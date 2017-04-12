@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site_name: 働け!
+  topbar:
+    jobs_de: Jobs in Germany
+    jobs_pl: Jobs in Poland
+    sign_in: Sign in
