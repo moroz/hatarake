@@ -10,13 +10,17 @@
     = csrf_meta_tags
   %body
     .top-bar
-      .top-bar-left
-        %ul.menu
-          %li.menu-text= t 'site_name'
-          %li= link_to t('topbar.jobs_de'), '#'
-          %li= link_to t('topbar.jobs_pl'), '#'
-      .top-bar-right
-        %ul.menu
-          %li= link_to t('topbar.sign_in'), '#'
+      .row
+        .top-bar-left
+          %ul.menu
+            %li.menu-text= t 'site_name'
+            %li= link_to t('topbar.jobs_de'), '#'
+            %li= link_to t('topbar.jobs_pl'), '#'
+        .top-bar-right
+          %ul.menu
+            %li= link_to t('topbar.sign_in'), '#'
     .row
       = yield
+    .row
+      %hr/
+      In Jobs

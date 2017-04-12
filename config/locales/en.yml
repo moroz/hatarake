@@ -21,7 +21,9 @@
 
 en:
   site_name: 働け!
+  motto: 働けば自由になります
   topbar:
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland
     sign_in: Sign in
+    
