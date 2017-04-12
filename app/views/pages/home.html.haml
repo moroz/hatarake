@@ -1,3 +1,7 @@
 %h1= t('site_name')
 
-%p= t('motto')
+%p InJobs is a job recruitment and social networking platform.
+
+%p
+  If you are looking for jobs or employers, please
+  != (link_to "sign up", sign_up_path) + "!"

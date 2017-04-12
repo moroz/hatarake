@@ -20,7 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  site_name: 働け!
+  site_name: InJobs
+  default_title: InJobs
   motto: 働けば自由になります
   topbar:
     jobs_de: Jobs in Germany
