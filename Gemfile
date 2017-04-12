@@ -27,7 +27,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'capistrano-rails', group: :development
-gem 'haml'
+gem 'haml-rails', '~> 0.9'
 gem 'decent_exposure'
 gem 'foundation-rails'
 
