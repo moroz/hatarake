@@ -2,7 +2,7 @@
   .row
     .top-bar-left
       %ul.menu
-        %li.menu-text= t 'site_name'
+        %li= link_to t('site_name'), root_path
         %li= link_to t('topbar.jobs_de'), '#'
         %li= link_to t('topbar.jobs_pl'), '#'
     .top-bar-right
