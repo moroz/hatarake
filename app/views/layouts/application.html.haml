@@ -10,8 +10,10 @@
     = csrf_meta_tags
   %body
     = render 'shared/topbar'
-    .row
-      = yield
-    .row
-      %hr/
-      InJobs
+    .container
+      .row
+        = yield
+    .container
+      .row
+        %hr/
+        InJobs
