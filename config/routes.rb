@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profile/(:id)', to: 'profile#show'
+
   devise_for :users
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }
   devise_for :companies, controllers: { registrations: 'companies/registrations' }

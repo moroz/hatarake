@@ -1,0 +1,2 @@
+module Candidates::ProfileHelper
+end
