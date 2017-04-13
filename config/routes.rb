@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :candidates
-  resources :candidates
-  devise_for :employers
-  resources :employers
   devise_for :users
+  resources :companies
+  resources :candidates
   root to: 'pages#home'
   get '/sign_up', to: 'pages#signup'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
