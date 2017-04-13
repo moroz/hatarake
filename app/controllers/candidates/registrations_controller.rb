@@ -3,6 +3,7 @@ class Candidates::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   def new
+    @heading = I18n.t('registrations.candidate_heading')
     super
   end
 

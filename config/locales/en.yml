@@ -28,4 +28,6 @@ en:
     jobs_pl: Jobs in Poland
     sign_in: Sign in
     sign_up: Sign up
-    
+  registrations:
+    candidate_heading: "Sign up for candidate account"
+    company_heading: "Sign up for company account"
