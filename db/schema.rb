@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20170414070034) do
     t.string   "name"
     t.string   "name_pl"
     t.string   "level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "candidate_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["candidate_id"], name: "index_skills_on_candidate_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

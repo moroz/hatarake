@@ -8,6 +8,7 @@ class ProfileController < ApplicationController
       flash[:alert] = "Your request could not be processed."
       redirect_to root_path
     end
+    @skills = @user.skills
   end
 
   def contact_data

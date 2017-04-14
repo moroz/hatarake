@@ -1,17 +1,23 @@
 .row
   .medium-9.columns
-    %section.row.row--border.row--padding.row--margin
+    = profile_section nil do
       .medium-4.columns
         .avatar.avatar--large{style: "background-image: url(avatar.png)"}
       .medium-8.columns
         %h2= @user.display_name
 
-    %section.row.row--border.row--padding.row--margin
-      %h3 Education
+    = profile_section "Skills" do
+      - if @skills.any?
+        %table
+          %tbody
+            = render @skills
+      - else
+        No skills.
+
+    = profile_section "Education" do
       %ul
         %li Chinese Studies at Adam Mickiewicz University in Poznań, Poland
 
-    %section.row.row--border.row--padding.row--margin
-      %h3 Work experience
+    = profile_section "Work experience" do
       %ul
         %li Internship at Goodlife 好生活, Taipei, Taiwan
