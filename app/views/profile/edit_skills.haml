@@ -1,0 +1,20 @@
+%h1 Edit skills
+
+%h3 Your skills
+- if @skills.any?
+  %table
+    %thead
+      %tr
+        %td Skill name
+        %td.skill__level Level
+    %tbody
+      = render partial: 'skills/skill', collection: @skills
+
+= simple_form_for @new_skill do |f|
+  .row
+    .medium-4.columns
+      = f.input :name, label: false, placeholder: "Skill name"
+    .medium-4.columns
+      = f.select :level, options_from_collection_for_select(I18n.t('skill_levels'), :first, :last)
+    .medium-4.columns
+      = f.submit "Add skill", class: 'button primary expanded'

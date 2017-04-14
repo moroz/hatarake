@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     candidate_signed_in? || company_signed_in?
   end
 
+  def current_user
+    current_candidate || current_company
+  end
+
   private
 
   def configure_permitted_parameters

@@ -2,5 +2,7 @@
   %td.skill__name
     = skill.name
   %td.skill__level
-    = skill.level
-    level
+    - if skill.type == "LanguageSkill"
+      = t("language_skill_levels." + skill.level)
+    - else
+      = t("skill_levels.#{skill.level}")

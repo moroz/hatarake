@@ -10,10 +10,10 @@
       - if @skills.any?
         %table
           %tbody
-            = render @skills
+            = render partial: 'skills/skill', collection: @skills
       - else
         No skills.
-      = link_to "Edit your skills...", "#"
+      = link_to "Edit your skills...", profile_edit_skills_path
 
     = profile_section "Education" do
       %ul
