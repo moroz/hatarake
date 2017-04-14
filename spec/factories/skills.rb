@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :skill do
-    name "MyString"
-    name_pl "MyString"
-    level "MyString"
+    name "Welding"
+    name_pl "Spawanie"
+    level "beginner"
+    candidate
   end
 end
