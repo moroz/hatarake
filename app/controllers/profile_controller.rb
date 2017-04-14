@@ -1,19 +1,21 @@
 class ProfileController < ApplicationController
+  before_action :set_user
+
   def show
-    if params[:id].present?
-      @user = User.find(params[:id])
-    elsif signed_in?
-      @user = current_candidate || current_company
-    else
-      flash[:alert] = "Your request could not be processed."
-      redirect_to root_path
-    end
     @skills = @user.skills
   end
 
-  def contact_data
+  def edit_skills
+    @skills = current_user.skills
   end
 
-  def languages
+  private
+
+  def set_user
+    if params[:id].present?
+      @user = User.find(params[:id])
+    elsif signed_in?
+      @user = current_user
+    end
   end
 end
