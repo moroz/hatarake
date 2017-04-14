@@ -1,16 +1,24 @@
 %h1 Edit skills
 
+= link_to "Back to profile", profile_path
+
 %h3 Your skills
 - if @skills.any?
   %table
     %thead
       %tr
         %td Skill name
-        %td.skill__level Level
+        %td Level
+        %td Actions
     %tbody
-      = render partial: 'skills/skill', collection: @skills
+      - for skill in @skills
+        %tr
+          %td= skill.name
+          - key = ['skill_levels', skill.category, skill.level].compact.join('.')
+          %td= t(key)
+          %td= link_to "Delete", skill, method: :delete
 
-= simple_form_for @new_skill do |f|
+= simple_form_for @skills.new do |f|
   .row
     .medium-4.columns
       = f.input :name, label: false, placeholder: "Skill name"

@@ -2,7 +2,5 @@
   %td.skill__name
     = skill.name
   %td.skill__level
-    - if skill.type == "LanguageSkill"
-      = t("language_skill_levels." + skill.level)
-    - else
-      = t("skill_levels.#{skill.level}")
+    - key = ['skill_levels', skill.category, skill.level].compact.join('.')
+    = t(key)

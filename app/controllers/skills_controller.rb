@@ -5,10 +5,11 @@ class SkillsController < ApplicationController
     redirect_to profile_edit_skills_path
   end
 
-  def update
-  end
-
   def destroy
+    @skill = current_user.skills.find(params[:id])
+    @skill.destroy
+    flash[:success] = "The skill has been deleted."
+    redirect_to profile_edit_skills_path
   end
 
   private

@@ -6,9 +6,7 @@ class ProfileController < ApplicationController
   end
 
   def edit_skills
-    
     @skills = current_user.skills
-    @new_skill = current_user.skills.new
   end
 
   private

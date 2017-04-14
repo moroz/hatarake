@@ -1,2 +1,0 @@
-class LanguageSkill < Skill
-end

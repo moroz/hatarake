@@ -1,4 +1,10 @@
 $notice-color: #34cf58; 
+
+select {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+}
+
 .notice {
   background-color: $notice-color;
 }
