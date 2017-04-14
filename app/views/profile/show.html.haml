@@ -1,4 +1,17 @@
-.medium-4.columns
-  .avatar.avatar--large{style: "background-image: url(avatar.png)"}
-  %h2= @user.display_name
-  %p Find me in app/views/candidates/profile/show.html.haml
+.row
+  .medium-9.columns
+    %section.row.row--border.row--padding.row--margin
+      .medium-4.columns
+        .avatar.avatar--large{style: "background-image: url(avatar.png)"}
+      .medium-8.columns
+        %h2= @user.display_name
+
+    %section.row.row--border.row--padding.row--margin
+      %h3 Education
+      %ul
+        %li Chinese Studies at Adam Mickiewicz University in Poznań, Poland
+
+    %section.row.row--border.row--padding.row--margin
+      %h3 Work experience
+      %ul
+        %li Internship at Goodlife 好生活, Taipei, Taiwan
