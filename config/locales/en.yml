@@ -34,10 +34,5 @@ en:
   skill_levels:
     beginner: Beginner
     intermediate: Intermediate
-    expert: Expert
     good: Good
-  language_skill_levels:
-    b1: Decent (B1)
-    b2: Good (B2)
-    c1: Fluent (≥ C1)
-    a2: Communicative (≤ A2)
+    expert: Expert

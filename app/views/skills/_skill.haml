@@ -2,5 +2,4 @@
   %td.skill__name
     = skill.name
   %td.skill__level
-    - key = ['skill_levels', skill.category, skill.level].compact.join('.')
-    = t(key)
+    = t(skill.level_key)

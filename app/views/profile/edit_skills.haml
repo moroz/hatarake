@@ -14,14 +14,13 @@
       - for skill in @skill_items
         %tr
           %td= skill.name
-          - key = ['skill_levels', skill.category, skill.level].compact.join('.')
-          %td= t(key)
+          %td= t(skill.level_key)
           %td= link_to "Delete", skill, method: :delete
 
 = simple_form_for @skill_items.new do |f|
   .row
     .medium-4.columns
-      = f.input :name, label: false, placeholder: "Skill name"
+      = f.input :skill_name, label: false, placeholder: "Skill name"
     .medium-4.columns
       = f.select :level, options_from_collection_for_select(I18n.t('skill_levels'), :first, :last)
     .medium-4.columns
