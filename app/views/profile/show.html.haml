@@ -2,7 +2,7 @@
   .medium-9.columns
     = profile_section nil do
       .medium-4.columns
-        .avatar.avatar--large{style: "background-image: url(avatar.png)"}
+        = avatar_for current_user
       .medium-8.columns
         %h2= @user.display_name
 

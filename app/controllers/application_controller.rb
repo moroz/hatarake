@@ -2,13 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def signed_in?
-    candidate_signed_in? || company_signed_in?
-  end
-
-  def current_user
-    current_candidate || current_company
-  end
+  #def after_sign_in_path_for(resource)
+    #profile_path
+  #end
 
   private
 
