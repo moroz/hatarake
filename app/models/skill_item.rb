@@ -1,6 +1,9 @@
 class SkillItem < ApplicationRecord
-  LEVELS = %w( beginner intermediate good expert )
+  LEVELS = %w( 1_beginner 2_intermediate 3_good 4_expert )
   attr_accessor :skill_name
+
+  default_scope { includes(:skill).ordered }
+  scope :ordered, -> { order('level DESC', 'skills.name') }
 
   belongs_to :candidate
   belongs_to :skill
