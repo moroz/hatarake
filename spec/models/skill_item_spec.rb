@@ -41,5 +41,6 @@ RSpec.describe SkillItem, type: :model do
         expect { skill_item.save }.not_to change { Skill.count }
       end
     end
+
   end
 end
