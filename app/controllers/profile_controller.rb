@@ -2,11 +2,11 @@ class ProfileController < ApplicationController
   before_action :set_user
 
   def show
-    @skills = @user.skills
+    @skill_items = @user.skill_items.includes(:skill)
   end
 
   def edit_skills
-    @skills = current_user.skills
+    @skill_items = current_user.skill_items
   end
 
   private
