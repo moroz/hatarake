@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :companies, controllers: { registrations: 'companies/registrations' }
   resources :companies, except: [:new, :create]
   resources :candidates, except: [:new, :create]
-  resources :skills, only: [:create, :update]
+  resources :skill_items, path: 'skills', only: [:create, :update]
   root to: 'pages#home'
   get '/sign_up', to: 'pages#signup'
 end

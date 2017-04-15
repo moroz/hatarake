@@ -1,5 +1,5 @@
-class Skill < ApplicationRecord
-  LEVELS = %w( beginner intermediate expert good a2 b1 b2 c1 )
+class SkillItem < ApplicationRecord
+  LEVELS = %w( beginner intermediate good expert )
 
   belongs_to :candidate
   validates_presence_of :name, :level
