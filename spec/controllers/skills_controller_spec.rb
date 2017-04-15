@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SkillsController, type: :controller do
+RSpec.describe SkillItemsController, type: :controller do
 
   describe "GET #create" do
     it "returns http success" do
