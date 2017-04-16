@@ -4,7 +4,7 @@ class CvItem < ApplicationRecord
 
   TYPES = %w( internship ba ma engineer phd work owner founder )
 
-  validates_presence_of :start_date, :end_date, :type, :position, :candidate 
+  validates_presence_of :start_date, :type, :position, :candidate 
   validates :type, inclusion: { in: TYPES }
 
   before_validation :make_dates
