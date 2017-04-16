@@ -20,6 +20,7 @@
         %table
           %tbody
             = render partial: 'cv_items/cv_item', collection: @cv_items
+      = link_to "Edit your education...", profile_edit_education_path
 
     = profile_section "Work experience" do
       %ul

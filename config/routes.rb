@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions
   devise_for :companies, controllers: { registrations: 'companies/registrations' }, skip: :sessions
   resources :skill_items, path: 'skills', only: [:create, :destroy]
+  resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   root to: 'pages#home'
   get '/sign_up', to: 'pages#signup'
 end

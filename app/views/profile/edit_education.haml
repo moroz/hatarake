@@ -1,0 +1,24 @@
+%h1 Edit education
+
+= link_to "Back to profile", profile_path
+
+= simple_form_for @cv_items.new do |f|
+  .row
+    .large-2.columns
+      = f.label "Starting date"
+    .large-5.columns
+      = select_month(Date.today, prefix: "cv_item", field_name: "start_month")
+    .large-5.columns
+      = select_year(Date.today, prefix: "cv_item", field_name: "start_year", start_year: 1980, end_year: Date.today.year)
+  .row
+    .large-2.columns
+      = f.label "End date"
+    .large-5.columns
+      = select_month(Date.today, prefix: "cv_item", field_name: "end_month")
+    .large-5.columns
+      = select_year(Date.today, prefix: "cv_item", field_name: "end_year", start_year: 1980, end_year: Date.today.year)
+
+  = f.select :category, options_from_collection_for_select(I18n.t('cv_items.education_categories'), :first, :last), label: "Typeof education:"
+  = f.input :organization_name
+  = f.input :position, label: "Specialization or field of studies:"
+  = f.submit "Add entry", class: 'button primary expanded'
