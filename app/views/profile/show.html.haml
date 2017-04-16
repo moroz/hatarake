@@ -16,8 +16,10 @@
       = link_to "Edit your skills...", profile_edit_skills_path
 
     = profile_section "Education" do
-      %ul
-        %li Chinese Studies at Adam Mickiewicz University in Poznań, Poland
+      - if @cv_items.any?
+        %table
+          %tbody
+            = render partial: 'cv_items/cv_item', collection: @cv_items
 
     = profile_section "Work experience" do
       %ul

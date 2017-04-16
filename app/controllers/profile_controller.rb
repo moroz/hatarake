@@ -1,8 +1,9 @@
 class ProfileController < ApplicationController
-  before_action :set_user
+  before_action :find_user
 
   def show
     @skill_items = @user.skill_items
+    @cv_items = @user.cv_items
   end
 
   def edit_skills
@@ -11,7 +12,7 @@ class ProfileController < ApplicationController
 
   private
 
-  def set_user
+  def find_user
     if params[:id].present?
       @user = User.find(params[:id])
     elsif signed_in?
