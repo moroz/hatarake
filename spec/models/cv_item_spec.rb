@@ -1,15 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe CvItem, type: :model do
-  let(:edu_item) { FactoryGirl.build(:cv_item) }
+  let(:cv_item) { FactoryGirl.build(:cv_item) }
   let(:work_item) { FactoryGirl.build(:cv_item, :work) }
   describe "validations" do
     context "with valid attributes" do
-      it "is valid"
+      it "is valid" do
+        expect(cv_item).to be_valid
+      end
     end
 
     context "with no dates" do
-      it "is invalid"
+      it "is invalid" do
+        no_date_item = FactoryGirl.build(:cv_item, :no_dates)
+        expect(no_date_item).not_to be_valid
+      end
     end
   end
 

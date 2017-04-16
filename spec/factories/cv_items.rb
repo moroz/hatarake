@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :cv_item do
+    candidate { Candidate.first || create(:candidate) }
     category "ba"
     position "English Studies"
     organization_name "Adam Mickiewicz University"

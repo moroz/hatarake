@@ -12,11 +12,19 @@ class CvItem < ApplicationRecord
   scope :education_items, -> { where('category IN (?)', EDUCATIONAL) }
   scope :work_items, -> { where('category NOT IN (?)', EDUCATIONAL) }
 
-  validates_presence_of :start_date, :categories, :position,
+  validates_presence_of :start_date, :category, :position,
     :candidate 
-  validates :type, inclusion: { in: CATEGORIES }
+  validates :category, inclusion: { in: CATEGORIES }
 
   before_validation :make_dates, :find_or_create_organization
+
+  def education?
+    self.category.in? EDUCATIONAL
+  end
+
+  def work?
+    !education?
+  end
 
   private
 
