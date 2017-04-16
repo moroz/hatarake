@@ -7,10 +7,14 @@ class CvItem < ApplicationRecord
   CATEGORIES = %w( internship ba ma engineer phd work owner founder )
   # This field was meant to be called type, but that's reserved
   # for Active Record's STI, so it was renamed
+  EDUCATIONAL = %w( ba ma engineer phd )
+
+  scope :education_items, -> { where('category IN (?)', EDUCATIONAL) }
+  scope :work_items, -> { where('category NOT IN (?)', EDUCATIONAL) }
 
   validates_presence_of :start_date, :categories, :position,
     :candidate 
-  validates :type, inclusion: { in: TYPES }
+  validates :type, inclusion: { in: CATEGORIES }
 
   before_validation :make_dates, :find_or_create_organization
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'profile/edit_skills', to: 'profile#edit_skills'
+  get 'profile/edit_education', to: 'profile#edit_education'
   get 'profile/(:id)', to: 'profile#show', as: :profile
 
   devise_for :users, skip: :registrations

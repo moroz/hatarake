@@ -10,6 +10,10 @@ class ProfileController < ApplicationController
     @skill_items = current_user.skill_items
   end
 
+  def edit_education
+    @cv_items = @user.cv_items.education_items
+  end
+
   private
 
   def find_user
