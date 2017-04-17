@@ -50,7 +50,7 @@ select {
 }
 
 .custom_button {
-  border: 3px solid lighten($button-color, 25%);
+  border: 3px solid lighten($button-color, 15%);
   border-radius: 0.3rem;
   padding: 0.4rem;
   color: darken($button-color, 10%);
@@ -74,6 +74,15 @@ select {
   font-weight: 400;
   border-width: 2px;
   font-size: 0.9rem;
+}
+
+.custom_button--tertiary {
+  border-color: $custom-tertiary;
+  color: $custom-tertiary;
+
+  &:hover {
+    background-color: lighten($custom-tertiary, 10%);
+  }
 }
 
 .top-bar {

@@ -15,7 +15,7 @@
         %tr
           %td= skill.name
           %td= t(skill.level_key)
-          %td= link_to "Delete", skill, method: :delete
+          %td= link_to "Delete", skill, method: :delete, class: 'custom_button custom_button--small custom_button--tertiary'
 
 = simple_form_for @skill_items.new do |f|
   .row
