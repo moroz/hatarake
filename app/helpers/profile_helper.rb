@@ -7,7 +7,11 @@ module ProfileHelper
   end
 
   def avatar_for(user, size = :large)
-    content_tag :div, nil, class: "avatar avatar--#{size}", style: "background-image: url(avatar.png)"
+    url = 'avatar.png'
+    if user.avatar.present?
+      url = user.avatar.image.url
+    end
+    content_tag :div, nil, class: "avatar avatar--#{size}", style: "background-image: url(#{url})"
   end
 
 end
