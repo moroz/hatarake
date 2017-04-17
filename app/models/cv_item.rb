@@ -16,7 +16,7 @@ class CvItem < ApplicationRecord
     :candidate 
   validates :category, inclusion: { in: CATEGORIES }
 
-  before_validation :make_dates, :find_or_create_organization
+  before_validation :make_dates, :swap_dates, :find_or_create_organization
 
   def education?
     self.category.in? EDUCATIONAL
@@ -35,7 +35,10 @@ class CvItem < ApplicationRecord
     if end_month.present? && end_year.present?
       self.end_date = Date.new(end_year.to_i, end_month.to_i)
     end
-    if end_date.present? && end_date < start_date
+  end
+
+  def swap_dates
+    if end_date.present? && start_date.present? && end_date < start_date
       end_date, start_date = start_date, end_date
     end
   end
