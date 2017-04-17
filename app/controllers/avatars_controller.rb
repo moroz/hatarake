@@ -1,12 +1,11 @@
 class AvatarsController < ApplicationController
   def new
     @avatar = Avatar.new
-    @avatar.user = current_user
   end
 
   def create
-    @avatar = current_user.build_avatar(avatar_params)
-    if @avatar.save
+    @avatar = current_user.avatar || current_user.build_avatar
+    if @avatar.update(avatar_params)
       flash[:success] = "The new avatar has been uploaded."
     else
       flash[:alert] = "There was an error processing your request."

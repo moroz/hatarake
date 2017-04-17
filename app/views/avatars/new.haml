@@ -1,1 +1,7 @@
-= render 'form'
+= link_to "Back to profile", profile_path
+.row
+  .medium-6.columns
+    %h3 Current avatar
+    = avatar_for current_user
+  .medium-6.columns
+    = render 'form'

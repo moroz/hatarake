@@ -5,6 +5,7 @@
         = avatar_for current_user
       .medium-8.columns
         %h2= @user.display_name
+        = link_to "Change profile picture...", new_avatar_path
 
     = profile_section "Skills" do
       - if @skill_items.any?
