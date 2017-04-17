@@ -1,8 +1,8 @@
-%h1 Edit education
+%h1 Edit work experience
 
 = link_to "Back to profile", profile_path
 
-%h3 Your education
+%h3 Your work experience
 %table
   %thead
     %tr
@@ -16,7 +16,7 @@
 %h3 Add a new entry
 = simple_form_for @cv_items.new do |f|
   = render partial: 'cv_items/fields', locals: { f: f }
-  = f.select :category, options_from_collection_for_select(I18n.t('cv_items.education_categories'), :first, :last), label: "Typeof education:"
+  = f.select :category, options_from_collection_for_select(I18n.t('cv_items.work_categories'), :first, :last), label: "Type of employment:"
   = f.input :organization_name
-  = f.input :position, label: "Specialization or field of studies:"
+  = f.input :position, label: "Position"
   = f.submit "Add entry", class: 'button primary expanded'

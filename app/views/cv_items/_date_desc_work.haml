@@ -1,0 +1,15 @@
+%td
+  %span.cv_item__date= l cv_item.start_date, format: :by
+  &ndash;
+  - if cv_item.end_date.present?
+    %span.cv_item__date= l cv_item.end_date, format: :by
+  - else
+    present
+%td
+  %span.cv_item__category= t('cv_items.work_categories.' + cv_item.category)
+  in 
+  %span.cv_item__position= cv_item.position
+  at
+  %span.cv_item__organization_name= cv_item.organization.name
+
+

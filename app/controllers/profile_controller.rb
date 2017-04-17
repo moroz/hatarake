@@ -14,6 +14,10 @@ class ProfileController < ApplicationController
     @cv_items = @user.cv_items.education_items
   end
 
+  def edit_work
+    @cv_items = @user.cv_items.work_items
+  end
+
   private
 
   def find_user

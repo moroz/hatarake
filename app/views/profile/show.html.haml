@@ -17,12 +17,16 @@
       = section_link "Edit your skills...", profile_edit_skills_path
 
     = profile_section "Education" do
-      - if @cv_items.any?
+      - if @cv_items.education_items.any?
         %table
           %tbody
-            = render partial: 'cv_items/cv_item', collection: @cv_items
+            = render partial: 'cv_items/cv_item', collection: @cv_items.education_items
       = section_link "Edit your education...", profile_edit_education_path
 
     = profile_section "Work experience" do
-      %ul
-        %li Internship at Goodlife 好生活, Taipei, Taiwan
+      - if @cv_items.work_items.any?
+        %table
+          %tbody
+            = render partial: 'cv_items/cv_item', collection: @cv_items.work_items
+
+      = section_link "Edit your work experience...", profile_edit_work_path
