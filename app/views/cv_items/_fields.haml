@@ -7,7 +7,7 @@
     = select_year(Date.today, prefix: "cv_item", field_name: "start_year", start_year: 1980, end_year: Date.today.year)
 .row
   .large-2.columns
-    = f.label "End date"
+    = f.label "End date (leave out if ongoing)"
   .large-5.columns
     = select_month(nil, prefix: "cv_item", field_name: "end_month", include_blank: true)
   .large-5.columns
