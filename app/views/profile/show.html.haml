@@ -5,7 +5,7 @@
         = avatar_for current_user
       .medium-8.columns
         %h2= @user.display_name
-        = link_to "Change profile picture...", new_avatar_path
+        = section_link "Change profile picture...", new_avatar_path, :small
 
     = profile_section "Skills" do
       - if @skill_items.any?
@@ -14,14 +14,14 @@
             = render partial: 'skills/skill', collection: @skill_items
       - else
         No skills.
-      = link_to "Edit your skills...", profile_edit_skills_path
+      = section_link "Edit your skills...", profile_edit_skills_path
 
     = profile_section "Education" do
       - if @cv_items.any?
         %table
           %tbody
             = render partial: 'cv_items/cv_item', collection: @cv_items
-      = link_to "Edit your education...", profile_edit_education_path
+      = section_link "Edit your education...", profile_edit_education_path
 
     = profile_section "Work experience" do
       %ul

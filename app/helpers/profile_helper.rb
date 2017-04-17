@@ -14,4 +14,9 @@ module ProfileHelper
     content_tag :div, nil, class: "avatar avatar--#{size}", style: "background-image: url(#{url})"
   end
 
+  def section_link(text, url, *custom_classes)
+    classes = custom_classes.map { |c| 'custom_button--' + c.to_s }.join(' ')
+    link_to text, url, class: 'custom_button ' + classes
+  end
+
 end

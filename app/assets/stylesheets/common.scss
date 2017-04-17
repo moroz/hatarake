@@ -1,5 +1,4 @@
-$notice-color: #34cf58; 
-
+@import 'colors';
 html {
   font-size: 100%;
 }
@@ -48,4 +47,40 @@ select {
 
 .skill__level {
   text-align: right;
+}
+
+.custom_button {
+  border: 3px solid lighten($button-color, 25%);
+  border-radius: 0.3rem;
+  padding: 0.4rem;
+  color: darken($button-color, 10%);
+  background-color: #fff;
+  font-size: 1.2rem;
+  //font-weight: bold;
+
+  &:hover {
+    background-color: $button-color;
+    transition: 0.3s background-color ease, 0.3s color ease;
+    color: #fff;
+  }
+}
+
+.custom_button--expanded {
+  width: 100%;
+  display: block;
+}
+
+.custom_button--small {
+  font-weight: 400;
+  border-width: 2px;
+  font-size: 0.9rem;
+}
+
+.top-bar {
+  a, a:visited {
+    color: $anchor-dark-bg;
+  }
+  a:hover {
+    color: darken($anchor-dark-bg, 14%);
+  }
 }
