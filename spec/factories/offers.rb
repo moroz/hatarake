@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :offer do
     company { Company.first || create(:company) }
+    title "Welder m/f Berlin"
+    location "Berlin"
     salary_min 1000
     salary_max 2000
     currency "PLN"
