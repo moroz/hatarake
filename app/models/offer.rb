@@ -2,7 +2,7 @@ class Offer < ApplicationRecord
   belongs_to :company
   has_and_belongs_to_many :skills
   validates_presence_of :currency, :company
-  validates :title, presence: true, length: { min: 10, max: 85 }
+  validates :title, presence: true, length: { minimum: 10, maximum: 85 }
 
   def salary
     if salary_min.present?

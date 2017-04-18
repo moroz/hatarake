@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'profile/edit_education', to: 'candidates#edit_education'
   get 'profile/edit_work', to: 'candidates#edit_work'
   get 'profile/(:id)', to: 'candidates#show', as: :profile
+  get '/company', to: 'companies#show', as: :company_profile
 
   devise_for :users, skip: :registrations
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions

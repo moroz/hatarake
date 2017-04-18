@@ -1,8 +1,8 @@
 class Candidate < User
   devise :registerable
   validates_presence_of :first_name, :last_name
-  has_many :skill_items
-  has_many :cv_items
+  has_many :skill_items, dependent: :destroy
+  has_many :cv_items, dependent: :destroy
 
   default_scope { includes(:skill_items, :cv_items) }
 
