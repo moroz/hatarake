@@ -12,6 +12,7 @@ class CvItem < ApplicationRecord
   scope :education_items, -> { where('category IN (?)', EDUCATIONAL) }
   scope :work_items, -> { where('category NOT IN (?)', EDUCATIONAL) }
   scope :ordered, -> { order('end_date DESC NULLS FIRST', 'start_date DESC') }
+  default_scope { includes(:organization).ordered }
 
   validates_presence_of :start_date, :category, :position,
     :candidate 
