@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
 
   def show
     @skill_items = @user.skill_items
-    @cv_items = @user.cv_items
+    @cv_items = @user.cv_items.ordered
   end
 
   def edit_skills
