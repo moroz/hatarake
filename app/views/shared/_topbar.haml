@@ -3,8 +3,7 @@
     .top-bar-left
       %ul.menu
         %li= link_to t('site_name'), root_path
-        %li= link_to t('topbar.jobs_de'), '#'
-        %li= link_to t('topbar.jobs_pl'), '#'
+        %li= link_to t('topbar.jobs'), offers_path
     .top-bar-right
       %ul.menu
         - if signed_in?

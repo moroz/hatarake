@@ -1,0 +1,11 @@
+%h1 Job offers
+
+%table
+  %thead
+    %td Title
+    %td Company
+    %td Salary
+    %td Location
+  %tbody
+    - for offer in offers
+      = render partial: 'offers/offer_row', locals: { offer: offer }
