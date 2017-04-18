@@ -1,0 +1,15 @@
+%h1
+  Job offer:
+  = offer.title
+
+%table
+  %tbody
+    %tr
+      %td Company
+      %td= offer.company.name
+    %tr
+      %td Salary
+      %td= offer.salary
+
+%h3 Description
+= offer.description

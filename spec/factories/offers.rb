@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :offer do
-    company nil
-    salary_min 1
-    salary_max 1
-    currency "MyString"
-    description "MyText"
-    contact_email "MyString"
-    contact_phone "MyString"
+    company { Company.first || create(:company) }
+    salary_min 1000
+    salary_max 2000
+    currency "PLN"
+    description "We're looking for welders."
+    contact_email "user@example.com"
+    contact_phone "555 100-800"
   end
 end

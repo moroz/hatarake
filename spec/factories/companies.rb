@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :candidate do
+  factory :company do
     first_name "Example"
     last_name "User"
     birth_date { 20.years.ago }
