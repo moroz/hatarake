@@ -1,0 +1,5 @@
+class AddNameToUsers < ActiveRecord::Migration[5.0]
+  def change
+    add_column :users, :name, :string, comment: "Only for Companies"
+  end
+end
