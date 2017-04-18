@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :offers
-  get 'profile/edit_skills', to: 'profile#edit_skills'
-  get 'profile/edit_education', to: 'profile#edit_education'
-  get 'profile/edit_work', to: 'profile#edit_work'
-  get 'profile/(:id)', to: 'profile#show', as: :profile
+  get 'profile/edit_skills', to: 'candidates#edit_skills'
+  get 'profile/edit_education', to: 'candidates#edit_education'
+  get 'profile/edit_work', to: 'candidates#edit_work'
+  get 'profile/(:id)', to: 'candidates#show', as: :profile
 
   devise_for :users, skip: :registrations
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions

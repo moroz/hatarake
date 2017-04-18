@@ -2,11 +2,16 @@ class Offer < ApplicationRecord
   belongs_to :company
   has_and_belongs_to_many :skills
   validates_presence_of :currency, :company
+  validates :title, presence: true, length: { min: 10, max: 85 }
 
   def salary
     if salary_min.present?
       if salary_max.present?
-        "#{salary_min}-#{salary_max} #{currency}"
+        if salary_min == salary_max
+          "#{salary_min} #{currency}"
+        else
+          "#{salary_min}-#{salary_max} #{currency}"
+        end
       else
         "#{salary_min}+ #{currency}"
       end
