@@ -7,10 +7,12 @@
     .top-bar-right
       %ul.menu
         - if signed_in?
-          - if current_user.type == "Company"
+          - if candidate?
             %li= link_to "Profile", company_profile_path
-          -else
+          -elsif company?
             %li= link_to "Me", profile_path
+          -elsif admin?
+            %li= link_to "Dashboard", "#"
           %li= link_to "Sign out", destroy_user_session_path, method: :delete 
         - else
           %li= link_to t('topbar.sign_in'), new_user_session_path
