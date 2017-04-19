@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require jquery-ui/autocomplete
+//= require autocomplete-rails
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
