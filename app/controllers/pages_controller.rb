@@ -1,5 +1,10 @@
 class PagesController < ApplicationController
-  expose :page, fetch: -> { fetch_page }
+  expose :page, find_by: :permalink
+  expose :pages, -> { Page.all }
+
+  def new
+  end
+
   def show
   end
 
@@ -16,15 +21,6 @@ class PagesController < ApplicationController
   end
 
   private
-
-  def fetch_page
-    permalink = params[:permalink] || params[:id]
-    if permalink.present?
-      @page = Page.find_by(permalink: permalink)
-      raise ActiveRecord::RecordNotFound if @page.nil?
-      @page
-    end
-  end
 
   def page_params
     params.require(:page).permit(:title, :body, :permalink)

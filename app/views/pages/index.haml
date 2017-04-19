@@ -1,0 +1,14 @@
+%h1 Static pages
+
+%table
+  %thead
+    %tr
+      %td Title
+      %td Permalink
+  %tbody
+    - for page in pages
+      %tr
+        %td= link_to page.title, page
+        %td= page.permalink
+
+= link_to "Create new page", new_page_path
