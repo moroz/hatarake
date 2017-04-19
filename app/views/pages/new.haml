@@ -1,0 +1,9 @@
+- if page.persisted?
+  = link_to "Back to page", page
+%h1= @title || "New static page"
+
+= simple_form_for page do |f|
+  = f.input :title
+  = f.input :permalink, disabled: page.persisted?
+  = f.input :body, as: :text, input_html: { rows: 15 }
+  = f.submit "Save", class: 'button success expanded'

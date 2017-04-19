@@ -93,3 +93,7 @@ select {
     color: darken($anchor-dark-bg, 14%);
   }
 }
+
+textarea.text {
+  font-family: monospace;
+}
