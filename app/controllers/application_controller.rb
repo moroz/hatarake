@@ -3,9 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_user, :admin?, :company?, :candidate?
 
-  #def after_sign_in_path_for(resource)
-    #profile_path
-  #end
   def current_user
     super || current_candidate || current_company
   end

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   expose :page, find_by: :permalink
   expose :pages, -> { Page.all }
 
-  before_action :authorize_admin!, except: [:show]
+  authorize_resource
 
   def new
   end
