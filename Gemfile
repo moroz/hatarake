@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'RedCloth'
+gem 'cancan'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
