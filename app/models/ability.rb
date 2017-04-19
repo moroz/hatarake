@@ -20,6 +20,7 @@ class Ability
       can :manage, :all
     else
       cannot :manage, Page
+      can :show, Page
     end
     #
     # The first argument to `can` is the action you are giving the user 
