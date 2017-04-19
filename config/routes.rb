@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'profile/(:id)', to: 'candidates#show', as: :profile
   get '/company', to: 'companies#show', as: :company_profile
   resources :pages
+  scope '/api' do
+    get 'skills' => 'autocomplete#skills', as: :autocomplete_skills
+  end
 
   devise_for :users, skip: :registrations
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions
