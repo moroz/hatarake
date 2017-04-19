@@ -9,3 +9,5 @@
   %tbody
     - for offer in offers
       = render partial: 'offers/offer_row', locals: { offer: offer }
+
+= link_to "Add new offer", new_offer_path

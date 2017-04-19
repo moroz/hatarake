@@ -9,8 +9,20 @@
       %td Company
       %td= offer.company.name
     %tr
+      %td Location
+      %td= offer.location
+    %tr
       %td Salary
       %td= offer.salary
+    %tr
+      %td Contact email:
+      %td= offer.contact_email
+    %tr
+      %td Contact phone:
+      %td= offer.contact_phone
 
 %h3 Description
-= offer.description
+!= textilize offer.description
+
+= link_to "Edit", edit_offer_path(offer), class: "button secondary"
+= link_to "Delete", offer, method: :delete, class: "button alert"
