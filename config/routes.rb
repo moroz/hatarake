@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]
   root to: 'pages#home'
-  get '/sign_up', to: 'pages#signup'
+  get '/sign_up', to: 'pages#show', params: { permalink: 'sign_up' }
 end
