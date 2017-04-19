@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'profile/edit_work', to: 'candidates#edit_work'
   get 'profile/(:id)', to: 'candidates#show', as: :profile
   get '/company', to: 'companies#show', as: :company_profile
+  resources :pages, except: :show
+  get '/pages/:permalink' => 'pages#show'
 
   devise_for :users, skip: :registrations
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions
@@ -13,5 +15,5 @@ Rails.application.routes.draw do
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]
   root to: 'pages#home'
-  get '/sign_up', to: 'pages#show', params: { permalink: 'sign_up' }
+  get '/sign_up', controller: :pages, action: :show, permalink: 'sign_up'
 end
