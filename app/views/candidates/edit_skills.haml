@@ -20,7 +20,7 @@
 = simple_form_for @skill_items.new do |f|
   .row
     .medium-4.columns
-      = f.input :skill_name, label: false, placeholder: "Skill name"
+      = f.input :skill_name, label: false, placeholder: "Skill name", url: autocomplete_skills_path, as: :autocomplete
     .medium-4.columns
       = f.select :level, options_from_collection_for_select(I18n.t('skill_levels'), :first, :last)
     .medium-4.columns
