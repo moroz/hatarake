@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]
-  root to: 'pages#home'
+  root to: 'pages#show', permalink: "home"
   get '/sign_up', controller: :pages, action: :show, permalink: 'sign_up'
 end
