@@ -13,6 +13,7 @@
     %tbody#skill_items
       = render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items }
       
+#skill_item_errors.callout.alert{style: "display: none"}
 = simple_form_for @skill_items.new, remote: true do |f|
   .row
     .medium-4.columns

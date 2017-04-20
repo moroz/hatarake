@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :clear_flash
   helper_method :current_user, :admin?, :company?, :candidate?
 
   def current_user
@@ -23,6 +24,10 @@ class ApplicationController < ActionController::Base
 
   def current_user_is_a?(type)
     current_user && current_user.type == type
+  end
+
+  def clear_flash
+    flash.clear
   end
 
   def configure_permitted_parameters

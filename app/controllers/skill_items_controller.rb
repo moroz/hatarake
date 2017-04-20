@@ -1,12 +1,17 @@
 class SkillItemsController < ApplicationController
-  respond_to :html, :js
-
   def create
     @skill_item = current_user.skill_items.new(skill_item_params)
     @skill_item.save
     respond_to do |f|
       f.html { redirect_to profile_edit_skills_path }
-      f.js { @skill_items = current_user.skill_items }
+      f.js do
+        if @skill_item.errors.any?
+          render 'show_errors'
+        else
+          @skill_items = current_user.skill_items
+          render 'create'
+        end
+      end
     end
   end
 
@@ -14,7 +19,21 @@ class SkillItemsController < ApplicationController
     @skill_item = current_user.skill_items.find(params[:id])
     @skill_item.destroy
     flash[:success] = "The skill has been deleted."
-    redirect_to profile_edit_skills_path
+    respond_to do |f|
+      f.html { redirect_to profile_edit_skills_path }
+      f.js {
+        @skill_items = current_user.skill_items
+        render 'create'
+      }
+    end
+  end
+
+  def destroy_all
+    current_user.skill_items.destroy_all
+    respond_to do |f|
+      f.html { redirect_to profile_edit_skills_path }
+      f.js
+    end
   end
 
   private

@@ -1,0 +1,5 @@
+:plain
+  var error_div = document.getElementById('skill_item_errors');
+  error_div.innerHTML = "#{j render partial: 'shared/errors', locals: { object: @skill_item} }"
+  error_div.style = 'display: block';
+

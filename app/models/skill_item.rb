@@ -9,6 +9,7 @@ class SkillItem < ApplicationRecord
   belongs_to :skill
   validates_presence_of :skill, :level
   validates :level, inclusion: { in: LEVELS }
+  validates :skill, uniqueness: { scope: :candidate_id }
   before_validation :find_or_create_skill
   delegate :name, to: :skill
 

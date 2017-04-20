@@ -1,6 +1,8 @@
 class Skill < ApplicationRecord
   has_many :skill_items
   has_and_belongs_to_many :offers
+  validates :name, uniqueness: true
+  validates :name_pl, uniqueness: true
   extend FindOrCreate
 
   def self.search(q)

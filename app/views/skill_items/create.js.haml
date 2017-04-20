@@ -1,3 +1,8 @@
 :plain
   var tbody = document.getElementById('skill_items');
   tbody.innerHTML = "#{j render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items } }";
+  var error_div = document.getElementById('skill_item_errors');
+  error_div.style = 'display: none';
+  var input = document.getElementById('skill_item_skill_name');
+  input.value = '';
+  input.focus();
