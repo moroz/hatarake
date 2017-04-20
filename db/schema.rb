@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420081439) do
+ActiveRecord::Schema.define(version: 20170420081741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20170420081439) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.index ["user_id"], name: "index_avatars_on_user_id", using: :btree
+  end
+
+  create_table "education_items", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "specialization"
+    t.integer  "organization_id"
+    t.integer  "candidate_id"
+    t.string   "memo"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organization_id"], name: "index_education_items_on_organization_id", using: :btree
   end
 
   create_table "offers", force: :cascade do |t|
@@ -107,5 +119,7 @@ ActiveRecord::Schema.define(version: 20170420081439) do
   end
 
   add_foreign_key "avatars", "users"
+  add_foreign_key "education_items", "organizations"
+  add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "skill_items", "skills"
 end
