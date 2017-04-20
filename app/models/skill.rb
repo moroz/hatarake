@@ -4,6 +4,6 @@ class Skill < ApplicationRecord
   extend FindOrCreate
 
   def self.search(q)
-    where("name LIKE :q OR name_pl LIKE :q", q: "%" + sanitize_sql_like(q) + "%")
+    where("name ILIKE :q OR name_pl ILIKE :q", q: "%" + sanitize_sql_like(q) + "%")
   end
 end
