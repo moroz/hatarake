@@ -21,7 +21,7 @@
         %table
           %tbody
             = render partial: 'cv_items/cv_item', collection: @cv_items.education_items
-      = section_link "Edit your education...", profile_edit_education_path
+      = section_link "Edit your education...", new_cv_item_path
 
     = profile_section "Work experience" do
       - if @cv_items.work_items.any?
@@ -29,4 +29,4 @@
           %tbody
             = render partial: 'cv_items/cv_item', collection: @cv_items.work_items
 
-      = section_link "Edit your work experience...", profile_edit_work_path
+      = section_link "Edit your work experience...", new_cv_item_path

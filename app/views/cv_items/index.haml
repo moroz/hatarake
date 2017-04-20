@@ -1,8 +1,8 @@
-%h1 Edit education
+%h1 Edit education and work experience
 
 = link_to "Back to profile", profile_path
 
-%h3 Your education
+%h4 Your education
 %table
   %thead
     %tr
@@ -10,11 +10,22 @@
       %td Description
       %td Actions
   %tbody
-    - for cv_item in @cv_items
+    - for cv_item in cv_items
+      = render partial: 'cv_items/cv_item_w_actions', locals: { cv_item: cv_item }
+%h4 Your work experience
+%table
+  %thead
+    %tr
+      %td Timespan
+      %td Description
+      %td Actions
+  %tbody
+    - for cv_item in cv_items
       = render partial: 'cv_items/cv_item_w_actions', locals: { cv_item: cv_item }
 
-%h3 Add a new entry
-= simple_form_for @cv_items.new do |f|
+%h4 Add a new entry
+= simple_form_for @cv_item || cv_items.new do |f|
+  = render partial: 'shared/errors', locals: { object: f.object }
   = render partial: 'cv_items/fields', locals: { f: f }
   = f.select :category, options_from_collection_for_select(I18n.t('cv_items.education_categories'), :first, :last), label: "Typeof education:"
   = f.input :organization_name

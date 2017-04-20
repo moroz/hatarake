@@ -10,14 +10,6 @@ class CandidatesController < ApplicationController
     @skill_items = current_user.skill_items
   end
 
-  def edit_education
-    @cv_items = @user.cv_items.education_items
-  end
-
-  def edit_work
-    @cv_items = @user.cv_items.work_items
-  end
-
   private
 
   def find_user

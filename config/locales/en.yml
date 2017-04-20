@@ -30,5 +30,14 @@ en:
   date:
     formats:
       by: "%B '%y"
-  errors:
-    format: "%{message}"
+  activerecord:
+    attributes:
+      skill_item:
+        skill: ''
+    errors:
+      models:
+        skill_item:
+          attributes:
+            skill:
+              taken: "You can't have two skills with the same name."
+              blank: "Please provide a valid skill name."

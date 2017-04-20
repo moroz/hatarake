@@ -15,6 +15,7 @@
 
 %h3 Add a new entry
 = simple_form_for @cv_items.new do |f|
+  = render partial: 'shared/errors', locals: { object: f.object }
   = render partial: 'cv_items/fields', locals: { f: f }
   = f.select :category, options_from_collection_for_select(I18n.t('cv_items.work_categories'), :first, :last), label: "Type of employment:"
   = f.input :organization_name
