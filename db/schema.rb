@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420081741) do
+ActiveRecord::Schema.define(version: 20170420082101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,8 +118,22 @@ ActiveRecord::Schema.define(version: 20170420081741) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "work_items", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "position"
+    t.integer  "organization_id"
+    t.integer  "candidate_id"
+    t.string   "memo"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organization_id"], name: "index_work_items_on_organization_id", using: :btree
+  end
+
   add_foreign_key "avatars", "users"
   add_foreign_key "education_items", "organizations"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "skill_items", "skills"
+  add_foreign_key "work_items", "organizations"
+  add_foreign_key "work_items", "users", column: "candidate_id"
 end
