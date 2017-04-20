@@ -10,8 +10,8 @@
     = profile_section "Skills" do
       - if @skill_items.any?
         %table
-          %tbody
-            = render partial: 'skills/skill', collection: @skill_items
+          %tbody#skill_items
+            = render @skill_items
       - else
         No skills.
       = section_link "Edit your skills...", profile_edit_skills_path

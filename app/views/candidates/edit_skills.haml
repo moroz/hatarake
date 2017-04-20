@@ -10,17 +10,13 @@
         %td Skill name
         %td Level
         %td Actions
-    %tbody
-      - for skill in @skill_items
-        %tr
-          %td= skill.name
-          %td= t(skill.level_key)
-          %td= link_to "Delete", skill, method: :delete, class: 'custom_button custom_button--small custom_button--tertiary'
-
-= simple_form_for @skill_items.new do |f|
+    %tbody#skill_items
+      = render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items }
+      
+= simple_form_for @skill_items.new, remote: true do |f|
   .row
     .medium-4.columns
-      = f.input :skill_name, label: false, placeholder: "Skill name", url: autocomplete_skills_path, as: :autocomplete
+      = f.input :skill_name, label: false, placeholder: "Skill name", url: autocomplete_skills_path, as: :autocomplete, input_html: { autofocus: true }
     .medium-4.columns
       = f.select :level, options_from_collection_for_select(I18n.t('skill_levels'), :first, :last)
     .medium-4.columns

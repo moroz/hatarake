@@ -1,0 +1,3 @@
+:plain
+  var tbody = document.getElementById('skill_items');
+  tbody.innerHTML = "#{j render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items } }";
