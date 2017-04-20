@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   resources :offers
   get 'profile/edit_skills', to: 'candidates#edit_skills'
-  get 'profile/edit_education', to: 'cv_items#new', as: 'new_cv_item'
   get 'profile/(:id)', to: 'candidates#show', as: :profile
   get '/company', to: 'companies#show', as: :company_profile
   resources :pages
-  resources :cv_items, except: :new
+  resources :education_items
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
   end

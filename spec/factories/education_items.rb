@@ -1,10 +1,15 @@
 FactoryGirl.define do
   factory :education_item do
-    start_date "2017-04-20"
-    end_date "2017-04-20"
-    specialization "MyString"
-    organization nil
-    candidate_id 1
-    memo "MyString"
+    candidate { Candidate.first || create(:candidate) }
+    category "ba"
+    specialization "English Studies"
+    organization_name "Adam Mickiewicz University"
+    start_date { 2.years.ago }
+    end_date { 1.years.ago }
+
+    trait :no_dates do
+      start_date nil
+      end_date nil
+    end
   end
 end

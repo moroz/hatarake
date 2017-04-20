@@ -16,7 +16,7 @@ en:
     2_intermediate: Intermediate
     3_good: Good
     4_expert: Expert
-  cv_items:
+  items:
     education_categories:
       ba: B.A.
       ma: M.A.

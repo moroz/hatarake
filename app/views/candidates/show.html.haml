@@ -17,16 +17,23 @@
       = section_link "Edit your skills...", profile_edit_skills_path
 
     = profile_section "Education" do
-      - if @cv_items.education_items.any?
+      - if @user.education_items.any?
         %table
           %tbody
-            = render partial: 'cv_items/cv_item', collection: @cv_items.education_items
-      = section_link "Edit your education...", new_cv_item_path
+            - for item in @user.education_items
+              %tr{id: dom_id(item)}
+                %td
+                  %span.education_item__date= l item.start_date, format: :by
+                  &ndash;
+                  - if item.end_date.present?
+                    %span.education_item__date= l item.end_date, format: :by
+                  - else
+                    present
+                %td
+                  %span.education_item__category= t('items.education_categories.' + item.category)
+                  in 
+                  %span.education_item__specialization= item.specialization
+                  at
+                  %span.education_item__organization_name= item.organization.name
 
-    = profile_section "Work experience" do
-      - if @cv_items.work_items.any?
-        %table
-          %tbody
-            = render partial: 'cv_items/cv_item', collection: @cv_items.work_items
-
-      = section_link "Edit your work experience...", new_cv_item_path
+      = section_link "Edit your education...", new_education_item_path

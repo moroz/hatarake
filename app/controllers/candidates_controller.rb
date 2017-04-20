@@ -3,7 +3,6 @@ class CandidatesController < ApplicationController
 
   def show
     @skill_items = @user.skill_items
-    @cv_items = @user.cv_items
   end
 
   def edit_skills
