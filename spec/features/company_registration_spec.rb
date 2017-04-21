@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Company registration" do
+  fixtures :pages
+
   it "registers a Company account" do
     visit '/companies/sign_up'
 

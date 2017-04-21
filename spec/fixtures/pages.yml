@@ -1,0 +1,56 @@
+---
+Page_1:
+  id: 1
+  title: Sign Up
+  permalink: sign_up
+  body: |
+    <h2>Are you looking for jobs or employees?</h2>
+    <div class="row">
+    <div class="medium-6 columns">
+    <div class="box">
+    <h3>I'm looking for a job</h3>
+    <p>Sign up for a free account to:</p>
+    <ul>
+    <li>apply for jobs</li>
+    <li>build a network of friends</li>
+    </ul>
+    <a href="/candidates/sign_up" class="custom_button custom_button--expanded">Register as a Candidate</a>
+    </div>
+    </div>
+    <div class="medium-6 columns">
+    <div class="box">
+    <h3>I'm an employer</h3>
+    <p>Sign up to:</p>
+    <ul>
+    <li>post offers</li>
+    <li>build a business network</li>
+    </ul>
+    <a href="/companies/sign_up" class="custom_button custom_button--expanded">Register as a Company</a>
+    </div>
+    </div>
+    </div>
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &1 2017-04-19 09:14:58.869799000 Z
+    zone: &2 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: *1
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &3 2017-04-19 09:47:49.520001000 Z
+    zone: *2
+    time: *3
+Page_2:
+  id: 2
+  title: InJobs
+  permalink: home
+  body: |
+    p. InJobs is a job recruitment and social networking platform.
+
+    p. If you are looking for jobs or employers, please "sign up":/sign_up!
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &4 2017-04-19 09:17:45.060241000 Z
+    zone: *2
+    time: *4
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &5 2017-04-19 09:46:47.736861000 Z
+    zone: *2
+    time: *5

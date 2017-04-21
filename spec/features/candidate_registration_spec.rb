@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Candidate registration" do
+  fixtures :pages
+
   it "registers a candidate account" do
     visit '/candidates/sign_up'
 
