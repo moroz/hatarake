@@ -1,32 +1,21 @@
 class CvItem < ApplicationRecord
+  self.abstract_class = true
+
   belongs_to :candidate
   belongs_to :organization
-  attr_accessor :start_month, :start_year, :end_month, :end_year,
-    :organization_name
+  attr_accessor :start_month, :start_year, :end_month, :end_year, :organization_name
 
   CATEGORIES = %w( internship ba ma engineer phd work owner founder )
   # This field was meant to be called type, but that's reserved
   # for Active Record's STI, so it was renamed
-  EDUCATIONAL = %w( ba ma engineer phd )
 
-  scope :education_items, -> { where('category IN (?)', EDUCATIONAL) }
-  scope :work_items, -> { where('category NOT IN (?)', EDUCATIONAL) }
   scope :ordered, -> { order('end_date DESC NULLS FIRST', 'start_date DESC') }
   default_scope { includes(:organization).ordered }
 
-  validates_presence_of :start_date, :category, :position,
-    :candidate 
+  validates_presence_of :start_date, :category, :candidate 
   validates :category, inclusion: { in: CATEGORIES }
 
   before_validation :make_dates, :swap_dates, :find_or_create_organization
-
-  def education?
-    self.category.in? EDUCATIONAL
-  end
-
-  def work?
-    !education?
-  end
 
   private
 
