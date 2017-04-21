@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :profession do
-    name "MyString"
-    name_pl "MyString"
+    name "Carpenter"
+    name_pl "Stolarz"
   end
 end
