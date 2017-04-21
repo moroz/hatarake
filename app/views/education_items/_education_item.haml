@@ -1,15 +1,14 @@
-%tr{id: dom_id(education_item)}
-  %td
-    %span.education_item__date= l education_item.start_date, format: :by
-    &ndash;
-    - if education_item.end_date.present?
-      %span.education_item__date= l education_item.end_date, format: :by
-    - else
-      present
-  %td
-    %span.education_item__category= t('items.education_categories.' + education_item.category)
-    in 
-    %span.education_item__specialization= education_item.specialization
-    at
-    %span.education_item__organization_name= education_item.organization.name
+%td
+  %span.education_item__date= l education_item.start_date, format: :by
+  &ndash;
+  - if education_item.end_date.present?
+    %span.education_item__date= l education_item.end_date, format: :by
+  - else
+    present
+%td
+  %span.education_item__category= t('items.education_categories.' + education_item.category)
+  in 
+  %span.education_item__specialization= education_item.specialization
+  at
+  %span.education_item__organization_name= education_item.organization.name
 

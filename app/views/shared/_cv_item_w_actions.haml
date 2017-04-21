@@ -1,0 +1,3 @@
+%tr{id: dom_id(item)}
+  = render item
+  %td= link_to "Delete", item, method: :delete, class: 'button alert', remote: true

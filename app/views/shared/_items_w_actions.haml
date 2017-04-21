@@ -1,0 +1,4 @@
+- for item in items
+  %tr{id: dom_id(item)}
+    = render partial: 'shared/cv_item_w_actions', locals: { item: item }
+
