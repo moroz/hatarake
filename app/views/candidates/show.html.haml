@@ -20,20 +20,12 @@
       - if @user.education_items.any?
         %table
           %tbody
-            - for item in @user.education_items
-              %tr{id: dom_id(item)}
-                %td
-                  %span.education_item__date= l item.start_date, format: :by
-                  &ndash;
-                  - if item.end_date.present?
-                    %span.education_item__date= l item.end_date, format: :by
-                  - else
-                    present
-                %td
-                  %span.education_item__category= t('items.education_categories.' + item.category)
-                  in 
-                  %span.education_item__specialization= item.specialization
-                  at
-                  %span.education_item__organization_name= item.organization.name
-
+            = render @user.education_items
       = section_link "Edit your education...", new_education_item_path
+
+    = profile_section "Work experience" do
+      - if @user.work_items.any?
+        %table
+          %tbody
+            = render @user.work_items
+      = section_link "Edit your work experience...", new_work_item_path

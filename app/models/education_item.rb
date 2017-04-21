@@ -1,6 +1,4 @@
 class EducationItem < ApplicationRecord
-  include FindOrCreate
-
   attr_accessor :organization_name
 
   belongs_to :organization

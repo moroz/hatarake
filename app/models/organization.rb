@@ -1,5 +1,7 @@
 class Organization < ApplicationRecord
   extend FindOrCreate
-  validates_presence_of :name
-  validates_uniqueness_of :name, :name_pl
+  validates :name, presence: true, uniqueness: { allow_nil: true }
+  validates :name_pl, uniqueness: { allow_nil: true }
+  has_many :work_items
+  has_many :education_items
 end

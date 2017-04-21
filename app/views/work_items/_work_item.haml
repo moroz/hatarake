@@ -1,0 +1,15 @@
+%tr{id: dom_id(work_item)}
+  %td
+    %span.work_item__date= l work_item.start_date, format: :by
+    &ndash;
+    - if work_item.end_date.present?
+      %span.work_item__date= l work_item.end_date, format: :by
+    - else
+      present
+  %td
+    %span.work_item__category= t('items.work_categories.' + work_item.category) + ":"
+    %span.work_item__position= work_item.position
+    at
+    %span.work_item__organization_name= work_item.organization.name
+
+

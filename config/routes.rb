@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/company', to: 'companies#show', as: :company_profile
   resources :pages
   resources :education_items
+  resources :work_items
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
   end
