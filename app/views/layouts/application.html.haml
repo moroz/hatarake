@@ -17,3 +17,6 @@
       .row
         %hr/
         InJobs
+        - if Rails.env.development?
+          = flash.to_json
+    

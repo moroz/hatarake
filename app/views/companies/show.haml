@@ -1,0 +1,14 @@
+= profile_section nil do
+  .medium-2.columns
+    = avatar_for company
+  .medium-10.columns
+    %h2= company.display_name
+    = section_link "Change profile picture...", new_avatar_path, :small
+
+= profile_section "Job offers" do
+  - if company.offers.any?
+    = render company.offers
+  - else
+    No offers.
+
+
