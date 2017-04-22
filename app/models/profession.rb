@@ -1,3 +1,5 @@
 class Profession < ApplicationRecord
-  include FindOrCreate
+  extend FindOrCreate
+
+  has_many :candidates
 end

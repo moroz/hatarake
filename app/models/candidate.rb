@@ -6,7 +6,10 @@ class Candidate < User
   has_many :work_items, dependent: :destroy
   attr_accessor :profession_name
 
-  default_scope { includes(:skill_items, :education_items, :work_items) }
+  belongs_to :profession
+  delegate :name, to: :profession, prefix: true
+
+  scope :with_associations, -> { includes(:skill_items, :education_items, :work_items) }
   scope :looking_for_work, -> { where(looking_for_work: true) }
   scope :with_profession, ->(profession) { joins("INNER JOIN professions AS p ON p.id = users.id WHERE p.name = '#{profession}' OR p.name_pl = '#{profession}'") }
 
