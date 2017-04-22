@@ -1,0 +1,3291 @@
+---
+Country_1:
+  id: 1
+  iso: AF
+  name_pl: Afganistan
+  name_en: Afghanistan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &1 2017-04-21 21:21:25.765977000 Z
+    zone: &2 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: *1
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &3 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *3
+Country_2:
+  id: 2
+  iso: AL
+  name_pl: Albania
+  name_en: Albania
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &4 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *4
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &5 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *5
+Country_3:
+  id: 3
+  iso: DZ
+  name_pl: Algieria
+  name_en: Algeria
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &6 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *6
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &7 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *7
+Country_4:
+  id: 4
+  iso: AD
+  name_pl: Andora
+  name_en: Andorra
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &8 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *8
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &9 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *9
+Country_5:
+  id: 5
+  iso: AO
+  name_pl: Angola
+  name_en: Angola
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &10 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *10
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &11 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *11
+Country_6:
+  id: 6
+  iso: AI
+  name_pl: Anguilla
+  name_en: Anguilla
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &12 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *12
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &13 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *13
+Country_7:
+  id: 7
+  iso: AQ
+  name_pl: Antarktyka
+  name_en: Antarctica
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &14 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *14
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &15 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *15
+Country_8:
+  id: 8
+  iso: AG
+  name_pl: Antigua i Barbuda
+  name_en: Antigua and Barbuda
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &16 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *16
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &17 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *17
+Country_9:
+  id: 9
+  iso: SA
+  name_pl: Arabia Saudyjska
+  name_en: Saudi Arabia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &18 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *18
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &19 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *19
+Country_10:
+  id: 10
+  iso: AR
+  name_pl: Argentyna
+  name_en: Argentina
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &20 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *20
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &21 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *21
+Country_11:
+  id: 11
+  iso: AM
+  name_pl: Armenia
+  name_en: Armenia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &22 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *22
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &23 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *23
+Country_12:
+  id: 12
+  iso: AW
+  name_pl: Aruba
+  name_en: Aruba
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &24 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *24
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &25 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *25
+Country_13:
+  id: 13
+  iso: AU
+  name_pl: Australia
+  name_en: Australia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &26 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *26
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &27 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *27
+Country_14:
+  id: 14
+  iso: AT
+  name_pl: Austria
+  name_en: Austria
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &28 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *28
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &29 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *29
+Country_15:
+  id: 15
+  iso: AZ
+  name_pl: Azerbejdżan
+  name_en: Azerbaijan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &30 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *30
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &31 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *31
+Country_16:
+  id: 16
+  iso: BS
+  name_pl: Bahamy
+  name_en: Bahamas
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &32 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *32
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &33 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *33
+Country_17:
+  id: 17
+  iso: BH
+  name_pl: Bahrajn
+  name_en: Bahrain
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &34 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *34
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &35 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *35
+Country_18:
+  id: 18
+  iso: BD
+  name_pl: Bangladesz
+  name_en: Bangladesh
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &36 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *36
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &37 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *37
+Country_19:
+  id: 19
+  iso: BB
+  name_pl: Barbados
+  name_en: Barbados
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &38 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *38
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &39 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *39
+Country_20:
+  id: 20
+  iso: BE
+  name_pl: Belgia
+  name_en: Belgium
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &40 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *40
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &41 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *41
+Country_21:
+  id: 21
+  iso: BZ
+  name_pl: Belize
+  name_en: Belize
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &42 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *42
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &43 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *43
+Country_22:
+  id: 22
+  iso: BJ
+  name_pl: Benin
+  name_en: Benin
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &44 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *44
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &45 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *45
+Country_23:
+  id: 23
+  iso: BM
+  name_pl: Bermudy
+  name_en: Bermuda
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &46 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *46
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &47 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *47
+Country_24:
+  id: 24
+  iso: BT
+  name_pl: Bhutan
+  name_en: Bhutan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &48 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *48
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &49 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *49
+Country_25:
+  id: 25
+  iso: BY
+  name_pl: Białoruś
+  name_en: Belarus
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &50 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *50
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &51 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *51
+Country_26:
+  id: 26
+  iso: BO
+  name_pl: Boliwia
+  name_en: Bolivia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &52 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *52
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &53 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *53
+Country_27:
+  id: 27
+  iso: BA
+  name_pl: Bośnia i Hercegowina
+  name_en: Bosnia and Herzegovina
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &54 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *54
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &55 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *55
+Country_28:
+  id: 28
+  iso: BW
+  name_pl: Botswana
+  name_en: Botswana
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &56 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *56
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &57 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *57
+Country_29:
+  id: 29
+  iso: BR
+  name_pl: Brazylia
+  name_en: Brazil
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &58 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *58
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &59 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *59
+Country_30:
+  id: 30
+  iso: BN
+  name_pl: Brunei Darussalam
+  name_en: Brunei
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &60 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *60
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &61 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *61
+Country_31:
+  id: 31
+  iso: IO
+  name_pl: Brytyjskie Terytorium Oceanu Indyjskiego
+  name_en: British Indian Ocean Territory
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &62 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *62
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &63 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *63
+Country_32:
+  id: 32
+  iso: VG
+  name_pl: Brytyjskie Wyspy Dziewicze
+  name_en: British Virgin Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &64 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *64
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &65 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *65
+Country_33:
+  id: 33
+  iso: BG
+  name_pl: Bułgaria
+  name_en: Bulgaria
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &66 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *66
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &67 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *67
+Country_34:
+  id: 34
+  iso: BF
+  name_pl: Burkina Faso
+  name_en: Burkina Faso
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &68 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *68
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &69 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *69
+Country_35:
+  id: 35
+  iso: BI
+  name_pl: Burundi
+  name_en: Burundi
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &70 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *70
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &71 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *71
+Country_36:
+  id: 36
+  iso: EA
+  name_pl: Ceuta i Melilla
+  name_en: Ceuta and Melilla
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &72 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *72
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &73 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *73
+Country_37:
+  id: 37
+  iso: CL
+  name_pl: Chile
+  name_en: Chile
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &74 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *74
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &75 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *75
+Country_38:
+  id: 38
+  iso: CN
+  name_pl: Chiny
+  name_en: China
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &76 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *76
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &77 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *77
+Country_39:
+  id: 39
+  iso: HR
+  name_pl: Chorwacja
+  name_en: Croatia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &78 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *78
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &79 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *79
+Country_40:
+  id: 40
+  iso: CI
+  name_pl: Côte d’Ivoire
+  name_en: Côte d’Ivoire
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &80 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *80
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &81 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *81
+Country_41:
+  id: 41
+  iso: CW
+  name_pl: Curaçao
+  name_en: Curaçao
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &82 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *82
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &83 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *83
+Country_42:
+  id: 42
+  iso: CY
+  name_pl: Cypr
+  name_en: Cyprus
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &84 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *84
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &85 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *85
+Country_43:
+  id: 43
+  iso: TD
+  name_pl: Czad
+  name_en: Chad
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &86 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *86
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &87 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *87
+Country_44:
+  id: 44
+  iso: ME
+  name_pl: Czarnogóra
+  name_en: Montenegro
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &88 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *88
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &89 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *89
+Country_45:
+  id: 45
+  iso: CZ
+  name_pl: Czechy
+  name_en: Czech Republic
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &90 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *90
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &91 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *91
+Country_46:
+  id: 46
+  iso: UM
+  name_pl: Dalekie Wyspy Mniejsze Stanów Zjednoczonych
+  name_en: U.S. Outlying Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &92 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *92
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &93 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *93
+Country_47:
+  id: 47
+  iso: DK
+  name_pl: Dania
+  name_en: Denmark
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &94 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *94
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &95 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *95
+Country_48:
+  id: 48
+  iso: CD
+  name_pl: Demokratyczna Republika Konga
+  name_en: Congo - Kinshasa
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &96 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *96
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &97 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *97
+Country_49:
+  id: 49
+  iso: DG
+  name_pl: Diego Garcia
+  name_en: Diego Garcia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &98 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *98
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &99 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *99
+Country_50:
+  id: 50
+  iso: DM
+  name_pl: Dominika
+  name_en: Dominica
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &100 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *100
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &101 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *101
+Country_51:
+  id: 51
+  iso: DO
+  name_pl: Dominikana
+  name_en: Dominican Republic
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &102 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *102
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &103 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *103
+Country_52:
+  id: 52
+  iso: DJ
+  name_pl: Dżibuti
+  name_en: Djibouti
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &104 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *104
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &105 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *105
+Country_53:
+  id: 53
+  iso: EG
+  name_pl: Egipt
+  name_en: Egypt
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &106 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *106
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &107 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *107
+Country_54:
+  id: 54
+  iso: EC
+  name_pl: Ekwador
+  name_en: Ecuador
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &108 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *108
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &109 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *109
+Country_55:
+  id: 55
+  iso: ER
+  name_pl: Erytrea
+  name_en: Eritrea
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &110 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *110
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &111 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *111
+Country_56:
+  id: 56
+  iso: EE
+  name_pl: Estonia
+  name_en: Estonia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &112 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *112
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &113 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *113
+Country_57:
+  id: 57
+  iso: ET
+  name_pl: Etiopia
+  name_en: Ethiopia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &114 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *114
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &115 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *115
+Country_58:
+  id: 58
+  iso: FK
+  name_pl: Falklandy
+  name_en: Falkland Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &116 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *116
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &117 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *117
+Country_59:
+  id: 59
+  iso: FJ
+  name_pl: Fidżi
+  name_en: Fiji
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &118 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *118
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &119 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *119
+Country_60:
+  id: 60
+  iso: PH
+  name_pl: Filipiny
+  name_en: Philippines
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &120 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *120
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &121 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *121
+Country_61:
+  id: 61
+  iso: FI
+  name_pl: Finlandia
+  name_en: Finland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &122 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *122
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &123 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *123
+Country_62:
+  id: 62
+  iso: FR
+  name_pl: Francja
+  name_en: France
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &124 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *124
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &125 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *125
+Country_63:
+  id: 63
+  iso: TF
+  name_pl: Francuskie Terytoria Południowe
+  name_en: French Southern Territories
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &126 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *126
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &127 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *127
+Country_64:
+  id: 64
+  iso: GA
+  name_pl: Gabon
+  name_en: Gabon
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &128 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *128
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &129 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *129
+Country_65:
+  id: 65
+  iso: GM
+  name_pl: Gambia
+  name_en: Gambia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &130 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *130
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &131 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *131
+Country_66:
+  id: 66
+  iso: GS
+  name_pl: Georgia Południowa i Sandwich Południowy
+  name_en: South Georgia & South Sandwich Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &132 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *132
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &133 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *133
+Country_67:
+  id: 67
+  iso: GH
+  name_pl: Ghana
+  name_en: Ghana
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &134 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *134
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &135 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *135
+Country_68:
+  id: 68
+  iso: GI
+  name_pl: Gibraltar
+  name_en: Gibraltar
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &136 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *136
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &137 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *137
+Country_69:
+  id: 69
+  iso: GR
+  name_pl: Grecja
+  name_en: Greece
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &138 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *138
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &139 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *139
+Country_70:
+  id: 70
+  iso: GD
+  name_pl: Grenada
+  name_en: Grenada
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &140 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *140
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &141 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *141
+Country_71:
+  id: 71
+  iso: GL
+  name_pl: Grenlandia
+  name_en: Greenland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &142 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *142
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &143 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *143
+Country_72:
+  id: 72
+  iso: GE
+  name_pl: Gruzja
+  name_en: Georgia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &144 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *144
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &145 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *145
+Country_73:
+  id: 73
+  iso: GU
+  name_pl: Guam
+  name_en: Guam
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &146 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *146
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &147 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *147
+Country_74:
+  id: 74
+  iso: GY
+  name_pl: Gujana
+  name_en: Guyana
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &148 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *148
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &149 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *149
+Country_75:
+  id: 75
+  iso: GF
+  name_pl: Gujana Francuska
+  name_en: French Guiana
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &150 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *150
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &151 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *151
+Country_76:
+  id: 76
+  iso: GP
+  name_pl: Gwadelupa
+  name_en: Guadeloupe
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &152 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *152
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &153 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *153
+Country_77:
+  id: 77
+  iso: GT
+  name_pl: Gwatemala
+  name_en: Guatemala
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &154 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *154
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &155 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *155
+Country_78:
+  id: 78
+  iso: GN
+  name_pl: Gwinea
+  name_en: Guinea
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &156 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *156
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &157 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *157
+Country_79:
+  id: 79
+  iso: GW
+  name_pl: Gwinea Bissau
+  name_en: Guinea-Bissau
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &158 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *158
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &159 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *159
+Country_80:
+  id: 80
+  iso: GQ
+  name_pl: Gwinea Równikowa
+  name_en: Equatorial Guinea
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &160 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *160
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &161 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *161
+Country_81:
+  id: 81
+  iso: HT
+  name_pl: Haiti
+  name_en: Haiti
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &162 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *162
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &163 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *163
+Country_82:
+  id: 82
+  iso: ES
+  name_pl: Hiszpania
+  name_en: Spain
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &164 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *164
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &165 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *165
+Country_83:
+  id: 83
+  iso: NL
+  name_pl: Holandia
+  name_en: Netherlands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &166 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *166
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &167 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *167
+Country_84:
+  id: 84
+  iso: HN
+  name_pl: Honduras
+  name_en: Honduras
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &168 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *168
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &169 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *169
+Country_85:
+  id: 85
+  iso: IN
+  name_pl: Indie
+  name_en: India
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &170 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *170
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &171 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *171
+Country_86:
+  id: 86
+  iso: ID
+  name_pl: Indonezja
+  name_en: Indonesia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &172 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *172
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &173 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *173
+Country_87:
+  id: 87
+  iso: IQ
+  name_pl: Irak
+  name_en: Iraq
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &174 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *174
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &175 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *175
+Country_88:
+  id: 88
+  iso: IR
+  name_pl: Iran
+  name_en: Iran
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &176 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *176
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &177 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *177
+Country_89:
+  id: 89
+  iso: IE
+  name_pl: Irlandia
+  name_en: Ireland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &178 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *178
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &179 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *179
+Country_90:
+  id: 90
+  iso: IS
+  name_pl: Islandia
+  name_en: Iceland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &180 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *180
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &181 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *181
+Country_91:
+  id: 91
+  iso: IL
+  name_pl: Izrael
+  name_en: Israel
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &182 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *182
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &183 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *183
+Country_92:
+  id: 92
+  iso: JM
+  name_pl: Jamajka
+  name_en: Jamaica
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &184 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *184
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &185 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *185
+Country_93:
+  id: 93
+  iso: JP
+  name_pl: Japonia
+  name_en: Japan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &186 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *186
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &187 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *187
+Country_94:
+  id: 94
+  iso: YE
+  name_pl: Jemen
+  name_en: Yemen
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &188 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *188
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &189 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *189
+Country_95:
+  id: 95
+  iso: JO
+  name_pl: Jordania
+  name_en: Jordan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &190 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *190
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &191 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *191
+Country_96:
+  id: 96
+  iso: KY
+  name_pl: Kajmany
+  name_en: Cayman Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &192 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *192
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &193 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *193
+Country_97:
+  id: 97
+  iso: KH
+  name_pl: Kambodża
+  name_en: Cambodia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &194 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *194
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &195 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *195
+Country_98:
+  id: 98
+  iso: CM
+  name_pl: Kamerun
+  name_en: Cameroon
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &196 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *196
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &197 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *197
+Country_99:
+  id: 99
+  iso: CA
+  name_pl: Kanada
+  name_en: Canada
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &198 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *198
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &199 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *199
+Country_100:
+  id: 100
+  iso: QA
+  name_pl: Katar
+  name_en: Qatar
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &200 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *200
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &201 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *201
+Country_101:
+  id: 101
+  iso: KZ
+  name_pl: Kazachstan
+  name_en: Kazakhstan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &202 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *202
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &203 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *203
+Country_102:
+  id: 102
+  iso: KE
+  name_pl: Kenia
+  name_en: Kenya
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &204 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *204
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &205 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *205
+Country_103:
+  id: 103
+  iso: KG
+  name_pl: Kirgistan
+  name_en: Kyrgyzstan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &206 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *206
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &207 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *207
+Country_104:
+  id: 104
+  iso: KI
+  name_pl: Kiribati
+  name_en: Kiribati
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &208 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *208
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &209 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *209
+Country_105:
+  id: 105
+  iso: CO
+  name_pl: Kolumbia
+  name_en: Colombia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &210 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *210
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &211 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *211
+Country_106:
+  id: 106
+  iso: KM
+  name_pl: Komory
+  name_en: Comoros
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &212 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *212
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &213 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *213
+Country_107:
+  id: 107
+  iso: CG
+  name_pl: Kongo
+  name_en: Congo - Brazzaville
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &214 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *214
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &215 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *215
+Country_108:
+  id: 108
+  iso: KR
+  name_pl: Korea Południowa
+  name_en: South Korea
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &216 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *216
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &217 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *217
+Country_109:
+  id: 109
+  iso: KP
+  name_pl: Korea Północna
+  name_en: North Korea
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &218 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *218
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &219 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *219
+Country_110:
+  id: 110
+  iso: XK
+  name_pl: Kosowo
+  name_en: Kosovo
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &220 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *220
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &221 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *221
+Country_111:
+  id: 111
+  iso: CR
+  name_pl: Kostaryka
+  name_en: Costa Rica
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &222 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *222
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &223 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *223
+Country_112:
+  id: 112
+  iso: CU
+  name_pl: Kuba
+  name_en: Cuba
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &224 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *224
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &225 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *225
+Country_113:
+  id: 113
+  iso: KW
+  name_pl: Kuwejt
+  name_en: Kuwait
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &226 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *226
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &227 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *227
+Country_114:
+  id: 114
+  iso: LA
+  name_pl: Laos
+  name_en: Laos
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &228 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *228
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &229 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *229
+Country_115:
+  id: 115
+  iso: LS
+  name_pl: Lesotho
+  name_en: Lesotho
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &230 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *230
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &231 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *231
+Country_116:
+  id: 116
+  iso: LB
+  name_pl: Liban
+  name_en: Lebanon
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &232 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *232
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &233 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *233
+Country_117:
+  id: 117
+  iso: LR
+  name_pl: Liberia
+  name_en: Liberia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &234 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *234
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &235 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *235
+Country_118:
+  id: 118
+  iso: LY
+  name_pl: Libia
+  name_en: Libya
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &236 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *236
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &237 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *237
+Country_119:
+  id: 119
+  iso: LI
+  name_pl: Liechtenstein
+  name_en: Liechtenstein
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &238 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *238
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &239 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *239
+Country_120:
+  id: 120
+  iso: LT
+  name_pl: Litwa
+  name_en: Lithuania
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &240 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *240
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &241 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *241
+Country_121:
+  id: 121
+  iso: LU
+  name_pl: Luksemburg
+  name_en: Luxembourg
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &242 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *242
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &243 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *243
+Country_122:
+  id: 122
+  iso: LV
+  name_pl: Łotwa
+  name_en: Latvia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &244 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *244
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &245 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *245
+Country_123:
+  id: 123
+  iso: MK
+  name_pl: Macedonia
+  name_en: Macedonia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &246 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *246
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &247 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *247
+Country_124:
+  id: 124
+  iso: MG
+  name_pl: Madagaskar
+  name_en: Madagascar
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &248 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *248
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &249 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *249
+Country_125:
+  id: 125
+  iso: YT
+  name_pl: Majotta
+  name_en: Mayotte
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &250 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *250
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &251 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *251
+Country_126:
+  id: 126
+  iso: MW
+  name_pl: Malawi
+  name_en: Malawi
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &252 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *252
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &253 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *253
+Country_127:
+  id: 127
+  iso: MV
+  name_pl: Malediwy
+  name_en: Maldives
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &254 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *254
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &255 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *255
+Country_128:
+  id: 128
+  iso: MY
+  name_pl: Malezja
+  name_en: Malaysia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &256 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *256
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &257 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *257
+Country_129:
+  id: 129
+  iso: ML
+  name_pl: Mali
+  name_en: Mali
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &258 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *258
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &259 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *259
+Country_130:
+  id: 130
+  iso: MT
+  name_pl: Malta
+  name_en: Malta
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &260 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *260
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &261 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *261
+Country_131:
+  id: 131
+  iso: MP
+  name_pl: Mariany Północne
+  name_en: Northern Mariana Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &262 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *262
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &263 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *263
+Country_132:
+  id: 132
+  iso: MA
+  name_pl: Maroko
+  name_en: Morocco
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &264 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *264
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &265 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *265
+Country_133:
+  id: 133
+  iso: MQ
+  name_pl: Martynika
+  name_en: Martinique
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &266 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *266
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &267 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *267
+Country_134:
+  id: 134
+  iso: MR
+  name_pl: Mauretania
+  name_en: Mauritania
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &268 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *268
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &269 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *269
+Country_135:
+  id: 135
+  iso: MU
+  name_pl: Mauritius
+  name_en: Mauritius
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &270 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *270
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &271 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *271
+Country_136:
+  id: 136
+  iso: MX
+  name_pl: Meksyk
+  name_en: Mexico
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &272 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *272
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &273 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *273
+Country_137:
+  id: 137
+  iso: FM
+  name_pl: Mikronezja
+  name_en: Micronesia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &274 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *274
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &275 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *275
+Country_138:
+  id: 138
+  iso: MM
+  name_pl: Mjanma (Birma)
+  name_en: Myanmar (Burma)
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &276 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *276
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &277 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *277
+Country_139:
+  id: 139
+  iso: MD
+  name_pl: Mołdawia
+  name_en: Moldova
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &278 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *278
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &279 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *279
+Country_140:
+  id: 140
+  iso: MC
+  name_pl: Monako
+  name_en: Monaco
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &280 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *280
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &281 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *281
+Country_141:
+  id: 141
+  iso: MN
+  name_pl: Mongolia
+  name_en: Mongolia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &282 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *282
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &283 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *283
+Country_142:
+  id: 142
+  iso: MS
+  name_pl: Montserrat
+  name_en: Montserrat
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &284 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *284
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &285 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *285
+Country_143:
+  id: 143
+  iso: MZ
+  name_pl: Mozambik
+  name_en: Mozambique
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &286 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *286
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &287 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *287
+Country_144:
+  id: 144
+  iso: NA
+  name_pl: Namibia
+  name_en: Namibia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &288 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *288
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &289 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *289
+Country_145:
+  id: 145
+  iso: NR
+  name_pl: Nauru
+  name_en: Nauru
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &290 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *290
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &291 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *291
+Country_146:
+  id: 146
+  iso: NP
+  name_pl: Nepal
+  name_en: Nepal
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &292 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *292
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &293 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *293
+Country_147:
+  id: 147
+  iso: BQ
+  name_pl: Niderlandy Karaibskie
+  name_en: Caribbean Netherlands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &294 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *294
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &295 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *295
+Country_148:
+  id: 148
+  iso: DE
+  name_pl: Niemcy
+  name_en: Germany
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &296 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *296
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &297 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *297
+Country_149:
+  id: 149
+  iso: NE
+  name_pl: Niger
+  name_en: Niger
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &298 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *298
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &299 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *299
+Country_150:
+  id: 150
+  iso: NG
+  name_pl: Nigeria
+  name_en: Nigeria
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &300 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *300
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &301 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *301
+Country_151:
+  id: 151
+  iso: NI
+  name_pl: Nikaragua
+  name_en: Nicaragua
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &302 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *302
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &303 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *303
+Country_152:
+  id: 152
+  iso: NU
+  name_pl: Niue
+  name_en: Niue
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &304 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *304
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &305 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *305
+Country_153:
+  id: 153
+  iso: NF
+  name_pl: Norfolk
+  name_en: Norfolk Island
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &306 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *306
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &307 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *307
+Country_154:
+  id: 154
+  iso: 'NO'
+  name_pl: Norwegia
+  name_en: Norway
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &308 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *308
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &309 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *309
+Country_155:
+  id: 155
+  iso: NC
+  name_pl: Nowa Kaledonia
+  name_en: New Caledonia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &310 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *310
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &311 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *311
+Country_156:
+  id: 156
+  iso: NZ
+  name_pl: Nowa Zelandia
+  name_en: New Zealand
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &312 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *312
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &313 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *313
+Country_157:
+  id: 157
+  iso: OM
+  name_pl: Oman
+  name_en: Oman
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &314 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *314
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &315 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *315
+Country_158:
+  id: 158
+  iso: PK
+  name_pl: Pakistan
+  name_en: Pakistan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &316 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *316
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &317 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *317
+Country_159:
+  id: 159
+  iso: PW
+  name_pl: Palau
+  name_en: Palau
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &318 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *318
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &319 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *319
+Country_160:
+  id: 160
+  iso: PA
+  name_pl: Panama
+  name_en: Panama
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &320 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *320
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &321 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *321
+Country_161:
+  id: 161
+  iso: PG
+  name_pl: Papua-Nowa Gwinea
+  name_en: Papua New Guinea
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &322 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *322
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &323 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *323
+Country_162:
+  id: 162
+  iso: PY
+  name_pl: Paragwaj
+  name_en: Paraguay
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &324 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *324
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &325 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *325
+Country_163:
+  id: 163
+  iso: PE
+  name_pl: Peru
+  name_en: Peru
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &326 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *326
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &327 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *327
+Country_164:
+  id: 164
+  iso: PN
+  name_pl: Pitcairn
+  name_en: Pitcairn Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &328 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *328
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &329 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *329
+Country_165:
+  id: 165
+  iso: PF
+  name_pl: Polinezja Francuska
+  name_en: French Polynesia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &330 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *330
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &331 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *331
+Country_166:
+  id: 166
+  iso: PL
+  name_pl: Polska
+  name_en: Poland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &332 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *332
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &333 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *333
+Country_167:
+  id: 167
+  iso: PR
+  name_pl: Portoryko
+  name_en: Puerto Rico
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &334 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *334
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &335 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *335
+Country_168:
+  id: 168
+  iso: PT
+  name_pl: Portugalia
+  name_en: Portugal
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &336 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *336
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &337 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *337
+Country_169:
+  id: 169
+  iso: ZA
+  name_pl: Republika Południowej Afryki
+  name_en: South Africa
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &338 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *338
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &339 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *339
+Country_170:
+  id: 170
+  iso: CF
+  name_pl: Republika Środkowoafrykańska
+  name_en: Central African Republic
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &340 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *340
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &341 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *341
+Country_171:
+  id: 171
+  iso: CV
+  name_pl: Republika Zielonego Przylądka
+  name_en: Cape Verde
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &342 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *342
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &343 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *343
+Country_172:
+  id: 172
+  iso: RE
+  name_pl: Reunion
+  name_en: Réunion
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &344 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *344
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &345 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *345
+Country_173:
+  id: 173
+  iso: RU
+  name_pl: Rosja
+  name_en: Russia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &346 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *346
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &347 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *347
+Country_174:
+  id: 174
+  iso: RO
+  name_pl: Rumunia
+  name_en: Romania
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &348 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *348
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &349 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *349
+Country_175:
+  id: 175
+  iso: RW
+  name_pl: Rwanda
+  name_en: Rwanda
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &350 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *350
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &351 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *351
+Country_176:
+  id: 176
+  iso: EH
+  name_pl: Sahara Zachodnia
+  name_en: Western Sahara
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &352 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *352
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &353 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *353
+Country_177:
+  id: 177
+  iso: KN
+  name_pl: Saint Kitts i Nevis
+  name_en: Saint Kitts and Nevis
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &354 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *354
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &355 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *355
+Country_178:
+  id: 178
+  iso: LC
+  name_pl: Saint Lucia
+  name_en: Saint Lucia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &356 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *356
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &357 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *357
+Country_179:
+  id: 179
+  iso: VC
+  name_pl: Saint Vincent i Grenadyny
+  name_en: St. Vincent & Grenadines
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &358 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *358
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &359 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *359
+Country_180:
+  id: 180
+  iso: BL
+  name_pl: Saint-Barthélemy
+  name_en: Saint Barthélemy
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &360 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *360
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &361 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *361
+Country_181:
+  id: 181
+  iso: MF
+  name_pl: Saint-Martin
+  name_en: Saint Martin
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &362 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *362
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &363 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *363
+Country_182:
+  id: 182
+  iso: PM
+  name_pl: Saint-Pierre i Miquelon
+  name_en: Saint Pierre and Miquelon
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &364 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *364
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &365 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *365
+Country_183:
+  id: 183
+  iso: SV
+  name_pl: Salwador
+  name_en: El Salvador
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &366 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *366
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &367 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *367
+Country_184:
+  id: 184
+  iso: WS
+  name_pl: Samoa
+  name_en: Samoa
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &368 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *368
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &369 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *369
+Country_185:
+  id: 185
+  iso: AS
+  name_pl: Samoa Amerykańskie
+  name_en: American Samoa
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &370 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *370
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &371 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *371
+Country_186:
+  id: 186
+  iso: SM
+  name_pl: San Marino
+  name_en: San Marino
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &372 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *372
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &373 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *373
+Country_187:
+  id: 187
+  iso: SN
+  name_pl: Senegal
+  name_en: Senegal
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &374 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *374
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &375 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *375
+Country_188:
+  id: 188
+  iso: RS
+  name_pl: Serbia
+  name_en: Serbia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &376 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *376
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &377 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *377
+Country_189:
+  id: 189
+  iso: SC
+  name_pl: Seszele
+  name_en: Seychelles
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &378 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *378
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &379 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *379
+Country_190:
+  id: 190
+  iso: SL
+  name_pl: Sierra Leone
+  name_en: Sierra Leone
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &380 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *380
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &381 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *381
+Country_191:
+  id: 191
+  iso: SG
+  name_pl: Singapur
+  name_en: Singapore
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &382 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *382
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &383 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *383
+Country_192:
+  id: 192
+  iso: SX
+  name_pl: Sint Maarten
+  name_en: Sint Maarten
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &384 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *384
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &385 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *385
+Country_193:
+  id: 193
+  iso: SK
+  name_pl: Słowacja
+  name_en: Slovakia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &386 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *386
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &387 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *387
+Country_194:
+  id: 194
+  iso: SI
+  name_pl: Słowenia
+  name_en: Slovenia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &388 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *388
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &389 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *389
+Country_195:
+  id: 195
+  iso: SO
+  name_pl: Somalia
+  name_en: Somalia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &390 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *390
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &391 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *391
+Country_196:
+  id: 196
+  iso: HK
+  name_pl: SRA Hongkong (Chiny)
+  name_en: Hong Kong SAR China
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &392 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *392
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &393 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *393
+Country_197:
+  id: 197
+  iso: MO
+  name_pl: SRA Makau (Chiny)
+  name_en: Macau SAR China
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &394 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *394
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &395 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *395
+Country_198:
+  id: 198
+  iso: LK
+  name_pl: Sri Lanka
+  name_en: Sri Lanka
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &396 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *396
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &397 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *397
+Country_199:
+  id: 199
+  iso: US
+  name_pl: Stany Zjednoczone
+  name_en: United States
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &398 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *398
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &399 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *399
+Country_200:
+  id: 200
+  iso: SZ
+  name_pl: Suazi
+  name_en: Swaziland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &400 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *400
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &401 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *401
+Country_201:
+  id: 201
+  iso: SD
+  name_pl: Sudan
+  name_en: Sudan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &402 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *402
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &403 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *403
+Country_202:
+  id: 202
+  iso: SS
+  name_pl: Sudan Południowy
+  name_en: South Sudan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &404 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *404
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &405 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *405
+Country_203:
+  id: 203
+  iso: SR
+  name_pl: Surinam
+  name_en: Suriname
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &406 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *406
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &407 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *407
+Country_204:
+  id: 204
+  iso: SJ
+  name_pl: Svalbard i Jan Mayen
+  name_en: Svalbard and Jan Mayen
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &408 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *408
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &409 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *409
+Country_205:
+  id: 205
+  iso: SY
+  name_pl: Syria
+  name_en: Syria
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &410 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *410
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &411 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *411
+Country_206:
+  id: 206
+  iso: CH
+  name_pl: Szwajcaria
+  name_en: Switzerland
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &412 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *412
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &413 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *413
+Country_207:
+  id: 207
+  iso: SE
+  name_pl: Szwecja
+  name_en: Sweden
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &414 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *414
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &415 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *415
+Country_208:
+  id: 208
+  iso: TJ
+  name_pl: Tadżykistan
+  name_en: Tajikistan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &416 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *416
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &417 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *417
+Country_209:
+  id: 209
+  iso: TH
+  name_pl: Tajlandia
+  name_en: Thailand
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &418 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *418
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &419 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *419
+Country_210:
+  id: 210
+  iso: TW
+  name_pl: Tajwan
+  name_en: Taiwan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &420 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *420
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &421 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *421
+Country_211:
+  id: 211
+  iso: TZ
+  name_pl: Tanzania
+  name_en: Tanzania
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &422 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *422
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &423 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *423
+Country_212:
+  id: 212
+  iso: PS
+  name_pl: Terytoria Palestyńskie
+  name_en: Palestinian Territories
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &424 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *424
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &425 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *425
+Country_213:
+  id: 213
+  iso: TL
+  name_pl: Timor Wschodni
+  name_en: Timor-Leste
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &426 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *426
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &427 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *427
+Country_214:
+  id: 214
+  iso: TG
+  name_pl: Togo
+  name_en: Togo
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &428 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *428
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &429 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *429
+Country_215:
+  id: 215
+  iso: TK
+  name_pl: Tokelau
+  name_en: Tokelau
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &430 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *430
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &431 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *431
+Country_216:
+  id: 216
+  iso: TO
+  name_pl: Tonga
+  name_en: Tonga
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &432 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *432
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &433 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *433
+Country_217:
+  id: 217
+  iso: TA
+  name_pl: Tristan da Cunha
+  name_en: Tristan da Cunha
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &434 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *434
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &435 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *435
+Country_218:
+  id: 218
+  iso: TT
+  name_pl: Trynidad i Tobago
+  name_en: Trinidad and Tobago
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &436 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *436
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &437 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *437
+Country_219:
+  id: 219
+  iso: TN
+  name_pl: Tunezja
+  name_en: Tunisia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &438 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *438
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &439 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *439
+Country_220:
+  id: 220
+  iso: TR
+  name_pl: Turcja
+  name_en: Turkey
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &440 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *440
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &441 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *441
+Country_221:
+  id: 221
+  iso: TM
+  name_pl: Turkmenistan
+  name_en: Turkmenistan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &442 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *442
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &443 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *443
+Country_222:
+  id: 222
+  iso: TC
+  name_pl: Turks i Caicos
+  name_en: Turks and Caicos Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &444 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *444
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &445 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *445
+Country_223:
+  id: 223
+  iso: TV
+  name_pl: Tuvalu
+  name_en: Tuvalu
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &446 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *446
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &447 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *447
+Country_224:
+  id: 224
+  iso: UG
+  name_pl: Uganda
+  name_en: Uganda
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &448 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *448
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &449 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *449
+Country_225:
+  id: 225
+  iso: UA
+  name_pl: Ukraina
+  name_en: Ukraine
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &450 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *450
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &451 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *451
+Country_226:
+  id: 226
+  iso: UY
+  name_pl: Urugwaj
+  name_en: Uruguay
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &452 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *452
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &453 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *453
+Country_227:
+  id: 227
+  iso: UZ
+  name_pl: Uzbekistan
+  name_en: Uzbekistan
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &454 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *454
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &455 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *455
+Country_228:
+  id: 228
+  iso: VU
+  name_pl: Vanuatu
+  name_en: Vanuatu
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &456 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *456
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &457 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *457
+Country_229:
+  id: 229
+  iso: WF
+  name_pl: Wallis i Futuna
+  name_en: Wallis and Futuna
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &458 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *458
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &459 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *459
+Country_230:
+  id: 230
+  iso: VA
+  name_pl: Watykan
+  name_en: Vatican City
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &460 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *460
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &461 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *461
+Country_231:
+  id: 231
+  iso: VE
+  name_pl: Wenezuela
+  name_en: Venezuela
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &462 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *462
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &463 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *463
+Country_232:
+  id: 232
+  iso: HU
+  name_pl: Węgry
+  name_en: Hungary
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &464 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *464
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &465 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *465
+Country_233:
+  id: 233
+  iso: GB
+  name_pl: Wielka Brytania
+  name_en: United Kingdom
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &466 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *466
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &467 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *467
+Country_234:
+  id: 234
+  iso: VN
+  name_pl: Wietnam
+  name_en: Vietnam
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &468 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *468
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &469 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *469
+Country_235:
+  id: 235
+  iso: IT
+  name_pl: Włochy
+  name_en: Italy
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &470 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *470
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &471 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *471
+Country_236:
+  id: 236
+  iso: CX
+  name_pl: Wyspa Bożego Narodzenia
+  name_en: Christmas Island
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &472 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *472
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &473 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *473
+Country_237:
+  id: 237
+  iso: GG
+  name_pl: Wyspa Guernsey
+  name_en: Guernsey
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &474 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *474
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &475 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *475
+Country_238:
+  id: 238
+  iso: JE
+  name_pl: Wyspa Jersey
+  name_en: Jersey
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &476 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *476
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &477 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *477
+Country_239:
+  id: 239
+  iso: IM
+  name_pl: Wyspa Man
+  name_en: Isle of Man
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &478 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *478
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &479 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *479
+Country_240:
+  id: 240
+  iso: SH
+  name_pl: Wyspa Świętej Heleny
+  name_en: Saint Helena
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &480 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *480
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &481 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *481
+Country_241:
+  id: 241
+  iso: AC
+  name_pl: Wyspa Wniebowstąpienia
+  name_en: Ascension Island
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &482 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *482
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &483 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *483
+Country_242:
+  id: 242
+  iso: AX
+  name_pl: Wyspy Alandzkie
+  name_en: Åland Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &484 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *484
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &485 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *485
+Country_243:
+  id: 243
+  iso: CK
+  name_pl: Wyspy Cooka
+  name_en: Cook Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &486 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *486
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &487 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *487
+Country_244:
+  id: 244
+  iso: VI
+  name_pl: Wyspy Dziewicze Stanów Zjednoczonych
+  name_en: U.S. Virgin Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &488 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *488
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &489 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *489
+Country_245:
+  id: 245
+  iso: IC
+  name_pl: Wyspy Kanaryjskie
+  name_en: Canary Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &490 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *490
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &491 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *491
+Country_246:
+  id: 246
+  iso: CC
+  name_pl: Wyspy Kokosowe
+  name_en: Cocos (Keeling) Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &492 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *492
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &493 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *493
+Country_247:
+  id: 247
+  iso: MH
+  name_pl: Wyspy Marshalla
+  name_en: Marshall Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &494 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *494
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &495 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *495
+Country_248:
+  id: 248
+  iso: FO
+  name_pl: Wyspy Owcze
+  name_en: Faroe Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &496 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *496
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &497 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *497
+Country_249:
+  id: 249
+  iso: SB
+  name_pl: Wyspy Salomona
+  name_en: Solomon Islands
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &498 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *498
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &499 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *499
+Country_250:
+  id: 250
+  iso: ST
+  name_pl: Wyspy Świętego Tomasza i Książęca
+  name_en: São Tomé and Príncipe
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &500 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *500
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &501 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *501
+Country_251:
+  id: 251
+  iso: ZM
+  name_pl: Zambia
+  name_en: Zambia
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &502 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *502
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &503 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *503
+Country_252:
+  id: 252
+  iso: ZW
+  name_pl: Zimbabwe
+  name_en: Zimbabwe
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &504 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *504
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &505 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *505
+Country_253:
+  id: 253
+  iso: AE
+  name_pl: Zjednoczone Emiraty Arabskie
+  name_en: United Arab Emirates
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &506 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *506
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &507 2017-04-21 21:21:25.765977000 Z
+    zone: *2
+    time: *507
