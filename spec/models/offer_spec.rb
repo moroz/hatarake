@@ -1,24 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe Offer, type: :model do
-  let(:offer) { FactoryGirl.create(:offer) }
+  let(:offer) { FactoryGirl.build(:offer) }
   describe "validations" do
     context "with valid attributes" do
       it "is valid" do
-        expect(:offer).to be_valid
+        expect(offer).to be_valid
       end
     end
 
     context "without currency" do
-      it "is invalid"
+      it "is invalid" do
+        offer.currency = nil
+        expect(offer).not_to be_valid
+      end
     end
 
     context "without title" do
-      it "is invalid"
+      it "is invalid" do
+        offer.title = nil
+        expect(offer).not_to be_valid
+      end
     end
 
     context "without company" do
-      it "is invalid"
+      it "is invalid" do
+        offer.company = nil
+        expect(offer).not_to be_valid
+      end
     end
   end
 
