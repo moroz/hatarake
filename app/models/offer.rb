@@ -6,22 +6,23 @@ class Offer < ApplicationRecord
   validates :title, presence: true, length: { minimum: 10, maximum: 85 }
 
   def salary
-    if salary_min.present?
+    format = if salary_min.present?
       if salary_max.present?
         if salary_min == salary_max
-          "#{salary_min} #{currency}"
+          'mineqmax'
         else
-          "#{salary_min}-#{salary_max} #{currency}"
+          'minmax'
         end
       else
-        "#{salary_min}+ #{currency}"
+        'min'
       end
     else
       if salary_max.present?
-        "up to #{salary_max} #{currency}"
+        'max'
       else
-        "n/a"
+        'none'
       end
     end
+    I18n.t("offers.salary.#{format}", min: salary_min, max: salary_max, currency: currency)
   end
 end

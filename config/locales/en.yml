@@ -27,6 +27,14 @@ en:
       work: Work
       owner: Owner
       founder: Founder
+
+  offers:
+    salary:
+      min: "%{min}+ %{currency}"
+      max: "up to %{max} %{currency}"
+      minmax: "%{min}-%{max} %{currency}"
+      mineqmax: "%{min} %{currency}"
+      none: "n/a"
   date:
     formats:
       by: "%B '%y"

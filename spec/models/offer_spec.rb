@@ -32,10 +32,28 @@ RSpec.describe Offer, type: :model do
   end
 
   describe "salary" do
-    context "when min and max present" do
-      it "returns a range"
+    def salary_string(offer, format)
+      I18n.t('offers.salary.' + format, min: offer.salary_min,
+             max: offer.salary_max, currency: offer.currency)
     end
-    
+    context "when min and max present" do
+      context "when min == max" do
+        it "returns one value" do
+          offer.salary_min = 1000
+          offer.salary_max = 1000
+          expect(offer.salary).to eq salary_string(offer, 'mineqmax')
+        end
+      end
+
+      context "when min != max" do
+        it "returns a range" do
+          offer.salary_min = 1000
+          offer.salary_max = 2000
+          expect(offer.salary).to eq salary_string(offer, 'minmax')
+        end
+      end
+    end
+
     context "when only min present" do
       it "returns min+"
     end
