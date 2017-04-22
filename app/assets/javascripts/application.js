@@ -15,7 +15,6 @@
 //= require jquery-ui/widgets/autocomplete
 //= require autocomplete-rails
 //= require foundation
-//= require turbolinks
 //= require_tree .
 
 //$(function(){ $(document).foundation(); });

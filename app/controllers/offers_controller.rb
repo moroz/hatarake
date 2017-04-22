@@ -2,6 +2,8 @@ class OffersController < ApplicationController
   expose :offer
   expose :offers, -> { Offer.all }
 
+  before_action :set_country_list, only: [:new, :edit]
+
   def show
   end
 
@@ -14,10 +16,14 @@ class OffersController < ApplicationController
   end
   
   def create
-    if @offer = current_company.offers.create(offer_params)
-      redirect_to @offer
+    offer.company = current_company
+    if offer.save
+      flash[:success] = "Your offer has been saved."
+      redirect_to offer
     else
-      render :new, offer: offer
+      flash[:alert] = "There was an error processing your request."
+      set_country_list
+      render :new
     end
   end
 
@@ -27,6 +33,7 @@ class OffersController < ApplicationController
       redirect_to offer
     else
       @title = "Editing offer: #{offer.title}"
+      set_country_list
       render 'new'
     end
   end
@@ -41,12 +48,16 @@ class OffersController < ApplicationController
 
   private
 
+  def set_country_list
+    @countries = Country.all.order(:name_en)
+  end
+
   def current_company
     super || Company.first # only testing
   end
 
   def offer_params
     params.require(:offer).permit(:title, :currency, :salary_min,
-                                  :salary_max, :contact_email, :contact_phone, :location, :description)
+                                  :salary_max, :contact_email, :contact_phone, :location, :description, :country_id)
   end
 end

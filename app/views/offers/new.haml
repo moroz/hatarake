@@ -9,6 +9,7 @@
   = f.input :contact_email
   = f.input :contact_phone
   = f.input :location
+  = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en)
   = f.input :description, as: :text, input_html: { rows: 15 }
   = f.submit "Save", class: 'button success expanded'
 

@@ -29,6 +29,7 @@ en:
       founder: Founder
 
   offers:
+    add_new_offer: Add new offer...
     salary:
       min: "%{min}+ %{currency}"
       max: "up to %{max} %{currency}"
