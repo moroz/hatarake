@@ -13,7 +13,12 @@ RSpec.describe Candidate, type: :model do
 
     describe "with profession" do
       context "when given profession name" do
-        it "returns candidates with profession name"
+        let!(:carpenter) { FactoryGirl.create(:candidate, profession_name: "Carpenter") }
+        let!(:welder) { FactoryGirl.create(:candidate, profession_name: "Welder") }
+        subject { Candidate.with_profession "Carpenter" }
+
+        it { is_expected.to include carpenter }
+        it { is_expected.not_to include welder }
       end
 
       context "when given Profession object" do

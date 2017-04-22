@@ -10,7 +10,17 @@ class Candidate < User
 
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items) }
   scope :looking_for_work, -> { where(looking_for_work: true) }
-  scope :with_profession, ->(profession) { joins("INNER JOIN professions AS p ON p.id = users.id WHERE p.name = '#{profession}' OR p.name_pl = '#{profession}'") }
+  
+  def self.with_profession(profession)
+    if profession.class == Profession
+      where(profession: profession)
+    elsif profession.class == String
+      joins(:profession).
+        where("professions.name = :q OR professions.name_pl = :q", q: profession)
+    else
+      nil
+    end
+  end
 
   before_validation :find_profession
 
