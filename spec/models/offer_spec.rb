@@ -55,15 +55,26 @@ RSpec.describe Offer, type: :model do
     end
 
     context "when only min present" do
-      it "returns min+"
+      it "returns min+" do
+        offer.salary_min = 1000
+        offer.salary_max = nil
+        expect(offer.salary).to eq salary_string(offer, 'min')
+      end
     end
 
     context "when only max present" do
-      it "returns up to max"
+      it "returns up to max" do
+        offer.salary_min = nil
+        offer.salary_max = 1000
+        expect(offer.salary).to eq salary_string(offer, 'max')
+      end
     end
 
     context "when none present" do
-      it "returns a placeholder string"
+      it "returns a placeholder string" do
+        offer.salary_min, offer.salary_max = nil
+        expect(offer.salary).to eq salary_string(offer, 'none')
+      end
     end
   end
 end
