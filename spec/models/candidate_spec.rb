@@ -4,17 +4,18 @@ RSpec.describe Candidate, type: :model do
   describe "scopes" do
     let!(:candidate) { FactoryGirl.create(:candidate, looking_for_work: true) }
     let!(:not_looking_candidate) { FactoryGirl.create(:candidate, :not_looking_for_work) }
-    describe "looking for work" do
+    describe "looking_for_work" do
       subject { Candidate.looking_for_work }
 
       it { is_expected.to include candidate }
       it { is_expected.not_to include not_looking_candidate }
     end
 
-    describe "with profession" do
+    describe "with_profession" do
+      let!(:carpenter) { FactoryGirl.create(:candidate, profession_name: "Carpenter") }
+      let!(:welder) { FactoryGirl.create(:candidate, profession_name: "Welder") }
+
       context "when given profession name" do
-        let!(:carpenter) { FactoryGirl.create(:candidate, profession_name: "Carpenter") }
-        let!(:welder) { FactoryGirl.create(:candidate, profession_name: "Welder") }
         subject { Candidate.with_profession "Carpenter" }
 
         it { is_expected.to include carpenter }
@@ -22,7 +23,11 @@ RSpec.describe Candidate, type: :model do
       end
 
       context "when given Profession object" do
-        it "returns candidates with profession"
+        let(:profession) { Profession.find_or_create_by_name("Carpenter") }
+
+        subject { Candidate.with_profession profession }
+
+        it { is_expected.to include carpenter }
       end
     end
   end
