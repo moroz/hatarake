@@ -7,7 +7,6 @@ class Candidate < User
   attr_accessor :profession_name
 
   belongs_to :profession
-  delegate :name, to: :profession, prefix: true
 
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items) }
   scope :looking_for_work, -> { where(looking_for_work: true) }
