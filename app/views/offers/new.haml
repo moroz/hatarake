@@ -3,13 +3,15 @@
 = simple_form_for offer do |f|
   = render partial: 'shared/errors', locals: { object: f.object }
   = f.input :title
-  = f.input :currency
+  = f.label :currency, "Currency:"
+  = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last)
   = f.input :salary_min, label: "Minimal salary"
   = f.input :salary_max, label: "Maximal salary"
   = f.input :contact_email
   = f.input :contact_phone
   = f.input :location
-  = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en)
+  = f.label :country
+  = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, 166)
   = f.input :description, as: :text, input_html: { rows: 15 }
   = f.submit "Save", class: 'button success expanded'
 

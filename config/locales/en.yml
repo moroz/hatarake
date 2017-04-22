@@ -28,6 +28,12 @@ en:
       owner: Owner
       founder: Founder
 
+  currencies:
+    pln: Polish Zloty
+    eur: Euro
+    chf: Swiss Frank
+    usd: US Dollar
+    gbp: Pound Sterling
   offers:
     add_new_offer: Add new offer...
     salary:

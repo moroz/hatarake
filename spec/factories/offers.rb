@@ -5,7 +5,7 @@ FactoryGirl.define do
     location "Berlin"
     salary_min 1000
     salary_max 2000
-    currency "PLN"
+    currency "pln"
     description "We're looking for welders."
     country { Country.first || create(:country) }
     contact_email "user@example.com"
