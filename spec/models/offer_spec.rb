@@ -9,10 +9,21 @@ RSpec.describe Offer, type: :model do
       end
     end
 
-    context "without currency" do
-      it "is invalid" do
-        offer.currency = nil
-        expect(offer).not_to be_valid
+    describe "currency" do
+      context "without currency" do
+        it "is invalid" do
+          offer.currency = nil
+          expect(offer).not_to be_valid
+        end
+      end
+
+      # Currency should be an ISO 4217-compliant
+      # three-letter code
+      context "with invalid currency" do
+        it "is invalid" do
+          offer.currency = "zł"
+          expect(offer).not_to be_valid
+        end
       end
     end
 
