@@ -3,15 +3,7 @@
 = link_to "Back to profile", profile_path
 
 %h3 Your skills
-- if @skill_items.any?
-  %table
-    %thead
-      %tr
-        %td Skill name
-        %td Level
-        %td Actions
-    %tbody#skill_items
-      = render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items }
+= render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items }
       
 #skill_item_errors.callout.alert{style: "display: none"}
 = simple_form_for @skill_items.new, remote: true do |f|

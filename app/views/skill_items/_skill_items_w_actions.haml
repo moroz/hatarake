@@ -1,7 +1,15 @@
-- for skill_item in skill_items do
-  %tr{id: dom_id(skill_item)}
-    %td.skill_item__name
-      = skill_item.name
-    %td.skill_item__level
-      = t(skill_item.level_key)
-    %td= link_to "Delete", skill_item, method: :delete, class: 'button alert', remote: true
+%table#skill_items
+  - if skill_items.any?
+    %thead
+      %tr
+        %td Skill name
+        %td Level
+        %td Actions
+    %tbody
+      - for skill_item in skill_items do
+        %tr{id: dom_id(skill_item)}
+          %td.skill_item__name
+            = skill_item.name
+          %td.skill_item__level
+            = t(skill_item.level_key)
+          %td= link_to "Delete", skill_item, method: :delete, class: 'button alert', remote: true

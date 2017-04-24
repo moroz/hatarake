@@ -5,10 +5,10 @@ class SkillItem < ApplicationRecord
   default_scope { includes(:skill).ordered }
   scope :ordered, -> { order('level DESC', 'skills.name') }
 
-  belongs_to :candidate
-  belongs_to :skill
+  belongs_to :candidate, required: true
+  belongs_to :skill, required: true
   validates :level, inclusion: { in: LEVELS }, presence: true
-  validates :skill, uniqueness: { scope: :candidate_id, if: -> { skill.present? } }, presence: true
+  validates :skill, uniqueness: { scope: :candidate_id, if: -> { skill.present? } }
   before_validation :find_or_create_skill
   delegate :name, to: :skill
 
