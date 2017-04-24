@@ -14,7 +14,7 @@ RSpec.describe SkillItem, type: :model do
           end
         end
 
-        context "with invalid leve" do
+        context "with invalid level" do
           it "is invalid" do
             skill_item.level = "foobar"
             expect(skill_item).not_to be_valid
