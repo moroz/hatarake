@@ -1,5 +1,6 @@
 require 'rails_helper'
+require './spec/support/cv_item'
 
-RSpec.describe WorkItem, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe WorkItem do
+  include_examples "cv item"
 end
