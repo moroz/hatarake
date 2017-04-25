@@ -1,14 +1,19 @@
 class Candidate < User
   devise :registerable
-  validates_presence_of :first_name, :last_name
   has_many :skill_items, dependent: :destroy
   has_many :education_items, dependent: :destroy
   has_many :work_items, dependent: :destroy
-  attr_accessor :profession_name
+  has_one :profile, class_name: 'CandidateProfile', foreign_key: :user_id
+
+  accepts_nested_attributes_for :profile
 
   belongs_to :profession
+  attr_accessor :profession_name
+  before_validation :find_profession
 
-  scope :with_associations, -> { includes(:skill_items, :education_items, :work_items) }
+  delegate :first_name, :last_name, :full_name, :display_name, to: :profile
+
+  scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { where(looking_for_work: true) }
   
   def self.with_profession(profession)
@@ -20,16 +25,6 @@ class Candidate < User
     else
       nil
     end
-  end
-
-  before_validation :find_profession
-
-  def full_name
-    first_name + " " + last_name
-  end
-
-  def display_name
-    full_name
   end
 
   private
