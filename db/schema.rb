@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422072044) do
+ActiveRecord::Schema.define(version: 20170425091747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20170422072044) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.index ["user_id"], name: "index_avatars_on_user_id", using: :btree
+  end
+
+  create_table "candidate_profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.boolean  "looking_for_work"
+    t.integer  "profession_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["profession_id"], name: "index_candidate_profiles_on_profession_id", using: :btree
+    t.index ["user_id"], name: "index_candidate_profiles_on_user_id", using: :btree
   end
 
   create_table "countries", force: :cascade do |t|
@@ -157,6 +170,8 @@ ActiveRecord::Schema.define(version: 20170422072044) do
   end
 
   add_foreign_key "avatars", "users"
+  add_foreign_key "candidate_profiles", "professions"
+  add_foreign_key "candidate_profiles", "users"
   add_foreign_key "education_items", "organizations"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "offers", "countries"
