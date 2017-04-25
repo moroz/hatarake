@@ -10,7 +10,11 @@ FactoryGirl.define do
     end
 
     trait :not_looking_for_work do
-      looking_for_work false
+      association :profile, factory: :candidate_profile, looking_for_work: false
+    end
+
+    trait :looking_for_work do
+      association :profile, factory: :candidate_profile, looking_for_work: true
     end
   end
 end

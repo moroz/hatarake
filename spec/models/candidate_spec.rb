@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Candidate, type: :model do
   describe "scopes" do
-    let!(:candidate) { FactoryGirl.create(:candidate, looking_for_work: true) }
+    let!(:candidate) { FactoryGirl.create(:candidate, :looking_for_work) }
     let!(:not_looking_candidate) { FactoryGirl.create(:candidate, :not_looking_for_work) }
     describe "looking_for_work" do
       subject { Candidate.looking_for_work }

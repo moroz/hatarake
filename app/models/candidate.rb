@@ -3,7 +3,7 @@ class Candidate < User
   has_many :skill_items, dependent: :destroy
   has_many :education_items, dependent: :destroy
   has_many :work_items, dependent: :destroy
-  has_one :profile, class_name: 'CandidateProfile', foreign_key: :user_id
+  has_one :profile, class_name: 'CandidateProfile', foreign_key: :user_id, dependent: :destroy
 
   accepts_nested_attributes_for :profile
 
@@ -14,7 +14,7 @@ class Candidate < User
   delegate :first_name, :last_name, :full_name, :display_name, to: :profile
 
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
-  scope :looking_for_work, -> { where(looking_for_work: true) }
+  scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
   
   def self.with_profession(profession)
     if profession.class == Profession
