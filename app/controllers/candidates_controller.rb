@@ -11,9 +11,9 @@ class CandidatesController < ApplicationController
 
   def update
     if current_user.update(candidate_params)
-      flash[:success] = "Your profile has been saved."
-      redirect_to profile_path
+      redirect_to profile_path, flash: { success:  "Your profile has been saved." }
     else
+      user.assign_attributes(candidate_params)
       render 'step2'
     end
   end
@@ -23,7 +23,7 @@ class CandidatesController < ApplicationController
   end
 
   def step2
-    @user.build_profile
+    @user.build_profile unless @user.profile.present?
   end
 
   private

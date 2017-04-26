@@ -27,6 +27,10 @@ class Candidate < User
     end
   end
 
+  def profession_name
+    profession.present? ? profession.name : @profession_name
+  end
+
   private
 
   def find_profession
