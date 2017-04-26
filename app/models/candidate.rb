@@ -29,7 +29,7 @@ class Candidate < User
 
   def profession_name
     return @profession_name if @profession_name.present?
-    profession.name
+    profession.try(:name)
   end
 
   private
