@@ -13,6 +13,7 @@ class Ability
     when "Candidate"
       can :manage, SkillItem, candidate_id: user.id
       can :manage, CvItem, candidate_id: user.id
+      can :read, Offer
       cannot :manage 
     when "Admin"
       can :manage, :all

@@ -3,6 +3,7 @@ class OffersController < ApplicationController
   expose :offers, -> { Offer.all }
 
   before_action :set_country_list, only: [:new, :edit]
+  authorize_resource
 
   def show
   end
