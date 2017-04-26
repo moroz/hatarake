@@ -1,13 +1,17 @@
 %h1 Job offers
 
-%table
-  %thead
-    %td Title
-    %td Company
-    %td Salary
-    %td Location
-  %tbody
-    - for offer in offers
-      = render partial: 'offers/offer_row', locals: { offer: offer }
+- if offers.any?
+  %table
+    %thead
+      %td Title
+      %td Company
+      %td Salary
+      %td Location
+      %tbody
+        - for offer in offers
+          = render partial: 'offers/offer_row', locals: { offer: offer }
+-else
+  No offers yet :(
 
-= link_to t('offers.add_new_offer'), new_offer_path
+- if can? :create, Offer
+  = link_to t('offers.add_new_offer'), new_offer_path
