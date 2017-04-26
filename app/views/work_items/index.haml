@@ -16,7 +16,7 @@
 = simple_form_for @work_item || work_items.new do |f|
   = render partial: 'shared/errors', locals: { object: f.object }
   = render partial: 'shared/cv_date_fields', locals: { prefix: "work_item", f: f }
-  = f.select :category, options_from_collection_for_select(I18n.t('items.education_categories'), :first, :last), label: "Typeof education:"
+  = f.select :category, options_from_collection_for_select(I18n.t('items.work_categories'), :first, :last), label: "Typeof education:"
   = f.input :organization_name
   = f.input :position, label: "Position:"
   = f.submit "Add entry", class: 'button primary expanded'

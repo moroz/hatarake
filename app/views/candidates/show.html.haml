@@ -5,6 +5,12 @@
         = avatar_for current_user
       .medium-8.columns
         %h2= @user.display_name
+        %p.candidate__sex= t('sexes.' + @user.sex)
+        %p.candidate__looking_for_work
+          - if @user.looking_for_work
+            Looking for work
+          -else
+            Not looking for work
         = section_link "Change profile picture...", new_avatar_path, :small
 
     = profile_section "Skills" do
