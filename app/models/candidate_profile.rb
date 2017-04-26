@@ -3,6 +3,8 @@ class CandidateProfile < ApplicationRecord
 
   validates_presence_of :first_name, :last_name
 
+  enum sex: [:male, :female, :apache_helicopter]
+
   def full_name
     first_name + " " + last_name
   end

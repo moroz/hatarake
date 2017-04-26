@@ -5,5 +5,6 @@
     = ff.input :looking_for_work, label: "Are you looking for work?", as: :radio_buttons
     = ff.input :first_name
     = ff.input :last_name
+    = ff.input :sex, collection: I18n.t('sexes'), label_method: :last, value_method: :first, as: :radio_buttons, label: "Gender:"
   = f.input :profession_name, label: "Profession:"
   = f.submit "Next", class: "button primary expanded" 

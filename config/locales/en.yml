@@ -27,7 +27,10 @@ en:
       work: Work
       owner: Owner
       founder: Founder
-
+  sexes:
+    1: Male
+    2: Female
+    3: Apache helicopter
   currencies:
     pln: Polish Zloty
     eur: Euro

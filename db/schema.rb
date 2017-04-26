@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425102350) do
+ActiveRecord::Schema.define(version: 20170426062642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20170425102350) do
     t.string   "last_name"
     t.date     "birth_date"
     t.boolean  "looking_for_work"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "sex",              limit: 2,              comment: "ISO/IEC 5218-compliant sex field, 1 male, 2 female"
     t.index ["user_id"], name: "index_candidate_profiles_on_user_id", using: :btree
   end
 
