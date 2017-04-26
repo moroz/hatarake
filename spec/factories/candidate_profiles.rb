@@ -4,5 +4,6 @@ FactoryGirl.define do
     last_name "User"
     birth_date { 20.years.ago }
     looking_for_work true
+    sex 1 # 1 male 2 female 3 apache_helicopter
   end
 end
