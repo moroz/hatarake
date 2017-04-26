@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :work_items
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
+    get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
   end
 
   devise_for :users, skip: :registrations

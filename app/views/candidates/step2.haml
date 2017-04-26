@@ -6,5 +6,5 @@
     = ff.input :first_name
     = ff.input :last_name
     = ff.input :sex, collection: I18n.t('sexes'), label_method: :last, value_method: :first, as: :radio_buttons, label: "Gender:"
-  = f.input :profession_name, label: "Profession:"
+  = f.input :profession_name, label: "Profession:", url: autocomplete_professions_path, as: :autocomplete
   = f.submit "Next", class: "button primary expanded" 

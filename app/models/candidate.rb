@@ -28,7 +28,8 @@ class Candidate < User
   end
 
   def profession_name
-    profession.present? ? profession.name : @profession_name
+    return @profession_name if @profession_name.present?
+    profession.name
   end
 
   private
