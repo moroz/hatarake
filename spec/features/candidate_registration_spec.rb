@@ -12,4 +12,19 @@ RSpec.describe "Candidate registration" do
 
     expect { click_button }.to change { Candidate.count }
   end
+
+  describe "second step" do
+    let(:candidate) { FactoryGirl.create(:candidate, :only_login_credentials) }
+
+    context "upon first login" do
+      before do
+        login_as(candidate, scope: :user)
+        visit profile_path
+      end
+
+      it "displays form for entering personal data" do
+        expect(current_path).to eq(candidate_step2_path)
+      end
+    end
+  end
 end

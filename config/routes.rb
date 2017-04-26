@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :offers
   get 'profile/edit_skills', to: 'candidates#edit_skills'
-  get 'profile/step2', to: "candidates#step2", as: :step2
+  get 'profile/step2', to: "candidates#step2", as: :candidate_step2
   get 'profile', to: 'candidates#show', as: :profile
   get '/company', to: 'companies#show', as: :company_profile
   resources :pages

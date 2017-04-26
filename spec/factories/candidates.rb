@@ -5,6 +5,11 @@ FactoryGirl.define do
     profession_name "Carpenter"
     association :profile, factory: :candidate_profile
 
+    trait :only_login_credentials do
+      profession_name nil
+      profile nil
+    end
+
     trait :no_profession do
       profession_name nil
     end
