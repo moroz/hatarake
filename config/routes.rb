@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
   end
 
-  devise_for :users, skip: :registrations
-  devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions
-  devise_for :companies, controllers: { registrations: 'companies/registrations' }, skip: :sessions
+  devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }
+  devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
+  devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations
   resources :candidates
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]

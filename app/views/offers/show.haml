@@ -24,5 +24,6 @@
 %h3 Description
 != textilize offer.description
 
-= link_to "Edit", edit_offer_path(offer), class: "button secondary"
-= link_to "Delete", offer, method: :delete, class: "button alert"
+- if can? :manage, offer
+  = link_to "Edit", edit_offer_path(offer), class: "button secondary"
+  = link_to "Delete", offer, method: :delete, class: "button alert"
