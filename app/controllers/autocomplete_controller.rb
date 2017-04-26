@@ -1,6 +1,16 @@
 class AutocompleteController < ApplicationController
   def skills
-    @skills = Skill.search(params[:term])
-    render json: @skills.serialize_for_autocomplete
+    autocomplete(Skill)
+  end
+
+  def professions
+    autocomplete(Profession)
+  end
+
+  private
+
+  def autocomplete(model)
+    @collection = model.search(params[:term])
+    render json: @collection.serialize_for_autocomplete
   end
 end
