@@ -3,12 +3,14 @@
     .top-bar-left
       %ul.menu
         %li= link_to t('site_name'), root_path
-        %li= link_to t('topbar.jobs'), offers_path
+        %li= link_to t('topbar.jobs_pl'), offers_path
+        %li= link_to t('topbar.jobs_abroad'), offers_path
     .top-bar-right
       %ul.menu
         - if signed_in?
           - if candidate?
             %li= link_to "Me", profile_path
+            -# This could be changed to profile thumbnail
           -elsif company?
             %li= link_to "Profile", company_profile_path
           -elsif admin?
