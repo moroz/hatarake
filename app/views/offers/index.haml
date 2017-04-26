@@ -10,7 +10,7 @@
       %tbody
         - for offer in offers
           = render partial: 'offers/offer_row', locals: { offer: offer }
--else
+- else
   No offers yet :(
 
 - if can? :create, Offer
