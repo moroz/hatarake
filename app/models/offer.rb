@@ -7,6 +7,8 @@ class Offer < ApplicationRecord
   CURRENCIES = %w( pln eur chf usd gbp )
   validates :currency, inclusion: { in: CURRENCIES }
 
+  scope :published, -> { where(published: true) }
+
   def salary
     format = if salary_min.present?
       if salary_max.present?
@@ -26,5 +28,13 @@ class Offer < ApplicationRecord
       end
     end
     I18n.t("offers.salary.#{format}", min: salary_min, max: salary_max, currency: currency)
+  end
+
+  def publish
+    self.update(published: true, published_at: Time.now)
+  end
+
+  def unpublish
+    self.update(published: false)
   end
 end

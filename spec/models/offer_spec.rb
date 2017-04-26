@@ -88,4 +88,32 @@ RSpec.describe Offer, type: :model do
       end
     end
   end
+
+  describe "publishing" do
+    context "when created" do
+      let(:offer) { FactoryGirl.create(:offer) }
+      
+      it "published is false" do
+        expect(offer).not_to be_published
+      end
+
+      it "published_at is nil" do
+        expect(offer.published_at).to be_nil
+      end
+    end
+
+    describe "#publish" do
+      before do
+        offer.publish
+      end
+      
+      it "published is true" do
+        expect(offer).to be_published
+      end
+
+      it "published_at is set" do
+        expect(offer.published_at).not_to be_nil
+      end
+    end
+  end
 end
