@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'profile', to: 'candidates#show', as: :profile
   get '/company', to: 'companies#show', as: :company_profile
   resources :pages
-  resources :candidates
   resources :education_items
   resources :work_items
   scope '/api' do
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   devise_for :users, skip: :registrations
   devise_for :candidates, controllers: { registrations: 'candidates/registrations' }, skip: :sessions
   devise_for :companies, controllers: { registrations: 'companies/registrations' }, skip: :sessions
+  resources :candidates
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]
