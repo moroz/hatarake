@@ -9,6 +9,15 @@ class CandidatesController < ApplicationController
     @skill_items = @user.skill_items
   end
 
+  def update
+    if current_user.update(candidate_params)
+      flash[:success] = "Your profile has been saved."
+      redirect_to profile_path
+    else
+      render 'step2'
+    end
+  end
+
   def edit_skills
     @skill_items = current_user.skill_items
   end
@@ -29,5 +38,9 @@ class CandidatesController < ApplicationController
     elsif signed_in?
       @user = current_user
     end
+  end
+
+  def candidate_params
+    params.require(:candidate).permit(:profession_name, profile_attributes: [:first_name, :last_name, :sex, :looking_for_work])
   end
 end
