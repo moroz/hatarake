@@ -1,15 +1,9 @@
 class OffersController < ApplicationController
   expose :offer
-  expose :offers, -> { Offer.published }
+  expose :offers, -> { published_or_own }
 
   before_action :set_country_list, only: [:new, :edit]
   authorize_resource
-
-  def show
-  end
-
-  def index
-  end
 
   def edit
     @title = "Editing offer: #{offer.title}"
@@ -39,6 +33,18 @@ class OffersController < ApplicationController
     end
   end
 
+  def unpublish
+    offer.unpublish
+    flash[:notice] = "The offer has been unpublished."
+    redirect_to offer
+  end
+
+  def publish
+    offer.publish
+    flash[:notice] = "The offer has been published."
+    redirect_to offer
+  end
+
   def destroy
     title = offer.title
     if offer.destroy
@@ -48,6 +54,14 @@ class OffersController < ApplicationController
   end
 
   private
+
+  def published_or_own
+    if company_signed_in?
+      Offer.published_or_owned_by(current_company)
+    else
+      Offer.published
+    end
+  end
 
   def set_country_list
     @countries = Country.all.order(:name_en)

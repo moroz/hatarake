@@ -8,8 +8,7 @@ class Ability
     cannot :manage, :all
     if user.company?
       can :create, Offer
-      can :update, Offer, company_id: user.id
-      can :destroy, Offer, company_id: user.id
+      can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
       can :read, Offer
       can :show, Page
     elsif user.candidate?

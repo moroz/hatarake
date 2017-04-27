@@ -8,6 +8,7 @@ class Offer < ApplicationRecord
   validates :currency, inclusion: { in: CURRENCIES }
 
   scope :published, -> { where(published: true) }
+  scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
 
   def salary
     format = if salary_min.present?
