@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   expose :offer
-  expose :offers, -> { Offer.all }
+  expose :offers, -> { Offer.published }
 
   before_action :set_country_list, only: [:new, :edit]
   authorize_resource

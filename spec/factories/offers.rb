@@ -10,5 +10,16 @@ FactoryGirl.define do
     country { Country.first || create(:country) }
     contact_email "user@example.com"
     contact_phone "555 100-800"
+    unpublished
+
+    trait :published do
+      published true
+      published_at { 1.day.ago }
+    end
+
+    trait :unpublished do
+      published false
+      published_at nil
+    end
   end
 end

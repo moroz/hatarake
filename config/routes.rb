@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :offers
+  resources :offers do
+    member do
+      patch :publish
+      patch :unpublish
+    end
+  end
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2
   get 'profile', to: 'candidates#show', as: :profile

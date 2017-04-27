@@ -34,6 +34,10 @@ class Offer < ApplicationRecord
     self.update(published: true, published_at: Time.now)
   end
 
+  def self.publish_all
+    update_all(published:true, published_at: Time.now)
+  end
+
   def unpublish
     self.update(published: false)
   end
