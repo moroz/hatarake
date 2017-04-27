@@ -36,8 +36,8 @@ RSpec.shared_examples "acts like autocompletable" do
   end
 
   describe "#serialize_for_autocomplete" do
-    LABEL_METHOD = "name"
-    VALUE_METHOD = "name"
+    LABEL_METHOD ||= "name"
+    VALUE_METHOD ||= "name"
 
     def serialized_collection
       [item, other].map { |s| { id: s.id, label: s[LABEL_METHOD],
