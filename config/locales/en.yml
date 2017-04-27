@@ -13,10 +13,10 @@ en:
     candidate_heading: "Sign up for candidate account"
     company_heading: "Sign up for company account"
   skill_levels:
-    1_beginner: Beginner
-    2_intermediate: Intermediate
-    3_good: Good
-    4_expert: Expert
+    beginner: Beginner
+    intermediate: Intermediate
+    good: Good
+    expert: Expert
   items:
     education_categories:
       ba: B.A.

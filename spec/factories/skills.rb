@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :skill_item do
-    level "1_beginner"
+    level 1
     candidate
     skill_name "Bulgarian"
   end

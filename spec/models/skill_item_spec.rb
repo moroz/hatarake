@@ -9,15 +9,15 @@ RSpec.describe SkillItem, type: :model do
 
         context 'with valid level' do
           it 'is valid' do
-            skill_item.level = '3_good'
+            skill_item.level = 'good'
             expect(skill_item).to be_valid
           end
         end
 
         context "with invalid level" do
-          it "is invalid" do
-            skill_item.level = "foobar"
-            expect(skill_item).not_to be_valid
+          it "raises error" do
+            expect { skill_item.level = "foobar" }
+              .to raise_error ArgumentError
           end
         end
 
