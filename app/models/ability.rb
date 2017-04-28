@@ -11,10 +11,12 @@ class Ability
       can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
       can :read, Offer
       can :show, Page
+      can :read, Candidate
     elsif user.candidate?
       can :manage, SkillItem, candidate_id: user.id
       can :manage, CvItem, candidate_id: user.id
       cannot [:create, :update, :destroy], Offer
+      can :manage, Candidate, id: user.id
       can :read, Offer
       can :show, Page
     elsif user.admin?

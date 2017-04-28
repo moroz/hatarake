@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     current_user_is_a? "Candidate"
   end
 
+  def current_user
+    super || current_candidate || current_company
+  end
+
   private
 
   def current_user_is_a?(type)

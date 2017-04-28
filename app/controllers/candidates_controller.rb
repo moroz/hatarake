@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
   before_action :find_user
   helper_method :user
+  authorize_resource
 
   def index
     @candidates = Candidate.joins(:profile, :profession).page(params[:page])

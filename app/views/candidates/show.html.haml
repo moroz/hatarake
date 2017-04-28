@@ -12,8 +12,9 @@
             Looking for work
           -else
             Not looking for work
-        = section_link "Change profile picture...", new_avatar_path, :small
-        = section_link "Change personal data", candidate_step2_path, :small
+        - if can? :edit, @user
+          = section_link "Change profile picture...", new_avatar_path, :small
+          = section_link "Change personal data", candidate_step2_path, :small
 
     = profile_section "Skills" do
       - if @skill_items.any?
@@ -22,18 +23,25 @@
             = render @skill_items
       - else
         No skills.
-      = section_link "Edit your skills...", profile_edit_skills_path
+      - if can? :edit, @user
+        = section_link "Edit your skills...", profile_edit_skills_path
 
     = profile_section "Education" do
       - if @user.education_items.any?
         %table
           %tbody
             = render @user.education_items
-      = section_link "Edit your education...", new_education_item_path
+      - else
+        No information about education.
+      - if can? :edit, @user
+        = section_link "Edit your education...", new_education_item_path
 
     = profile_section "Work experience" do
       - if @user.work_items.any?
         %table
           %tbody
             = render @user.work_items
-      = section_link "Edit your work experience...", new_work_item_path
+      - else
+        No information about work experience.
+      - if can? :edit, @user
+        = section_link "Edit your work experience...", new_work_item_path
