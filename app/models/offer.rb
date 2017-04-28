@@ -1,4 +1,7 @@
 class Offer < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name_for_slug, use: [:slugged, :finders]
+
   belongs_to :company, required: true
   belongs_to :country, required: true
   has_and_belongs_to_many :skills
@@ -41,5 +44,14 @@ class Offer < ApplicationRecord
 
   def unpublish
     self.update(published: false)
+  end
+
+  private
+
+  def name_for_slug
+    [
+      [:title, :location],
+      [:title, :location, SecureRandom.hex(3)]
+    ]
   end
 end

@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  expose :offer
+  expose :offer, scope: -> { Offer.friendly }
   expose :offers, -> { published_or_own }
 
   before_action :set_country_list, only: [:new, :edit]
