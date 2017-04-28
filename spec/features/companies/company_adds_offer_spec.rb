@@ -6,7 +6,7 @@ RSpec.describe "Company adds Offer" do
 
   describe "offer creation" do
     before do
-      login_as(company, scope: :user)
+      login_as(company, scope: :company)
       visit offers_path
     end
 
@@ -36,7 +36,7 @@ RSpec.describe "Company adds Offer" do
     let(:offer) { FactoryGirl.create(:offer, :unpublished,
                                      company: company) }
     before do
-      login_as(company, scope: :user)
+      login_as(company, scope: :company)
       visit offer_path(offer)
     end
 
@@ -45,8 +45,8 @@ RSpec.describe "Company adds Offer" do
     end
 
     it "publishes when clicked" do
-      expect(offer).to receive :publish
       click_link_or_button I18n.t('offers.show.publish')
+      expect(offer.reload).to be_published
     end
 
   end
