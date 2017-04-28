@@ -9,6 +9,7 @@ en:
     jobs: Jobs
     sign_in: Sign in
     sign_up: Sign up
+    candidates: Candidates
   registrations:
     candidate_heading: "Sign up for candidate account"
     company_heading: "Sign up for company account"

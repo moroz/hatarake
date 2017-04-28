@@ -1,0 +1,17 @@
+%h1 Browse candidates
+
+%table
+  %thead
+    %tr
+      %td Name
+      %td Age
+      %td Profession
+      %td Looking for work
+
+  %tbody
+    - for candidate in @candidates
+      %tr
+        %td= link_to candidate.profile.full_name, candidate
+        %td= candidate.profile.age
+        %td= candidate.profession_name
+        %td= candidate.profile.looking_for_work ? "Yes" : "No"

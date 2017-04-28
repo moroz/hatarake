@@ -2,6 +2,10 @@ class CandidatesController < ApplicationController
   before_action :find_user
   helper_method :user
 
+  def index
+    @candidates = Candidate.joins(:profile, :profession)
+  end
+
   def show
     if @user.profile.nil?
       redirect_to candidate_step2_path
@@ -41,6 +45,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:profession_name, profile_attributes: [:first_name, :last_name, :sex, :looking_for_work])
+    params.require(:candidate).permit(:profession_name, profile_attributes: [:first_name, :last_name, :sex, :looking_for_work, :birth_date])
   end
 end
