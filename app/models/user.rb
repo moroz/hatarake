@@ -4,6 +4,8 @@ class User < ApplicationRecord
   # :registerable, :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable, :rememberable
   has_one :avatar, dependent: :destroy
+  extend FriendlyId
+  friendly_id :name_for_slug, use: [:finders]
 
   def admin?
     self.type == "Admin"
@@ -16,4 +18,5 @@ class User < ApplicationRecord
   def candidate?
     self.type == "Candidate"
   end
+  
 end

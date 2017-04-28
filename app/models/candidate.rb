@@ -1,5 +1,9 @@
 class Candidate < User
   devise :registerable
+
+  extend FriendlyId
+  friendly_id :name_for_slug, use: [:slugged]
+
   has_many :skill_items, dependent: :destroy
   has_many :education_items, dependent: :destroy
   has_many :work_items, dependent: :destroy
@@ -15,7 +19,7 @@ class Candidate < User
 
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
-  
+
   def self.with_profession(profession)
     if profession.class == Profession
       where(profession: profession)
@@ -33,6 +37,17 @@ class Candidate < User
   end
 
   private
+
+  def name_for_slug
+    if profile.present?
+      [:full_name,
+       [:full_name, SecureRandom.hex(3)],
+       [:full_name, profile.age]
+      ] 
+    else
+      SecureRandom.hex(8)
+    end
+  end
 
   def find_profession
     if self.profession_name.present?
