@@ -67,10 +67,6 @@ class OffersController < ApplicationController
     @countries = Country.all.order(:name_en)
   end
 
-  def current_company
-    super || Company.first # only testing
-  end
-
   def offer_params
     params.require(:offer).permit(:title, :currency, :salary_min,
                                   :salary_max, :contact_email, :contact_phone, :location, :description, :country_id)
