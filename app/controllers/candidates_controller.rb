@@ -3,7 +3,7 @@ class CandidatesController < ApplicationController
   helper_method :user
 
   def index
-    @candidates = Candidate.joins(:profile, :profession)
+    @candidates = Candidate.joins(:profile, :profession).page(params[:page])
   end
 
   def show

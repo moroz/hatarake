@@ -47,6 +47,9 @@ gem 'cancan'
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
 
+# Pagination
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

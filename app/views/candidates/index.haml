@@ -1,5 +1,7 @@
 %h1 Browse candidates
 
+= paginate @candidates
+
 %table
   %thead
     %tr
@@ -15,3 +17,5 @@
         %td= candidate.profile.age
         %td= candidate.profession_name
         %td= candidate.profile.looking_for_work ? "Yes" : "No"
+
+= paginate @candidates

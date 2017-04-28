@@ -56,11 +56,12 @@ class OffersController < ApplicationController
   private
 
   def published_or_own
-    if company_signed_in?
+    scope = if company_signed_in?
       Offer.published_or_owned_by(current_company)
     else
       Offer.published
     end
+    scope = scope.page(params[:page])
   end
 
   def set_country_list

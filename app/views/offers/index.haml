@@ -1,5 +1,7 @@
 %h1 Job offers
 
+= paginate offers
+
 - if offers.any?
   %table
     %thead
@@ -13,5 +15,6 @@
 - else
   No offers yet :(
 
+= paginate offers
 - if can? :create, Offer
   = link_to t('offers.add_new_offer'), new_offer_path
