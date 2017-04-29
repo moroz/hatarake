@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428053513) do
+ActiveRecord::Schema.define(version: 20170429075013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,16 +38,25 @@ ActiveRecord::Schema.define(version: 20170428053513) do
     t.index ["user_id"], name: "index_candidate_profiles_on_user_id", using: :btree
   end
 
+  create_table "cities", primary_key: "geoname_id", id: :integer, force: :cascade do |t|
+    t.string "locale_code",            limit: 4,  null: false
+    t.string "continent_code",         limit: 4,  null: false
+    t.string "continent_name",         limit: 30, null: false
+    t.string "country_iso_code",       limit: 4,  null: false
+    t.string "country_name",           limit: 50, null: false
+    t.string "subdivision_1_iso_code", limit: 4
+    t.string "subdivision_1_name",     limit: 60
+    t.string "subdivision_2_iso_code", limit: 4
+    t.string "subdivision_2_name",     limit: 60
+    t.string "city_name",              limit: 60
+    t.string "metro_code",             limit: 10
+    t.string "time_zone",              limit: 40
+  end
+
   create_table "countries", force: :cascade do |t|
     t.string "iso"
     t.string "name_pl"
     t.string "name_en"
-  end
-
-  create_table "country_list", force: :cascade do |t|
-    t.string "iso",     limit: 2,  null: false
-    t.string "name_pl", limit: 64
-    t.string "name_en", limit: 64
   end
 
   create_table "education_items", force: :cascade do |t|
@@ -113,6 +122,13 @@ ActiveRecord::Schema.define(version: 20170428053513) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.integer "country_id"
+    t.string  "name_en"
+    t.string  "name_pl"
+    t.index ["country_id"], name: "index_provinces_on_country_id", using: :btree
+  end
+
   create_table "skill_items", force: :cascade do |t|
     t.integer  "level"
     t.integer  "candidate_id"
@@ -174,6 +190,7 @@ ActiveRecord::Schema.define(version: 20170428053513) do
   add_foreign_key "education_items", "organizations"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "offers", "countries"
+  add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
   add_foreign_key "work_items", "organizations"
   add_foreign_key "work_items", "users", column: "candidate_id"
