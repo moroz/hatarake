@@ -2,10 +2,9 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(function() {
+$('.offers.new, .offers.edit').ready(function() {
   document.getElementById('offer_country_id').addEventListener('change', function(e) {
     var country_id = e.target.value;
-    console.log("Field changed to " + country_id + "!");
     $.get('/api/provinces/' + country_id);
-  }, false)
+  }, false);
 });
