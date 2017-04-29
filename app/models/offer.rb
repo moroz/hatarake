@@ -4,6 +4,7 @@ class Offer < ApplicationRecord
 
   belongs_to :company, required: true
   belongs_to :country, required: true
+  belongs_to :province
   has_and_belongs_to_many :skills
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 10, maximum: 85 }
