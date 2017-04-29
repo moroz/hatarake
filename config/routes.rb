@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
+    get 'provinces/(:country_id)' => 'provinces#index', as: :provinces
   end
 
   devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }

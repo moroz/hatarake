@@ -66,10 +66,11 @@ class OffersController < ApplicationController
 
   def set_country_list
     @countries = Country.all.order(:name_en)
+    @provinces = Province.where(country_id: 166).order(:name_en) # load Polish voivodeships
   end
 
   def offer_params
     params.require(:offer).permit(:title, :currency, :salary_min,
-                                  :salary_max, :contact_email, :contact_phone, :location, :description, :country_id)
+                                  :salary_max, :contact_email, :contact_phone, :location, :description, :country_id, :province_id)
   end
 end

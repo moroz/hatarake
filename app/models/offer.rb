@@ -47,6 +47,13 @@ class Offer < ApplicationRecord
     self.update(published: false)
   end
 
+  def full_location
+    str = location
+    str << ", " + province.name_en if province.present? 
+    str << ", " + country.name_en if country.present?
+    str
+  end
+
   private
 
   def name_for_slug
