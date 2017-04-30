@@ -66,7 +66,11 @@ class OffersController < ApplicationController
 
   def set_country_list
     @countries = Country.all.order(:name_en)
-    @provinces = Province.where(country_id: 166).order(:name_en) # load Polish voivodeships
+    if offer.persisted?
+      @provinces = offer.country.provinces.order(:name_en)
+    else
+      @provinces = Province.where(country_id: 166).order(:name_en) # load Polish voivodeships
+    end
   end
 
   def offer_params

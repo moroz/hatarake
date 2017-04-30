@@ -11,7 +11,7 @@
   = f.input :contact_phone
   = f.input :location
   = f.label :country
-  = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, 166)
+  = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, offer.country_id || 166)
   = f.label :province
   = f.select :province_id, options_from_collection_for_select(@provinces, :id, :name_en)
   = f.input :description, as: :text, input_html: { rows: 15 }
