@@ -15,10 +15,10 @@
   .row
     .medium-6.columns
       = f.label :country, t('offers.fields.country')
-      = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, offer.country_id || 166)
+      = f.select :country_id, localized_collection(@countries, offer.country_id || 166)
     .medium-6.columns
       = f.label :province, label: t('offers.fields.province')
-      = f.select :province_id, options_from_collection_for_select(@provinces, :id, :name_en)
+      = f.select :province_id, localized_collection(@provinces)
   = f.input :location, label: t('offers.fields.location')
   %h5.text-center= t('offers.fields.description')
   .row

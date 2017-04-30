@@ -49,8 +49,8 @@ class Offer < ApplicationRecord
 
   def full_location
     str = location
-    str << ", " + province.name_en if province.present? 
-    str << ", " + country.name_en if country.present?
+    str << ", " + province.local_name if province.present? 
+    str << ", " + country.local_name if country.present?
     str
   end
 

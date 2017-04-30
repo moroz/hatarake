@@ -6,7 +6,6 @@ class ProvincesController < ApplicationController
       render json: {}, head: :no_content
     end
     @provinces = Province.
-      where(country_id: params[:country_id]).
-      order(:name_en)
+      where(country_id: params[:country_id]).local_order
   end
 end

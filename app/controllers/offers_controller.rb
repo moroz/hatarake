@@ -65,11 +65,11 @@ class OffersController < ApplicationController
   end
 
   def set_country_list
-    @countries = Country.all.order(:name_en)
+    @countries = Country.all.order(local_name)
     if offer.persisted?
-      @provinces = offer.country.provinces.order(:name_en)
+      @provinces = offer.country.provinces.local_order
     else
-      @provinces = Province.where(country_id: 166).order(:name_en) # load Polish voivodeships
+      @provinces = Province.where(country_id: 166).local_order
     end
   end
 
