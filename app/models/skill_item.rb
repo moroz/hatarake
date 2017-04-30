@@ -2,7 +2,7 @@ class SkillItem < ApplicationRecord
   attr_accessor :skill_name
 
   default_scope { includes(:skill).ordered }
-  scope :ordered, -> { order('level DESC', 'skills.name') }
+  scope :ordered, -> { order('level DESC', 'skills.name_en') }
 
   enum level: [:beginner, :intermediate, :good, :expert]
 
@@ -11,7 +11,7 @@ class SkillItem < ApplicationRecord
   validates :level, presence: true
   validates :skill, uniqueness: { scope: :candidate_id, if: -> { skill.present? } }
   before_validation :find_or_create_skill
-  delegate :name, to: :skill
+  delegate :name_en, to: :skill
 
   def level_key
     "skill_levels.#{level}"

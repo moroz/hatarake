@@ -26,7 +26,7 @@ RSpec.describe SkillItem, type: :model do
   end
 
   describe "auto-creating Skill" do
-    let(:skill) { FactoryGirl.create(:skill, name: "Bazz") }
+    let(:skill) { FactoryGirl.create(:skill, name_en: "Bazz") }
 
     context "when Skill doesn't exist" do
       it "creates a new Skill" do
@@ -37,7 +37,7 @@ RSpec.describe SkillItem, type: :model do
 
     context "when Skill exists" do
       it "reuses existing Skill" do
-        skill_item.skill_name = skill.name
+        skill_item.skill_name = skill.name_en
         expect { skill_item.save }.not_to change { Skill.count }
       end
     end

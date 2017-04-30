@@ -1,11 +1,13 @@
 module FindOrCreate
   extend ActiveSupport::Concern
 
-  def find_by_name(name)
-    self.where("name ILIKE :q OR name_pl ILIKE :q", q:name).first
-  end
+  class_methods do 
+    def find_by_name(name)
+      self.where("name_en ILIKE :q OR name_pl ILIKE :q", q:name).first
+    end
 
-  def find_or_create_by_name(name)
-    self.where("name ILIKE :q OR name_pl ILIKE :q", q:name).first || create(name: name)
+    def find_or_create_by_name(name)
+      self.where("name_en ILIKE :q OR name_pl ILIKE :q", q:name).first || create(name_en: name)
+    end
   end
 end

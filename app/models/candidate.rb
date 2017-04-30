@@ -25,7 +25,7 @@ class Candidate < User
       where(profession: profession)
     elsif profession.class == String
       joins(:profession).
-        where("professions.name = :q OR professions.name_pl = :q", q: profession)
+        where("professions.name_en = :q OR professions.name_pl = :q", q: profession)
     else
       nil
     end
@@ -33,7 +33,7 @@ class Candidate < User
 
   def profession_name
     return @profession_name if @profession_name.present?
-    profession.try(:name)
+    profession.try(:name_en)
   end
 
   private

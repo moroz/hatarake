@@ -6,7 +6,7 @@ FactoryGirl.define do
   end
 
   factory :skill do
-    name "Chinese"
+    name_en "Chinese"
     name_pl "Język chiński"
   end
 end

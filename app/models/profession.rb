@@ -1,6 +1,6 @@
 class Profession < ApplicationRecord
-  extend FindOrCreate
-  extend ActsLikeAutocompletable
+  include FindOrCreate
+  include ActsLikeAutocompletable
 
   has_many :candidates
 end

@@ -1,11 +1,13 @@
 module Localizable
   extend ActiveSupport::Concern
 
-  def self.local_order
-    if I18n.locale == :pl
-      order('name_pl, name_en')
-    else
-      order(:name_en)
+  class_methods do 
+    def local_order
+      if I18n.locale == :pl
+        order('name_pl, name_en')
+      else
+        order(:name_en)
+      end
     end
   end
 

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :organization do
-    name "MyString"
-    name_pl "MyString"
+    name_en "Jeronimo Martins Poland"
+    name_pl "Biedronka"
   end
 end
