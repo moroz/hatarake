@@ -1,4 +1,4 @@
-%h1= @title || "Create new offer"
+%h1= @title || t('.title')
 
 = simple_form_for offer do |f|
   = render partial: 'shared/errors', locals: { object: f.object }

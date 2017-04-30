@@ -1,0 +1,86 @@
+pl:
+  site_name: InJobs
+  default_title: InJobs
+  motto: 働けば自由になります
+  topbar:
+    jobs_de: Praca w Niemczech
+    jobs_pl: Praca w Polsce
+    jobs_abroad: Praca za granicą
+    jobs: Oferty pracy
+    sign_in: Logowanie
+    sign_up: Rejestracja
+    candidates: Kandydaci
+  registrations:
+    candidate_heading: "Zarejestruj się jako kandydat"
+    company_heading: "Zarejestruj się jako firma"
+  skill_levels:
+    beginner: Początkujący
+    intermediate: Średniozaawansowany
+    good: Dobry
+    expert: Ekspert
+  items:
+    education_categories:
+      ba: lic.
+      ma: mgr
+      engineer: inż.
+      phd: dr
+    work_categories:
+      internship: Praktyki
+      work: Praca
+      owner: Właściciel
+      founder: Założyciel
+  sexes:
+    male: Kobieta
+    female: Mężczyzna
+    apache_helicopter: Bojowy Helikopter Apache
+  currencies:
+    pln: Złoty polski
+    eur: Euro
+    chf: Frank szwajcarski
+    usd: Dolar US
+    gbp: Funt sterling
+  offers:
+    add_new_offer: Dodaj nową ofertę
+    new:
+      title: "Utwórz nową ofertę"
+    edit:
+      title: "Edycja oferty"
+    fields:
+      title: "Tytuł:"
+      currency: "Waluta:"
+      salary_min: "Pensja min.:"
+      salary_max: "Pensja max.:"
+      contact_email: "E-mail kontaktowy:"
+      contact_phone: "Numer kontaktowy:"
+      country: "Kraj:"
+      province: "Województwo lub prowincja:"
+      description: "Opis"
+      location: "Miejscowość:"
+    placeholders:
+      preview: W tym miejscu pojawi się podgląd opisu.
+    show:
+      delete: Usuń
+      publish: Opublikuj
+      unpublish: Wycofaj
+      edit: Edycja
+    salary:
+      min: "%{min}+ %{currency}"
+      max: "do %{max} %{currency}"
+      minmax: "%{min}-%{max} %{currency}"
+      mineqmax: "%{min} %{currency}"
+      none: "nie podano"
+  date:
+    formats:
+      by: "%B '%y"
+  activerecord:
+    attributes:
+      skill_item:
+        skill: ''
+    errors:
+      models:
+        skill_item:
+          attributes:
+            skill:
+              taken: "Nie możesz mieć dwóch umiejętności o tej samej nazwie."
+              blank: "Proszę wpisać prawidłową nazwę umiejętności."
+
