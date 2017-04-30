@@ -5,15 +5,28 @@
   = f.input :title
   = f.label :currency, "Currency:"
   = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last)
-  = f.input :salary_min, label: "Minimal salary"
-  = f.input :salary_max, label: "Maximal salary"
+  .row
+    .medium-6.columns
+      = f.input :salary_min, label: "Minimal salary"
+    .medium-6.columns
+      = f.input :salary_max, label: "Maximal salary"
   = f.input :contact_email
   = f.input :contact_phone
   = f.input :location
-  = f.label :country
-  = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, offer.country_id || 166)
-  = f.label :province
-  = f.select :province_id, options_from_collection_for_select(@provinces, :id, :name_en)
-  = f.input :description, as: :text, input_html: { rows: 15 }
-  = f.submit "Save", class: 'button success expanded'
+  .row
+    .medium-6.columns
+      = f.label :country
+      = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, offer.country_id || 166)
+    .medium-6.columns
+      = f.label :province
+      = f.select :province_id, options_from_collection_for_select(@provinces, :id, :name_en)
+  .row
+    .medium-6.columns
+      = f.input :description, as: :text, input_html: { rows: 15 }
+    .medium-6.columns#offer__preview.offer__preview
+  .row
+    .medium-6.columns
+      = link_to "Preview", "#", class: 'button primary expanded', id: 'preview_offer_btn'
+    .medium-6.columns
+      = f.submit "Save", class: 'button success expanded'
 
