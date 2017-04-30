@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170429080147) do
+ActiveRecord::Schema.define(version: 20170430144126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,21 +36,6 @@ ActiveRecord::Schema.define(version: 20170429080147) do
     t.datetime "updated_at",                 null: false
     t.integer  "sex",              limit: 2,              comment: "ISO/IEC 5218-compliant sex field, 1 male, 2 female"
     t.index ["user_id"], name: "index_candidate_profiles_on_user_id", using: :btree
-  end
-
-  create_table "cities", primary_key: "geoname_id", id: :integer, force: :cascade do |t|
-    t.string "locale_code",            limit: 4,  null: false
-    t.string "continent_code",         limit: 4,  null: false
-    t.string "continent_name",         limit: 30, null: false
-    t.string "country_iso_code",       limit: 4,  null: false
-    t.string "country_name",           limit: 50, null: false
-    t.string "subdivision_1_iso_code", limit: 4
-    t.string "subdivision_1_name",     limit: 60
-    t.string "subdivision_2_iso_code", limit: 4
-    t.string "subdivision_2_name",     limit: 60
-    t.string "city_name",              limit: 60
-    t.string "metro_code",             limit: 10
-    t.string "time_zone",              limit: 40
   end
 
   create_table "countries", force: :cascade do |t|
@@ -103,7 +88,7 @@ ActiveRecord::Schema.define(version: 20170429080147) do
   end
 
   create_table "organizations", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.string   "name_pl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -118,7 +103,7 @@ ActiveRecord::Schema.define(version: 20170429080147) do
   end
 
   create_table "professions", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.string   "name_pl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -142,7 +127,7 @@ ActiveRecord::Schema.define(version: 20170429080147) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.string   "name_pl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
