@@ -41,6 +41,23 @@ en:
     gbp: Pound Sterling
   offers:
     add_new_offer: Add new offer...
+    new:
+      title: "Create new offer"
+    edit:
+      title: "Edit offer"
+    fields:
+      title: "Title:"
+      currency: "Currency:"
+      salary_min: "Minimal salary:"
+      salary_max: "Maximal salary:"
+      contact_email: "Contact e-mail:"
+      contact_phone: "Contact phone:"
+      country: "Country:"
+      province: "Voivodeship or province:"
+      description: "Description"
+      location: "City or village:"
+    placeholders:
+      preview: A preview of your description will appear here.
     show:
       delete: Delete
       publish: Publish

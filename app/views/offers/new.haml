@@ -2,25 +2,25 @@
 
 = simple_form_for offer do |f|
   = render partial: 'shared/errors', locals: { object: f.object }
-  = f.input :title
-  = f.label :currency, "Currency:"
+  = f.input :title, label: t('offers.fields.title')
+  = f.label :currency, t('offers.fields.currency')
   = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last)
   .row
     .medium-6.columns
-      = f.input :salary_min, label: "Minimal salary"
+      = f.input :salary_min, label: t('offers.fields.salary_min')
     .medium-6.columns
-      = f.input :salary_max, label: "Maximal salary"
-  = f.input :contact_email
-  = f.input :contact_phone
-  = f.input :location
+      = f.input :salary_max, label: t('offers.fields.salary_max')
+  = f.input :contact_email, label: t('offers.fields.contact_email')
+  = f.input :contact_phone, label: t('offers.fields.contact_phone')
   .row
     .medium-6.columns
-      = f.label :country
+      = f.label :country, t('offers.fields.country')
       = f.select :country_id, options_from_collection_for_select(@countries, :id, :name_en, offer.country_id || 166)
     .medium-6.columns
-      = f.label :province
+      = f.label :province, label: t('offers.fields.province')
       = f.select :province_id, options_from_collection_for_select(@provinces, :id, :name_en)
-  %h5.text-center Description
+  = f.input :location, label: t('offers.fields.location')
+  %h5.text-center= t('offers.fields.description')
   .row
     .medium-6.columns
       = f.input :description, as: :text, input_html: { rows: 15 }, label: false
@@ -29,6 +29,6 @@
         - if offer.persisted?
           != textilize offer.description
         - else
-          A preview of your description will appear here.
+          = t('offers.placeholders.preview') 
   = f.submit "Save", class: 'button success expanded'
 
