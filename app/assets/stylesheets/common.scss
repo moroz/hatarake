@@ -99,4 +99,7 @@ textarea.text {
   font-family: monospace;
 }
 
-
+th[scope='row'] {
+  text-align: left;
+  width: 10rem;
+}

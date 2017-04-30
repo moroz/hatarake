@@ -3,26 +3,27 @@
   Job offer:
   = offer.title
 
-%table
+%table.unstriped.offer__data
   %tbody
     %tr
-      %td Company
+      %th{scope:'row'} Company
       %td= offer.company.name
     %tr
-      %td Location
+      %th{scope:'row'} Location
       %td= offer.full_location
     %tr
-      %td Salary
+      %th{scope:'row'} Salary
       %td= offer.salary
     %tr
-      %td Contact email:
+      %th{scope:'row'} Contact email:
       %td= offer.contact_email
     %tr
-      %td Contact phone:
+      %th{scope:'row'} Contact phone:
       %td= offer.contact_phone
 
 %h3 Description
-!= textilize offer.description
+.offer__description
+  != textilize offer.description
 
 - if can? :update, offer
   = link_to t('.edit'), edit_offer_path(offer), class: "button secondary"
