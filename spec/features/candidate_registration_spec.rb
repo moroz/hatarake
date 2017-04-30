@@ -49,7 +49,7 @@ RSpec.describe "Candidate registration" do
             choose "Yes"
           end
           within '.candidate_profile_sex' do
-            choose "Male"
+            choose I18n.t('sexes.male')
           end
 
           page.find("#candidate_profile_attributes_first_name").set("John")

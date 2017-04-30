@@ -30,8 +30,8 @@ pl:
       owner: Właściciel
       founder: Założyciel
   sexes:
-    male: Kobieta
-    female: Mężczyzna
+    male: Mężczyzna
+    female: Kobieta
     apache_helicopter: Bojowy Helikopter Apache
   currencies:
     pln: Złoty polski

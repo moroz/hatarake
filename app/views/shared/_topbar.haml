@@ -12,10 +12,10 @@
     .top-bar-right
       %ul.menu
         - if signed_in?
-          - if candidate?
+          - if candidate_signed_in?
             %li= link_to "Me", profile_path
             -# This could be changed to profile thumbnail
-          -elsif company?
+          -elsif company_signed_in?
             %li= link_to "Profile", company_profile_path
           -elsif admin?
             %li= link_to "Dashboard", "#"
