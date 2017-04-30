@@ -53,6 +53,8 @@ gem 'kaminari'
 # Friendly ids for models
 gem 'friendly_id'
 
+gem 'rails-i18n'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
