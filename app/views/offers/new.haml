@@ -20,13 +20,15 @@
     .medium-6.columns
       = f.label :province
       = f.select :province_id, options_from_collection_for_select(@provinces, :id, :name_en)
+  %h5.text-center Description
   .row
     .medium-6.columns
-      = f.input :description, as: :text, input_html: { rows: 15 }
-    .medium-6.columns#offer__preview.offer__preview
-  .row
-    .medium-6.columns
-      = link_to "Preview", "#", class: 'button primary expanded', id: 'preview_offer_btn'
-    .medium-6.columns
-      = f.submit "Save", class: 'button success expanded'
+      = f.input :description, as: :text, input_html: { rows: 15 }, label: false
+    .medium-6.columns.offer__preview
+      #offer__preview.offer__preview-contents
+        - if offer.persisted?
+          != textilize offer.description
+        - else
+          A preview of your description will appear here.
+  = f.submit "Save", class: 'button success expanded'
 
