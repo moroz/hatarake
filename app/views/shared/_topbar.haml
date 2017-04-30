@@ -11,6 +11,10 @@
           %li= link_to t('topbar.jobs_abroad'), offers_path
     .top-bar-right
       %ul.menu
+        - if current_locale == :pl
+          %li= link_to "EN", lang: "en"
+        -else
+          %li= link_to "PL", lang: "pl"
         - if signed_in?
           - if candidate_signed_in?
             %li= link_to "Me", profile_path
