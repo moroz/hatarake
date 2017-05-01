@@ -5,4 +5,5 @@ class Skill < ApplicationRecord
   validates :name_pl, uniqueness: true, allow_blank: true
   include FindOrCreate
   include ActsLikeAutocompletable
+  include Localizable
 end
