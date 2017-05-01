@@ -72,6 +72,22 @@ en:
   date:
     formats:
       by: "%B '%y"
+  candidates:
+    show:
+      looking_for_work:
+        'true': Looking for work
+        'false': Not looking for work
+      change_picture: Change profile picture...
+      change_data: Change personal data
+      skills: Skills
+      edit_skills: "Edit your skills..."
+      no_skills: No skills.
+      education: "Education"
+      no_education: No information about education.
+      edit_education: "Edit your education..."
+      work_experience: "Work experience"
+      no_work_experience: No information about work experience.
+      edit_work: "Edit your work experience..."
   activerecord:
     attributes:
       skill_item:

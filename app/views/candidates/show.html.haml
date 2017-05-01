@@ -6,42 +6,40 @@
       .medium-8.columns
         %h2= @user.display_name
         %p.candidate__sex= t('sexes.' + @user.sex)
-        %p.candidate__profession= @user.profession_name if @user.profession.present?
+        %p.candidate__profession= @user.profession.local_name if @user.profession.present?
         %p.candidate__looking_for_work
-          - if @user.looking_for_work
-            Looking for work
-          -else
-            Not looking for work
-        - if can? :edit, @user
-          = section_link "Change profile picture...", new_avatar_path, :small
-          = section_link "Change personal data", candidate_step2_path, :small
+          = t('.looking_for_work.' + @user.looking_for_work.to_s)
 
-    = profile_section "Skills" do
+        - if can? :edit, @user
+          = section_link t('.change_picture'), new_avatar_path, :small
+          = section_link t('.change_data'), candidate_step2_path, :small
+
+    = profile_section t('.skills') do
       - if @skill_items.any?
         %table
           %tbody#skill_items
             = render @skill_items
       - else
-        No skills.
+        = t('.no_skills')
       - if can? :edit, @user
-        = section_link "Edit your skills...", profile_edit_skills_path
+        = section_link t('.edit_skills'), profile_edit_skills_path
 
-    = profile_section "Education" do
+    = profile_section t('.education') do
       - if @user.education_items.any?
         %table
           %tbody
             = render @user.education_items
       - else
-        No information about education.
+        = t('.no_education')
       - if can? :edit, @user
-        = section_link "Edit your education...", new_education_item_path
+        = section_link t('.edit_education'), new_education_item_path
 
-    = profile_section "Work experience" do
+    = profile_section t('.work_experience') do
       - if @user.work_items.any?
         %table
           %tbody
             = render @user.work_items
       - else
-        No information about work experience.
+        = t('.no_work_experience') 
       - if can? :edit, @user
-        = section_link "Edit your work experience...", new_work_item_path
+        = section_link t('.edit_work'), new_work_item_path
