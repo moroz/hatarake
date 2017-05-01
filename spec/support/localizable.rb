@@ -46,8 +46,12 @@ RSpec.shared_examples "acts like localizable" do
         end
 
         context "when no name_pl present" do
-          it "orders by name_en" do
+          let!(:b) { create_item "CCCC", nil }
+          let!(:a) { create_item "BBBB", nil }
+          let!(:c) { create_item "AAAA", nil }
 
+          it "orders by name_en" do
+            expect(described_class.local_order.to_a).to eq([c,a,b])
           end
         end
       end

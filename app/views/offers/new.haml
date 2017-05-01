@@ -18,7 +18,7 @@
       = f.select :country_id, localized_collection(@countries, offer.country_id || 166)
     .medium-6.columns
       = f.label :province, label: t('offers.fields.province')
-      = f.select :province_id, localized_collection(@provinces)
+      = f.select :province_id, localized_collection(@provinces, offer.province_id)
   = f.input :location, label: t('offers.fields.location')
   %h5.text-center= t('offers.fields.description')
   .row
