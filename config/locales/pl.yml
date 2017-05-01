@@ -2,6 +2,8 @@ pl:
   site_name: InJobs
   default_title: InJobs
   motto: 働けば自由になります
+  'true': Tak
+  'false': Nie
   topbar:
     jobs_de: Praca w Niemczech
     jobs_pl: Praca w Polsce
@@ -88,6 +90,12 @@ pl:
       edit_skills: Edytuj umiejętności
       edit_work: Edytuj doświadczenie zawodowe
       edit_education: Edytuj wykształcenie
+    index:
+      title: Przegląd kandydatów
+      name: Imię i nazwisko
+      age: Wiek
+      profession: Zawód
+      looking_for_work: Szuka pracy
   activerecord:
     attributes:
       skill_item:
