@@ -21,6 +21,7 @@
       = f.select :province_id, localized_collection(@provinces, offer.province_id)
   = f.input :location, label: t('offers.fields.location')
   %h5.text-center= t('offers.fields.description')
+  = render 'shared/textile_info'
   .row
     .medium-6.columns
       = f.input :description, as: :text, input_html: { rows: 15 }, label: false
