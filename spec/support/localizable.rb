@@ -11,13 +11,17 @@ RSpec.shared_examples "acts like localizable" do
   end
 
   describe "class methods" do
+    before(:each) do
+      DatabaseCleaner.clean_with :truncation
+    end
+
     describe "local_order" do
       let!(:b) { create_item "BBBB" }
       let!(:c) { create_item "CCCC" }
       let!(:a) { create_item "AAAA" }
 
       context "when locale is set to :en" do
-        before do
+        before(:each) do
           I18n.locale = :en
         end
 
@@ -27,7 +31,7 @@ RSpec.shared_examples "acts like localizable" do
       end
 
       context "when locale is set to :pl" do
-        before do
+        before(:each) do
           I18n.locale = :pl
         end
 
