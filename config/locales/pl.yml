@@ -43,6 +43,10 @@ pl:
     gbp: Funt sterling
   offers:
     add_new_offer: Dodaj nową ofertę
+    table:
+      title: "Tytuł"
+      salary: "Wynagrodzenie"
+      location: "Lokalizacja"
     new:
       title: "Utwórz nową ofertę"
     edit:

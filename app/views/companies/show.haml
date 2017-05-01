@@ -7,7 +7,14 @@
 
 = profile_section t('.offers') do
   - if company.offers.any?
-    = render company.offers
+    %table
+      %thead
+        %tr
+          %th= t('offers.table.title')
+          %th= t('offers.table.salary')
+          %th= t('offers.table.location')
+      %tbody
+        = render company.offers
   - else
     t('.no_offers')
 

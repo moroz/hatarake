@@ -43,6 +43,10 @@ en:
     gbp: Pound Sterling
   offers:
     add_new_offer: Add new offer...
+    table:
+      title: "Title"
+      salary: "Salary"
+      location: "Location"
     new:
       title: "Create new offer"
     edit:
@@ -96,6 +100,11 @@ en:
       age: Age
       profession: Profession
       looking_for_work: Looking for work
+  companies:
+    show:
+      change_picture: "Change profile picture..." 
+      offers: Job offers
+      no_offers: No offers.
   activerecord:
     attributes:
       skill_item:
