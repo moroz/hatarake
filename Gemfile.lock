@@ -93,6 +93,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    database_cleaner (1.5.3)
     db_fixtures_dump (0.1.1)
     debug_inspector (0.0.2)
     decent_exposure (3.0.2)
@@ -353,6 +354,7 @@ DEPENDENCIES
   capistrano-rails
   capybara
   coffee-rails (~> 4.2)
+  database_cleaner
   db_fixtures_dump
   decent_exposure
   devise
