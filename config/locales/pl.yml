@@ -96,6 +96,11 @@ pl:
       age: Wiek
       profession: Zawód
       looking_for_work: Szuka pracy
+  companies:
+    show:
+      change_picture: Zdjęcie profilowe
+      offers: Oferty pracy
+      no_offers: Brak ofert.
   activerecord:
     attributes:
       skill_item:

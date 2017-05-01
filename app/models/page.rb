@@ -1,5 +1,6 @@
 class Page < ApplicationRecord
   validates :permalink, uniqueness: true, presence: true
+  validates :body_en, presence: true
   before_save :strip_lines
 
   def to_param
