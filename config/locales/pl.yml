@@ -41,6 +41,10 @@ pl:
     chf: Frank szwajcarski
     usd: Dolar US
     gbp: Funt sterling
+    czk: Korona czeska
+    nok: Korona norweska
+    sek: Korona szwedzka
+    dkk: Korona duńska
   offers:
     add_new_offer: Dodaj nową ofertę
     table:

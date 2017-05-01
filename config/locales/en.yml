@@ -41,6 +41,10 @@ en:
     chf: Swiss Frank
     usd: US Dollar
     gbp: Pound Sterling
+    czk: Czech koruna
+    nok: Norwegian krone
+    sek: Swedish krone
+    dkk: Danish krone
   offers:
     add_new_offer: Add new offer...
     table:

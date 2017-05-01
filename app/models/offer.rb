@@ -8,7 +8,7 @@ class Offer < ApplicationRecord
   has_and_belongs_to_many :skills
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 10, maximum: 85 }
-  CURRENCIES = %w( pln eur chf usd gbp )
+  CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
   validates :currency, inclusion: { in: CURRENCIES }
 
   scope :published, -> { where(published: true) }
