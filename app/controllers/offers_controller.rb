@@ -12,7 +12,7 @@ class OffersController < ApplicationController
   end
 
   def edit
-    @title = "Editing offer: #{offer.title}"
+    @title = t('.title') + offer.title
     render 'new'
   end
   

@@ -53,8 +53,9 @@ pl:
       location: "Lokalizacja"
     new:
       title: "Utwórz nową ofertę"
+      heading: "Utwórz ofertę"
     edit:
-      title: "Edycja oferty"
+      title: "Edycja oferty: "
     fields:
       title: "Tytuł:"
       currency: "Waluta:"
@@ -66,6 +67,7 @@ pl:
       province: "Województwo lub prowincja:"
       description: "Opis"
       location: "Miejscowość:"
+      salary_help_text: "Jeżeli pensja jest stała, proszę wpisać tę samą liczbę w obu polach."
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.
     show:

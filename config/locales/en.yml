@@ -52,9 +52,11 @@ en:
       salary: "Salary"
       location: "Location"
     new:
+      heading: "Create new offer"
       title: "Create new offer"
     edit:
-      title: "Edit offer"
+      heading: "Edit offer"
+      title: "Edit offer: "
     fields:
       title: "Title:"
       currency: "Currency:"
@@ -66,6 +68,7 @@ en:
       province: "Voivodeship or province:"
       description: "Description"
       location: "City or village:"
+      salary_help_text: "If salary is a fixed value, please put the same value in both fields."
     placeholders:
       preview: A preview of your description will appear here.
     show:

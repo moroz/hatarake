@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
-  helper_method :current_user, :admin?, :current_locale, :local_name
+  helper_method :current_user, :admin?, :current_locale, :local_name, :page_title
 
   def admin?
     current_user_is_a?("Admin")
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def local_name
     "name_#{current_locale}".to_sym
+  end
+
+  def page_title
+    @title || I18n.t('.title', default: :default_title)
   end
 
   private
