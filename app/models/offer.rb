@@ -62,4 +62,9 @@ class Offer < ApplicationRecord
       [:title, :location, SecureRandom.hex(3)]
     ]
   end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || title_changed? || location_changed?
+  end
+
 end
