@@ -14,7 +14,7 @@
           = section_link t('.change_picture'), new_avatar_path, :small
           = section_link t('.change_data'), candidate_step2_path, :small
 
-    = profile_section t('.skills') do
+    = profile_section t('.skills'), color: :red do
       - if @skill_items.any?
         %table
           %tbody#skill_items
@@ -24,7 +24,7 @@
       - if can? :edit, @user
         = section_link t('.edit_skills'), profile_edit_skills_path
 
-    = profile_section t('.education') do
+    = profile_section t('.education'), color: :green do
       - if @user.education_items.any?
         %table
           %tbody
@@ -34,7 +34,7 @@
       - if can? :edit, @user
         = section_link t('.edit_education'), new_education_item_path
 
-    = profile_section t('.work_experience') do
+    = profile_section t('.work_experience'), color: :blue do
       - if @user.work_items.any?
         %table
           %tbody

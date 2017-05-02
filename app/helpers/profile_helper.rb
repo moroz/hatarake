@@ -1,8 +1,13 @@
 module ProfileHelper
   def profile_section(heading = "Foobar", options = {}, &block)
-    content_tag :section, class: 'row row--padding row--border row--margin' do
-      concat content_tag :h3, heading if heading
-      concat capture(&block)
+    section_classes = 'row profile-section--padding profile-section--border profile-section--margin' 
+    header_classes = 'profile-section__heading' 
+    if options[:color]
+      section_classes << " profile-section--color-#{options[:color]}"
+    end
+    content_tag :section, class: section_classes do
+      concat content_tag :h3, heading, class: header_classes if heading
+      concat content_tag(:div, capture(&block), class: 'profile-section__content')
     end
   end
 
