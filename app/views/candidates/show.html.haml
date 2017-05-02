@@ -5,9 +5,12 @@
         = avatar_for current_user
       .medium-8.columns
         %h2= @user.display_name
-        %p.candidate__sex= t('sexes.' + @user.sex)
-        %p.candidate__profession= @user.profession.local_name if @user.profession.present?
-        %p.candidate__looking_for_work
+        %p
+          %span.candidate__sex= t('sexes.' + @user.sex) + ","
+          %span.candidate__age= @user.profile.age
+        %p
+          %span.candidate__profession= @user.profession.local_name + "," if @user.profession.present?
+          %span.candidate__looking_for_work
           = t('.looking_for_work.' + @user.looking_for_work.to_s)
 
         - if can? :edit, @user
