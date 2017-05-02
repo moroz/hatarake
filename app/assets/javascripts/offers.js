@@ -9,8 +9,18 @@ function safe_textilize(text) {
 
 $('.offers.new, .offers.edit').ready(function() {
   document.getElementById('offer_country_id').addEventListener('change', function(e) {
-    var country_id = e.target.value;
-    $.get('/api/provinces/' + country_id);
+    var countryId = e.target.value;
+    $.get('/api/provinces/' + countryId);
+  }, false);
+
+  document.getElementById('offer_province_id').addEventListener('change', function(e) {
+    var id = e.target.value;
+    var locationInput = document.getElementById('offer_location');
+    if(id) {
+      locationInput.disabled = false;
+    } else {
+      locationInput.disabled = true;
+    }
   }, false);
 
   //  changes mouse cursor when highlighting loawer right of box
