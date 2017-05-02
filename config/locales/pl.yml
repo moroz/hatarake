@@ -79,6 +79,8 @@ pl:
       minmax: "%{min}-%{max} %{currency}"
       mineqmax: "%{min} %{currency}"
       none: "nie podano"
+    provinces:
+      blank: Cały kraj
   date:
     formats:
       by: "%B '%y"

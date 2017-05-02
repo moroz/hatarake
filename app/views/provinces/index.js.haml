@@ -1,2 +1,2 @@
 :plain
-  document.getElementById('offer_province_id').innerHTML = '#{j localized_collection(@provinces)}';
+  document.getElementById('offer_province_id').innerHTML = '#{j localized_collection(@provinces, blank: t('offers.provinces.blank'))}';
