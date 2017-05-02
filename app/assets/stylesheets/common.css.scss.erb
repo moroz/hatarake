@@ -53,13 +53,21 @@ select {
   padding: 0.8rem;
 }
 
-<% %w( red blue green ).each do |color| %>
+<% %w( red blue green maroon ).each do |color| %>
+  <% bg = "$profile-section-#{color}-bg" %>
   .profile-section--color-<%= color %> {
     .profile-section__heading {
-      background-color: $profile-section-<%= color %>-bg;
+      background-color: <%= bg %>;
       color: white;
     }
-    border-color: $profile-section-<%= color %>-bg;
+    border-color: <%= bg %>;
+    a.button {
+      background-color: <%= bg %>;
+      &:hover {
+        background-color: lighten(<%= bg %>, 14);
+        transition: background-color 0.3s fade;
+      }
+    }
   }
 <% end %>
 
