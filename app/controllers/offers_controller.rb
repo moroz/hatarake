@@ -5,6 +5,12 @@ class OffersController < ApplicationController
   before_action :set_country_list, only: [:new, :edit]
   authorize_resource
 
+  def show
+    if request.path != offer_path(offer)
+      redirect_to offer, status: :moved_permanently
+    end
+  end
+
   def edit
     @title = "Editing offer: #{offer.title}"
     render 'new'

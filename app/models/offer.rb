@@ -1,6 +1,6 @@
 class Offer < ApplicationRecord
   extend FriendlyId
-  friendly_id :name_for_slug, use: [:slugged, :finders]
+  friendly_id :name_for_slug, use: [:slugged, :finders, :history]
 
   belongs_to :company, required: true
   belongs_to :country, required: true
