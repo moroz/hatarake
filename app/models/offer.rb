@@ -48,10 +48,11 @@ class Offer < ApplicationRecord
   end
 
   def full_location
-    str = location
-    str << ", " + province.local_name if province.present? 
-    str << ", " + country.local_name if country.present?
-    str
+    if province.present?
+      [location, province.local_name, country.local_name].join(', ')
+    else
+      country.local_name + " – " + I18n.t('offers.provinces.blank')
+    end
   end
 
   private
