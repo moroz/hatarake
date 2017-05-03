@@ -21,11 +21,6 @@ en:
     good: Good
     expert: Expert
   items:
-    education_categories:
-      ba: B.A.
-      ma: M.A.
-      engineer: Engineer
-      phd: Ph.D.
     work_categories:
       internship: Internship
       work: Work
@@ -109,6 +104,22 @@ en:
       age: Age
       profession: Profession
       looking_for_work: Looking for work
+  education_items:
+    index:
+      heading: Edit education
+      timespan: Timespan
+      description: Description
+      add_new: Add a new entry
+    fields:
+      category: "Type of education:"
+      specialization: "Specialization or field of studies:"
+      submit: "Add entry"
+    categories:
+      ba: B.A.
+      ma: M.A.
+      engineer: Engineer
+      phd: Ph.D.
+
   companies:
     show:
       change_picture: "Change profile picture..." 

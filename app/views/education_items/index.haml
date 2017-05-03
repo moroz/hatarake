@@ -1,24 +1,22 @@
-%h1 Edit education and work experience
-
 = link_to "Back to profile", profile_path
+%h1= t('.heading')
 
-%h4 Your education
 %table
   %thead
     %tr
-      %td Timespan
-      %td Description
-      %td Actions
+      %td= t('.timespan')
+      %td= t('.description')
+      %td
   %tbody
     - for item in education_items
       %tr{id: dom_id(item)}
         = render partial: 'shared/cv_item_w_actions', locals: { item: item }
 
-%h4 Add a new entry
+%h4= t('.add_new')
 = simple_form_for @education_item || education_items.new do |f|
   = render partial: 'shared/errors', locals: { object: f.object }
   = render partial: 'shared/cv_date_fields', locals: { prefix: "education_item", f: f }
-  = f.select :category, options_from_collection_for_select(I18n.t('items.education_categories'), :first, :last), label: "Typeof education:"
+  = f.select :category, options_from_collection_for_select(I18n.t('education_items.categories'), :first, :last), label: t('education_items.fields.category')
   = f.input :organization_name
-  = f.input :specialization, label: "Specialization or field of studies:"
-  = f.submit "Add entry", class: 'button primary expanded'
+  = f.input :specialization, label: t('education_items.fields.specialization')
+  = f.submit t('education_items.fields.submit'), class: 'button primary expanded'

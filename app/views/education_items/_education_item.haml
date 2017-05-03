@@ -6,9 +6,7 @@
   - else
     present
 %td
-  %span.education_item__category= t('items.education_categories.' + education_item.category)
-  in 
-  %span.education_item__specialization= education_item.specialization
-  at
-  %span.education_item__organization_name= education_item.organization.name
+  %span.education_item__category= t("education_items.categories.#{education_item.category}") + ","
+  %span.education_item__specialization= education_item.specialization+","
+  %span.education_item__organization_name= education_item.organization.local_name
 
