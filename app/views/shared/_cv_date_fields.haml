@@ -1,15 +1,2 @@
-.row
-  .large-2.columns
-    = f.label "Starting date"
-  .large-5.columns
-    = select_month(Date.today, prefix: prefix, field_name: "start_month")
-  .large-5.columns
-    = select_year(Date.today, prefix: prefix, field_name: "start_year", start_year: 1980, end_year: Date.today.year)
-.row
-  .large-2.columns
-    = f.label "End date (leave out if ongoing)"
-  .large-5.columns
-    = select_month(nil, prefix: prefix, field_name: "end_month", include_blank: true)
-  .large-5.columns
-    = select_year(nil, prefix: prefix, field_name: "end_year", start_year: 1980, end_year: Date.today.year, include_blank: true)
-
+= f.input :start_date, start_year: 20.years.ago.year, end_year: Time.now.utc.year, discard_day: true
+= f.input :end_date, start_year: 20.years.ago.year, end_year: Time.now.utc.year, discard_day: true, include_blank: true

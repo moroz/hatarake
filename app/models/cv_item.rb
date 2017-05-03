@@ -3,7 +3,7 @@ class CvItem < ApplicationRecord
 
   belongs_to :candidate
   belongs_to :organization
-  attr_accessor :start_month, :start_year, :end_month, :end_year, :organization_name
+  attr_accessor :organization_name
 
   CATEGORIES = %w( internship ba ma engineer phd work owner founder )
   # This field was meant to be called type, but that's reserved
@@ -15,18 +15,9 @@ class CvItem < ApplicationRecord
   validates_presence_of :start_date, :category, :candidate 
   validates :category, inclusion: { in: CATEGORIES }
 
-  before_validation :make_dates, :swap_dates, :find_or_create_organization
+  before_validation :swap_dates, :find_or_create_organization
 
   private
-
-  def make_dates
-    if start_month.present? && start_year.present?
-      self.start_date = Date.new(start_year.to_i, start_month.to_i)
-    end
-    if end_month.present? && end_year.present?
-      self.end_date = Date.new(end_year.to_i, end_month.to_i)
-    end
-  end
 
   def swap_dates
     if end_date.present? && start_date.present? && end_date < start_date
