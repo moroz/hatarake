@@ -2,7 +2,7 @@
   .medium-9.columns
     = profile_section nil, color: :maroon do
       .medium-4.columns
-        = avatar_for current_user
+        = avatar_for @user, :thumb
       .medium-8.columns
         %h2= @user.display_name
         %p

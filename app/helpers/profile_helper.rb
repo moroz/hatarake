@@ -11,10 +11,10 @@ module ProfileHelper
     end
   end
 
-  def avatar_for(user, size = :large)
+  def avatar_for(user, size = :thumb)
     url = 'avatar.png'
     if user.avatar.present?
-      url = user.avatar.image.url
+      url = user.avatar.image.url(size)
     end
     content_tag :div, nil, class: "avatar avatar--#{size}", style: "background-image: url(#{url})"
   end
