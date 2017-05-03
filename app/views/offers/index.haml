@@ -2,21 +2,22 @@
 
 %section.advanced_search.callout
   %h4= t('.advanced_search')
-  = simple_form_for offers_path, method: :get do |f|
+  = form_for offers_path, method: :get do |f|
     .row
       .medium-6.columns
         = f.label :cid, t('.country')
-        = f.select :cid, localized_collection(@countries, 166)
+        = f.select :cid, localized_collection(@countries, 166), {}, name: 'cid'
       .medium-6.columns
         = f.label :pid, t('.province')
-        = f.select :pid, localized_collection(@provinces, @provinces.first.id, blank: t('offers.provinces.blank'))
+        = f.select :pid, localized_collection(@provinces, @provinces.first.id, blank: t('offers.provinces.blank')), {}, name: 'pid'
     .row
       .medium-6.columns
-        = f.input :smin, label: t('.salary_min')
+        = f.label :smin, t('.salary_min')
+        = f.text_field :smin, name: 'smin'
       .medium-6.columns
         = f.label :cur, t('.currency')
-        = f.select :cur, options_from_collection_for_select(I18n.t('currencies'), :first, :last)
-    = f.submit t('.submit'), class: 'button expanded success'
+        = f.select :cur, options_from_collection_for_select(I18n.t('currencies'), :first, :last), {}, name: 'cur'
+    = f.submit t('.submit'), class: 'button expanded success', name: nil
 
 = paginate offers
 
