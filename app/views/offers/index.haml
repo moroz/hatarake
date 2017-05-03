@@ -1,20 +1,23 @@
 %h1 Job offers
 
+%section.filter_search.callout
+  %h4= t('.filters')
+
 = paginate offers
 
 - if offers.any?
-  %table
+  %table.unstriped.hover
     %thead
-      %td Title
-      %td Company
-      %td Salary
-      %td Location
+      %td= t('offers.table.title')
+      %td= t('offers.table.company')
+      %td= t('offers.table.salary')
+      %td= t('offers.table.location')
       %tbody
         - for offer in offers
           = render partial: 'offers/offer_row', locals: { offer: offer }
 - else
-  No offers yet :(
+  = t('.no_offers')
 
 = paginate offers
 - if can? :create, Offer
-  = link_to t('offers.add_new_offer'), new_offer_path
+  = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

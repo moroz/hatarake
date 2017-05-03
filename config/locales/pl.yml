@@ -46,9 +46,13 @@ pl:
       title: "Tytuł"
       salary: "Wynagrodzenie"
       location: "Lokalizacja"
+      company: "Firma"
     new:
       title: "Utwórz nową ofertę"
       heading: "Utwórz ofertę"
+    index:
+      no_offers: "Brak ofert spełniających kryteria wyszukiwania."
+      filters: "Filtruj oferty"
     edit:
       title: "Edycja oferty: "
     fields:

@@ -46,9 +46,13 @@ en:
       title: "Title"
       salary: "Salary"
       location: "Location"
+      company: "Company"
     new:
       heading: "Create new offer"
       title: "Create new offer"
+    index:
+      no_offers: "No offers found for the search criteria entered."
+      filters: "Filter results"
     edit:
       heading: "Edit offer"
       title: "Edit offer: "

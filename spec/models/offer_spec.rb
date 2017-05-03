@@ -45,7 +45,7 @@ RSpec.describe Offer, type: :model do
   describe "salary" do
     def salary_string(offer, format)
       I18n.t('offers.salary.' + format, min: offer.salary_min,
-             max: offer.salary_max, currency: offer.currency)
+             max: offer.salary_max, currency: offer.currency.upcase)
     end
     context "when min and max present" do
       context "when min == max" do

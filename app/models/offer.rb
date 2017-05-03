@@ -32,7 +32,7 @@ class Offer < ApplicationRecord
         'none'
       end
     end
-    I18n.t("offers.salary.#{format}", min: salary_min, max: salary_max, currency: currency)
+    I18n.t("offers.salary.#{format}", min: salary_min, max: salary_max, currency: currency.upcase)
   end
 
   def publish
@@ -52,6 +52,14 @@ class Offer < ApplicationRecord
       [location, province.local_name, country.local_name].join(', ')
     else
       country.local_name + " – " + I18n.t('offers.provinces.blank')
+    end
+  end
+
+  def short_location
+    if location.present?
+      [location, country.local_name].join(', ')
+    else
+      country.local_name
     end
   end
 
