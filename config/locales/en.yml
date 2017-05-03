@@ -52,7 +52,12 @@ en:
       title: "Create new offer"
     index:
       no_offers: "No offers found for the search criteria entered."
-      filters: "Filter results"
+      advanced_search: "Advanced search"
+      country: Country
+      province: Province/area
+      salary_min: Minimal salary
+      currency: Currency
+      submit: "Search"
     edit:
       heading: "Edit offer"
       title: "Edit offer: "

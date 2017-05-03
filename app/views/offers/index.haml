@@ -1,7 +1,22 @@
 %h1 Job offers
 
-%section.filter_search.callout
-  %h4= t('.filters')
+%section.advanced_search.callout
+  %h4= t('.advanced_search')
+  = simple_form_for offers_path, method: :get do |f|
+    .row
+      .medium-6.columns
+        = f.label :cid, t('.country')
+        = f.select :cid, localized_collection(@countries, 166)
+      .medium-6.columns
+        = f.label :pid, t('.province')
+        = f.select :pid, localized_collection(@provinces, @provinces.first.id, blank: t('offers.provinces.blank'))
+    .row
+      .medium-6.columns
+        = f.input :smin, label: t('.salary_min')
+      .medium-6.columns
+        = f.label :cur, t('.currency')
+        = f.select :cur, options_from_collection_for_select(I18n.t('currencies'), :first, :last)
+    = f.submit t('.submit'), class: 'button expanded success'
 
 = paginate offers
 

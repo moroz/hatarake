@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   expose :offer, scope: -> { Offer.friendly }
   expose :offers, -> { published_or_own }
 
-  before_action :set_country_list, only: [:new, :edit]
+  before_action :set_country_list, only: [:new, :edit, :index]
   authorize_resource
 
   def show
@@ -72,7 +72,7 @@ class OffersController < ApplicationController
 
   def set_country_list
     @countries = Country.all.order(local_name)
-    if offer.persisted?
+    if offer.present? && offer.persisted?
       @provinces = offer.country.provinces.local_order
     else
       @provinces = Province.where(country_id: 166).local_order

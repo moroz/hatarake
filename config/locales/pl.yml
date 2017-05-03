@@ -52,7 +52,12 @@ pl:
       heading: "Utwórz ofertę"
     index:
       no_offers: "Brak ofert spełniających kryteria wyszukiwania."
-      filters: "Filtruj oferty"
+      advanced_search: "Wyszukiwanie zaawansowane"
+      country: Kraj
+      province: Rejon
+      salary_min: "Pensja minimalna"
+      currency: Waluta
+      submit: "Szukaj ofert"
     edit:
       title: "Edycja oferty: "
     fields:
