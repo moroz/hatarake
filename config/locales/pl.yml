@@ -58,6 +58,7 @@ pl:
       salary_min: "Pensja minimalna"
       currency: Waluta
       submit: "Szukaj ofert"
+      term: "Wyszukiwana fraza"
     edit:
       title: "Edycja oferty: "
     fields:

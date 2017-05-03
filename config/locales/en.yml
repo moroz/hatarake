@@ -58,6 +58,7 @@ en:
       salary_min: Minimal salary
       currency: Currency
       submit: "Search"
+      term: "Search term"
     edit:
       heading: "Edit offer"
       title: "Edit offer: "

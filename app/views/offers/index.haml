@@ -3,6 +3,8 @@
 %section.advanced_search.callout
   %h4= t('.advanced_search')
   = form_for offers_path, method: :get do |f|
+    = f.label :q, t('.term')
+    = f.text_field :q, name: 'q'
     .row
       .medium-6.columns
         = f.label :cid, t('.country')
