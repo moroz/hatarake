@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   end
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2
-  get 'profile', to: 'candidates#show', as: :profile
+  get 'profile', to: 'profile#profile'
   get '/company', to: 'companies#show', as: :company_profile
   resources :pages
   resources :education_items
   resources :work_items
+  resources :companies, only: :show
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions

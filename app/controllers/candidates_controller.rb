@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
-  before_action :find_user
-  helper_method :user
+  before_action :find_candidate
+  helper_method :candidate
   authorize_resource
 
   def index
@@ -8,14 +8,13 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    if @user.profile.nil?
+    if @candidate.profile.nil?
       redirect_to candidate_step2_path
     end
-    @skill_items = @user.skill_items
   end
 
   def update
-    if current_user.update(candidate_params)
+    if current_candidate.update(candidate_params)
       flash[:success] = "Your profile has been saved."
       redirect_to profile_path
     else
@@ -24,24 +23,24 @@ class CandidatesController < ApplicationController
   end
 
   def edit_skills
-    @skill_items = current_user.skill_items
+    @skill_items = current_candidate.skill_items
   end
 
   def step2
-    @user.build_profile unless @user.profile.present?
+    @candidate.build_profile unless @candidate.profile.present?
   end
 
   private
 
-  def user
-    @user ||= find_user
+  def candidate
+    @candidate ||= find_candidate
   end
 
-  def find_user
+  def find_candidate
     if params[:id].present?
-      @user = User.find(params[:id])
+      @candidate = Candidate.find(params[:id])
     elsif signed_in?
-      @user = current_user
+      @candidate = current_candidate
     end
   end
 
