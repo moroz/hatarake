@@ -1,6 +1,7 @@
 %h1 Job offers
 
-= render 'advanced_search'
+= render partial: 'basic_search'
+= render partial: 'advanced_search', locals: {hidden: true}
 = paginate offers
 
 - if offers.any?

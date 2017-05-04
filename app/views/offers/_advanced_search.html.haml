@@ -1,4 +1,6 @@
-%section.advanced_search.callout
+- classes = 'advanced_search callout'
+- classes << ' hide' if hidden
+%section{class: classes}
   .row
     .medium-9.columns
       %h4= t('offers.index.advanced_search')

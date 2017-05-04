@@ -1,0 +1,10 @@
+- classes = 'basic_search callout'
+- classes << ' hide' if defined?(hidden) && hidden
+%section{class: classes}
+  %h4= t('offers.index.basic_search')
+  = form_for offers_path, method: :get do |f|
+    .input-group
+      = f.text_field :q, class: 'input-group-field'
+      .input-group-button
+        = f.submit 'Submit', class: 'button'
+  
