@@ -7,20 +7,19 @@ function safe_textilize(text) {
   return textile(result);
 }
 
+$(function() {
+  document.querySelector('[data-country-select]').
+    addEventListener('change', function (e) {
+      var countryId = e.target.value;
+      $.get('/api/provinces/' + countryId);
+    }, false);
+});
+
 $('.offers.new, .offers.edit').ready(function() {
-  document.getElementById('offer_country_id').addEventListener('change', function(e) {
-    var countryId = e.target.value;
-    $.get('/api/provinces/' + countryId);
-  }, false);
 
   document.getElementById('offer_province_id').addEventListener('change', function(e) {
-    var id = e.target.value;
     var locationInput = document.getElementById('offer_location');
-    if(id) {
-      locationInput.disabled = false;
-    } else {
-      locationInput.disabled = true;
-    }
+    locationInput.disabled = !e.target.value;
   }, false);
 
   //  changes mouse cursor when highlighting loawer right of box

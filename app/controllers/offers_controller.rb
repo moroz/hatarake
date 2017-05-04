@@ -1,9 +1,13 @@
 class OffersController < ApplicationController
   expose :offer, scope: -> { Offer.friendly }
-  expose :offers, -> { published_or_own }
+  helper_method :offers
 
   before_action :set_country_list, only: [:new, :edit, :index]
   authorize_resource
+
+  def index
+    
+  end
 
   def show
     if request.path != offer_path(offer)
@@ -33,7 +37,7 @@ class OffersController < ApplicationController
       flash[:success] = "The offer was updated."
       redirect_to offer
     else
-      @title = "Editing offer: #{offer.title}"
+      @title = t('.title') + offer.title
       set_country_list
       render 'new'
     end
@@ -68,6 +72,10 @@ class OffersController < ApplicationController
       Offer.published
     end
     scope = scope.page(params[:page])
+  end
+
+  def offers
+    @offers ||= published_or_own
   end
 
   def set_country_list
