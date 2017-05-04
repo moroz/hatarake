@@ -53,6 +53,8 @@ pl:
     index:
       no_offers: "Brak ofert spełniających kryteria wyszukiwania."
       advanced_search: "Wyszukiwanie zaawansowane"
+      basic_search: "Wyszukiwanie podstawowe"
+    advanced_search:
       country: Kraj
       province: Rejon
       salary_min: "Pensja minimalna"

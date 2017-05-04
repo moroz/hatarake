@@ -53,6 +53,8 @@ en:
     index:
       no_offers: "No offers found for the search criteria entered."
       advanced_search: "Advanced search"
+      basic_search: "Basic search"
+    advanced_search:
       country: Country
       province: Province/area
       salary_min: Minimal salary
