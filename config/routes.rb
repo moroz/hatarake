@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :pages
   resources :education_items
   resources :work_items
-  resources :companies, only: :show
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations
   resources :candidates
+  resources :companies, only: :show
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]
