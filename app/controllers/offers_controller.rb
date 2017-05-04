@@ -41,7 +41,6 @@ class OffersController < ApplicationController
       flash[:success] = "Your offer has been saved."
       redirect_to offer
     else
-      flash[:alert] = "There was an error processing your request."
       set_country_list
       render :new
     end

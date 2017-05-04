@@ -4,7 +4,7 @@
   = render partial: 'shared/errors', locals: { object: f.object }
   = f.input :title, label: t('offers.fields.title')
   = f.label :currency, t('offers.fields.currency')
-  = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last)
+  = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last, offer.currency)
   .row
     .medium-6.columns
       = f.input :salary_min, label: t('offers.fields.salary_min'), input_html: { 'aria-describedby' => 'salary_help_text' }
@@ -28,8 +28,8 @@
       = f.input :description, as: :text, input_html: { rows: 15 }, label: false
     .medium-6.columns.offer__preview
       #offer__preview.offer__preview-contents
-        - if offer.persisted?
-          != textilize offer.description
+        - if offer.description.present?
+          != safe_textilize offer.description
         - else
           = t('offers.placeholders.preview') 
   = f.submit "Save", class: 'button success expanded'
