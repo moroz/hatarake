@@ -13,6 +13,9 @@ class Offer < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
+  scope :with_min_salary, 
+    ->(min) { where("salary_min <= :min AND salary_max >= :min",
+                    min: min) }
 
   def salary
     format = if salary_min.present?
@@ -41,6 +44,11 @@ class Offer < ApplicationRecord
 
   def self.publish_all
     update_all(published:true, published_at: Time.now)
+  end
+
+  def self.search_by_query(query)
+    country = "%#{sanitize_sql_like(query)}%"
+    self.where("title ILIKE :q OR location ILIKE :q", q: country)
   end
 
   def unpublish

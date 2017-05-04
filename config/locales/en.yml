@@ -57,6 +57,8 @@ en:
       province: Province/area
       salary_min: Minimal salary
       currency: Currency
+      any_currency: Any currency
+      any_country: Any country
       submit: "Search"
       term: "Search term"
     edit:

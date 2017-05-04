@@ -59,6 +59,8 @@ pl:
       currency: Waluta
       submit: "Szukaj ofert"
       term: "Wyszukiwana fraza"
+      any_currency: Dowolna waluta
+      any_country: Dowolny kraj
     edit:
       title: "Edycja oferty: "
     fields:

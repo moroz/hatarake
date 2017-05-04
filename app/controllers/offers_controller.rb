@@ -6,7 +6,22 @@ class OffersController < ApplicationController
   authorize_resource
 
   def index
-    
+    @offers = published_or_own
+    if params[:cid].present?
+      @offers = @offers.where(country_id: params[:cid])
+    end
+    if params[:pid].present?
+      @offers = @offers.where(province_id: params[:pid])
+    end
+    if params[:cur].present?
+      @offers = @offers.where(currency: params[:cur])
+    end
+    if params[:q].present?
+      @offers = @offers.search_by_query(params[:q])
+    end
+    if params[:smin].present?
+      @offers = @offers.with_min_salary(params[:smin])
+    end
   end
 
   def show

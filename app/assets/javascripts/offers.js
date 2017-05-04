@@ -8,20 +8,22 @@ function safe_textilize(text) {
 }
 
 $(function() {
-  document.querySelector('[data-country-select]').
-    addEventListener('change', function (e) {
-      var countryId = e.target.value;
+  var el = document.querySelector('[data-country-select]');
+  el && el.addEventListener('change', function (e) {
+    var countryId = e.target.value;
+    if (countryId) {
       $.get('/api/provinces/' + countryId);
-    }, false);
-});
+    }
+    document.querySelector('[data-province-select]')
+      .disabled = !countryId;
+  }, false);
 
-$('.offers.new, .offers.edit').ready(function() {
-
-  document.getElementById('offer_province_id').addEventListener('change', function(e) {
+  el = document.getElementById('offer_province_id');
+  el && el.addEventListener('change', function(e) {
     var locationInput = document.getElementById('offer_location');
     locationInput.disabled = !e.target.value;
   }, false);
-
+  
   //  changes mouse cursor when highlighting loawer right of box
   $('#offer_description')
     .on('mousemove', function(e) {
@@ -42,3 +44,4 @@ $('.offers.new, .offers.edit').ready(function() {
       };
     });
 });
+

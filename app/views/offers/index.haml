@@ -8,17 +8,17 @@
     .row
       .medium-6.columns
         = f.label :cid, t('.country')
-        = f.select :cid, localized_collection(@countries, 166), {}, name: 'cid', data: {'country-select': ''}
+        = f.select :cid, localized_collection(@countries, 0, blank: t('.any_country')), {}, name: 'cid', data: {'country-select': ''}
       .medium-6.columns
         = f.label :pid, t('.province')
-        = f.select :pid, localized_collection(@provinces, @provinces.first.id, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}
+        = f.select :pid, localized_collection(@provinces, 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}
     .row
       .medium-6.columns
         = f.label :smin, t('.salary_min')
         = f.text_field :smin, name: 'smin'
       .medium-6.columns
         = f.label :cur, t('.currency')
-        = f.select :cur, options_from_collection_for_select(I18n.t('currencies'), :first, :last), {}, name: 'cur'
+        = f.select :cur, options_from_collection_for_select(I18n.t('currencies'), :first, :last), {include_blank: t('.any_currency')}, name: 'cur'
     = f.submit t('.submit'), class: 'button expanded success', name: nil
 
 = paginate offers
