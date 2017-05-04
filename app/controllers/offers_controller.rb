@@ -22,6 +22,10 @@ class OffersController < ApplicationController
     if params[:smin].present?
       @offers = @offers.with_min_salary(params[:smin])
     end
+    respond_to do |f|
+      f.html
+      f.js
+    end
   end
 
   def show

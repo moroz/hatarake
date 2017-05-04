@@ -3,21 +3,8 @@
 - show_advanced = params[:adv].present? && params[:adv] == '1'
 = render partial: 'basic_search', locals: {hidden: show_advanced}
 = render partial: 'advanced_search', locals: {hidden: !show_advanced}
-= paginate offers
 
-- if offers.any?
-  %table.unstriped.hover
-    %thead
-      %td= t('offers.table.title')
-      %td= t('offers.table.company')
-      %td= t('offers.table.salary')
-      %td= t('offers.table.location')
-      %tbody
-        - for offer in offers
-          = render partial: 'offers/offer_row', locals: { offer: offer }
-- else
-  = t('.no_offers')
-
-= paginate offers
+.offers#offer_table
+  = render partial: 'offers'
 - if can? :create, Offer
   = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

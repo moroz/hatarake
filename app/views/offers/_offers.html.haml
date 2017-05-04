@@ -1,0 +1,15 @@
+= paginate @offers
+- if @offers.any?
+  %table.unstriped.hover
+    %thead
+      %td= t('offers.table.title')
+      %td= t('offers.table.company')
+      %td= t('offers.table.salary')
+      %td= t('offers.table.location')
+      %tbody
+        - for offer in @offers
+          = render partial: 'offers/offer_row', locals: { offer: offer }
+- else
+  = t('offers.index.no_offers')
+= paginate @offers
+
