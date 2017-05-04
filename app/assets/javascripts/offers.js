@@ -45,3 +45,9 @@ $(function() {
     });
 });
 
+$('.offers.index').ready(function() {
+  $('#show_advanced_search, #show_basic_search').click(function(e) {
+    e.preventDefault();
+    $('.basic_search, .advanced_search').toggleClass('hide');
+  });
+});

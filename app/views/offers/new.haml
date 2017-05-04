@@ -19,8 +19,8 @@
       = f.select :country_id, localized_collection(@countries, offer.country_id || 166, blank: false), {}, data: {'country-select': ''}
     .medium-6.columns
       = f.label :province, label: t('offers.fields.province')
-      = f.select :province_id, localized_collection(@provinces, offer.province_id, blank: t('offers.provinces.blank')), {}, data: {'province-select': ''}
-  = f.input :location, label: t('offers.fields.location')
+      = f.select :province_id, localized_collection(@provinces, offer.province_id || 0, blank: t('offers.provinces.blank')), {}, data: {'province-select': ''}
+  = f.input :location, label: t('offers.fields.location'), input_html: { disabled: offer.try(:province_id) != '0' }
   %h5.text-center= t('offers.fields.description')
   = render 'shared/textile_info'
   .row

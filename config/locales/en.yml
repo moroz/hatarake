@@ -55,6 +55,7 @@ en:
       advanced_search: "Advanced search"
       basic_search: "Basic search"
     advanced_search:
+      heading: "Advanced search"
       country: Country
       province: Province/area
       salary_min: Minimal salary
@@ -63,6 +64,8 @@ en:
       any_country: Any country
       submit: "Search"
       term: "Search term"
+    basic_search:
+      heading: "Search for offers"
     edit:
       heading: "Edit offer"
       title: "Edit offer: "

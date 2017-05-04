@@ -63,6 +63,8 @@ pl:
       term: "Wyszukiwana fraza"
       any_currency: Dowolna waluta
       any_country: Dowolny kraj
+    basic_search:
+      heading: "Wyszukiwanie ofert"
     edit:
       title: "Edycja oferty: "
     fields:

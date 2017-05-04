@@ -1,10 +1,14 @@
 - classes = 'basic_search callout'
 - classes << ' hide' if defined?(hidden) && hidden
 %section{class: classes}
-  %h4= t('offers.index.basic_search')
+  .row
+    .columns.medium-9
+      %h4= t('.heading')
+    .columns.medium-3.text-right
+      = link_to t('offers.index.advanced_search'), offers_path(adv: '1'), class: 'button small', id: 'show_advanced_search'
   = form_for offers_path, method: :get do |f|
     .input-group
-      = f.text_field :q, class: 'input-group-field'
+      = f.text_field :q, name: 'q', class: 'input-group-field'
       .input-group-button
-        = f.submit 'Submit', class: 'button'
+        = f.submit 'Submit', class: 'button success'
   
