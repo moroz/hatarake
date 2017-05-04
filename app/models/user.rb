@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # :registerable, :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable, :rememberable
   has_one :avatar, dependent: :destroy
+  validates :email, presence: true, uniqueness: true
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
