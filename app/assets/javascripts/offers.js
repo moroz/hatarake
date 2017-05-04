@@ -23,7 +23,7 @@ $(function() {
     var locationInput = document.getElementById('offer_location');
     locationInput.disabled = !e.target.value;
   }, false);
-  
+
   //  changes mouse cursor when highlighting loawer right of box
   $('#offer_description')
     .on('mousemove', function(e) {
@@ -51,3 +51,4 @@ $('.offers.index').ready(function() {
     $('.basic_search, .advanced_search').toggleClass('hide');
   });
 });
+
