@@ -36,6 +36,10 @@ class Candidate < User
     profession.try(:name_en)
   end
 
+  def short_sex
+    I18n.t("sexes.short.#{sex}")
+  end
+
   private
 
   def name_for_slug

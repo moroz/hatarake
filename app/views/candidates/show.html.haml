@@ -6,7 +6,7 @@
       .medium-8.columns
         %h2= candidate.display_name
         %p
-          %span.candidate__sex= t('sexes.' + candidate.sex) + ","
+          %span.candidate__sex= t('sexes.long.' + candidate.sex) + ","
           %span.candidate__age= candidate.profile.age
         %p
           %span.candidate__profession= candidate.profession.local_name + "," if candidate.profession.present?

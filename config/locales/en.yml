@@ -2,8 +2,8 @@ en:
   site_name: InJobs
   default_title: InJobs
   motto: 働けば自由になります
-  'true': Yes
-  'false': No
+  'true': 'Yes'
+  'false': 'No'
   topbar:
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland
@@ -27,8 +27,12 @@ en:
       owner: Owner
       founder: Founder
   sexes:
-    male: Male
-    female: Female
+    long:
+      male: Male
+      female: Female
+    short:
+      male: M
+      female: F
   currencies:
     pln: Polish Zloty
     eur: Euro
@@ -118,6 +122,7 @@ en:
       title: Browse candidates
       name: Name
       age: Age
+      sex: Sex
       profession: Profession
       looking_for_work: Looking for work
   education_items:

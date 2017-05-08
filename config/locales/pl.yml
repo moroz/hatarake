@@ -27,8 +27,12 @@ pl:
       owner: Właściciel
       founder: Założyciel
   sexes:
-    male: Mężczyzna
-    female: Kobieta
+    long:
+      male: Mężczyzna
+      female: Kobieta
+    short:
+      male: M
+      female: K
   currencies:
     pln: Złoty polski
     eur: Euro
@@ -116,6 +120,7 @@ pl:
       title: Przegląd kandydatów
       name: Imię i nazwisko
       age: Wiek
+      sex: Płeć
       profession: Zawód
       looking_for_work: Szuka pracy
   education_items:

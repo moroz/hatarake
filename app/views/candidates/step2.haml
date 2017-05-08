@@ -1,11 +1,11 @@
 %h5 Please answer a few questions to start looking for jobs.
 
-= simple_form_for user do |f|
+= simple_form_for candidate do |f|
   = f.simple_fields_for :profile do |ff|
-    = ff.input :looking_for_work, label: "Are you looking for work?", as: :radio_buttons, input_html: { value: user.profile.try(:looking_for_work) }
+    = ff.input :looking_for_work, label: "Are you looking for work?", as: :radio_buttons, input_html: { value: candidate.profile.try(:looking_for_work) }
     = ff.input :birth_date, label: "Date of birth:", as: :date, start_year: 70.years.ago.year, end_year: 15.years.ago.year
     = ff.input :first_name
     = ff.input :last_name
-    = ff.input :sex, collection: I18n.t('sexes'), label_method: :last, value_method: :first, as: :radio_buttons, label: "Gender:"
+    = ff.input :sex, collection: I18n.t('sexes.long'), label_method: :last, value_method: :first, as: :radio_buttons, label: "Gender:"
   = f.input :profession_name, label: "Profession:", url: autocomplete_professions_path, as: :autocomplete
   = f.submit "Next", class: "button primary expanded" 
