@@ -133,10 +133,10 @@ pl:
       order: Sortuj według
       submit: Szukaj
       order_cols:
-        name: Imienia i nazwiska
-        age: Wieku
-        sex: Płci
-        profession: Zawodu
+        0: Imienia i nazwiska
+        1: Wieku
+        2: Płci
+        3: Zawodu
   education_items:
     index:
       heading: "Edytuj wykształcenie"

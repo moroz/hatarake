@@ -5,6 +5,9 @@ class CandidatesController < ApplicationController
 
   def index
     @candidates = Candidate.joins(:profile, :profession).page(params[:page])
+    if params[:o].present?
+      order_candidates(params[:o])
+    end
     set_professions_list
   end
 
@@ -35,6 +38,11 @@ class CandidatesController < ApplicationController
 
   def set_professions_list
     @professions = Profession.all
+  end
+
+  def order_candidates(param)
+    orders = ['candidate_profiles.first_name, candidate_profiles.last_name', 'candidate_profiles.birth_date', 'candidate_profiles.sex', 'professions.name_pl, professions.name_en']
+    @candidates = @candidates.order(orders[param.to_i])
   end
 
   def candidate

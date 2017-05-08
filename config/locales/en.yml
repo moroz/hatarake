@@ -130,6 +130,15 @@ en:
       profession: 'Profession'
       only_looking_for_work: "Only looking for work"
       sex: Sex
+      any_profession: Any
+      any_sex: Any
+      order: Order by
+      submit: Search
+      order_cols:
+        0: Name
+        1: Age
+        2: Sex
+        3: Profession
   education_items:
     index:
       heading: Edit education
