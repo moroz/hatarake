@@ -1,5 +1,24 @@
 %h1= t('.title')
 
+%section.candidate_search.callout
+  %h4= t('candidates.search.heading')
+  = form_for candidates_path, method: :get do |f|
+    .row
+      .medium-6.columns
+        = f.label :prid, t('candidates.search.profession')
+        = f.select :prid, localized_collection(@professions, 0, blank: t('candidates.search.any_profession')), {}, name: 'prid'
+      .medium-6.columns
+        = f.label :sex, t('candidates.search.sex')
+        = f.select :sex, options_from_collection_for_select(I18n.t('sexes.long'), :first, :last), {include_blank: t('candidates.search.any_sex')}, name: 'sex'
+    .row
+      .medium-6.columns
+        = f.check_box :lfw, name: 'lfw'
+        = f.label :lfw, t('candidates.search.only_looking_for_work')
+      .medium-6.columns
+        = f.label :o, t('candidates.search.order')
+        = f.select :o, options_from_collection_for_select(I18n.t('candidates.search.order_cols'), :first, :last), {}, name: 'o'
+    = f.submit t('candidates.search.submit'), class: 'button success expanded', name: nil
+
 = paginate @candidates
 
 %table

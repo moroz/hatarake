@@ -5,6 +5,7 @@ class CandidatesController < ApplicationController
 
   def index
     @candidates = Candidate.joins(:profile, :profession).page(params[:page])
+    set_professions_list
   end
 
   def show
@@ -31,6 +32,10 @@ class CandidatesController < ApplicationController
   end
 
   private
+
+  def set_professions_list
+    @professions = Profession.all
+  end
 
   def candidate
     @candidate ||= find_candidate

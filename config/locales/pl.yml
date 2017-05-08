@@ -123,6 +123,20 @@ pl:
       sex: Płeć
       profession: Zawód
       looking_for_work: Szuka pracy
+    search:
+      heading: Wyszukiwanie kandydatów
+      profession: Zawód
+      only_looking_for_work: Tylko szukający pracy
+      sex: Płeć
+      any_profession: Dowolny
+      any_sex: Dowolna
+      order: Sortuj według
+      submit: Szukaj
+      order_cols:
+        name: Imienia i nazwiska
+        age: Wieku
+        sex: Płci
+        profession: Zawodu
   education_items:
     index:
       heading: "Edytuj wykształcenie"

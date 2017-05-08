@@ -125,6 +125,11 @@ en:
       sex: Sex
       profession: Profession
       looking_for_work: Looking for work
+    search:
+      heading: "Candidate search"
+      profession: 'Profession'
+      only_looking_for_work: "Only looking for work"
+      sex: Sex
   education_items:
     index:
       heading: Edit education
