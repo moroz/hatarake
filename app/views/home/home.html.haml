@@ -1,0 +1,14 @@
+%h1 InJobs
+
+%p InJobs jest platformą poszukiwania pracy.
+%p Aby rozpocząć poszukiwanie pracy lub pracowników, <a href="/sign_up">zarejestruj się!</a>
+
+.home__offers.callout
+  %h3 Ostatnie oferty
+  %ul
+    - for offer in @offers
+      %li
+        = (link_to offer.title, offer) + ","
+        = offer.salary + ","
+        = offer.short_location
+  = link_to "Więcej ofert...", offers_path
