@@ -8,6 +8,18 @@ class CandidatesController < ApplicationController
     if params[:o].present?
       order_candidates(params[:o])
     end
+    if params[:prid].present?
+      @candidates = @candidates.where(profession_id: params[:prid])
+    end
+    if params[:sex].present?
+      @candidates = @candidates.where('candidate_profiles.sex = ?', params[:sex])
+    end
+    if params[:lfw].present? && params[:lfw].to_i == 1
+      @candidates = @candidates.looking_for_work
+    end
+    if params[:q].present?
+      @candidates = @candidates.search(params[:q])
+    end
     set_professions_list
   end
 

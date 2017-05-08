@@ -31,6 +31,11 @@ class Candidate < User
     end
   end
 
+  def self.search(term)
+    joins(:profile).where("concat(candidate_profiles.first_name, ' ', candidate_profiles.last_name) ILIKE :q",
+                          q: "%#{sanitize_sql_like(term)}%")
+  end
+
   def profession_name
     return @profession_name if @profession_name.present?
     profession.try(:name_en)
