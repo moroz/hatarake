@@ -29,7 +29,6 @@ en:
   sexes:
     male: Male
     female: Female
-    apache_helicopter: Apache helicopter
   currencies:
     pln: Polish Zloty
     eur: Euro

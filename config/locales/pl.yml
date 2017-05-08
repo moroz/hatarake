@@ -29,7 +29,6 @@ pl:
   sexes:
     male: Mężczyzna
     female: Kobieta
-    apache_helicopter: Bojowy Helikopter Apache
   currencies:
     pln: Złoty polski
     eur: Euro
