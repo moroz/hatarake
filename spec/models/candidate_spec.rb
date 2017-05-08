@@ -30,6 +30,32 @@ RSpec.describe Candidate, type: :model do
         it { is_expected.to include carpenter }
       end
     end
+
+    describe "search" do
+      let!(:smith) { FactoryGirl.create(:candidate, profile: FactoryGirl.create(:candidate_profile, first_name: "John", last_name: "Smith")) }
+      let!(:kowalski) { FactoryGirl.create(:candidate, profile: FactoryGirl.create(:candidate_profile, first_name: "Jan", last_name: "Kowalski")) }
+
+      context "by first name" do
+        subject { Candidate.search("john") }
+
+        it { is_expected.to include smith }
+        it { is_expected.not_to include kowalski }
+      end
+
+      context "by last name" do
+        subject { Candidate.search("smith") }
+        
+        it { is_expected.to include smith }
+        it { is_expected.not_to include kowalski }
+      end
+
+      context "by substring of full name" do
+        subject { Candidate.search("n kowa") }
+        
+        it { is_expected.to include kowalski }
+        it { is_expected.not_to include smith }
+      end
+    end
   end
 
 end
