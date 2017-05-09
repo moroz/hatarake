@@ -1,6 +1,9 @@
 %table.unstriped.offer__data
   %tbody
     %tr
+      %th{scope:'row'}= t('offers.show.published_at')
+      %td= l offer.published_at, format: :long
+    %tr
       %th{scope:'row'}= t('offers.show.company')
       %td= offer.company.name
     %tr

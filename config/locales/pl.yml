@@ -44,6 +44,11 @@ pl:
     sek: Korona szwedzka
     dkk: Korona duńska
   offers:
+    applicant_count:
+      zero: "Nikt jeszcze nie aplikował na to stanowisko."
+      one: "Jedna osoba aplikowała na to stanowisko."
+      few: "%{count} osoby aplikowały na to stanowisko."
+      many: "%{count} osób aplikowało na to stanowisko."
     add_new_offer: Dodaj nową ofertę
     show:
       company: "Pracodawca"
@@ -53,6 +58,7 @@ pl:
       contact_phone: "Telefon kontaktowy"
       heading: "Oferta pracy: "
       title: "Oferta: "
+      published_at: "Opublikowano"
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"
@@ -168,8 +174,11 @@ pl:
       engineer: inżynier
       phd: doktor
   applications:
+    already_applied:
+      male: Już aplikował Pan na to stanowisko.
+      female: Już aplikowała Pani na to stanowisko.
     form:
-      heading: Aplikuj na to stanowisko
+      heading: Aplikuj
       submit: Wyślij aplikację
       memo: "Dodatkowe informacje (opcjonalnie, max. 600 znaków)"
       show_form: "Aplikuj"
@@ -199,4 +208,3 @@ pl:
             skill:
               taken: "Nie możesz mieć dwóch umiejętności o tej samej nazwie."
               blank: "Proszę wpisać prawidłową nazwę umiejętności."
-

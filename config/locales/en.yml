@@ -44,7 +44,20 @@ en:
     sek: Swedish krone
     dkk: Danish krone
   offers:
+    applicant_count:
+      zero: "Nobody has applied for this post yet."
+      one: "One person applied for this post."
+      many: "%{count} people applied for this post."
     add_new_offer: Add new offer...
+    show:
+      company: "Employer"
+      location: "Location"
+      salary: "Salary"
+      contact_email: "Contact e-mail"
+      contact_phone: "Contact phone"
+      heading: "Job offer: "
+      title: "Offer: "
+      published_at: Published on
     table:
       title: "Title"
       salary: "Salary"
@@ -159,9 +172,12 @@ en:
       engineer: Engineer
       phd: Ph.D.
   applications:
+    already_applied:
+      male: You have already applied for this post.
+      female: You have already applied for this post.
     form:
       heading: Apply for this post
-      submit: Submit application
+      submit: Submit your application
       memo: "Additional information (optional, max. 600 characters)"
       show_form: "Show application form"
     create:

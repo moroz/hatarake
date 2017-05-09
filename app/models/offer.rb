@@ -49,6 +49,10 @@ class Offer < ApplicationRecord
     Application.where(candidate: candidate, offer: self).present?
   end
 
+  def applicant_count_in_words
+    I18n.t('offers.applicant_count', count: self.applications.count)
+  end
+
   def self.publish_all
     update_all(published:true, published_at: Time.now)
   end
