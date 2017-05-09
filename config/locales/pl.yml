@@ -84,11 +84,6 @@ pl:
       salary_help_text: "Jeżeli pensja jest stała, proszę wpisać tę samą liczbę w obu polach."
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.
-    show:
-      delete: Usuń
-      publish: Opublikuj
-      unpublish: Wycofaj
-      edit: Edycja
     salary:
       min: "%{min}+ %{currency}"
       max: "do %{max} %{currency}"
@@ -97,6 +92,11 @@ pl:
       none: "nie podano"
     provinces:
       blank: Cały kraj
+  actions:
+    delete: Usuń
+    publish: Opublikuj
+    unpublish: Wycofaj
+    edit: Edycja
   date:
     formats:
       by: "%B '%y"
@@ -156,8 +156,11 @@ pl:
     form:
       heading: Aplikuj na to stanowisko
       submit: Wyślij aplikację
+      memo: "Dodatkowe informacje (opcjonalnie, max. 600 znaków)"
+      show_form: "Wyświetl formularz aplikacji"
     create:
       notice: Twoja aplikacja została zapisana.
+      failure: Nie możesz aplikować dwukrotnie na to samo stanowisko.
   companies:
     show:
       change_picture: Zdjęcie profilowe

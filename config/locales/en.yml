@@ -86,11 +86,6 @@ en:
       salary_help_text: "If salary is a fixed value, please put the same value in both fields."
     placeholders:
       preview: A preview of your description will appear here.
-    show:
-      delete: Delete
-      publish: Publish
-      unpublish: Unpublish
-      edit: Edit
     salary:
       min: "%{min}+ %{currency}"
       max: "up to %{max} %{currency}"
@@ -99,6 +94,11 @@ en:
       none: "n/a"
     provinces:
       blank: Everywhere
+  actions:
+    delete: Delete
+    publish: Publish
+    unpublish: Unpublish
+    edit: Edit
   date:
     formats:
       by: "%B '%y"
@@ -155,6 +155,11 @@ en:
       engineer: Engineer
       phd: Ph.D.
   applications:
+    form:
+      heading: Apply for this post
+      submit: Submit application
+      memo: "Additional information (optional, max. 600 characters)"
+      show_form: "Show application form"
     create:
       notice: Your application has been saved.
   companies:

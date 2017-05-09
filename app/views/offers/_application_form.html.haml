@@ -1,9 +1,10 @@
-- if candidate_signed_in?
-  .offer_application.callout
-    %h4= t('applications.form.heading')
-    = form_for [offer, offer.applications.new] do |f|
-      = f.text_area :memo
-      = f.submit t('applications.form.submit'), class: 'button expanded success'
-- else
-  .callout
-    <a href="/sign_in">Sign in</a> or <a href="/sign_up">sign up</a> as a Candidate to apply for this position!
+#offer_aplication.offer_application
+  #application_form.hide
+    .callout
+      %button.close-button{'data-toggle-application-form': ''}  &times;
+      %h4= t('applications.form.heading')
+      = form_for [offer, offer.applications.new] do |f|
+        = f.label :memo, t('applications.form.memo')
+        = f.text_area :memo, rows: 5
+        = f.submit t('applications.form.submit'), class: 'button expanded success'
+  = link_to t('applications.form.show_form'), '#', class: 'button primary expanded', data: { 'toggle-application-form': '' }, id: 'show_application_form'

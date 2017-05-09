@@ -3,8 +3,17 @@
   Job offer:
   = offer.title
 
-= render 'details'
-= render 'application_form'
+.row
+  .medium-6.columns
+    = render 'details'
+  .medium-6.columns
+    - if candidate_signed_in?
+      - if offer.candidate_applied?(current_candidate)
+        = render 'already_applied'
+      - else
+        = render 'application_form'
+    - elsif !company_signed_in? && !admin_signed_in?
+      = render 'sign_in_to_apply'
 
 %h3 Description
 .offer__description

@@ -5,10 +5,13 @@ class ApplicationsController < ApplicationController
   authorize_resource
 
   def create
-    current_user.applications.new(application_params.merge({offer: offer}))
-    if current_user.save
-      redirect_to offer, notice: I18n.t('applications.create.notice')
+    if Application.where(candidate: current_candidate, offer: offer).present?
+      flash[:alert] = I18n.t('applications.create.failure')
+    else
+      current_user.applications.create(application_params.merge({offer: offer}))
+      flash[:notice] = I18n.t('applications.create.notice')
     end
+    redirect_to offer
   end
 
   private

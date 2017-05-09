@@ -19,5 +19,6 @@
         %hr/
         InJobs
         - if Rails.env.development?
-          = flash.to_json
+          = debug flash
+          = debug params
     

@@ -52,3 +52,9 @@ $('.offers.index').ready(function() {
   });
 });
 
+$('.offers.show').ready(function() {
+  $('[data-toggle-application-form]').click(function(e) {
+    e.preventDefault();
+    $('#application_form, #show_application_form').toggleClass('hide');
+  });
+});

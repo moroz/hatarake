@@ -45,6 +45,10 @@ class Offer < ApplicationRecord
     self.update(published: true, published_at: Time.now)
   end
 
+  def candidate_applied?(candidate)
+    Application.where(candidate: candidate, offer: self).present?
+  end
+
   def self.publish_all
     update_all(published:true, published_at: Time.now)
   end
