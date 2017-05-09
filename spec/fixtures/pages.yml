@@ -3,7 +3,7 @@ Page_1:
   id: 1
   title: Sign Up
   permalink: sign_up
-  body: |
+  body_en: |
     <h2>Are you looking for jobs or employees?</h2>
     <div class="row">
     <div class="medium-6 columns">
@@ -42,7 +42,7 @@ Page_2:
   id: 2
   title: InJobs
   permalink: home
-  body: |
+  body_en: |
     p. InJobs is a job recruitment and social networking platform.
 
     p. If you are looking for jobs or employers, please "sign up":/sign_up!

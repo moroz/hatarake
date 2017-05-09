@@ -19,6 +19,7 @@ class Ability
       can :manage, Candidate, id: user.id
       can :read, Offer
       can :show, Page
+      can [:create, :new], Application
     elsif user.admin?
       can :manage, :all
     else

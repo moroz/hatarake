@@ -16,7 +16,7 @@ RSpec.describe "Candidate registration" do
   describe "second step" do
     let(:candidate) { FactoryGirl.create(:candidate, :only_login_credentials) }
     before do
-      login_as(candidate, scope: :user)
+      login_as(candidate, scope: :candidate)
       visit profile_path
     end
 
@@ -49,7 +49,7 @@ RSpec.describe "Candidate registration" do
             choose "Yes"
           end
           within '.candidate_profile_sex' do
-            choose I18n.t('sexes.male')
+            choose I18n.t('sexes.long.male')
           end
 
           page.find("#candidate_profile_attributes_first_name").set("John")

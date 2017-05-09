@@ -6,7 +6,11 @@ class ProfileController < ApplicationController
       redirect_to root_path and return
     end
     if candidate_signed_in?
-      render 'candidates/show'
+      if candidate.profile.nil?
+        redirect_to candidate_step2_path
+      else
+        render 'candidates/show'
+      end
     elsif company_signed_in?
       render 'companies/show'
     elsif admin?
