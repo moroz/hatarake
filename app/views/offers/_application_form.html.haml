@@ -1,0 +1,5 @@
+.offer_application.callout
+  %h4= t('applications.form.heading')
+  = form_for [offer, offer.applications.new] do |f|
+    = f.text_area :memo
+    = f.submit t('applications.form.submit'), class: 'button expanded success'

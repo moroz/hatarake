@@ -154,7 +154,9 @@ en:
       ma: M.A.
       engineer: Engineer
       phd: Ph.D.
-
+  applications:
+    create:
+      notice: Your application has been saved.
   companies:
     show:
       change_picture: "Change profile picture..." 

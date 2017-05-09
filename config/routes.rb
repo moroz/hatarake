@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       patch :publish
       patch :unpublish
     end
+    resources :applications
   end
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2

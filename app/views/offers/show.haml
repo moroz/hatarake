@@ -33,3 +33,5 @@
     = link_to t('.publish'), publish_offer_path(offer), method: :patch, class: "button success"
 - if can? :destroy, offer
   = link_to t('.delete'), offer, method: :delete, class: "button alert"
+
+= render 'application_form'

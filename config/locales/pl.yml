@@ -152,6 +152,12 @@ pl:
       ma: magister
       engineer: inżynier
       phd: doktor
+  applications:
+    form:
+      heading: Aplikuj na to stanowisko
+      submit: Wyślij aplikację
+    create:
+      notice: Twoja aplikacja została zapisana.
   companies:
     show:
       change_picture: Zdjęcie profilowe
