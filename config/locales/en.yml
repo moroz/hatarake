@@ -139,6 +139,10 @@ en:
         1: Age
         2: Sex
         3: Profession
+  home:
+    featured_offers:
+      heading: Featured offers
+      more: 'More offers...'
   education_items:
     index:
       heading: Edit education

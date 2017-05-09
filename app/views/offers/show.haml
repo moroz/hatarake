@@ -12,7 +12,7 @@
         = render 'already_applied'
       - else
         = render 'application_form'
-    - elsif !company_signed_in? && !admin_signed_in?
+    - elsif !company_signed_in? && !admin?
       = render 'sign_in_to_apply'
 
 %h3 Description

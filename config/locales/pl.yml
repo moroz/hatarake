@@ -137,6 +137,10 @@ pl:
         1: Wieku
         2: Płci
         3: Zawodu
+  home:
+    featured_offers:
+      heading: Promowane oferty
+      more: 'Więcej ofert...'
   education_items:
     index:
       heading: "Edytuj wykształcenie"
@@ -157,7 +161,7 @@ pl:
       heading: Aplikuj na to stanowisko
       submit: Wyślij aplikację
       memo: "Dodatkowe informacje (opcjonalnie, max. 600 znaków)"
-      show_form: "Wyświetl formularz aplikacji"
+      show_form: "Aplikuj"
     create:
       notice: Twoja aplikacja została zapisana.
       failure: Nie możesz aplikować dwukrotnie na to samo stanowisko.
