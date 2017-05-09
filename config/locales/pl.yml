@@ -45,6 +45,14 @@ pl:
     dkk: Korona duńska
   offers:
     add_new_offer: Dodaj nową ofertę
+    show:
+      company: "Pracodawca"
+      location: "Miejsce pracy"
+      salary: "Pensja"
+      contact_email: "E-mail kontaktowy"
+      contact_phone: "Telefon kontaktowy"
+      heading: "Oferta pracy: "
+      title: "Oferta: "
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"

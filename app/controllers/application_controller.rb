@@ -21,7 +21,11 @@ class ApplicationController < ActionController::Base
   end
 
   def page_title
-    @title || I18n.t('.title', default: :default_title)
+    if @title.present?
+      @title + " – " + I18n.t('default_title')
+    else
+      I18n.t('.title', default: :default_title)
+    end
   end
 
   private

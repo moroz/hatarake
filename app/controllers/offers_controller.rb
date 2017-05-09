@@ -35,6 +35,7 @@ class OffersController < ApplicationController
     if request.path != offer_path(offer)
       redirect_to offer, status: :moved_permanently
     end
+    @title = t('.title') + offer.title
   end
 
   def edit
