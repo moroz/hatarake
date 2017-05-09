@@ -3,35 +3,11 @@
   Job offer:
   = offer.title
 
-%table.unstriped.offer__data
-  %tbody
-    %tr
-      %th{scope:'row'} Company
-      %td= offer.company.name
-    %tr
-      %th{scope:'row'} Location
-      %td= offer.full_location
-    %tr
-      %th{scope:'row'} Salary
-      %td= offer.salary
-    %tr
-      %th{scope:'row'} Contact email:
-      %td= offer.contact_email
-    %tr
-      %th{scope:'row'} Contact phone:
-      %td= offer.contact_phone
+= render 'details'
+= render 'application_form'
 
 %h3 Description
 .offer__description
   != textilize offer.description
 
-- if can? :update, offer
-  = link_to t('.edit'), edit_offer_path(offer), class: "button secondary"
-  - if offer.published?
-    = link_to t('.unpublish'), unpublish_offer_path(offer), method: :patch, class: "button alert"
-  - else
-    = link_to t('.publish'), publish_offer_path(offer), method: :patch, class: "button success"
-- if can? :destroy, offer
-  = link_to t('.delete'), offer, method: :delete, class: "button alert"
-
-= render 'application_form'
+= render 'actions'

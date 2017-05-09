@@ -1,0 +1,9 @@
+- if can? :update, offer
+  = link_to t('.edit'), edit_offer_path(offer), class: "button secondary"
+  - if offer.published?
+    = link_to t('.unpublish'), unpublish_offer_path(offer), method: :patch, class: "button alert"
+  - else
+    = link_to t('.publish'), publish_offer_path(offer), method: :patch, class: "button success"
+- if can? :destroy, offer
+  = link_to t('.delete'), offer, method: :delete, class: "button alert"
+

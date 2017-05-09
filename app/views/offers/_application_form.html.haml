@@ -1,5 +1,9 @@
-.offer_application.callout
-  %h4= t('applications.form.heading')
-  = form_for [offer, offer.applications.new] do |f|
-    = f.text_area :memo
-    = f.submit t('applications.form.submit'), class: 'button expanded success'
+- if candidate_signed_in?
+  .offer_application.callout
+    %h4= t('applications.form.heading')
+    = form_for [offer, offer.applications.new] do |f|
+      = f.text_area :memo
+      = f.submit t('applications.form.submit'), class: 'button expanded success'
+- else
+  .callout
+    <a href="/sign_in">Sign in</a> or <a href="/sign_up">sign up</a> as a Candidate to apply for this position!
