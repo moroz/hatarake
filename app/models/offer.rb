@@ -18,7 +18,7 @@ class Offer < ApplicationRecord
   scope :with_min_salary, 
     ->(min) { where("salary_min <= :min AND salary_max >= :min",
                     min: min) }
-  scope :recent, -> { published.order('published_at DESC') }
+  scope :featured, -> { published.order('published_at DESC') }
 
   def salary
     format = if salary_min.present?

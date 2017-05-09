@@ -141,6 +141,9 @@ pl:
     featured_offers:
       heading: Promowane oferty
       more: 'Więcej ofert...'
+    featured_companies:
+      heading: Promowani pracodawcy
+      more: 'Więcej pracodawców...'
   education_items:
     index:
       heading: "Edytuj wykształcenie"

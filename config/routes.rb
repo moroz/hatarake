@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2
   get 'profile', to: 'profile#profile'
-  get '/company', to: 'companies#show', as: :company_profile
   resources :pages
   resources :education_items
   resources :work_items
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
   resources :candidates
-  resources :companies, only: :show
+  resources :companies, only: [:show,:index]
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]
