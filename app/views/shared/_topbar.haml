@@ -16,7 +16,7 @@
         -else
           %li= link_to "PL", lang: "pl"
         - if signed_in?
-          -if admin?
+          -if admin_signed_in?
             %li= link_to "Dashboard", "#"
           - else
             %li= link_to "Profile", profile_path

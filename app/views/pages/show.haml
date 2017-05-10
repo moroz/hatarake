@@ -2,6 +2,6 @@
 
 != textilize page.local_body
 
-- if admin?
+- if admin_signed_in?
   = link_to "Edit page", edit_page_path(page)
   = link_to "All static pages", pages_path

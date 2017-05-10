@@ -2,14 +2,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
-  helper_method :current_user, :admin?, :current_locale, :local_name, :page_title
+  helper_method :current_user, :admin_signed_in?, :current_locale, :local_name, :page_title, :signed_in?
 
-  def admin?
+  def admin_signed_in?
     current_user_is_a?("Admin")
   end
 
   def current_user
     super || current_candidate || current_company
+  end
+
+  def signed_in?
+    !!current_user
   end
 
   def current_locale

@@ -13,7 +13,7 @@ class ProfileController < ApplicationController
       end
     elsif company_signed_in?
       render 'companies/show'
-    elsif admin?
+    elsif admin_signed_in?
       redirect_to root_path # This will be dashboard later
     end
   end
