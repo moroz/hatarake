@@ -13,6 +13,8 @@ class Offer < ApplicationRecord
   CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
   validates :currency, inclusion: { in: CURRENCIES }
 
+  before_save :swap_salary_values
+
   scope :published, -> { where(published: true) }
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
   scope :with_min_salary, 
@@ -93,6 +95,12 @@ class Offer < ApplicationRecord
 
   def should_generate_new_friendly_id?
     slug.blank? || title_changed? || location_changed?
+  end
+
+  def swap_salary_values
+    if salary_max < salary_min
+      self.salary_max, self.salary_min = salary_min, salary_max
+    end
   end
 
 end
