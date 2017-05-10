@@ -2,7 +2,11 @@
   %tbody
     %tr
       %th{scope:'row'}= t('offers.show.published_at')
-      %td= l offer.published_at, format: :long
+      %td
+        - if offer.published_at.present?
+          = l offer.published_at, format: :long
+        -else
+          No
     %tr
       %th{scope:'row'}= t('offers.show.company')
       %td= offer.company.name
