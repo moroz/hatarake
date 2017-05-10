@@ -2,6 +2,14 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
+function countHyphens(text) {
+  return (text.match(/^\-\s/gm) || []).length;
+}
+
+function hyphensToAsterisks(text) {
+  return text.replace(/^\-\s/gm, "* ");
+}
+
 function safe_textilize(text) {
   result = text.replace(/</g,'&lt;').replace(/>/g,'&gt;'); // replace(/&/g,'&amp;')
   return textile(result);
@@ -37,6 +45,14 @@ $(function() {
     .on('change keyup paste', function(e) {
       var text = e.target.value;
       var container = document.getElementById('offer__preview');
+      if ((countHyphens(text) >= 2) && !window.alreadyAsked) {
+        var shouldConvert =
+          confirm("It looks like there are some lists in the text. Would you like to convert it to bullets?\nWykryto wypunktowanie, czy chcesz przekonwertować je na listę?");
+        window.alreadyAsked = true;
+      }
+      if (shouldConvert) {
+        $(this).val(hyphensToAsterisks(text));
+      }
       container.innerHTML = safe_textilize(text);
       //  the following will help the text expand as typing takes place
       while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
