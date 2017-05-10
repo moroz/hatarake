@@ -22,27 +22,6 @@ class Offer < ApplicationRecord
                     min: min) }
   scope :featured, -> { published.order('published_at DESC') }
 
-  def salary
-    format = if salary_min.present?
-      if salary_max.present?
-        if salary_min == salary_max
-          'mineqmax'
-        else
-          'minmax'
-        end
-      else
-        'min'
-      end
-    else
-      if salary_max.present?
-        'max'
-      else
-        'none'
-      end
-    end
-    I18n.t("offers.salary.#{format}", min: salary_min, max: salary_max, currency: currency.upcase)
-  end
-
   def publish
     self.update(published: true, published_at: Time.now)
   end
