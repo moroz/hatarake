@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508170817) do
+ActiveRecord::Schema.define(version: 20170510153901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20170508170817) do
     t.datetime "published_at"
     t.string   "slug"
     t.integer  "province_id"
+    t.numrange "hourly_wage"
     t.index ["company_id"], name: "index_offers_on_company_id", using: :btree
     t.index ["country_id"], name: "index_offers_on_country_id", using: :btree
     t.index ["province_id"], name: "index_offers_on_province_id", using: :btree
