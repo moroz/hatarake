@@ -1,7 +1,7 @@
 class Offer < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:slugged, :finders, :history]
-  attr_accessor :salary_min, :salary_max
+  attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
   belongs_to :company, required: true
   belongs_to :country, required: true
@@ -18,9 +18,7 @@ class Offer < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
-  scope :with_min_salary, 
-    ->(min) { where("salary_min <= :min AND salary_max >= :min",
-                    min: min) }
+  scope :with_min_salary, ->(min) { where("salary_min <= :min AND salary_max >= :min", min: min) }
   scope :featured, -> { published.order('published_at DESC') }
 
   def publish
@@ -78,16 +76,28 @@ class Offer < ApplicationRecord
   end
 
   def make_salary_range
-    smin = self.salary_min
-    smax = self.salary_max
-    if smin.present? || smax.present?
-      if smin.present? && smax.present?
-        if smin.to_d > smax.to_d
-          smin, smax = smax, smin
-        end
-      end
-      self.salary = "[#{smin},#{smax}]"
+    min = self.salary_min
+    max = self.salary_max
+    if min.present? || max.present?
+      self.salary = make_range(min, max)
     end
+  end
+
+  def make_hourly_wage
+    min = self.hourly_wage_min
+    max = self.hourly_wage_max
+    if min.present? || max.present?
+      self.hourly_wage = make_range(min, max)
+    end
+  end
+
+  def make_range(min, max)
+    if min.present? && max.present?
+      if min.to_d > max.to_d
+        min, max = max, min
+      end
+    end
+    return "[#{min},#{max}]"
   end
 
 end

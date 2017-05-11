@@ -87,8 +87,12 @@ pl:
     fields:
       title: "Tytuł:"
       currency: "Waluta:"
+      salary_html: "Pensja miesięczna: <small>(opcjonalnie)</small>"
       salary_min: "Pensja min.:"
       salary_max: "Pensja max.:"
+      hourly_wage_html: "Stawka godzinowa: <small>(opcjonalnie)</small>"
+      hourly_wage_min: "Minimalna stawka godzinowa:"
+      hourly_wage_max: "Maksymalna stawka godzinowa:"
       contact_email: "E-mail kontaktowy:"
       contact_phone: "Numer kontaktowy:"
       country: "Kraj:"
@@ -96,6 +100,7 @@ pl:
       description: "Opis"
       location: "Miejscowość:"
       salary_help_text: "Jeżeli pensja jest stała, proszę wpisać tę samą liczbę w obu polach."
+      hourly_wage_help_text: "Jeżeli stawka jest stała, proszę wpisać tę samą liczbę w obu polach."
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.
     salary:

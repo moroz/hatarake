@@ -90,6 +90,8 @@ en:
       currency: "Currency:"
       salary_min: "Minimal salary:"
       salary_max: "Maximal salary:"
+      hourly_wage_min: "Maximal hourly wage:"
+      hourly_wage_max: "Minimal hourly wage:"
       contact_email: "Contact e-mail:"
       contact_phone: "Contact phone:"
       country: "Country:"
