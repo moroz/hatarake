@@ -4,6 +4,12 @@ en:
   motto: 働けば自由になります
   'true': 'Yes'
   'false': 'No'
+  currency_range:
+    min: "%{min}+ %{currency}"
+    max: "up to %{max} %{currency}"
+    minmax: "%{min}-%{max} %{currency}"
+    mineqmax: "%{min} %{currency}"
+    none: "n/a"
   topbar:
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland
@@ -53,6 +59,7 @@ en:
       company: "Employer"
       location: "Location"
       salary: "Salary"
+      hourly_wage: "Hourly wage"
       contact_email: "Contact e-mail"
       contact_phone: "Contact phone"
       heading: "Job offer: "
@@ -88,8 +95,10 @@ en:
     fields:
       title: "Title:"
       currency: "Currency:"
+      salary_html: "Monthly salary: <small>(optional)</small>"
       salary_min: "Minimal salary:"
       salary_max: "Maximal salary:"
+      hourly_wage_html: "Hourly wage: <small>(optional)</small>"
       hourly_wage_min: "Maximal hourly wage:"
       hourly_wage_max: "Minimal hourly wage:"
       contact_email: "Contact e-mail:"
@@ -98,15 +107,10 @@ en:
       province: "Voivodeship or province:"
       description: "Description"
       location: "City or village:"
-      salary_help_text: "If salary is a fixed value, please put the same value in both fields."
+      salary_help_text: "If the salary is a fixed value, please put the same value in both fields."
+      hourly_wage_help_text: "If the hourly wage is a fixed value, please put the same value in both fields."
     placeholders:
       preview: A preview of your description will appear here.
-    salary:
-      min: "%{min}+ %{currency}"
-      max: "up to %{max} %{currency}"
-      minmax: "%{min}-%{max} %{currency}"
-      mineqmax: "%{min} %{currency}"
-      none: "n/a"
     provinces:
       blank: Everywhere
   actions:

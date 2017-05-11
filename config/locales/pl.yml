@@ -4,6 +4,12 @@ pl:
   motto: 働けば自由になります
   'true': Tak
   'false': Nie
+  currency_range:
+    min: "%{min}+ %{currency}"
+    max: "do %{max} %{currency}"
+    minmax: "%{min}-%{max} %{currency}"
+    mineqmax: "%{min} %{currency}"
+    none: "nie podano"
   topbar:
     jobs_de: Praca w Niemczech
     jobs_pl: Praca w Polsce
@@ -54,6 +60,7 @@ pl:
       company: "Pracodawca"
       location: "Miejsce pracy"
       salary: "Pensja"
+      hourly_wage: "Stawka godzinowa"
       contact_email: "E-mail kontaktowy"
       contact_phone: "Telefon kontaktowy"
       heading: "Oferta pracy: "
@@ -103,12 +110,6 @@ pl:
       hourly_wage_help_text: "Jeżeli stawka jest stała, proszę wpisać tę samą liczbę w obu polach."
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.
-    salary:
-      min: "%{min}+ %{currency}"
-      max: "do %{max} %{currency}"
-      minmax: "%{min}-%{max} %{currency}"
-      mineqmax: "%{min} %{currency}"
-      none: "nie podano"
     provinces:
       blank: Cały kraj
   actions:

@@ -15,6 +15,7 @@ class Offer < ApplicationRecord
   validates :currency, inclusion: { in: CURRENCIES }
 
   before_validation :make_salary_range
+  before_validation :make_hourly_wage
 
   scope :published, -> { where(published: true) }
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }

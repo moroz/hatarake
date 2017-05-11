@@ -15,10 +15,10 @@
       %td= offer.full_location
     %tr
       %th{scope:'row'}= t('offers.show.salary')
-      %td= offer.salary
+      %td= readable_currency_range(offer.salary, offer.currency)
     %tr
-      %th{scope:'row'} Hourly wage:
-      %td= offer.hourly_wage
+      %th{scope:'row'}= t('offers.show.hourly_wage')
+      %td= readable_currency_range(offer.hourly_wage, offer.currency)
     %tr
       %th{scope:'row'}= t('offers.show.contact_email')
       %td= offer.contact_email
