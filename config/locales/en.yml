@@ -9,7 +9,7 @@ en:
     max: "up to %{max} %{currency}"
     minmax: "%{min}-%{max} %{currency}"
     mineqmax: "%{min} %{currency}"
-    none: "n/a"
+    none: "none given"
   topbar:
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland
@@ -70,12 +70,15 @@ en:
       salary: "Salary"
       location: "Location"
       company: "Company"
+      per_month: "/mo."
+      per_hour: "/h"
     new:
       heading: "Create new offer"
       title: "Create new offer"
     index:
       no_offers: "No offers found for the search criteria entered."
       advanced_search: "Advanced search"
+      noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
     advanced_search:
       heading: "Advanced search"

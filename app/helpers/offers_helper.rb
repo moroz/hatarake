@@ -9,6 +9,18 @@ module OffersHelper
     raw str
   end
 
+  def short_salary(offer)
+    if offer.salary.present?
+      readable_currency_range(offer.salary, offer.currency) +
+        I18n.t('offers.table.per_month')
+    elsif offer.hourly_wage.present?
+      readable_currency_range(offer.hourly_wage, offer.currency) +
+        I18n.t('offers.table.per_hour')
+    else
+      I18n.t('currency_range.none')
+    end
+  end
+
   def pretty_currency_value(value)
     return if value.nil?
     value.infinite? ? nil : number_with_precision(value, separator: '.', strip_insignificant_zeros: true, precision: 2)

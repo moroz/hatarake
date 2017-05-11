@@ -82,6 +82,9 @@ class Offer < ApplicationRecord
     if min.present? || max.present?
       self.salary = make_range(min, max)
     end
+    if min == '' && max == ''
+      self.salary = nil
+    end
   end
 
   def make_hourly_wage
@@ -89,6 +92,9 @@ class Offer < ApplicationRecord
     max = self.hourly_wage_max
     if min.present? || max.present?
       self.hourly_wage = make_range(min, max)
+    end
+    if min == '' && max == ''
+      self.hourly_wage = nil
     end
   end
 

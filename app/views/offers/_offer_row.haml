@@ -1,5 +1,5 @@
 %tr{id: dom_id(offer), class: 'offer offer__row'}
   %td= link_to offer.title, offer
   %td= offer.company.name
-  %td= readable_currency_range(offer.salary, offer.currency)
+  %td= short_salary(offer)
   %td= offer.short_location

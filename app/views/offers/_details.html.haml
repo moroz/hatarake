@@ -13,12 +13,14 @@
     %tr
       %th{scope:'row'}= t('offers.show.location')
       %td= offer.full_location
-    %tr
-      %th{scope:'row'}= t('offers.show.salary')
-      %td= readable_currency_range(offer.salary, offer.currency)
-    %tr
-      %th{scope:'row'}= t('offers.show.hourly_wage')
-      %td= readable_currency_range(offer.hourly_wage, offer.currency)
+    - if offer.salary.present?
+      %tr
+        %th{scope:'row'}= t('offers.show.salary')
+        %td= readable_currency_range(offer.salary, offer.currency)
+    - if offer.hourly_wage.present?
+      %tr
+        %th{scope:'row'}= t('offers.show.hourly_wage')
+        %td= readable_currency_range(offer.hourly_wage, offer.currency)
     %tr
       %th{scope:'row'}= t('offers.show.contact_email')
       %td= offer.contact_email

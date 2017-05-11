@@ -71,6 +71,8 @@ pl:
       salary: "Wynagrodzenie"
       location: "Lokalizacja"
       company: "Firma"
+      per_month: "/mc."
+      per_hour: "/h"
     new:
       title: "Utwórz nową ofertę"
       heading: "Utwórz ofertę"
