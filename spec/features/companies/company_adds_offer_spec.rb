@@ -41,11 +41,11 @@ RSpec.describe "Company adds Offer" do
     end
 
     it "shows 'Publish' button" do
-      expect(page.body).to have_selector(:link_or_button, I18n.t('offers.show.publish'))
+      expect(page.body).to have_selector(:link_or_button, I18n.t('actions.publish'))
     end
 
     it "publishes when clicked" do
-      click_link_or_button I18n.t('offers.show.publish')
+      click_link_or_button I18n.t('actions.publish')
       expect(offer.reload).to be_published
     end
 

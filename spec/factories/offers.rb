@@ -17,6 +17,14 @@ FactoryGirl.define do
       published_at { 1.day.ago }
     end
 
+    trait :russia do
+      country { Country.find_by(iso: "RU") || FactoryGirl.create(:country, :russia) }
+    end
+
+    trait :germany do
+      country { Country.find_by(iso: "DE") || FactoryGirl.create(:country, :germany) }
+    end
+
     trait :unpublished do
       published false
       published_at nil
