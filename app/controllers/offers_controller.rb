@@ -23,11 +23,8 @@ class OffersController < ApplicationController
       @offers = @offers.with_min_salary(params[:smin])
     end
     respond_to do |f|
-      if request.xhr?
-        f.js
-      else
-        f.html
-      end
+      f.js
+      f.html
     end
   end
 

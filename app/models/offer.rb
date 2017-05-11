@@ -19,7 +19,7 @@ class Offer < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
-  scope :with_min_salary, ->(min) { where("salary_min <= :min AND salary_max >= :min", min: min) }
+  scope :with_min_salary, ->(min) { where("salary @> :min or lower(salary) > :min", min: min.to_d) }
   scope :featured, -> { published.order('published_at DESC') }
 
   def publish
