@@ -7,9 +7,9 @@
   = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last, offer.currency)
   .row
     .medium-6.columns
-      = f.input :salary_min, label: t('offers.fields.salary_min'), input_html: { 'aria-describedby' => 'salary_help_text' }
+      = f.input :salary_min, label: t('offers.fields.salary_min'), input_html: { 'aria-describedby' => 'salary_help_text', value: low_bound(offer.salary) }
     .medium-6.columns
-      = f.input :salary_max, label: t('offers.fields.salary_max'), input_html: { 'aria-describedby' => 'salary_help_text' }
+      = f.input :salary_max, label: t('offers.fields.salary_max'), input_html: { 'aria-describedby' => 'salary_help_text', value: high_bound(offer.salary) }
   %p.help-text#salary_help_text= t('offers.fields.salary_help_text')
   = f.input :contact_email, label: t('offers.fields.contact_email')
   = f.input :contact_phone, label: t('offers.fields.contact_phone')

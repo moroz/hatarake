@@ -81,7 +81,7 @@ class Offer < ApplicationRecord
     smin = self.salary_min
     smax = self.salary_max
     if smin.present? || smax.present?
-      if smin && smax
+      if smin.present? && smax.present?
         if smin.to_d > smax.to_d
           smin, smax = smax, smin
         end
