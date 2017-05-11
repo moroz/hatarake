@@ -1,6 +1,7 @@
 class Offer < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:slugged, :finders, :history]
+  attr_accessor :salary_min, :salary_max
 
   belongs_to :company, required: true
   belongs_to :country, required: true
@@ -13,7 +14,7 @@ class Offer < ApplicationRecord
   CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
   validates :currency, inclusion: { in: CURRENCIES }
 
-  before_save :swap_salary_values
+  before_validation :make_salary_range
 
   scope :published, -> { where(published: true) }
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
@@ -76,9 +77,16 @@ class Offer < ApplicationRecord
     slug.blank? || title_changed? || location_changed?
   end
 
-  def swap_salary_values
-    if salary_max < salary_min
-      self.salary_max, self.salary_min = salary_min, salary_max
+  def make_salary_range
+    smin = self.salary_min
+    smax = self.salary_max
+    if smin.present? || smax.present?
+      if smin && smax
+        if smin.to_d > smax.to_d
+          smin, smax = smax, smin
+        end
+      end
+      self.salary = "[#{smin},#{smax}]"
     end
   end
 

@@ -4,7 +4,7 @@
     - for offer in @offers
       %li
         = (link_to offer.title, offer) + ","
-        = offer.salary + ","
+        = offer.salary.to_s + ","
         = offer.short_location
   = link_to t('home.featured_offers.more'), offers_path
 
