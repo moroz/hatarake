@@ -1,10 +1,10 @@
-%h1 InJobs
+- content_for :row1 do
+  %h1 InJobs
 
-%p InJobs jest platformą poszukiwania pracy.
-%p Aby rozpocząć poszukiwanie pracy lub pracowników, <a href="/sign_up">zarejestruj się!</a>
+  %p InJobs jest platformą poszukiwania pracy.
+  %p Aby rozpocząć poszukiwanie pracy lub pracowników, <a href="/sign_up">zarejestruj się!</a>
 
-.row
-  .medium-6.columns
-    = render 'featured_offers'
-  .medium-6.columns
-    = render 'featured_companies'
+.medium-6.columns
+  = render 'featured_offers'
+.medium-6.columns
+  = render 'featured_companies'
