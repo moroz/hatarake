@@ -178,6 +178,9 @@ en:
     featured_offers:
       heading: Featured offers
       more: 'More offers...'
+    featured_companies:
+      heading: "Featured companies"
+      more: "More companies..."
 
   education_items:
     index:
