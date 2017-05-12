@@ -120,12 +120,18 @@ select {
 }
 
 .top-bar {
+  font-family: $alternative-font;
+  // text-transform: uppercase;
   a, a:visited {
-    color: $anchor-dark-bg;
+    color: #333;
   }
   a:hover {
-    color: darken($anchor-dark-bg, 14%);
+    color: darken(#333, 14%);
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $alternative-font;
 }
 
 textarea.text {
