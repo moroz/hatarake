@@ -4,12 +4,14 @@ en:
   motto: 働けば自由になります
   'true': 'Yes'
   'false': 'No'
+
   currency_range:
     min: "%{min}+ %{currency}"
     max: "up to %{max} %{currency}"
     minmax: "%{min}-%{max} %{currency}"
     mineqmax: "%{min} %{currency}"
     none: "none given"
+
   topbar:
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland
@@ -18,20 +20,24 @@ en:
     sign_in: Sign in
     sign_up: Sign up
     candidates: Candidates
+
   registrations:
     candidate_heading: "Sign up for candidate account"
     company_heading: "Sign up for company account"
+
   skill_levels:
     beginner: Beginner
     intermediate: Intermediate
     good: Good
     expert: Expert
+
   items:
     work_categories:
       internship: Internship
       work: Work
       owner: Owner
       founder: Founder
+
   sexes:
     long:
       male: Male
@@ -39,6 +45,7 @@ en:
     short:
       male: M
       female: F
+
   currencies:
     pln: Polish Zloty
     eur: Euro
@@ -49,6 +56,7 @@ en:
     nok: Norwegian krone
     sek: Swedish krone
     dkk: Danish krone
+
   offers:
     applicant_count:
       zero: "Nobody has applied for this post yet."
@@ -116,14 +124,17 @@ en:
       preview: A preview of your description will appear here.
     provinces:
       blank: Everywhere
+
   actions:
     delete: Delete
     publish: Publish
     unpublish: Unpublish
     edit: Edit
+
   date:
     formats:
       by: "%B '%y"
+
   candidates:
     show:
       looking_for_work:
@@ -152,6 +163,7 @@ en:
       profession: 'Profession'
       only_looking_for_work: "Only looking for work"
       sex: Sex
+      name: Name
       any_profession: Any
       any_sex: Any
       order: Order by
@@ -161,10 +173,12 @@ en:
         1: Age
         2: Sex
         3: Profession
+
   home:
     featured_offers:
       heading: Featured offers
       more: 'More offers...'
+
   education_items:
     index:
       heading: Edit education
@@ -180,6 +194,7 @@ en:
       ma: M.A.
       engineer: Engineer
       phd: Ph.D.
+
   applications:
     already_applied:
       male: You have already applied for this post.
@@ -191,11 +206,13 @@ en:
       show_form: "Show application form"
     create:
       notice: Your application has been saved.
+
   companies:
     show:
       change_picture: "Change profile picture..." 
       offers: Job offers
       no_offers: No offers.
+
   activerecord:
     attributes:
       skill_item:

@@ -12,6 +12,9 @@ class Ability
       can :read, Offer
       can :show, Page
       can :read, Candidate
+      can :read, Application do |a|
+        a.offer.company_id = user.id
+      end
     elsif user.candidate?
       can :manage, SkillItem, candidate_id: user.id
       can :manage, CvItem, candidate_id: user.id

@@ -1,0 +1,4 @@
+%h3= t(".heading") + offer.title
+
+- offer_applications.each do |application|
+  = application.candidate.full_name

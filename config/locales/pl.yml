@@ -4,12 +4,14 @@ pl:
   motto: 働けば自由になります
   'true': Tak
   'false': Nie
+
   currency_range:
     min: "%{min}+ %{currency}"
     max: "do %{max} %{currency}"
     minmax: "%{min}-%{max} %{currency}"
     mineqmax: "%{min} %{currency}"
     none: "nie podano"
+  
   topbar:
     jobs_de: Praca w Niemczech
     jobs_pl: Praca w Polsce
@@ -18,20 +20,24 @@ pl:
     sign_in: Logowanie
     sign_up: Rejestracja
     candidates: Kandydaci
+
   registrations:
     candidate_heading: "Zarejestruj się jako kandydat"
     company_heading: "Zarejestruj się jako firma"
+
   skill_levels:
     beginner: Początkujący
     intermediate: Średniozaawansowany
     good: Dobry
     expert: Ekspert
+
   items:
     work_categories:
       internship: Praktyki
       work: Praca
       owner: Właściciel
       founder: Założyciel
+
   sexes:
     long:
       male: Mężczyzna
@@ -39,6 +45,7 @@ pl:
     short:
       male: M
       female: K
+
   currencies:
     pln: Złoty polski
     eur: Euro
@@ -49,6 +56,7 @@ pl:
     nok: Korona norweska
     sek: Korona szwedzka
     dkk: Korona duńska
+
   offers:
     applicant_count:
       zero: "Nikt jeszcze nie aplikował na to stanowisko."
@@ -115,11 +123,13 @@ pl:
       preview: W tym miejscu pojawi się podgląd opisu.
     provinces:
       blank: Cały kraj
+
   actions:
     delete: Usuń
     publish: Opublikuj
     unpublish: Wycofaj
     edit: Edycja
+
   date:
     month_names:
     -
@@ -137,9 +147,11 @@ pl:
     - grudnia
     formats:
       by: "%B '%y"
+
   time:
     formats:
       long: "%e %B %Y, %H:%m %Z"
+
   candidates:
     show:
       looking_for_work:
@@ -171,12 +183,14 @@ pl:
       any_profession: Dowolny
       any_sex: Dowolna
       order: Sortuj według
+      name: Imię i nazwisko
       submit: Szukaj
       order_cols:
         0: Imienia i nazwiska
         1: Wieku
         2: Płci
         3: Zawodu
+
   home:
     featured_offers:
       heading: Promowane oferty
@@ -184,6 +198,7 @@ pl:
     featured_companies:
       heading: Promowani pracodawcy
       more: 'Więcej pracodawców...'
+
   education_items:
     index:
       heading: "Edytuj wykształcenie"
@@ -199,6 +214,7 @@ pl:
       ma: magister
       engineer: inżynier
       phd: doktor
+
   applications:
     already_applied:
       male: Już aplikował Pan na to stanowisko.
@@ -211,11 +227,15 @@ pl:
     create:
       notice: Twoja aplikacja została zapisana.
       failure: Nie możesz aplikować dwukrotnie na to samo stanowisko.
+    index:
+      heading: "Aplikacje na stanowisko: "
+
   companies:
     show:
       change_picture: Zdjęcie profilowe
       offers: Oferty pracy
       no_offers: Brak ofert.
+
   activerecord:
     attributes:
       skill_item:

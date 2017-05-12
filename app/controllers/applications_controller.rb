@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
   expose(:offer) { Offer.friendly.find(params[:offer_id]) }
   expose(:application)
+  expose(:offer_applications) { offer.applications }
   
   authorize_resource
 
@@ -12,6 +13,9 @@ class ApplicationsController < ApplicationController
       flash[:notice] = I18n.t('applications.create.notice')
     end
     redirect_to offer
+  end
+
+  def index
   end
 
   private
