@@ -3,22 +3,7 @@
 = render 'search_form'
 = paginate @candidates
 
-%table
-  %thead
-    %tr
-      %td= t('.name')
-      %td= t('.age')
-      %td= t('.sex')
-      %td= t('.profession')
-      %td= t('.looking_for_work')
-
-  %tbody
-    - for candidate in @candidates
-      %tr
-        %td= link_to candidate.profile.full_name, candidate
-        %td= candidate.profile.age
-        %td= candidate.short_sex
-        %td= candidate.profession.try(:local_name)
-        %td= I18n.t(candidate.profile.looking_for_work.to_s)
+= render 'table_header' do
+  = render @candidates
 
 = paginate @candidates

@@ -1,2 +1,3 @@
 .applicant_count.callout
-  = offer.applicant_count_in_words
+  %p= offer.applicant_count_in_words
+  = link_to t('applications.applicant_count_callout.link_text'), offer_applications_path(offer)

@@ -196,6 +196,8 @@ en:
       phd: Ph.D.
 
   applications:
+    index:
+      heading: "Applicants for offer: "
     already_applied:
       male: You have already applied for this post.
       female: You have already applied for this post.
@@ -206,6 +208,8 @@ en:
       show_form: "Show application form"
     create:
       notice: Your application has been saved.
+    applicant_count_callout:
+      link_text: "Applicant list"
 
   companies:
     show:

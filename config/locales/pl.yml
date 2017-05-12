@@ -229,6 +229,8 @@ pl:
       failure: Nie możesz aplikować dwukrotnie na to samo stanowisko.
     index:
       heading: "Aplikacje na stanowisko: "
+    applicant_count_callout:
+      link_text: "Lista aplikantów"
 
   companies:
     show:
