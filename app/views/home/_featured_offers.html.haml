@@ -4,7 +4,7 @@
     - for offer in @offers
       %li
         = (link_to offer.title, offer) + ","
-        = offer.salary.to_s + "," if offer.salary.present?
+        = (short_salary(offer) + ',') if offer.salary.present?
         = offer.short_location
   = link_to t('home.featured_offers.more'), offers_path
 
