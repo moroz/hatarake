@@ -1,8 +1,9 @@
-%h1 Job offers
+%h1.text-center Job offers
 
 - show_advanced = params[:adv].present? && params[:adv] == '1'
-= render partial: 'basic_search', locals: {hidden: show_advanced}
-= render partial: 'advanced_search', locals: {hidden: !show_advanced}
+.row
+  = render partial: 'basic_search', locals: {hidden: show_advanced}
+  = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
 .offers#offer_table
   = render partial: 'offers'
