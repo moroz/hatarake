@@ -38,7 +38,8 @@ pl:
       basic_search: "Wyszukiwanie podstawowe"
 
     search_description:
-      basic: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
+      reset: "Wyczyść kryteria wyszukiwania."
+      basic: "Wyniki wyszukiwania dla zapytania: <strong>%{q}</strong>."
       advanced:
         start: "Wyniki wyszukiwania dla "
         end: "."

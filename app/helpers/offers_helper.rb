@@ -19,6 +19,10 @@ module OffersHelper
     end
   end
 
+  def reset_search_link
+    link_to I18n.t('offers.search_description.reset'), offers_path
+  end
+
   def advanced_search_description(params)
     msg = []
     key_prefix = 'offers.search_description.advanced.'

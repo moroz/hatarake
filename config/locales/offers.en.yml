@@ -36,7 +36,8 @@ en:
       basic_search: "Basic search"
 
     search_description:
-      basic: "Search results for query <strong>%{q}</strong>:"
+      reset: "Reset filters."
+      basic: "Search results for query: <strong>%{q}</strong>."
       advanced:
         start: "Search results for "
         end: "."

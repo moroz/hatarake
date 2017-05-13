@@ -1,4 +1,6 @@
-.offer_search_description= search_description(params)
+.offer_search_description
+  = @search_description
+  = reset_search_link if @search_description.present?
 = paginate @offers
 - if @offers.any?
   %table.unstriped.hover
