@@ -100,6 +100,8 @@ en:
       term: "Search term"
     basic_search:
       heading: "Search for offers"
+      placeholder: "Partial title, description, location..."
+      submit: "Search"
     edit:
       heading: "Edit offer"
       title: "Edit offer: "

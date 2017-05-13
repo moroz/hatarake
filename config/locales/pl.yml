@@ -99,6 +99,8 @@ pl:
       any_currency: Dowolna waluta
       any_country: Dowolny kraj
     basic_search:
+      submit: "Szukaj"
+      placeholder: "Fragment tytułu, opisu, lokalizacja..."
       heading: "Wyszukiwanie ofert"
     edit:
       title: "Edycja oferty: "

@@ -1,3 +1,5 @@
 :plain
   document.getElementById('offer_table').innerHTML = '#{j render partial: 'offers'}';
   // history.pushState({}, '', '#{request.url}');
+  var text_field = document.getElementById('basic_search_q');
+  text_field && (text_field.value = '');
