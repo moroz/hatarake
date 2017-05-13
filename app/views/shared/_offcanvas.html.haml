@@ -2,6 +2,7 @@
   %button.close-button{'aria-label' => "Close menu", 'data-close': ''}
     %span{'aria-hidden': true} &times;
   %ul.menu.vertical
+    %li= locale_link((current_locale == :en ? :pl : :en))
     %li= link_to t('site_name'), root_path
     - if company_signed_in?
       %li= link_to t('topbar.jobs'), offers_path
@@ -9,7 +10,6 @@
     -else
       %li= link_to t('topbar.jobs_pl'), offers_path
       %li= link_to t('topbar.jobs_abroad'), offers_path
-    %li= locale_link((current_locale == :en ? :pl : :en))
   %hr/
   %ul.menu.vertical
     - if signed_in?

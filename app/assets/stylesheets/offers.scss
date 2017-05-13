@@ -1,3 +1,32 @@
 // Place all the styles related to the Offers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.offer__preview {
+  padding: 0.5rem;
+  min-height: 40vh;
+  border: 1px dashed #333;
+  margin-bottom: 1.5rem;
+}
+
+.offer__preview-contents {
+  height: auto;
+  display: table-row;
+  &:empty {
+    background-color: #ccc;
+  }
+}
+
+.offers {
+  overflow-x: auto;
+}
+
+.textile_info {
+  padding: 0.8rem;
+  margin: 0.5rem;
+  font-size: 86%;
+  background-color: lighten(SeaGreen, 39);
+  border: 1px dashed #666;
+}
+
+
