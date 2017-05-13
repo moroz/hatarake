@@ -34,6 +34,7 @@ en:
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
+      heading: "Job offers"
 
     search_description:
       reset: "Reset filters."
