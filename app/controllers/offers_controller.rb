@@ -7,6 +7,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = published_or_own.order(:published_at).advanced_search(params)
+    @search_description = view_context.search_description(params)
     respond_to do |f|
       f.js
       f.html

@@ -1,0 +1,38 @@
+// Place all the styles related to the Candidates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+
+.profile-section--border {
+  border: 1px solid #bbb;
+}
+
+.profile-section--padding {
+  padding: 0;
+}
+
+.profile-section--margin {
+  margin: 1rem;
+}
+
+.profile-section__heading {
+  width: 100%;
+  background-color: #ccc;
+  font-size: 1.4rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+}
+
+.profile-section__content {
+  padding: 0.8rem;
+}
+
+.skill__name {
+  font-weight: bold;
+}
+
+.skill__level {
+  text-align: right;
+}
+
+

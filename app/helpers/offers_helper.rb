@@ -19,12 +19,32 @@ module OffersHelper
     end
   end
 
+  def reset_search_link
+    link_to I18n.t('offers.search_description.reset'), offers_path
+  end
+
   def advanced_search_description(params)
-    ''
+    msg = []
+    key_prefix = 'offers.search_description.advanced.'
+    search_params = {
+      cid: -> { Country.find_by(id: params[:cid]).try(:local_name) },
+      pid: -> { Province.find_by(id: params[:pid]).try(:local_name) },
+      cur: -> { I18n.t('currencies.' + params[:cur]) },
+      smin: -> { params[:smin] }
+    }
+    search_params.each do |k,v|
+      if params[k].present?
+        msg << I18n.t(key_prefix + k.to_s, val: v.call)
+      end
+    end
+    if msg.empty?
+      return I18n.t(key_prefix + 'all')
+    end
+    raw (I18n.t(key_prefix + 'start') + msg.join(I18n.t(key_prefix + 'separator')) + I18n.t(key_prefix + 'end'))
   end
 
   def basic_search_description(params)
-    raw I18n.t('offers.index.basic_search_results_html', q: params[:q])
+    raw I18n.t('offers.search_description.basic', q: params[:q])
   end
 
   def short_salary(offer)

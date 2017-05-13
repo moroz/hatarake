@@ -15,6 +15,8 @@ function safe_textilize(text) {
   return textile(result);
 }
 
+jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
+
 $(function() {
   var el = document.querySelector('[data-country-select]');
   el && el.addEventListener('change', function (e) {
@@ -66,6 +68,15 @@ $('.offers.index').ready(function() {
     e.preventDefault();
     $('.basic_search, .advanced_search').toggleClass('hide');
   });
+  $(window).on('popstate', function () {
+    $.ajax({
+      url: document.location.href,
+      dataType: 'script'
+    });
+    document.querySelectorAll('form').forEach(function (f) {
+      f.reset();
+    });
+  });
 });
 
 $('.offers.show').ready(function() {
@@ -74,3 +85,4 @@ $('.offers.show').ready(function() {
     $('#application_form, #show_application_form').toggleClass('hide');
   });
 });
+

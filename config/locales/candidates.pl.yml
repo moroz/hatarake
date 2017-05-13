@@ -1,0 +1,40 @@
+pl:
+  candidates:
+    show:
+      looking_for_work:
+        'true': Szuka pracy
+        'false': Nie szuka pracy
+      change_picture: Zdjęcie profilowe
+      change_data: Edycja danych osobowych
+      skills: Umiejętności
+      education: Wykształcenie
+      work_experience: Doświadczenie zawodowe
+      no_skills: Nie podano umiejętności.
+      no_education: Brak informacji o wykształceniu.
+      no_work_experience: Brak informacji o doświadczeniu zawodowym.
+      edit_skills: Edytuj umiejętności
+      edit_work: Edytuj doświadczenie zawodowe
+      edit_education: Edytuj wykształcenie
+    index:
+      title: Przegląd kandydatów
+      name: Imię i nazwisko
+      age: Wiek
+      sex: Płeć
+      profession: Zawód
+      looking_for_work: Szuka pracy
+    search:
+      heading: Wyszukiwanie kandydatów
+      profession: Zawód
+      only_looking_for_work: Tylko szukający pracy
+      sex: Płeć
+      any_profession: Dowolny
+      any_sex: Dowolna
+      order: Sortuj według
+      name: Imię i nazwisko
+      submit: Szukaj
+      order_cols:
+        0: Imienia i nazwiska
+        1: Wieku
+        2: Płci
+        3: Zawodu
+

@@ -3,6 +3,7 @@
 - show_advanced = params[:adv].present? && params[:adv] == '1'
 .row
   = render partial: 'basic_search', locals: {hidden: show_advanced}
+.row
   = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
 .offers#offer_table
