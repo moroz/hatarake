@@ -2,17 +2,20 @@
 %html{:lang => "en"}
   = render 'shared/header'
   %body.home
-    = render 'shared/topbar'
-    .home__row1
-      .row
-        .columns.medium-6
-          .row1__opaque-box
-            = yield :row1
-    .container
-      .row
-        = render 'shared/messages'
-        = yield
-      .row
-        %hr/
-        InJobs
-    
+    = render 'shared/offcanvas'
+    .off-canvas-content{'data-off-canvas-content': ''}
+      = render 'shared/topbar'
+      = render 'shared/titlebar'
+      .home__row1
+        .row
+          .columns.medium-6
+            .row1__opaque-box
+              = yield :row1
+      .container
+        .row
+          = render 'shared/messages'
+          = yield
+        .row
+          %hr/
+          InJobs
+      
