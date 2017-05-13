@@ -15,6 +15,8 @@ function safe_textilize(text) {
   return textile(result);
 }
 
+jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
+
 $(function() {
   var el = document.querySelector('[data-country-select]');
   el && el.addEventListener('change', function (e) {

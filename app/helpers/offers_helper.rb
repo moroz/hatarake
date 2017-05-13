@@ -22,14 +22,16 @@ module OffersHelper
   def advanced_search_description(params)
     msg = []
     key_prefix = 'offers.search_description.advanced.'
-    if params[:cid].present?
-      msg << I18n.t(key_prefix + 'cid', val: Country.find_by(id: params[:cid]).try(:local_name))
-    end
-    if params[:pid].present?
-      msg << I18n.t(key_prefix + 'pid', val: Province.find_by(id: params[:pid]).try(:local_name))
-    end
-    if params[:cur].present?
-      msg << I18n.t(key_prefix + 'cur', val: I18n.t('currencies.' + params[:cur]))
+    search_params = {
+      cid: -> { Country.find_by(id: params[:cid]).try(:local_name) },
+      pid: -> { Province.find_by(id: params[:pid]).try(:local_name) },
+      cur: -> { I18n.t('currencies.' + params[:cur]) },
+      smin: -> { params[:smin] }
+    }
+    search_params.each do |k,v|
+      if params[k].present?
+        msg << I18n.t(key_prefix + k.to_s, val: v.call)
+      end
     end
     raw (I18n.t(key_prefix + 'start') + msg.join(I18n.t(key_prefix + 'separator')) + I18n.t(key_prefix + 'end'))
   end
