@@ -22,6 +22,26 @@ class Offer < ApplicationRecord
   scope :with_min_salary, ->(min) { where("salary @> :min or lower(salary) > :min", min: min.to_d) }
   scope :featured, -> { published.order('published_at DESC') }
 
+  def self.advanced_search(o = {})
+    scope = self.all
+    if o[:cid].present?
+      scope = scope.where(country_id: o[:cid])
+    end
+    if o[:pid].present?
+      scope = scope.where(province_id: o[:pid])
+    end
+    if o[:q].present?
+      scope = scope.search_by_query(o[:q])
+    end
+    if o[:smin].present?
+      scope = scope.with_min_salary(o[:smin])
+    end
+    if o[:cur].present?
+      scope = scope.where(currency: o[:cur])
+    end
+    scope
+  end
+
   def publish
     self.update(published: true, published_at: Time.now)
   end
