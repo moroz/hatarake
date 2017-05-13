@@ -57,77 +57,6 @@ en:
     sek: Swedish krone
     dkk: Danish krone
 
-  offers:
-    applicant_count:
-      zero: "Nobody has applied for this post yet."
-      one: "One person applied for this post."
-      many: "%{count} people applied for this post."
-    add_new_offer: Add new offer...
-    show:
-      company: "Employer"
-      location: "Location"
-      salary: "Salary"
-      hourly_wage: "Hourly wage"
-      contact_email: "Contact e-mail"
-      contact_phone: "Contact phone"
-      heading: "Job offer: "
-      title: "Offer: "
-      published_at: Published on
-    table:
-      title: "Title"
-      salary: "Salary"
-      location: "Location"
-      company: "Company"
-      per_month: "/mo."
-      per_hour: "/h"
-    new:
-      heading: "Create new offer"
-      title: "Create new offer"
-    index:
-      no_offers: "No offers found for the search criteria entered."
-      advanced_search: "Advanced search"
-      noscript: Please enable JS in your browser to search by region.
-      basic_search: "Basic search"
-      basic_search_results_html: "Search results for query <strong>%{q}</strong>:"
-    advanced_search:
-      heading: "Advanced search"
-      country: Country
-      province: Province/area
-      salary_min: Minimal salary
-      currency: Currency
-      any_currency: Any currency
-      any_country: Any country
-      submit: "Search"
-      term: "Search term"
-    basic_search:
-      heading: "Search for offers"
-      placeholder: "Partial title, description, location..."
-      submit: "Search"
-    edit:
-      heading: "Edit offer"
-      title: "Edit offer: "
-    fields:
-      title: "Title:"
-      currency: "Currency:"
-      salary_html: "Monthly salary: <small>(optional)</small>"
-      salary_min: "Minimal salary:"
-      salary_max: "Maximal salary:"
-      hourly_wage_html: "Hourly wage: <small>(optional)</small>"
-      hourly_wage_min: "Maximal hourly wage:"
-      hourly_wage_max: "Minimal hourly wage:"
-      contact_email: "Contact e-mail:"
-      contact_phone: "Contact phone:"
-      country: "Country:"
-      province: "Voivodeship or province:"
-      description: "Description"
-      location: "City or village:"
-      salary_help_text: "If the salary is a fixed value, please put the same value in both fields."
-      hourly_wage_help_text: "If the hourly wage is a fixed value, please put the same value in both fields."
-    placeholders:
-      preview: A preview of your description will appear here.
-    provinces:
-      blank: Everywhere
-
   actions:
     delete: Delete
     publish: Publish
@@ -137,45 +66,6 @@ en:
   date:
     formats:
       by: "%B '%y"
-
-  candidates:
-    show:
-      looking_for_work:
-        'true': Looking for work
-        'false': Not looking for work
-      change_picture: Change profile picture...
-      change_data: Change personal data
-      skills: Skills
-      education: "Education"
-      work_experience: "Work experience"
-      edit_skills: "Edit your skills..."
-      edit_education: "Edit your education..."
-      edit_work: "Edit your work experience..."
-      no_skills: No skills.
-      no_education: No information about education.
-      no_work_experience: No information about work experience.
-    index:
-      title: Browse candidates
-      name: Name
-      age: Age
-      sex: Sex
-      profession: Profession
-      looking_for_work: Looking for work
-    search:
-      heading: "Candidate search"
-      profession: 'Profession'
-      only_looking_for_work: "Only looking for work"
-      sex: Sex
-      name: Name
-      any_profession: Any
-      any_sex: Any
-      order: Order by
-      submit: Search
-      order_cols:
-        0: Name
-        1: Age
-        2: Sex
-        3: Profession
 
   home:
     featured_offers:

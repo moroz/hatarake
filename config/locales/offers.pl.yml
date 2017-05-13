@@ -1,0 +1,71 @@
+pl:
+  offers:
+    applicant_count:
+      zero: "Nikt jeszcze nie aplikował na to stanowisko."
+      one: "Jedna osoba aplikowała na to stanowisko."
+      few: "%{count} osoby aplikowały na to stanowisko."
+      many: "%{count} osób aplikowało na to stanowisko."
+    add_new_offer: Dodaj nową ofertę
+    show:
+      company: "Pracodawca"
+      location: "Miejsce pracy"
+      salary: "Pensja miesięczna"
+      hourly_wage: "Stawka godzinowa"
+      contact_email: "E-mail kontaktowy"
+      contact_phone: "Telefon kontaktowy"
+      heading: "Oferta pracy: "
+      title: "Oferta: "
+      published_at: "Opublikowano"
+    table:
+      title: "Tytuł"
+      salary: "Wynagrodzenie"
+      location: "Lokalizacja"
+      company: "Firma"
+      per_month: "/mc."
+      per_hour: "/h"
+    new:
+      title: "Utwórz nową ofertę"
+      heading: "Utwórz ofertę"
+    index:
+      no_offers: "Brak ofert spełniających kryteria wyszukiwania."
+      advanced_search: "Wyszukiwanie zaawansowane"
+      noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
+      basic_search: "Wyszukiwanie podstawowe"
+      basic_search_results_html: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
+    advanced_search:
+      country: Kraj
+      province: Rejon
+      salary_min: "Pensja minimalna"
+      currency: Waluta
+      submit: "Szukaj ofert"
+      term: "Wyszukiwana fraza"
+      any_currency: Dowolna waluta
+      any_country: Dowolny kraj
+    basic_search:
+      submit: "Szukaj"
+      placeholder: "Fragment tytułu, opisu, lokalizacja..."
+      heading: "Wyszukiwanie ofert"
+    edit:
+      title: "Edycja oferty: "
+    fields:
+      title: "Tytuł:"
+      currency: "Waluta:"
+      salary_html: "Pensja miesięczna: <small>(opcjonalnie)</small>"
+      salary_min: "od"
+      salary_max: "do"
+      hourly_wage_html: "Stawka godzinowa: <small>(opcjonalnie)</small>"
+      hourly_wage_min: "od"
+      hourly_wage_max: "do"
+      contact_email: "E-mail kontaktowy:"
+      contact_phone: "Numer kontaktowy:"
+      country: "Kraj:"
+      province: "Województwo lub prowincja:"
+      description: "Opis"
+      location: "Miejscowość:"
+      salary_help_text: "Jeżeli pensja jest stałą, proszę wpisać tę samą liczbę w obu polach."
+      hourly_wage_help_text: "Jeżeli stawka jest stałą, proszę wpisać tę samą liczbę w obu polach."
+    placeholders:
+      preview: W tym miejscu pojawi się podgląd opisu.
+    provinces:
+      blank: Cały kraj
+

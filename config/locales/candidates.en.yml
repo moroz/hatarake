@@ -1,0 +1,40 @@
+en:
+  candidates:
+    show:
+      looking_for_work:
+        'true': Looking for work
+        'false': Not looking for work
+      change_picture: Change profile picture...
+      change_data: Change personal data
+      skills: Skills
+      education: "Education"
+      work_experience: "Work experience"
+      edit_skills: "Edit your skills..."
+      edit_education: "Edit your education..."
+      edit_work: "Edit your work experience..."
+      no_skills: No skills.
+      no_education: No information about education.
+      no_work_experience: No information about work experience.
+    index:
+      title: Browse candidates
+      name: Name
+      age: Age
+      sex: Sex
+      profession: Profession
+      looking_for_work: Looking for work
+    search:
+      heading: "Candidate search"
+      profession: 'Profession'
+      only_looking_for_work: "Only looking for work"
+      sex: Sex
+      name: Name
+      any_profession: Any
+      any_sex: Any
+      order: Order by
+      submit: Search
+      order_cols:
+        0: Name
+        1: Age
+        2: Sex
+        3: Profession
+
