@@ -24,7 +24,7 @@ module OffersHelper
   end
 
   def basic_search_description(params)
-    raw I18n.t('offers.index.basic_search_results_html', q: params[:q])
+    raw I18n.t('offers.search_description.basic', q: params[:q])
   end
 
   def short_salary(offer)

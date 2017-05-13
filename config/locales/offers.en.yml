@@ -1,5 +1,6 @@
 en:
   offers:
+
     applicant_count:
       zero: "Nobody has applied for this post yet."
       one: "One person applied for this post."
@@ -15,6 +16,7 @@ en:
       heading: "Job offer: "
       title: "Offer: "
       published_at: Published on
+
     table:
       title: "Title"
       salary: "Salary"
@@ -22,15 +24,20 @@ en:
       company: "Company"
       per_month: "/mo."
       per_hour: "/h"
+
     new:
       heading: "Create new offer"
       title: "Create new offer"
+
     index:
       no_offers: "No offers found for the search criteria entered."
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
-      basic_search_results_html: "Search results for query <strong>%{q}</strong>:"
+
+    search_description:
+      basic: "Search results for query <strong>%{q}</strong>:"
+
     advanced_search:
       heading: "Advanced search"
       country: Country

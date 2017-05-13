@@ -66,6 +66,15 @@ $('.offers.index').ready(function() {
     e.preventDefault();
     $('.basic_search, .advanced_search').toggleClass('hide');
   });
+  $(window).on('popstate', function () {
+    $.ajax({
+      url: document.location.href,
+      dataType: 'script'
+    });
+    document.querySelectorAll('form').forEach(function (f) {
+      f.reset();
+    });
+  });
 });
 
 $('.offers.show').ready(function() {
@@ -74,3 +83,4 @@ $('.offers.show').ready(function() {
     $('#application_form, #show_application_form').toggleClass('hide');
   });
 });
+

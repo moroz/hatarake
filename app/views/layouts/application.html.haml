@@ -14,7 +14,7 @@
         .row
           %hr/
           InJobs
-          - if Rails.env.development?
+          - if Rails.env.development? && false
             %small= debug flash
             %small= debug params
       

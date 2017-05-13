@@ -1,11 +1,8 @@
-- classes = 'advanced_search'
+- classes = 'advanced_search medium-10 medium-offset-1 columns'
 - classes << ' hide' if defined?(hidden) && hidden
 %section{class: classes}
-  .row
-    .medium-9.columns
-      %h4= t('offers.index.advanced_search')
-    .medium-3.columns.text-right
-      = link_to t('offers.index.basic_search'), offers_path(adv: '0'), class: 'button small', id: 'show_basic_search'
+  .text-center
+    = link_to t('offers.index.basic_search'), offers_path(adv: '0'), id: 'show_basic_search'
   = form_for offers_path, method: :get, remote: true do |f|
     = f.hidden_field :adv, name: 'adv',value: "1"
     = f.label :q, t('.term')

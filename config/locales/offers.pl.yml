@@ -5,7 +5,9 @@ pl:
       one: "Jedna osoba aplikowała na to stanowisko."
       few: "%{count} osoby aplikowały na to stanowisko."
       many: "%{count} osób aplikowało na to stanowisko."
+
     add_new_offer: Dodaj nową ofertę
+
     show:
       company: "Pracodawca"
       location: "Miejsce pracy"
@@ -16,6 +18,7 @@ pl:
       heading: "Oferta pracy: "
       title: "Oferta: "
       published_at: "Opublikowano"
+
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"
@@ -23,15 +26,20 @@ pl:
       company: "Firma"
       per_month: "/mc."
       per_hour: "/h"
+
     new:
       title: "Utwórz nową ofertę"
       heading: "Utwórz ofertę"
+
     index:
       no_offers: "Brak ofert spełniających kryteria wyszukiwania."
       advanced_search: "Wyszukiwanie zaawansowane"
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
-      basic_search_results_html: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
+
+    search_description:
+      basic: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
+
     advanced_search:
       country: Kraj
       province: Rejon
@@ -41,12 +49,15 @@ pl:
       term: "Wyszukiwana fraza"
       any_currency: Dowolna waluta
       any_country: Dowolny kraj
+
     basic_search:
       submit: "Szukaj"
       placeholder: "Fragment tytułu, opisu, lokalizacja..."
       heading: "Wyszukiwanie ofert"
+
     edit:
       title: "Edycja oferty: "
+
     fields:
       title: "Tytuł:"
       currency: "Waluta:"
