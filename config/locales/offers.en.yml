@@ -41,6 +41,7 @@ en:
         start: "Search results for "
         end: "."
         separator: ", "
+        all: "All offers:"
         cid: "country: <strong>%{val}</strong>"
         pid: "region: <strong>%{val}</strong>"
         cur: "currency: <strong>%{val}</strong>"
@@ -56,13 +57,16 @@ en:
       any_country: Any country
       submit: "Search"
       term: "Search term"
+
     basic_search:
       heading: "Search for offers"
       placeholder: "Partial title, description, location..."
       submit: "Search"
+
     edit:
       heading: "Edit offer"
       title: "Edit offer: "
+
     fields:
       title: "Title:"
       currency: "Currency:"

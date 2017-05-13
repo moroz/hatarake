@@ -33,6 +33,9 @@ module OffersHelper
         msg << I18n.t(key_prefix + k.to_s, val: v.call)
       end
     end
+    if msg.empty?
+      return I18n.t(key_prefix + 'all')
+    end
     raw (I18n.t(key_prefix + 'start') + msg.join(I18n.t(key_prefix + 'separator')) + I18n.t(key_prefix + 'end'))
   end
 

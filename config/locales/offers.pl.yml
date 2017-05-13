@@ -39,6 +39,15 @@ pl:
 
     search_description:
       basic: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
+      advanced:
+        start: "Wyniki wyszukiwania dla "
+        end: "."
+        separator: ", "
+        all: "Wszystkie oferty:"
+        cid: "kraju: <strong>%{val}</strong>"
+        pid: "regionu: <strong>%{val}</strong>"
+        cur: "waluty: <strong>%{val}</strong>"
+        smin: "pensji minimalnej: <strong>%{val}</strong>"
 
     advanced_search:
       country: Kraj
