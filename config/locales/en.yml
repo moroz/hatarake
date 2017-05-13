@@ -88,6 +88,7 @@ en:
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
+      basic_search_results_html: "Search results for query <strong>%{q}</strong>:"
     advanced_search:
       heading: "Advanced search"
       country: Country

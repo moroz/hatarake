@@ -89,7 +89,7 @@ pl:
       advanced_search: "Wyszukiwanie zaawansowane"
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
-      basic_search_results_html: "Search results for phrase <strong>%{q}</strong>:"
+      basic_search_results_html: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
     advanced_search:
       country: Kraj
       province: Rejon

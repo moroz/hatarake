@@ -9,6 +9,24 @@ module OffersHelper
     raw str
   end
 
+  def search_description(params)
+    if params[:adv].present? && params[:adv] == '1'
+      advanced_search_description(params)
+    elsif params[:q].present?
+      basic_search_description(params)
+    else
+      nil
+    end
+  end
+
+  def advanced_search_description(params)
+    ''
+  end
+
+  def basic_search_description(params)
+    raw I18n.t('offers.index.basic_search_results_html', q: params[:q])
+  end
+
   def short_salary(offer)
     if offer.salary.present?
       readable_currency_range(offer.salary, offer.currency) +
