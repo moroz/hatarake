@@ -2,15 +2,20 @@
 %html{:lang => "en"}
   = render 'shared/header'
   %body{class: "#{controller_name} #{action_name}"}
-    = render 'shared/topbar'
-    .container
-      .row
-        = render 'shared/messages'
-        = yield
-      .row
-        %hr/
-        InJobs
-        - if Rails.env.development?
-          %small= debug flash
-          %small= debug params
-    
+    .off-canvas.position-left#offCanvas{'data-off-canvas': ''}
+      Hehe
+    .off-canvas-content{'data-off-canvas-content': ''}
+      = render 'shared/topbar' # topbar, visible for medium and above
+      = render 'shared/titlebar' # visible for small screens
+      .container
+        .row
+          %button{type: 'button', 'data-open': 'offCanvas'}
+          = render 'shared/messages'
+          = yield
+        .row
+          %hr/
+          InJobs
+          - if Rails.env.development?
+            %small= debug flash
+            %small= debug params
+      
