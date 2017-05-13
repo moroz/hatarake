@@ -5,7 +5,7 @@
     .input-group
       = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.basic_search.placeholder'), autocomplete: 'off', autofocus: '', id: "basic_search_q"
       .input-group-button
-        = f.submit t('offers.basic_search.submit'), class: 'button success', name: nil
+        = f.submit t('offers.basic_search.submit'), class: 'button primary', name: nil
   .text-center
     = link_to t('offers.index.advanced_search'), offers_path(adv: '1'), class: '', id: 'show_advanced_search'
   
