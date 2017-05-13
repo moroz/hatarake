@@ -90,6 +90,7 @@ pl:
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
       basic_search_results_html: "Wyniki wyszukiwania dla zapytania <strong>%{q}</strong>:"
+      heading: Oferty pracy
     advanced_search:
       country: Kraj
       province: Rejon
