@@ -37,6 +37,14 @@ en:
 
     search_description:
       basic: "Search results for query <strong>%{q}</strong>:"
+      advanced:
+        start: "Search results for "
+        end: "."
+        separator: ", "
+        cid: "country: <strong>%{val}</strong>"
+        pid: "region: <strong>%{val}</strong>"
+        cur: "currency: <strong>%{val}</strong>"
+        smin: "minimal salary: <strong>%{val}</strong>"
 
     advanced_search:
       heading: "Advanced search"
