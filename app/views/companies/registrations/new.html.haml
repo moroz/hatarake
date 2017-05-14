@@ -1,5 +1,5 @@
 %h2 Sign up for company account
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { 'data-behavior' => 'turbolinks-form' }) do |f|
   = render partial: 'shared/errors', locals: { object: f.object }
   .form-inputs
     = f.input :email, required: true, autofocus: true

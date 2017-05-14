@@ -1,7 +1,7 @@
 !!!
 %html{:lang => "en"}
   = render 'shared/header'
-  %body{class: "#{controller_name} #{action_name}"}
+  = body_tag do
     = render 'shared/offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'shared/topbar' # topbar, visible for medium and above

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+  before_action :disable_turbolinks, only: [:new, :edit, :create, :update]
   helper_method :current_user, :admin_signed_in?, :current_locale, :local_name, :page_title, :signed_in?
 
   def admin_signed_in?
@@ -33,6 +34,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def disable_turbolinks
+    @disable_turbolinks = true
+  end
 
   def set_locale
     session[:locale] = params[:lang] if params[:lang].present?

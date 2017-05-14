@@ -1,6 +1,6 @@
 %h1= @title || t('.heading')
 
-= simple_form_for offer do |f|
+= simple_form_for offer, remote: true do |f|
   = render partial: 'shared/errors', locals: { object: f.object }
   = f.input :title, label: t('offers.fields.title')
   = f.label :currency, t('offers.fields.currency')
