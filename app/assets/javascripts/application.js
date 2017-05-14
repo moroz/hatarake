@@ -23,25 +23,3 @@
 document.addEventListener('turbolinks:load', function () {
   $(document).foundation();
 });
-
-$(document).on('ajax:before', 'form[method=get][data-remote=true]', function(e) {
-  e.preventDefault(); // do not perform regular sumbit
-  e.stopPropagation(); // do not let regular remote handler see this
-  var form = $(this);
-  Turbolinks.visit(form.attr("action") + form.serialize());
-});
-
-(function(){
-  var remoteForm = 'form[method!=get][data-remote=true]';
-  $(document).on('submit', remoteForm, function(e, response) {
-    Turbolinks.controller.history.push(window.location.href);
-  });
-
-  $(document).on('ajax:success', remoteForm, function(e, response) {
-    if(response.substring(0, 10) == 'Turbolinks'){ return; }
-    Turbolinks.clearCache();
-    $("body").html(response.match(/<body[^>]*>([\s\S]*?)<\/body>/i)[1]);
-    Turbolinks.dispatch("turbolinks:load");
-    window.scroll(0, 0);
-  });
-})();
