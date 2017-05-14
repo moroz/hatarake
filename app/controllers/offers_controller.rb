@@ -32,8 +32,16 @@ class OffersController < ApplicationController
       flash[:success] = "Your offer has been saved."
       redirect_to offer
     else
-      set_country_list
-      render :new
+      respond_to do |f|
+        f.html do
+          set_country_list
+          render :new
+        end
+        f.js do
+          @object = offer
+          render 'shared/errors'
+        end
+      end
     end
   end
 
