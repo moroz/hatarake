@@ -14,9 +14,12 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/autocomplete
 //= require jquery-readyselector
+//= require turbolinks
 //= require textile
 //= require autocomplete-rails
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+document.addEventListener('turbolinks:load', function () {
+  $(document).foundation();
+});

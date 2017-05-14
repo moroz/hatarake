@@ -17,7 +17,7 @@ function safe_textilize(text) {
 
 jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
 
-$(function() {
+document.addEventListener('turbolinks:load', function () {
   var el = document.querySelector('[data-country-select]');
   el && el.addEventListener('change', function (e) {
     var countryId = e.target.value;
@@ -61,9 +61,7 @@ $(function() {
         $(this).height($(this).height()+1);
       };
     });
-});
 
-$('.offers.index').ready(function() {
   $('#show_advanced_search, #show_basic_search').click(function(e) {
     e.preventDefault();
     $('.basic_search, .advanced_search').toggleClass('hide');
@@ -77,9 +75,7 @@ $('.offers.index').ready(function() {
       f.reset();
     });
   });
-});
 
-$('.offers.show').ready(function() {
   $('[data-toggle-application-form]').click(function(e) {
     e.preventDefault();
     $('#application_form, #show_application_form').toggleClass('hide');
