@@ -1,10 +1,12 @@
-.home__offers.callout
-  %h3= t('home.featured_offers.heading')
-  %ul
-    - for offer in @offers
-      %li
-        = (link_to offer.title, offer) + ","
-        = (short_salary(offer) + ',') if offer.salary.present?
-        = offer.short_location
-  = link_to t('home.featured_offers.more'), offers_path
+.home__offers.card
+  .card-divider
+    %h3= t('home.featured_offers.heading')
+  .card-section
+    %ul
+      - for offer in @offers
+        %li
+          = (link_to offer.title, offer) + ","
+          = (short_salary(offer) + ',') if offer.salary.present?
+          = offer.short_location
+    = link_to t('home.featured_offers.more'), offers_path
 
