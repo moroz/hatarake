@@ -70,15 +70,6 @@ document.addEventListener('turbolinks:load', function () {
     e.preventDefault();
     $('.basic_search, .advanced_search').toggleClass('hide');
   });
-  //$(window).on('popstate', function () {
-    //$.ajax({
-      //url: document.location.href,
-      //dataType: 'script'
-    //});
-    //document.querySelectorAll('form').forEach(function (f) {
-      //f.reset();
-    //});
-  //});
 
   $('[data-toggle-application-form]').click(function(e) {
     e.preventDefault();

@@ -1,4 +1,6 @@
 :plain
   document.getElementById('offer_table').innerHTML = '#{j render partial: 'offers'}';
-  Turbolinks.visit('#{ request.url }');
-  // document.querySelector('.basic_search form').reset();
+  Turbolinks
+    .controller
+    .pushHistoryWithLocationAndRestorationIdentifier('#{request.url}', Turbolinks.uuid()); 
+  document.querySelector('.basic_search form').reset();

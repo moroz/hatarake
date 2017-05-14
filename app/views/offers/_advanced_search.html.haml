@@ -3,7 +3,7 @@
 %section{class: classes}
   .text-center
     = link_to t('offers.index.basic_search'), offers_path(adv: '0'), id: 'show_basic_search'
-  = form_for offers_path, method: :get, data: { 'offer-search' => '' } do |f|
+  = form_for offers_path, method: :get, remote: true do |f|
     = f.hidden_field :adv, name: 'adv',value: "1"
     = f.label :q, t('.term')
     = f.text_field :q, name: 'q', id: "advanced_search_q"
