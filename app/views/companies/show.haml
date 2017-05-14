@@ -1,21 +1,11 @@
-= profile_section nil do
-  .medium-2.columns
-    = avatar_for company
-  .medium-10.columns
-    %h2= company.display_name
-    = section_link t('.change_picture'), new_avatar_path, :small
+.row
+  .medium-9.columns
+    .company__column
+      %h1.company__name= company.name
+      %p.company__description= company.description
 
-= profile_section t('.offers') do
-  - if company.offers.any?
-    %table
-      %thead
-        %tr
-          %th= t('offers.table.title')
-          %th= t('offers.table.salary')
-          %th= t('offers.table.location')
-      %tbody
-        = render company.offers
-  - else
-    t('.no_offers')
-
-
+  .medium-3.columns
+    .company__column
+      - if company.offers.any?
+        - company.offers.each do |offer|
+          %p= offer.title
