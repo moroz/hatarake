@@ -96,12 +96,12 @@ select {
 .top-bar {
   font-family: $alternative-font;
   a, a:visited {
-    color: #333;
+    color: $custom-secondary;
     border-bottom: 2px solid transparent;
   }
   a:hover {
-    color: darken(#333, 14%);
-    border-bottom: 2px solid $custom-secondary;
+    color: lighten($custom-secondary, 10);
+    border-color: lighten($custom-secondary, 10);
     text-decoration: none;
   }
 }
