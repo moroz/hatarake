@@ -70,19 +70,6 @@ document.addEventListener('turbolinks:load', function () {
     e.preventDefault();
     $('.basic_search, .advanced_search').toggleClass('hide');
   });
-
-  // change offers via AJAX
-  $('[data-offer-search]').on('submit', function (e) {
-    e.preventDefault();
-    var location = '/offers?' + $(this).serialize();
-    $.get(location)
-      .success(function (e) {
-         Turbolinks
-         .controller
-         .pushHistoryWithLocationAndRestorationIdentifier(location, Turbolinks.uuid()) 
-      });
-  });
-  
   //$(window).on('popstate', function () {
     //$.ajax({
       //url: document.location.href,
