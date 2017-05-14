@@ -1,6 +1,6 @@
 .row
-  .medium-9.columns
-    .row.callout
+  .medium-8.columns
+    .card
       .medium-4.columns
         = avatar_for candidate, :avatar
       .medium-8.columns
@@ -17,38 +17,44 @@
           = link_to t('.change_picture'), new_avatar_path, class: 'button small'
           = link_to t('.change_data'), candidate_step2_path, class: 'button small'
 
-    .row.callout
-      %h4= t('.skills')
-      %div
-        - if candidate.skill_items.any?
-          %table
-            %tbody#skill_items
-              = render candidate.skill_items
-        - else
-          = t('.no_skills')
-      - if can? :edit, candidate
-        = link_to t('.edit_skills'), profile_edit_skills_path, class: 'button small'
+    .card
+      .card-divider
+        %h3= t('.skills')
+      .card-section
+        %div
+          - if candidate.skill_items.any?
+            %table
+              %tbody#skill_items
+                = render candidate.skill_items
+          - else
+            = t('.no_skills')
+        - if can? :edit, candidate
+          = link_to t('.edit_skills'), profile_edit_skills_path, class: 'button small'
 
-    .row.callout
-      %h4= t('.education')
-      %div
-        - if candidate.education_items.any?
-          %table
-            %tbody
-              = render candidate.education_items
-        - else
-          = t('.no_education')
-      - if can? :edit, candidate
-        = link_to t('.edit_education'), new_education_item_path, class: 'button small'
+    .card
+      .card-divider
+        %h3= t('.education')
+      .card-section
+        %div
+          - if candidate.education_items.any?
+            %table
+              %tbody
+                = render candidate.education_items
+          - else
+            = t('.no_education')
+        - if can? :edit, candidate
+          = link_to t('.edit_education'), new_education_item_path, class: 'button small'
 
-    .row.callout
-      %h4= t('.work_experience')
-      %div
-        - if candidate.work_items.any?
-          %table
-            %tbody
-              = render candidate.work_items
-        - else
-          = t('.no_work_experience') 
-      - if can? :edit, candidate
-        = link_to t('.edit_work'), new_work_item_path, class: 'button small'
+    .card
+      .card-divider
+        %h3= t('.work_experience')
+      .card-section
+        %div
+          - if candidate.work_items.any?
+            %table
+              %tbody
+                = render candidate.work_items
+          - else
+            = t('.no_work_experience') 
+        - if can? :edit, candidate
+          = link_to t('.edit_work'), new_work_item_path, class: 'button small'

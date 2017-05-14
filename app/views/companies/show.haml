@@ -1,11 +1,16 @@
 .row
-  .medium-9.columns
-    .company__column
-      %h1.company__name= company.name
-      %p.company__description= company.description
+  .medium-8.columns
+    .card
+      .card-divider
+        %h3.company__name= company.name
+      .card-section
+        %p.company__description= company.description
 
-  .medium-3.columns
-    .company__column
-      - if company.offers.any?
-        - company.offers.each do |offer|
-          %p= offer.title
+  .medium-4.columns
+    .card
+      .card-divider
+        %h4 Recent offers
+      .card-section
+        - if company.offers.any?
+          - company.offers.each do |offer|
+            %p= offer.title
