@@ -18,6 +18,8 @@ function safe_textilize(text) {
 jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
 
 document.addEventListener('turbolinks:load', function () {
+
+  // substitute provinces in the province select when country is changed
   var el = document.querySelector('[data-country-select]');
   el && el.addEventListener('change', function (e) {
     var countryId = e.target.value;
@@ -28,6 +30,8 @@ document.addEventListener('turbolinks:load', function () {
       .disabled = !countryId;
   }, false);
 
+  // disable location field in offers#new and offers#edit
+  // if no province is set
   el = document.getElementById('offer_province_id');
   el && el.addEventListener('change', function(e) {
     var locationInput = document.getElementById('offer_location');
@@ -66,6 +70,19 @@ document.addEventListener('turbolinks:load', function () {
     e.preventDefault();
     $('.basic_search, .advanced_search').toggleClass('hide');
   });
+
+  // change offers via AJAX
+  $('[data-offer-search]').on('submit', function (e) {
+    e.preventDefault();
+    var location = '/offers?' + $(this).serialize();
+    $.get(location)
+      .success(function (e) {
+         Turbolinks
+         .controller
+         .pushHistoryWithLocationAndRestorationIdentifier(location, Turbolinks.uuid()) 
+      });
+  });
+  
   //$(window).on('popstate', function () {
     //$.ajax({
       //url: document.location.href,
