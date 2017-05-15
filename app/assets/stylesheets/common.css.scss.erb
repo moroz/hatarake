@@ -1,3 +1,4 @@
+@import 'settings';
 @import 'colors';
 html {
   font-size: 100%;
@@ -61,15 +62,15 @@ select {
   font-size: 1.2rem;
   font-family: $alternative-font;
 
-  &:hover {
-    background-color: $button-color;
-    transition: 0.3s background-color ease, 0.3s color ease;
-    text-decoration: none;
-    color: #fff;
-  }
-
   &:visited {
     color: $button-color;
+  }
+
+  &:hover, &:focus {
+    background-color: $button-color;
+    color: #fff;
+    transition: 0.3s background-color ease, 0.3s color ease;
+    text-decoration: none;
   }
 }
 
@@ -93,10 +94,23 @@ select {
   }
 }
 
+a, th {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table a {
+  font-weight: $global-weight-normal;
+}
+
 .top-bar {
   font-family: $alternative-font;
   a, a:visited {
     color: $custom-secondary;
+    font-weight: 400;
     border-bottom: 2px solid transparent;
   }
   a:hover {
@@ -130,13 +144,6 @@ textarea.text {
 th[scope='row'] {
   text-align: left;
   width: 10rem;
-}
-a, th, ul.menu a {
-  font-weight: 400;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .white-bg {
