@@ -15,6 +15,13 @@ function safe_textilize(text) {
   return textile(result);
 }
 
+function resetSearchForms() {
+  var forms = document.querySelectorAll('form');
+  for (var i = 0; i < forms.length; i++) {
+    forms[i].reset();
+  }
+}
+
 jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
 
 document.addEventListener('turbolinks:load', function () {

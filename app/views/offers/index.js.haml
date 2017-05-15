@@ -4,14 +4,6 @@
     .controller
     .pushHistoryWithLocationAndRestorationIdentifier('#{request.url}', Turbolinks.uuid()); 
   document.querySelector('.basic_search form').reset();
-  if (#{@search_description.present?}) {
-    var el = document.getElementById('reset_search');
-    el && el.addEventListener('click', function (e) {
-      var forms = document.querySelectorAll('form');
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].reset();
-      }
-    }, false);
-  } else {
-    $(document).unbind('#reset_search');
+  if (!#{@search_description.present?}) {
+    resetSearchForms();
   }
