@@ -51,4 +51,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:first_name, :last_name])
   end
+
+  def render_js_errors_for(object)
+    @object = object
+    render 'shared/errors'
+  end
 end

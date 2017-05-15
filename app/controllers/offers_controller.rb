@@ -37,10 +37,7 @@ class OffersController < ApplicationController
           set_country_list
           render :new
         end
-        f.js do
-          @object = offer
-          render 'shared/errors'
-        end
+        f.js { render_js_errors_for(offer) }
       end
     end
   end
@@ -50,9 +47,14 @@ class OffersController < ApplicationController
       flash[:success] = "The offer was updated."
       redirect_to offer
     else
-      @title = t('.title') + offer.title
-      set_country_list
-      render 'new'
+      respond_to do |f|
+        f.html do
+          @title = t('.title') + offer.title
+          set_country_list
+          render 'new'
+        end
+        f.js { render_js_errors_for(offer) }
+      end
     end
   end
 
