@@ -76,9 +76,5 @@ document.addEventListener('turbolinks:load', function () {
     $('#application_form, #show_application_form').toggleClass('hide');
   });
 
-  el = document.getElementById('reset_search');
-  el && el.addEventListener('click', function (e) {
-    document.querySelectorAll('form').forEach((f) => { f.reset() });
-  }, false);
 });
 
