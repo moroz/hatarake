@@ -10,7 +10,7 @@ RSpec.describe "Candidate registration" do
     page.find("#candidate_password").set('foobar')
     page.find("#candidate_password_confirmation").set('foobar')
 
-    expect { click_button }.to change { Candidate.count }
+    expect { submit_form }.to change { Candidate.count }
   end
 
   describe "second step" do
@@ -56,7 +56,7 @@ RSpec.describe "Candidate registration" do
           page.find("#candidate_profile_attributes_last_name").set("Smith")
           page.find("#candidate_profession_name").set("Fireman")
 
-          click_button
+          submit_form
 
           u = candidate.reload
           p = u.profile

@@ -11,6 +11,6 @@ RSpec.describe "Company registration" do
     page.find("#company_password_confirmation").set('foobar')
     page.find("#company_name").set('Foobar Inc.')
 
-    expect { click_button }.to change { Company.count }
+    expect { submit_form }.to change { Company.count }
   end
 end

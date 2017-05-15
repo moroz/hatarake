@@ -26,8 +26,8 @@ RSpec.describe "Company adds Offer" do
       page.find("#offer_contact_phone").set("555 100-888")
       page.find("#offer_location").set("Berlin")
       page.find("#offer_description").set("We're looking for welders!")
-
-      expect { click_button }.to change { Offer.count }
+      
+      expect { submit_form }.to change { Offer.count }
     end
 
   end
@@ -45,7 +45,7 @@ RSpec.describe "Company adds Offer" do
     end
 
     it "publishes when clicked" do
-      click_link_or_button I18n.t('actions.publish')
+      click_link_or_button I18n.t('actions.publish'), match: :first
       expect(offer.reload).to be_published
     end
 
