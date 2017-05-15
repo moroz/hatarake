@@ -19,6 +19,8 @@ pl:
     jobs: Oferty pracy
     sign_in: Logowanie
     sign_up: Rejestracja
+    sign_out: Wyloguj się
+    profile: Profil
     candidates: Kandydaci
 
   registrations:

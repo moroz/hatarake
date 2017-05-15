@@ -19,6 +19,8 @@ en:
     jobs: Jobs
     sign_in: Sign in
     sign_up: Sign up
+    sign_out: Sign out
+    profile: Profile
     candidates: Candidates
 
   registrations:
