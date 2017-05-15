@@ -20,7 +20,7 @@ module OffersHelper
   end
 
   def reset_search_link
-    link_to I18n.t('offers.search_description.reset'), offers_path, remote: true
+    link_to I18n.t('offers.search_description.reset'), offers_path, id: 'reset_search', remote: true
   end
 
   def advanced_search_description(params)
