@@ -17,10 +17,10 @@
           -if admin_signed_in?
             %li= link_to "Dashboard", "#"
           - else
-            %li= link_to t('topbar.profile'), profile_path
+            %li= link_to "Profile", profile_path
           %li= link_to t('topbar.sign_out'), destroy_user_session_path, method: :delete 
         - else
-          %li= link_to t('devise.sessions.new'), new_user_session_path
-          %li= link_to t('devise.registrations.new'), sign_up_path
+          %li= link_to t('topbar.sign_in'), new_user_session_path
+          %li= link_to t('topbar.sign_up'), sign_up_path
 
 

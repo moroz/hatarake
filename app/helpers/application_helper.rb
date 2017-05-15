@@ -5,6 +5,12 @@ module ApplicationHelper
     renderer.to_html
   end
 
+  def error_messages_for(object)
+    content_tag :div, class: 'error_explanation', id: 'error_explanation' do
+      render partial: 'shared/errors', locals: { object: object }
+    end
+  end
+
   def locale_flag(lang)
     image_tag "/flag-#{lang}.svg", class: 'locale_flag'
   end

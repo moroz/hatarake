@@ -1,4 +1,4 @@
 :plain
-  document.getElementById('error_messages').innerHTML = '#{j render 'shared/errors', object: @object}';
+  document.getElementById('error_explanation').innerHTML = '#{j render 'shared/errors', object: @object}';
   window.scroll(0,0);
   document.querySelector('input[type=submit]').disabled = false;

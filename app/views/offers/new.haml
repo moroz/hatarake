@@ -1,8 +1,7 @@
 %h1= @title || t('.heading')
 
 = simple_form_for offer, remote: true do |f|
-  #error_messages
-    = render 'shared/errors', object: f.object
+  = error_messages_for f.object
   = f.input :title, label: t('offers.fields.title')
   = f.label :currency, t('offers.fields.currency')
   = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last, offer.currency)
