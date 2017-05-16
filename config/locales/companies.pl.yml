@@ -4,8 +4,9 @@ pl:
       change_picture: Zdjęcie profilowe
       offers: Oferty pracy
       no_offers: Brak ofert.
-      website: Strona WWW
+      website: 'Strona WWW:'
       description: Opis
+      recent_offers: Ostatnie oferty
 
   edit:
     heading: Edycja profilu

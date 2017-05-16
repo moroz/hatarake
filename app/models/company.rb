@@ -3,6 +3,10 @@ class Company < User
   validates_presence_of :name
   has_many :offers, dependent: :destroy
   validates :website, format: { with: URI::regexp }
+  validates :name, uniqueness: true
+
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
 
   scope :featured, -> { order('updated_at DESC') }
 

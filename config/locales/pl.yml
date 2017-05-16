@@ -128,12 +128,6 @@ pl:
     applicant_count_callout:
       link_text: "Lista aplikantów"
 
-  companies:
-    show:
-      change_picture: Zdjęcie profilowe
-      offers: Oferty pracy
-      no_offers: Brak ofert.
-
   activerecord:
     attributes:
       skill_item:

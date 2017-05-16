@@ -1,10 +1,11 @@
 .row
   .medium-8.columns
     .card
-      .card-divider
-        %h3.company__name= company.name
       .card-section
-        = link_to t('companies.show.website'), company.website if company.website.present?
+        %h3.company__name= company.name
+        - if company.website.present?
+          = t('companies.show.website')
+          = link_to company.website, company.website
         %h4= t('companies.show.description')
         %p.company__description= company.description
         - if can? :edit, company
@@ -13,8 +14,8 @@
   .medium-4.columns
     .card
       .card-divider
-        %h4 Recent offers
+        %h4= t('companies.show.recent_offers')
       .card-section
         - if company.offers.any?
           - company.offers.each do |offer|
-            %p= offer.title
+            %p= link_to offer.title, offer
