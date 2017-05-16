@@ -6,10 +6,12 @@
         - if company.website.present?
           = t('companies.show.website')
           = link_to company.website, company.website
-        %h4= t('companies.show.description')
-        %p.company__description= company.description
         - if can? :edit, company
           = link_to "Edit profile", edit_company_path(company)
+        = company.location.to_s if company.location.present?
+        %hr/
+        %h4= t('companies.show.description')
+        %p.company__description= company.description
 
   .medium-4.columns
     .card
