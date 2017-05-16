@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516035408) do
+ActiveRecord::Schema.define(version: 20170516084904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,16 @@ ActiveRecord::Schema.define(version: 20170516035408) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer  "country_id"
+    t.integer  "province_id"
+    t.string   "city"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["country_id"], name: "index_locations_on_country_id", using: :btree
+    t.index ["province_id"], name: "index_locations_on_province_id", using: :btree
   end
 
   create_table "offers", force: :cascade do |t|
@@ -179,7 +189,9 @@ ActiveRecord::Schema.define(version: 20170516035408) do
     t.string   "slug"
     t.text     "description"
     t.string   "website"
+    t.integer  "location_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["location_id"], name: "index_users_on_location_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   end
@@ -203,10 +215,13 @@ ActiveRecord::Schema.define(version: 20170516035408) do
   add_foreign_key "candidate_profiles", "users"
   add_foreign_key "education_items", "organizations"
   add_foreign_key "education_items", "users", column: "candidate_id"
+  add_foreign_key "locations", "countries"
+  add_foreign_key "locations", "provinces"
   add_foreign_key "offers", "countries"
   add_foreign_key "offers", "provinces"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
+  add_foreign_key "users", "locations"
   add_foreign_key "work_items", "organizations"
   add_foreign_key "work_items", "users", column: "candidate_id"
 end
