@@ -1,0 +1,10 @@
+en:
+  companies:
+    show:
+      change_picture: "Change profile picture..." 
+      offers: Job offers
+      no_offers: No offers.
+      website: Website
+
+  edit:
+    heading: Edit profile

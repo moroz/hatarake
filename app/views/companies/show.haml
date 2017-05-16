@@ -4,8 +4,11 @@
       .card-divider
         %h3.company__name= company.name
       .card-section
-        = link_to "Website", company.website if company.website.present?
+        = link_to t('companies.show.website'), company.website if company.website.present?
+        %h4= t('companies.show.description')
         %p.company__description= company.description
+        - if can? :edit, company
+          = link_to "Edit profile", edit_company_path(company)
 
   .medium-4.columns
     .card

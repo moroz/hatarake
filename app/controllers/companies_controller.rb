@@ -7,7 +7,28 @@ class CompaniesController < ApplicationController
 
   end
 
+  def edit
+    if company_signed_in?
+      @company = current_company
+    else
+      redirect_to root_path
+    end
+  end
+
   def show
+  end
+
+  def update
+    if current_company.update(company_params)
+      redirect_to company
+    else
+      respond_to do |f|
+        f.html {
+          flash.alert = "The profile could not be saved."
+        }
+        f.js { render_js_errors_for company }
+      end
+    end
   end
 
   private
@@ -22,5 +43,9 @@ class CompaniesController < ApplicationController
     elsif signed_in?
       @company = current_user
     end
+  end
+
+  def company_params
+    params.require(:company).permit(:name, :website, :description)
   end
 end

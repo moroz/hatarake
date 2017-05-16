@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
   resources :candidates
-  resources :companies, only: [:show,:index]
+  resources :companies, only: [:show,:index,:update,:edit]
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   resource :avatar, only: [:new, :create]

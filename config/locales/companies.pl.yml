@@ -1,0 +1,12 @@
+pl:
+  companies:
+    show:
+      change_picture: Zdjęcie profilowe
+      offers: Oferty pracy
+      no_offers: Brak ofert.
+      website: Strona WWW
+      description: Opis
+
+  edit:
+    heading: Edycja profilu
+

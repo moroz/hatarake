@@ -12,6 +12,7 @@ class Ability
       can :read, Offer
       can :show, Page
       can :read, Candidate
+      can :manage, Company, id: user.id
       can :read, Application do |a|
         a.offer.company_id = user.id
       end

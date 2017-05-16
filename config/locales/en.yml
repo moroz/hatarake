@@ -109,12 +109,6 @@ en:
     applicant_count_callout:
       link_text: "Applicant list"
 
-  companies:
-    show:
-      change_picture: "Change profile picture..." 
-      offers: Job offers
-      no_offers: No offers.
-
   activerecord:
     attributes:
       skill_item:
