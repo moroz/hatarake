@@ -16,6 +16,9 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    if request.path != company_path(company)
+      redirect_to company, status: :moved_permanently
+    end
   end
 
   def update
