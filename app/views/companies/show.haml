@@ -4,6 +4,7 @@
       .card-divider
         %h3.company__name= company.name
       .card-section
+        = link_to "Website", company.website if company.website.present?
         %p.company__description= company.description
 
   .medium-4.columns
