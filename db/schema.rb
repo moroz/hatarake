@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516084904) do
+ActiveRecord::Schema.define(version: 20170517070127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,13 +58,12 @@ ActiveRecord::Schema.define(version: 20170516084904) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "specialization"
-    t.integer  "organization_id"
     t.integer  "candidate_id"
     t.string   "memo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "category"
-    t.index ["organization_id"], name: "index_education_items_on_organization_id", using: :btree
+    t.string   "organization"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -117,13 +116,6 @@ ActiveRecord::Schema.define(version: 20170516084904) do
     t.integer "skill_id", null: false
     t.index ["offer_id"], name: "index_offers_skills_on_offer_id", using: :btree
     t.index ["skill_id"], name: "index_offers_skills_on_skill_id", using: :btree
-  end
-
-  create_table "organizations", force: :cascade do |t|
-    t.string   "name_en"
-    t.string   "name_pl"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -200,20 +192,18 @@ ActiveRecord::Schema.define(version: 20170516084904) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "position"
-    t.integer  "organization_id"
     t.integer  "candidate_id"
     t.string   "memo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "category"
-    t.index ["organization_id"], name: "index_work_items_on_organization_id", using: :btree
+    t.string   "organization"
   end
 
   add_foreign_key "applications", "offers"
   add_foreign_key "applications", "users", column: "candidate_id"
   add_foreign_key "avatars", "users"
   add_foreign_key "candidate_profiles", "users"
-  add_foreign_key "education_items", "organizations"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "locations", "countries"
   add_foreign_key "locations", "provinces"
@@ -222,6 +212,5 @@ ActiveRecord::Schema.define(version: 20170516084904) do
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
   add_foreign_key "users", "locations"
-  add_foreign_key "work_items", "organizations"
   add_foreign_key "work_items", "users", column: "candidate_id"
 end
