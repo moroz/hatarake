@@ -6,7 +6,7 @@
 .row
   = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
-.offers#offer_table
+.offer-list#offer-list
   = render partial: 'offers'
 - if can? :create, Offer
   = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

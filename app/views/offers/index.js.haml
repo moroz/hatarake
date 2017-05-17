@@ -1,9 +1,7 @@
 :plain
-  document.getElementById('offer_table').innerHTML = '#{j render partial: 'offers'}';
-  Turbolinks
-    .controller
-    .pushHistoryWithLocationAndRestorationIdentifier('#{request.url}', Turbolinks.uuid()); 
+  document.getElementById('offer-list').innerHTML = '#{j render partial: 'offers'}';
+  Turbolinks.changeURL('#{request.url}');
+- if params[:adv].blank? || params[:adv] == '0'
   document.querySelector('.basic_search form').reset();
-  if (!#{@search_description.present?}) {
-    resetSearchForms();
-  }
+- if @search_description.blank?
+  resetSearchForms();

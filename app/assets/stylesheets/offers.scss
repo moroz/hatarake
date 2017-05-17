@@ -22,8 +22,8 @@
   }
 }
 
-.offers {
-  overflow-x: auto;
+.offer-list {
+  padding: 0.5rem;
 }
 
 .textile_info {
@@ -34,4 +34,13 @@
   border: 1px dashed #666;
 }
 
+.offer__row {
+  background-color: #fff;
+  padding: 0.8rem 0.5rem 0.3rem 0.5rem;
+  border-bottom: 1px dashed #cacaca;
+}
 
+.offer__row__description {
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}

@@ -20,6 +20,12 @@
 //= require foundation
 //= require_tree .
 
+Turbolinks.changeURL = function(url) {
+  Turbolinks.controller
+    .pushHistoryWithLocationAndRestorationIdentifier(url, Turbolinks.uuid()); 
+}
+
 document.addEventListener('turbolinks:load', function () {
   $(document).foundation();
 });
+
