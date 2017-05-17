@@ -6,10 +6,10 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     cannot :manage, :all
+    can :read, [Company, Offer]
     if user.company?
       can :create, Offer
       can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
-      can :read, Offer
       can :show, Page
       can :read, Candidate
       can :manage, Company, id: user.id
@@ -21,7 +21,6 @@ class Ability
       can :manage, CvItem, candidate_id: user.id
       cannot [:create, :update, :destroy], Offer
       can :manage, Candidate, id: user.id
-      can :read, Offer
       can :show, Page
       can [:create, :new], Application
     elsif user.admin?
@@ -30,7 +29,6 @@ class Ability
       cannot [:index, :create, :update, :destroy], Page
       cannot [:create, :update, :destroy], Offer
       can :show, Page
-      can [:show, :index], Offer
     end
     #
     # The first argument to `can` is the action you are giving the user 

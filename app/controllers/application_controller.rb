@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :disable_turbolinks, only: [:new, :edit, :create, :update]
   helper_method :current_user, :admin_signed_in?, :current_locale, :local_name, :page_title, :signed_in?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url, :alert => exception.message
+  end
+
   def admin_signed_in?
     current_user_is_a?("Admin")
   end

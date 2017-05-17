@@ -5,6 +5,11 @@ pl:
   'true': Tak
   'false': Nie
 
+  unauthorized:
+    default: "Nie jesteś upoważniony do wyświetlania tej strony."
+  errors:
+    generic: "Przy przetwarzaniu Twojego zapytania wystąpił błąd."
+
   currency_range:
     min: "%{min}+ %{currency}"
     max: "do %{max} %{currency}"
