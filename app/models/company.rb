@@ -3,7 +3,7 @@ class Company < User
   validates_presence_of :name
   has_many :offers, dependent: :destroy
   belongs_to :location
-  validates :website, format: { with: URI::regexp }
+  validates :website, format: { with: URI::regexp, allow_blank: true }
   validates :name, uniqueness: true
 
   extend FriendlyId
