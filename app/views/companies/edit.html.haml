@@ -1,6 +1,6 @@
 %h1= t('.heading')
 
-= simple_form_for company, remote: true do |f|
+= simple_form_for company, remote: true, authenticity_token: true do |f|
   = error_messages_for company
   = f.input :name
   = f.input :website

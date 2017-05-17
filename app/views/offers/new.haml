@@ -1,6 +1,6 @@
 %h1= @title || t('.heading')
 
-= simple_form_for offer, remote: true do |f|
+= simple_form_for offer, remote: true, authenticity_token: true do |f|
   = error_messages_for f.object
   = f.input :title, label: t('offers.fields.title')
   = f.label :currency, t('offers.fields.currency')

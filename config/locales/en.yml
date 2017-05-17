@@ -12,6 +12,10 @@ en:
     mineqmax: "%{min} %{currency}"
     none: "none given"
 
+  description:
+    heading: Description
+    noscript: "Real-time description preview requires JS to be enabled in your browser."
+
   topbar:
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland

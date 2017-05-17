@@ -1,9 +1,10 @@
-%h5.text-center= t('offers.fields.description')
+%h5.text-center= t('description.heading')
 = render 'shared/textile_info'
 .row
   .medium-6.columns
     = f.input :description, as: :text, input_html: { rows: 15, data: { 'description-input': '' } }, label: false
   .medium-6.columns.description__preview
+    %noscript.description__preview--noscript= t('description.noscript')
     #description__preview.description__preview-contents
       - if f.object.description.present?
         != safe_textilize f.object.description

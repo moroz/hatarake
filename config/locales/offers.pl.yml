@@ -100,7 +100,8 @@ pl:
       template:
         header:
           one: 'Przy zapisywaniu %{model} wystąpił błąd:'
-          other: 'Przy zapisywaniu %{model} wystąpiły następujące błędy:'
+          few: 'Przy zapisywaniu %{model} wystąpiły %{count} błędy:'
+          many: 'Przy zapisywaniu %{model} wystąpiło %{count} błędów:'
       models:
         offer:
           attributes:
