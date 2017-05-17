@@ -1,10 +1,9 @@
 class Company < User
   devise :registerable
-  validates_presence_of :name
   has_many :offers, dependent: :destroy
   belongs_to :location
   validates :website, format: { with: URI::regexp, allow_blank: true }
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true 
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]

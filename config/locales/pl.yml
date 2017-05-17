@@ -132,15 +132,9 @@ pl:
     attributes:
       skill_item:
         skill: ''
-      offer:
-        title: "Tytuł"
+
     errors:
       models:
-        offer:
-          attributes:
-            title:
-              too_short: "jest za krótki (przynajmniej %{count} znaków}."
-              too_long: "jest za długi (max. %{count} znaków)."
         skill_item:
           attributes:
             skill:

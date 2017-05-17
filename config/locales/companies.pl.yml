@@ -11,3 +11,16 @@ pl:
   edit:
     heading: Edycja profilu
 
+  activerecord:
+    attributes:
+      company:
+        name: "Nazwa firmy"
+        website: "Strona WWW"
+        description: "Opis"
+
+    errors:
+      models:
+        company:
+          attributes:
+            website:
+              invalid: "jest nieprawidłowa."

@@ -91,3 +91,24 @@ pl:
     provinces:
       blank: Cały kraj
 
+  activerecord:
+    attributes:
+      offer:
+        title: "Tytuł"
+
+    errors:
+      template:
+        header:
+          one: 'Przy zapisywaniu %{model} wystąpił błąd:'
+          other: 'Przy zapisywaniu %{model} wystąpiły następujące błędy:'
+      models:
+        offer:
+          attributes:
+            title:
+              too_short: "jest za krótki (przynajmniej %{count} znaków}."
+              too_long: "jest za długi (max. %{count} znaków)."
+          
+    models:
+      offer: oferty
+      company: profilu pracodawcy
+

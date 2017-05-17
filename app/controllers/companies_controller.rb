@@ -3,6 +3,7 @@ class CompaniesController < ApplicationController
   helper_method :company
 
   expose :companies { Company.all }
+  authorize_resource
   def index
 
   end
@@ -22,7 +23,8 @@ class CompaniesController < ApplicationController
   end
 
   def update
-    if current_company.update(company_params)
+    company = current_company
+    if company.update(company_params)
       redirect_to company
     else
       respond_to do |f|
