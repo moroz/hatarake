@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.offer__preview {
+.description__preview {
   padding: 0.5rem;
   min-height: 40vh;
   border: 1px dashed #333;
   margin-bottom: 1.5rem;
 }
 
-.offer__preview-contents {
+.description__preview-contents {
   height: auto;
   display: table-row;
   &:empty {

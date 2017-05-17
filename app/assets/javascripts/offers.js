@@ -46,7 +46,7 @@ document.addEventListener('turbolinks:load', function () {
   }, false);
 
   //  changes mouse cursor when highlighting loawer right of box
-  $('#offer_description')
+  $('[data-description-input]')
     .on('mousemove', function(e) {
       var a = $(this).offset().top + $(this).outerHeight() - 16,	//	top border of bottom-right-corner-box area
         b = $(this).offset().left + $(this).outerWidth() - 16;	//	left border of bottom-right-corner-box area
@@ -57,7 +57,7 @@ document.addEventListener('turbolinks:load', function () {
   //  the following simple make the textbox "Auto-Expand" as it is typed in
     .on('change keyup paste', function(e) {
       var text = e.target.value;
-      var container = document.getElementById('offer__preview');
+      var container = document.getElementById('description__preview');
       if ((countHyphens(text) >= 2) && !window.alreadyAsked) {
         var shouldConvert =
           confirm("It looks like there are some lists in the text. Would you like to convert it to bullets?\nWykryto wypunktowanie, czy chcesz przekonwertować je na listę?");
@@ -65,6 +65,7 @@ document.addEventListener('turbolinks:load', function () {
       }
       if (shouldConvert) {
         $(this).val(hyphensToAsterisks(text));
+        return;
       }
       container.innerHTML = safe_textilize(text);
       //  the following will help the text expand as typing takes place

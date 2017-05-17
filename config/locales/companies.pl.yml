@@ -8,8 +8,8 @@ pl:
       description: Opis
       recent_offers: Ostatnie oferty
 
-  edit:
-    heading: Edycja profilu
+    edit:
+      heading: Edycja profilu
 
   activerecord:
     attributes:

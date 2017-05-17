@@ -29,16 +29,6 @@
       = f.label :province, label: t('offers.fields.province')
       = f.select :province_id, localized_collection(@provinces, offer.province_id || 0, blank: t('offers.provinces.blank')), {}, data: {'province-select': ''}
   = f.input :location, label: t('offers.fields.location'), input_html: { disabled: offer.try(:province_id) != '0' }
-  %h5.text-center= t('offers.fields.description')
-  = render 'shared/textile_info'
-  .row
-    .medium-6.columns
-      = f.input :description, as: :text, input_html: { rows: 15 }, label: false
-    .medium-6.columns.offer__preview
-      #offer__preview.offer__preview-contents
-        - if offer.description.present?
-          != safe_textilize offer.description
-        - else
-          = t('offers.placeholders.preview') 
+  = render 'shared/description_with_preview', f: f
   = f.submit "Save", class: 'button success expanded'
 

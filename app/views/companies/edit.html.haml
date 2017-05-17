@@ -1,8 +1,8 @@
-%h1 Edit profile
+%h1= t('.heading')
 
 = simple_form_for company, remote: true do |f|
   = error_messages_for company
   = f.input :name
   = f.input :website
-  = f.input :description, as: :text, input_html: { rows: 15 }, label: false
+  = render 'shared/description_with_preview', f: f
   = f.submit "Submit", class: 'button expanded success'
