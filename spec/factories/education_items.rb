@@ -3,7 +3,7 @@ FactoryGirl.define do
     candidate { Candidate.first || create(:candidate) }
     category "ba"
     specialization "English Studies"
-    organization_name "Adam Mickiewicz University"
+    organization "Adam Mickiewicz University"
     start_date { 2.years.ago }
     end_date { 1.years.ago }
 

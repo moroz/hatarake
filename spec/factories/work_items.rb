@@ -3,7 +3,7 @@ FactoryGirl.define do
     candidate { Candidate.first || create(:candidate) }
     category "work"
     position "Merchandiser"
-    organization_name "Jeronimo Martins Polska"
+    organization "Jeronimo Martins Polska"
     start_date { 2.years.ago }
     end_date { 1.years.ago }
 
