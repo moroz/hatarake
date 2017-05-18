@@ -12,7 +12,7 @@
       %small Tu trzeba coś wstawić, żeby to optycznie zapełnić, np. filtry albo opcje sortowania.
 
   .medium-9.columns
-    .offers.card#offer-list
+    .offers.card.shadow#offer-list
       = render partial: 'offers'
     - if can? :create, Offer
       = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

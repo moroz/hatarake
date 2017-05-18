@@ -1,6 +1,6 @@
 .row
   .medium-8.columns
-    .card
+    .card.shadow
       .card-section
         %h3.company__name= company.name
         - if company.website.present?
@@ -15,7 +15,7 @@
           %p.company__description!= safe_textilize company.description
 
   .medium-4.columns
-    .card
+    .card.shadow
       .card-divider
         %h4= t('companies.show.recent_offers')
       .card-section
