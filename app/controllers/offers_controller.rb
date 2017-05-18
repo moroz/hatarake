@@ -43,10 +43,6 @@ class OffersController < ApplicationController
   end
 
   def update
-    # TODO: This is meant to prevent user from updating the location of a different offer
-    if offer_params[:location_attributes][:id].to_i != offer.location.id
-      raise
-    end
     if offer.update(offer_params)
       flash[:success] = "The offer was updated."
       redirect_to offer

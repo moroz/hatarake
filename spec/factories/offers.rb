@@ -1,13 +1,12 @@
 FactoryGirl.define do
   factory :offer do
     company { Company.first || create(:company) }
-    title "Welder m/f Berlin"
-    location "Berlin"
+    title "Welder m/f"
+    location
     salary_min 1000
     salary_max 2000
     currency "pln"
     description "We're looking for welders. *bold* _italic_"
-    country { Country.first || create(:country) }
     contact_email "user@example.com"
     contact_phone "555 100-800"
     unpublished
@@ -18,11 +17,11 @@ FactoryGirl.define do
     end
 
     trait :russia do
-      country { Country.find_by(iso: "RU") || FactoryGirl.create(:country, :russia) }
+      association :location, :russia
     end
 
     trait :germany do
-      country { Country.find_by(iso: "DE") || FactoryGirl.create(:country, :germany) }
+      association :location, :germany
     end
 
     trait :unpublished do

@@ -25,14 +25,16 @@ class Offer < ApplicationRecord
   scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
   scope :with_min_salary, ->(min) { where("salary @> :min or lower(salary) > :min", min: min.to_d) }
   scope :featured, -> { published.order('published_at DESC') }
+  scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }
+  scope :with_province_id, ->(province_id) { joins(:location).where('locations.province_id = ?', province_id) }
 
   def self.advanced_search(o = {})
     scope = self.all
     if o[:cid].present?
-      scope = scope.where(country_id: o[:cid])
+      scope = scope.with_country_id(o[:cid])
     end
     if o[:pid].present?
-      scope = scope.where(province_id: o[:pid])
+      scope = scope.with_province_id(o[:pid])
     end
     if o[:q].present?
       scope = scope.search_by_query(o[:q])
@@ -63,8 +65,8 @@ class Offer < ApplicationRecord
   end
 
   def self.search_by_query(query)
-    country = "%#{sanitize_sql_like(query)}%"
-    self.where("title ILIKE :q OR location ILIKE :q", q: country)
+    q = "%#{sanitize_sql_like(query)}%"
+    joins(:location).where("title ILIKE :q OR locations.city ILIKE :q", q: q)
   end
 
   def unpublish
