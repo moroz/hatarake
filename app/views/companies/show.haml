@@ -10,8 +10,9 @@
         - if can? :edit, company
           = link_to "Edit profile", edit_company_path(company)
         %hr/
-        %h4= t('companies.show.description')
-        %p.company__description!= safe_textilize company.description
+        - if company.description.present?
+          %h4= t('companies.show.description')
+          %p.company__description!= safe_textilize company.description
 
   .medium-4.columns
     .card
