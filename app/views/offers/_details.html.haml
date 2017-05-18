@@ -12,7 +12,7 @@
       %td= offer.company.name
     %tr
       %th{scope:'row'}= t('offers.show.location')
-      %td= offer.full_location
+      %td= offer.location
     - if offer.salary.present?
       %tr
         %th{scope:'row'}= t('offers.show.salary')

@@ -4,15 +4,19 @@ class Offer < ApplicationRecord
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
   belongs_to :company, required: true
-  belongs_to :country, required: true
+  belongs_to :location, required: true
+  accepts_nested_attributes_for :location
+
   has_many :applications
   has_many :candidates, through: :applications
-  belongs_to :province
   has_and_belongs_to_many :skills
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 10, maximum: 85 }
   CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
   validates :currency, inclusion: { in: CURRENCIES }
+
+  delegate :country_id, to: :location
+  delegate :province_id, to: :location
 
   before_validation :make_salary_range
   before_validation :make_hourly_wage
@@ -87,13 +91,13 @@ class Offer < ApplicationRecord
 
   def name_for_slug
     [
-      [:title, :location],
-      [:title, :location, SecureRandom.hex(3)]
+      [:title, self.location.city],
+      [:title, self.location.city, SecureRandom.hex(3)]
     ]
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || title_changed? || location_changed?
+    slug.blank? || title_changed? || location_id_changed?
   end
 
   def make_salary_range

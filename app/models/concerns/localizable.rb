@@ -9,6 +9,10 @@ module Localizable
         order(:name_en)
       end
     end
+
+    def find_by_local_name(name)
+      where('name_en = :name OR name_pl = :name', name: name).first
+    end
   end
 
   def local_name

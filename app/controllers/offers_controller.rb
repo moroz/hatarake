@@ -96,13 +96,13 @@ class OffersController < ApplicationController
   def set_country_list
     @countries = Country.all.order(local_name)
     if offer.present? && offer.persisted?
-      @provinces = offer.country.provinces.local_order
+      @provinces = offer.location.country.provinces.local_order
     else
       @provinces = Province.where(country_id: 166).local_order
     end
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :location, :description, :country_id, :province_id, :hourly_wage_min, :hourly_wage_max)
+    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :description, :hourly_wage_min, :hourly_wage_max, location_attributes: [:country_id, :province_id, :city])
   end
 end

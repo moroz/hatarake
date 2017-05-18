@@ -7,6 +7,6 @@
         %li
           = (link_to offer.title, offer) + ","
           = (short_salary(offer) + ',') if offer.salary.present?
-          = offer.short_location
+          = offer.location.short_format
     = link_to t('home.featured_offers.more'), offers_path
 

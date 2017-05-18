@@ -4,7 +4,7 @@
       %strong= (link_to offer.title, offer)
       %br
       %small
-        %span.offer__location= offer.short_location + ","
+        %span.offer__location= offer.location.short_format + ","
         %span= short_salary(offer)
       %br/
     .medium-3.columns.offer__actions.text-right

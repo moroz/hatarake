@@ -39,11 +39,9 @@ document.addEventListener('turbolinks:load', function () {
 
   // disable location field in offers#new and offers#edit
   // if no province is set
-  el = document.getElementById('offer_province_id');
-  el && el.addEventListener('change', function(e) {
-    var locationInput = document.getElementById('offer_location');
-    locationInput.disabled = !e.target.value;
-  }, false);
+  $('[data-province-select]').on('change', function(e) {
+    document.querySelector('[data-city-input]').disabled = !this.value;
+  });
 
   //  changes mouse cursor when highlighting loawer right of box
   $('[data-description-input]')
