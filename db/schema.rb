@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517070127) do
+ActiveRecord::Schema.define(version: 20170518070642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,17 +97,13 @@ ActiveRecord::Schema.define(version: 20170517070127) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.string   "title"
-    t.string   "location"
-    t.integer  "country_id"
     t.boolean  "published",     default: false
     t.datetime "published_at"
     t.string   "slug"
-    t.integer  "province_id"
     t.numrange "hourly_wage"
     t.numrange "salary"
+    t.integer  "location_id"
     t.index ["company_id"], name: "index_offers_on_company_id", using: :btree
-    t.index ["country_id"], name: "index_offers_on_country_id", using: :btree
-    t.index ["province_id"], name: "index_offers_on_province_id", using: :btree
     t.index ["slug"], name: "index_offers_on_slug", unique: true, using: :btree
   end
 
@@ -207,8 +203,7 @@ ActiveRecord::Schema.define(version: 20170517070127) do
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "locations", "countries"
   add_foreign_key "locations", "provinces"
-  add_foreign_key "offers", "countries"
-  add_foreign_key "offers", "provinces"
+  add_foreign_key "offers", "locations"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
   add_foreign_key "users", "locations"
