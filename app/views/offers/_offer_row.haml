@@ -1,11 +1,12 @@
 %div{id: dom_id(offer), class: 'offer offer__row'}
   .row
     .medium-9.columns
-      %strong= (link_to offer.title, offer) + ","
-      %span.offer__location= offer.short_location + ","
-      %span= short_salary(offer)
+      %strong= (link_to offer.title, offer)
+      %br
+      %small
+        %span.offer__location= offer.short_location + ","
+        %span= short_salary(offer)
       %br/
-      %p.offer__row__description= truncate(offer.description, length: 120, separator: ' ')
     .medium-3.columns.offer__actions.text-right
       = link_to offer.company.name, offer.company
       %br/
