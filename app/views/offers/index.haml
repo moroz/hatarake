@@ -6,7 +6,13 @@
 .row
   = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
-.offers#offer-list
-  = render partial: 'offers'
-- if can? :create, Offer
-  = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'
+.row
+  .medium-3.columns
+    .card
+      %small Tu trzeba coś wstawić, żeby to optycznie zapełnić, np. filtry albo opcje sortowania.
+
+  .medium-9.columns
+    .offers.card#offer-list
+      = render partial: 'offers'
+    - if can? :create, Offer
+      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'
