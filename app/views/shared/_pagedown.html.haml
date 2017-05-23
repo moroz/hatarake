@@ -1,8 +1,12 @@
-.wmd-panel
-  .wmd-button-bar
-  = f.input :description, as: :text, input_html: { rows: 15, class: 'wmd-input', id: 'wmd-input' } 
+.row
+  .wmd-button-bar#wmd-button-bar
+  = f.input :description, as: :text, input_html: { rows: 15, class: 'wmd-input', id: 'wmd-input' }, label: false
 
-.wmd-panel.wmd-preview#wmd-preview
+.row
+  Live preview
+  .description__preview
+    .description__preview-contents#wmd-preview
+
 
 :javascript
   var converter1 = Markdown.getSanitizingConverter();
