@@ -11,10 +11,12 @@
         = render 'already_applied'
       - else
         = render 'application_form'
-    - elsif (company_signed_in? && current_company.id == offer.company_id) || admin_signed_in?
+    - elsif can? :manage, offer
       = render 'applicant_count'
     - elsif !signed_in?
       = render 'sign_in_to_apply'
+- if signed_in?
+  = link_to t('offers.save_offer'), "#"
 
 %h3 Description
 .offer__description

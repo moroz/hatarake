@@ -9,5 +9,6 @@
       %br/
     .medium-3.columns.offer__actions.text-right
       = link_to offer.company.name, offer.company
-      %br/
-      = link_to "Save offer", "#"
+      - if signed_in?
+        %br/
+        = link_to t('offers.save_offer'), "#"

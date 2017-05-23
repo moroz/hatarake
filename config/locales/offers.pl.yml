@@ -91,6 +91,8 @@ pl:
     provinces:
       blank: Cały kraj
 
+    save_offer: 'Zapisz ofertę'
+
   activerecord:
     attributes:
       offer:
