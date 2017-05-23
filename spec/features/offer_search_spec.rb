@@ -38,10 +38,6 @@ RSpec.describe "Offer search" do
     it { is_expected.to have_selector('.advanced_search input[name="smin"]') }
   end
 
-  def dom_id(object)
-    "#" + object.class.to_s.downcase + "_#{object.id}"
-  end
-
   describe "searching by name" do
     let!(:matching) { FactoryGirl.create(:offer, :published, title: "Manga reader") }
     let!(:other) { FactoryGirl.create(:offer, :published, title: "Computer programmer") }

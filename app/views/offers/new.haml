@@ -23,6 +23,7 @@
   = f.input :contact_phone, label: t('offers.fields.contact_phone')
   = f.simple_fields_for :location do |ff|
     = render 'location_fields', f: ff
-  = render 'shared/description_with_preview', f: f
+  -# = render 'shared/description_with_preview', f: f
+  = render 'shared/pagedown', f: f
   = f.submit "Save", class: 'button success expanded'
 

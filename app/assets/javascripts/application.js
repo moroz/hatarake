@@ -16,6 +16,9 @@
 //= require jquery-readyselector
 //= require turbolinks
 //= require textile
+//= require Markdown.Converter
+//= require Markdown.Sanitizer
+//= require Markdown.Editor
 //= require autocomplete-rails
 //= require foundation
 //= require_tree .
