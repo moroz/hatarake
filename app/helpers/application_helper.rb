@@ -5,6 +5,26 @@ module ApplicationHelper
     renderer.to_html
   end
 
+  def safe_markdown(text)
+    options = {
+      filter_html:     true,
+      hard_wrap:       true,
+      link_attributes: { rel: 'nofollow', target: "_blank" },
+      space_after_headers: true
+    }
+
+    extensions = {
+      autolink:           true,
+      superscript:        true,
+      disable_indented_code_blocks: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    markdown.render(text).html_safe
+  end
+
   def error_messages_for(object)
     content_tag :div, class: 'error_explanation', id: 'error_explanation' do
       render partial: 'shared/errors', locals: { object: object }

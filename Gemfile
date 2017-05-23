@@ -39,6 +39,7 @@ gem 'aws-sdk', '~> 2.3'
 
 # Rich text formatting with Textile
 gem 'RedCloth'
+gem 'redcarpet'
 
 # User permissions
 gem 'cancan'

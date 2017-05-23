@@ -6,10 +6,6 @@ function countHyphens(text) {
   return (text.match(/^\-\s/gm) || []).length;
 }
 
-function hyphensToAsterisks(text) {
-  return text.replace(/^\-\s/gm, "* ");
-}
-
 function safe_textilize(text) {
   result = text.replace(/</g,'&lt;').replace(/>/g,'&gt;'); // replace(/&/g,'&amp;')
   return textile(result);
@@ -56,15 +52,6 @@ document.addEventListener('turbolinks:load', function () {
     .on('change keyup paste', function(e) {
       var text = e.target.value;
       var container = document.getElementById('description__preview');
-      if ((countHyphens(text) >= 2) && !window.alreadyAsked) {
-        var shouldConvert =
-          confirm("It looks like there are some lists in the text. Would you like to convert it to bullets?\nWykryto wypunktowanie, czy chcesz przekonwertować je na listę?");
-        window.alreadyAsked = true;
-      }
-      if (shouldConvert) {
-        $(this).val(hyphensToAsterisks(text));
-        return;
-      }
       container.innerHTML = safe_textilize(text);
       //  the following will help the text expand as typing takes place
       while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
