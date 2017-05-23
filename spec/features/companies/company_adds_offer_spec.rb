@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe "Company adds Offer" do
   let(:company) { Company.first || FactoryGirl.create(:company) }
   let!(:country) { FactoryGirl.create(:country) }
@@ -22,9 +23,9 @@ RSpec.describe "Company adds Offer" do
       page.find("#offer_salary_min").set(1000)
       page.find("#offer_salary_max").set(2000)
       page.find("#offer_contact_email").set("foobar@example.com")
-      page.find("#offer_country_id").set(country.name_en)
+      page.find("#location_country_id").set(country.name_en)
       page.find("#offer_contact_phone").set("555 100-888")
-      page.find("#offer_location").set("Berlin")
+      page.find("#location_city").set("Berlin")
       page.find("#offer_description").set("We're looking for welders!")
       
       expect { submit_form }.to change { Offer.count }

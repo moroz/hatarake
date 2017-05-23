@@ -5,6 +5,10 @@ class OffersController < ApplicationController
   before_action :set_country_list, only: [:new, :edit, :index]
   authorize_resource
 
+  def new
+    offer.build_location
+  end
+
   def index
     @offers = published_or_own.order(:published_at).advanced_search(params)
     @search_description = view_context.search_description(params)
