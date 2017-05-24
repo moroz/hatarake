@@ -1,6 +1,6 @@
 %h1= page.title
 
-!= textilize page.local_body
+= unsafe_markdown page.local_body
 
 - if admin_signed_in?
   = link_to "Edit page", edit_page_path(page)

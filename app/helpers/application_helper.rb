@@ -5,7 +5,26 @@ module ApplicationHelper
     renderer.to_html
   end
 
-  def safe_markdown(text)
+  def unsafe_markdown(text)
+    options = {
+      filter_html:     false,
+      link_attributes: { rel: 'nofollow', target: "_blank" },
+      space_after_headers: true
+    }
+
+    extensions = {
+      autolink:           true,
+      superscript:        true,
+      disable_indented_code_blocks: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    raw markdown.render(text)
+  end
+
+  def markdown(text)
     options = {
       filter_html:     true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
