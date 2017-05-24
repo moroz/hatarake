@@ -21,7 +21,8 @@ pl:
     heading: Opis
     noscript: "Podgląd opisu w czasie rzeczywistym wymaga włączenia JS w przeglądarce."
   
-  topbar:
+  nav:
+    home: Strona główna
     jobs_de: Praca w Niemczech
     jobs_pl: Praca w Polsce
     jobs_abroad: Praca za granicą

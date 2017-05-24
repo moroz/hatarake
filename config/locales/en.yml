@@ -16,7 +16,8 @@ en:
     heading: Description
     noscript: "Real-time description preview requires JS to be enabled in your browser."
 
-  topbar:
+  nav:
+    home: Homepage
     jobs_de: Jobs in Germany
     jobs_pl: Jobs in Poland
     jobs_abroad: Jobs abroad
