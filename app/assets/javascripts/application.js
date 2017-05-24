@@ -13,9 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/widgets/autocomplete
-//= require jquery-readyselector
 //= require turbolinks
-//= require textile
 //= require Markdown.Converter
 //= require Markdown.Sanitizer
 //= require Markdown.Editor
