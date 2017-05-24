@@ -64,7 +64,12 @@ RSpec.describe "Candidate saves offer" do
 
   describe "saving offer" do
     context "when candidate clicks link" do
-      
+      it "changes saved_offers count" do
+        login_as(candidate, scope: :candidate)
+        visit offer_path(offer)
+        expect { click_link_or_button I18n.t('offers.save_offer') }.to change { candidate.saved_offers.count }
+
+      end
     end
   end
 end

@@ -57,6 +57,10 @@ class Offer < ApplicationRecord
     Application.where(candidate: candidate, offer: self).present?
   end
 
+  def candidate_saved?(candidate)
+    OfferSave.where(candidate: candidate, offer: self).present?
+  end
+
   def applicant_count_in_words
     I18n.t('offers.applicant_count', count: self.applications.count)
   end

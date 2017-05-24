@@ -92,6 +92,7 @@ pl:
       blank: Cały kraj
 
     save_offer: 'Zapisz ofertę'
+    unsave_offer: "Usuń z zapisanych"
 
   activerecord:
     attributes:

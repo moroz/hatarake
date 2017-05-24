@@ -45,7 +45,11 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     session[:locale] = params[:lang] if params[:lang].present?
-    I18n.locale = session[:locale] || I18n.default_locale
+    I18n.locale = session[:locale] || accepted_language || I18n.default_locale
+  end
+
+  def accepted_language
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/pl/) ? :pl : :en
   end
 
   def current_user_is_a?(type)

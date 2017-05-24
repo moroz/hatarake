@@ -92,3 +92,4 @@ en:
       blank: Everywhere
 
     save_offer: "Save offer"
+    unsave_offer: "Delete from saved"

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       patch :unpublish
     end
     resources :applications
+    resources :offer_saves, only: [:create]
   end
+  delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2
   get 'profile', to: 'profile#profile'
