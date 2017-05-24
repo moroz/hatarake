@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518070642) do
+ActiveRecord::Schema.define(version: 20170524072533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,14 @@ ActiveRecord::Schema.define(version: 20170518070642) do
     t.datetime "updated_at",  null: false
     t.index ["country_id"], name: "index_locations_on_country_id", using: :btree
     t.index ["province_id"], name: "index_locations_on_province_id", using: :btree
+  end
+
+  create_table "offer_saves", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "offer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_offer_saves_on_offer_id", using: :btree
   end
 
   create_table "offers", force: :cascade do |t|
@@ -203,6 +211,7 @@ ActiveRecord::Schema.define(version: 20170518070642) do
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "locations", "countries"
   add_foreign_key "locations", "provinces"
+  add_foreign_key "offer_saves", "offers"
   add_foreign_key "offers", "locations"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"

@@ -61,4 +61,10 @@ RSpec.describe "Candidate saves offer" do
       end
     end
   end
+
+  describe "saving offer" do
+    context "when candidate clicks link" do
+      
+    end
+  end
 end

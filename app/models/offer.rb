@@ -9,6 +9,7 @@ class Offer < ApplicationRecord
 
   has_many :applications
   has_many :candidates, through: :applications
+  has_many :savers, through: :offer_saves, class_name: "Candidate"
   has_and_belongs_to_many :skills
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 10, maximum: 85 }

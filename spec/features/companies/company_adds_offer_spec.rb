@@ -26,7 +26,7 @@ RSpec.describe "Company adds Offer" do
       page.find("#location_country_id").set(country.name_en)
       page.find("#offer_contact_phone").set("555 100-888")
       page.find("#location_city").set("Berlin")
-      page.find("#offer_description").set("We're looking for welders!")
+      page.find("#wmd-input").set("We're looking for welders!")
       
       expect { submit_form }.to change { Offer.count }
     end
