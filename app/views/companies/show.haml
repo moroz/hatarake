@@ -12,7 +12,7 @@
         %hr/
         - if company.description.present?
           %h4= t('companies.show.description')
-          %p.company__description!= safe_textilize company.description
+          %p.company__description!= safe_markdown company.description
 
   .medium-4.columns
     .card.shadow
