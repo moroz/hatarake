@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
   end
 
   def accepted_language
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/pl/) ? :pl : :en
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/pl/).present? ? :pl : :en
   end
 
   def current_user_is_a?(type)
