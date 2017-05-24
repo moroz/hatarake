@@ -2,15 +2,6 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
-function countHyphens(text) {
-  return (text.match(/^\-\s/gm) || []).length;
-}
-
-function safe_textilize(text) {
-  result = text.replace(/</g,'&lt;').replace(/>/g,'&gt;'); // replace(/&/g,'&amp;')
-  return textile(result);
-}
-
 function resetSearchForms() {
   var forms = document.forms;
   for (var i = 0; i < forms.length; i++) {
@@ -38,26 +29,6 @@ document.addEventListener('turbolinks:load', function () {
   $('[data-province-select]').on('change', function(e) {
     document.querySelector('[data-city-input]').disabled = !this.value;
   });
-
-  //  changes mouse cursor when highlighting loawer right of box
-  $('[data-description-input]')
-    .on('mousemove', function(e) {
-      var a = $(this).offset().top + $(this).outerHeight() - 16,	//	top border of bottom-right-corner-box area
-        b = $(this).offset().left + $(this).outerWidth() - 16;	//	left border of bottom-right-corner-box area
-      $(this).css({
-        cursor: e.pageY > a && e.pageX > b ? 'nw-resize' : ''
-      });
-    })
-  //  the following simple make the textbox "Auto-Expand" as it is typed in
-    .on('change keyup paste', function(e) {
-      var text = e.target.value;
-      var container = document.getElementById('description__preview');
-      container.innerHTML = safe_textilize(text);
-      //  the following will help the text expand as typing takes place
-      while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
-        $(this).height($(this).height()+1);
-      };
-    });
 
   $('#show_advanced_search, #show_basic_search').click(function(e) {
     e.preventDefault();
