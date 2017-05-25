@@ -39,8 +39,10 @@ class SessionsController < Devise::SessionsController
   def after_sign_in_path_for(resource)
     case resource.type
       when "Candidate"
-        return resource.profile.present? ? candidate_dashboard_path
+        return resource.profile.present? ? dashboard_path
           : candidate_step2_path
+      when "Company"
+        dashboard_path
       else
         super(resource)
     end
