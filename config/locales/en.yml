@@ -125,3 +125,8 @@ en:
             skill:
               taken: "You can't have two skills with the same name."
               blank: "Please provide a valid skill name."
+      template:
+        header:
+          one:    "An error prohibited this %{model} from being saved:"
+          other:  "%{count} errors prohibited this %{model} from being saved:"
+        body: "There were problems with the following fields:"
