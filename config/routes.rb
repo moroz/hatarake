@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2
   get 'profile', to: 'profile#profile'
+  get 'candidates/dashboard', to: 'candidates/dashboard#show', as: 'candidate_dashboard'
   resources :pages
   resources :education_items
   resources :work_items

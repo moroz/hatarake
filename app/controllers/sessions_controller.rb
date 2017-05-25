@@ -16,7 +16,7 @@ class SessionsController < Devise::SessionsController
               :user
             end
     sign_in(scope, resource)
-    if !session[:return_to].blank?
+    if session[:return_to].present?
       redirect_to session[:return_to]
       session[:return_to] = nil
     else
@@ -29,5 +29,17 @@ class SessionsController < Devise::SessionsController
     set_flash_message! :notice, :signed_out if signed_out
     yield if block_given?
     respond_to_on_destroy
+  end
+
+  private
+
+  def after_sign_in_path_for(resource)
+    case resource.type
+      when "Candidate"
+        return resource.profile.present? ? candidate_dashboard_path
+          : candidate_step2_path
+      else
+        super(resource)
+    end
   end
 end
