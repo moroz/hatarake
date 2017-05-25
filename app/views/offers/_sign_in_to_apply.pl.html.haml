@@ -1,3 +1,4 @@
 .callout
-  <a href="/sign_in">Zaloguj się</a> lub <a href="/sign_up">zarejestruj</a>, aby aplikować na to stanowisko.
+  = link_to "Zaloguj się", new_user_session_path(return_to: request.url)
+  lub <a href="/sign_up">zarejestruj</a>, aby aplikować na to stanowisko.
 

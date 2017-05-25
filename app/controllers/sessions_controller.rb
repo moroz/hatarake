@@ -1,6 +1,9 @@
 class SessionsController < Devise::SessionsController
 
   def new
+    if params[:return_to].present?
+      session[:return_to] = params[:return_to]
+    end
     super
   end
 
