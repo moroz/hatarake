@@ -30,11 +30,15 @@ class CandidatesController < ApplicationController
   end
 
   def update
-    if current_candidate.update(candidate_params)
+    @candidate = current_candidate
+    if @candidate.update(candidate_params)
       flash[:success] = "Your profile has been saved."
       redirect_to profile_path
     else
-      render 'step2'
+      respond_to do |f|
+        f.html { render 'step2' }
+        f.js { render_js_errors_for(@candidate) }
+      end
     end
   end
 
