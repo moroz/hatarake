@@ -28,7 +28,7 @@ class EducationItemsController < ApplicationController
   private
 
   def education_item_params
-    params.require(:education_item).permit(:start_date, :end_date, :organization_name,
-                                           :specialization, :category)
+    params.require(:education_item).permit(:start_date, :end_date,
+                         :organization, :specialization, :category)
   end
 end
