@@ -1,8 +1,8 @@
 class CandidateProfile < ApplicationRecord
   belongs_to :candidate, dependent: :destroy
 
-  validates_presence_of :first_name, :last_name
-  validates :sex, presence: true
+  validates_presence_of :first_name, :last_name, :sex, :birth_date,
+    :looking_for_work
 
   enum sex: {male: 1, female: 2}
 
