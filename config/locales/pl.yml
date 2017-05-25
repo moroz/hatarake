@@ -76,7 +76,7 @@ pl:
     edit: Edycja
 
   date:
-    month_names:
+    abbr_month_names:
     -
     - stycznia
     - lutego
@@ -95,7 +95,7 @@ pl:
 
   time:
     formats:
-      long: "%e %B %Y, %H:%m %Z"
+      long: "%e %b %Y, %H:%m %Z"
 
   home:
     featured_offers:
@@ -142,6 +142,17 @@ pl:
     attributes:
       skill_item:
         skill: ''
+      education_item:
+        start_date: Data początkowa
+        end_date: Data końcowa
+        category: Kategoria
+        organization: 'Nazwa szkoły/uczelni'
+        specialization: "Specjalizacja/kierunek studiów"
+
+    models:
+      skill_item: umiejętności
+      education_item: pozycji
+      work_item: pozycji
 
     errors:
       models:
@@ -150,3 +161,12 @@ pl:
             skill:
               taken: "Nie możesz mieć dwóch umiejętności o tej samej nazwie."
               blank: "Proszę wpisać prawidłową nazwę umiejętności."
+        education_item:
+          attributes:
+            end_date:
+              blank: "nie może być pusta."
+            organization:
+              blank: "nie może być pusta."
+            specialization:
+              blank: "nie może być pusta."
+

@@ -1,0 +1,9 @@
+= simple_form_for education_item || new_item, remote: true do |f|
+  = error_messages_for f.object
+  = render partial: 'shared/cv_date_fields', locals: { prefix: "education_item", f: f }
+  = f.label :category
+  = f.select :category, options_from_collection_for_select(I18n.t('education_items.categories'), :first, :last)
+  = f.input :organization
+  = f.input :specialization
+  = f.submit t('education_items.fields.submit'), class: 'button primary expanded'
+

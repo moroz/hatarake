@@ -8,15 +8,6 @@
       %td= t('.description')
       %td
   %tbody
-    - for item in education_items
-      %tr{id: dom_id(item)}
-        = render partial: 'shared/cv_item_w_actions', locals: { item: item }
-
+    = render education_items, show_actions: true
 %h4= t('.add_new')
-= simple_form_for education_item || new_item, remote: true do |f|
-  = error_messages_for f.object
-  = render partial: 'shared/cv_date_fields', locals: { prefix: "education_item", f: f }
-  = f.select :category, options_from_collection_for_select(I18n.t('education_items.categories'), :first, :last), label: t('education_items.fields.category')
-  = f.input :organization
-  = f.input :specialization, label: t('education_items.fields.specialization')
-  = f.submit t('education_items.fields.submit'), class: 'button primary expanded'
+= render 'form'
