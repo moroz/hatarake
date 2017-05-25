@@ -49,7 +49,8 @@ class ApplicationController < ActionController::Base
   end
 
   def accepted_language
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/pl/).present? ? :pl : :en
+    return if request.env['HTTP_ACCEPT_LANGUAGE'].blank?
+    /pl/ =~ request.env['HTTP_ACCEPT_LANGUAGE'] ? :pl : :en
   end
 
   def current_user_is_a?(type)
