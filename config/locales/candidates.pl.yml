@@ -1,5 +1,14 @@
 pl:
   candidates:
+    step2:
+      looking_for_work: Czy poszukujesz pracy?
+      birth_date: 'Data urodzenia:'
+      first_name: 'Imię:'
+      last_name: 'Nazwisko:'
+      sex: 'Płeć:'
+      profession: "Zawód:"
+      submit: "Dalej"
+      heading: "Uzupełnij profil, aby rozpocząć poszukiwanie pracy."
     show:
       looking_for_work:
         'true': Szuka pracy

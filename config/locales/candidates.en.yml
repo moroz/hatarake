@@ -1,5 +1,14 @@
 en:
   candidates:
+    step2:
+      looking_for_work: Are you looking for work?
+      birth_date: 'Date of birth:'
+      first_name: 'First name:'
+      last_name: 'Last name:'
+      sex: 'Sex:'
+      profession: "Profession:"
+      submit: "Next"
+      heading: "Please fill in your profile to start looking for work."
     show:
       looking_for_work:
         'true': Looking for work
