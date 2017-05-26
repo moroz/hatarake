@@ -3,7 +3,13 @@
 %section.applied_offers.card
   .card-section
     %h3= t('.applied_offers.heading')
+    %table
+      %tbody
+        = render @applied
 
 %section.saved_offers.card
   .card-section
     %h3= t('.saved_offers.heading')
+    %table
+      %tbody
+        = render @saved

@@ -15,6 +15,8 @@ class DashboardController < ApplicationController
   private
 
   def candidate_dashboard
+    @saved = current_candidate.saved_offers
+    @applied = current_candidate.applied_offers
     render 'candidate_dashboard'
   end
 
