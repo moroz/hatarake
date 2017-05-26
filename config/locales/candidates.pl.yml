@@ -55,3 +55,13 @@ pl:
 
     models:
       candidate: profilu
+
+  dashboard:
+    candidate_dashboard:
+      heading: Panel kandydata
+
+      applied_offers:
+        heading: Oferty, na które aplikowałeś
+
+      saved_offers:
+        heading: Zapisane oferty

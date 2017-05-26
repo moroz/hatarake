@@ -47,3 +47,12 @@ en:
         2: Sex
         3: Profession
 
+  dashboard:
+    candidate_dashboard:
+      heading: Dashboard
+
+      applied_offers:
+        heading: Offers you applied for
+
+      saved_offers:
+        heading: Offers you saved
