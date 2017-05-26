@@ -57,8 +57,8 @@ class Offer < ApplicationRecord
     Application.where(candidate: candidate, offer: self).present?
   end
 
-  def candidate_saved?(candidate)
-    OfferSave.where(candidate: candidate, offer: self).present?
+  def user_saved?(user)
+    OfferSave.where(user: user, offer: self).present?
   end
 
   def applicant_count_in_words

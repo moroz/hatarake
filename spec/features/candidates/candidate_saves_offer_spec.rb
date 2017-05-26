@@ -64,11 +64,25 @@ RSpec.describe "Candidate saves offer" do
 
   describe "saving offer" do
     context "when candidate clicks link" do
-      it "changes saved_offers count" do
+      before(:each) do
         login_as(candidate, scope: :candidate)
         visit offer_path(offer)
-        expect { click_link_or_button I18n.t('offers.save_offer') }.to change { candidate.saved_offers.count }
+      end
 
+      context "for the first time" do
+        it "changes saved_offers count" do
+          expect { click_link_or_button I18n.t('offers.save_offer') }.to change { candidate.saved_offers.count }
+        end
+
+        it "save offer link disappears" do
+          click_link_or_button I18n.t('offers.save_offer')
+          expect(page).not_to have_content I18n.t('offers.save_offer')
+        end
+      end
+
+      context "for the second time" do
+        it "doesn't change saved_offers count" do
+        end
       end
     end
   end
