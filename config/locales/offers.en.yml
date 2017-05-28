@@ -1,5 +1,6 @@
 en:
   offers:
+    published_time_ago: "Published %{time} ago"
 
     applicant_count:
       zero: "Nobody has applied for this post yet."
@@ -16,6 +17,7 @@ en:
       heading: "Job offer: "
       title: "Offer: "
       published_at: Published on
+      description: "Job description"
 
     table:
       title: "Title"

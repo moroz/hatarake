@@ -1,34 +1,9 @@
-%table.unstriped.offer__data
-  %tbody
-    %tr
-      %th{scope:'row'}= t('offers.show.published_at')
-      %td
-        - if offer.published_at.present?
-          = l offer.published_at, format: :long
-        -else
-          No
-    %tr
-      %th{scope:'row'}= t('offers.show.company')
-      %td= offer.company.name
-    %tr
-      %th{scope:'row'}= t('offers.show.location')
-      %td= offer.location
-    - if offer.salary.present?
-      %tr
-        %th{scope:'row'}= t('offers.show.salary')
-        %td= readable_currency_range(offer.salary, offer.currency)
-    - if offer.hourly_wage.present?
-      %tr
-        %th{scope:'row'}= t('offers.show.hourly_wage')
-        %td= readable_currency_range(offer.hourly_wage, offer.currency)
-    %tr
-      %th{scope:'row'}= t('offers.show.contact_email')
-      %td= offer.contact_email
-    %tr
-      %th{scope:'row'}= t('offers.show.contact_phone')
-      %td= offer.contact_phone
-    %tr
-      %th{scope:'row'} Views:
-      %td= offer.views || 0
-
-
+.card.shadow
+  .card-section
+    %h4= offer.title
+    %small
+      = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at)) if offer.published_at.present?
+      &bull;
+      = link_to offer.company.name, offer.company
+      &bull;
+      = offer.location
