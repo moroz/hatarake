@@ -38,7 +38,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
 gem 'carrierwave', '~> 1.1.0'
-gem 'fog'
+gem 'fog-aws'
 
 # Rich text formatting with Textile
 gem 'RedCloth'
