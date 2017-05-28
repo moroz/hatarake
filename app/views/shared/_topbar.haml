@@ -2,7 +2,7 @@
   .row
     .top-bar-left
       %ul.menu
-        %li= link_to t('site_name'), root_path
+        %li= link_to t('site_name'), (signed_in? ? dashboard_path : root_path)
         - if company_signed_in?
           %li= link_to t('nav.jobs'), offers_path
           %li= link_to t('nav.candidates'), candidates_path
