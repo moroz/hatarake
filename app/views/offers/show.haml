@@ -6,23 +6,17 @@
   .medium-6.columns
     = render 'details'
   .medium-6.columns
-    - if candidate_signed_in?
-      - if offer.candidate_applied?(current_candidate)
-        = render 'already_applied'
-      - else
-        = render 'application_form'
-    - elsif can? :manage, offer
-      = render 'applicant_count'
-    - elsif !signed_in?
-      = render 'sign_in_to_apply'
+    = render 'application'
 - if signed_in? && can?(:create, OfferSave)
   - if offer.user_saved?(current_candidate)
     = link_to t('offers.unsave_offer'), destroy_offer_save_path(offer_id: offer), method: :delete
   - else
     = link_to t('offers.save_offer'), offer_offer_saves_path(offer_id: offer), method: :post
 
-%h3 Description
-.offer__description
-  = markdown offer.description
+.card.shadow.offer__description
+  .card-divider
+    %h4 Job Description
+  .card-section
+    = markdown offer.description
 
 = render 'actions'

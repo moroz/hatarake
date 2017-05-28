@@ -1,12 +1,11 @@
 #offer_aplication.offer_application
+  %button.close-button{'data-toggle-application-form': ''}  &times;
   #application_form.hide
-    .callout
-      %button.close-button{'data-toggle-application-form': ''}  &times;
-      %small= I18n.t('offers.applicant_count', count: offer.applications.count)
-      %h4= t('applications.form.heading')
-      = form_for [offer, offer.applications.new] do |f|
-        = f.label :memo, t('applications.form.memo')
-        = f.text_area :memo, rows: 5
-        = f.submit t('applications.form.submit'), class: 'button expanded success'
+    %small= I18n.t('offers.applicant_count', count: offer.applications.count)
+    %h4= t('applications.form.heading')
+    = form_for [offer, offer.applications.new] do |f|
+      = f.label :memo, t('applications.form.memo')
+      = f.text_area :memo, rows: 5
+      = f.submit t('applications.form.submit'), class: 'button expanded success'
   .float-right
     = link_to t('applications.form.show_form'), '#', class: 'button primary', data: { 'toggle-application-form': '' }, id: 'show_application_form'
