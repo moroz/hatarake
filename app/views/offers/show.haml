@@ -1,13 +1,9 @@
 = link_to "Back to list", offers_path
 
 .row
-  .medium-9.columns
+  .medium-8.columns
+    = render 'header'
+    = render 'application_form'
     = render 'details'
-    .card.shadow.offer__description
-      .card-divider
-        %h4= t('offers.show.description')
-      .card-section
-        = markdown offer.description
-  .medium-3.columns
-    = render 'application'
-
+  .medium-4.columns
+    = render 'company_desc'

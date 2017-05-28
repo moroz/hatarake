@@ -18,9 +18,14 @@ pl:
       heading: "Oferta pracy: "
       title: "Oferta: "
       published_at: "Opublikowano"
-      description: "Szczegóły"
+      details: "Szczegóły"
+      description: "Opis stanowiska"
 
-    published_time_ago: "Oferta opublikowana %{time} temu"
+    published_time_ago: "opublikowano %{time} temu"
+    view_count:
+      one: "wyświetlono raz"
+      few: "wyświetlono %{count} razy"
+      many: "wyświetlono %{count} razy"
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"

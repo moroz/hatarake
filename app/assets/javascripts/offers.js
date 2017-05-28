@@ -37,7 +37,7 @@ document.addEventListener('turbolinks:load', function () {
 
   $('[data-toggle-application-form]').click(function(e) {
     e.preventDefault();
-    $('#application_form, #show_application_form').toggleClass('hide');
+    $('#application_form').toggleClass('hide');
   });
 
 });

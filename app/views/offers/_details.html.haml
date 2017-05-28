@@ -1,11 +1,8 @@
-.card.shadow
+.card.shadow.offer__description
+  .card-divider
+    %h4= t('offers.show.details')
+    = offer.location
   .card-section
-    %h4= offer.title
-    %small
-      = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at)) if offer.published_at.present?
-      &bull;
-      = link_to offer.company.name, offer.company
-      &bull;
-      = offer.location
-    = render 'save_offer'
-    = render 'actions'
+    %h4= t('offers.show.description')
+    = markdown offer.description
+
