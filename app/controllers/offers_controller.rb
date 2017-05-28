@@ -22,6 +22,7 @@ class OffersController < ApplicationController
     if request.path != offer_path(offer)
       redirect_to offer, status: :moved_permanently
     end
+    offer.increment!(:views) unless offer.company_id == current_user.try(:id)
     @title = t('.title') + offer.title
   end
 
