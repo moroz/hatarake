@@ -20,7 +20,7 @@ pl:
       published_at: "Opublikowano"
       description: "Szczegóły"
 
-    published_time_ago: "Oferta publikowana %{time} temu"
+    published_time_ago: "Oferta opublikowana %{time} temu"
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"
