@@ -37,6 +37,9 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
+gem 'carrierwave', '~> 1.1.0'
+gem 'fog'
+
 # Rich text formatting with Textile
 gem 'RedCloth'
 gem 'redcarpet'
