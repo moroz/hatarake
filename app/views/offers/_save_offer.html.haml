@@ -1,0 +1,7 @@
+- if signed_in? && can?(:create, OfferSave)
+  %div
+    - if offer.user_saved?(current_candidate)
+      = link_to t('offers.unsave_offer'), destroy_offer_save_path(offer_id: offer), method: :delete, class: 'custom_button custom_button--small'
+    - else
+      = link_to t('offers.save_offer'), offer_offer_saves_path(offer_id: offer), method: :post, class: 'custom_button custom_button--small'
+

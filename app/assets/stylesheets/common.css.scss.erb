@@ -29,24 +29,6 @@ select {
   background-size: cover;
 }
 
-<% %w( red blue green maroon ).each do |color| %>
-  <% bg = "$profile-section-#{color}-bg" %>
-  .profile-section--color-<%= color %> {
-    .profile-section__heading {
-      background-color: <%= bg %>;
-      color: white;
-    }
-    border-color: <%= bg %>;
-    a.button {
-      background-color: <%= bg %>;
-      &:hover {
-        background-color: lighten(<%= bg %>, 14);
-        transition: background-color 0.3s fade;
-      }
-    }
-  }
-<% end %>
-
 .avatar--large {
   max-width: 300px;
   max-height: 300px;
@@ -55,6 +37,7 @@ select {
 }
 .custom_button {
   border: 3px solid $button-color;
+  vertical-align: middle;
   border-radius: 0.3rem;
   padding: 0.4rem;
   color: $button-color;
@@ -85,14 +68,21 @@ select {
   font-size: 0.9rem;
 }
 
-.custom_button--tertiary {
-  border-color: $custom-tertiary;
-  color: $custom-tertiary;
+<% %w( primary secondary success notice alert warning ).each do |color| %>
+  .custom_button--<%= color %> {
+    color: $<%= color %>-color;
+    border-color: $<%= color %>-color;
 
-  &:hover {
-    background-color: lighten($custom-tertiary, 10%);
+    &:visited {
+      color: $<%= color %>-color;
+    }
+  
+    &:hover, &:focus {
+      background-color: lighten($<%= color %>-color, 10%);
+      color: #fff;
+    }
   }
-}
+<% end %>
 
 a, th {
   font-weight: 400;
