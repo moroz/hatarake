@@ -1,21 +1,24 @@
 class AvatarsController < ApplicationController
+  authorize_resource
+  helper_method :avatar
+
   def new
-    @avatar = Avatar.new
   end
 
   def create
-    @avatar = current_user.avatar || current_user.build_avatar
-    if @avatar.update(avatar_params)
-      flash[:success] = "The new avatar has been uploaded."
-    else
-      flash[:alert] = "There was an error processing your request."
+    if avatar.update(avatar_params)
+      redirect_to profile_path, notice: "Success"
     end
-    redirect_to new_avatar_path
+  end
+
+  def avatar
+    @avatar = current_user.avatar || current_user.build_avatar
   end
 
   private
 
   def avatar_params
-    params.require(:avatar).permit(:image)
+    params.require(:avatar).permit(:file)
   end
 end
+
