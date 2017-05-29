@@ -56,3 +56,8 @@ en:
 
       saved_offers:
         heading: Offers you saved
+
+  resumes:
+    new:
+      heading: Upload a resumé
+      submit: Start upload

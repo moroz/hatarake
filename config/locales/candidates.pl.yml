@@ -52,6 +52,9 @@ pl:
       candidate/profile:
         first_name: "Imię"
         last_name: "Nazwisko"
+      resume:
+        description: Opis
+        language: Język
 
     models:
       candidate: profilu
@@ -65,3 +68,8 @@ pl:
 
       saved_offers:
         heading: Zapisane oferty
+
+  resumes:
+    new:
+      heading: Prześlij CV
+      submit: Wyślij

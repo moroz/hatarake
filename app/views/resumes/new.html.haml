@@ -1,8 +1,9 @@
-%h1 Upload resumé
+%h1= t('resumes.new.heading')
 
-= simple_form_for Resume.new, multipart: true do |f|
-  = f.label :language, "Language:"
+= simple_form_for Resume.new, remote: true, multipart: true do |f|
+  = error_messages_for f.object
+  = f.label :language
   = f.select :language, options_from_collection_for_select(I18n.t('languages'), :first, :last, 'pl')
   = f.input :description
   = f.file_field :file
-  = f.submit
+  = f.submit t('resumes.new.submit'), class: 'button success expanded'
