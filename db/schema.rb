@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528044248) do
+ActiveRecord::Schema.define(version: 20170529032447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +25,11 @@ ActiveRecord::Schema.define(version: 20170528044248) do
     t.index ["offer_id"], name: "index_applications_on_offer_id", using: :btree
   end
 
-  create_table "avatars", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["user_id"], name: "index_avatars_on_user_id", using: :btree
+  create_table "attachments", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "candidate_profiles", force: :cascade do |t|
@@ -207,7 +203,6 @@ ActiveRecord::Schema.define(version: 20170528044248) do
 
   add_foreign_key "applications", "offers"
   add_foreign_key "applications", "users", column: "candidate_id"
-  add_foreign_key "avatars", "users"
   add_foreign_key "candidate_profiles", "users"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "locations", "countries"
