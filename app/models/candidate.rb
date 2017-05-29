@@ -8,6 +8,7 @@ class Candidate < User
   has_many :education_items, dependent: :destroy
   has_many :work_items, dependent: :destroy
   has_many :applications
+  has_many :resumes, foreign_key: 'owner_id', dependent: :destroy
   has_many :applied_offers, through: :applications, source: :offer
   has_many :offer_saves, class_name: "OfferSave", foreign_key: :user_id
   has_many :saved_offers, through: :offer_saves, source: :offer

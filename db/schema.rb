@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529034704) do
+ActiveRecord::Schema.define(version: 20170529062116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 20170529034704) do
   create_table "attachments", force: :cascade do |t|
     t.string   "file"
     t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "type"
+    t.string   "language"
+    t.text     "description"
   end
 
   create_table "candidate_profiles", force: :cascade do |t|
@@ -204,6 +206,7 @@ ActiveRecord::Schema.define(version: 20170529034704) do
 
   add_foreign_key "applications", "offers"
   add_foreign_key "applications", "users", column: "candidate_id"
+  add_foreign_key "attachments", "users", column: "owner_id"
   add_foreign_key "candidate_profiles", "users"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "locations", "countries"

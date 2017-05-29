@@ -25,6 +25,7 @@ class Ability
       can :show, Page
       can [:create, :delete], OfferSave
       can [:create, :new], Application
+      can :manage, Resume, owner_id: user.id
     elsif user.admin?
       can :manage, :all
     else

@@ -130,3 +130,29 @@ en:
           one:    "An error prohibited this %{model} from being saved:"
           other:  "%{count} errors prohibited this %{model} from being saved:"
         body: "There were problems with the following fields:"
+
+  languages:
+    en: English
+    pl: Polish
+    bg: Bulgarian
+    zh_CN: Chinese (Simplified)
+    zh_TW: Chinese (Traditional)
+    hr: Croatian
+    cs: Czech
+    da: Danish
+    nl: Dutch
+    fi: Finnish
+    fr: French
+    de: German
+    el: Greek
+    hu: Hungarian
+    lv: Latvian
+    lt: Lithuanian
+    'no': Norwegian
+    ro: Romanian
+    ru: Russian
+    sk: Slovak
+    sl: Slovenian
+    es: Spanish
+    sv: Swedish
+    ua: Ukrainian

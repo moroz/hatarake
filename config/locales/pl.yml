@@ -170,3 +170,29 @@ pl:
             specialization:
               blank: "nie może być pusta."
 
+  languages:
+    pl: polski
+    en: angielski
+    bg: bułgarski
+    zh_TW: chiński (tradycyjny)
+    zh_CN: chiński (uproszczony)
+    hr: chorwacki
+    cs: czeski
+    da: duński
+    fi: fiński
+    fr: francuski
+    el: grecki
+    es: hiszpański
+    lt: litewski
+    lv: łotewski
+    nl: niderlandzki
+    de: niemiecki
+    'no': norweski
+    ru: rosyjski
+    ro: rumuński
+    sv: szwedzki
+    sk: słowacki
+    sl: słoweński
+    ua: ukraiński
+    hu: węgierski
+
