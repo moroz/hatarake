@@ -34,9 +34,6 @@ gem 'devise'
 gem 'simple_form'
 
 # For uploading assets
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
-
 gem 'carrierwave', '~> 1.1.0'
 gem 'fog-aws'
 
