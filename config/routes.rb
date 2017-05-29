@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :applications
     resources :offer_saves, only: [:create]
   end
+  resources :attachments, only: [:new, :create]
   delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'profile/edit_skills', to: 'candidates#edit_skills'
   get 'profile/step2', to: "candidates#step2", as: :candidate_step2

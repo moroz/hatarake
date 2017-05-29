@@ -1,12 +1,4 @@
 = form_for Avatar.new, url: avatar_path do |f|
-  - if @avatar.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@avatar.errors.count, "error")
-        prohibited this avatar from being saved:
-      %ul
-        - @avatar.errors.full_messages.each do |msg|
-          %li= msg
   .field
     = f.label :image
     = f.file_field :image

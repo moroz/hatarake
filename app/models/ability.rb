@@ -7,6 +7,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     cannot :manage, :all
     can :read, [Company, Offer]
+    can :manage, Attachment
     if user.company?
       can :create, Offer
       can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
@@ -29,6 +30,7 @@ class Ability
     else
       cannot [:index, :create, :update, :destroy], Page
       cannot [:create, :update, :destroy], Offer
+      cannot :manage, Attachment
       can :show, Page
     end
     #

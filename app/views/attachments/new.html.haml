@@ -1,0 +1,10 @@
+= link_to "Back to profile", profile_path
+.row
+  .medium-6.columns
+    = form_for @attachment, multipart: true do |f|
+      = error_messages_for @attachment
+      .field
+        = f.label :file
+        = f.file_field :file
+      .actions
+        = f.submit 'Upload', class: 'button primary expanded'
