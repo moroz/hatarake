@@ -1,8 +1,8 @@
 = link_to "Back to profile", profile_path
 .row
   .medium-6.columns
-    = form_for @attachment, multipart: true do |f|
-      = error_messages_for @attachment
+    = form_for @avatar, multipart: true do |f|
+      = error_messages_for @avatar
       .field
         = f.label :file
         = f.file_field :file

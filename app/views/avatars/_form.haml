@@ -1,6 +1,6 @@
-= form_for Avatar.new, url: avatar_path do |f|
+= form_for avatar, url: avatar_path do |f|
   .field
-    = f.label :image
-    = f.file_field :image
+    = f.label :file
+    = f.file_field :file
   .actions
     = f.submit 'Upload', class: 'button primary expanded'
