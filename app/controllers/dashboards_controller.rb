@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class DashboardsController < ApplicationController
   def show
     unless signed_in?
       redirect_to root_path and return

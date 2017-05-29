@@ -47,7 +47,7 @@ en:
         2: Sex
         3: Profession
 
-  dashboard:
+  dashboards:
     candidate_dashboard:
       heading: Dashboard
 

@@ -59,7 +59,7 @@ pl:
     models:
       candidate: profilu
 
-  dashboard:
+  dashboards:
     candidate_dashboard:
       heading: Panel kandydata
 
