@@ -23,6 +23,8 @@ class OffersController < ApplicationController
       redirect_to offer, status: :moved_permanently
     end
     offer.increment!(:views) unless offer.company_id == current_user.try(:id)
+    @company = offer.company
+    @offers = @company.offers.where("id != ?", offer.id).limit(5)
     @title = t('.title') + offer.title
   end
 

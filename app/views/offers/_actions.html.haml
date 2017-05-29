@@ -13,5 +13,8 @@
     - else
       = link_to t('offers.save_offer'), offer_offer_saves_path(offer_id: offer), method: :post, class: 'custom_button custom_button--small'
 
-  = link_to t('applications.form.show_form'), '#', class: 'custom_button custom_button--small', data: { 'toggle-application-form': '' }, id: 'show_application_form'
+  - unless signed_in?
+    = render 'sign_in_to_apply'
+  - else 
+    = link_to t('applications.form.show_form'), '#', class: 'custom_button custom_button--small', data: { 'toggle-application-form': '' }, id: 'show_application_form'
 
