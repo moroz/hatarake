@@ -23,7 +23,7 @@ RSpec.describe "Candidate registration" do
     context "upon first login" do
 
       it "redirects to step2 path" do
-        expect(current_path).to eq(candidate_step2_path)
+        expect(current_path).to eq(edit_candidate_profile_path)
       end
 
       describe "form has all fields" do

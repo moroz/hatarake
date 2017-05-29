@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
 
   def show
     if @candidate.profile.nil?
-      redirect_to candidate_step2_path
+      redirect_to edit_candidate_profile_path
     end
   end
 
@@ -46,7 +46,7 @@ class CandidatesController < ApplicationController
     @skill_items = current_candidate.skill_items
   end
 
-  def step2
+  def edit
     @candidate.build_profile unless @candidate.profile.present?
   end
 

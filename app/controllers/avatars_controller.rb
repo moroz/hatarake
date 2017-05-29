@@ -2,7 +2,7 @@ class AvatarsController < ApplicationController
   authorize_resource
   helper_method :avatar
 
-  def new
+  def show
   end
 
   def create

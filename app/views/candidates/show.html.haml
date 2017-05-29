@@ -14,8 +14,8 @@
           = t('.looking_for_work.' + candidate.looking_for_work.to_s)
 
         - if can? :edit, candidate
-          = link_to t('.change_picture'), new_avatar_path, class: 'button small'
-          = link_to t('.change_data'), candidate_step2_path, class: 'button small'
+          = link_to t('.change_picture'), edit_avatar_path, class: 'button small'
+          = link_to t('.change_data'), edit_candidate_profile_path, class: 'button small'
 
     .card
       .card-divider
@@ -29,7 +29,7 @@
           - else
             = t('.no_skills')
         - if can? :edit, candidate
-          = link_to t('.edit_skills'), profile_edit_skills_path, class: 'button small'
+          = link_to t('.edit_skills'), candidate_edit_skills_path, class: 'button small'
 
     .card
       .card-divider

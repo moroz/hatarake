@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   end
   resources :resumes
   delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
-  get 'profile/edit_skills', to: 'candidates#edit_skills'
-  get 'profile/step2', to: "candidates#step2", as: :candidate_step2
-  get 'profile', to: 'profile#profile'
-  get 'dashboard', to: 'dashboard#show'
+  get 'candidate/edit_skills', to: 'candidates#edit_skills'
+  get 'candidate/edit_profile', to: "candidates#edit", as: :edit_candidate_profile
+  resource :profile, only: :show
+  resource :dashboard, only: :show
   resources :pages
   resources :education_items
   resources :work_items
@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   resources :companies, only: [:show,:index,:update,:edit]
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
-  resource :avatar, only: [:new, :create]
+  get '/edit_avatar', to: 'avatars#new'
+  resource :avatar, only: :create
   root to: 'home#home'
   get '/sign_up', controller: :pages, action: :show, id: 'sign_up'
 end

@@ -40,7 +40,7 @@ class SessionsController < Devise::SessionsController
     case resource.type
       when "Candidate"
         return resource.profile.present? ? dashboard_path
-          : candidate_step2_path
+          : edit_candidate_profile_path
       when "Company"
         dashboard_path
       else

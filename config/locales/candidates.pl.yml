@@ -1,6 +1,6 @@
 pl:
   candidates:
-    step2:
+    edit:
       looking_for_work: Czy poszukujesz pracy?
       birth_date: 'Data urodzenia:'
       first_name: 'Imię:'

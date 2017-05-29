@@ -1,13 +1,13 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
   helper_method :company, :candidate
 
-  def profile
+  def show
     unless signed_in?
       redirect_to root_path and return
     end
     if candidate_signed_in?
       if candidate.profile.nil?
-        redirect_to candidate_step2_path
+        redirect_to edit_candidate_profile_path
       else
         render 'candidates/show'
       end

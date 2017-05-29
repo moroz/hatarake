@@ -1,5 +1,5 @@
 %tr{id: dom_id(offer), class: 'offer'}
   %td= link_to offer.title, offer
-  %td= offer.salary
-  %td= offer.location
+  %td= short_salary(offer)
+  %td= offer.location.short_format
 
