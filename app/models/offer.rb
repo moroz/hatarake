@@ -27,7 +27,15 @@ class Offer < ApplicationRecord
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', POLAND_ID) }
 
   scope :published, -> { where(published: true) }
-  scope :published_or_owned_by, ->(company) { where("published = ? OR company_id = ?", true, company.id) }
+  
+  def self.published_or_owned_by(company)
+    if company.present?
+      where('published = ? OR company_id = ?', true, company.id)
+    else
+      published
+    end
+  end
+  
   scope :with_min_salary, ->(min) { where("salary @> :min or lower(salary) > :min", min: min.to_d) }
   scope :featured, -> { published.order('published_at DESC') }
   scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }

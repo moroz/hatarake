@@ -1,0 +1,18 @@
+%h2.text-center Jobs in Poland
+
+- show_advanced = params[:adv].present? && params[:adv] == '1'
+.row
+  = render partial: 'basic_search', locals: {hidden: show_advanced}
+.row
+  = render partial: 'advanced_search', locals: {hidden: !show_advanced, only_poland: true}
+
+.row
+  .medium-3.columns
+    .card
+      %small Tu trzeba coś wstawić, żeby to optycznie zapełnić, np. filtry albo opcje sortowania.
+
+  .medium-9.columns
+    .offers.card.shadow#offer-list
+      = render partial: 'offers'
+    - if can? :create, Offer
+      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

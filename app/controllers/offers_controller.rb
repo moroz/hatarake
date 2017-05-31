@@ -3,19 +3,29 @@ class OffersController < ApplicationController
   helper_method :offers
 
   before_action :set_country_list, only: [:new, :edit, :index]
-  authorize_resource
+  before_action :set_province_list, only: [:new, :edit, :index, :poland, :abroad]
+  before_action :set_search_description, only: :index
+  authorize_resource except: [:index, :poland, :abroad]
 
   def new
     offer.build_location
   end
 
   def index
-    @offers = published_or_own.order(:published_at).advanced_search(params)
-    @search_description = view_context.search_description(params)
+    @offers = Offer.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
     respond_to do |f|
       f.js
       f.html
     end
+  end
+
+  def poland
+    @offers = Offer.poland.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+  end
+
+  def abroad
+    @offers = Offer.abroad.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    render :index
   end
 
   def show
@@ -87,26 +97,24 @@ class OffersController < ApplicationController
 
   private
 
-  def published_or_own
-    scope = if company_signed_in?
-      Offer.published_or_owned_by(current_company)
-    else
-      Offer.published
-    end
-    scope = scope.page(params[:page])
-  end
-
   def offers
     @offers ||= published_or_own
   end
 
   def set_country_list
     @countries = Country.all.order(local_name)
+  end
+
+  def set_province_list
     if offer.present? && offer.persisted?
       @provinces = offer.location.country.provinces.local_order
     else
       @provinces = Province.where(country_id: 166).local_order
     end
+  end
+
+  def set_search_description
+    @search_description = view_context.search_description(params)
   end
 
   def offer_params

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/offers/poland', to: 'offers#poland'
+  get '/offers/abroad', to: 'offers#abroad'
   resources :offers do
     member do
       patch :publish
