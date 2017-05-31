@@ -43,7 +43,10 @@ pl:
       advanced_search: "Wyszukiwanie zaawansowane"
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
-      heading: "Oferty pracy"
+      heading: "Praca za granicą"
+
+    poland:
+      heading: Praca w Polsce
 
     search_description:
       reset: "Wyczyść kryteria wyszukiwania."

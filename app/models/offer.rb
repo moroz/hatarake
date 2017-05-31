@@ -2,7 +2,6 @@ class Offer < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:slugged, :finders, :history]
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
-  POLAND_ID = 166
 
   belongs_to :company, required: true
   belongs_to :location, required: true
@@ -23,8 +22,8 @@ class Offer < ApplicationRecord
   before_validation :make_salary_range
   before_validation :make_hourly_wage
 
-  scope :poland, -> { joins(:location).where('locations.country_id = ?', POLAND_ID) }
-  scope :abroad, -> { joins(:location).where('locations.country_id != ?', POLAND_ID) }
+  scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
+  scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
 
   scope :published, -> { where(published: true) }
   

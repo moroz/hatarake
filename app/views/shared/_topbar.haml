@@ -7,8 +7,8 @@
           %li= link_to t('nav.jobs'), offers_path
           %li= link_to t('nav.candidates'), candidates_path
         -else
-          %li= link_to t('nav.jobs_pl'), offers_path
-          %li= link_to t('nav.jobs_abroad'), offers_path
+          %li= link_to t('nav.jobs_pl'), offers_poland_path
+          %li= link_to t('nav.jobs_abroad'), offers_abroad_path
     .top-bar-right
       %ul.menu
         %li= locale_link((current_locale == :en ? :pl : :en))

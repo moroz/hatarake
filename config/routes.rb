@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/offers/poland', to: 'offers#poland'
-  get '/offers/abroad', to: 'offers#abroad'
-  resources :offers do
+  get '/offers/abroad', to: 'offers#index'
+  resources :offers, except: :index do
     member do
       patch :publish
       patch :unpublish
