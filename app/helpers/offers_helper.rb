@@ -59,6 +59,10 @@ module OffersHelper
     end
   end
 
+  def salary_for(offer)
+    readable_currency_range(offer.salary, offer.currency)
+  end
+
   def pretty_currency_value(value)
     return if value.nil?
     value.infinite? ? nil : number_with_precision(value, separator: '.', strip_insignificant_zeros: true, precision: 2)

@@ -1,9 +1,7 @@
 .card.shadow.offer__description
   .card-divider
-    %h4= t('offers.show.details')
     %p= offer.location
-    %p= readable_currency_range(offer.salary, offer.currency) if offer.salary.present?
+    %p= salary_for(offer) if offer.salary.present?
   .card-section
-    %h4= t('offers.show.description')
     = markdown offer.description
 

@@ -5,6 +5,10 @@ class ApplicationsController < ApplicationController
   
   authorize_resource
 
+  def new
+
+  end
+
   def create
     if Application.where(candidate: current_candidate, offer: offer).present?
       flash[:alert] = I18n.t('applications.create.failure')
