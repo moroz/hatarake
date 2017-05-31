@@ -60,6 +60,7 @@ pl:
         pid: "regionu: <strong>%{val}</strong>"
         cur: "waluty: <strong>%{val}</strong>"
         smin: "pensji minimalnej: <strong>%{val}</strong>"
+        q: "frazy: <strong>%{val}</strong>"
 
     advanced_search:
       country: Kraj

@@ -4,7 +4,6 @@ class OffersController < ApplicationController
 
   before_action :set_country_list, only: [:new, :edit, :index]
   before_action :set_province_list, only: [:new, :edit, :index, :poland]
-  before_action :set_search_description, only: [:index, :poland]
   authorize_resource except: [:index, :poland]
 
   def new
@@ -13,6 +12,7 @@ class OffersController < ApplicationController
 
   def poland
     @offers = Offer.poland.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    set_search_description
     respond_to do |f|
       f.js { render 'index' }
       f.html
@@ -21,6 +21,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.abroad.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    set_search_description
     respond_to do |f|
       f.js
       f.html

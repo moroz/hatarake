@@ -40,5 +40,11 @@ document.addEventListener('turbolinks:load', function () {
     $('#application_form').toggleClass('hide');
   });
 
+  var searchFilters = document.getElementById('search_filters');
+  searchFilters && searchFilters.addEventListener('change', function(e) {
+    e.stopPropagation();
+    $(searchFilters).submit();
+  }, false);
+
 });
 

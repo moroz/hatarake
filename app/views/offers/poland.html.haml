@@ -1,15 +1,11 @@
 %h2.text-center= t('.heading')
 
-- show_advanced = params[:adv].present? && params[:adv] == '1'
 .row
-  = render partial: 'basic_search', locals: {hidden: show_advanced}
-.row
-  = render partial: 'advanced_search', locals: {hidden: !show_advanced, only_poland: true}
+  = render 'basic_search', hide_adv_link: true
 
 .row
   .medium-3.columns
-    .card
-      %small Tu trzeba coś wstawić, żeby to optycznie zapełnić, np. filtry albo opcje sortowania.
+    = render 'filter_sidebar'
 
   .medium-9.columns
     .offers.card.shadow#offer-list

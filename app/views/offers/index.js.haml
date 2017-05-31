@@ -5,3 +5,5 @@
   document.querySelector('.basic_search form').reset();
 - if @search_description.blank?
   resetSearchForms();
+- elsif params[:q].present?
+  $('#filter_sidebar_q').val('#{j params[:q]}');

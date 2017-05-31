@@ -40,7 +40,10 @@ en:
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
-      heading: "Job offers"
+      heading: "Jobs abroad"
+
+    poland:
+      heading: "Jobs in Poland"
 
     search_description:
       reset: "Reset filters."
@@ -54,6 +57,7 @@ en:
         pid: "region: <strong>%{val}</strong>"
         cur: "currency: <strong>%{val}</strong>"
         smin: "minimal salary: <strong>%{val}</strong>"
+        q: "term: <strong>%{val}</strong>"
 
     advanced_search:
       heading: "Advanced search"

@@ -10,7 +10,8 @@ module OffersHelper
   end
 
   def search_description(params)
-    if params[:adv].present? && params[:adv] == '1'
+    if params[:cid].present? || params[:pid].present? ||
+      params[:smin].present? || params[:cur].present?
       advanced_search_description(params)
     elsif params[:q].present?
       basic_search_description(params)
@@ -30,6 +31,7 @@ module OffersHelper
       cid: -> { Country.find_by(id: params[:cid]).try(:local_name) },
       pid: -> { Province.find_by(id: params[:pid]).try(:local_name) },
       cur: -> { I18n.t('currencies.' + params[:cur]) },
+      q: -> { params[:q] },
       smin: -> { params[:smin] }
     }
     search_params.each do |k,v|
