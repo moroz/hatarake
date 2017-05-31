@@ -1,15 +1,19 @@
 FactoryGirl.define do
   factory :offer do
     company { Company.first || create(:company) }
-    title "Welder m/f"
+    title { Faker::Job.title }
     location
-    salary_min 1000
-    salary_max 2000
+    salary_min { @smin = rand(10) * 1000 }
+    salary_max { @smin + 2500 }
     currency "pln"
-    description "We're looking for welders. *bold* _italic_"
-    contact_email "user@example.com"
-    contact_phone "555 100-800"
+    description { Faker::Lorem.paragraphs(8, true).join("\n\n") }
+    contact_email { Faker::Internet.email }
+    contact_phone { Faker::PhoneNumber.cell_phone }
     unpublished
+
+    trait :random do
+      association :location, :random
+    end
 
     trait :published do
       published true
