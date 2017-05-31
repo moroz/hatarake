@@ -1,8 +1,15 @@
 FactoryGirl.define do
   factory :country do
-    iso "PL"
-    name_pl "Polska"
-    name_en "Poland"
+    iso "UA"
+    name_pl "Ukraina"
+    name_en "Ukraine"
+
+    trait :poland do
+      id 166
+      iso "PL"
+      name_pl "Polska"
+      name_en "Rosja"
+    end
 
     trait :russia do
       iso "RU"

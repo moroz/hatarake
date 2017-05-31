@@ -69,4 +69,36 @@ RSpec.describe Offer, type: :model do
       end
     end
   end
+
+  describe "scopes" do
+    describe "featured"
+
+    describe "with_country_id" do
+
+    end
+
+    describe "with_province_id" do
+
+    end
+
+    describe "offers in Poland and abroad" do
+      let!(:offer_pl) { FactoryGirl.create(:offer, :published, :poland) }
+      let!(:offer_de) { FactoryGirl.create(:offer, :published, :germany) }
+
+      describe "poland" do
+        subject { Offer.poland.to_a }
+
+        it { is_expected.to include offer_pl }
+        it { is_expected.not_to include offer_de }
+      end
+
+      describe "abroad" do
+        subject { Offer.abroad.to_a }
+
+        it { is_expected.to include offer_de }
+        it { is_expected.not_to include offer_pl }
+      end
+
+    end
+  end
 end

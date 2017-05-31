@@ -16,12 +16,10 @@ FactoryGirl.define do
       published_at { 1.day.ago }
     end
 
-    trait :russia do
-      association :location, :russia
-    end
-
-    trait :germany do
-      association :location, :germany
+    %i{ russia poland germany }.each do |country|
+      trait country do
+        association :location, country
+      end
     end
 
     trait :unpublished do

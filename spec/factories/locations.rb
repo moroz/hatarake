@@ -11,6 +11,10 @@ FactoryGirl.define do
     trait :germany do
       country { Country.find_by(iso: "DE") || create(:country, :germany) }
     end
+
+    trait :poland do
+      country { Country.find_by(iso: "PL") || create(:country, :poland) }
+    end
     
   end
 end
