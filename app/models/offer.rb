@@ -77,7 +77,7 @@ class Offer < ApplicationRecord
   end
 
   def self.publish_all
-    update_all(published:true, published_at: Time.now)
+    where(published: false).update_all(published:true, published_at: Time.now)
   end
 
   def self.search_by_query(query)
