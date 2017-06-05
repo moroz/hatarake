@@ -1,5 +1,10 @@
-%ul
-  %li= offer.published_at
-  %li= offer.location
+%ul.fa-ul
+  %li
+    = fa_icon('calendar li')
+    = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
+  %li
+    = fa_icon('money li')
+    = salary_for(offer)
+  %li= fa_icon('location-arrow li', text: offer.location.to_s)
 
 = link_to "Apply now", "#", class: 'button success expanded'

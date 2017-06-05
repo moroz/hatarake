@@ -21,7 +21,7 @@ pl:
       details: "Szczegóły"
       description: "Opis stanowiska"
 
-    published_time_ago: "opublikowano %{time} temu"
+    published_time_ago: "Opublikowano %{time} temu"
     view_count:
       one: "wyświetlono raz"
       few: "wyświetlono %{count} razy"
