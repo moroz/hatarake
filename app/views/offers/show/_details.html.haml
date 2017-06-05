@@ -1,4 +1,5 @@
-.card.shadow.offer__description
-  .card-section
-    = markdown offer.description
+%ul
+  %li= offer.published_at
+  %li= offer.location
 
+= link_to "Apply now", "#", class: 'button success expanded'

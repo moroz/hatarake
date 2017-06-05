@@ -1,7 +1,0 @@
-%h4= offer.title
-%small
-  - str = []
-  - str << t('offers.published_time_ago', time: time_ago_in_words(offer.published_at)) if offer.published_at.present?
-  - str << t('offers.view_count', count: offer.views)
-  = str.join(', ').capitalize
-= render 'actions'

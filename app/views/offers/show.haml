@@ -3,10 +3,10 @@
 %h2.text-center= offer.title
 .row
   .medium-8.columns
-    = render 'offers/show/details'
+    = render 'offers/show/description'
   .medium-4.columns
     .card.shadow.offer__sidebar
       .card-section
         = render 'offers/show/company_desc'
-        %hr/
-        = render 'offers/show/header'
+      .card-section
+        = render 'offers/show/details'
