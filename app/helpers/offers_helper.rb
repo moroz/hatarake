@@ -61,6 +61,22 @@ module OffersHelper
     end
   end
 
+  def salary_and_wage_for(offer)
+    a = []
+    if offer.salary.present?
+      a << (readable_currency_range(offer.salary, offer.currency) +
+        I18n.t('offers.table.per_month'))
+    end
+    if offer.hourly_wage.present?
+      a << (readable_currency_range(offer.hourly_wage, offer.currency) +
+        I18n.t('offers.table.per_hour'))
+    end
+    if a.empty?
+      return I18n.t('currency_range.none')
+    end
+    a.join("<br/>")
+  end
+
   def salary_for(offer)
     readable_currency_range(offer.salary, offer.currency)
   end
