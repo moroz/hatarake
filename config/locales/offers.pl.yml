@@ -1,10 +1,5 @@
 pl:
   offers:
-    applicant_count:
-      zero: "Nikt jeszcze nie aplikował na to stanowisko."
-      one: "Jedna osoba aplikowała na to stanowisko."
-      few: "%{count} osoby aplikowały na to stanowisko."
-      many: "%{count} osób aplikowało na to stanowisko."
     apply_now: "Aplikuj teraz"
 
     add_new_offer: Dodaj nową ofertę
@@ -28,6 +23,11 @@ pl:
       one: "1 wyświetlenie"
       few: "%{count} wyświetlenia"
       many: "%{count} wyświetleń"
+    applicant_count:
+      zero: "0 aplikantów"
+      one: "1 aplikant"
+      few: "%{count} aplikantów"
+      many: "%{count} aplikantów"
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"

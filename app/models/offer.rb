@@ -65,7 +65,7 @@ class Offer < ApplicationRecord
   end
 
   def candidate_applied?(candidate)
-    Application.where(candidate: candidate, offer: self).present?
+    Application.where(candidate: candidate, offer: self).exists?
   end
 
   def user_saved?(user)
