@@ -1,9 +1,12 @@
 = link_to "Back to list", offers_path
 
+%h2.text-center= offer.title
 .row
   .medium-8.columns
-    = render 'header'
-    = render 'application_form'
-    = render 'details'
+    = render 'offers/show/details'
   .medium-4.columns
-    = render 'company_desc'
+    .card.shadow.offer__sidebar
+      .card-section
+        = render 'offers/show/company_desc'
+        %hr/
+        = render 'offers/show/header'
