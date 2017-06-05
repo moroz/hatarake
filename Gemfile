@@ -50,6 +50,7 @@ gem 'jquery-ui-rails'
 
 # Pagination
 gem 'kaminari'
+gem 'kaminari-i18n'
 
 # Friendly ids for models
 gem 'friendly_id'

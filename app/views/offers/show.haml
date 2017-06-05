@@ -2,11 +2,11 @@
 
 %h2.text-center= offer.title
 .row
-  .medium-8.columns
-    = render 'offers/show/description'
-  .medium-4.columns
+  .columns.large-4.large-push-8
     .card.shadow.offer__sidebar
       .card-section
         = render 'offers/show/company_desc'
       .card-section
         = render 'offers/show/details'
+  .columns.large-8.large-pull-4
+    = render 'offers/show/description'

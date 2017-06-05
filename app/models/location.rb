@@ -11,7 +11,10 @@ class Location < ApplicationRecord
 
   def to_s
     if province.present? || city.present?
-      [city, province.try(:local_name), country.try(:local_name)].reject(&:blank?).join(', ')
+      if country.id == Country::POLAND_ID && I18n.locale == :pl
+        return [city, province.try(:local_name)].reject(&:blank?).join(', ')
+      end
+      [city, province.try(:local_name), country.local_name].reject(&:blank?).join(', ')
     else
       country.local_name + " – " + I18n.t('offers.provinces.blank')
     end

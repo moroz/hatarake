@@ -2,9 +2,10 @@ en:
   offers:
     published_time_ago: "Published %{time} ago"
     view_count:
-      one: "viewed one time"
-      other: "viewed %{count} times"
+      one: "1 view"
+      other: "%{count} views"
 
+    apply_now: Apply now
     applicant_count:
       zero: "Nobody has applied for this post yet."
       one: "One person applied for this post."

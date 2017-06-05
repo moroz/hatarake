@@ -12,5 +12,8 @@
   %li
     = fa_icon('phone li')
     = offer.contact_phone
+  %li
+    = fa_icon('eye li')
+    = t('offers.view_count', count: offer.views)
 
-= link_to "Apply now", "#", class: 'button success expanded'
+= link_to t('offers.apply_now'), "#", class: 'button success expanded'

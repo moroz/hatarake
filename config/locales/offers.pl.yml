@@ -5,6 +5,7 @@ pl:
       one: "Jedna osoba aplikowała na to stanowisko."
       few: "%{count} osoby aplikowały na to stanowisko."
       many: "%{count} osób aplikowało na to stanowisko."
+    apply_now: "Aplikuj teraz"
 
     add_new_offer: Dodaj nową ofertę
 
@@ -23,9 +24,10 @@ pl:
 
     published_time_ago: "Opublikowano %{time} temu"
     view_count:
-      one: "wyświetlono raz"
-      few: "wyświetlono %{count} razy"
-      many: "wyświetlono %{count} razy"
+      zero: "0 wyświetleń"
+      one: "1 wyświetlenie"
+      few: "%{count} wyświetlenia"
+      many: "%{count} wyświetleń"
     table:
       title: "Tytuł"
       salary: "Wynagrodzenie"
