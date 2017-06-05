@@ -11,6 +11,12 @@ class AvatarsController < ApplicationController
     end
   end
 
+  def update
+    if avatar.update(avatar_params)
+      redirect_to profile_path, notice: "Success"
+    end
+  end
+
   def avatar
     @avatar = current_user.avatar || current_user.build_avatar
   end

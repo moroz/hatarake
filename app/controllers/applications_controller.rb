@@ -6,7 +6,9 @@ class ApplicationsController < ApplicationController
   authorize_resource
 
   def new
-
+    if candidate_signed_in? && offer.candidate_applied?(current_candidate)
+      redirect_to offer
+    end
   end
 
   def create

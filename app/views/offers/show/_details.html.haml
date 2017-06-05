@@ -6,12 +6,14 @@
     = fa_icon('money li')
     != salary_and_wage_for(offer)
   %li= fa_icon('location-arrow li', text: offer.location.to_s)
-  %li
-    = fa_icon('envelope-o li')
-    = link_to offer.contact_email, "mailto:#{offer.contact_email}"
-  %li
-    = fa_icon('phone li')
-    = offer.contact_phone
+  - if offer.contact_email.present?
+    %li
+      = fa_icon('envelope-o li')
+      = link_to offer.contact_email, "mailto:#{offer.contact_email}"
+  - if offer.contact_phone.present?
+    %li
+      = fa_icon('phone li')
+      = offer.contact_phone
   %li
     = fa_icon('eye li')
     = t('offers.view_count', count: offer.views)

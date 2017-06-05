@@ -16,7 +16,7 @@ module ProfileHelper
     if user.avatar.present?
       url = user.avatar.file_url
     end
-    content_tag :div, nil, class: "avatar avatar--#{size}", style: "background-image: url(#{url})"
+    content_tag :div, nil, class: "avatar avatar--#{size} shadow", style: "background-image: url(#{url})"
   end
 
   def section_link(text, url, *custom_classes)

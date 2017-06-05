@@ -1,21 +1,22 @@
 .row
   .medium-8.columns
     .card
-      .medium-4.columns
-        = avatar_for candidate, :avatar
-      .medium-8.columns
-        %h2= candidate.display_name
-        %p
-          %span.candidate__sex= t('sexes.long.' + candidate.sex) + ","
-          %span.candidate__age= candidate.profile.age
-          %br/
-          %span.candidate__profession= candidate.profession.local_name + "," if candidate.profession.present?
-          %span.candidate__looking_for_work
-          = t('.looking_for_work.' + candidate.looking_for_work.to_s)
+      .card-section
+        .medium-4.columns
+          = avatar_for candidate, :avatar
+        .medium-8.columns
+          %h2= candidate.display_name
+          %p
+            %span.candidate__sex= t('sexes.long.' + candidate.sex) + ","
+            %span.candidate__age= candidate.profile.age
+            %br/
+            %span.candidate__profession= candidate.profession.local_name + "," if candidate.profession.present?
+            %span.candidate__looking_for_work
+            = t('.looking_for_work.' + candidate.looking_for_work.to_s)
 
-        - if can? :edit, candidate
-          = link_to t('.change_picture'), edit_avatar_path, class: 'button small'
-          = link_to t('.change_data'), edit_candidate_profile_path, class: 'button small'
+          - if can? :edit, candidate
+            = link_to t('.change_picture'), edit_avatar_path, class: 'button small'
+            = link_to t('.change_data'), edit_candidate_profile_path, class: 'button small'
 
     .card
       .card-divider
