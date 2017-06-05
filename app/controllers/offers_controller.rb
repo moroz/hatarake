@@ -11,7 +11,7 @@ class OffersController < ApplicationController
   end
 
   def poland
-    @offers = Offer.includes(:company, location: [:country]).poland.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
     set_search_description
     respond_to do |f|
       f.js { render 'index' }
@@ -20,7 +20,7 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.includes(:company, location: [:country]).abroad.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
     set_search_description
     respond_to do |f|
       f.js
