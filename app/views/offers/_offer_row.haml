@@ -11,4 +11,4 @@
       = link_to offer.company.name, offer.company
       - if signed_in?
         %br/
-        = link_to t('offers.save_offer'), "#"
+        = link_to fa_icon('star-o'), '#', title: t('offers.save_offer')
