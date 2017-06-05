@@ -19,12 +19,7 @@ class SessionsController < Devise::SessionsController
               :user
             end
     sign_in(scope, resource)
-    if session[:return_to].present?
-      redirect_to session[:return_to]
-      session[:return_to] = nil
-    else
-      respond_with resource, :location => after_sign_in_path_for(resource)
-    end
+    respond_with resource, :location => after_sign_in_path_for(resource)
   end
 
   def destroy
@@ -37,6 +32,7 @@ class SessionsController < Devise::SessionsController
   private
 
   def after_sign_in_path_for(resource)
+    session.delete(:return_to) ||
     case resource.type
       when "Candidate"
         return resource.profile.present? ? dashboard_path

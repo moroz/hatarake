@@ -1,6 +1,6 @@
 %ul.fa-ul
   %li
-    = fa_icon('calendar li')
+    = fa_icon('calendar li fw')
     = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
   %li
     = fa_icon('money li')
@@ -16,4 +16,14 @@
     = fa_icon('eye li')
     = t('offers.view_count', count: offer.views)
 
-= link_to t('offers.apply_now'), "#", class: 'button success expanded'
+- if signed_in?
+  - if candidate_signed_in?
+    - if offer.candidate_applied?(current_candidate)
+      %span.offer__already-applied
+        =t("applications.already_applied.#{current_candidate.profile.sex}")
+    - else
+      = link_to t('offers.apply_now'), new_offer_application_path(offer_id: offer), class: 'button success expanded'
+- else
+  = link_to t('offers.apply_now'),
+    new_user_session_path(return_to: new_offer_application_path(offer_id: offer)), class: 'button success expanded'
+  
