@@ -12,10 +12,9 @@ module ProfileHelper
   end
 
   def avatar_for(user, size = :thumb)
-    url = 'avatar.png'
-    if user.avatar.present?
-      url = user.avatar.file_url
-    end
+    url = user.avatar.present? ?
+      user.avatar.file_url :
+      image_path('avatar.png')
     content_tag :div, nil, class: "avatar avatar--#{size} shadow", style: "background-image: url(#{url})"
   end
 
