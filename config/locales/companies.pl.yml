@@ -24,3 +24,10 @@ pl:
           attributes:
             website:
               invalid: "jest nieprawidłowa."
+
+  dashboards:
+    company_dashboard:
+      heading: Panel pracodawcy
+      my_offers: Moje oferty
+      applications: Aplikacje
+      messages: Wiadomości

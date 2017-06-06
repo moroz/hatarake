@@ -10,3 +10,10 @@ en:
 
     edit:
       heading: Edit profile
+
+  dashboards:
+    company_dashboard:
+      heading: Company dashboard
+      my_offers: My jobs
+      applications: Applications
+      messages: Messages
