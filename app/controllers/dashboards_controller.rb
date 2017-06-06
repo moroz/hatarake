@@ -15,8 +15,8 @@ class DashboardsController < ApplicationController
   private
 
   def candidate_dashboard
-    @saved = current_candidate.saved_offers
-    @applied = current_candidate.applied_offers
+    @saved = current_candidate.saved_offers.includes(location: [:country])
+    @applied = current_candidate.applied_offers.includes(location: [:country])
     render 'candidate_dashboard'
   end
 
