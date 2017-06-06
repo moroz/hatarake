@@ -1,0 +1,8 @@
+%h3.company__name= company.name
+- if company.website.present?
+  %strong= t('companies.show.website')
+  = link_to company.website, company.website
+%p= company.location if company.location.present?
+- if can? :edit, company
+  = link_to "Edit profile", edit_company_path(company)
+

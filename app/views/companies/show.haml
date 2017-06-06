@@ -3,16 +3,13 @@
     .card.shadow
       .card-section
         .row
-          .medium-4.columns
-            = avatar_for company
-          .medium-8.columns
-            %h3.company__name= company.name
-            - if company.website.present?
-              %strong= t('companies.show.website')
-              = link_to company.website, company.website
-            %p= company.location if company.location.present?
-            - if can? :edit, company
-              = link_to "Edit profile", edit_company_path(company)
+          - if company.avatar.present?
+            .medium-4.columns
+              = avatar_for company
+            .medium-8.columns
+              = render 'companies/show/info'
+          - else
+            = render 'companies/show/info'
         %hr/
         - if company.description.present?
           %h4= t('companies.show.description')

@@ -8,5 +8,5 @@ en:
       description: Description
       recent_offers: Recent offers
 
-  edit:
-    heading: Edit profile
+    edit:
+      heading: Edit profile

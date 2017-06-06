@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
   before_action :disable_turbolinks, only: [:new, :edit, :create, :update]
-  helper_method :current_user, :admin_signed_in?, :current_locale, :local_name, :page_title, :signed_in?
+  helper_method :current_user, :admin_signed_in?, :current_locale, :local_name, :page_title, :signed_in?, :translate_with_gender
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, :alert => exception.message
@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
 
   def local_name
     "name_#{current_locale}".to_sym
+  end
+
+  def translate_with_gender(key, gender = 'male')
+    I18n.t(key + ".#{gender}")
   end
 
   def page_title

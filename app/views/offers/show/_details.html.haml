@@ -25,7 +25,7 @@
   - if candidate_signed_in?
     - if offer.candidate_applied?(current_candidate)
       %span.offer__already-applied
-        =t("applications.already_applied.#{current_candidate.profile.sex}")
+        = translate_with_gender('applications.already_applied', current_candidate.profile.sex)
       - url = nil
     - else
       - url = new_offer_application_path(offer_id: offer)

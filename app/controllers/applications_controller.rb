@@ -7,7 +7,7 @@ class ApplicationsController < ApplicationController
 
   def new
     if candidate_signed_in? && offer.candidate_applied?(current_candidate)
-      redirect_to offer
+      redirect_to offer, alert: translate_with_gender('applications.already_applied', current_candidate.profile.sex)
     end
   end
 
