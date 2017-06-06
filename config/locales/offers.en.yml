@@ -104,3 +104,7 @@ en:
 
     save_offer: "Save offer"
     unsave_offer: "Delete from saved"
+
+  applications:
+    new:
+      heading: "Apply for offer: %{title}"

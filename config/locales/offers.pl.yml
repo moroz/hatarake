@@ -129,3 +129,6 @@ pl:
       offer: oferty
       company: profilu pracodawcy
 
+  applications:
+    new:
+      heading: "Aplikacja na stanowisko"

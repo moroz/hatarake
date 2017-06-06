@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
   expose(:offer) { Offer.friendly.find(params[:offer_id]) }
   expose(:application)
+  expose(:company) { offer.company }
   expose(:offer_applications) { offer.applications }
   
   authorize_resource

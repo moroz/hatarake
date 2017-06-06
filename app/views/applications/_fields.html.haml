@@ -1,5 +1,3 @@
-%small= I18n.t('offers.applicant_count', count: offer.applications.count)
-%h4= t('applications.form.heading')
 = form_for [offer, offer.applications.new] do |f|
   = f.label :memo, t('applications.form.memo')
   = f.text_area :memo, rows: 5
