@@ -1,6 +1,7 @@
 class Company < User
   devise :registerable
   has_many :offers, dependent: :destroy
+  has_many :applications, through: :offers
   belongs_to :location
   validates :website, format: { with: URI::regexp, allow_blank: true }
   validates :name, uniqueness: true, presence: true 
