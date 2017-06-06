@@ -4,8 +4,10 @@
   .columns.medium-4
     .dashboard-nav-card.green-bg
       = fa_icon 'briefcase', class: 'dashboard-nav-card-icon'
-      = current_company.offers.count
-      %h3.dashboard-nav-card-title= t('.my_offers')
+      %h3.dashboard-nav-card-title
+        = current_company.offers.count
+        %br
+        = t('.my_offers')
   .columns.medium-4
     .dashboard-nav-card.blue-bg
       = fa_icon 'users', class: 'dashboard-nav-card-icon'
