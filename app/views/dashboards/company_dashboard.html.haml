@@ -1,1 +1,16 @@
 %h1 Company dashboard
+
+.row
+  .columns.medium-4
+    .dashboard-nav-card.green-bg
+      = fa_icon 'briefcase', class: 'dashboard-nav-card-icon'
+      = current_company.offers.count
+      %h3.dashboard-nav-card-title Job offers
+  .columns.medium-4
+    .dashboard-nav-card.blue-bg
+      = fa_icon 'users', class: 'dashboard-nav-card-icon'
+      %h3.dashboard-nav-card-title Applications
+  .columns.medium-4
+    .dashboard-nav-card.purple-bg
+      = fa_icon 'envelope', class: 'dashboard-nav-card-icon'
+      %h3.dashboard-nav-card-title Messages
