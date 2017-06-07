@@ -7,12 +7,13 @@
         .medium-8.columns
           %h2= candidate.display_name
           %p
-            %span.candidate__sex= t('sexes.long.' + candidate.sex) + ","
-            %span.candidate__age= candidate.profile.age
+            %span.label
+              - icon = candidate.sex == 'male' ? 'mars' : 'venus'
+              = fa_icon icon
+              = candidate.profile.age
+            = looking_for_work_label(candidate.profile.looking_for_work)
             %br/
             %span.candidate__profession= candidate.profession.local_name + "," if candidate.profession.present?
-            %span.candidate__looking_for_work
-            = t('.looking_for_work.' + candidate.looking_for_work.to_s)
 
           - if can? :edit, candidate
             = link_to t('.change_picture'), edit_avatar_path, class: 'button small'
