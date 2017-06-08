@@ -1,0 +1,14 @@
+.card
+  .card-divider
+    %h4= t('candidates.show.work_experience')
+  .card-section
+    %div
+      - if candidate.work_items.any?
+        %table
+          %tbody
+            = render candidate.work_items
+      - else
+        = t('candidates.show.no_work_experience') 
+    - if can? :edit, candidate
+      = link_to t('candidates.show.edit_work'), new_work_item_path, class: 'button small'
+

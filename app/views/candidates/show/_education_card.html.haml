@@ -1,0 +1,14 @@
+.card
+  .card-divider
+    %h4= t('candidates.show.education')
+  .card-section
+    %div
+      - if candidate.education_items.any?
+        %table
+          %tbody
+            = render candidate.education_items
+      - else
+        = t('candidates.show.no_education')
+    - if can? :edit, candidate
+      = link_to t('candidates.show.edit_education'), new_education_item_path, class: 'button small'
+

@@ -16,6 +16,8 @@ pl:
       change_picture: Zdjęcie profilowe
       change_data: Edycja danych osobowych
       skills: Umiejętności
+      contact_data: Dane kontaktowe
+      about: O mnie
       education: Wykształcenie
       work_experience: Doświadczenie zawodowe
       no_skills: Nie podano umiejętności.
