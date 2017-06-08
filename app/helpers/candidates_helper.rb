@@ -6,11 +6,26 @@ module CandidatesHelper
   end
 
   def looking_for_work_label(lfw)
-    classNames = lfw ? 'label success' : 'label alert'
+    classNames = lfw ? 'label candidate__lfw candidate__lfw--green' : 'label candidate__lfw candidate_lfw--red'
     text = I18n.t('candidates.show.looking_for_work.' + (!!lfw).to_s)
     content_tag :span, class: classNames do
       concat fa_icon 'briefcase'
       concat ' ' + text
+    end
+  end
+
+  def sex_age_label(sex, age)
+    classNames = 'label candidate__sex_age'
+    if sex == 'male'
+      classNames << ' candidate__sex_age--blue'
+      icon = 'mars'
+    else
+      classNames << ' candidate__sex_age--purple'
+      icon = 'venus'
+    end
+    content_tag :span, class: classNames do
+      concat fa_icon icon
+      concat ' ' + age.to_s
     end
   end
 end
