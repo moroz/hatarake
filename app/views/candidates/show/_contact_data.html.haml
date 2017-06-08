@@ -1,0 +1,21 @@
+.card
+  .card-divider
+    %h4= t('candidates.show.contact_data')
+  .card-section
+    .row
+      .medium-6.columns
+        %table
+          %tr
+            %th{scope: 'row'} Telefon:
+            %td 500 100 800
+      .medium-6.columns
+        %table
+          %tr
+            %th{scope: 'row'} E-mail:
+            %td user@example.com
+  .card-divider
+    %h4= t('candidates.show.about')
+  .card-section
+    %blockquote= Faker::Lorem.sentences(4).join(' ')
+
+

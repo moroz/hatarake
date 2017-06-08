@@ -40,3 +40,14 @@
 .candidate__sex_age--purple {
   background-color: $purple;
 }
+
+// small screen only
+@media screen and (max-width: 640px) {
+  .candidate__details {
+    text-align: center;
+  }
+
+  .avatar {
+    margin: 0.8em auto 0 auto;
+  }
+}

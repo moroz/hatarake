@@ -1,8 +1,8 @@
 .card
   .row
-    .medium-3.columns
+    .medium-4.large-3.columns
       = avatar_for candidate, :avatar
-    .medium-9.columns
+    .medium-8.large-9.columns.candidate__details
       %h2.candidate__name= candidate.display_name
       %p
         = sex_age_label(candidate.sex, candidate.profile.age)
@@ -13,22 +13,3 @@
       - if can? :edit, candidate
         = link_to t('candidates.show.change_picture'), edit_avatar_path, class: 'button small'
         = link_to t('candidates.show.change_data'), edit_candidate_profile_path, class: 'button small'
-  .card-divider
-    %h4= t('candidates.show.contact_data')
-  .card-section
-    .row
-      .medium-6.columns
-        %table
-          %tr
-            %th{scope: 'row'} Telefon:
-            %td 500 100 800
-      .medium-6.columns
-        %table
-          %tr
-            %th{scope: 'row'} E-mail:
-            %td user@example.com
-  .card-divider
-    %h4= t('candidates.show.about')
-  .card-section
-    %blockquote= Faker::Lorem.sentences(4).join(' ')
-
