@@ -41,13 +41,34 @@
   background-color: $purple;
 }
 
+.candidate__details {
+  width: calc(100% - 195px);
+  float: left;
+}
+
+.candidate__avatar {
+  width: 190px;
+  float: left;
+}
+
 // small screen only
 @media screen and (max-width: 640px) {
   .candidate__details {
     text-align: center;
+    display: block;
+    width: 100%;
+
+    h2 {
+      font-size: 2.2rem;
+    }
   }
 
-  .avatar {
-    margin: 0.8em auto 0 auto;
+  .label {
+    font-size: 1.15rem;
+  }
+
+  .candidate__avatar {
+    float: none;
+    margin: 1rem auto 0 auto;
   }
 }

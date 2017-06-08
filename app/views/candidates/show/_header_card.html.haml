@@ -1,15 +1,14 @@
 .card
-  .row
-    .medium-4.large-3.columns
-      = avatar_for candidate, :avatar
-    .medium-8.large-9.columns.candidate__details
-      %h2.candidate__name= candidate.display_name
-      %p
-        = sex_age_label(candidate.sex, candidate.profile.age)
-        = looking_for_work_label(candidate.profile.looking_for_work)
-        %br/
-        %span.candidate__profession= candidate.profession.local_name if candidate.profession.present?
+  .candidate__avatar
+    = avatar_for candidate, :avatar
+  .candidate__details
+    %h2.candidate__name= candidate.display_name
+    %p
+      = sex_age_label(candidate.sex, candidate.profile.age)
+      = looking_for_work_label(candidate.profile.looking_for_work)
+      %br/
+      %span.candidate__profession= candidate.profession.local_name if candidate.profession.present?
 
-      - if can? :edit, candidate
-        = link_to t('candidates.show.change_picture'), edit_avatar_path, class: 'button small'
-        = link_to t('candidates.show.change_data'), edit_candidate_profile_path, class: 'button small'
+    - if can? :edit, candidate
+      = link_to t('candidates.show.change_picture'), edit_avatar_path, class: 'button small'
+      = link_to t('candidates.show.change_data'), edit_candidate_profile_path, class: 'button small'
