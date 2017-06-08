@@ -18,7 +18,7 @@
 
     .card
       .card-divider
-        %h3= t('.skills')
+        %h4= t('.skills')
       .card-section
         %div
           - if candidate.skill_items.any?
@@ -32,7 +32,7 @@
 
     .card
       .card-divider
-        %h3= t('.education')
+        %h4= t('.education')
       .card-section
         %div
           - if candidate.education_items.any?
@@ -46,7 +46,7 @@
 
     .card
       .card-divider
-        %h3= t('.work_experience')
+        %h4= t('.work_experience')
       .card-section
         %div
           - if candidate.work_items.any?
