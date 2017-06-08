@@ -72,7 +72,7 @@ en:
 
   date:
     formats:
-      by: "%B '%y"
+      month_and_year: '%B %Y'
 
   home:
     featured_offers:

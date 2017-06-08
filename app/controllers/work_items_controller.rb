@@ -28,7 +28,6 @@ class WorkItemsController < ApplicationController
   private
 
   def work_item_params
-    params.require(:work_item).permit(:start_month, :start_year, :end_month, :end_year,
-                                    :organization_name, :position, :category)
+    params.require(:work_item).permit(:start_date, :end_date, :organization, :position, :category)
   end
 end

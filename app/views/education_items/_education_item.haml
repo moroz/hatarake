@@ -1,9 +1,9 @@
 %tr.education_item{id: dom_id(education_item)}
   %td
-    %span.education_item__date= l education_item.start_date, format: :by
+    %span.education_item__date= l education_item.start_date, format: :month_and_year
     &ndash;
     - if education_item.end_date.present?
-      %span.education_item__date= l education_item.end_date, format: :by
+      %span.education_item__date= l education_item.end_date, format: :month_and_year
     - else
       present
   %td

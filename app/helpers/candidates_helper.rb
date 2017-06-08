@@ -28,4 +28,13 @@ module CandidatesHelper
       concat ' ' + age.to_s
     end
   end
+
+  def timespan(start_date, end_date = nil)
+    str = I18n.l(start_date, format: :month_and_year) + "–"
+    if end_date
+      str << I18n.l(end_date, format: :month_and_year)
+    else
+      str << "present" 
+    end
+  end
 end

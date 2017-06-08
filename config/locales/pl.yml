@@ -91,7 +91,7 @@ pl:
     - listopada
     - grudnia
     formats:
-      by: "%B '%y"
+      month_and_year: '%B %Y'
 
   time:
     formats:
