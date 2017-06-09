@@ -13,7 +13,7 @@ pl:
       looking_for_work:
         'true': Szuka pracy
         'false': Nie szuka pracy
-      change_picture: Zdjęcie profilowe
+      change_picture: Edytuj zdjęcie
       change_data: Edycja danych osobowych
       skills: Umiejętności
       contact_data: Dane kontaktowe

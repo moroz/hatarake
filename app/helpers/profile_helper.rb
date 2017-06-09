@@ -11,11 +11,17 @@ module ProfileHelper
     end
   end
 
-  def avatar_for(user, size = :thumb)
+  def avatar_for(user, size: 'thumb', editable: false)
     url = user.avatar.present? ?
       user.avatar.file_url :
       image_path('avatar.png')
-    content_tag :div, nil, class: "avatar avatar--#{size}", style: "background-image: url(#{url})"
+    content_tag :div, class: "avatar avatar--#{size}", style: "background-image: url(#{url})" do
+      if editable
+        content_tag :div, class: 'avatar__edit_button' do
+          link_to fa_icon('pencil'), edit_avatar_path, title: I18n.t('candidates.show.change_picture')
+        end
+      end
+    end
   end
 
   def section_link(text, url, *custom_classes)

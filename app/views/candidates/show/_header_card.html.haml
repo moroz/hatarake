@@ -1,6 +1,6 @@
 .card
   .candidate__avatar
-    = avatar_for candidate, :avatar
+    = avatar_for candidate, editable: can?(:edit, candidate)
   .candidate__details
     %h2.candidate__name= candidate.display_name
     %p
@@ -10,5 +10,4 @@
       %span.candidate__profession= candidate.profession.local_name if candidate.profession.present?
 
     - if can? :edit, candidate
-      = link_to t('candidates.show.change_picture'), edit_avatar_path, class: 'button small'
       = link_to t('candidates.show.change_data'), edit_candidate_profile_path, class: 'button small'

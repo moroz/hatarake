@@ -25,19 +25,9 @@ select {
   overflow: hidden;
   background-position: center;
   background-size: cover;
-  img {
-    min-width: 100%;
-    min-height: 100%;
-  }
-  vertical-align: middle;
+  position: relative;
 }
 
-.avatar--large {
-  max-width: 300px;
-  max-height: 300px;
-  width: 100%;
-  padding-bottom: 100%;
-}
 .custom_button {
   border: 3px solid $button-color;
   vertical-align: middle;
@@ -60,6 +50,21 @@ select {
   }
 }
 
+.avatar__edit_button {
+  position: absolute;
+  right: 11px;
+  bottom: 1px;
+  font-size: 40px;
+  a, a:visited {
+    color: rgba(255,255,255,0.5);
+  }
+
+  a:hover {
+    color: rgba(255,255,255,0.9);
+    transition: color ease 0.3s;
+    text-decoration: none;
+  }
+}
 .custom_button--expanded {
   width: 100%;
   display: block;
