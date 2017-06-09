@@ -10,4 +10,5 @@
       %span.candidate__profession= candidate.profession.local_name if candidate.profession.present?
 
     - if can? :edit, candidate
-      = link_to t('candidates.show.change_data'), edit_candidate_profile_path, class: 'button small'
+      .card-section__actions
+        = link_to fa_icon('pencil') + ' ' + I18n.t('actions.edit'), edit_candidate_profile_path, class: 'card-section__actions__button'

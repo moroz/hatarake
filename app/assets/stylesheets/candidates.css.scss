@@ -12,6 +12,30 @@
   text-align: right;
 }
 
+.candidate__details {
+  position: relative;
+}
+
+.card-section__actions {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+}
+
+.card-section__actions__button {
+  border-radius: 3px;
+  font-family: $alternative-font;
+  font-weight: 200;
+  border: 1px dashed lighten($dark-blue, 15%);
+  padding: 0.3rem 0.5rem;
+  &:hover {
+    text-decoration: none;
+    background-color: lighten($dark-blue, 15%);
+    transition: background-color ease 0.15s;
+    color: #fff;
+  }
+}
+
 .candidate__name {
   color: $dark-blue;
   margin-top: 0.6em;
