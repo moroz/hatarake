@@ -45,11 +45,14 @@
 
   .card-section__actions__button {
   }
+
+  .candidate__name {
+    margin-top: 0.6em;
+  }
 }
 
 .candidate__name {
   color: $dark-blue;
-  margin-top: 0.6em;
   font-weight: 200;
 }
 
