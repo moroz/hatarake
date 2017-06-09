@@ -16,23 +16,34 @@
   position: relative;
 }
 
-.card-section__actions {
-  position: absolute;
-  top: 20px;
-  right: 14px;
-}
-
 .card-section__actions__button {
   border-radius: 3px;
-  font-family: $alternative-font;
-  font-weight: 200;
-  border: 1px dashed lighten($dark-blue, 15%);
+  font-size: 1rem;
+  font-weight: 400;
   padding: 0.3rem 0.5rem;
+  border: 1px dashed lighten($dark-blue, 15%);
+
   &:hover {
     text-decoration: none;
     background-color: lighten($dark-blue, 15%);
     transition: background-color ease 0.15s;
     color: #fff;
+  }
+}
+
+.card-section__actions {
+  margin: 0.5rem auto;
+}
+
+@media screen and (min-width: 641px) {
+  .card-section__actions {
+    position: absolute;
+    top: 20px;
+    right: 14px;
+    margin: 0;
+  }
+
+  .card-section__actions__button {
   }
 }
 

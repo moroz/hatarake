@@ -3,11 +3,10 @@
     = avatar_for candidate, editable: can?(:edit, candidate)
   .candidate__details
     %h2.candidate__name= candidate.display_name
-    %p
-      = sex_age_label(candidate.sex, candidate.profile.age)
-      = looking_for_work_label(candidate.profile.looking_for_work)
-      %br/
-      %span.candidate__profession= candidate.profession.local_name if candidate.profession.present?
+    = sex_age_label(candidate.sex, candidate.profile.age)
+    = looking_for_work_label(candidate.profile.looking_for_work)
+    %br/
+    %span.candidate__profession= candidate.profession.local_name if candidate.profession.present?
 
     - if can? :edit, candidate
       .card-section__actions
