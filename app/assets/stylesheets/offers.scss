@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
+
 .description__preview {
   padding: 0.5rem;
   overflow-x: auto;
@@ -64,5 +66,6 @@
 }
 
 .fa-li {
-  top: 0.4em;
+  top: 0.45em;
+  color: $dark-blue;
 }

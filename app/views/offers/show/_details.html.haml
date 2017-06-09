@@ -5,10 +5,10 @@
   %li
     = fa_icon('money li')
     != salary_and_wage_for(offer)
-  %li= fa_icon('location-arrow li', text: offer.location.to_s)
+  %li= fa_icon('map-marker li', text: offer.location.to_s)
   - if offer.contact_email.present?
     %li
-      = fa_icon('envelope-o li')
+      = fa_icon('envelope li')
       = link_to offer.contact_email, "mailto:#{offer.contact_email}"
   - if offer.contact_phone.present?
     %li
