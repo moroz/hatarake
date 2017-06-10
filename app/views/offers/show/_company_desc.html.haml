@@ -1,2 +1,3 @@
 .offer__company-desc
-  %h4= @company.name
+  = avatar_for @company, className: 'float-center'
+  %h3.company__name.text-center= @company.name
