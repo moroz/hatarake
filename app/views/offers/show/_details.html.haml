@@ -1,7 +1,9 @@
+= render 'sign_in_to_apply'
 %ul.fa-ul
-  %li
-    = fa_icon('calendar li fw')
-    = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
+  - if offer.published?
+    %li
+      = fa_icon('calendar li fw')
+      = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
   %li
     = fa_icon('money li')
     != salary_and_wage_for(offer)
@@ -21,15 +23,3 @@
     = fa_icon('user li')
     = offer.applicant_count_in_words
 
-- if signed_in?
-  - if candidate_signed_in?
-    - if offer.candidate_applied?(current_candidate)
-      %span.offer__already-applied
-        = translate_with_gender('applications.already_applied', current_candidate.profile.sex)
-      - url = nil
-    - else
-      - url = new_offer_application_path(offer_id: offer)
-- else
-  - url = new_user_session_path(return_to: new_offer_application_path(offer_id: offer))
-= link_to t('offers.apply_now'), url, class: 'button primary expanded' if url
-  

@@ -1,20 +1,9 @@
-.offer__actions
+.offer__actions.text-right
   - if can? :update, offer
-    = link_to t('actions.edit'), edit_offer_path(offer), class: "custom_button custom_button--small custom_button--secondary"
+    = link_to fa_icon('pencil', text: t('actions.edit')), edit_offer_path(offer), class: "custom_button custom_button--small"
     - if offer.published?
-      = link_to t('actions.unpublish'), unpublish_offer_path(offer), method: :patch, class: "custom_button custom_button--small custom_button--alert"
+      = link_to fa_icon('undo', text: t('actions.unpublish')), unpublish_offer_path(offer), method: :patch, class: "custom_button custom_button--small custom_button--dark-red"
     - else
-      = link_to t('actions.publish'), publish_offer_path(offer), method: :patch, class: "custom_button custom_button--small custom_button--success"
+      = link_to fa_icon('space-shuttle', text: t('actions.publish')), publish_offer_path(offer), method: :patch, class: "custom_button custom_button--small custom_button--dark-green"
   - if can? :destroy, offer
-    = link_to t('actions.delete'), offer, method: :delete, class: "custom_button custom_button--small custom_button--alert"
-  - if signed_in? && can?(:create, OfferSave)
-    - if offer.user_saved?(current_candidate)
-      = link_to t('offers.unsave_offer'), destroy_offer_save_path(offer_id: offer), method: :delete, class: 'custom_button custom_button--small'
-    - else
-      = link_to t('offers.save_offer'), offer_offer_saves_path(offer_id: offer), method: :post, class: 'custom_button custom_button--small'
-
-  - unless signed_in?
-    = render 'sign_in_to_apply'
-  - else 
-    = link_to t('applications.form.show_form'), '#', class: 'custom_button custom_button--small', data: { 'toggle-application-form': '' }, id: 'show_application_form'
-
+    = link_to fa_icon('trash', text: t('actions.delete')), offer, method: :delete, class: "custom_button custom_button--small custom_button--dark-red"

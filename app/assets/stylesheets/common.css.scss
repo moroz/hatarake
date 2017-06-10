@@ -29,24 +29,39 @@ select {
 }
 
 .custom_button {
-  border: 3px solid $button-color;
-  vertical-align: middle;
-  border-radius: 0.3rem;
-  padding: 0.4rem;
-  color: $button-color;
-  background-color: #fff;
-  font-size: 1.2rem;
-  font-family: $alternative-font;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.3rem 0.5rem;
+  border: 1px dashed lighten($dark-blue, 15%);
 
-  &:visited {
-    color: $button-color;
-  }
-
-  &:hover, &:focus {
-    background-color: $button-color;
-    color: #fff;
-    transition: 0.3s background-color ease, 0.3s color ease;
+  &:hover, &:active, &:focus {
     text-decoration: none;
+    background-color: lighten($dark-blue, 15%);
+    border-color: transparent;
+    transition: background-color ease 0.15s;
+    color: #fff;
+  }
+}
+
+.custom_button--expanded {
+  width: 100%;
+  display: block;
+}
+
+.custom_button--small {
+  font-size: 0.9rem;
+}
+
+@each $name, $color in $custom-palette {
+  .custom_button--#{$name} {
+    color: #{$color};
+    border-color: #{$color};
+
+    &:hover, &:active, &:focus {
+      background-color: #{$color};
+      color: #fff;
+    }
   }
 }
 
@@ -65,32 +80,6 @@ select {
     text-decoration: none;
   }
 }
-.custom_button--expanded {
-  width: 100%;
-  display: block;
-}
-
-.custom_button--small {
-  font-weight: 400;
-  border-width: 2px;
-  font-size: 0.9rem;
-}
-
-<% %w( primary secondary success notice alert warning ).each do |color| %>
-  .custom_button--<%= color %> {
-    color: $<%= color %>-color;
-    border-color: $<%= color %>-color;
-
-    &:visited {
-      color: $<%= color %>-color;
-    }
-  
-    &:hover, &:focus {
-      background-color: lighten($<%= color %>-color, 10%);
-      color: #fff;
-    }
-  }
-<% end %>
 
 a, th {
   font-weight: 400;
