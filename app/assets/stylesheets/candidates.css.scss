@@ -14,7 +14,6 @@
 
 .company__details,
 .candidate__details {
-  position: relative;
   text-align: center;
   display: block;
   width: 100%;
@@ -32,10 +31,13 @@
   font-size: 1.15rem;
 }
 
+$avatar-size: 180px;
+
 .company__avatar,
 .candidate__avatar {
   float: none;
   margin: 1rem auto 0 auto;
+  width: $avatar-size;
 }
 
 @media screen and (min-width: 641px) {
@@ -53,14 +55,17 @@
 
   .company__avatar,
   .candidate__avatar {
-    width: 190px;
+    width: #{$avatar-size + 10px};
     float: left;
     margin: 0;
   }
 
   .company__details,
   .candidate__details {
+    position: relative;
     text-align: left;
+    width: calc(100% - #{$avatar-size + 15px});
+    float: left;
   }
 }
 
@@ -91,12 +96,6 @@
 
 .candidate__sex_age--purple {
   background-color: $purple;
-}
-
-.candidate__details,
-.company__details {
-  width: calc(100% - 195px);
-  float: left;
 }
 
 // small screen only
