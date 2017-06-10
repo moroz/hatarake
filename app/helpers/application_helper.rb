@@ -60,4 +60,8 @@ module ApplicationHelper
       concat capture(&block)
     end
   end
+
+  def edit_button(path)
+    link_to fa_icon('pencil', text: I18n.t('actions.edit')), path, class: 'custom_button'
+  end
 end

@@ -5,4 +5,4 @@
 %p= company.location if company.location.present?
 - if can? :edit, company
   .card-section__actions
-    = link_to fa_icon('pencil') + ' ' + I18n.t('actions.edit'), edit_company_path(company), class: 'custom_button'
+    = edit_button edit_company_path(company)

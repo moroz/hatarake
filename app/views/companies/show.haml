@@ -2,9 +2,10 @@
   .medium-8.columns
     .card
       .company__avatar
-        = avatar_for company
+        = avatar_for company, editable: can?(:edit, company)
       .company__details
         = render 'companies/show/info'
+
     - if company.description.present?
       .card
         .card-divider
