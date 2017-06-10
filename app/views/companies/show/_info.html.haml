@@ -1,8 +1,8 @@
-%h3.company__name= company.name
+%h2.company__name= company.name
 - if company.website.present?
-  %strong= t('companies.show.website')
+  = fa_icon 'globe'
   = link_to company.website, company.website
 %p= company.location if company.location.present?
 - if can? :edit, company
-  = link_to "Edit profile", edit_company_path(company)
-
+  .card-section__actions
+    = link_to fa_icon('pencil') + ' ' + I18n.t('actions.edit'), edit_company_path(company), class: 'custom_button'

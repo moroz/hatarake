@@ -1,18 +1,15 @@
 .row
   .medium-8.columns
-    .card.shadow
-      .card-section
-        .row
-          - if company.avatar.present?
-            .medium-4.columns
-              = avatar_for company
-            .medium-8.columns
-              = render 'companies/show/info'
-          - else
-            = render 'companies/show/info'
-        %hr/
-        - if company.description.present?
+    .card
+      .company__avatar
+        = avatar_for company
+      .company__details
+        = render 'companies/show/info'
+    - if company.description.present?
+      .card
+        .card-divider
           %h4= t('companies.show.description')
+        .card-section
           %p.company__description!= markdown company.description
 
   .medium-4.columns
