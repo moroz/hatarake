@@ -1,15 +1,17 @@
-%h1= t('.heading')
+%h1.text-center= t('.heading')
 
 %section.applied_offers.card.shadow
-  .card-section
+  .card-divider
     %h3= t('.applied_offers.heading')
+  .card-section
     %table
       %tbody
         = render @applied
 
 %section.saved_offers.card.shadow
-  .card-section
+  .card-divider
     %h3= t('.saved_offers.heading')
+  .card-section
     %table
       %tbody
         = render @saved

@@ -119,11 +119,7 @@ table a {
 }
 
 .title-bar__sitename {
-  font-family: $alternative-font;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $alternative-font;
+  font-weight: 400;
 }
 
 textarea.text {
@@ -167,9 +163,8 @@ th[scope='row'] {
 
 .card-divider {
   padding: 0.4rem 1rem 0.4rem 1rem;
-}
-
-.card-divider h4 {
-  font-family: $main-font;
-  color: $dark-blue;
+  position: relative;
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-blue;
+  }
 }
