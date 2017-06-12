@@ -7,6 +7,7 @@ pl:
       website: 'Strona WWW:'
       description: Opis
       recent_offers: Ostatnie oferty
+      all_offers: "Wszystkie oferty..."
 
     edit:
       heading: Edycja profilu
