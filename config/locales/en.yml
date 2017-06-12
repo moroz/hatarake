@@ -27,6 +27,7 @@ en:
     sign_out: Sign out
     profile: Profile
     candidates: Candidates
+    companies: Companies
 
   registrations:
     candidate_heading: "Sign up for candidate account"

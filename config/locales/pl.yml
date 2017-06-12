@@ -32,6 +32,7 @@ pl:
     sign_out: Wyloguj się
     profile: Profil
     candidates: Kandydaci
+    companies: Pracodawcy
 
   registrations:
     candidate_heading: "Zarejestruj się jako kandydat"
