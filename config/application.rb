@@ -13,5 +13,8 @@ module InJobs
     # -- all .rb files in that directory are automatically loaded.
     I18n.available_locales = [:en, :pl]
     I18n.default_locale = :pl
+
+    config.action_view.sanitized_allowed_tags = %w(code blockquote p span a i b em strong br hr img h1 h2 h3 h4 h5 h6 )
+    config.action_view.sanitized_allowed_attributes = %w( href src style )
   end
 end

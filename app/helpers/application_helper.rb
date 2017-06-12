@@ -18,13 +18,6 @@ module ApplicationHelper
     raw markdown.render(text)
   end
 
-  # wrapper for Rails sanitize method with default params
-  # TODO find a way to do it more cleanly
-  def sanitize_html(text)
-    sanitize text, tags: %w( code blockquote p span a i b em strong br hr img ),
-      attributes: %w( href )
-  end
-
   def markdown(text)
     options = {
       # We will handle HTML sanitization later
@@ -44,7 +37,7 @@ module ApplicationHelper
     renderer = Redcarpet::Render::HTML.new(options)
     md = Redcarpet::Markdown.new(renderer, extensions)
 
-    sanitize_html md.render(text)
+    sanitize md.render(text)
   end
 
   def error_messages_for(object)
