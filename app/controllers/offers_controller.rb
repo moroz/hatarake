@@ -3,7 +3,7 @@ class OffersController < ApplicationController
   helper_method :offers
 
   before_action :set_country_list, only: [:new, :edit, :index]
-  before_action :set_province_list, only: [:new, :edit, :index, :poland]
+  before_action :set_province_list, only: [:new, :edit, :poland]
   authorize_resource except: [:index, :poland]
 
   def new

@@ -14,7 +14,7 @@
           = f.select :cid, localized_collection(@countries, 0, blank: t('.any_country')), {}, name: 'cid', data: {'country-select': ''}
       .medium-6.columns
         = f.label :pid, t('.province')
-        = f.select :pid, localized_collection(@provinces, 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}, 'aria-describedby' => 'provinceSelectHelptext'
+        = f.select :pid, localized_collection(@provinces || [], 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}, 'aria-describedby' => 'provinceSelectHelptext'
     %noscript
       %p.help-text#provinceSelectHelptext= t('offers.index.noscript')
     .row

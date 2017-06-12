@@ -6,6 +6,7 @@ en:
       other: "%{count} views"
 
     apply_now: Apply now
+    delete_confirm: "Are you sure you want to permanently delete this offer and all associated objects?"
     applicant_count:
       zero: "0 applications"
       one: "1 application"
