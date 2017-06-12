@@ -67,4 +67,8 @@ module ApplicationHelper
   def edit_button(path)
     link_to fa_icon('pencil', text: I18n.t('actions.edit')), path, class: 'custom_button'
   end
+
+  def divider_edit_button(path)
+    link_to fa_icon('pencil', text: t('actions.edit')), path, class: 'card-divider__edit' 
+  end
 end

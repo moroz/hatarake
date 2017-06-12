@@ -23,6 +23,32 @@
   }
 }
 
+.card-divider {
+  position: relative;
+}
+
+.card-divider__edit {
+  position: absolute;
+  margin: 0;
+  right: 1.2rem;
+  font-size: 1.1rem;
+
+  &, &:visited, &:active {
+    color: #333;
+  }
+
+  &:hover {
+    color: $dark-blue;
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .card-divider__edit {
+    top: 0.7rem;
+  }
+}
+
 .card-section__actions {
   margin: 0.5rem auto;
 }

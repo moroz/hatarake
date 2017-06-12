@@ -1,5 +1,6 @@
 .card
   .card-divider
+    = divider_edit_button(candidate_edit_skills_path) if can? :edit, candidate
     %h4= t('candidates.show.skills')
   .card-section
     %div
@@ -9,6 +10,3 @@
             = render candidate.skill_items
       - else
         = t('candidates.show.no_skills')
-    - if can? :edit, candidate
-      = link_to t('candidates.show.edit_skills'), candidate_edit_skills_path, class: 'button small'
-
