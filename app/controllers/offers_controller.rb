@@ -22,6 +22,7 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
     set_search_description
+    set_province_list if params[:cid].present?
     respond_to do |f|
       f.js
       f.html
@@ -109,7 +110,7 @@ class OffersController < ApplicationController
     if offer.present? && offer.persisted?
       @provinces = offer.location.country.provinces.local_order
     else
-      @provinces = Province.where(country_id: Country::POLAND_ID).local_order
+      @provinces = Province.where(country_id: params[:cid] || Country::POLAND_ID).local_order
     end
   end
 
