@@ -7,10 +7,10 @@ class Offer < ApplicationRecord
   belongs_to :location, required: true
   accepts_nested_attributes_for :location
 
-  has_many :applications
+  has_many :applications, dependent: :destroy
   has_many :candidates, through: :applications
+  has_many :offer_saves, dependent: :destroy, class_name: "OfferSave"
   has_many :savers, through: :offer_saves, class_name: "Candidate"
-  has_and_belongs_to_many :skills
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 10, maximum: 85 }
   CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
