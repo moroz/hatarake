@@ -54,6 +54,15 @@ select {
 }
 
 @each $name, $color in $custom-palette {
+  .#{$name}-bg {
+    color: #fff;
+    background-color: $color;
+
+    a, a:visited {
+      color: #fff;
+    }
+  }
+
   .custom_button--#{$name} {
     color: #{$color};
     border-color: #{$color};
@@ -143,18 +152,6 @@ th[scope='row'] {
 
 .off-canvas .locale_flag {
   height: 1.5rem;
-}
-
-.green-bg {
-  background-color: $green;
-}
-
-.purple-bg {
-  background-color: $purple;
-}
-
-.blue-bg {
-  background-color: $blue;
 }
 
 .dashboard-nav-card-icon {

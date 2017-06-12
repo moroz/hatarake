@@ -1,5 +1,5 @@
 .row
-  .medium-8.columns
+  .large-8.columns
     .card
       .company__avatar
         = avatar_for company, editable: can?(:edit, company)
@@ -13,11 +13,13 @@
         .card-section
           %p.company__description!= markdown company.description
 
-  .medium-4.columns
+  .large-4.columns
     .card.shadow
       .card-divider
         %h4= t('companies.show.recent_offers')
       .card-section
-        - if company.offers.any?
-          - company.offers.each do |offer|
-            %p= link_to offer.title, offer
+        %ul.company__recent_offers.no-bullet
+        - company.recent_offers.each do |offer|
+          %li.no-bullet= link_to offer.title, offer
+        %hr/
+        = link_to t('.all_offers')

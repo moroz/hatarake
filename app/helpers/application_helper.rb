@@ -54,21 +54,15 @@ module ApplicationHelper
     link_to locale_flag(lang), lang: lang
   end
 
-  def body_tag(&block)
-    options = {
-      class: "#{controller_name} #{action_name}"
-    }
-    options = options.merge({'data-no-turbolink' => true}) if @disable_turbolinks
-    content_tag :body, options do
-      concat capture(&block)
-    end
-  end
-
   def edit_button(path)
     link_to fa_icon('pencil', text: I18n.t('actions.edit')), path, class: 'custom_button'
   end
 
   def divider_edit_button(path)
     link_to fa_icon('pencil', text: t('actions.edit')), path, class: 'card-divider__edit' 
+  end
+
+  def strip_http(url)
+    URI(url.to_s).host
   end
 end

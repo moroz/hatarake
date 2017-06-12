@@ -7,6 +7,7 @@ en:
       website: 'Website:'
       description: Description
       recent_offers: Recent offers
+      all_offers: "See all..."
 
     edit:
       heading: Edit profile

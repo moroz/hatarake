@@ -14,4 +14,8 @@ class Company < User
   def display_name
     name
   end
+
+  def recent_offers(limit = 5)
+    self.offers.order(:published_at).limit(limit)
+  end
 end

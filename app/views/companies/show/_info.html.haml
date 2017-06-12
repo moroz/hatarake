@@ -1,8 +1,8 @@
 %h2.company__name= company.name
 - if company.website.present?
-  = fa_icon 'globe'
-  = link_to company.website, company.website
-%p= company.location if company.location.present?
+  %span.label.dark-blue-bg
+    = link_to fa_icon('globe', text: strip_http(company.website)), company.website
+%p= fa_icon('map-marker', text: company.location) if company.location.present?
 - if can? :edit, company
   .card-section__actions
     = edit_button edit_company_path(company)
