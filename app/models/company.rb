@@ -1,5 +1,6 @@
 class Company < User
   devise :registerable
+  has_and_belongs_to_many :fields
   has_many :offers, dependent: :destroy
   has_many :applications, through: :offers
   belongs_to :location
