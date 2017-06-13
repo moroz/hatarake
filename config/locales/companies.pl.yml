@@ -12,6 +12,9 @@ pl:
     edit:
       heading: Edycja profilu
 
+    index:
+      heading: Profile pracodawców
+
   activerecord:
     attributes:
       company:
@@ -32,3 +35,4 @@ pl:
       my_offers: Moje oferty
       applications: Aplikacje
       messages: Wiadomości
+

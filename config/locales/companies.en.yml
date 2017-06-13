@@ -12,6 +12,9 @@ en:
     edit:
       heading: Edit profile
 
+    index:
+      heading: Company profiles
+
   dashboards:
     company_dashboard:
       heading: Company dashboard

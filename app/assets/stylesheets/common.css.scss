@@ -54,7 +54,7 @@ select {
 }
 
 @each $name, $color in $custom-palette {
-  .#{"" + $name}-bg {
+  .#{$name}-bg {
     color: #fff;
     background-color: $color;
 

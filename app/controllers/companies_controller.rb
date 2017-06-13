@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   before_action :find_user, only: :show
   helper_method :company
 
-  expose :companies { Company.all }
+  expose :companies { Company.all.page(params[:page]) }
   authorize_resource
   def index
 
