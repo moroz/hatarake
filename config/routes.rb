@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
     get 'provinces/(:country_id)' => 'provinces#index', as: :provinces
   end
+  scope '/admin' do
+    resources :fields, controller: 'admin/fields'
+  end
 
   devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
