@@ -4,7 +4,11 @@
     %br/
     %span.work_item__timespan= timespan(work_item.start_date,
       work_item.end_date)
-  .columns.medium-4.text-right
-    %span.work_item__location
-      = fa_icon 'map-marker'
-      Taipei, Taiwan
+    - if work_item.position.present? 
+      %br/
+      %span.work_item__position= work_item.position
+  - if work_item.location.present?
+    .columns.medium-4.text-right
+      %span.work_item__location
+        = fa_icon 'map-marker'
+        = work_item.location.short_format

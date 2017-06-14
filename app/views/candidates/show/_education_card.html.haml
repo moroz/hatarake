@@ -2,12 +2,9 @@
   .card-divider
     = divider_edit_button(new_education_item_path) if can? :edit, candidate
     %h4= t('candidates.show.education')
-  .card-section
-    %div
-      - if candidate.education_items.any?
-        %table
-          %tbody
-            = render candidate.education_items
-      - else
-        = t('candidates.show.no_education')
+  .card-section.education_items
+    - if candidate.education_items.any?
+      = render candidate.education_items
+    - else
+      = t('candidates.show.no_education')
 

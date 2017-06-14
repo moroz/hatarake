@@ -99,14 +99,6 @@ class Offer < ApplicationRecord
     end
   end
 
-  def short_location
-    if location.present?
-      [location, country.local_name].join(', ')
-    else
-      country.local_name
-    end
-  end
-
   private
 
   def name_for_slug
