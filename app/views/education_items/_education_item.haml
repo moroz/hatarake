@@ -1,15 +1,9 @@
-%tr.education_item{id: dom_id(education_item)}
-  %td
-    %span.education_item__date= l education_item.start_date, format: :month_and_year
-    &ndash;
-    - if education_item.end_date.present?
-      %span.education_item__date= l education_item.end_date, format: :month_and_year
-    - else
-      present
-  %td
-    %span.education_item__category= t("education_items.categories.#{education_item.category}") + ","
-    %span.education_item__specialization= education_item.specialization+","
-    %span.education_item__organization_name= education_item.organization
-  - if defined?(show_actions) && show_actions
-    %td= link_to "Delete", education_item, method: :delete, class: 'button alert small', remote: true
-
+.row.education_item
+  .columns.medium-8
+    %span.education_item__organization= education_item.organization
+    %br/
+    %span.education_item__timespan= timespan(education_item.start_date, education_item.end_date)
+  .columns.medium-4.text-right
+    %span.education_item__location
+      = fa_icon 'map-marker'
+      Poznań, Poland

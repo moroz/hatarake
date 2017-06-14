@@ -74,8 +74,8 @@ $avatar-size: 180px;
     margin: 0;
   }
 
-  .company__name,
-  .candidate__name {
+  .company__name--margin-top,
+  .candidate__name--margin-top {
     margin-top: 0.9em;
   }
 
@@ -128,6 +128,7 @@ $avatar-size: 180px;
 @media screen and (max-width: 640px) {
 }
 
+.education_item__organization,
 .work_item__organization {
   font-size: 1.1rem;
   color: $dark-blue;

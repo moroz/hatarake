@@ -1,4 +1,4 @@
-%h2.company__name= company.name
+%h2.company__name.company__name--margin-top= company.name
 - if company.website.present?
   %span.label.dark-blue-bg
     = link_to fa_icon('globe', text: strip_http(company.website)), company.website
