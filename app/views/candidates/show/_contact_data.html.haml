@@ -13,9 +13,8 @@
           %tr
             %th{scope: 'row'} E-mail:
             %td user@example.com
-  .card-divider
-    %h4= t('candidates.show.about')
-  .card-section
-    %blockquote= Faker::Lorem.sentences(4).join(' ')
-
-
+  - if candidate.description.present?
+    .card-divider
+      %h4= t('candidates.show.about')
+    .card-section
+      %blockquote= candidate.description
