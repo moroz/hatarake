@@ -46,21 +46,32 @@
 .offer-row {
   $offer-row-bg: #fff;
   background-color: $offer-row-bg;
-  padding: 1rem 0.7rem 0.6rem 0.9rem;
+  padding: 1rem;
   border-bottom: $offer-row-border;
+
+  a & {
+    color: #333;
+  }
 
   &:hover {
     background-color: darken($offer-row-bg, 6%);
   }
 
-  &:last-of-type {
-    border-bottom: none;
+}
+
+.offer-row__title {
+  color: $dark-blue;
+}
+
+@media screen and (min-width: 640px) {
+  .offer-row__right {
+    text-align: right;
+    font-weight: 300;
   }
 }
 
 .pagination + .offer-list {
   border-top: $offer-row-border;
-  border-bottom: $offer-row-border;
 }
 
 .offer-row__description {
