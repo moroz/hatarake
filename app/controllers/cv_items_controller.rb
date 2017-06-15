@@ -1,0 +1,3 @@
+class CvItemsController < ApplicationController
+
+end

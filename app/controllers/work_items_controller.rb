@@ -1,4 +1,4 @@
-class WorkItemsController < ApplicationController
+class WorkItemsController < CvItemsController
   expose :work_item
   expose :work_items, -> {current_user.work_items}
 

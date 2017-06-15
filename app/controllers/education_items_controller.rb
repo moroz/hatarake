@@ -1,4 +1,4 @@
-class EducationItemsController < ApplicationController
+class EducationItemsController < CvItemsController
   expose :education_items, -> {current_user.education_items}
   expose :education_item
   expose :new_item, -> { current_candidate.education_items.new }

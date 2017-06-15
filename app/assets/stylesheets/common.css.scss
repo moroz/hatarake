@@ -188,3 +188,13 @@ th[scope='row'] {
     color: $dark-blue;
   }
 }
+
+.date-select--half {
+  select {
+    width: 49%;
+    &:last-of-type {
+      float: right;
+    }
+  }
+}
+
