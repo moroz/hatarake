@@ -7,11 +7,7 @@
   = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
 .row
-  .medium-3.columns
-    .card
-      %small Tu trzeba coś wstawić, żeby to optycznie zapełnić, np. filtry albo opcje sortowania.
-
-  .medium-9.columns
+  .large-10.large-offset-1.columns
     .offers.card.shadow#offer-list
       = render partial: 'offers'
     - if can? :create, Offer

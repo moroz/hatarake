@@ -47,6 +47,10 @@ select {
   }
 }
 
+a.button:hover {
+  text-decoration: none;
+}
+
 .custom_button {
   border-radius: 3px;
   font-size: 1rem;
