@@ -1,2 +1,5 @@
-%div{id: dom_id(company), class: 'company'}
-  = company.name
+%div{id: dom_id(company), class: 'company company-row'}
+  .company-row__left
+    = avatar_for company, size: :thumb
+  .company-row__center
+    %span.company-row__name= company.name

@@ -1,5 +1,5 @@
 module ProfileHelper
-  def avatar_for(user, size: 'thumb', editable: false, className: '')
+  def avatar_for(user, size: 'normal', editable: false, className: '')
     url = user.avatar.present? ?
       user.avatar.file_url :
       image_path('avatar.png')

@@ -42,7 +42,7 @@ module ApplicationHelper
 
   def error_messages_for(object)
     content_tag :div, class: 'error_explanation', id: 'error_explanation' do
-      render partial: 'shared/errors', locals: { object: object }
+      render partial: 'errors', locals: { object: object }
     end
   end
 

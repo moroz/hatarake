@@ -67,6 +67,6 @@ class ApplicationController < ActionController::Base
 
   def render_js_errors_for(object)
     @object = object
-    render 'shared/errors'
+    render 'errors'
   end
 end
