@@ -1,22 +1,17 @@
-%h1 Edit work experience
+.row
+  .large-10.columns.large-offset-1
+    %h1 Edit work experience
 
-= link_to "Back to profile", profile_path
+    = link_to "Back to profile", profile_path
 
-%h4 Your education
-%table
-  %thead
-    %tr
-      %td Timespan
-      %td Description
-      %td Actions
-  %tbody
-    = render partial: 'shared/items_w_actions', locals: { items: work_items }
+    .work_items
+      = render work_items, destroyable: true
 
-%h4 Add a new entry
-= simple_form_for @work_item || work_items.new do |f|
-  = render partial: 'errors', locals: { object: f.object }
-  = render partial: 'shared/cv_date_fields', locals: { prefix: "work_item", f: f }
-  = f.select :category, options_from_collection_for_select(I18n.t('items.work_categories'), :first, :last), label: "Typeof education:"
-  = f.input :organization
-  = f.input :position, label: "Position:"
-  = f.submit "Add entry", class: 'button primary expanded'
+    %h4 Add a new entry
+    = simple_form_for @work_item || work_items.new do |f|
+      = render partial: 'errors', locals: { object: f.object }
+      = render partial: 'shared/cv_date_fields', locals: { prefix: "work_item", f: f }
+      = f.select :category, options_from_collection_for_select(I18n.t('items.work_categories'), :first, :last), label: "Typeof education:"
+      = f.input :organization
+      = f.input :position, label: "Position:"
+      = f.submit "Add entry", class: 'button primary expanded'

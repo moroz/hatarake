@@ -2,10 +2,6 @@ class WorkItemsController < ApplicationController
   expose :work_item
   expose :work_items, -> {current_user.work_items}
 
-  def new
-    render 'index'
-  end
-
   def create
     work_item.candidate = current_user
     if work_item.save

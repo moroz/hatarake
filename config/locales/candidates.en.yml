@@ -63,3 +63,9 @@ en:
     new:
       heading: Upload a resumé
       submit: Start upload
+
+  work_items:
+    delete_confirm: "Are you sure you want to delete this item?"
+
+  education_items:
+    delete_confirm: "Are you sure you want to delete this item?"

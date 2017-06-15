@@ -1,14 +1,16 @@
-.row.work_item
-  .columns.medium-8
-    %span.work_item__organization= work_item.organization
-    %br/
-    %span.work_item__timespan= timespan(work_item.start_date,
-      work_item.end_date)
-    - if work_item.position.present? 
+.work_item
+  .row
+    .columns.medium-8
+      %span.work_item__organization= work_item.organization
       %br/
-      %span.work_item__position= work_item.position
-  - if work_item.location.present?
-    .columns.medium-4.text-right
-      %span.work_item__location
+      %span.work_item__timespan= timespan(work_item.start_date,
+        work_item.end_date)
+      - if work_item.position.present? 
+        %br/
+        %span.work_item__position= work_item.position
+    .columns.medium-4.work_item__location
+      - if work_item.location.present?
         = fa_icon 'map-marker'
         = work_item.location.short_format
+      - if defined?(destroyable) && destroyable
+        = link_to fa_icon('trash'), work_item, method: :delete, class: 'custom_button custom_button--dark-red work_item__delete-button', data: { confirm: t('work_items.delete_confirm') }

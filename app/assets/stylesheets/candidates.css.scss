@@ -43,12 +43,6 @@
   }
 }
 
-@media screen and (min-width: 641px) {
-  .card-divider__edit {
-    top: 0.7rem;
-  }
-}
-
 .card-section__actions {
   margin: 0.5rem auto;
 }
@@ -66,7 +60,7 @@ $avatar-size: 180px;
   width: $avatar-size;
 }
 
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 640px) {
   .card-section__actions {
     position: absolute;
     top: 20px;
@@ -92,6 +86,15 @@ $avatar-size: 180px;
     text-align: left;
     width: calc(100% - #{$avatar-size + 15px});
     float: left;
+  }
+
+  .card-divider__edit {
+    top: 0.7rem;
+  }
+
+  .work_item__location,
+  .education_item__location {
+    text-align: right;
   }
 }
 
@@ -124,14 +127,11 @@ $avatar-size: 180px;
   background-color: $purple;
 }
 
-// small screen only
-@media screen and (max-width: 640px) {
-}
-
 .education_item,
 .work_item {
   padding: 0.5rem 0;
   border-bottom: 1px solid #d0d0d0;
+  p
 
   &:first-of-type {
     padding-top: 0;
