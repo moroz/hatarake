@@ -26,8 +26,6 @@
 }
 
 .offers {
-  padding: 0.5rem;
-
   .pagination {
     text-align: center;
   }
@@ -45,18 +43,27 @@
   border: 1px dashed #666;
 }
 
-.offer__row {
+.offer-row {
   $offer-row-bg: #fff;
   background-color: $offer-row-bg;
-  padding: 0.8rem 0.5rem 0.3rem 0.5rem;
-  border-bottom: 1px dashed #cacaca;
+  padding: 1rem 0.7rem 0.6rem 0.9rem;
+  border-bottom: $offer-row-border;
 
   &:hover {
     background-color: darken($offer-row-bg, 6%);
   }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
-.offer__row__description {
+.pagination + .offer-list {
+  border-top: $offer-row-border;
+  border-bottom: $offer-row-border;
+}
+
+.offer-row__description {
   font-size: 0.85rem;
   margin-bottom: 0.2rem;
 }
