@@ -1,0 +1,20 @@
+%div.cv_item{id: dom_id(item)}
+  .row
+    .columns.medium-8
+      %span.cv_item__organization= item.organization
+      %br/
+      %span.cv_item__timespan= timespan(item.start_date,
+        item.end_date)
+      - if item.respond_to?(:position) && item.position.present? 
+        %br/
+        %span.cv_item__position= item.position
+      - if item.respond_to?(:specialization) && item.specialization.present?
+        %br/
+        %span.cv_item__specialization= item.specialization
+    .columns.medium-4.cv_item__location
+      - if item.location.present?
+        = fa_icon 'map-marker'
+        = item.location.short_format
+      - if defined?(destroyable) && destroyable
+        = link_to fa_icon('trash'), item, method: :delete, class: 'custom_button custom_button--dark-red cv_item__delete-button', data: { confirm: t('cv_items.delete_confirm') }
+

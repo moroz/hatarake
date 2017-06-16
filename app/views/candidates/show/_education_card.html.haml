@@ -4,7 +4,8 @@
     %h4= t('candidates.show.education')
   .card-section.education_items
     - if candidate.education_items.any?
-      = render candidate.education_items
+      - candidate.education_items.each do |item|
+        = render 'cv_items/cv_item', item: item
     - else
       = t('candidates.show.no_education')
 

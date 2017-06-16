@@ -1,13 +1,16 @@
 = link_to "Back to profile", profile_path
-%h1= t('.heading')
+.card
+  .card-divider
+    %h3= t('.heading')
 
-%table
-  %thead
-    %tr
-      %td= t('.timespan')
-      %td= t('.description')
-      %td
-  %tbody
-    = render education_items, show_actions: true
-%h4= t('.add_new')
-= render 'form'
+  .card-section
+    - education_items.each do |item|
+      = render 'cv_item', item: item, destroyable: true
+
+.card
+  .card-divider
+    %h4= t('.add_new')
+  .card-section
+    = simple_form_for @education_item || education_items.new do |f|
+      = render 'fields', f: f
+      = f.submit "Add entry", class: 'button primary expanded'

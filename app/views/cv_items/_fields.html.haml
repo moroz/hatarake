@@ -1,0 +1,7 @@
+= render partial: 'errors', locals: { object: f.object }
+= f.input :organization
+= render 'specific_fields', f: f
+= render 'date_fields', { prefix: "work_item", f: f }
+= f.label :category, "Type of employment:"
+= f.select :category, options_from_collection_for_select(I18n.t('items.work_categories'), :first, :last)
+

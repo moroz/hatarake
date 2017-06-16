@@ -17,7 +17,7 @@
   text-align: center;
   display: block;
   width: 100%;
-  
+
   h2 {
     font-size: 2.2rem;
   }
@@ -92,8 +92,7 @@ $avatar-size: 180px;
     top: 0.7rem;
   }
 
-  .work_item__location,
-  .education_item__location {
+  .cv_item__location {
     text-align: right;
   }
 }
@@ -127,8 +126,7 @@ $avatar-size: 180px;
   background-color: $purple;
 }
 
-.education_item,
-.work_item {
+.cv_item {
   padding: 0.5rem 0;
   border-bottom: 1px solid #d0d0d0;
   p
@@ -143,8 +141,7 @@ $avatar-size: 180px;
   }
 }
 
-.education_item__organization,
-.work_item__organization {
+.cv_item__organization {
   font-size: 1.1rem;
   color: $dark-blue;
   font-weight: 400;

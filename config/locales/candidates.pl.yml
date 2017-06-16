@@ -76,8 +76,5 @@ pl:
       heading: Prześlij CV
       submit: Wyślij
 
-  education_items:
-    delete_confirm: "Czy na pewno chcesz usunąć tę pozycję?"
-
-  work_items:
+  cv_items:
     delete_confirm: "Czy na pewno chcesz usunąć tę pozycję?"

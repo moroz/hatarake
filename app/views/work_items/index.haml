@@ -1,18 +1,18 @@
 .row
   .large-10.columns.large-offset-1
-    %h1 Edit work experience
-
     = link_to "Back to profile", profile_path
+    .card
+      .card-divider
+        %h3 Your work experience
 
-    .work_items
-      = render work_items, destroyable: true
+      .card-section
+        - work_items.each do |item|
+          = render 'cv_item', item: item, destroyable: true
 
-    %h4 Add a new entry
-    = simple_form_for @work_item || work_items.new do |f|
-      = render partial: 'errors', locals: { object: f.object }
-      = f.input :organization
-      = f.input :position, label: "Position:"
-      = render partial: 'shared/cv_date_fields', locals: { prefix: "work_item", f: f }
-      = f.label :category, "Type of employment:"
-      = f.select :category, options_from_collection_for_select(I18n.t('items.work_categories'), :first, :last)
-      = f.submit "Add entry", class: 'button primary expanded'
+    .card
+      .card-divider
+        %h3 Add a new entry
+      .card-section
+        = simple_form_for @work_item || work_items.new do |f|
+          = render 'fields', f: f
+          = f.submit "Add entry", class: 'button primary expanded'
