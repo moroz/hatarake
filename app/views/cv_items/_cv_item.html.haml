@@ -16,5 +16,5 @@
         = fa_icon 'map-marker'
         = item.location.short_format
       - if defined?(destroyable) && destroyable
-        = link_to fa_icon('trash'), item, method: :delete, class: 'custom_button custom_button--dark-red cv_item__delete-button', data: { confirm: t('cv_items.delete_confirm') }
+        = link_to fa_icon('trash'), item, method: :delete, class: 'custom_button custom_button--dark-red cv_item__delete-button', id: "delete_#{dom_id(item)}", data: { confirm: t('cv_items.delete_confirm') }
 

@@ -6,9 +6,9 @@ RSpec.describe "Candidate registration" do
   it "registers a candidate account" do
     visit '/candidates/sign_up'
 
-    page.find("#candidate_email").set('foobar@example.com')
-    page.find("#candidate_password").set('foobar')
-    page.find("#candidate_password_confirmation").set('foobar')
+    find("#candidate_email").set('foobar@example.com')
+    find("#candidate_password").set('foobar')
+    find("#candidate_password_confirmation").set('foobar')
 
     expect { submit_form }.to change { Candidate.count }
   end
@@ -52,9 +52,9 @@ RSpec.describe "Candidate registration" do
             choose I18n.t('sexes.long.male')
           end
 
-          page.find("#candidate_profile_attributes_first_name").set("John")
-          page.find("#candidate_profile_attributes_last_name").set("Smith")
-          page.find("#candidate_profession_name").set("Fireman")
+          find("#candidate_profile_attributes_first_name").set("John")
+          find("#candidate_profile_attributes_last_name").set("Smith")
+          find("#candidate_profession_name").set("Fireman")
 
           submit_form
 

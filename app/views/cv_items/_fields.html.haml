@@ -3,8 +3,4 @@
 = render 'specific_fields', f: f
 = render 'date_fields', { prefix: "work_item", f: f }
 = f.label :category
-- if f.object.is_a?(WorkItem)
-  = f.select :category, options_from_collection_for_select(I18n.t('items.work_categories'), :first, :last)
-- else
-  = f.select :category, options_from_collection_for_select(I18n.t('items.education_categories'), :first, :last)
 
