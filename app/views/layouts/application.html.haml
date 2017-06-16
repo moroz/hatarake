@@ -1,11 +1,11 @@
 !!!
 %html{:lang => "en"}
-  = render 'shared/header'
+  = render 'header'
   %body
-    = render 'shared/offcanvas'
+    = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
-      = render 'shared/topbar' # topbar, visible for medium and above
-      = render 'shared/titlebar' # visible for small screens
+      = render 'topbar' # topbar, visible for medium and above
+      = render 'titlebar' # visible for small screens
       .container
         .row
           %button{type: 'button', 'data-open': 'offCanvas'}
