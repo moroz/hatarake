@@ -3,7 +3,7 @@
     = link_to "Back to profile", profile_path
     .card
       .card-divider
-        %h3 Your work experience
+        %h3= t('.heading')
 
       .card-section
         - work_items.each do |item|
@@ -11,8 +11,8 @@
 
     .card
       .card-divider
-        %h3 Add a new entry
+        %h3= t('.add_new')
       .card-section
-        = simple_form_for @work_item || work_items.new do |f|
+        = simple_form_for @work_item || work_items.new, remote: true do |f|
           = render 'fields', f: f
-          = f.submit "Add entry", class: 'button primary expanded'
+          = f.submit t('.submit'), class: 'button primary expanded'

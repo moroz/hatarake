@@ -9,8 +9,8 @@
 
 .card
   .card-divider
-    %h4= t('.add_new')
+    %h3= t('.add_new')
   .card-section
-    = simple_form_for @education_item || education_items.new do |f|
+    = simple_form_for @education_item || education_items.new, remote: true do |f|
       = render 'fields', f: f
-      = f.submit "Add entry", class: 'button primary expanded'
+      = f.submit t('.submit'), class: 'button primary expanded'

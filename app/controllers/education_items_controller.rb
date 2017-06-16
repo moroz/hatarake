@@ -1,19 +1,11 @@
 class EducationItemsController < CvItemsController
   expose :education_items, -> {current_user.education_items}
   expose :education_item
-  expose :new_item, -> { current_candidate.education_items.new }
-
-  def new
-    render 'index'
-  end
 
   def create
     education_item.candidate = current_candidate
     if education_item.save
-      respond_to do |f|
-        f.html { redirect_to education_items_path }
-        f.js
-      end
+      redirect_to education_items_path
     else
       respond_to do |f|
         f.html do
@@ -26,9 +18,9 @@ class EducationItemsController < CvItemsController
 
   def destroy
     if education_item.destroy
-      flash[:success] = "The entry was deleted."
+      flash[:success] = I18n.t('cv_items.destroy.success')
     else
-      flash[:alert] = "There was an error processing your request."
+      flash[:alert] = I18n.t('errors.generic')
     end
     redirect_to education_items_path
   end

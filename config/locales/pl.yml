@@ -44,7 +44,9 @@ pl:
     good: Dobry
     expert: Ekspert
 
-  items:
+  cv_items:
+    destroy:
+      success: "Wpis został usunięty."
     work_categories:
       internship: Praktyki
       work: Praca
@@ -113,13 +115,14 @@ pl:
 
   education_items:
     index:
-      heading: "Edytuj wykształcenie"
-      timespan: Czas trwania
-      description: Szczegóły
-      add_new: Dodaj wpis
-    fields:
-      category: "Typ szkoły:"
-      specialization: "Specjalizacja/kierunek studiów:"
+      heading: "Twoje wykształcenie"
+      add_new: Nowy wpis
+      submit: Dodaj wpis
+
+  work_items:
+    index:
+      heading: "Twoje doświadczenie zawodowe"
+      add_new: "Nowy wpis"
       submit: Dodaj wpis
 
   applications:

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resource :profile, only: :show
   resource :dashboard, only: :show
   resources :pages
-  resources :education_items
+  resources :education_items, except: [:new, :edit]
   resources :work_items, except: [:new, :edit]
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills

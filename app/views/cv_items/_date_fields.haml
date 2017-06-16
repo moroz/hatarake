@@ -1,4 +1,4 @@
 .date-select.date-select--half
-  = f.input :start_date, start_year: 20.years.ago.year, end_year: Time.now.utc.year, discard_day: true
+  = f.input :start_date, start_year: 20.years.ago.year, end_year: Time.now.utc.year, discard_day: true, order: [:month, :year]
 .date-select.date-select--half
-  = f.input :end_date, start_year: 20.years.ago.year, end_year: Time.now.utc.year, discard_day: true, include_blank: true
+  = f.input :end_date, start_year: 20.years.ago.year, end_year: Time.now.utc.year, discard_day: true, include_blank: true, order: [:month, :year]

@@ -88,5 +88,17 @@ RSpec.describe 'Candidate edits CV items' do
 
   describe 'education items' do
     
+    context 'when user clicks edit link' do
+
+      it 'goes to work_items_path' do
+        visit profile_path
+        within '#candidate_education' do
+          click_link_or_button I18n.t('actions.edit')
+          expect(current_path).to eq(education_items_path)
+        end
+      end
+
+    end
+    
   end
 end

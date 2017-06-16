@@ -39,7 +39,9 @@ en:
     good: Good
     expert: Expert
 
-  items:
+  cv_items:
+    destroy:
+      success: "Wpis został usunięty."
     work_categories:
       internship: Internship
       work: Work
@@ -91,13 +93,14 @@ en:
   education_items:
     index:
       heading: Edit education
-      timespan: Timespan
-      description: Description
       add_new: Add a new entry
-    fields:
-      category: "Type of education:"
-      specialization: "Specialization or field of studies:"
       submit: "Add entry"
+
+  work_items:
+    index:
+      heading: "Edit work experience"
+      add_new: Add a new entry
+      submit: Submit entry
 
   applications:
     index:

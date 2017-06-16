@@ -7,16 +7,20 @@ class WorkItemsController < CvItemsController
     if work_item.save
       redirect_to work_items_path
     else
-      @work_item = work_item
-      render :index
+      respond_to do |f|
+        f.html do
+          render 'index'
+        end
+        f.js { render_js_errors_for work_item }
+      end
     end
   end
 
   def destroy
     if work_item.destroy
-      flash[:success] = "The entry was deleted."
+      flash[:success] = I18n.t('cv_items.destroy.success')
     else
-      flash[:alert] = "There was an error processing your request."
+      flash[:alert] = I18n.t('errors.generic')
     end
     redirect_to work_items_path
   end
