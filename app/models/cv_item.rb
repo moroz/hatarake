@@ -9,7 +9,7 @@ class CvItem < ApplicationRecord
 
   scope :ordered, -> { order('end_date DESC NULLS FIRST', 'start_date DESC') }
 
-  validates_presence_of :start_date, :category, :candidate, :organization
+  validates_presence_of :start_date, :candidate, :organization
   validates :category, inclusion: { in: CATEGORIES }
 
   before_validation :swap_dates

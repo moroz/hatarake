@@ -50,6 +50,11 @@ pl:
       work: Praca
       owner: Właściciel
       founder: Założyciel
+    education_categories:
+      ba: licencjat
+      ma: magister
+      engineer: inżynier
+      phd: doktor
 
   sexes:
     long:
@@ -116,11 +121,6 @@ pl:
       category: "Typ szkoły:"
       specialization: "Specjalizacja/kierunek studiów:"
       submit: Dodaj wpis
-    categories:
-      ba: licencjat
-      ma: magister
-      engineer: inżynier
-      phd: doktor
 
   applications:
     already_applied:
@@ -146,9 +146,15 @@ pl:
       education_item:
         start_date: Data początkowa
         end_date: Data końcowa
-        category: Kategoria
+        category: Stopień
         organization: 'Nazwa szkoły/uczelni'
         specialization: "Specjalizacja/kierunek studiów"
+      work_item:
+        start_date: Data początkowa
+        end_date: Data końcowa
+        category: Typ zatrudnienia
+        organization: Firma
+        position: Stanowisko
 
     models:
       skill_item: umiejętności

@@ -45,6 +45,11 @@ en:
       work: Work
       owner: Owner
       founder: Founder
+    education_categories:
+      ba: B.A.
+      ma: M.A.
+      engineer: Engineer
+      phd: Ph.D.
 
   sexes:
     long:
@@ -93,11 +98,6 @@ en:
       category: "Type of education:"
       specialization: "Specialization or field of studies:"
       submit: "Add entry"
-    categories:
-      ba: B.A.
-      ma: M.A.
-      engineer: Engineer
-      phd: Ph.D.
 
   applications:
     index:
@@ -119,6 +119,16 @@ en:
     attributes:
       skill_item:
         skill: ''
+      education_item:
+        category: Degree
+        organization: Name of school/university
+        specialization: Specialization or field
+
+      work_item:
+        category: Type of employment
+        organization: Company
+        position: Job title
+
     errors:
       models:
         skill_item:
