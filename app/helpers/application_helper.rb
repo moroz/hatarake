@@ -65,4 +65,8 @@ module ApplicationHelper
   def strip_http(url)
     URI(url.to_s).host
   end
+
+  def add_soft_break_to_email(email)
+    raw email.split('@').join('&#8203;&#64;')
+  end
 end

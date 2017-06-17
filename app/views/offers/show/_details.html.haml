@@ -11,7 +11,7 @@
   - if offer.contact_email.present?
     %li
       = fa_icon('envelope li')
-      = link_to offer.contact_email, "mailto:#{offer.contact_email}"
+      = link_to add_soft_break_to_email(offer.contact_email), "mailto:#{offer.contact_email}"
   - if offer.contact_phone.present?
     %li
       = fa_icon('phone li')
