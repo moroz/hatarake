@@ -23,7 +23,8 @@ class Ability
       cannot [:create, :update, :destroy], Offer
       can :manage, Candidate, id: user.id
       can :show, Page
-      can [:create, :delete], OfferSave
+      can :save, Offer
+      can :vote, Company
       can [:create, :new], Application
       can :manage, Resume, owner_id: user.id
     elsif user.admin?

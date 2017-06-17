@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     member do
       patch :publish
       patch :unpublish
+      post :save
     end
     resources :applications
-    resources :offer_saves, only: [:create]
   end
   resources :resumes
   delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
@@ -30,7 +30,11 @@ Rails.application.routes.draw do
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
   resources :candidates
-  resources :companies, only: [:show,:index,:update,:edit]
+  resources :companies, only: [:show,:index,:update,:edit] do
+    member do
+      post :vote
+    end
+  end
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   get '/edit_avatar', to: 'avatars#new'

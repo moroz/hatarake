@@ -24,6 +24,7 @@ class CompaniesController < ApplicationController
     if request.path != company_path(company)
       redirect_to company, status: :moved_permanently
     end
+    @rating = company.reputation_for(:avg_rating)
   end
 
   def update
@@ -37,6 +38,17 @@ class CompaniesController < ApplicationController
         }
         f.js { render_js_errors_for company }
       end
+    end
+  end
+
+  def vote
+    value = Integer(params[:v]) rescue false
+    if !value || !(1..5).include?(value)
+      head 400 and return
+    end
+    company.add_or_update_evaluation(:avg_rating, value, current_user)
+    respond_to do |f|
+      f.js
     end
   end
 

@@ -8,7 +8,7 @@
   %span
     = t('plurals.offer', count: company.offers.size)
     |
-    = fa_icon('star-o', text: company.reputation_for(:avg_rating))
+    = fa_icon('star-o', text: @rating)
 - if can? :edit, company
   .card-section__actions
     = edit_button edit_company_path(company)

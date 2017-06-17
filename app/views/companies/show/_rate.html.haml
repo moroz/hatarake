@@ -6,12 +6,13 @@
       #rateYo
     .medium-6.columns
       #company_rating
+        = @rating
 
 :javascript
   $('#rateYo').rateYo({
     ratedFill: '#19629a',
     fullStar: true,
     onSet: function(r, ryi) {
-      $('#company_rating').html(r);
+      $.post(window.location.pathname + '/vote?v=' + r);
     }
   });
