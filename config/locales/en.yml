@@ -170,3 +170,9 @@ en:
     es: Spanish
     sv: Swedish
     ua: Ukrainian
+
+  plurals:
+    offer:
+      zero: no offers
+      one: 1 offer
+      other: '%{count} offers'

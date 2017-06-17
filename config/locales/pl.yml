@@ -206,3 +206,10 @@ pl:
     ua: ukraiński
     hu: węgierski
 
+  plurals:
+    offer:
+      zero: '%{count} ofert'
+      one: '%{count} oferta'
+      few: '%{count} oferty'
+      many: '%{count} ofert'
+

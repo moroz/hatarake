@@ -4,3 +4,5 @@
       = avatar_for company, size: :thumb
     .company-row__center
       %span.company-row__name= company.name
+      %br/
+      = t('plurals.offer', count: @offer_counts[company.id])

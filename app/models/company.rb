@@ -19,4 +19,14 @@ class Company < User
   def recent_offers(limit = 5)
     self.offers.order(:published_at).limit(limit)
   end
+
+  # If this query proves hard on the database, please consider
+  # adding an offers_count to the database. However, Company is
+  # an abstract model, as it is stored in the users table.
+  def self.offer_counts
+    self.joins(:offers).select('users.id AS id, count(offers.id) as count').group('users.id').reduce({}) do |acc, c|
+      acc[c.id] = c.count
+      acc
+    end
+  end
 end
