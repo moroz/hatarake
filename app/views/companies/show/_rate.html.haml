@@ -1,0 +1,17 @@
+.card-divider
+  %h4 Rate company
+.card-section
+  .row
+    .medium-6.columns
+      #rateYo
+    .medium-6.columns
+      #company_rating
+
+:javascript
+  $('#rateYo').rateYo({
+    ratedFill: '#19629a',
+    fullStar: true,
+    onSet: function(r, ryi) {
+      $('#company_rating').html(r);
+    }
+  });

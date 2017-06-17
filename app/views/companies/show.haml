@@ -1,20 +1,24 @@
 .row
   .large-8.columns
-    .card
+    .card#company_info
       .company__avatar
         = avatar_for company, editable: can?(:edit, company)
       .company__details
         = render 'companies/show/info'
 
+    - if candidate_signed_in?
+      .card#rate_company
+        = render 'companies/show/rate'
+
     - if company.description.present?
-      .card
+      .card#company_description
         .card-divider
           %h4= t('companies.show.description')
         .card-section
           %p.company__description!= markdown company.description
 
   .large-4.columns
-    .card.shadow
+    .card#recent_offers
       .card-divider
         %h4= t('companies.show.recent_offers')
       .card-section
