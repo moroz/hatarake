@@ -2,9 +2,13 @@ class CompaniesController < ApplicationController
   before_action :find_user, only: :show
   helper_method :company
 
-  expose :companies { Company.includes(:avatar).page(params[:page]) }
+  expose :companies {
+    Company.includes(:avatar).with_avg_rating.
+      page(params[:page])
+  }
   authorize_resource
   def index
+
     @offer_counts = companies.offer_counts
   end
 

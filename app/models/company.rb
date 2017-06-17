@@ -11,6 +11,9 @@ class Company < User
   friendly_id :name, use: [:slugged, :finders]
 
   scope :featured, -> { order('updated_at DESC') }
+  scope :with_avg_rating, -> { find_with_reputation(:avg_rating, :all) }
+
+  has_reputation :avg_rating, source: :user, aggregated_by: :average
 
   def display_name
     name
@@ -24,7 +27,7 @@ class Company < User
   # adding an offers_count to the database. However, Company is
   # an abstract model, as it is stored in the users table.
   def self.offer_counts
-    self.joins(:offers).select('users.id AS id, count(offers.id) as count').group('users.id').reduce({}) do |acc, c|
+    self.unscoped.joins(:offers).select('users.id AS id, count(offers.id) AS count').group('users.id').reduce({}) do |acc, c|
       acc[c.id] = c.count
       acc
     end
