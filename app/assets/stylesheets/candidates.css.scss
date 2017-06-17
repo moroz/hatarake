@@ -68,9 +68,12 @@ $avatar-size: 180px;
     margin: 0;
   }
 
-  .company__name--margin-top,
+  .company__name--margin-top {
+    margin-top: 0.85rem;
+  }
+
   .candidate__name--margin-top {
-    margin-top: 0.9em;
+    margin-top: 0.9rem;
   }
 
   .company__avatar,
@@ -95,6 +98,11 @@ $avatar-size: 180px;
   .cv_item__location {
     text-align: right;
   }
+}
+
+.company__details__info {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .company__name,
