@@ -25,6 +25,7 @@ class CompaniesController < ApplicationController
       redirect_to company, status: :moved_permanently
     end
     @rating = company.reputation_for(:avg_rating).round(2)
+    @ratings_count = company.ratings_count
   end
 
   def update

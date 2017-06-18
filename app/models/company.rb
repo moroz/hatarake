@@ -19,6 +19,14 @@ class Company < User
     name
   end
 
+  def ratings_count
+    ReputationSystem::Evaluation.where(target_id: id).count
+  end
+
+  def user_rating(user)
+    ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.value.to_i
+  end
+
   def recent_offers(limit = 5)
     self.offers.order(:published_at).limit(limit)
   end

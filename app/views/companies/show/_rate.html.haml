@@ -7,6 +7,13 @@
     .medium-8.columns
       #company_rating
         = @rating
+        from
+        = @ratings_count
+        votes
+        - if candidate_signed_in?
+          %br
+          Your rating:
+          = company.user_rating(current_candidate)
 
 :javascript
   $('#rateYo').rateYo({
