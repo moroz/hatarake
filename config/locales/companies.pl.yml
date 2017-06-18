@@ -15,6 +15,9 @@ pl:
     index:
       heading: Profile pracodawców
 
+    vote:
+      success: 'Dziękujemy za oddanie głosu.'
+
   activerecord:
     attributes:
       company:

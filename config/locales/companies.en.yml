@@ -15,6 +15,9 @@ en:
     index:
       heading: Company profiles
 
+    vote:
+      success: 'Thank you for voting!'
+
   dashboards:
     company_dashboard:
       heading: Company dashboard

@@ -2,9 +2,9 @@
   %h4 Rate company
 .card-section
   .row
-    .medium-6.columns
+    .medium-4.columns
       #rateYo
-    .medium-6.columns
+    .medium-8.columns
       #company_rating
         = @rating
 
@@ -12,7 +12,10 @@
   $('#rateYo').rateYo({
     ratedFill: '#19629a',
     fullStar: true,
+    rating: #{@rating},
     onSet: function(r, ryi) {
-      $.post(window.location.pathname + '/vote?v=' + r);
+      $.post(window.location.pathname + '/vote',
+        {v: r}
+      );
     }
   });

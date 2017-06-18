@@ -24,7 +24,7 @@ class CompaniesController < ApplicationController
     if request.path != company_path(company)
       redirect_to company, status: :moved_permanently
     end
-    @rating = company.reputation_for(:avg_rating)
+    @rating = company.reputation_for(:avg_rating).round(2)
   end
 
   def update
