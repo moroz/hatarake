@@ -18,9 +18,3 @@
  *= require_tree .
 
  */
-
-@media screen and (max-width: 1000px) {
-  .container {
-    padding: 0.6rem;
-  }
-}
