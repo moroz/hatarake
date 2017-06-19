@@ -24,8 +24,7 @@ class CompaniesController < ApplicationController
     if request.path != company_path(company)
       redirect_to company, status: :moved_permanently
     end
-    @rating = company.reputation_for(:avg_rating).round(2)
-    @ratings_count = company.ratings_count
+    set_rating
   end
 
   def update
@@ -48,12 +47,18 @@ class CompaniesController < ApplicationController
       head 400 and return
     end
     company.add_or_update_evaluation(:avg_rating, value, current_user)
+    set_rating
     respond_to do |f|
       f.js
     end
   end
 
   private
+
+  def set_rating
+    @rating = company.reputation_for(:avg_rating).round(2)
+    @ratings_count = company.ratings_count
+  end
 
   def company
     @company ||= find_user

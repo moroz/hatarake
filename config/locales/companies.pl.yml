@@ -8,6 +8,7 @@ pl:
       description: Opis
       recent_offers: Ostatnie oferty
       all_offers: "Wszystkie oferty..."
+      rate_company: "Oceń firmę"
 
     edit:
       heading: Edycja profilu
@@ -17,6 +18,8 @@ pl:
 
     vote:
       success: 'Dziękujemy za oddanie głosu.'
+      avg_rating: "Średnia ocena: %{rating} z %{ratings} głosów."
+      your_rating: "Twoja ocena: %{user_rating}."
 
   activerecord:
     attributes:

@@ -8,6 +8,7 @@ en:
       description: Description
       recent_offers: Recent offers
       all_offers: "See all..."
+      rate_company: Rate this company
 
     edit:
       heading: Edit profile
@@ -17,6 +18,8 @@ en:
 
     vote:
       success: 'Thank you for voting!'
+      avg_rating: "Average rating: %{rating} from %{ratings} votes."
+      your_rating: "Your rating: %{user_rating}."
 
   dashboards:
     company_dashboard:

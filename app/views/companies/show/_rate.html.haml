@@ -1,25 +1,22 @@
 .card-divider
-  %h3 Rate company
+  %h3= t('companies.show.rate_company')
 .card-section
-  .row
-    .medium-4.columns
-      #rateYo
-    .medium-8.columns
+  .row.text-center
+    .medium-6.columns
+      #rateYo.float-center
+    .medium-6.columns
       #company_rating
-        = @rating
-        from
-        = @ratings_count
-        votes
+        = t('companies.vote.avg_rating', rating: @rating, ratings: @ratings_count)
         - if candidate_signed_in?
           %br
-          Your rating:
-          = company.user_rating(current_candidate)
+          = t('companies.vote.your_rating', user_rating: company.user_rating(current_candidate))
 
 :javascript
   $('#rateYo').rateYo({
     ratedFill: '#19629a',
     fullStar: true,
     rating: #{@rating},
+    starWidth: '48px',
     onSet: function(r, ryi) {
       $.post(window.location.pathname + '/vote',
         {v: r}

@@ -1,2 +1,2 @@
 :plain
-  document.getElementById('company_rating').innerHTML = '#{j t '.success'}';
+  document.getElementById('company_rating').innerHTML = '#{j t '.success'}<br/>#{j t '.avg_rating', rating: @rating, ratings: @ratings_count}';
