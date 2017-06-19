@@ -72,10 +72,6 @@ $avatar-size: 180px;
     margin-top: 0.85rem;
   }
 
-  .candidate__name--margin-top {
-    margin-top: 0.9rem;
-  }
-
   .company__avatar,
   .candidate__avatar {
     width: #{$avatar-size + 10px};
@@ -109,6 +105,7 @@ $avatar-size: 180px;
 .candidate__name {
   color: $dark-blue;
   font-weight: 200;
+  font-size: 2rem;
 }
 
 .candidate__lfw,

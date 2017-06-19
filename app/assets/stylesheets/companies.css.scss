@@ -1,5 +1,10 @@
 @import 'colors';
 
+.logo {
+  width: 180px;
+  height: auto;
+}
+
 .candidate-row,
 .company-row {
   $company-row-bg: #fafafa;

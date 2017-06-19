@@ -11,4 +11,14 @@ module ProfileHelper
       end
     end
   end
+
+  def square_logo_for(company, size: 'normal', className: '')
+    content_tag :div, class: "avatar avatar--#{size} #{className}", id: 'companyLogoContainer' do
+      image_tag(company.avatar.file_url, class: 'logo', id: 'companyLogo', data: { 'center-vertically': '' })
+    end
+  end
+
+  def logo_for(company)
+    image_tag(company.avatar.file_url, class: 'logo')
+  end
 end
