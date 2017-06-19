@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
   authorize_resource
 
   def index
-    @candidates = Candidate.joins(:profile, :profession).page(params[:page])
+    @candidates = Candidate.joins(:profile).includes(:profile, :profession).page(params[:page])
     if params[:o].present?
       order_candidates(params[:o])
     end
