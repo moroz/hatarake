@@ -4,3 +4,9 @@
       = avatar_for candidate, size: :thumb
     .candidate-row__center
       %span.candidate-row__name= candidate.full_name
+      %br/
+      %small
+        = fa_icon sex_icon(candidate.profile.sex), text: candidate.profile.age
+        |
+        = candidate.profession.local_name
+        

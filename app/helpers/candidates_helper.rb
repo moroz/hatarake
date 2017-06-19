@@ -14,6 +14,10 @@ module CandidatesHelper
     end
   end
 
+  def sex_icon(sex)
+    sex == 'male' ? 'mars' : 'venus'
+  end
+
   def sex_age_label(sex, age)
     classNames = 'label candidate__sex_age'
     if sex == 'male'
