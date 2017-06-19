@@ -1,6 +1,6 @@
-%tr
-  %td= link_to candidate.profile.full_name, candidate
-  %td= candidate.profile.age
-  %td= candidate.short_sex
-  %td= candidate.profession.try(:local_name)
-  %td= I18n.t(candidate.profile.looking_for_work.to_s)
+= link_to candidate do
+  %div{id: dom_id(candidate), class: 'candidate candidate-row'}
+    .candidate-row__left
+      = avatar_for candidate, size: :thumb
+    .candidate-row__center
+      %span.candidate-row__name= candidate.full_name

@@ -48,7 +48,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1000);
+$global-width: rem-calc(900);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: $custom-primary, // #175eba,
@@ -549,7 +549,7 @@ $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
 $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
-$table-is-striped: true;
+$table-is-striped: false;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
 $table-head-background: transparent;// smart-scale($table-background, $table-color-scale / 2);

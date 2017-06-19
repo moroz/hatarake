@@ -3,7 +3,9 @@
 = render 'search_form'
 = paginate @candidates
 
-= render 'table_header' do
-  = render @candidates
+- @candidates.each_slice(3) do |slice|
+  .candidate-grid
+    - slice.each do |candidate|
+      = render candidate
 
 = paginate @candidates

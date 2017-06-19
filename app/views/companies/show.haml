@@ -13,14 +13,14 @@
     - if company.description.present?
       .card#company_description
         .card-divider
-          %h4= t('companies.show.description')
+          %h3= t('companies.show.description')
         .card-section
           %p.company__description!= markdown company.description
 
   .large-4.columns
     .card#recent_offers
       .card-divider
-        %h4= t('companies.show.recent_offers')
+        %h3= t('companies.show.recent_offers')
       .card-section
         %ul.company__recent_offers.no-bullet
         - company.recent_offers.each do |offer|

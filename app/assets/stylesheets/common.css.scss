@@ -6,7 +6,7 @@ html {
 
 body {
   font-size: 110%;
-  background-color: #f6f6f6;
+  background-color: #fff;
 }
 
 select {
@@ -29,11 +29,33 @@ select {
 }
 
 .avatar--thumb {
-  width: 60px;
-  height: 60px;
+  width: 105px;
+  height: 105px;
 }
 
-@media screen and (min-width: 641px) {
+.card-divider {
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  position: relative;
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-blue;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card-divider {
+    h2, h3, h4 {
+      text-align: center;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
   .avatar--thumb {
     width: 80px;
     height: 80px;
@@ -194,14 +216,6 @@ th[scope='row'] {
 
 .dashboard-nav-card-icon {
   font-size: rem-calc(30);
-}
-
-.card-divider {
-  padding: 0.4rem 1rem 0.4rem 1rem;
-  position: relative;
-  h1, h2, h3, h4, h5, h6 {
-    color: $dark-blue;
-  }
 }
 
 .date-select--half {

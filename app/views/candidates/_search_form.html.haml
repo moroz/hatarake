@@ -1,23 +1,21 @@
-.row
-  .medium-8.medium-offset-2
-    .candidate_search
-      = form_for candidates_path, method: :get do |f|
-        = f.label :q, t('candidates.search.name')
-        = f.text_field :q, value: params[:q], name: 'q'
-        .row
-          .medium-6.columns
-            = f.label :prid, t('candidates.search.profession')
-            = f.select :prid, localized_collection(@professions, params[:prid] || 0, blank: t('candidates.search.any_profession')), {}, name: 'prid'
-          .medium-6.columns
-            = f.label :sex, t('candidates.search.sex')
-            - sexes = I18n.t('sexes.long').values.each_with_index.map { |n,i| [i+1,n] }
-            = f.select :sex, options_from_collection_for_select(sexes, :first, :last, params[:sex]), {include_blank: t('candidates.search.any_sex')}, name: 'sex'
-        .row
-          .medium-6.columns
-            = f.check_box :lfw, name: 'lfw'
-            = f.label :lfw, t('candidates.search.only_looking_for_work')
-          .medium-6.columns
-            = f.label :o, t('candidates.search.order')
-            = f.select :o, options_from_collection_for_select(I18n.t('candidates.search.order_cols'), :first, :last, params[:o]), {}, name: 'o'
-        = f.submit t('candidates.search.submit'), class: 'button success expanded', name: nil
+.candidate_search
+  = form_for candidates_path, method: :get do |f|
+    = f.label :q, t('candidates.search.name')
+    = f.text_field :q, value: params[:q], name: 'q'
+    .row
+      .medium-6.columns
+        = f.label :prid, t('candidates.search.profession')
+        = f.select :prid, localized_collection(@professions, params[:prid] || 0, blank: t('candidates.search.any_profession')), {}, name: 'prid'
+      .medium-6.columns
+        = f.label :sex, t('candidates.search.sex')
+        - sexes = I18n.t('sexes.long').values.each_with_index.map { |n,i| [i+1,n] }
+        = f.select :sex, options_from_collection_for_select(sexes, :first, :last, params[:sex]), {include_blank: t('candidates.search.any_sex')}, name: 'sex'
+    .row
+      .medium-6.columns
+        = f.check_box :lfw, name: 'lfw'
+        = f.label :lfw, t('candidates.search.only_looking_for_work')
+      .medium-6.columns
+        = f.label :o, t('candidates.search.order')
+        = f.select :o, options_from_collection_for_select(I18n.t('candidates.search.order_cols'), :first, :last, params[:o]), {}, name: 'o'
+    = f.submit t('candidates.search.submit'), class: 'button success expanded', name: nil
 

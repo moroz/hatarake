@@ -1,14 +1,12 @@
 @import 'colors';
 
+.candidate-row,
 .company-row {
-  $company-row-bg: #fff;
+  $company-row-bg: #fafafa;
   background-color: $company-row-bg;
-  border: $company-row-border;
   display: block;
-  padding: 0;
-  margin-bottom: 0.5rem;
-  width: 100%;
   overflow: auto;
+  margin-bottom: 0.5rem;
   box-sizing: inherit;
 
   &:hover {
@@ -16,41 +14,33 @@
   }
 }
 
-$left-width-on-small: 60px;
-$left-width-on-medium: 80px;
-$left-width-on-large: 105px;
-$avatar-margin: 14px;
+$left-width: 105px;
+$avatar-margin: 8px;
 
+.candidate-row__left,
 .company-row__left {
-  width: #{$left-width-on-small + $avatar-margin};
+  width: #{$left-width + $avatar-margin};
   float: left;
 }
 
+.candidate-row__center,
 .company-row__center {
-  width: calc(100% - #{$left-width-on-small + $avatar-margin + 2px});
+  width: calc(100% - #{$left-width + $avatar-margin});
   padding-top: 1rem;
   float: left;
 }
 
-@media screen and (min-width: 641px) {
-  .company-row__left {
-    width: #{$left-width-on-medium + $avatar-margin};
-  }
-  
-  .company-row__center {
-    width: calc(100% - #{$left-width-on-medium + $avatar-margin + 2px});
-  }
-}
-
 @media screen and (min-width: 1024px) {
-  .company-row__left {
-    width: #{$left-width-on-large + $avatar-margin};
-  }
-  .company-row__center {
-    width: calc(100% - #{$left-width-on-large + $avatar-margin + 2px});
+  .company-row,
+  .candidate-row {
+    width: 33.3%;
+    float: left;
+    padding: 0;
+    margin: 0;
   }
 }
 
+.candidate-row__name,
 .company-row__name {
   color: #333;
   font-weight: 400;
