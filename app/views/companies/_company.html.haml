@@ -6,6 +6,6 @@
       %span.company-row__name= company.name
       %br/
       %small
-        = t('plurals.offer', count: @offer_counts[company.id])
+        = t('plurals.offer', count: @offer_counts[company.id] || 0)
         |
         = fa_icon('star-o', text: company.avg_rating)
