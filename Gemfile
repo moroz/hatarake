@@ -36,6 +36,7 @@ gem 'simple_form'
 # For uploading assets
 gem 'carrierwave', '~> 1.1.0'
 gem 'fog-aws'
+gem 'carrierwave-i18n'
 gem 'mini_magick'
 
 # Rich text formatting with Textile

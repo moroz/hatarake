@@ -8,4 +8,8 @@ class Avatar < Attachment
   def crop_avatar
     file.recreate_versions! if crop_x.present?
   end  
+
+  def croppable?
+    file.content_type != 'image/svg+xml'
+  end
 end

@@ -18,7 +18,7 @@
 //= require Markdown.Sanitizer
 //= require Markdown.Editor
 //= require jquery.rateyo
-//= require jquery.Jcrop
+//= require Jcrop
 //= require autocomplete-rails
 //= require foundation
 //= require_tree .

@@ -6,6 +6,8 @@ class AvatarCropper
     $('#cropbox').Jcrop
       aspectRatio: 1
       setSelect: [0, 0, 600, 600]
+      boxWidth: 500
+      boxHeight: 400
       onSelect: @update
       onChange: @update
 
@@ -14,7 +16,6 @@ class AvatarCropper
     $('#avatar_crop_y').val(coords.y)
     $('#avatar_crop_w').val(coords.w)
     $('#avatar_crop_h').val(coords.h)
-    @updatePreview(coords)
 
   updatePreview: (coords) =>
     $('#preview').css

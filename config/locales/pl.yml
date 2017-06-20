@@ -213,3 +213,8 @@ pl:
       few: '%{count} oferty'
       many: '%{count} ofert'
 
+  avatars:
+    crop:
+      heading: "Przycinanie zdjęcia profilowego"
+      submit: "Przytnij"
+      preview: "Podgląd"

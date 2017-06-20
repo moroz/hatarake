@@ -20,6 +20,7 @@ pl:
       success: 'Dziękujemy za oddanie głosu.'
       avg_rating: "Średnia ocena: %{rating} z %{ratings} głosów."
       your_rating: "Twoja ocena: %{user_rating}."
+      not_voted_yet: "Jeszcze nie oceniłeś tej firmy."
 
   activerecord:
     attributes:

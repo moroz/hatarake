@@ -20,6 +20,7 @@ en:
       success: 'Thank you for voting!'
       avg_rating: "Average rating: %{rating} from %{ratings} votes."
       your_rating: "Your rating: %{user_rating}."
+      not_voted_yet: "You have not rated this company yet."
 
   dashboards:
     company_dashboard:

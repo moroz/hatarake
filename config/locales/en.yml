@@ -176,3 +176,9 @@ en:
       zero: no offers
       one: 1 offer
       other: '%{count} offers'
+
+  avatars:
+    crop:
+      heading: "Crop Avatar"
+      submit: "Crop"
+      preview: "Preview"

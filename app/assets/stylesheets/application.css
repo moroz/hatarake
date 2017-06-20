@@ -14,7 +14,7 @@
  *= require jquery-ui
  *= require font-awesome
  *= require jquery.rateyo
- *= require jquery.Jcrop
+ *= require Jcrop
  *= require_self
  *= require_tree .
 

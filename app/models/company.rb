@@ -24,7 +24,7 @@ class Company < User
   end
 
   def user_rating(user)
-    ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.value.to_i
+    ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.try(:value)
   end
 
   def recent_offers(limit = 5)
@@ -36,8 +36,7 @@ class Company < User
   # an abstract model, as it is stored in the users table.
   def self.offer_counts
     self.unscoped.joins(:offers).select('users.id AS id, count(offers.id) AS count').group('users.id').reduce({}) do |acc, c|
-      acc[c.id] = c.count
-      acc
+      acc.merge({c.id => c.count})
     end
   end
 end

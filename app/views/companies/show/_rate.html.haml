@@ -8,8 +8,12 @@
       #company_rating
         = t('companies.vote.avg_rating', rating: @rating, ratings: @ratings_count)
         - if candidate_signed_in?
+          - rating = company.user_rating(current_candidate)
           %br
-          = t('companies.vote.your_rating', user_rating: company.user_rating(current_candidate))
+          - if rating.nil?
+            = t ('companies.vote.not_voted_yet')
+          - else
+            = t('companies.vote.your_rating', user_rating: company.user_rating(current_candidate))
 
 :javascript
   $('#rateYo').rateYo({
