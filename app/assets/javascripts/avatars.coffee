@@ -6,8 +6,8 @@ class AvatarCropper
     $('#cropbox').Jcrop
       aspectRatio: 1
       setSelect: [0, 0, 600, 600]
-      boxWidth: 500
-      boxHeight: 400
+      boxWidth: window.innerWidth
+      boxHeight: window.innerHeight
       onSelect: @update
       onChange: @update
 
