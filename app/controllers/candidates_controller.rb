@@ -32,8 +32,12 @@ class CandidatesController < ApplicationController
   def update
     @candidate = current_candidate
     if @candidate.update(candidate_params)
-      flash[:success] = "Your profile has been saved."
-      redirect_to profile_path
+      if params[:candidate][:avatar].present?
+        redirect_to crop_avatar_path
+      else
+        flash[:success] = I18n.t('.success')
+        redirect_to profile_path
+      end
     else
       respond_to do |f|
         f.html { render 'step2' }

@@ -1,5 +1,6 @@
 en:
   candidates:
+    
     edit:
       looking_for_work: Are you looking for work?
       birth_date: 'Date of birth:'
@@ -9,6 +10,7 @@ en:
       profession: "Profession:"
       submit: "Next"
       heading: "Please fill in your profile to start looking for work."
+      
     show:
       looking_for_work:
         'true': Looking for work
@@ -26,6 +28,7 @@ en:
       no_skills: No skills.
       no_education: No information about education.
       no_work_experience: No information about work experience.
+
     index:
       title: Browse candidates
       name: Name
@@ -33,6 +36,7 @@ en:
       sex: Sex
       profession: Profession
       looking_for_work: Looking for work
+
     search:
       heading: "Candidate search"
       profession: 'Profession'
@@ -48,6 +52,9 @@ en:
         1: Age
         2: Sex
         3: Profession
+
+    update:
+      success: 'Your profile has been saved.'
 
   dashboards:
     candidate_dashboard:

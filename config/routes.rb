@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   get '/edit_avatar', to: 'avatars#new'
+  get '/crop_avatar', to: 'avatars#crop'
   resource :avatar, only: [:create, :update]
   root to: 'home#home'
   get '/sign_up', controller: :pages, action: :show, id: 'sign_up'

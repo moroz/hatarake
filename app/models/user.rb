@@ -19,5 +19,4 @@ class User < ApplicationRecord
   def candidate?
     self.type == "Candidate"
   end
-  
 end

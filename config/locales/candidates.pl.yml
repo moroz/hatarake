@@ -1,5 +1,6 @@
 pl:
   candidates:
+
     edit:
       looking_for_work: Czy poszukujesz pracy?
       birth_date: 'Data urodzenia:'
@@ -9,6 +10,7 @@ pl:
       profession: "Zawód:"
       submit: "Dalej"
       heading: "Uzupełnij profil, aby rozpocząć poszukiwanie pracy."
+
     show:
       looking_for_work:
         'true': Szuka pracy
@@ -26,6 +28,7 @@ pl:
       edit_skills: Edytuj umiejętności
       edit_work: Edytuj doświadczenie zawodowe
       edit_education: Edytuj wykształcenie
+
     index:
       title: Przegląd kandydatów
       name: Imię i nazwisko
@@ -33,6 +36,7 @@ pl:
       sex: Płeć
       profession: Zawód
       looking_for_work: Szuka pracy
+
     search:
       heading: Wyszukiwanie kandydatów
       profession: Zawód
@@ -48,6 +52,9 @@ pl:
         1: Wieku
         2: Płci
         3: Zawodu
+
+    update:
+      success: "Profil został zapisany."
 
   activerecord:
     attributes:

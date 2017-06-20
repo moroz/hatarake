@@ -5,15 +5,13 @@ class AvatarsController < ApplicationController
   def show
   end
 
-  def create
-    if avatar.update(avatar_params)
-      redirect_to profile_path, notice: "Success"
-    end
-  end
-
   def update
     if avatar.update(avatar_params)
-      redirect_to profile_path, notice: "Success"
+      if params[:avatar][:file].present?
+        render :crop
+      else
+        redirect_to profile_path, notice: "Success"
+      end
     end
   end
 
@@ -24,7 +22,7 @@ class AvatarsController < ApplicationController
   private
 
   def avatar_params
-    params.require(:avatar).permit(:file)
+    params.require(:avatar).permit(%i{file crop_x crop_y crop_w crop_h})
   end
 end
 

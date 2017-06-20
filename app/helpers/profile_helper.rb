@@ -1,7 +1,7 @@
 module ProfileHelper
   def avatar_for(user, size: 'normal', editable: false, className: '')
     url = user.avatar.present? ?
-      user.avatar.file_url :
+      user.avatar.file_url(size) :
       image_path('avatar.png')
     content_tag :div, class: "avatar avatar--#{size} #{className}", style: "background-image: url(#{url})" do
       if editable
