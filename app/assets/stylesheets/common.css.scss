@@ -242,3 +242,8 @@ th[scope='row'] {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
+
+.ui-widget {
+  font-family: $main-font;
+  font-weight: 400;
+}

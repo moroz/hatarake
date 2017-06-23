@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
+    get 'schools/(:term)' => 'autocomplete#schools', as: :autocomplete_schools
+    get 'organizations/(:term)' => 'autocomplete#organizations', as: :autocomplete_organizations
     get 'provinces/(:country_id)' => 'provinces#index', as: :provinces
   end
   scope '/admin' do

@@ -14,6 +14,10 @@ class CvItem < ApplicationRecord
 
   before_validation :swap_dates
 
+  def self.distinct_organizations_like(term)
+    where('organization ILIKE ?', "%#{sanitize_sql_like(term)}%").distinct.limit(5).pluck(:organization)
+  end
+
   private
 
   def swap_dates

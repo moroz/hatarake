@@ -7,6 +7,14 @@ class AutocompleteController < ApplicationController
     autocomplete(Profession)
   end
 
+  def schools
+    render json: EducationItem.distinct_organizations_like(params[:term])
+  end
+
+  def organizations
+    render json: WorkItem.distinct_organizations_like(params[:term])
+  end
+
   private
 
   def autocomplete(model)

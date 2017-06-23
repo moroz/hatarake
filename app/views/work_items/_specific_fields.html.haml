@@ -1,3 +1,4 @@
+= f.input :organization, url: autocomplete_organizations_path, as: :autocomplete
 = f.input :position
 = f.label :category
 = f.select :category, options_from_collection_for_select(I18n.t('cv_items.work_categories'), :first, :last)
