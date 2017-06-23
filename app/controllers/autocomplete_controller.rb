@@ -8,13 +8,11 @@ class AutocompleteController < ApplicationController
   end
 
   def schools
-    @collection = EducationItem.distinct_organizations_like(params[:term])
-    render json: view_context.highlight_search_term_in_collection(@collection, params[:term])
+    render json: EducationItem.distinct_organizations_like(params[:term])
   end
 
   def organizations
-    @collection = WorkItem.distinct_organizations_like(params[:term])
-    render json: view_context.highlight_search_term_in_collection(@collection, params[:term])
+    render json: WorkItem.distinct_organizations_like(params[:term])
   end
 
   private
