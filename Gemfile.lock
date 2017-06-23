@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.3.2)
     actioncable (5.0.3)
       actionpack (= 5.0.3)
       nio4r (>= 1.2, < 3.0)
@@ -366,7 +365,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth
   activerecord-reputation-system
   binding_of_caller
   byebug
@@ -417,7 +415,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
