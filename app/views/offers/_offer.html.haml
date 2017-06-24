@@ -1,5 +1,19 @@
-%tr{id: dom_id(offer), class: 'offer'}
-  %td= link_to offer.title, offer
-  %td= short_salary(offer)
-  %td= offer.location.short_format
+- if defined?(short) && short
+  %tr{id: dom_id(offer), class: 'offer'}
+    %td= link_to offer.title, offer
+    %td= short_salary(offer)
+    %td= offer.location.short_format
+- else
+  = link_to offer do 
+    %div{id: dom_id(offer), class: 'offer offer-row'}
+      .row
+        .medium-8.columns
+          %span.offer-row__title= offer.title
+          @
+          %span.offer-row__company= offer.company.name
+          %br/
+          %small= fa_icon 'money', text: short_salary(offer)
+          %small.show-for-small-only= fa_icon 'map-marker', text: offer.location.short_format
+        .medium-4.columns.hide-for-small-only.offer-row__right
+          = fa_icon 'map-marker', text: offer.location.short_format
 

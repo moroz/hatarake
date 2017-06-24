@@ -1,11 +1,9 @@
 .offer_search_description
   = @search_description
   = reset_search_link if @search_description.present?
-= paginate @offers
-.offer-list
+.offer-list#offers
   - if @offers.any?
-    - for offer in @offers
-      = render partial: 'offers/offer_row', locals: { offer: offer }
+    = render @offers
   - else
     = t('offers.index.no_offers')
 = paginate @offers

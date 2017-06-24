@@ -45,5 +45,20 @@ document.addEventListener('turbolinks:load', function () {
     e.stopPropagation();
     $(searchFilters).submit();
   }, false);
+
+  // infinite scroll
+  if (document.querySelectorAll('.pagination').length) {
+    document.addEventListener('scroll', function (e) {
+      var nextLink = document.querySelector('.pagination a[rel="next"]');
+      if (nextLink && nextLink.href) {
+        // pure JS alternative to $(window).scrollTop()
+        var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        if (scrollTop > $(document).height() - $(window).height() - 50) {
+          $('.pagination').text('Loading...');
+          $.get(nextLink.href);
+        }
+      }
+    }, false);
+  }
 });
 
