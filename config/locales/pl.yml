@@ -144,6 +144,8 @@ pl:
 
   activerecord:
     attributes:
+      avatar:
+        file: "Plik"
       skill_item:
         skill: ''
       education_item:
@@ -214,7 +216,13 @@ pl:
       many: '%{count} ofert'
 
   avatars:
+    integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd. Może to oznaczać niewłaściwy format lub typ pliku."
+    success: "Zdjęcie profilowe zostało zapisane."
+    back_to_profile: "Powrót do profilu"
     crop:
       heading: "Przycinanie zdjęcia profilowego"
       submit: "Przytnij"
       preview: "Podgląd"
+    new:
+      current_avatar: "Obecne zdjęcie profilowe"
+      submit: "Prześlij plik"

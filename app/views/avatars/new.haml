@@ -1,7 +1,7 @@
-= link_to "Back to profile", profile_path
+= link_to t('avatars.back_to_profile'), profile_path
 .row
   .medium-6.columns
-    %h3 Current avatar
+    %h3= t('avatars.new.current_avatar')
     = avatar_for current_user
   .medium-6.columns
     = render 'form'

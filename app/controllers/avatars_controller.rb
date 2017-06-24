@@ -3,7 +3,7 @@ class AvatarsController < ApplicationController
   helper_method :avatar
 
   rescue_from CarrierWave::IntegrityError do
-    redirect_to edit_avatar_path, alert: "Wrong file type"
+    redirect_to edit_avatar_path, alert: I18n.t('avatars.integrity_error_message')
   end
 
   def show
@@ -17,7 +17,7 @@ class AvatarsController < ApplicationController
       if params[:avatar][:file].present? && avatar.croppable?
         redirect_to crop_avatar_path
       else
-        redirect_to profile_path, notice: "Success"
+        redirect_to profile_path, notice: I18n.t('avatars.success')
       end
     end
   end

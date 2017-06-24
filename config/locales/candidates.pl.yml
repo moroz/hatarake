@@ -19,6 +19,8 @@ pl:
       change_data: Edycja danych osobowych
       skills: Umiejętności
       contact_data: Dane kontaktowe
+      phone: 'Numer telefonu:'
+      contact_email: 'Adres e-mail:'
       about: O mnie
       education: Wykształcenie
       work_experience: Doświadczenie zawodowe

@@ -1,18 +1,17 @@
 .card
-  .card-divider
-    %h4= t('candidates.show.contact_data')
-  .card-section
-    .row
-      .medium-6.columns
-        %table
-          %tr
-            %th{scope: 'row'} Telefon:
-            %td 500 100 800
-      .medium-6.columns
-        %table
-          %tr
-            %th{scope: 'row'} E-mail:
-            %td user@example.com
+  - if candidate.phone.present? && candidate.contact_email.present?
+    .card-divider
+      %h4= t('candidates.show.contact_data')
+    .card-section
+      .row
+        - if candidate.phone.present?
+          .medium-6.columns.text-center
+            %strong= t('candidates.show.phone')
+            = candidate.phone
+        - if candidate.contact_email.present?
+          .medium-6.columns.text-center
+            %strong= t('candidates.show.contact_email')
+            = candidate.contact_email
   - if candidate.description.present?
     .card-divider
       %h4= t('candidates.show.about')
