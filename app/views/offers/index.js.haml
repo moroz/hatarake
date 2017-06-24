@@ -1,9 +1,16 @@
 :plain
+- if params[:page].blank? || params[:page] == '1'
   document.getElementById('offer-list').innerHTML = '#{j render partial: 'offers'}';
   Turbolinks.changeURL('#{request.url}');
-- if params[:adv].blank? || params[:adv] == '0'
-  document.querySelector('.basic_search form').reset();
-- if @search_description.blank?
-  resetSearchForms();
-- elsif params[:q].present?
-  $('#filter_sidebar_q').val('#{j params[:q]}');
+  - if params[:adv].blank? || params[:adv] == '0'
+    document.querySelector('.basic_search form').reset();
+  - if @search_description.blank?
+    resetSearchForms();
+  - elsif params[:q].present?
+    $('#filter_sidebar_q').val('#{j params[:q]}');
+- else
+  $('#offers').append('#{j render @offers}');
+  - if @offers.last_page?
+    $('.pagination').remove();
+  - else
+    $('.pagination').html('#{j paginate @offers}');
