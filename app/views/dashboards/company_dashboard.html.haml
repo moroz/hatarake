@@ -1,18 +1,14 @@
 %h1= t('.heading')
 
-.row
-  .columns.medium-4
-    .dashboard-nav-card.green-bg
-      = fa_icon 'briefcase', class: 'dashboard-nav-card-icon'
-      %h3.dashboard-nav-card-title
-        = current_company.offers.count
-        %br
-        = t('.my_offers')
-  .columns.medium-4
-    .dashboard-nav-card.blue-bg
-      = fa_icon 'users', class: 'dashboard-nav-card-icon'
-      %h3.dashboard-nav-card-title= t('.applications')
-  .columns.medium-4
-    .dashboard-nav-card.purple-bg
-      = fa_icon 'envelope', class: 'dashboard-nav-card-icon'
-      %h3.dashboard-nav-card-title= t('.messages')
+%section.company_offers.card.shadow
+  .card-divider
+    %h3= t('.my_offers')
+  = render @offers
+
+%section.applied_offers.card.shadow
+  .card-divider
+    %h3= t('.applications')
+  - @applications.each do |offer, applications|
+    .card-divider
+      %h4= offer.title
+    = render applications

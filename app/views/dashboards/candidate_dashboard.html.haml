@@ -3,15 +3,9 @@
 %section.applied_offers.card.shadow
   .card-divider
     %h3= t('.applied_offers.heading')
-  .card-section
-    %table
-      %tbody
-        = render @applied
+  = render @applied
 
 %section.saved_offers.card.shadow
   .card-divider
     %h3= t('.saved_offers.heading')
-  .card-section
-    %table
-      %tbody
-        = render @saved
+  = render @saved

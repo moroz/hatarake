@@ -6,7 +6,7 @@
 - else
   = link_to offer, class: 'tile__link' do 
     %div{id: dom_id(offer), class: 'offer tile'}
-      - if offer.title.length >= 25
+      - if offer.title.length >= 22
         - title_class = 'offer-tile__title offer-tile__title--small'
       - else
         - title_class = 'offer-tile__title'
