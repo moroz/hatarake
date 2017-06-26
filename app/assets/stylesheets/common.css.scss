@@ -5,8 +5,8 @@ html {
 }
 
 body {
-  font-size: 110%;
   background-color: #fff;
+  font-size: 110%;
 }
 
 select {
@@ -181,9 +181,9 @@ table a {
 }
 
 .title-bar {
- // border-bottom: 1px solid $custom-secondary;
- padding: 0;
- height: 2.4rem;
+  // border-bottom: 1px solid $custom-secondary;
+  padding: 0;
+  height: 2.4rem;
 }
 
 .title-bar-left {
@@ -253,4 +253,68 @@ th[scope='row'] {
   border-color: #5ea4da;
   background-color: #90cfff;
   color: #205177;
+}
+
+$tile-bg: #f6f6f6;
+.tile {
+  background-color: $tile-bg;
+  display: block;
+  overflow: hidden;
+  height: 115px;
+  margin-bottom: 0.5rem;
+  box-sizing: inherit;
+  padding: 0.7rem;
+
+  &:hover {
+    background-color: darken($tile-bg, 6%);
+    text-decoration: none;
+  }
+}
+
+.tile__link:nth-of-type(even) div, .tile:nth-of-type(even) {
+  $even-tile-bg: #efefef;
+  background-color: $even-tile-bg;
+
+  &:hover {
+    background-color: darken($even-tile-bg, 6%);
+  }
+
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .tile {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 1rem;
+    height: 150px;
+  }
+
+  .tile__link:nth-of-type(4n+2) div, .tile:nth-of-type(4n+2),
+  .tile__link:nth-of-type(4n+3) div, .tile:nth-of-type(4n+3) {
+    $even-tile-bg: #efefef;
+    background-color: $even-tile-bg;
+
+    &:hover {
+      background-color: darken($even-tile-bg, 6%);
+    }
+  }
+
+  .tile__link:nth-of-type(4n+1) div, .tile:nth-of-type(4n+1),
+  .tile__link:nth-of-type(4n) div, .tile:nth-of-type(4n) {
+    background-color: $tile-bg;
+    &:hover {
+      background-color: darken($tile-bg, 6%);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .tile {
+    width: 33.3%;
+    float: left;
+    margin: 0;
+    padding: 1rem;
+    height: 150px;
+  }
 }

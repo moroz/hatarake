@@ -6,9 +6,7 @@
 .row
   = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
-.row
-  .large-10.large-offset-1.columns
-    .offers.card.shadow#offer-list
-      = render partial: 'offers'
-    - if can? :create, Offer
-      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'
+#offer-list
+  = render partial: 'offers'
+- if can? :create, Offer
+  = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

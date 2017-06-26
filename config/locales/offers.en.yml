@@ -43,6 +43,9 @@ en:
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
       heading: "Jobs abroad"
+      offer_count:
+        one: "%{count} offer found."
+        other: "%{count} offers found."
 
     poland:
       heading: "Jobs in Poland"

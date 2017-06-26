@@ -43,31 +43,26 @@
   border: 1px dashed #666;
 }
 
-.offer-row {
-  $offer-row-bg: #fff;
-  background-color: $offer-row-bg;
-  padding: 1rem;
-  border-bottom: $offer-row-border;
-
-  a & {
-    color: #333;
-  }
-
-  &:hover {
-    background-color: darken($offer-row-bg, 6%);
-  }
-
+.offer-tile__title {
+  color: lighten($dark-blue, 10%);
+  font-size: 1.3rem;
 }
 
-.offer-row__title {
-  color: $dark-blue;
+.offer-tile__title--small {
+  font-size: 1.18rem;
 }
 
-@media screen and (min-width: 640px) {
-  .offer-row__right {
-    text-align: right;
-    font-weight: 300;
-  }
+.offer-tile__title,
+.offer-tile__company,
+.offer-tile__salary,
+.offer-tile__location {
+  display: block;
+}
+
+.offer-tile__company,
+.offer-tile__salary,
+.offer-tile__location {
+  font-size: 0.9rem;
 }
 
 .offer_search_description {
