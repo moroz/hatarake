@@ -2,7 +2,7 @@ class Application < ApplicationRecord
   belongs_to :offer, required: true
   belongs_to :candidate, required: true
   has_one :company, through: :offer
-  scope :unread, -> { where(read: false) }
+  scope :unread, -> { where('NOT read') }
 
   def mark_as_read
     self.update(read: true)
