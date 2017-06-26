@@ -62,7 +62,13 @@
 .offer-tile__company,
 .offer-tile__salary,
 .offer-tile__location {
+  color: #333;
   font-size: 0.9rem;
+
+  .fa {
+    width: 18px;
+    text-align: center;
+  }
 }
 
 .offer_search_description {

@@ -11,7 +11,7 @@
       - else
         - title_class = 'offer-tile__title'
       %span{class: title_class}= offer.title
-      %span.offer-tile__company= offer.company.name
+      %span.offer-tile__company= fa_icon 'building-o', text: offer.company.name
       %span.offer-tile__salary= fa_icon 'money', text: short_salary(offer)
       %span.offer-tile__location= fa_icon 'map-marker', text: offer.location.short_format
 
