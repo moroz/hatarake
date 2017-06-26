@@ -1,11 +1,13 @@
-.offer_search_description
-  = @search_description
-  = t('offers.index.offer_count', count: @offers.total_count)
-  = reset_search_link if @search_description.present?
-.offer-list#offers
-  - if @offers.any?
-    = render @offers
-  - else
-    = t('offers.index.no_offers')
-= paginate @offers
-
+- if @offers.total_count > 0
+  .offer_search_description
+    = @search_description
+    = t('offers.index.offer_count', count: @offers.total_count)
+    = reset_search_link if @search_description.present?
+  .offer-list#offers
+    - if @offers.any?
+      = render @offers
+    - else
+      = t('offers.index.no_offers')
+  = paginate @offers
+- else
+  = render 'no_offers_found'

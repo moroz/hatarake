@@ -20,8 +20,8 @@ module OffersHelper
     end
   end
 
-  def reset_search_link
-    link_to I18n.t('offers.search_description.reset'), request.path, id: 'reset_search', remote: true
+  def reset_search_link(options = {})
+    link_to I18n.t('offers.search_description.reset'), request.path, options.merge({id: 'reset_search', remote: true})
   end
 
   def advanced_search_description(params)
