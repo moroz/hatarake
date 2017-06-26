@@ -45,11 +45,12 @@
 
 .offer-tile__title {
   color: lighten($dark-blue, 10%);
+  line-height: 1.5;
   font-size: 1.3rem;
 }
 
 .offer-tile__title--small {
-  font-size: 1.18rem;
+  font-size: 1.1rem;
 }
 
 .offer-tile__title,
