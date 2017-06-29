@@ -48,6 +48,7 @@ pl:
       basic_search: "Wyszukiwanie podstawowe"
       heading: "Praca za granicą"
       most_popular_countries: "Najpopularniejsze kraje"
+      most_popular_regions: "Najpopularniejsze województwa"
       offer_count:
         one: "Znaleziono jedną ofertę."
         few: "Znaleziono %{count} oferty."

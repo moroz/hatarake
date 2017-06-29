@@ -21,14 +21,22 @@ class Location < ApplicationRecord
   end
 
   def short_format
-    [city, country.local_name].reject(&:blank?).join(', ')
+    short_format_base.reject(&:blank?).join(', ')
   end
 
   def short_with_line_breaks
-    [city, country.local_name].reject(&:blank?).join('<br/>').html_safe
+    short_format_base.reject(&:blank?).join('<br/>').html_safe
   end
 
   private
+
+  def short_format_base
+    if country_id == Country::POLAND_ID
+      [city, province.try(:local_name)]
+    else
+      [city, country.local_name]
+    end
+  end
 
   def find_country_and_province
     if self.country_name.present?

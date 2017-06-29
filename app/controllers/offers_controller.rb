@@ -12,6 +12,7 @@ class OffersController < ApplicationController
 
   def poland
     @offers = Offer.with_associations.poland.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    @popular_regions = Province.most_popular_voivodeships_with_counts
     set_search_description
     respond_to do |f|
       f.js { render 'index' }

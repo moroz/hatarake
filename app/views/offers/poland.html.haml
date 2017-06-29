@@ -3,12 +3,13 @@
 .row
   = render 'basic_search', hide_adv_link: true
 
-.row
-  .medium-3.columns
-    = render 'filter_sidebar'
+.popular_regions.text-center
+  %h4= t('offers.index.most_popular_regions')
+  - @popular_regions.each do |region|
+    = link_to region['name'], pid: region['id'].to_i, remote: true
+    %small= '(' + region['cnt'].to_s + ')'
 
-  .medium-9.columns
-    .offers.card.shadow#offer-list
-      = render partial: 'offers'
-    - if can? :create, Offer
-      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'
+- if can? :create, Offer
+  = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'
+#offer-list 
+  = render 'offers'

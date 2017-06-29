@@ -43,6 +43,7 @@ en:
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
       most_popular_countries: "Most popular countries"
+      most_popular_regions: "Most popular regions"
       heading: "Jobs abroad"
       offer_count:
         one: "%{count} offer found."

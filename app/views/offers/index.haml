@@ -15,4 +15,4 @@
 - if can? :create, Offer
   = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'
 #offer-list
-  = render partial: 'offers'
+  = render 'offers'
