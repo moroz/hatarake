@@ -4,7 +4,8 @@
       %ul.menu
         %li.topbar__logo= link_to image_tag('/logo.svg'), (signed_in? ? dashboard_path : root_path)
         - if company_signed_in?
-          %li= link_to t('nav.jobs'), offers_path
+          %li= link_to t('nav.jobs_pl'), offers_poland_path
+          %li= link_to t('nav.jobs_abroad'), offers_path
           %li= link_to t('nav.candidates'), candidates_path
         -else
           %li= link_to t('nav.jobs_pl'), offers_poland_path
