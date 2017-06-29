@@ -5,7 +5,6 @@ html {
 }
 
 body {
-  background-color: #fff;
   font-size: 110%;
 }
 
@@ -176,6 +175,10 @@ table a {
   }
 }
 
+.top-bar-left, .top-bar-right {
+  padding-top: 1px;
+}
+
 .basic_search {
   margin-bottom: 1.5rem;
 }
@@ -255,7 +258,7 @@ th[scope='row'] {
   color: #205177;
 }
 
-$tile-bg: #f6f6f6;
+$tile-bg: #f9f9f9;
 .tile {
   background-color: $tile-bg;
   display: block;
@@ -272,7 +275,7 @@ $tile-bg: #f6f6f6;
 }
 
 .tile__link:nth-of-type(even) div, .tile:nth-of-type(even) {
-  $even-tile-bg: #efefef;
+  $even-tile-bg: #f2f2f2;
   background-color: $even-tile-bg;
 
   &:hover {

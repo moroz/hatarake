@@ -61,26 +61,30 @@
 
 .offer-row__title {
   color: $dark-blue;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.offer-row__company,
+.offer-row__salary,
+.offer-row__location {
+  display: block;
+  font-size: 0.9rem;
+  font-color: #333;
 }
 
 @media screen and (min-width: 640px) {
   .offer-row__right {
-    text-align: right;
-    font-weight: 300;
+    text-align: center;
   }
 }
 
 .offer_search_description {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .pagination + .offer-list, .offer_search_description + .offer-list {
   border-top: $offer-row-border;
-}
-
-.offer-row__description {
-  font-size: 0.85rem;
-  margin-bottom: 0.2rem;
 }
 
 .fa-ul li {

@@ -24,6 +24,10 @@ class Location < ApplicationRecord
     [city, country.local_name].reject(&:blank?).join(', ')
   end
 
+  def short_with_line_breaks
+    [city, country.local_name].reject(&:blank?).join('<br/>').html_safe
+  end
+
   private
 
   def find_country_and_province
