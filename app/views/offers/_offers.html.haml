@@ -1,5 +1,5 @@
 - if @offers.total_count > 0
-  .offer_search_description
+  .offers__search_description
     = @search_description
     = t('offers.index.offer_count', count: @offers.total_count)
     = reset_search_link if @search_description.present?

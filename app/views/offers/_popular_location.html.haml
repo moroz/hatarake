@@ -1,0 +1,4 @@
+%span.offers__popular_location
+  = link_to location['name'], link_param => location['id'].to_i, remote: true
+  %small= '(' + location['cnt'].to_s + ')'
+

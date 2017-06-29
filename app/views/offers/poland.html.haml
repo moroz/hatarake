@@ -3,11 +3,10 @@
 .row
   = render 'basic_search', hide_adv_link: true
 
-.popular_regions.text-center
-  %h4= t('offers.index.most_popular_regions')
-  - @popular_regions.each do |region|
-    = link_to region['name'], pid: region['id'].to_i, remote: true
-    %small= '(' + region['cnt'].to_s + ')'
+.offers__popular_locations.text-center
+  %h4= t('.popular_locations')
+  - @popular_locations.each do |location|
+    = render 'popular_location', location: location, link_param: :pid
 
 - if can? :create, Offer
   = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'

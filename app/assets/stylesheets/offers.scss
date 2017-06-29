@@ -81,12 +81,22 @@
   }
 }
 
-.offer_search_description {
+.offers__search_description {
   padding: 0.5rem 1rem;
 }
 
-.pagination + .offer-list, .offer_search_description + .offer-list {
+.pagination + .offer-list, .offers__search_description + .offer-list {
   border-top: $offer-row-border;
+}
+
+.offers__popular_location {
+  display: block;
+}
+
+@media screen and (min-width: 640px) {
+  .offers__popular_location {
+    display: inline;
+  }
 }
 
 .fa-ul li {

@@ -42,14 +42,14 @@ en:
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
-      most_popular_countries: "Most popular countries"
-      most_popular_regions: "Most popular regions"
+      popular_locations: "Most popular countries"
       heading: "Jobs abroad"
       offer_count:
         one: "%{count} offer found."
         other: "%{count} offers found."
 
     poland:
+      popular_locations: "Most popular regions"
       heading: "Jobs in Poland"
 
     search_description:

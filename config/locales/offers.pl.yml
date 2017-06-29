@@ -47,8 +47,7 @@ pl:
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
       heading: "Praca za granicą"
-      most_popular_countries: "Najpopularniejsze kraje"
-      most_popular_regions: "Najpopularniejsze województwa"
+      popular_locations: "Najpopularniejsze kraje"
       offer_count:
         one: "Znaleziono jedną ofertę."
         few: "Znaleziono %{count} oferty."
@@ -56,6 +55,7 @@ pl:
 
     poland:
       heading: Praca w Polsce
+      popular_locations: "Najpopularniejsze województwa"
 
     search_description:
       reset: "Wyczyść kryteria wyszukiwania."
