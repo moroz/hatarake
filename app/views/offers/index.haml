@@ -6,6 +6,12 @@
 .row
   = render partial: 'advanced_search', locals: {hidden: !show_advanced}
 
+.popular_countries.text-center
+  %h4= t('.most_popular_countries')
+  - @popular_countries.each do |country|
+    = link_to country['name'], cid: country['id'].to_i, remote: true
+    %small= '(' + country['cnt'].to_s + ')'
+
 - if can? :create, Offer
   = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'
 #offer-list

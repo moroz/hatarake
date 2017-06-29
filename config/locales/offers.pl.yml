@@ -47,6 +47,7 @@ pl:
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
       heading: "Praca za granicą"
+      most_popular_countries: "Najpopularniejsze kraje"
       offer_count:
         one: "Znaleziono jedną ofertę."
         few: "Znaleziono %{count} oferty."

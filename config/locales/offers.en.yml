@@ -42,6 +42,7 @@ en:
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"
+      most_popular_countries: "Most popular countries"
       heading: "Jobs abroad"
       offer_count:
         one: "%{count} offer found."

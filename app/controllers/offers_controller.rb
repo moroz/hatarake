@@ -21,6 +21,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).order(:published_at).advanced_search(params).page(params[:page])
+    @popular_countries = Country.most_popular_with_offer_counts
     set_search_description
     set_province_list if params[:cid].present?
     respond_to do |f|
