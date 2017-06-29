@@ -67,10 +67,16 @@
 
 .offer-row__company,
 .offer-row__salary,
+.offer-row__published_at,
 .offer-row__location {
   display: block;
   font-size: 0.9rem;
   font-color: #333;
+
+  .fa {
+    width: 1.2rem;
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 640px) {

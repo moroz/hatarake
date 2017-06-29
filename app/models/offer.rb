@@ -22,6 +22,8 @@ class Offer < ApplicationRecord
   before_validation :make_salary_range
   before_validation :make_hourly_wage
 
+  default_scope { order('published_at DESC NULLS FIRST') }
+  
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
 
