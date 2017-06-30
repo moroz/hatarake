@@ -7,6 +7,8 @@ class Company < User
   belongs_to :location
   validates :name, uniqueness: true, presence: true 
 
+  delegate :active?, :valid_thru, :activate_or_prolong!, to: :subscription, prefix: true, allow_nil: true
+
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 

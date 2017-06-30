@@ -1,11 +1,15 @@
 class Subscription < ApplicationRecord
   belongs_to :company, required: true
 
-  def is_valid?
-    valid_thru > Time.now
+  def active?
+    !!valid_thru && valid_thru > Time.now
   end
 
-  def approve!(duration: 1)
-    self.update(valid_thru: duration.months.from_now)
+  def activate_or_prolong!(time = 1.month)
+    if active?
+      update(valid_thru: valid_thru + time)
+    else
+      update(valid_thru: time.from_now)
+    end
   end
 end

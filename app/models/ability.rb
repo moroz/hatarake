@@ -11,11 +11,15 @@ class Ability
     if user.company?
       can :create, Offer
       can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
-      can :show, Page
-      can :read, Candidate
+      can :show, [Page, Candidate]
       can :manage, Company, id: user.id
       can :read, Application do |a|
         a.offer.company_id = user.id
+      end
+
+      # only premium users
+      if user.subscription_active?
+        can :index, Candidate
       end
     elsif user.candidate?
       can :manage, SkillItem, candidate_id: user.id
