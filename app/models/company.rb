@@ -3,6 +3,7 @@ class Company < User
   has_and_belongs_to_many :fields
   has_many :offers, dependent: :destroy
   has_many :applications, through: :offers
+  has_one :subscription
   belongs_to :location
   validates :name, uniqueness: true, presence: true 
 
@@ -24,6 +25,10 @@ class Company < User
 
   def user_rating(user)
     ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.try(:value)
+  end
+
+  def has_valid_subscription?
+    subscription.exists? && subscription.is_valid?
   end
 
   def recent_offers(limit = 5)
