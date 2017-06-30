@@ -1,15 +1,22 @@
 class Subscription < ApplicationRecord
   belongs_to :company, required: true
 
+  scope :valid, -> { where('valid_until > NOW()') }
+
   def active?
-    !!valid_thru && valid_thru > Time.now
+    !!valid_until && valid_until > Time.now
   end
 
-  def activate_or_prolong!(time = 1.month)
-    if active?
-      update(valid_thru: valid_thru + time)
+  def paid!
+    return false if paid
+    if company.has_valid_subscription?
+      self.valid_until = company.last_subscription.valid_until + duration
     else
-      update(valid_thru: time.from_now)
+      self.valid_until = Time.now + duration
     end
+    self.paid = true
+    self.paid_at = Time.now
+    self.save!
+    true
   end
 end

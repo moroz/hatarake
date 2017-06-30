@@ -6,7 +6,9 @@ FactoryGirl.define do
     website { Faker::Internet.url }
 
     trait :premium do
-      subscription
+      after_create do |company|
+        association :subscriptions, factory: :subscription
+      end
     end
   end
 end

@@ -18,7 +18,7 @@ class Ability
       end
 
       # only premium users
-      if user.subscription_active?
+      if user.premium?
         can :index, Candidate
       end
     elsif user.candidate?
