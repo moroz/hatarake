@@ -9,6 +9,7 @@
     = render 'popular_location', location: location, link_param: :pid
 
 - if can? :create, Offer
-  = link_to t('offers.add_new_offer'), new_offer_path, class: 'button'
+  .text-center
+    = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'
 #offer-list 
   = render 'offers'
