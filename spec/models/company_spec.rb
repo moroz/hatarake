@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Company do
   let(:company) { FactoryGirl.build(:company) }
+
   describe "validations" do
     describe "website URL format" do
       context "with invalid URL" do
@@ -24,6 +25,18 @@ RSpec.describe Company do
           expect(company).to be_valid
         end
       end
+    end
+  end
+
+  describe "scopes" do
+    let!(:company) { FactoryGirl.create(:company) }
+    let!(:premium_company) { FactoryGirl.create(:company, :premium) }
+    
+    describe "#premium_users" do
+      subject { Company.premium_users }
+
+      it { is_expected.to include(premium_company) }
+      it { is_expected.not_to include(company) }
     end
   end
 end
