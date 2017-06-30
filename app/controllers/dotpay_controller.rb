@@ -1,0 +1,2 @@
+class DotpayController < ApplicationController
+end

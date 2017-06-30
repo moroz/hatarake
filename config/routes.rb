@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subscriptions
   get '/offers/poland', to: 'offers#poland'
   resources :offers do
     member do

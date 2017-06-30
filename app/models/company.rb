@@ -3,12 +3,14 @@ class Company < User
   has_and_belongs_to_many :fields
   has_many :offers, dependent: :destroy
   has_many :applications, through: :offers
+  has_many :subscriptions
   belongs_to :location
   validates :name, uniqueness: true, presence: true 
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
+  scope :premium_users, -> { joins(:subscription).where('subscriptions.valid_until > NOW()') }
   scope :featured, -> { order('updated_at DESC') }
   scope :with_avg_rating, -> { find_with_reputation(:avg_rating, :all) }
 
@@ -24,6 +26,24 @@ class Company < User
 
   def user_rating(user)
     ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.try(:value)
+  end
+
+  def subscriptions_valid_until
+    last_subscription.valid_until
+  end
+
+  def has_valid_subscription?
+    subscriptions.valid.exists?
+  end
+
+  alias :premium? :has_valid_subscription?
+
+  def current_subscription
+    subscriptions.valid.order('valid_until').first
+  end
+
+  def last_subscription
+    subscriptions.valid.order(valid_until: :desc).first
   end
 
   def recent_offers(limit = 5)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626155146) do
+ActiveRecord::Schema.define(version: 20170630162954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -222,6 +222,18 @@ ActiveRecord::Schema.define(version: 20170626155146) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "company_id"
+    t.datetime "valid_until"
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.datetime "paid_at"
+    t.boolean  "paid",                                default: false
+    t.integer  "duration",                            default: 2592000
+    t.decimal  "price",       precision: 8, scale: 2
+    t.index ["company_id"], name: "index_subscriptions_on_company_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -281,6 +293,7 @@ ActiveRecord::Schema.define(version: 20170626155146) do
   add_foreign_key "offers", "locations"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
+  add_foreign_key "subscriptions", "users", column: "company_id"
   add_foreign_key "users", "locations"
   add_foreign_key "work_items", "locations"
   add_foreign_key "work_items", "users", column: "candidate_id"
