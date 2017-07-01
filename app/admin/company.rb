@@ -4,11 +4,19 @@ ActiveAdmin.register Company do
   scope :all
   scope :premium_users
 
+  action_item :show, only: :show do
+    link_to "View on Website", company_path(company), target: '_blank'
+  end
+
+  action_item :index, only: :index do
+    link_to "View on Website", companies_path, target: '_blank'
+  end
+
   index do
     column :premium do |company|
       company.premium?
     end
-    column :name
+    column :name { |company| link_to company.name, admin_company_path(company) }
     column :email
     column :contact_email
     column :phone

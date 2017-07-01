@@ -9,9 +9,17 @@ ActiveAdmin.register Offer do
   scope :all, default: true
   scope :poland
   scope :abroad
+
+  action_item :show, only: :show do
+    link_to "View on Website", offer_path(offer), target: '_blank'
+  end
+
+  action_item :index, only: :index do
+    link_to "View on Website", offers_path, target: '_blank'
+  end
 #
   index do
-    column :title { |o| link_to o.title, o, target: '_blank' }
+    column :title { |o| link_to o.title, admin_offer_path(o) }
     column :company
     column :published_at
     column :views
