@@ -291,3 +291,7 @@ ActiveAdmin.setup do |config|
   #
   # config.order_clause = MyOrderClause
 end
+
+ActiveAdmin::BaseController.class_eval do
+  skip_before_action :set_locale
+end
