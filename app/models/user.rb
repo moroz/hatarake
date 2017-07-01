@@ -11,10 +11,6 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
-  def admin?
-    self.type == "Admin"
-  end
-
   def company?
     self.type == "Company"
   end

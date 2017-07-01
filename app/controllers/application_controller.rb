@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_url, :alert => exception.message
   end
 
-  def admin_signed_in?
-    current_user_is_a?("Admin")
-  end
-
   def current_user
     super || current_candidate || current_company
   end

@@ -15,8 +15,6 @@ class ProfilesController < ApplicationController
       @rating = company.reputation_for(:avg_rating).round(2)
       @ratings_count = company.ratings_count
       render 'companies/show'
-    elsif admin_signed_in?
-      redirect_to root_path # This will be dashboard later
     end
   end
 

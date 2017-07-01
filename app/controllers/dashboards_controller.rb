@@ -7,8 +7,6 @@ class DashboardsController < ApplicationController
       candidate_dashboard
     elsif company_signed_in?
       company_dashboard
-    elsif admin_signed_in?
-      admin_dashboard
     end
   end
 
@@ -24,9 +22,6 @@ class DashboardsController < ApplicationController
     @offers = current_company.offers.limit(12)
     @applications = current_company.applications.includes(:offer).unread.group_by(&:offer)
     render 'company_dashboard'
-  end
-
-  def admin_dashboard
   end
 
 end

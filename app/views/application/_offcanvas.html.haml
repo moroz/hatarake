@@ -14,10 +14,7 @@
   %hr/
   %ul.menu.vertical
     - if signed_in?
-      -if admin_signed_in?
-        %li= link_to "Dashboard", "#"
-      - else
-        %li= link_to "Profile", profile_path
+      %li= link_to "Profile", profile_path
       %li= link_to "Sign out", destroy_user_session_path, method: :delete 
     - else
       %li= link_to t('nav.sign_in'), new_user_session_path

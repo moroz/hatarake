@@ -31,8 +31,6 @@ class Ability
       can :vote, Company
       can [:create, :new], Application
       can :manage, Resume, owner_id: user.id
-    elsif user.admin?
-      can :manage, :all
     else
       cannot [:index, :create, :update, :destroy], Page
       cannot [:create, :update, :destroy], Offer
