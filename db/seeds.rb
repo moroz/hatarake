@@ -10,3 +10,4 @@ files = Dir[File.expand_path(Rails.root + "db/seeds/*")]
 files.each do |f|
   load f
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
