@@ -1,5 +1,8 @@
-= simple_form_for [:admin, @offer], builder: ActiveAdmin::FormBuilder do |f|
-  = f.input :views
-  = f.input :title
-  = f.input :description, as: :text
-  = f.actions
+= form_for [:admin, @offer], builder: ActiveAdmin::FormBuilder do |f|
+  .row
+    = f.label :views
+    = f.text_field :views
+    = f.label :title
+    = f.text_field :title
+    = render 'pagedown', f: f, no_simple_form: true
+    = f.actions

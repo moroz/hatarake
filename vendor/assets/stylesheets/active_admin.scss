@@ -11,6 +11,21 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-forms;
+
+@import "colors";
+@import 'pagedown';
+@import 'offers';
+
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Inconsolata&amp;subset=latin-ext";
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
@@ -19,4 +34,21 @@
 body {
   font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 105%;
+}
+
+#header {
+  background: lighten($dark-blue, 15%);
+
+  a, a:link {
+    color: #fff;
+  }
+
+  ul.tabs > li.current > a {
+    background: lighten($dark-blue, 30%);
+  }
+}
+
+form textarea {
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
 }

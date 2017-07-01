@@ -1,7 +1,10 @@
 = render 'shared/markdown_info'
 .row
   .wmd-button-bar#wmd-button-bar
-  = f.input :description, as: :text, input_html: { rows: 15, class: 'wmd-input', id: 'wmd-input' }, label: false
+  - if defined?(no_simple_form) && no_simple_form
+    = f.text_area :description, rows: 15, class: 'wmd-input', id: 'wmd-input'
+  - else
+    = f.input :description, as: :text, input_html: { rows: 15, class: 'wmd-input', id: 'wmd-input' }, label: false
 
 .row
   Live preview
