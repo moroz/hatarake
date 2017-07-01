@@ -44,4 +44,6 @@ ActiveAdmin.register Company do
   filter :contact_email
   filter :email
   filter :phone
+
+  form partial: 'form'
 end

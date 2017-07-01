@@ -42,7 +42,4 @@ ActiveAdmin.register Offer do
 
   filter :company
   filter :title
-
-  
-
 end

@@ -1,0 +1,10 @@
+= form_for [:admin, @company], builder: ActiveAdmin::FormBuilder do |f|
+  .row
+    = f.label :email
+    = f.text_field :email
+    = f.label :contact_email
+    = f.text_field :contact_email
+    = f.label :name
+    = f.text_field :name
+    = render 'pagedown', f: f, no_simple_form: true
+    = f.actions
