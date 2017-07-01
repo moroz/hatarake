@@ -28,6 +28,12 @@ class Location < ApplicationRecord
     short_format_base.reject(&:blank?).join('<br/>').html_safe
   end
 
+  def ==(other)
+    self.country_id == other.country_id &&
+      self.province_id == other.province_id &&
+      self.city == other.city
+  end
+
   private
 
   def short_format_base

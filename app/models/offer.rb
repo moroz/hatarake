@@ -10,7 +10,6 @@ class Offer < ApplicationRecord
   has_many :applications, dependent: :destroy
   has_many :candidates, through: :applications
   has_many :offer_saves, dependent: :destroy, class_name: "OfferSave"
-  has_many :savers, through: :offer_saves, class_name: "Candidate"
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
   CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
