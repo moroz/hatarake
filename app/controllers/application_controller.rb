@@ -48,6 +48,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || accepted_language || I18n.default_locale
   end
 
+  def set_admin_locale
+    I18n.locale = :en
+  end
+
   def accepted_language
     return if request.env['HTTP_ACCEPT_LANGUAGE'].blank?
     /pl/ =~ request.env['HTTP_ACCEPT_LANGUAGE'] ? :pl : :en
