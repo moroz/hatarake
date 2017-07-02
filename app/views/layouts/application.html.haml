@@ -9,6 +9,7 @@
       .container
         .row.relative
           %button{type: 'button', 'data-open': 'offCanvas'}
+          = breadcrumbs
           = render 'messages'
           = yield
         .row

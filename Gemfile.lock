@@ -167,6 +167,8 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     guard (2.14.1)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -437,6 +439,7 @@ DEPENDENCIES
   font-awesome-rails
   foundation-rails
   friendly_id
+  gretel
   guard-livereload
   guard-rspec
   haml-rails (~> 0.9)
