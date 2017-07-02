@@ -71,6 +71,6 @@ module ApplicationHelper
   end
 
   def link_back
-    link_to "&laquo; ".html_safe + t('link_back'), :back, class: 'custom_button custom_button--small link_back'
+    link_to "&laquo; ".html_safe + t('link_back'), :back, class: 'link_back'
   end
 end
