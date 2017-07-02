@@ -182,6 +182,9 @@ en:
   avatars:
     integrity_error_message: "The file could not be saved. This may mean that it has the wrong file type."
     success: "Your avatar has been saved."
+    new:
+      current_avatar: "Current avatar"
+      submit: "Upload"
     crop:
       heading: "Crop Avatar"
       submit: "Crop"

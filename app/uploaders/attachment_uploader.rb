@@ -22,6 +22,8 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
+  process :auto_orient
+
   version :large do
     process resize_to_limit: [600,600]
   end
@@ -58,6 +60,12 @@ class AttachmentUploader < CarrierWave::Uploader::Base
         img.crop("#{w}x#{h}+#{x}+#{y}")
         img
       end
+    end
+  end
+
+  def auto_orient
+    manipulate! do |img|
+      img.tap(&:auto_orient)
     end
   end
 
