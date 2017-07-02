@@ -5,14 +5,21 @@ ActiveAdmin.register Candidate do
     link_to "View on Website", candidate_path(candidate), target: '_blank'
   end
 
+  order_by(:full_name) do |order_clause|
+    binding.pry
+    'first_name ' + order_clause.order + ', last_name ' + order_clause.order
+  end
   index title: 'Candidates' do
     column :id
-    column :first_name
-    column :last_name
+    column :full_name do |c|
+      c.display_name
+    end
     column :slug
     column :profession { |c| c.profession.name_en }
     actions
   end
+
+  filter :profession { |c| c.profession.name_en }
 
   show title: proc { |c| 'Candidate: ' +c.display_name } do
     attributes_table do
