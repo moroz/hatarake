@@ -7,6 +7,7 @@ ActiveAdmin.register_page "Dashboard" do
       span class: "blank_slate" do
         span I18n.t("active_admin.dashboard_welcome.welcome")
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
+        span I18n.locale.to_s
       end
     end
 
