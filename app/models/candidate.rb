@@ -20,7 +20,7 @@ class Candidate < User
   attr_accessor :profession_name
   before_validation :find_profession
 
-  delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, to: :profile
+  delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :age, to: :profile
 
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }

@@ -1,5 +1,6 @@
 ActiveAdmin.register Company do
   permit_params :name, :description, :website
+  menu label: "Companies"
 
   scope :all
   scope :premium_users
@@ -12,7 +13,7 @@ ActiveAdmin.register Company do
     link_to "View on Website", companies_path, target: '_blank'
   end
 
-  index do
+  index title: "Companies" do
     column :premium do |company|
       company.premium?
     end
@@ -46,4 +47,10 @@ ActiveAdmin.register Company do
   filter :phone
 
   form partial: 'form'
+
+  controller do
+    def scoped_collection
+      super.includes(:subscriptions)
+    end
+  end
 end

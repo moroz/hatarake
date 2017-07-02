@@ -10,7 +10,7 @@ class Company < User
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
-  scope :premium_users, -> { joins(:subscriptions).where('subscriptions.valid_until > NOW()').uniq }
+  scope :premium_users, -> { joins(:subscriptions).where('subscriptions.valid_until > NOW()').distinct }
   scope :featured, -> { order('updated_at DESC') }
   scope :with_avg_rating, -> { find_with_reputation(:avg_rating, :all) }
 

@@ -17,22 +17,6 @@ select {
 .callout.notice {
   background-color: lighten($notice-color, 25%);
 }
-
-.avatar {
-  width: 180px;
-  height: 180px;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.avatar--thumb {
-  width: 105px;
-  height: 105px;
-}
-
 .card-divider {
   padding: 0.4rem 1rem 0.4rem 1rem;
   position: relative;
@@ -52,20 +36,6 @@ select {
     h4 {
       font-size: 1.3rem;
     }
-  }
-}
-
-@media screen and (min-width: 640px) {
-  .avatar--thumb {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .avatar--thumb {
-    width: 105px;
-    height: 105px;
   }
 }
 
@@ -118,27 +88,6 @@ a.button:hover {
     }
   }
 }
-
-.avatar__edit_button {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 25px;
-  background-color: lighten($dark-blue, 15%);
-  padding: 0px 10px;
-  border: 1px solid #aaa;
-  border-radius: 50%;
-  &, &:visited {
-    color: rgba(255,255,255,0.8);
-  }
-
-  &:hover {
-    color: rgba(255,255,255,1);
-    transition: color ease 0.3s;
-    text-decoration: none;
-  }
-}
-
 a, th {
   font-weight: 400;
 }

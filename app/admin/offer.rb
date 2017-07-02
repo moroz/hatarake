@@ -3,6 +3,7 @@ ActiveAdmin.register Offer do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
   permit_params :views, :title, :description
+  menu label: "Offers"
 #
 # or
   #
@@ -42,4 +43,10 @@ ActiveAdmin.register Offer do
 
   filter :company
   filter :title
+
+  controller do
+    def scoped_collection
+      super.includes(:location, :company)
+    end
+  end
 end
