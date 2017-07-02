@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    super || current_candidate || current_company
+    super || current_candidate || current_company || current_admin_user
   end
 
   def signed_in?

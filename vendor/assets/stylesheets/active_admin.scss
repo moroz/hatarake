@@ -9,7 +9,6 @@
 
 // Active Admin's got SASS!
 @import "active_admin/mixins";
-@import "active_admin/base";
 
 @charset 'utf-8';
 
@@ -24,6 +23,7 @@
 @import 'pagedown';
 @import 'offers';
 @import 'avatars';
+@import "active_admin/base";
 
 @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Inconsolata&amp;subset=latin-ext";
 

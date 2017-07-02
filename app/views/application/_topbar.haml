@@ -3,20 +3,21 @@
     .top-bar-left
       %ul.menu
         %li.topbar__logo= link_to image_tag('/logo.svg'), (signed_in? ? dashboard_path : root_path)
+        %li= link_to t('nav.jobs_pl'), offers_poland_path
+        %li= link_to t('nav.jobs_abroad'), offers_path
         - if company_signed_in?
-          %li= link_to t('nav.jobs_pl'), offers_poland_path
-          %li= link_to t('nav.jobs_abroad'), offers_path
           %li= link_to t('nav.candidates'), candidates_path
         -else
-          %li= link_to t('nav.jobs_pl'), offers_poland_path
-          %li= link_to t('nav.jobs_abroad'), offers_path
           %li= link_to t('nav.companies'), companies_path
     .top-bar-right
       %ul.menu
         %li= locale_link((current_locale == :en ? :pl : :en))
 
         - if signed_in?
-          %li= link_to t('nav.profile'), profile_path
+          - if admin_user_signed_in?
+            %li= link_to 'Panel', admin_dashboard_path
+          - else
+            %li= link_to t('nav.profile'), profile_path
           %li= link_to t('nav.sign_out'), destroy_user_session_path, method: :delete 
         - else
           %li= link_to t('nav.sign_in'), new_user_session_path
