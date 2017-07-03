@@ -1,12 +1,7 @@
 .home__offers.card
   .card-divider
     %h3= t('home.featured_offers.heading')
+  = render @offers, short: true, show_company: true
   .card-section
-    %ul
-      - for offer in @offers
-        %li
-          = (link_to offer.title, offer) + ","
-          = (short_salary(offer) + ',') if offer.salary.present?
-          = offer.location.short_format
     = link_to t('home.featured_offers.more'), offers_path
 

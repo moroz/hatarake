@@ -255,11 +255,11 @@ ActiveRecord::Schema.define(version: 20170701084932) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.integer  "company_id"
+    t.boolean  "paid",                                default: false
+    t.datetime "paid_at"
     t.datetime "valid_until"
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
-    t.datetime "paid_at"
-    t.boolean  "paid",                                default: false
     t.integer  "duration",                            default: 2592000
     t.decimal  "price",       precision: 8, scale: 2
     t.index ["company_id"], name: "index_subscriptions_on_company_id", using: :btree

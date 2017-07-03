@@ -1,8 +1,15 @@
 - if defined?(short) && short
-  %tr{id: dom_id(offer), class: 'offer'}
-    %td= link_to offer.title, offer
-    %td= short_salary(offer)
-    %td= offer.location.short_format
+  %div{id: dom_id(offer), class: 'offer'}
+    = link_to offer do
+      - if defined?(show_company) && show_company
+        .offer__left
+          = avatar_for offer.company, size: :thumb
+      .offer__center
+        %span.offer__title= offer.title.truncate(26, separator: /\s/)
+        - if defined?(show_company) && show_company
+          %span.offer__company= fa_icon('building-o', text: offer.company_name)
+        %span.offer__salary= fa_icon 'money', text: short_salary(offer)
+        %span.offer__location= fa_icon 'map-marker', text: offer.location.short_format
 - else
   = link_to offer do 
     %div{id: dom_id(offer), class: 'offer offer-row'}
@@ -11,7 +18,7 @@
           = avatar_for offer.company, size: :thumb
         .medium-7.columns
           %span.offer-row__title= offer.title
-          %span.offer-row__company= fa_icon 'building-o', text: offer.company.name
+          %span.offer-row__company= fa_icon 'building-o', text: offer.company_name
           %span.offer-row__salary= fa_icon 'money', text: short_salary(offer)
           %span.offer-row__published_at= fa_icon 'clock-o', text: t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
           %small.show-for-small-only= fa_icon 'map-marker', text: offer.location.short_format

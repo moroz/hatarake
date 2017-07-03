@@ -2,9 +2,9 @@
 - if company.website.present?
   %span.label.dark-blue-bg
     = link_to fa_icon('globe', text: strip_http(company.website)), company.website
-%p.company__details__info
-  = fa_icon('map-marker', text: company.location) if company.location.present?
-  %br/
+.company__details__info
+  - if company.location.present?
+    %span= fa_icon('map-marker', text: company.location)
   %span
     = t('plurals.offer', count: company.offers.size)
     |

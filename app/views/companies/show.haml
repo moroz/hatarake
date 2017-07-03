@@ -21,9 +21,6 @@
     .card#recent_offers
       .card-divider
         %h3= t('companies.show.recent_offers')
+      = render company.recent_offers, short: true
       .card-section
-        %ul.company__recent_offers.no-bullet
-        - company.recent_offers.each do |offer|
-          %li.no-bullet= link_to offer.title, offer
-        %hr/
         = link_to t('.all_offers')

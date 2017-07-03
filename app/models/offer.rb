@@ -18,6 +18,8 @@ class Offer < ApplicationRecord
   delegate :country_id, to: :location
   delegate :province_id, to: :location
 
+  delegate :name, to: :company, prefix: true
+
   before_validation :make_salary_range
   before_validation :make_hourly_wage
 

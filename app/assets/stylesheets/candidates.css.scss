@@ -85,6 +85,14 @@ $avatar-size: 180px;
     text-align: left;
     width: calc(100% - #{$avatar-size + 15px});
     float: left;
+
+    span {
+      display: block;
+    }
+
+    .label {
+      display: inline-block;
+    }
   }
 
   .card-divider__edit {
