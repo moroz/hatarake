@@ -7,8 +7,8 @@ FactoryGirl.define do
 
     trait :paid do
       paid true
-      paid_at 2.weeks.ago
-      valid_until 
+      paid_at { 2.weeks.ago }
+      valid_until { 1.month.from_now }
     end
   end
 end
