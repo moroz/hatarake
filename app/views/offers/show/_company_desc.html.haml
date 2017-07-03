@@ -1,3 +1,4 @@
 .offer__company-desc.text-center
-  = logo_for @company
-  %h3.company__name.text-center= @company.name
+  = link_to @company, title: @company.name do
+    = logo_for @company
+    %span.offer__company-name.text-center= @company.name

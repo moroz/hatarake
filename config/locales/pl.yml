@@ -220,7 +220,6 @@ pl:
   avatars:
     integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd. Może to oznaczać niewłaściwy format lub typ pliku."
     success: "Zdjęcie profilowe zostało zapisane."
-    back_to_profile: "Powrót do profilu"
     crop:
       heading: "Przycinanie zdjęcia profilowego"
       submit: "Przytnij"

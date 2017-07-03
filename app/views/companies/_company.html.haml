@@ -1,7 +1,7 @@
 = link_to company do
   %div{id: dom_id(company), class: 'company company-row'}
     .company-row__left
-      = square_logo_for company, size: 'thumb'
+      = avatar_for company, size: 'thumb'
     .company-row__center
       %span.company-row__name= company.name
       %br/

@@ -8,7 +8,7 @@
     %div{id: dom_id(offer), class: 'offer offer-row'}
       .row
         .medium-2.columns.hide-for-small-only
-          = logo_for offer.company
+          = avatar_for offer.company, size: :thumb
         .medium-7.columns
           %span.offer-row__title= offer.title
           %span.offer-row__company= fa_icon 'building-o', text: offer.company.name

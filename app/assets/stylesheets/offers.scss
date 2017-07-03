@@ -79,6 +79,16 @@
   }
 }
 
+.offer__company-name {
+  font-size: 2rem;
+  color: $dark-blue;
+  display: inline-block;
+
+  a:hover &, a:link & {
+    text-decoration: none;
+  }
+}
+
 @media screen and (min-width: 640px) {
   .offer-row__right {
     font-size: 1.05rem;

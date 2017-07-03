@@ -19,7 +19,7 @@ class DashboardsController < ApplicationController
   end
 
   def company_dashboard
-    @offers = current_company.offers.limit(12)
+    @offers = current_company.offers.includes(location: [:country, :province]).limit(12)
     @applications = current_company.applications.includes(:offer).unread.group_by(&:offer)
     render 'company_dashboard'
   end
