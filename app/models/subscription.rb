@@ -1,7 +1,7 @@
 class Subscription < ApplicationRecord
   belongs_to :company, required: true
 
-  attr_accessor :duration_in_months
+  attr_accessor :duration_in_months, :plan_id
 
   scope :valid, -> { where('valid_until > NOW()') }
 

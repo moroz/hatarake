@@ -10,7 +10,9 @@ class Ability
     else
       cannot :manage, :all
       can :read, [Company, Offer]
-      can :manage, Attachment
+      can :manage, Attachment do |a|
+        a.owner_id = user.id
+      end
       if user.company?
         can :create, Offer
         can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
@@ -27,16 +29,13 @@ class Ability
       elsif user.candidate?
         can :manage, SkillItem, candidate_id: user.id
         can :manage, CvItem, candidate_id: user.id
-        cannot [:create, :update, :destroy], Offer
         can :manage, Candidate, id: user.id
         can :show, Page
         can :save, Offer
         can :vote, Company
-        can [:create, :new], Application
+        can :create, Application
         can :manage, Resume, owner_id: user.id
       else
-        cannot [:index, :create, :update, :destroy], Page
-        cannot [:create, :update, :destroy], Offer
         cannot :manage, Attachment
         can :show, Page
       end
