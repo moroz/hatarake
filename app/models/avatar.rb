@@ -1,4 +1,6 @@
 class Avatar < Attachment
+  mount_uploader :file, AvatarUploader
+
   belongs_to :owner, class_name: "User"
 
   # For cropping

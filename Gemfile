@@ -7,6 +7,7 @@ gem 'cancan'
 gem 'capistrano-rails', group: :development
 gem 'carrierwave', '~> 1.1.0'
 gem 'carrierwave-i18n'
+gem 'carrierwave-unoconv'
 gem 'coffee-rails', '~> 4.2'
 gem 'decent_exposure'
 gem 'devise'

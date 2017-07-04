@@ -1,5 +1,5 @@
 %h1= t('.heading')
-= image_tag avatar.file_url(:large), id: "cropbox"
+= image_tag avatar.file_url, id: "cropbox"
 = form_for avatar do |f|
   - %w[x y w h].each do |attribute|
     = f.hidden_field "crop_#{attribute}"
