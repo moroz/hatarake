@@ -1,0 +1,5 @@
+%li.resume{id: dom_id(resume)}
+  = t("languages.#{resume.language}")
+  = link_to "Download", resume.file_url, target: '_blank'
+  - if can? :destroy, resume
+    = link_to "Delete", resume, method: :delete

@@ -13,10 +13,22 @@ class ResumeUploader < CarrierWave::Uploader::Base
     %w(pdf doc docx rtf odt)
   end
 
+  version :pdf, if: :not_pdf? do
+    process :uno_convert => 'pdf'
+    def full_filename(for_file = model.file)
+      for_file.sub(/\.\w{2,4}$/, '.pdf')
+    end
+  end
+
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "CV-#{model.owner.display_name}-#{SecureRandom.hex(2)}".gsub(/\s/, '-') if original_filename
+    model.filename + ".#{file.extension}" if original_filename
   end
 
+  protected
+  
+  def not_pdf?(new_file)
+    new_file.content_type != 'application/pdf'
+  end
 end

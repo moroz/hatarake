@@ -1,0 +1,8 @@
+.card
+  .card-divider
+    %h4 CV
+  .card-section
+    %ul
+      = render candidate.resumes
+    - if can? :update, candidate
+      = link_to "Update more CVs", new_resume_path, class: 'button'

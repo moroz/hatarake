@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703155939) do
+ActiveRecord::Schema.define(version: 20170704155938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170703155939) do
     t.string   "type"
     t.string   "language"
     t.text     "description"
+    t.string   "filename"
   end
 
   create_table "candidate_profiles", force: :cascade do |t|
@@ -263,11 +264,11 @@ ActiveRecord::Schema.define(version: 20170703155939) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.integer  "company_id"
-    t.boolean  "paid",                                default: false
-    t.datetime "paid_at"
     t.datetime "valid_until"
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
+    t.datetime "paid_at"
+    t.boolean  "paid",                                default: false
     t.integer  "duration",                            default: 2592000
     t.decimal  "price",       precision: 8, scale: 2
     t.index ["company_id"], name: "index_subscriptions_on_company_id", using: :btree

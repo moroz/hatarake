@@ -1,19 +1,20 @@
-.card
-  - if candidate.phone.present? && candidate.contact_email.present?
-    .card-divider
-      %h4= t('candidates.show.contact_data')
-    .card-section
-      .row
-        - if candidate.phone.present?
-          .medium-6.columns.text-center
-            %strong= t('candidates.show.phone')
-            = candidate.phone
-        - if candidate.contact_email.present?
-          .medium-6.columns.text-center
-            %strong= t('candidates.show.contact_email')
-            = candidate.contact_email
-  - if candidate.description.present?
-    .card-divider
-      %h4= t('candidates.show.about')
-    .card-section
-      %p= candidate.description
+- if candidate.phone.present? || candidate.contact_email.present? || candidate.description.present?
+  .card
+    - if candidate.phone.present? || candidate.contact_email.present?
+      .card-divider
+        %h4= t('candidates.show.contact_data')
+      .card-section
+        .row
+          - if candidate.phone.present?
+            .medium-6.columns.text-center
+              %strong= t('candidates.show.phone')
+              = candidate.phone
+          - if candidate.contact_email.present?
+            .medium-6.columns.text-center
+              %strong= t('candidates.show.contact_email')
+              = candidate.contact_email
+    - if candidate.description.present?
+      .card-divider
+        %h4= t('candidates.show.about')
+      .card-section
+        %p= candidate.description

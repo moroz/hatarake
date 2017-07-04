@@ -71,5 +71,11 @@ en:
       heading: Upload a resumé
       submit: Start upload
 
+    create:
+      success: "Your resumé has been saved."
+
+    destroy: 
+      success: "Your resumé has been deleted."
+
   cv_items:
     delete_confirm: "Are you sure you want to delete this item?"
