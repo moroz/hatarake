@@ -24,7 +24,7 @@ set :deploy_to, "/home/deployer/injobs"
 append :linked_files, "config/database.yml", "config/secrets.yml", "config/application.yml"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", 'vendor/bundle', 'public/uploads'
+append :linked_dirs, "bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", 'vendor/bundle' 
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -33,4 +33,4 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
