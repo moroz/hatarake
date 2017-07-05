@@ -2,7 +2,9 @@
   .card-divider
     %h4 CV
   .card-section
-    %ul
-      = render candidate.resumes
+    - if candidate.resumes.any?
+      %table.resumes
+        %tbody
+          = render candidate.resumes
     - if can? :update, candidate
       = link_to "Upload another CV", new_resume_path, class: 'button'

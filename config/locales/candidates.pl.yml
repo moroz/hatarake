@@ -91,5 +91,7 @@ pl:
     destroy:
       success: "Twoje CV zostało usunięte."
 
+    download: "Pobierz w formacie %{format}"
+
   cv_items:
     delete_confirm: "Czy na pewno chcesz usunąć tę pozycję?"
