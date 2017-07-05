@@ -2,6 +2,10 @@
   .large-8.columns
     = render 'info_card'
 
+    - if candidate_signed_in?
+      .card#rate_company
+        = render 'companies/show/rate'
+
     - if company.description.present?
       .card#company_description
         .card-divider

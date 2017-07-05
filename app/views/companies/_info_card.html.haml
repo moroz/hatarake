@@ -3,7 +3,3 @@
     = avatar_for company, editable: can?(:edit, company)
   .company__details
     = render 'companies/show/info'
-
-- if candidate_signed_in?
-  .card#rate_company
-    = render 'companies/show/rate'

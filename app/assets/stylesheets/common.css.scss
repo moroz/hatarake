@@ -297,3 +297,10 @@ $tile-bg: #f9f9f9;
 .relative {
   position: relative;
 }
+
+@media screen and (max-width: 640px) {
+  .padding-for-small {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

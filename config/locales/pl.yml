@@ -109,10 +109,10 @@ pl:
 
   home:
     featured_offers:
-      heading: Promowane oferty
+      heading: Najciekawsze oferty
       more: 'Więcej ofert...'
     featured_companies:
-      heading: Promowani pracodawcy
+      heading: Wyróżnieni pracodawcy
       more: 'Więcej pracodawców...'
 
   education_items:

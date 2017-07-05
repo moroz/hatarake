@@ -1,10 +1,7 @@
 .home__companies.card
   .card-divider
     %h3= t('home.featured_companies.heading')
+  = render @companies
   .card-section
-    %ul
-      - for company in @companies
-        %li
-          = (link_to company.display_name, company)
     = link_to t('home.featured_companies.more'), companies_path
 
