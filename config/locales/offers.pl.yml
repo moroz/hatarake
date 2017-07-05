@@ -19,6 +19,7 @@ pl:
       description: "Opis stanowiska"
 
     published_time_ago: "Opublikowano %{time} temu"
+    not_published: "Nie opublikowano"
     view_count:
       zero: "0 wyświetleń"
       one: "1 wyświetlenie"

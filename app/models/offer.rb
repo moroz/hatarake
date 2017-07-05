@@ -30,7 +30,7 @@ class Offer < ApplicationRecord
 
   scope :with_associations, -> { includes(:company, location: [:country]) }
 
-  scope :published, -> { where(published: true) }
+  scope :published, -> { where('published') }
   
   def self.published_or_owned_by(company)
     if company.present?

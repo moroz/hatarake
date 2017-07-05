@@ -20,7 +20,11 @@
           %span.offer-row__title= offer.title
           %span.offer-row__company= fa_icon 'building-o', text: offer.company_name
           %span.offer-row__salary= fa_icon 'money', text: short_salary(offer)
-          %span.offer-row__published_at= fa_icon 'clock-o', text: t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
+          %span.offer-row__published_at
+            - if offer.published?
+              = fa_icon 'clock-o', text: t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
+            - else
+              = fa_icon 'clock-o', text: t('offers.not_published')
           %small.show-for-small-only= fa_icon 'map-marker', text: offer.location.short_format
         .medium-3.columns.hide-for-small-only.offer-row__right
           = fa_icon 'map-marker', text: offer.location.short_with_line_breaks
