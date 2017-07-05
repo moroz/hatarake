@@ -56,7 +56,7 @@ document.addEventListener('turbolinks:load', function () {
         if (scrollTop > $(document).height() - $(window).height() - 90) {
           $('.pagination').text('Loading...');
           console.log("Getting next page at " + new Date().toTimeString());
-          $.get(nextLink.href);
+          $.getScript(nextLink.href);
         }
       }
     }, false);

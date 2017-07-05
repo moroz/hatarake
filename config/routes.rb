@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
   resources :candidates
   resources :companies, only: [:show,:index,:update,:edit] do
+    resources :offers, only: [:index], controller: 'company_offers'
     member do
       post :vote
     end

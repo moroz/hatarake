@@ -1,14 +1,6 @@
 .row
   .large-8.columns
-    .card#company_info
-      .company__avatar
-        = avatar_for company, editable: can?(:edit, company)
-      .company__details
-        = render 'companies/show/info'
-
-    - if candidate_signed_in?
-      .card#rate_company
-        = render 'companies/show/rate'
+    = render 'info_card'
 
     - if company.description.present?
       .card#company_description
@@ -17,10 +9,11 @@
         .card-section
           %p.company__description!= markdown company.description
 
+
   .large-4.columns
     .card#recent_offers
       .card-divider
         %h3= t('companies.show.recent_offers')
       = render company.recent_offers, short: true
       .card-section
-        = link_to t('.all_offers')
+        = link_to t('.all_offers'), company_offers_path(company)

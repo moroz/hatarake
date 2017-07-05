@@ -1,0 +1,10 @@
+= render 'companies/info_card'
+%h2.text-center= t('.heading', company: company.name)
+- if company == current_company
+  .text-center
+    = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'
+.offers__search_description
+  = t('offers.index.offer_count', count: company_offers.total_count)
+.offers#offers
+  = render company_offers
+= paginate company_offers, remote: true

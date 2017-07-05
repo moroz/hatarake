@@ -43,3 +43,7 @@ pl:
       applications: Aplikacje
       messages: Wiadomości
 
+  company_offers:
+    index:
+      heading: "Oferty firmy: %{company}"
+
