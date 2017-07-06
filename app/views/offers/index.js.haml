@@ -13,4 +13,4 @@
   - if @offers.last_page?
     $('.pagination').remove();
   - else
-    $('.pagination').html('#{j paginate @offers}');
+    $('.pagination').html('#{j paginate @offers, ref: 'company'}');

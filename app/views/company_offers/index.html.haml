@@ -7,5 +7,5 @@
 .offers__search_description
   = t('offers.index.offer_count', count: company_offers.total_count)
 .offers#offers
-  = render company_offers
-= paginate company_offers, remote: true
+  = render company_offers, ref: 'company'
+= paginate company_offers, remote: true, params: { ref: 'company' }

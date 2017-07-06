@@ -1,6 +1,6 @@
 - if defined?(short) && short
   %div{id: dom_id(offer), class: 'offer'}
-    = link_to offer do
+    = link_to offer_path(offer, ref: (defined?(ref) && ref)) do
       - if defined?(show_company) && show_company
         .offer__left
           = avatar_for offer.company, size: :thumb
@@ -11,7 +11,7 @@
         %span.offer__salary= fa_icon 'money', text: short_salary(offer)
         %span.offer__location= fa_icon 'map-marker', text: offer.location.short_format
 - else
-  = link_to offer do 
+  = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]) do 
     %div{id: dom_id(offer), class: 'offer offer-row'}
       .row
         .medium-2.columns.hide-for-small-only

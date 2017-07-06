@@ -51,7 +51,7 @@ module ApplicationHelper
   end
 
   def locale_link(lang)
-    link_to locale_flag(lang), lang: lang
+    link_to locale_flag(lang), lang: lang, ref: params[:ref]
   end
 
   def edit_button(path)

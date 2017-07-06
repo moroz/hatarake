@@ -1,4 +1,4 @@
-- if /\/companies\// =~ request.env['HTTP_REFERER']
+- if params[:ref] == 'company'
   - breadcrumb :company_offer, offer
 - else
   - breadcrumb :offer, offer
