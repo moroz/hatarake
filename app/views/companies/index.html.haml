@@ -1,6 +1,3 @@
 %h1 Browse companies
 
-- companies.each_slice(3) do |slice|
-  - slice.each do |company|
-    = render company
-
+= render companies, tile: true
