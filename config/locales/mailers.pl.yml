@@ -1,0 +1,4 @@
+pl:
+  applications_mailer:
+    new_application:
+      subject: "%{candidate} aplikował na stanowisko %{offer}"

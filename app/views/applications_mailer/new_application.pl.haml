@@ -1,0 +1,29 @@
+%p Szanowni Państwo,
+
+%p
+  Kandydat
+  = @candidate.display_name
+  aplikował na stanowisko
+  = @offer.title
+  w dniu
+  = @application.created_at.strftime('%d.%m.%Y')
+  o godzinie
+  = @application.created_at.strftime('%H:%m.')
+
+%p
+  Podstawowe informacje o kandydacie:
+
+%table
+  %tr
+    %th{scope: 'row'} Wiek
+    %td= @candidate.age
+  %tr
+    %th{scope: 'row'} Płeć
+    %td= @candidate.sex
+  %tr
+    %th{scope: 'row'} Zawód
+    %td= @candidate.profession.local_name
+
+%p
+  Mogą Państwo przejrzeć pełen profil kandydata pod adresem:
+  = link_to candidate_url(@candidate), @candidate, target: '_blank'

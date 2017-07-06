@@ -81,6 +81,10 @@ class Offer < ApplicationRecord
     I18n.t('offers.applicant_count', count: self.applications.count)
   end
 
+  def application_email
+    contact_email || company.contact_email || company.email
+  end
+
   def self.publish_all
     where(published: false).update_all(published:true, published_at: Time.now)
   end

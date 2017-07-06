@@ -1,0 +1,4 @@
+en:
+  applications_mailer:
+    new_application:
+      subject: "%{candidate} applied for the offer %{offer}"
