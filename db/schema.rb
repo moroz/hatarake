@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704155938) do
+ActiveRecord::Schema.define(version: 20170706212536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -300,6 +300,7 @@ ActiveRecord::Schema.define(version: 20170704155938) do
     t.integer  "location_id"
     t.string   "phone"
     t.string   "contact_email"
+    t.string   "locale"
     t.index ["contact_email"], name: "index_users_on_contact_email", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["location_id"], name: "index_users_on_location_id", using: :btree

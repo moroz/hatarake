@@ -44,12 +44,21 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    session[:locale] = params[:lang] if params[:lang].present?
-    I18n.locale = session[:locale] || accepted_language || I18n.default_locale
+    if params[:lang].present?
+      session[:locale] = params[:lang] 
+      if signed_in?
+        current_user.set_locale(params[:lang])
+      end
+    end
+    I18n.locale = session[:locale] || user_locale || accepted_language || I18n.default_locale
   end
 
   def set_admin_locale
     I18n.locale = :en
+  end
+
+  def user_locale
+    current_user.locale if signed_in?
   end
 
   def accepted_language

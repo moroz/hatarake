@@ -18,4 +18,8 @@ class User < ApplicationRecord
   def candidate?
     self.type == "Candidate"
   end
+
+  def set_locale(locale)
+    self.update(locale: locale)
+  end
 end
