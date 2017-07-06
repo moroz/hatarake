@@ -34,6 +34,14 @@ class Location < ApplicationRecord
       self.city == other.city
   end
 
+  def poland?
+    self.country_id == Country::POLAND_ID
+  end
+
+  def abroad?
+    !poland?
+  end
+
   private
 
   def short_format_base

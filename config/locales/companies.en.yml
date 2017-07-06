@@ -31,4 +31,5 @@ en:
 
   company_offers:
     index:
+      breadcrumb: "Offers"
       heading: "Offers by company: %{company}"

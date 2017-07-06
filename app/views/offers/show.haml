@@ -1,4 +1,7 @@
-= link_back
+- if /\/companies\// =~ request.env['HTTP_REFERER']
+  - breadcrumb :company_offer, offer
+- else
+  - breadcrumb :offer, offer
 
 .row
   .columns.large-4.large-push-8

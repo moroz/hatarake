@@ -45,5 +45,6 @@ pl:
 
   company_offers:
     index:
+      breadcrumb: "Oferty pracy"
       heading: "Oferty firmy: %{company}"
 

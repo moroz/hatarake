@@ -2,6 +2,41 @@ crumb :root do
   link "Home", root_path
 end
 
+crumb :jobs_abroad do
+  link I18n.t('offers.index.heading'), offers_path
+  parent :root
+end
+
+crumb :jobs_poland do
+  link I18n.t('offers.poland.heading'), offers_poland_path
+  parent :root
+end
+
+crumb :offer do |offer|
+  link offer.title, offer_path(offer)
+  parent offer.location.poland? ? :jobs_poland : :jobs_abroad
+end
+
+crumb :companies do
+  link I18n.t('companies.index.heading'), companies_path
+  parent :root
+end
+
+# in the future this will go back to industry
+crumb :company do |company|
+  link company.name, company_path(company)
+  parent :companies
+end
+
+crumb :company_offers do |company|
+  link I18n.t('company_offers.index.breadcrumb'), company_offers_path(company_id: company.id)
+  parent :company, company
+end
+
+crumb :company_offer do |offer|
+  link offer.title, offer
+  parent :company_offers, offer.company
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
