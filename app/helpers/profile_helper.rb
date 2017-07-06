@@ -17,6 +17,6 @@ module ProfileHelper
   end
 
   def logo_for(company)
-    image_tag((company.avatar.file.normal.try(:url) || 'avatar.png'), class: 'logo')
+    image_tag((company.avatar.present? ? company.avatar.file.normal.url : 'avatar.png'), class: 'logo')
   end
 end
