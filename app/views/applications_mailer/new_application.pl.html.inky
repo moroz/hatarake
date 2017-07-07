@@ -1,0 +1,42 @@
+%p Szanowni Państwo,
+
+%p
+  - male = @candidate.sex == 'male'
+  = 'Kandydat' + (male ? '' : 'ka')
+  = @candidate.display_name
+  = 'aplikował' + (male ? '' : 'a')
+  na stanowisko
+  = @offer.title
+  w dniu
+  = @application.created_at.strftime('%d.%m.%Y')
+  o godzinie
+  = @application.created_at.strftime('%H:%m')
+  za pośrednictwem formularza w serwisie <a href="https://injobs.pl">InJobs.pl</a>.
+
+%p
+  Podstawowe informacje o kandydacie:
+
+%table.table__center
+  %tr
+    %th{scope: 'row'} Wiek
+    %td= @candidate.age
+  %tr
+    %th{scope: 'row'} Płeć
+    %td= @candidate.sex
+  %tr
+    %th{scope: 'row'} Zawód
+    %td= @candidate.profession.local_name
+
+%p
+  Mogą Państwo przejść do profilu kandydata w serwisie InJobs.pl przy pomocy linku poniżej:
+  %button.radius{href: candidate_url(@candidate)}= @candidate.display_name
+
+- if @application.memo.present?
+  %p
+    W aplikacji
+    = 'kandydat' + (male ? '' : 'ka')
+    = 'załączył' + (male ? '' : 'a')
+    następujące uwagi:
+
+  .application__memo
+    = markdown @application.memo

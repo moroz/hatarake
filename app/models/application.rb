@@ -13,5 +13,5 @@ class Application < ApplicationRecord
   end
   
   validates :offer, uniqueness: { scope: :candidate_id }
-  validates :memo, length: { maximum: 600 }
+  validates :memo, length: { maximum: 4000 }
 end

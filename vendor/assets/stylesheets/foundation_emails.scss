@@ -1,0 +1,27 @@
+@import "foundation-emails";
+
+body, html, p, a, table, td, th, li, strong, em, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', 'Segoe UI', 'Calibri', 'Lucida Grande', 'Myriad Pro', 'Gill Sans', 'Open Sans', 'Roboto', 'Droid Sans', 'Helvetica Neue', 'Helvetica', Tahoma, Arial, sans-serif;
+}
+
+p {
+  text-indent: 1em;
+}
+
+th {
+  width: 50%;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.application__memo {
+  padding: 1em;
+  border: 1px solid #555;
+  border-radius: 3px;
+  margin: 0.5em;
+}
+
+table.table__center {
+  margin: 0 auto;
+}
