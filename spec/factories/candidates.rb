@@ -3,6 +3,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password "foobar2000"
     profession_name "Carpenter"
+    confirmed_at Time.now
     association :profile, factory: :candidate_profile
 
     trait :only_login_credentials do

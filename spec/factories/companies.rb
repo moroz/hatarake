@@ -4,6 +4,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password "foobar2000"
     website { Faker::Internet.url }
+    confirmed_at Time.now
 
     trait :premium do
       after(:create) do |company, evaluator|
