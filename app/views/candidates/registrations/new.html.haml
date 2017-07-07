@@ -4,4 +4,8 @@
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
+  .row
+    %fieldset.medium-12.columns
+      %legend Preferred language
+      = f.input :locale, as: :radio_buttons, collection: [['polski', 'pl'], ['English', 'en']], label: false
   = f.submit "Create account", class: 'button primary expanded'

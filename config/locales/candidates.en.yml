@@ -1,5 +1,8 @@
 en:
   candidates:
+    registrations:
+      edit:
+        title: Edit account credentials
     
     edit:
       looking_for_work: Are you looking for work?

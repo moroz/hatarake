@@ -1,6 +1,10 @@
 pl:
   candidates:
 
+    registrations:
+      edit:
+        title: 'Edycja konta'
+
     edit:
       looking_for_work: Czy poszukujesz pracy?
       birth_date: 'Data urodzenia:'
