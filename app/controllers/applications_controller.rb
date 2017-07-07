@@ -16,8 +16,9 @@ class ApplicationsController < ApplicationController
     if Application.where(candidate: current_candidate, offer: offer).present?
       flash[:alert] = I18n.t('applications.create.failure')
     else
-      current_user.applications.create(application_params.merge({offer: offer}))
+      application = current_user.applications.create(application_params.merge({offer: offer}))
       flash[:notice] = I18n.t('applications.create.notice')
+      ApplicationsMailer.new_application(application).deliver
     end
     redirect_to offer
   end
