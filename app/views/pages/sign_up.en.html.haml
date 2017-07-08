@@ -1,0 +1,28 @@
+%h1.text-center Sign up
+%h2.subheader.text-center Are you an employer or a candidate?
+.row
+  .medium-6.columns
+    %ul.pricing-table
+      %li.price
+        Sign up for a candidate account to:
+      %li
+        Apply for
+        %strong all offers
+        posted on InJobs.pl
+      %li
+        Be included in the database of
+        %strong candidates looking for work
+      %li
+        = link_to 'Candidate Registration', new_candidate_registration_path, class: 'button expanded'
+  .medium-6.columns
+    %ul.pricing-table
+      %li.price
+        Sign up for a company account to: 
+      %li Publish job offers <strong>for free</strong>
+      %li
+        Get access to the database of
+        %strong candidates looking for work
+        %span.label.alert PREMIUM
+      %li
+        = link_to 'Company Registration', new_company_registration_path, class: 'button expanded'
+

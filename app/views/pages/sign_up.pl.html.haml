@@ -1,0 +1,21 @@
+%h1.text-center Rejestracja
+%h2.subheader.text-center Czy jesteś pracodawcą, czy kandydatem?
+.row
+  .medium-6.columns
+    %ul.pricing-table
+      %li.price
+        Załóż profil kandydata, aby:
+      %li Zapisać się do bazy fachowców poszukujących pracy
+      %li Aplikować na stanowiska za pośrednictwem serwisu InJobs.pl
+      %li
+        = link_to 'Załóż profil kandydata', new_candidate_registration_path, class: 'button expanded'
+  .medium-6.columns
+    %ul.pricing-table
+      %li.price
+        Załóż profil pracodawcy, aby:
+        %li Publikować oferty
+        %li
+          Uzyskać dostęp do bazy fachowców poszukujących pracy
+          %span.label.alert PREMIUM
+        %li
+          = link_to 'Załóż profil pracodawcy', new_company_registration_path, class: 'button expanded'

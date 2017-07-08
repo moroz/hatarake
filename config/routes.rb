@@ -44,5 +44,5 @@ Rails.application.routes.draw do
   get '/crop_avatar', to: 'avatars#crop'
   resource :avatar, only: [:create, :update]
   root to: 'home#home'
-  get '/sign_up', controller: :pages, action: :show, id: 'sign_up'
+  get '/sign_up' => 'pages#sign_up'
 end

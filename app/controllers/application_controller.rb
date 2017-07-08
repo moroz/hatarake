@@ -78,4 +78,10 @@ class ApplicationController < ActionController::Base
     @object = object
     render 'errors'
   end
+
+  def deny_access_if_logged_in
+    if logged_in?
+      redirect_to root_path, alert: I18n.t('devise.failure.already_authenticated') and return
+    end
+  end
 end
