@@ -1,5 +1,6 @@
 class Subscription < ApplicationRecord
   belongs_to :company, required: true
+  has_many :payments
 
   attr_accessor :duration_in_months, :plan_id
 

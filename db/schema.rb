@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170707141333) do
+ActiveRecord::Schema.define(version: 20170708115337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,6 +180,16 @@ ActiveRecord::Schema.define(version: 20170707141333) do
     t.text     "body_pl"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer  "subscription_id"
+    t.integer  "subscription_price_id"
+    t.decimal  "payment_fee"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["subscription_id"], name: "index_payments_on_subscription_id", using: :btree
+    t.index ["subscription_price_id"], name: "index_payments_on_subscription_price_id", using: :btree
+  end
+
   create_table "professions", force: :cascade do |t|
     t.string   "name_en"
     t.string   "name_pl"
@@ -333,6 +343,8 @@ ActiveRecord::Schema.define(version: 20170707141333) do
   add_foreign_key "locations", "provinces"
   add_foreign_key "offer_saves", "offers"
   add_foreign_key "offers", "locations"
+  add_foreign_key "payments", "subscription_prices"
+  add_foreign_key "payments", "subscriptions"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
   add_foreign_key "subscriptions", "users", column: "company_id"
