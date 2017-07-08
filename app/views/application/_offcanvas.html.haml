@@ -13,7 +13,7 @@
       %li= link_to t('nav.companies'), companies_path
   %hr/
   %ul.menu.vertical
-    - if signed_in?
+    - if logged_in?
       %li= link_to "Profile", profile_path
       %li= link_to "Sign out", destroy_user_session_path, method: :delete 
     - else

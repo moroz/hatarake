@@ -72,7 +72,7 @@ class CandidatesController < ApplicationController
   def find_candidate
     if params[:id].present?
       @candidate = Candidate.friendly.find(params[:id])
-    elsif signed_in?
+    elsif logged_in?
       @candidate = current_candidate
     end
   end

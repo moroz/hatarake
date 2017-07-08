@@ -11,6 +11,8 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
+  before_create :set_locale
+
   def company?
     self.type == "Company"
   end
@@ -19,7 +21,8 @@ class User < ApplicationRecord
     self.type == "Candidate"
   end
 
-  def set_locale(locale)
-    self.update(locale: locale)
+  def set_locale(locale = I18n.locale)
+    self.locale = locale
+    self.save if self.persisted?
   end
 end

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
   before_action :disable_turbolinks, only: [:new, :edit, :create, :update]
-  helper_method :current_user, :admin_signed_in?, :current_locale, :local_name, :page_title, :signed_in?, :translate_with_gender
+  helper_method :current_user, :current_locale, :local_name, :page_title, :logged_in?, :translate_with_gender
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, :alert => exception.message
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     super || current_candidate || current_company || current_admin_user
   end
 
-  def signed_in?
+  def logged_in?
     !!current_user
   end
 
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   def set_locale
     if params[:lang].present?
       session[:locale] = params[:lang] 
-      if signed_in?
+      if logged_in?
         current_user.set_locale(params[:lang])
       end
     end
@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_locale
-    current_user.locale if signed_in?
+    current_user.try(:locale)
   end
 
   def accepted_language

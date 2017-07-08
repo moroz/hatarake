@@ -67,7 +67,7 @@ class CompaniesController < ApplicationController
   def find_user
     if params[:id].present?
       @company = User.find(params[:id])
-    elsif signed_in?
+    elsif logged_in?
       @company = current_user
     end
   end

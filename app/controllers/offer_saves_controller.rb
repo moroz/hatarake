@@ -7,7 +7,7 @@ class OfferSavesController < ApplicationController
   end
 
   def destroy
-    if signed_in? && offer.user_saved?(current_user)
+    if logged_in? && offer.user_saved?(current_user)
       OfferSave.where(offer: offer, user: current_user).first.destroy
       redirect_to offer, notice: "You have unsaved this offer."
     end

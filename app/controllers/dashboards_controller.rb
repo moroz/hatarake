@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    unless signed_in?
+    unless logged_in?
       redirect_to root_path and return
     end
     if candidate_signed_in?

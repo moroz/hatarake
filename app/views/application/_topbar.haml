@@ -2,7 +2,7 @@
   .row
     .top-bar-left
       %ul.menu
-        %li.topbar__logo= link_to image_tag('/logo.svg'), (signed_in? ? dashboard_path : root_path)
+        %li.topbar__logo= link_to image_tag('/logo.svg'), (logged_in?? ? dashboard_path : root_path)
         %li= link_to t('nav.jobs_pl'), offers_poland_path
         %li= link_to t('nav.jobs_abroad'), offers_path
         - if company_signed_in?
@@ -13,7 +13,7 @@
       %ul.menu
         %li= locale_link((current_locale == :en ? :pl : :en))
 
-        - if signed_in?
+        - if logged_in?
           - if admin_user_signed_in?
             %li= link_to 'Panel', admin_dashboard_path
           - else
