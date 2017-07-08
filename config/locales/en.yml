@@ -38,6 +38,10 @@ en:
       subheader: "Step 1. Login credentials"
       explanation: "Please fill in your e-mail address and pick a password. We will send you an e-mail with the confirmation link."
 
+    step2:
+      subheader: "Personal and contact data"
+      explanation: "Please fill in your personal and contact data. They will only be visible to employers with the functionality of browsing candidate profiles."
+
   skill_levels:
     beginner: Beginner
     intermediate: Intermediate

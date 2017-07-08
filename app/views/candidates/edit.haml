@@ -1,16 +1,21 @@
-= link_to "Back to profile", profile_path
-%h5= t('.heading')
+.padding-for-small
+  - if params[:ref] == 'signup'
+    %h2= t('registrations.candidate_heading')
+    %h4.subheader= t('registrations.step2.subheader')
+    %p= t('registrations.step2.explanation')
+  - else
+    %h5= t('.heading')
 
-= simple_form_for candidate, remote: true do |f|
-  = error_messages_for f.object
-  = f.simple_fields_for :profile do |ff|
-    = ff.input :looking_for_work, label: t('candidates.edit.looking_for_work'), as: :radio_buttons, input_html: { value: candidate.profile.try(:looking_for_work) }
-    = ff.input :birth_date, label: t('candidates.edit.birth_date'), as: :date, start_year: 70.years.ago.year, end_year: 15.years.ago.year
-    = f.input :phone
-    = f.input :contact_email
-    = ff.input :first_name, label: t('candidates.edit.first_name')
-    = ff.input :last_name, label: t('candidates.edit.last_name')
-    = ff.input :sex, collection: I18n.t('sexes.long'), label_method: :last, value_method: :first, as: :radio_buttons, label: t('candidates.edit.sex')
-  = f.input :profession_name, label: t('candidates.edit.profession'), url: autocomplete_professions_path, as: :autocomplete
-  = f.input :description, as: :text, input_html: { rows: 8 }
-  = f.submit t('candidates.edit.submit'), class: "button primary expanded" 
+  = simple_form_for candidate, remote: true do |f|
+    = error_messages_for f.object
+    = f.simple_fields_for :profile do |ff|
+      = ff.input :looking_for_work, label: t('candidates.edit.looking_for_work'), as: :radio_buttons, checked: candidate.profile.try(:looking_for_work) || true
+      = ff.input :birth_date, label: t('candidates.edit.birth_date'), as: :date, start_year: 70.years.ago.year, end_year: 15.years.ago.year, default: 25.years.ago
+      = f.input :phone
+      = f.input :contact_email
+      = ff.input :first_name, label: t('candidates.edit.first_name')
+      = ff.input :last_name, label: t('candidates.edit.last_name')
+      = ff.input :sex, collection: I18n.t('sexes.long'), label_method: :last, value_method: :first, as: :radio_buttons, label: t('candidates.edit.sex'), checked: candidate.profile.try(:sex) || 'male'
+    = f.input :profession_name, label: t('candidates.edit.profession'), url: autocomplete_professions_path, as: :autocomplete
+    = f.input :description, as: :text, input_html: { rows: 8 }
+    = f.submit t('candidates.edit.submit'), class: "button primary expanded" 

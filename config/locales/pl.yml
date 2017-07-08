@@ -44,6 +44,10 @@ pl:
       subheader: "Krok 1. Dane do logowania"
       explanation: "Wpisz swój adres e-mail i hasło. Na podany adres wyślemy wiadomość zawierającą link niezbędny do aktywacji konta."
 
+    step2:
+      subheader: "Krok 2. Dane osobowe i kontaktowe"
+      explanation: "Podaj swoje dane osobowe i kontaktowe. Będą one widoczne jedynie dla pracodawców z wykupioną funkcją przeglądania profili kandydatów."
+
   skill_levels:
     beginner: Początkujący
     intermediate: Średniozaawansowany

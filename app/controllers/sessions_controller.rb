@@ -10,14 +10,7 @@ class SessionsController < Devise::SessionsController
   def create
     self.resource = warden.authenticate!(auth_options)
     set_flash_message(:notice, :signed_in) if is_navigational_format?
-    scope = case resource.type
-            when "Company"
-              :company
-            when "Candidate"
-              :candidate
-            else
-              :user
-            end
+    scope = resource.type.downcase.to_sym
     sign_in(scope, resource)
     respond_with resource, :location => after_sign_in_path_for(resource)
   end
@@ -36,7 +29,7 @@ class SessionsController < Devise::SessionsController
     case resource.type
       when "Candidate"
         return resource.profile.present? ? dashboard_path
-          : edit_candidate_profile_path
+          : edit_candidate_profile_path(ref: 'signup')
       when "Company"
         dashboard_path
       else

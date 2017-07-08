@@ -9,7 +9,6 @@ class Ability
       cannot :manage, :all
       can :read, [Company, Offer]
       can :manage, Attachment, owner_id: user.id
-      can :show, Page
       if user.company?
         can :create, Offer
         can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
