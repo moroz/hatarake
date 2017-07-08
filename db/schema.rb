@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708115337) do
+ActiveRecord::Schema.define(version: 20170708135629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,15 +169,6 @@ ActiveRecord::Schema.define(version: 20170708115337) do
     t.integer "skill_id", null: false
     t.index ["offer_id"], name: "index_offers_skills_on_offer_id", using: :btree
     t.index ["skill_id"], name: "index_offers_skills_on_skill_id", using: :btree
-  end
-
-  create_table "pages", force: :cascade do |t|
-    t.string   "title"
-    t.string   "permalink"
-    t.text     "body_en"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "body_pl"
   end
 
   create_table "payments", force: :cascade do |t|
