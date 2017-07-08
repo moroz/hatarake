@@ -34,6 +34,9 @@ en:
   registrations:
     candidate_heading: "Sign up for candidate account"
     company_heading: "Sign up for company account"
+    step1:
+      subheader: "Step 1. Login credentials"
+      explanation: "Please fill in your e-mail address and pick a password. We will send you an e-mail with the confirmation link."
 
   skill_levels:
     beginner: Beginner
