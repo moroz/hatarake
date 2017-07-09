@@ -10,7 +10,7 @@ class ResumeUploader < CarrierWave::Uploader::Base
   end
 
   def extension_whitelist
-    %w(pdf doc docx rtf odt)
+    Resume::EXTENSIONS
   end
 
   version :pdf, if: :not_pdf? do

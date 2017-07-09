@@ -35,6 +35,10 @@ pl:
       edit_work: Edytuj doświadczenie zawodowe
       edit_education: Edytuj wykształcenie
 
+      resumes:
+        blank_slate: "Prześlij swoje CV, aby wywrzeć lepsze wrażenie na pracodawcach!"
+        upload_button: "Prześlij CV"
+
     index:
       title: Przegląd kandydatów
       name: Imię i nazwisko
@@ -88,6 +92,10 @@ pl:
     new:
       heading: Prześlij CV
       submit: Wyślij
+      allowed_formats: "Akceptowane formaty: %{formats}."
+      max_size: "Maksymalny rozmiar pliku wynosi 2 MB."
+      pdf_recommended: "Jeżeli zależy Ci na estetycznym wyglądzie Twojego CV, przekonwertuj je do formatu PDF w programie, przy użyciu którego zostało ono utworzone (takim jak MS Word bądź LibreOffice Writer), w przeciwnym wypadku może nastąpić utrata danych związanych z formatowaniem." # TODO linki do tutoriali
+      unsupported_format: "Nieobsługiwany format pliku. Proszę wybrać plik w formacie PDF, DOC, DOCX, RTF lub ODT."
 
     create:
       success: "Twoje CV zostało zapisane."
@@ -96,6 +104,7 @@ pl:
       success: "Twoje CV zostało usunięte."
 
     download: "Pobierz w formacie %{ext}"
+    delete_confirm: "Czy na pewno chcesz trwale usunąć ten plik?"
 
   cv_items:
     delete_confirm: "Czy na pewno chcesz usunąć tę pozycję?"

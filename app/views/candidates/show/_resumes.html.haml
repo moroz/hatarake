@@ -6,5 +6,8 @@
       %table.resumes
         %tbody
           = render candidate.resumes
+    - else
+      %h4.text-center
+        = t('candidates.show.resumes.blank_slate')
     - if can? :update, candidate
-      = link_to "Upload another CV", new_resume_path, class: 'button'
+      = link_to t('candidates.show.resumes.upload_button'), new_resume_path, class: 'custom_button'

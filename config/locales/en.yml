@@ -39,7 +39,7 @@ en:
       explanation: "Please fill in your e-mail address and pick a password. We will send you an e-mail with the confirmation link."
 
     step2:
-      subheader: "Personal and contact data"
+      subheader: "Step 2. Personal and contact data"
       explanation: "Please fill in your personal and contact data. They will only be visible to employers with the functionality of browsing candidate profiles."
 
   skill_levels:
@@ -142,6 +142,7 @@ en:
         position: Job title
 
     errors:
+      generic: There was an error processing your request.
       models:
         skill_item:
           attributes:

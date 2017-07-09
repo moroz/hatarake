@@ -35,7 +35,7 @@ class CandidatesController < ApplicationController
       if params[:candidate][:avatar].present?
         redirect_to crop_avatar_path
       else
-        flash[:success] = I18n.t('.success')
+        flash[:success] = I18n.t('candidates.update.success')
         redirect_to profile_path
       end
     else

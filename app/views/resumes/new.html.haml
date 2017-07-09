@@ -1,9 +1,36 @@
-%h1= t('resumes.new.heading')
+.padding-for-small
+  %h1= t('resumes.new.heading')
 
-= simple_form_for Resume.new, remote: true, multipart: true, authenticity_token: true do |f|
-  = error_messages_for f.object
-  = f.label :language
-  = f.select :language, options_from_collection_for_select(I18n.t('languages'), :first, :last, 'pl')
-  = f.input :description
-  = f.file_field :file
-  = f.submit t('resumes.new.submit'), class: 'button success expanded'
+  = simple_form_for Resume.new, remote: true, multipart: true, authenticity_token: true do |f|
+    = error_messages_for f.object
+    = f.label :language
+    = f.select :language, options_from_collection_for_select(I18n.t('languages'), :first, :last, 'pl')
+    = t('.allowed_formats', formats: Resume::EXTENSIONS.map(&:upcase).join(', '))
+    = t('.max_size') # musaffa/file_validators
+    = f.file_field :file
+    .hide.callout.alert#pdf_recommended
+      = t('.pdf_recommended')
+    .hide.callout.warning#unsupported_format
+      = t('.unsupported_format')
+    = f.submit t('resumes.new.submit'), class: 'button success expanded', id: 'resume_submit'
+
+:javascript
+  document.getElementById('resume_file').addEventListener('change', function(e) {
+    var extension = e.target.value.split('.').pop().toLowerCase();
+    var pdfWarningDiv = document.getElementById('pdf_recommended');
+    var formatWarningDiv = document.getElementById('unsupported_format');
+    var submitButton = document.getElementById('resume_submit');
+    if (extension) {
+      if (!['doc', 'docx', 'pdf', 'odt', 'rtf'].includes(extension)) {
+        formatWarningDiv.classList.remove('hide');
+        submitButton.disabled = true;
+      } else if (extension != 'pdf') {
+        pdfWarningDiv.classList.remove('hide');
+        submitButton.disabled = false;
+      } else {
+        formatWarningDiv.classList.add('hide');
+        pdfWarningDiv.classList.add('hide');
+        submitButton.disabled = false;
+      }
+    }
+  }, false);

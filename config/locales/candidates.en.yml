@@ -32,6 +32,10 @@ en:
       no_education: No information about education.
       no_work_experience: No information about work experience.
 
+      resumes:
+        blank_slate: "Upload your CV to impress employers!"
+        upload_button: "Upload a CV"
+
     index:
       title: Browse candidates
       name: Name
@@ -73,6 +77,10 @@ en:
     new:
       heading: Upload a resumé
       submit: Start upload
+      allowed_formats: "Allowed extensions: %{formats}."
+      max_size: "The file size should not exceed 2 MB."
+      pdf_recommended: "If you want your CV to look good, please convert it to PDF format using the same software you used to create it (such as MS Word or LibreOffice Writer.) Otherwise data loss may occur."
+      unsupported_format: "Unsupported file format. Please choose a file with the extension PDF, DOC, DOCX, RTF, or ODT."
 
     create:
       success: "Your resumé has been saved."
@@ -81,6 +89,7 @@ en:
       success: "Your resumé has been deleted."
 
     download: "Download in %{ext} format"
+    delete_confirm: "Are you sure you want to permanently delete this file?"
 
   cv_items:
     delete_confirm: "Are you sure you want to delete this item?"

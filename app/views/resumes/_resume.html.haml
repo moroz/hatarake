@@ -6,4 +6,4 @@
   %td.resume__pdf= link_to fa_icon('file-pdf-o'), resume.file.pdf.url, target: '_blank', title: t('resumes.download', ext: 'PDF')
   %td.resume__delete
     - if can? :destroy, resume
-      = link_to fa_icon('trash'), resume, method: :delete, title: t('actions.delete')
+      = link_to fa_icon('trash'), resume, method: :delete, title: t('actions.delete'), data: { confirm: t('resumes.delete_confirm') }

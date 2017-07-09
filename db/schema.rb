@@ -303,7 +303,7 @@ ActiveRecord::Schema.define(version: 20170709083510) do
     t.string   "contact_email"
     t.string   "locale"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-    t.index ["contact_email"], name: "index_users_on_contact_email", unique: true, where: "(contact_email IS NOT NULL)", using: :btree
+    t.index ["contact_email"], name: "index_users_on_contact_email", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["location_id"], name: "index_users_on_location_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
