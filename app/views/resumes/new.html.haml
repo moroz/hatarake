@@ -30,13 +30,12 @@
       if (!allowed_formats.includes(extension)) {
         formatWarningDiv.classList.remove('hide');
         valid = false;
+      } else if (extension != 'pdf') {
+        pdfWarningDiv.classList.remove('hide');
       }
       if (e.target.files && e.target.files[0].size > 2097152) {
         tooBigDiv.classList.remove('hide');
         valid = false;
-      }
-      if (extension != 'pdf') {
-        pdfWarningDiv.classList.remove('hide');
       }
       if (valid) {
         formatWarningDiv.classList.add('hide');
