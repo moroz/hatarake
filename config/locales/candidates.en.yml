@@ -93,3 +93,17 @@ en:
 
   cv_items:
     delete_confirm: "Are you sure you want to delete this item?"
+
+  avatars:
+    success: "Your avatar has been saved."
+    new:
+      current_avatar: "Current avatar"
+      submit: "Upload"
+      unsupported_format: "Unsupported file format. Please choose a file with the extension JPEG (JPG), GIF, PNG, or SVG."
+
+    crop:
+      heading: "Crop Avatar"
+      submit: "Crop"
+      preview: "Preview"
+
+  file_too_big: "The selected file is too big. Maximum file size is %{size}."

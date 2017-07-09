@@ -108,3 +108,17 @@ pl:
 
   cv_items:
     delete_confirm: "Czy na pewno chcesz usunąć tę pozycję?"
+
+  avatars:
+    integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd."
+    success: "Zdjęcie profilowe zostało zapisane."
+    crop:
+      heading: "Przycinanie zdjęcia profilowego"
+      submit: "Przytnij"
+      preview: "Podgląd"
+    new:
+      current_avatar: "Obecne zdjęcie profilowe"
+      submit: "Prześlij plik"
+      unsupported_format: "Nieobsługiwany format pliku. Proszę wybrać plik w formacie JPEG (JPG), GIF, PNG lub SVG."
+
+  file_too_big: "Wybrany plik jest zbyt duży. Maksymalny rozmiar pliku wynosi %{size}."

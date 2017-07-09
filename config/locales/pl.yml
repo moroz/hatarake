@@ -224,14 +224,3 @@ pl:
       one: '%{count} oferta'
       few: '%{count} oferty'
       many: '%{count} ofert'
-
-  avatars:
-    integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd."
-    success: "Zdjęcie profilowe zostało zapisane."
-    crop:
-      heading: "Przycinanie zdjęcia profilowego"
-      submit: "Przytnij"
-      preview: "Podgląd"
-    new:
-      current_avatar: "Obecne zdjęcie profilowe"
-      submit: "Prześlij plik"

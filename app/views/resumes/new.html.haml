@@ -7,30 +7,40 @@
     = f.select :language, options_from_collection_for_select(I18n.t('languages'), :first, :last, 'pl')
     = t('.allowed_formats', formats: Resume::EXTENSIONS.map(&:upcase).join(', '))
     = t('.max_size') # musaffa/file_validators
-    = f.file_field :file
+    = f.file_field :file, id: 'uploaded_file'
     .hide.callout.alert#pdf_recommended
       = t('.pdf_recommended')
     .hide.callout.warning#unsupported_format
       = t('.unsupported_format')
-    = f.submit t('resumes.new.submit'), class: 'button success expanded', id: 'resume_submit'
+    .callout.warning.hide#file_too_big
+      = t('file_too_big', size: '2 MB')
+    = f.submit t('resumes.new.submit'), class: 'button success expanded', id: 'upload_submit'
 
 :javascript
-  document.getElementById('resume_file').addEventListener('change', function(e) {
+  document.getElementById('uploaded_file').addEventListener('change', function(e) {
     var extension = e.target.value.split('.').pop().toLowerCase();
     var pdfWarningDiv = document.getElementById('pdf_recommended');
     var formatWarningDiv = document.getElementById('unsupported_format');
-    var submitButton = document.getElementById('resume_submit');
+    var tooBigDiv = document.getElementById('file_too_big');
+    var submitButton = document.getElementById('upload_submit');
+    var valid = true;
     if (extension) {
       if (!['doc', 'docx', 'pdf', 'odt', 'rtf'].includes(extension)) {
         formatWarningDiv.classList.remove('hide');
-        submitButton.disabled = true;
-      } else if (extension != 'pdf') {
-        pdfWarningDiv.classList.remove('hide');
-        submitButton.disabled = false;
-      } else {
-        formatWarningDiv.classList.add('hide');
-        pdfWarningDiv.classList.add('hide');
-        submitButton.disabled = false;
+        valid = false;
       }
+      if (e.target.files && e.target.files[0].size > 2097152) {
+        tooBigDiv.classList.remove('hide');
+        valid = false;
+      }
+      if (extension != 'pdf') {
+        pdfWarningDiv.classList.remove('hide');
+      }
+      if (valid) {
+        formatWarningDiv.classList.add('hide');
+        tooBigDiv.classList.add('hide');
+        pdfWarningDiv.classList.add('hide');
+      }
+      submitButton.disabled = !valid;
     }
   }, false);
