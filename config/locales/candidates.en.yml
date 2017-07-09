@@ -77,10 +77,7 @@ en:
     new:
       heading: Upload a resumé
       submit: Start upload
-      allowed_formats: "Allowed extensions: %{formats}."
-      max_size: "The file size should not exceed 2 MB."
       pdf_recommended: "If you want your CV to look good, please convert it to PDF format using the same software you used to create it (such as MS Word or LibreOffice Writer.) Otherwise data loss may occur."
-      unsupported_format: "Unsupported file format. Please choose a file with the extension PDF, DOC, DOCX, RTF, or ODT."
 
     create:
       success: "Your resumé has been saved."
@@ -99,11 +96,13 @@ en:
     new:
       current_avatar: "Current avatar"
       submit: "Upload"
-      unsupported_format: "Unsupported file format. Please choose a file with the extension JPEG (JPG), GIF, PNG, or SVG."
 
     crop:
       heading: "Crop Avatar"
       submit: "Crop"
       preview: "Preview"
 
+  file_max_size: "The file size should not exceed %{size}."
+  file_allowed_formats: "Allowed extensions: %{formats}."
   file_too_big: "The selected file is too big. Maximum file size is %{size}."
+  file_unsupported_format: "Unsupported file format. Please choose a file with the extension: %{formats}."

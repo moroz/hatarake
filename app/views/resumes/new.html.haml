@@ -5,19 +5,21 @@
     = error_messages_for f.object
     = f.label :language
     = f.select :language, options_from_collection_for_select(I18n.t('languages'), :first, :last, 'pl')
-    = t('.allowed_formats', formats: Resume::EXTENSIONS.map(&:upcase).join(', '))
-    = t('.max_size') # musaffa/file_validators
+    - allowed_formats = Resume::EXTENSIONS.map(&:upcase).join(', ')
+    = t('file_allowed_formats', formats: allowed_formats)
+    = t('file_max_size', size: '2 MB')
     = f.file_field :file, id: 'uploaded_file'
     .hide.callout.alert#pdf_recommended
       = t('.pdf_recommended')
     .hide.callout.warning#unsupported_format
-      = t('.unsupported_format')
+      = t('file_unsupported_format', formats: allowed_formats)
     .callout.warning.hide#file_too_big
       = t('file_too_big', size: '2 MB')
     = f.submit t('resumes.new.submit'), class: 'button success expanded', id: 'upload_submit'
 
 :javascript
   document.getElementById('uploaded_file').addEventListener('change', function(e) {
+    var allowed_formats = #{Resume::EXTENSIONS.to_json};
     var extension = e.target.value.split('.').pop().toLowerCase();
     var pdfWarningDiv = document.getElementById('pdf_recommended');
     var formatWarningDiv = document.getElementById('unsupported_format');
@@ -25,7 +27,7 @@
     var submitButton = document.getElementById('upload_submit');
     var valid = true;
     if (extension) {
-      if (!['doc', 'docx', 'pdf', 'odt', 'rtf'].includes(extension)) {
+      if (!allowed_formats.includes(extension)) {
         formatWarningDiv.classList.remove('hide');
         valid = false;
       }

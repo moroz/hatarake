@@ -4,6 +4,7 @@ class Avatar < Attachment
   belongs_to :owner, class_name: "User"
 
   MAX_SIZE = 5242880 # 5 megabytes
+  EXTENSIONS = %w(jpg jpeg gif png svg)
 
   validates :file, file_size: { less_than_or_equal_to: MAX_SIZE }
 

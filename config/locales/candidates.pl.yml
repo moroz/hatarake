@@ -92,10 +92,7 @@ pl:
     new:
       heading: Prześlij CV
       submit: Wyślij
-      allowed_formats: "Akceptowane formaty: %{formats}."
-      max_size: "Maksymalny rozmiar pliku wynosi 2 MB."
       pdf_recommended: "Jeżeli zależy Ci na estetycznym wyglądzie Twojego CV, przekonwertuj je do formatu PDF w programie, przy użyciu którego zostało ono utworzone (takim jak MS Word bądź LibreOffice Writer), w przeciwnym wypadku może nastąpić utrata danych związanych z formatowaniem." # TODO linki do tutoriali
-      unsupported_format: "Nieobsługiwany format pliku. Proszę wybrać plik w formacie PDF, DOC, DOCX, RTF lub ODT."
 
     create:
       success: "Twoje CV zostało zapisane."
@@ -119,6 +116,8 @@ pl:
     new:
       current_avatar: "Obecne zdjęcie profilowe"
       submit: "Prześlij plik"
-      unsupported_format: "Nieobsługiwany format pliku. Proszę wybrać plik w formacie JPEG (JPG), GIF, PNG lub SVG."
 
   file_too_big: "Wybrany plik jest zbyt duży. Maksymalny rozmiar pliku wynosi %{size}."
+  file_unsupported_format: "Nieobsługiwany format pliku. Proszę wybrać plik w formacie: %{formats}."
+  file_allowed_formats: "Akceptowane formaty: %{formats}."
+  file_max_size: "Maksymalny rozmiar pliku wynosi %{size}."
