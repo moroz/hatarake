@@ -12,6 +12,17 @@ class AvatarsController < ApplicationController
   def crop
   end
 
+  def create
+    if avatar.update(avatar_params)
+      if params[:avatar][:file].present? && avatar.croppable?
+        redirect_to crop_avatar_path
+      else
+        redirect_to profile_path, notice: I18n.t('avatars.success')
+      end
+    end
+  end
+
+
   def update
     if avatar.update(avatar_params)
       if params[:avatar][:file].present? && avatar.croppable?
