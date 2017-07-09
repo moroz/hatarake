@@ -1,6 +1,13 @@
-.row
+.row.padding-for-small
+  - if current_user.avatar.present?
+    .medium-6.columns
+      %h3= t('avatars.new.current_avatar')
+      = avatar_for current_user
   .medium-6.columns
-    %h3= t('avatars.new.current_avatar')
-    = avatar_for current_user
-  .medium-6.columns
-    = render 'form'
+    = form_for @avatar, url: avatar_path, remote: true, authenticity_token: true do |f|
+      = error_messages_for f.object
+      .field
+        = f.label :file
+        = f.file_field :file
+      .actions
+        = f.submit t('avatars.new.submit'), class: 'button primary expanded'

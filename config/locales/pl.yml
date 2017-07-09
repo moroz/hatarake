@@ -226,7 +226,7 @@ pl:
       many: '%{count} ofert'
 
   avatars:
-    integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd. Może to oznaczać niewłaściwy format lub typ pliku."
+    integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd."
     success: "Zdjęcie profilowe zostało zapisane."
     crop:
       heading: "Przycinanie zdjęcia profilowego"

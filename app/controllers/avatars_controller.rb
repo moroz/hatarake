@@ -2,8 +2,8 @@ class AvatarsController < ApplicationController
   authorize_resource
   helper_method :avatar
 
-  rescue_from CarrierWave::IntegrityError do
-    redirect_to edit_avatar_path, alert: I18n.t('avatars.integrity_error_message')
+  def new
+    @avatar = current_user.avatar || current_user.build_avatar
   end
 
   def show
@@ -13,22 +13,34 @@ class AvatarsController < ApplicationController
   end
 
   def create
-    if avatar.update(avatar_params)
+    @avatar = current_user.build_avatar(avatar_params)
+    if @avatar.save
       if params[:avatar][:file].present? && avatar.croppable?
         redirect_to crop_avatar_path
       else
         redirect_to profile_path, notice: I18n.t('avatars.success')
+      end
+    else
+      respond_to do |f|
+        f.html { redirect_to edit_avatar_path }
+        f.js { render_js_errors_for(@avatar) }
       end
     end
   end
 
 
   def update
-    if avatar.update(avatar_params)
+    @avatar = current_user.avatar
+    if @avatar.update(avatar_params)
       if params[:avatar][:file].present? && avatar.croppable?
         redirect_to crop_avatar_path
       else
         redirect_to profile_path, notice: I18n.t('avatars.success')
+      end
+    else
+      respond_to do |f|
+        f.html { redirect_to edit_avatar_path, warning: "Failure" }
+        f.js { render_js_errors_for(@avatar) }
       end
     end
   end
