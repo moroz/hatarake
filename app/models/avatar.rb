@@ -3,6 +3,10 @@ class Avatar < Attachment
 
   belongs_to :owner, class_name: "User"
 
+  MAX_SIZE = 5242880 # 5 megabytes
+
+  validates :file, file_size: { less_than_or_equal_to: MAX_SIZE }
+
   # For cropping
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar

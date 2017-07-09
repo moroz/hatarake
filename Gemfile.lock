@@ -147,6 +147,9 @@ GEM
     faker (1.7.3)
       i18n (~> 0.5)
     ffi (1.9.18)
+    file_validators (2.1.0)
+      activemodel (>= 3.0)
+      mime-types (>= 1.0)
     fog-aws (1.4.0)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -461,6 +464,7 @@ DEPENDENCIES
   devise-i18n
   factory_girl_rails
   faker (~> 1.7.3)
+  file_validators
   fog-aws
   font-awesome-rails
   foundation-rails
