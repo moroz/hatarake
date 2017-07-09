@@ -64,8 +64,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp-relay.sendinblue.com',
     port: 587,
-    user_name: ENV.fetch('SENDINBLUE_USERNAME'),
-    password: ENV.fetch('SENDINBLUE_API_KEY'),
+    user_name: Rails.application.secrets.SENDINBLUE_USERNAME,
+    password: Rails.application.secrets.SENDINBLUE_API_KEY,
     authentication: 'login',
     enable_starttls_auto: true
   }
