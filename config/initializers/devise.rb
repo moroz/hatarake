@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  config.secret_key = Figaro.env.devise_secret_key if Rails.env.production? || Rails.env.staging?
+  config.secret_key = Rails.application.secrets.devise_secret_key if Rails.env.production? || Rails.env.staging?
   config.mailer_sender = 'InJobs.pl <no-reply@injobs.pl>'
   require 'devise/orm/active_record'
   config.case_insensitive_keys = [:email]
