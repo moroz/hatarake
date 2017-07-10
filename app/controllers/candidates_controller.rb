@@ -36,7 +36,7 @@ class CandidatesController < ApplicationController
         redirect_to crop_avatar_path
       else
         flash[:success] = I18n.t('candidates.update.success')
-        redirect_to profile_path
+        redirect_to session.delete(:return_to) || profile_path
       end
     else
       respond_to do |f|

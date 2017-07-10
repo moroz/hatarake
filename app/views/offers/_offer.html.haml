@@ -10,6 +10,19 @@
           %span.offer__company= fa_icon('building-o', text: offer.company_name)
         %span.offer__salary= fa_icon 'money', text: short_salary(offer)
         %span.offer__location= fa_icon 'map-marker', text: offer.location.short_format
+
+- elsif defined?(block) && block
+  - if logged_in?
+    - url = new_offer_application_path(offer_id: offer)
+  - else
+    - url = new_candidate_registration_path(return_to: new_offer_application_path(offer_id: offer))
+  .large-3.columns.offer-block{id: dom_id(offer)}
+    = link_to offer.title.truncate(20, separator: /\s/), offer, class: 'offer-block__title'
+    %span.offer-block__company= offer.company.name
+    %span.offer-block__location= offer.location.short_format
+    = link_to "Aplikuj teraz", url, class: 'button offer-block__cta'
+
+
 - else
   = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]) do 
     %div{id: dom_id(offer), class: 'offer offer-row'}

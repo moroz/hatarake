@@ -4,6 +4,9 @@ class Candidates::RegistrationsController < Devise::RegistrationsController
     if logged_in?
       redirect_to root_path, alert: I18n.t('devise.failure.already_authenticated') and return
     end
+    if params[:return_to].present?
+      session[:return_to] = params[:return_to]
+    end
     super
   end
 

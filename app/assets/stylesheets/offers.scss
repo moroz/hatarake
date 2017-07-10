@@ -179,3 +179,32 @@ $avatar-margin: 5px;
   display: block;
   color: #333;
 }
+
+.offer-block {
+  text-align: center;
+
+  span {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+.offer-block__title {
+  &:link, &:visited {
+    text-decoration: none;
+  }
+}
+
+a.offer-block__title {
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+a.offer-block__cta {
+  color: #fff;
+  background-color: #333;
+  border-radius: 25px;
+  margin-top: 0.5em;
+  padding-right: 1.8em;
+  padding-left: 1.8em;
+}

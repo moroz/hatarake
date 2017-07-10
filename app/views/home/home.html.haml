@@ -3,7 +3,19 @@
   %p.home__row1__lower-text Znajdź <strong>za darmo</strong> wymarzoną pracę lub kompetentnych pracowników!
   = link_to "Zarejestruj się", sign_up_path, class: 'home__row1__cta'
 
-.row
-  = render 'featured_offers'
+%section.home__row2
+  .row
+    %h2.text-center Znajdź ofertę/pracodawcę
+    .row
+      .medium-8.medium-offset-2.columns
+        = form_for offers_path, url: offers_path, method: :get do |f|
+          .input-group
+            = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.basic_search.placeholder'), autocomplete: 'off', id: "basic_search_q"
+            .input-group-button
+              = f.submit t('offers.basic_search.submit'), class: 'button primary', name: nil
+
+%section.home__row3
+  .row
+    = render 'featured_offers'
 .row
   = render 'featured_companies'

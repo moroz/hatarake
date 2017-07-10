@@ -1,7 +1,4 @@
-.home__offers.card
-  .card-divider
-    %h3= t('home.featured_offers.heading')
-  = render @offers, short: true, show_company: true
-  .card-section
-    = link_to t('home.featured_offers.more'), offers_path
-
+%h2.text-center= t('home.featured_offers.heading')
+%h4.text-center Prezentujemy oferty, które mogą Cię zainteresować:
+.row
+  = render @offers, block: true
