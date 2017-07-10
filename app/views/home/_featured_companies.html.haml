@@ -1,7 +1,14 @@
-.home__companies.card
-  .card-divider
-    %h3= t('home.featured_companies.heading')
-  = render @companies
-  .card-section
-    = link_to t('home.featured_companies.more'), companies_path
+%h2.text-center= t('home.featured_companies.heading')
+.row
+  - cont_class = "large-#{@companies.size*3} columns collapse small-centered"
+  %div{class: cont_class}  
+    - @companies.each_with_index do |company, i|
+      - if i == @companies.size - 1
+        - classes = "large-#{12 / @companies.size} columns end centered"
+      - else
+        - classes = "large-#{12 / @companies.size} columns centered"
+      %div{class: classes}
+        = link_to company do
+          = avatar_for company, size: :normal
+        
 
