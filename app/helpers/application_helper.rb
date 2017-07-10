@@ -47,11 +47,11 @@ module ApplicationHelper
   end
 
   def locale_flag(lang)
-    image_tag "/flag-#{lang}.svg", class: 'locale_flag'
+    lang.to_s.upcase
   end
 
   def locale_link(lang)
-    link_to locale_flag(lang), lang: lang, ref: params[:ref]
+    link_to locale_flag(lang), {lang: lang, ref: params[:ref]}, class: 'locale_link'
   end
 
   def edit_button(path)
