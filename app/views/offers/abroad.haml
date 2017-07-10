@@ -1,14 +1,11 @@
 - breadcrumb :jobs_abroad
 %h2.text-center= t('.heading')
 
-- show_advanced = params[:adv].present? && params[:adv] == '1'
 .row
-  = render partial: 'basic_search', locals: {hidden: show_advanced}
-.row
-  = render partial: 'advanced_search', locals: {hidden: !show_advanced}
+  = render partial: 'basic_search'
 
 .offers__popular_locations.text-center
-  %h4= t('.popular_locations')
+  %h4= t('offers.popular_countries')
   - @popular_locations.each do |location|
     = render 'popular_location', location: location, link_param: :cid
 - if can? :create, Offer

@@ -1,5 +1,4 @@
 - classes = 'basic_search columns medium-8 medium-offset-2'
-- classes << ' hide' if defined?(hidden) && hidden
 %section{class: classes}
   = form_for offers_path, method: :get, remote: true do |f|
     .input-group
@@ -8,5 +7,5 @@
         = f.submit t('offers.basic_search.submit'), class: 'button primary', name: nil
   - unless defined?(hide_adv_link) && hide_adv_link
     .text-center
-      = link_to t('offers.index.advanced_search'), offers_path(adv: '1'), class: '', id: 'show_advanced_search'
+      = link_to t('offers.index.advanced_search'), offers_path, class: '', id: 'show_advanced_search'
   

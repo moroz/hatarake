@@ -4,10 +4,19 @@ class OffersController < ApplicationController
 
   before_action :set_country_list, only: [:new, :edit, :index]
   before_action :set_province_list, only: [:new, :edit, :poland]
-  authorize_resource except: [:index, :poland]
+  authorize_resource except: [:index, :poland, :abroad]
 
   def new
     offer.build_location
+  end
+
+  def index
+    @offers = Offer.with_associations.published_or_owned_by(current_user).advanced_search(params).page(params[:page])
+    set_search_description
+    respond_to do |f|
+      f.js
+      f.html
+    end
   end
 
   def poland
@@ -20,13 +29,13 @@ class OffersController < ApplicationController
     end
   end
 
-  def index
+  def abroad
     @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).advanced_search(params).page(params[:page])
     @popular_locations = Country.most_popular_with_offer_counts
     set_search_description
     set_province_list if params[:cid].present?
     respond_to do |f|
-      f.js
+      f.js { render 'index' }
       f.html
     end
   end
@@ -106,7 +115,6 @@ class OffersController < ApplicationController
 
   def set_country_list
     @countries = Country.order(local_name)
-    @countries = @countries.abroad if action_name == 'index'
   end
 
   def set_province_list

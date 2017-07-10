@@ -30,16 +30,6 @@ document.addEventListener('turbolinks:load', function () {
     document.querySelector('[data-city-input]').disabled = !this.value;
   });
 
-  $('#show_advanced_search, #show_basic_search').click(function(e) {
-    e.preventDefault();
-    $('.basic_search, .advanced_search').toggleClass('hide');
-  });
-
-  $('[data-toggle-application-form]').click(function(e) {
-    e.preventDefault();
-    $('#application_form').toggleClass('hide');
-  });
-
   var searchFilters = document.getElementById('search_filters');
   searchFilters && searchFilters.addEventListener('change', function(e) {
     e.stopPropagation();
