@@ -115,14 +115,6 @@ pl:
     formats:
       long: "%e %b %Y, %H:%m %Z"
 
-  home:
-    featured_offers:
-      heading: Najciekawsze oferty
-      more: 'Więcej ofert...'
-    featured_companies:
-      heading: Wyróżnieni pracodawcy
-      more: 'Więcej pracodawców...'
-
   education_items:
     index:
       heading: "Twoje wykształcenie"

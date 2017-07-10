@@ -1,0 +1,14 @@
+pl:
+  home:
+    featured_offers:
+      heading: Najciekawsze oferty
+      more: 'Więcej ofert...'
+      subheader: "Prezentujemy oferty, które mogą Cię zainteresować:"
+    featured_companies:
+      heading: Wyróżnieni pracodawcy
+      more: 'Więcej pracodawców...'
+
+    home:
+      row1:
+        upper_text: "InJobs jest platformą poszukiwania pracy."
+        lower_text: "Znajdź <strong>za darmo</strong> wymarzoną pracę lub kompetentnych pracowników!"

@@ -1,0 +1,13 @@
+en:
+  home:
+    featured_offers:
+      heading: Featured offers
+      more: 'More offers...'
+      subheader: "We think you may like these offers:"
+    featured_companies:
+      heading: "Featured companies"
+      more: "More companies..."
+    home:
+      row1:
+        upper_text: "InJobs.pl is a job board."
+        lower_text: "Find the job of your dreams or competent workers <strong>completely free!</strong>"

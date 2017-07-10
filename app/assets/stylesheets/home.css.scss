@@ -26,15 +26,19 @@
 }
 
 .home__row1__upper-text {
+  text-shadow: 1px 1px 5px rgba(255,255,255,0.45);
   font-size: 2rem;
 }
 
 .home__row1__lower-text {
+  text-shadow: 1px 1px 5px rgba(255,255,255,0.3);
   font-size: 1.5rem;
 }
 
 .home__row1__cta {
+  margin-top: 0.65rem;
   background: transparent;
+  display: inline-block;
   border-radius: 20px;
   border: 2px solid #fff;
   padding: 0.5em 1em;
@@ -45,9 +49,9 @@
 
   &:hover, &:active {
     text-decoration: none;
-    color: #000;
+    color: #333;
     background-color: #fff;
-    transition: background-color ease 0.3s;
+    transition: background-color ease 0.3s, color ease 0.3s;
   }
 }
 
@@ -64,7 +68,7 @@
 
 .home__row3 {
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   background-color: #f0f0f0;
 }
 

@@ -91,14 +91,6 @@ en:
     formats:
       month_and_year: '%B %Y'
 
-  home:
-    featured_offers:
-      heading: Featured offers
-      more: 'More offers...'
-    featured_companies:
-      heading: "Featured companies"
-      more: "More companies..."
-
   education_items:
     index:
       heading: Edit education

@@ -20,7 +20,7 @@
     = link_to offer.title.truncate(20, separator: /\s/), offer, class: 'offer-block__title'
     %span.offer-block__company= offer.company.name
     %span.offer-block__location= offer.location.short_format
-    = link_to "Aplikuj teraz", url, class: 'button offer-block__cta'
+    = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
 
 
 - else
