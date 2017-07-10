@@ -3,12 +3,12 @@ crumb :root do
 end
 
 crumb :jobs_abroad do
-  link I18n.t('offers.index.heading'), offers_path
+  link I18n.t('offers.index.heading'), jobs_abroad_path
   parent :root
 end
 
 crumb :jobs_poland do
-  link I18n.t('offers.poland.heading'), offers_poland_path
+  link I18n.t('offers.poland.heading'), jobs_poland_path
   parent :root
 end
 

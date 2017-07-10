@@ -11,14 +11,14 @@
       .card#company_description
         .card-divider
           %h3= t('companies.show.description')
-        .card-section
-          %p.company__description!= markdown company.description
+        .card-section.company__description
+          %p!= markdown company.description
 
 
   .large-4.columns
     .card#recent_offers
       .card-divider
         %h3= t('companies.show.recent_offers')
-      = render company.recent_offers, short: true
+      = render company.recent_offers, short: true, ref: 'company'
       .card-section
         = link_to t('.all_offers'), company_offers_path(company)

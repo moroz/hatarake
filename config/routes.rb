@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :subscriptions
-  get '/offers/poland', to: 'offers#poland'
-  resources :offers do
+  get '/jobs/abroad', to: 'offers#index'
+  get '/jobs/poland', to: 'offers#poland'
+  resources :offers, path: '/jobs' do
     member do
       patch :publish
       patch :unpublish

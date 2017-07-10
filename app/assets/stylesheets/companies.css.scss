@@ -51,3 +51,7 @@ $avatar-margin: 8px;
   font-weight: 400;
   font-size: 1.25rem;
 }
+
+.company__description {
+  @include normal-weight-font;
+}
