@@ -6,20 +6,6 @@ RSpec.describe "Offer search" do
       visit offers_path
     end
 
-    it "shows basic search form" do
-      expect(page).to have_selector('.basic_search form')
-    end
-
-    subject { page.body }
-
-    it { is_expected.to have_selector('.basic_search input[name="q"]') }
-  end
-
-  describe "when visiting offers_path with adv=1" do
-    before do
-      visit offers_path(adv: 1)
-    end
-
     it "shows advanced search form" do
       expect(page).to have_selector('.advanced_search form')
     end
@@ -64,7 +50,7 @@ RSpec.describe "Offer search" do
     let!(:russia) { FactoryGirl.create(:offer, :published, :russia, title: "Offer in Russia") }
 
     before(:each) do
-      visit offers_path(adv: 1, lang: 'en')
+      visit offers_path(lang: 'en')
       within('.advanced_search') do
         select("Germany", from: 'cid')
         click_button

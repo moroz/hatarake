@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'candidate/edit_profile', to: "candidates#edit", as: :edit_candidate_profile
   resource :profile, only: :show
   resource :dashboard, only: :show
-  resources :pages
   resources :education_items, except: [:new, :edit]
   resources :work_items, except: [:new, :edit]
   scope '/api' do
