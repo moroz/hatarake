@@ -1,10 +1,9 @@
 - content_for :row1 do
-  %h1 InJobs
+  %p.home__row1__upper-text InJobs jest platformą poszukiwania pracy.
+  %p.home__row1__lower-text Znajdź <strong>za darmo</strong> wymarzoną pracę lub kompetentnych pracowników!
+  = link_to "Zarejestruj się", sign_up_path, class: 'home__row1__cta'
 
-  %p InJobs jest platformą poszukiwania pracy.
-  %p Aby rozpocząć poszukiwanie pracy lub pracowników, <a href="/sign_up">zarejestruj się!</a>
-
-.medium-6.columns
+.row
   = render 'featured_offers'
-.medium-6.columns
+.row
   = render 'featured_companies'

@@ -7,10 +7,8 @@
       = render 'topbar'
       = render 'titlebar'
       .home__row1
-        .row
-          .columns.medium-6
-            .row1__opaque-box
-              = yield :row1
+        .row.home__row1__text
+          = yield :row1
       .container
         .row
           = render 'messages'
