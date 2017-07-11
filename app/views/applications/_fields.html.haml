@@ -1,5 +1,5 @@
 = form_for [offer, offer.applications.new] do |f|
-  = f.label :memo, t('applications.form.memo')
+  = f.label :memo, t('applications.form.memo', max_length: Application::MAX_LENGTH)
   = f.text_area :memo, rows: 5
   = f.submit t('applications.form.submit'), class: 'button expanded success'
 

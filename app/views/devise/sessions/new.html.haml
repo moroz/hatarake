@@ -1,5 +1,5 @@
 .row
-  .medium-8.medium-offset-2.columns
+  .medium-8.medium-offset-2.columns.padding-for-small
     %h2.text-center= t('.sign_in')
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = f.input :email

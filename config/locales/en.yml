@@ -112,7 +112,7 @@ en:
     form:
       heading: Apply for this post
       submit: Submit your application
-      memo: "Additional information (optional, max. 600 characters)"
+      memo: "Additional information (optional, max. %{max_length} characters)"
       show_form: "Show application form"
     create:
       notice: Your application has been saved.

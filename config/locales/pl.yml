@@ -134,7 +134,7 @@ pl:
     form:
       heading: Aplikuj
       submit: Wyślij aplikację
-      memo: "Dodatkowe informacje dla pracodawcy (opcjonalnie, max. 600 znaków):"
+      memo: "Dodatkowe informacje dla pracodawcy (opcjonalnie, max. %{max_length} znaków):"
       show_form: "Aplikuj"
     create:
       notice: Twoja aplikacja została zapisana.
