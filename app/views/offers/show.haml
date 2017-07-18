@@ -4,12 +4,12 @@
   - breadcrumb :offer, offer
 
 .row
+  %h2.center-for-mobile= offer.title
   .columns.large-4.large-push-8
     .card.shadow.offer__sidebar
       .card-section
         = render 'offers/show/company_desc'
         = render 'offers/show/details'
   .columns.large-8.large-pull-4.padding-for-small
-    %h2.text-center= offer.title
     .offer__description
       = render 'offers/show/description'

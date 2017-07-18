@@ -9,8 +9,8 @@
       .container
         .row.relative
           %button{type: 'button', 'data-open': 'offCanvas'}
+          = breadcrumbs separator: " &raquo; "
           .padding-for-small
-            = breadcrumbs separator: " &raquo; "
             = render 'messages'
           = yield
         .row.padding-for-small

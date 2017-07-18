@@ -28,7 +28,7 @@ class Offer < ApplicationRecord
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
 
-  scope :with_associations, -> { includes(:company, location: [:country]) }
+  scope :with_associations, -> { includes(company: [:avatar], location: [:country, :province]) }
 
   scope :published, -> { where('published') }
   

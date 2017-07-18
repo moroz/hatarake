@@ -8,6 +8,28 @@ body {
   font-size: 110%;
 }
 
+.container {
+  max-width: 100vw;
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .center-for-mobile {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+.center-for-mobile {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -301,14 +323,6 @@ $tile-bg: #f9f9f9;
 .relative {
   position: relative;
 }
-
-@media screen and (max-width: 640px) {
-  .padding-for-small {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
 .footer {
   background-color: #333;
   color: #fff;
