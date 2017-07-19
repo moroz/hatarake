@@ -19,6 +19,10 @@
           return "<blockquote>" + rbg(inner) + "</blockquote>\n";
       });
   });
+
+  converter.hooks.chain("postSpanGamut", function(text) {
+    return text.replace(/([^(>)])\n/g, "$1<br>\n");
+  });
   var editor = new Markdown.Editor(converter);
   editor.run();
 

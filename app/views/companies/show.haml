@@ -2,6 +2,9 @@
 .row
   .large-8.columns
     = render 'companies/info_card'
+    - if can? :edit, company
+      .show-for-small-only
+        = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
 
     - if candidate_signed_in?
       .card#rate_company
@@ -16,6 +19,10 @@
 
 
   .large-4.columns
+    - if can? :edit, company
+      .hide-for-small-only
+        = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
+
     .card#recent_offers
       .card-divider
         %h3= t('companies.show.recent_offers')
