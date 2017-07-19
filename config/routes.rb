@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
 
-  resources :payments, only: :create
   resources :offers, path: '/jobs' do
     member do
       patch :publish
@@ -28,6 +27,9 @@ Rails.application.routes.draw do
     get 'schools/(:term)' => 'autocomplete#schools', as: :autocomplete_schools
     get 'organizations/(:term)' => 'autocomplete#organizations', as: :autocomplete_organizations
     get 'provinces/(:country_id)' => 'provinces#index', as: :provinces
+    scope '/dotpay' do
+      post 'confirm_payment' => 'dotpay#confirm'
+    end
   end
 
   devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }
