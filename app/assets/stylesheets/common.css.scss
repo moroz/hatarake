@@ -6,6 +6,7 @@ html {
 
 body {
   font-size: 110%;
+  @include normal-weight-font;
 }
 
 .container {
@@ -131,7 +132,7 @@ table a {
 .top-bar {
   a, a:visited {
     color: #000;
-    font-weight: 300;
+    @include thin-font;
     border-bottom: 2px solid transparent;
   }
   a:hover {
@@ -228,7 +229,7 @@ a.locale_link {
 }
 
 .ui-widget {
-  font-family: $main-font;
+  font-family: $thin-font;
   font-weight: 400;
 }
 
@@ -328,4 +329,8 @@ $tile-bg: #f9f9f9;
   color: #fff;
   padding-top: 1.5rem;
   font-size: 0.9rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include thin-font;
 }

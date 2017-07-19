@@ -179,6 +179,7 @@ $avatar-margin: 5px;
 
 .offer-block {
   text-align: center;
+  @include thin-font;
 
   span {
     display: block;
@@ -198,6 +199,7 @@ a.offer-block__title {
 }
 
 a.offer-block__cta {
+  @include normal-weight-font;
   color: #fff;
   background-color: #333;
   border-radius: 25px;
@@ -208,6 +210,12 @@ a.offer-block__cta {
   &:hover, &:active {
     background-color: #555;
   }
+}
+
+.offer-block__company,
+.offer-block__location {
+  font-family: $thin-font;
+  font-weight: 300;
 }
 
 .offer__description {

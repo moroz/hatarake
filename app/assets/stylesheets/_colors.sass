@@ -1,3 +1,6 @@
+@import "https://fonts.googleapis.com/css?family=Lato:300&amp;subset=latin-ext"
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&amp;subset=latin-ext"
+
 $green: #9CD12E
 $purple: #c774e8
 $blue: #94d0ff
@@ -22,9 +25,14 @@ $cvitem-row-border: 1px solid #d0d0d0
 
 $notice-color: $green
 
-$main-font: 'Lato', 'Open Sans','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif
+$thin-font: 'Lato', 'Open Sans','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif
 
 @mixin normal-weight-font
+  font-family: 'Open Sans', 'Roboto', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif
   font-weight: 400
   strong
     font-weight: 600
+
+@mixin thin-font
+  font-family: $thin-font
+  font-weight: 300

@@ -2,14 +2,22 @@
 
 %p Register for a premium account to enjoy many benefits.
 
-= form_for subscription do |f|
-  %table
-    %tbody
-      - @prices.each do |p|
-        %tr
-          %td= f.radio_button 'plan_id', p.name
-          %td= p.name
-          %td= number_to_currency p.price, unit: "PLN", format: "%n %u"
+.row
+  .columns.medium-6
+    %ul.pricing-table
+      %li.price
+        Pay in Polish Zloty
 
-  = f.submit "Subscribe", class: 'button expanded'
+      %li 39.99 PLN/month<br>
+      %li (49.19 PLN incl. tax)
 
+      %li= link_to "Order now", subscriptions_path, method: :post, class: 'button expanded'
+
+  .columns.medium-6
+    %ul.pricing-table
+      %li.price
+        Pay in Euro
+      %li 10&euro;/month<br>
+      %li (12.30&euro; incl. tax)
+
+      %li= link_to "Order now", subscriptions_path(currency: 'eur'), method: :post, class: 'button expanded'

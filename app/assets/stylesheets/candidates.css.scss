@@ -163,3 +163,7 @@ $avatar-size: 180px;
 .candidate-row--green {
   background-color: #c0e28a;
 }
+
+.candidate__description {
+  @include normal-weight-font;
+}

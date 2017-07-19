@@ -16,5 +16,5 @@
     - if candidate.description.present?
       .card-divider
         %h4= t('candidates.show.about')
-      .card-section
-        %p= candidate.description
+      .card-section.candidate__description
+        = markdown candidate.description
