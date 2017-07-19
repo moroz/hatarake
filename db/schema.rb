@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719083436) do
+ActiveRecord::Schema.define(version: 20170719100839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -193,10 +193,6 @@ ActiveRecord::Schema.define(version: 20170719083436) do
     t.string "name_en"
     t.string "name_pl"
     t.index ["country_id"], name: "index_provinces_on_country_id"
-  end
-
-  create_table "raw_payments_data", force: :cascade do |t|
-    t.text "data"
   end
 
   create_table "rs_evaluations", id: :serial, force: :cascade do |t|
