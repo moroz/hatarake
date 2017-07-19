@@ -18,6 +18,7 @@
 }
 
 .description__preview-contents {
+  @include normal-weight-font;
   height: auto;
   display: table-row;
   &:empty {
