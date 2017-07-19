@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :subscriptions
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
+
+  resources :payments, only: :create
   resources :offers, path: '/jobs' do
     member do
       patch :publish
