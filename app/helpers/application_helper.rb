@@ -20,12 +20,9 @@ module ApplicationHelper
 
   def markdown(text)
     options = {
-      # We will handle HTML sanitization later
-      # It should allow SOME HTML, like A, STRONG,
-      # EM, BR, HR
-      #filter_html:     true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
-      space_after_headers: true
+      space_after_headers: true,
+      hard_wrap: true
     }
 
     extensions = {
