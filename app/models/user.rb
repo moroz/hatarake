@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   before_create :set_locale
 
+  before_validation :add_http_to_website
+
   def company?
     self.type == "Company"
   end
@@ -24,5 +26,11 @@ class User < ApplicationRecord
   def set_locale(locale = I18n.locale)
     self.locale = locale
     self.save if self.persisted?
+  end
+
+  protected
+
+  def add_http_to_website
+    self.website = add_http_to_url(website)
   end
 end

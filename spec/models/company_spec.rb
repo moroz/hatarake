@@ -19,12 +19,43 @@ RSpec.describe Company do
         end
       end
 
-      context "with valid URL" do
+      context "with URL with http://" do
+        before { company.website = "http://www.injobs.pl" }
+
         it "is valid" do
-          company.website = "http://www.injobs.pl"
           expect(company).to be_valid
         end
+
+        it "after validation protocol is http" do
+          company.validate
+          expect(URI.parse(company.website).scheme).to eq 'http'
+        end
       end
+
+      context "with URL with https://" do
+        before { company.website = "https://www.injobs.pl" }
+        it "is valid" do
+          expect(company).to be_valid
+        end
+
+        it "after validation protocol is https" do
+          company.validate
+          expect(URI.parse(company.website).scheme).to eq 'https'
+        end
+      end
+
+      context "with URL with no protocol" do
+        before { company.website = "www.injobs.pl" }
+        it "is valid" do
+          expect(company).to be_valid
+        end
+
+        it "after validation protocol is http" do
+          company.validate
+          expect(URI.parse(company.website).scheme).to eq 'http'
+        end
+      end
+
     end
   end
 
