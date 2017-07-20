@@ -99,6 +99,7 @@ en:
 
     crop:
       heading: "Crop Avatar"
+      skip: "I don't want to crop this"
       submit: "Crop"
       preview: "Preview"
 

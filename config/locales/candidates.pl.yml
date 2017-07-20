@@ -107,10 +107,10 @@ pl:
     delete_confirm: "Czy na pewno chcesz usunąć tę pozycję?"
 
   avatars:
-    integrity_error_message: "Przy zapisywaniu pliku wystąpił błąd."
     success: "Zdjęcie profilowe zostało zapisane."
     crop:
       heading: "Przycinanie zdjęcia profilowego"
+      skip: "Nie chcę przycinać tego zdjęcia"
       submit: "Przytnij"
       preview: "Podgląd"
     new:

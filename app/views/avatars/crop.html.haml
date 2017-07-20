@@ -1,4 +1,5 @@
 %h1= t('.heading')
+= link_to t('.skip'), profile_path, class: 'button alert expanded'
 = image_tag avatar.file_url, id: "cropbox"
 = form_for avatar do |f|
   - %w[x y w h].each do |attribute|
