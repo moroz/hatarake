@@ -22,6 +22,7 @@ class Offer < ApplicationRecord
 
   before_validation :make_salary_range
   before_validation :make_hourly_wage
+  before_validation :add_http_to_application_url
 
   default_scope { order('published_at DESC NULLS FIRST') }
   
@@ -148,6 +149,10 @@ class Offer < ApplicationRecord
       end
     end
     return "[#{min},#{max}]"
+  end
+
+  def add_http_to_application_url
+    application_url = add_http_to_url(application_url)
   end
 
 end

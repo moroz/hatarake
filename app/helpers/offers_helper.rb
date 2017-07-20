@@ -122,4 +122,16 @@ module OffersHelper
   def high_bound(range)
     pretty_currency_value range.try(:last)
   end
+
+  def application_link_for(offer, options = {})
+    url = offer.apply_on_website? ?
+      offer.application_url :
+      new_offer_application_path(offer_id: offer)
+    url = new_user_session_path(return_to: url) unless logged_in?
+    if offer.apply_on_website?
+      link_to I18n.t('offers.apply_on_website'), url, class: options[:class]
+    else
+      link_to I18n.t('offers.apply_now'), url, class: options[:class]
+    end
+  end
 end

@@ -1,6 +1,7 @@
 pl:
   offers:
     apply_now: "Aplikuj teraz"
+    apply_on_website: "Aplikuj na stronie pracodawcy"
 
     add_new_offer: Dodaj nową ofertę
     delete_confirm: "Czy na pewno chcesz trwale usunąć tę ofertę wraz ze wszystkimi powiązanymi obiektami?"

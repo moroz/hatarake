@@ -3,9 +3,7 @@
     - if offer.candidate_applied?(current_candidate)
       %span.offer__already-applied
         = translate_with_gender('applications.already_applied', current_candidate.profile.sex)
-      - url = nil
     - else
-      - url = new_offer_application_path(offer_id: offer)
+      = application_link_for(offer, class: 'button primary expanded')
 - else
-  - url = new_user_session_path(return_to: new_offer_application_path(offer_id: offer))
-= link_to t('offers.apply_now'), url, class: 'button primary expanded' if url
+  = application_link_for(offer, class: 'button primary expanded')
