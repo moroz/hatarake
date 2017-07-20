@@ -14,6 +14,7 @@ class Offer < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
   CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
   validates :currency, inclusion: { in: CURRENCIES }
+  validates :application_url, url: true, if: :apply_on_website?
 
   delegate :country_id, to: :location
   delegate :province_id, to: :location
@@ -22,7 +23,7 @@ class Offer < ApplicationRecord
 
   before_validation :make_salary_range
   before_validation :make_hourly_wage
-  before_validation :add_http_to_application_url
+  after_validation :add_http_to_application_url
 
   default_scope { order('published_at DESC NULLS FIRST') }
   

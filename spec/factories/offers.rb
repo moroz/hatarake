@@ -9,6 +9,7 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraphs(8, true).join("\n\n") }
     contact_email { Faker::Internet.email }
     contact_phone { Faker::PhoneNumber.cell_phone }
+    apply_on_website false
     unpublished
 
     trait :random do
@@ -29,6 +30,11 @@ FactoryGirl.define do
     trait :unpublished do
       published false
       published_at nil
+    end
+
+    trait :apply_on_website do
+      apply_on_website true
+      application_url 'https://www.injobs.pl'
     end
   end
 end

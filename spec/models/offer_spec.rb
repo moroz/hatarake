@@ -40,6 +40,41 @@ RSpec.describe Offer, type: :model do
         expect(offer).not_to be_valid
       end
     end
+
+    context "when apply_on_website is false" do
+      let(:offer) { FactoryGirl.build(:offer, apply_on_website: false) }
+      context 'without application_url' do
+        it 'is valid' do
+          offer.application_url = nil
+          expect(offer).to be_valid
+        end
+      end
+    end
+
+    context "when apply_on_website is true" do
+      let(:offer) { FactoryGirl.build(:offer, :apply_on_website) }
+
+      context "without application_url" do
+        it "is invalid" do
+          offer.application_url = nil
+          expect(offer).not_to be_valid
+        end
+      end
+
+      context "with invalid application_url" do
+        it "is invalid" do
+          offer.application_url = 'foobar'
+          expect(offer).not_to be_valid
+        end
+      end
+
+      context "with valid application_url" do
+        it "is valid" do
+          offer.application_url = 'https://www.injobs.pl'
+          expect(offer).to be_valid
+        end
+      end
+    end
   end
 
   describe "publishing" do
