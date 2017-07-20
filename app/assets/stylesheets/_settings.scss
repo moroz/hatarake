@@ -53,8 +53,8 @@ $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #175eba,
   secondary: #767676,
-  success: $green, // #34cf58,
-  notice: $green,
+  success: #3adb48,
+  notice: #3adb48,
   warning: $purple,
   alert: #cc4b37,
 );
@@ -289,7 +289,7 @@ $callout-link-tint: 30%;
 
 $card-background: $white;
 $card-font-color: $body-font-color;
-$card-divider-background: $light-gray;
+$card-divider-background: $white;
 $card-border: 1px solid $light-gray;
 $card-shadow: none;
 $card-border-radius: 3px;

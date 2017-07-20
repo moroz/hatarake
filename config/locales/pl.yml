@@ -25,9 +25,11 @@ pl:
   
   nav:
     home: Strona główna
-    jobs_de: Praca w Niemczech
     jobs_pl: Praca w Polsce
     jobs_abroad: Praca za granicą
+    poland: Polska
+    abroad: Zagranica
+    add_offer: Nowa oferta
     jobs: Oferty pracy
     sign_in: Logowanie
     sign_up: Rejestracja

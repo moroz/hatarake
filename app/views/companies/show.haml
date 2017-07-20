@@ -12,8 +12,6 @@
 
     - if company.description.present?
       .card#company_description
-        .card-divider
-          %h3= t('companies.show.description')
         .card-section.company__description
           %p!= markdown company.description
 
@@ -21,7 +19,7 @@
   .large-4.columns
     - if can? :edit, company
       .hide-for-small-only
-        = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
+        = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded large success'
 
     .card#recent_offers
       .card-divider

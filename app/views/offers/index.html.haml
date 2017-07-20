@@ -4,8 +4,5 @@
 .row
   = render partial: 'advanced_search'
 
-- if can? :create, Offer
-  .text-center
-    = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'
 #offer-list
   = render 'offers'

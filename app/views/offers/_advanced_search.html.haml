@@ -23,6 +23,6 @@
         .medium-6.columns
           = f.label :cur, t('.currency')
           = f.select :cur, options_from_collection_for_select(I18n.t('currencies'), :first, :last), {include_blank: t('.any_currency')}, name: 'cur'
-    = f.submit t('.submit'), class: 'button expanded success', name: nil
+    = f.submit t('.submit'), class: 'button expanded', name: nil
 
 

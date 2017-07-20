@@ -3,10 +3,11 @@
     .top-bar-left
       %ul.menu
         %li.topbar__logo= link_to image_tag('/logo.svg'), root_path
-        %li= link_to t('nav.jobs_pl'), jobs_poland_path
-        %li= link_to t('nav.jobs_abroad'), jobs_abroad_path
+        %li= link_to t('nav.poland'), jobs_poland_path
+        %li= link_to t('nav.abroad'), jobs_abroad_path
         - if company_signed_in?
           %li= link_to t('nav.candidates'), candidates_path
+          %li= link_to t('nav.add_offer'), new_offer_path
         -else
           %li= link_to t('nav.companies'), companies_path
     .top-bar-right
