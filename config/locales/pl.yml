@@ -37,6 +37,7 @@ pl:
     profile: Profil
     candidates: Kandydaci
     companies: Pracodawcy
+    dashboard: Panel
 
   registrations:
     candidate_heading: "Zarejestruj się jako kandydat"

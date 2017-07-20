@@ -33,6 +33,7 @@ en:
     profile: Profile
     candidates: Candidates
     companies: Companies
+    dashboard: Dashboard
 
   registrations:
     candidate_heading: "Sign up for candidate account"
@@ -108,7 +109,7 @@ en:
 
   applications:
     index:
-      heading: "Applicants for offer: "
+      heading: "Applications for post:"
     already_applied:
       male: You have already applied for this post.
       female: You have already applied for this post.

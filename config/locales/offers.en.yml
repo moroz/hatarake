@@ -116,5 +116,6 @@ en:
     unsave_offer: "Delete from saved"
 
   applications:
+    breadcrumb: Applications
     new:
       heading: "Apply for offer: %{title}"

@@ -167,3 +167,7 @@ $avatar-size: 180px;
 .candidate__description {
   @include normal-weight-font;
 }
+
+#clickable_table {
+  cursor: pointer;
+}

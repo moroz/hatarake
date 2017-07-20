@@ -141,5 +141,6 @@ pl:
       company: profilu pracodawcy
 
   applications:
+    breadcrumb: Aplikacje
     new:
       heading: "Aplikacja na stanowisko"

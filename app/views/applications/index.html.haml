@@ -1,5 +1,20 @@
-%h3= t(".heading") + offer.title
+- breadcrumb :offer_applications, offer
+%h3
+  = t(".heading")
+  = link_to offer.title, offer
 
-= render 'candidates/table_header' do
-  - offer_applications.each do |application|
-    = render application.candidate
+%table.hover
+  %thead
+    %tr
+      %td= t('candidates.index.name')
+      %td= t('candidates.index.age')
+      %td= t('candidates.index.sex')
+      %td= t('candidates.index.profession')
+  %tbody#clickable_table
+    - offer_applications.each do |application|
+      - candidate = application.candidate
+      %tr{'data-link' => candidate_path(candidate), id: dom_id(candidate)}
+        %td= link_to candidate.display_name, candidate
+        %td= candidate.age
+        %td= candidate.sex
+        %td= candidate.profession.try(:local_name)

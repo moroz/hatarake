@@ -333,4 +333,7 @@ $tile-bg: #f9f9f9;
 
 h1, h2, h3, h4, h5, h6 {
   @include thin-font;
+  & > a:hover {
+    text-decoration: none;
+  }
 }
