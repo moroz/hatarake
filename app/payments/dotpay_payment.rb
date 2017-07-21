@@ -8,4 +8,26 @@ class DotpayPayment
     sum = @secret.to_s + @data.map { |k,v| v[0] unless k == 'signature' }.join('')
     Digest::SHA256.hexdigest(sum) == @data['signature'][0]
   end
+
+  def status
+    @data['operation_status'][0]
+  end
+
+  def amount
+    str = @data['operation_amount'][0]
+    str.present? && str.to_d
+  end
+
+  def currency
+    @data['operation_currency'][0]
+  end
+
+  def description
+    @data['description'][0]
+  end
+
+  def time
+    str = @data['operation_datetime'][0]
+    str.present? && Time.parse(str)
+  end
 end
