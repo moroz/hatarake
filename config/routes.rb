@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :subscriptions
+  resources :payments, only: [:create, :show]
+  post '/dotpay_payment/:token' => 'dotpay#payment', as: :dotpay_payment
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
 

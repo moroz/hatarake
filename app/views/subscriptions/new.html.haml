@@ -11,7 +11,7 @@
       %li 39.99 PLN/month<br>
       %li (49.19 PLN incl. tax)
 
-      %li= link_to "Order now", subscriptions_path, method: :post, class: 'button expanded'
+      %li= link_to "Order now", payments_path, method: :post, class: 'button expanded'
 
   .columns.medium-6
     %ul.pricing-table
@@ -20,4 +20,4 @@
       %li 10&euro;/month<br>
       %li (12.30&euro; incl. tax)
 
-      %li= link_to "Order now", subscriptions_path(currency: 'eur'), method: :post, class: 'button expanded'
+      %li= link_to "Order now", payments_path(currency: 'eur'), method: :post, class: 'button expanded'

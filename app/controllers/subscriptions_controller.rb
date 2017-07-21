@@ -4,16 +4,12 @@ class SubscriptionsController < ApplicationController
   helper_method :company
 
   def new
-    @prices = SubscriptionPrice.all
     @title = "Premium Accounts"
-    
   end
 
   def create
-    plan = SubscriptionPrice.find(params[:subscription][:plan_id])
     subscription.company = company
-    subscription.price = plan.price
-    subscription.duration = plan.duration
+    subscription.price = Subscription
     subscription.save
   end
 
@@ -21,5 +17,9 @@ class SubscriptionsController < ApplicationController
 
   def company
     @company ||= current_company
+  end
+
+  def subscription_params
+    params.require(:subscription).permit(:currency)
   end
 end

@@ -1,0 +1,9 @@
+%h1 Payment details
+
+%p Description: #{@payment.description}
+
+%p
+  Amount:
+  = sprintf "%.2f %s", @payment.amount, @payment.currency.upcase
+
+= link_to "Confirm and pay with Dotpay", dotpay_payment_path(token: @payment.token), method: :post
