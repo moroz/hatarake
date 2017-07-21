@@ -6,4 +6,9 @@
   Amount:
   = sprintf "%.2f %s", @payment.amount, @payment.currency.upcase
 
-= link_to "Confirm and pay with Dotpay", dotpay_payment_path(token: @payment.token), method: :post
+= form_with url: "https://ssl.dotpay.pl/test_payment/", method: :post, local: true do |f|
+  = f.hidden_field :id, value: '767542'
+  = f.hidden_field :currency, value: @payment.currency.upcase
+  = f.hidden_field :amount, value: sprintf("%.2f", @payment.amount)
+  = f.hidden_field :description, value: @payment.description
+  = f.submit "Confirm and pay with Dotpay", class: 'button large'

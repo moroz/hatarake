@@ -14,12 +14,12 @@ class DotpayPayment
   end
 
   def amount
-    str = @data['operation_amount'][0]
+    str = @data['operation_original_amount'][0]
     str.present? && str.to_d
   end
 
   def currency
-    @data['operation_currency'][0]
+    @data['operation_original_currency'][0]
   end
 
   def description
