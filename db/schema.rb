@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720154057) do
+ActiveRecord::Schema.define(version: 20170721101313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,11 +176,19 @@ ActiveRecord::Schema.define(version: 20170720154057) do
   create_table "payments", id: :serial, force: :cascade do |t|
     t.integer "subscription_id"
     t.integer "subscription_price_id"
-    t.decimal "payment_fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
+    t.string "currency"
+    t.string "description"
+    t.string "unique_token"
+    t.integer "payer_id"
+    t.integer "item_id"
+    t.decimal "amount", precision: 6, scale: 2
+    t.index ["description"], name: "index_payments_on_description", unique: true
     t.index ["subscription_id"], name: "index_payments_on_subscription_id"
     t.index ["subscription_price_id"], name: "index_payments_on_subscription_price_id"
+    t.index ["unique_token"], name: "index_payments_on_unique_token", unique: true
   end
 
   create_table "professions", id: :serial, force: :cascade do |t|
@@ -338,6 +346,7 @@ ActiveRecord::Schema.define(version: 20170720154057) do
   add_foreign_key "offers", "locations"
   add_foreign_key "payments", "subscription_prices"
   add_foreign_key "payments", "subscriptions"
+  add_foreign_key "payments", "users", column: "payer_id"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
   add_foreign_key "subscriptions", "users", column: "company_id"

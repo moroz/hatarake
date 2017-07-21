@@ -2,14 +2,16 @@ class Subscription < ApplicationRecord
   belongs_to :company, required: true
   has_many :payments
 
-  attr_accessor :duration_in_months, :plan_id
+  attr_accessor :currency
 
   scope :valid, -> { where('valid_until > NOW()') }
 
   scope :paid, -> { where('paid') }
   scope :unpaid, -> { where('NOT paid') }
 
-  before_validation :set_duration, :set_price
+  PRICES = {'eur' => 12.30, 'pln' => 49.19}
+  DURATION = 2592000 # 30 days
+  PAYMENT_TITLE = "InJobs Premium "
 
   def active?
     !!valid_until && valid_until > Time.now
@@ -30,17 +32,7 @@ class Subscription < ApplicationRecord
 
   private
 
-  def set_duration
-    if duration_in_months.present?
-      # convert months to duration in seconds
-      self.duration = duration_in_months * 30 * 86400
-      self.price = nil
-    end
-  end
-
   def set_price
-    if price.nil?
-      self.price = SubscriptionPrice.find_by(duration: self.duration).try(:price)
-    end
+    self.price ||= PRICES[currency]
   end
 end
