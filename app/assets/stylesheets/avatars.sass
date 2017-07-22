@@ -1,0 +1,47 @@
+@import colors
+
+.avatar
+  width: 180px
+  height: 180px
+  overflow: hidden
+  clear: none
+  background-position: center
+  background-size: contain
+  background-repeat: no-repeat
+  position: relative
+
+.avatar--thumb
+  width: 105px
+  height: 105px
+
+@media screen and (min-width: 640px)
+  .avatar--thumb
+    width: 80px
+    height: 80px
+
+@media screen and (min-width: 1024px)
+  .avatar--thumb
+    width: 105px
+    height: 105px
+
+.avatar__edit_button
+  position: absolute
+  right: 10px
+  bottom: 10px
+  font-size: 25px
+  background-color: lighten($dark-blue, 15%)
+  padding: 0px 10px
+  border: 1px solid #aaa
+  border-radius: 50%
+
+  &, &:visited
+    color: rgba(255, 255, 255, 0.8)
+
+  &:hover
+    color: rgba(255, 255, 255, 1)
+    transition: color ease 0.3s
+    text-decoration: none
+
+.logo
+  display: block
+  margin: 0 auto
