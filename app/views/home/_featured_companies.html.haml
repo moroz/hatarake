@@ -8,7 +8,5 @@
       - else
         - classes = "large-#{12 / @companies.size} columns centered"
       %div{class: classes}
-        = link_to company do
+        = link_to company, title: company.name do
           = avatar_for company, size: :normal
-        
-
