@@ -9,7 +9,6 @@ class SubscriptionsController < ApplicationController
 
   def create
     subscription.company = company
-    subscription.price = Subscription
     subscription.save
   end
 
