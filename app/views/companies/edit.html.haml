@@ -4,5 +4,7 @@
   = error_messages_for company
   = f.input :name
   = f.input :website
+  = f.simple_fields_for :location do |ff|
+    = render 'location_fields', f: ff
   = render 'pagedown', f: f
   = f.submit "Submit", class: 'button expanded success'

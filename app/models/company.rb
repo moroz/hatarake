@@ -7,6 +7,8 @@ class Company < User
   belongs_to :location
   validates :name, uniqueness: true, presence: true 
 
+  accepts_nested_attributes_for :location
+
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 

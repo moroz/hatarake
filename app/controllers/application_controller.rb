@@ -84,4 +84,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: I18n.t('devise.failure.already_authenticated') and return
     end
   end
+
+  def set_country_list
+    @countries = Country.order(local_name)
+  end
 end

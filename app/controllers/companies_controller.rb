@@ -2,6 +2,9 @@ class CompaniesController < ApplicationController
   before_action :find_user, only: :show
   helper_method :company
 
+  before_action :set_province_list, only: :edit
+  before_action :set_country_list, only: :edit
+
   expose :companies {
     Company.includes(:avatar).with_avg_rating.
       page(params[:page])
@@ -73,6 +76,12 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :website, :description)
+    params.require(:company).permit(:name, :website, :description, location_attributes: [:country_id, :province_id, :city])
+  end
+
+  def set_province_list
+    if current_company.location.country.present?
+      @provinces = current_company.location.country.provinces.local_order
+    end
   end
 end

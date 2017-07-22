@@ -1,9 +1,0 @@
-.row
-  .medium-6.columns
-    = f.label :country, t('offers.fields.country')
-    = f.select :country_id, localized_collection(@countries, offer.country_id || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id'
-  .medium-6.columns
-    = f.label :province, label: t('offers.fields.province')
-    = f.select :province_id, localized_collection(@provinces, offer.province_id || 0, blank: t('offers.provinces.blank')), {}, data: {'province-select': ''}, id: 'location_province_id'
-= f.input :city, label: t('offers.fields.location'), input_html: { disabled: offer.try(:province_id) != '0', data: { 'city-input': '' }, id: 'location_city' }
-

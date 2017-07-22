@@ -113,10 +113,6 @@ class OffersController < ApplicationController
     @offers ||= published_or_own
   end
 
-  def set_country_list
-    @countries = Country.order(local_name)
-  end
-
   def set_province_list
     if offer.present? && offer.persisted?
       @provinces = offer.location.country.provinces.local_order
