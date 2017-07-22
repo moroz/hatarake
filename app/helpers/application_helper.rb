@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def javascript(*files)
+    content_for(:javascripts) { javascript_include_tag(*files) }
+  end
+
+  def stylesheet(*files)
+    content_for(:stylesheets) { stylesheet_link_tag(*files) }
+  end
+
   def unsafe_markdown(text)
     options = {
       filter_html:     false,
