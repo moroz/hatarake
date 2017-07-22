@@ -7,7 +7,7 @@ module ProfileHelper
               user.avatar.file_url(size)
             end
           else
-            image_path('avatar.png')
+            default_avatar(user.sex)
           end
     content_tag :div, class: "avatar avatar--#{size} #{className}", style: "background-image: url(#{url})" do
       if editable
@@ -18,5 +18,13 @@ module ProfileHelper
 
   def logo_for(company)
     image_tag((company.avatar.present? ? company.avatar.file.normal.url : 'avatar.png'), class: 'logo')
+  end
+
+  def default_avatar(sex)
+    if !sex || sex == 'male'
+      image_path('avatar-male.svg')
+    else
+      image_path('avatar-female.svg')
+    end
   end
 end

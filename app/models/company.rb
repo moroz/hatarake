@@ -46,6 +46,10 @@ class Company < User
     subscriptions.valid.order(valid_until: :desc).first
   end
 
+  def sex
+    nil
+  end
+
   def recent_offers(limit = 5)
     self.offers.order(:published_at).limit(limit)
   end
