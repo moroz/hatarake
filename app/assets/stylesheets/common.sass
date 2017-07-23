@@ -89,11 +89,11 @@ a.button:hover
       color: #fff
 
   .custom_button--#{$name}
-    color: #{$color}
-    border-color: #{$color}
+    color: $color
+    border-color: $color
 
     &:hover, &:active, &:focus
-      background-color: #{$color}
+      background-color: $color
       color: #fff
 
 a, th
@@ -117,6 +117,14 @@ table a
     color: #000
     border-color: #e6e6e6
     text-decoration: none
+
+@media screen and (min-width: 1440px)
+  html
+    font-size: 110%
+
+@media screen and (min-width: 1700px)
+  html
+    font-size: 120%
 
 .topbar__logo
   height: 1.6rem
