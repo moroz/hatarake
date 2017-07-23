@@ -8,7 +8,7 @@ pl:
       heading: Wyróżnieni pracodawcy
       more: 'Więcej pracodawców...'
 
-    home:
-      row1:
+    carousel:
+      slide1:
         upper_text: "InJobs jest platformą poszukiwania pracy."
         lower_text: "Znajdź <strong>za darmo</strong> wymarzoną pracę lub kompetentnych pracowników!"

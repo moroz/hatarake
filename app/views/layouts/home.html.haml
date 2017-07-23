@@ -1,24 +1,28 @@
 !!!
 %html{:lang => "en"}
   = render 'header'
-  = javascript_include_tag 'owl.carousel'
   = stylesheet_link_tag 'owl.carousel'
-  = stylesheet_link_tag 'owl.theme.default.css'
+  = stylesheet_link_tag 'owl.theme.css'
   %body.home
     = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'topbar'
       = render 'titlebar'
-      .home__row1
-        .row.home__row1__container
-          .home__row1__text
-            = yield :row1
+      = render 'home/carousel'
       .container
         .row
           = render 'messages'
         = yield
-      
       .footer
         .row
           = render 'footer'
+    :javascript
+      $('.owl-carousel').owlCarousel({
+        items: 1,
+        dots: true,
+        slideSpeed: 1000,
+        autoplay: true,
+        loop: true,
+        autoplayTimeout: 5500
+      });
     = render 'ga'

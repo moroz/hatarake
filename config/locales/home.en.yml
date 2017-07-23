@@ -7,7 +7,7 @@ en:
     featured_companies:
       heading: "Featured companies"
       more: "More companies..."
-    home:
-      row1:
+    carousel:
+      slide1:
         upper_text: "InJobs.pl is a job board."
         lower_text: "Find the job of your dreams or competent workers <strong>completely free!</strong>"

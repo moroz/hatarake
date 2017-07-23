@@ -1,0 +1,14 @@
+.owl-carousel.owl-theme
+  .owl-slide
+    .row.owl-slide__container
+      .owl-slide__text
+        %p.home__row1__upper-text= t('.slide1.upper_text') 
+        %p.home__row1__lower-text= raw t('.slide1.lower_text') 
+        = link_to t('nav.sign_up'), sign_up_path, class: 'home__row1__cta'
+  .owl-slide
+    .row.owl-slide__container
+      .owl-slide__text
+        %p.home__row1__upper-text= t('.slide1.upper_text') 
+        %p.home__row1__lower-text= raw t('.slide1.lower_text') 
+        = link_to t('nav.sign_up'), sign_up_path, class: 'home__row1__cta'
+
