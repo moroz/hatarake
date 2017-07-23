@@ -1,6 +1,9 @@
 !!!
 %html{:lang => "en"}
   = render 'header'
+  = javascript_include_tag 'owl.carousel'
+  = stylesheet_link_tag 'owl.carousel'
+  = stylesheet_link_tag 'owl.theme.default.css'
   %body.home
     = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
