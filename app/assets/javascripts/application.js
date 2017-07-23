@@ -8,7 +8,10 @@
 //= require foundation.util.mediaQuery
 //= require foundation.util.keyboard.js
 //= require foundation.util.triggers.js
+//= require foundation.util.box.js
+//= require foundation.util.nest.js
 //= require foundation.offcanvas.js
+//= require foundation.dropdownMenu.js
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller

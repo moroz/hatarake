@@ -11,8 +11,17 @@
         -else
           %li= link_to t('nav.companies'), companies_path
     .top-bar-right
-      %ul.menu
-        %li= locale_link((current_locale == :en ? :pl : :en))
+      %ul.dropdown.menu{'data-dropdown-menu' => true}
+        %li.is-dropdown-submenu-parent.locale_dropdown
+          = link_to "#" do
+            = image_tag("flag-#{current_locale}.svg", class: 'locale_flag')
+            = current_locale.to_s.upcase
+          %ul.menu
+            %li.locale_link
+              - other_locale = current_locale == :pl ? 'en' : 'pl'
+              = link_to lang: other_locale do
+                = image_tag("flag-#{other_locale}.svg", class: 'locale_flag')
+                = other_locale.upcase
 
         - if logged_in?
           - if admin_user_signed_in?

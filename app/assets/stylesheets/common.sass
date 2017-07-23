@@ -168,10 +168,25 @@ th[scope='row']
 
 .locale_flag
   height: 1rem
+  outline: 1px solid #dadada
   width: auto
+
+.js-dropdown-active
+  z-index: 2
+  font-weight: 400
 
 a.locale_link
   font-weight: 400
+
+.locale_dropdown
+  a:visited, a:hover, a:link
+    @include normal-weight-font
+    border-bottom-color: transparent
+    cursor: default
+  ul.menu
+    background-color: #eee
+    a
+      cursor: pointer
 
 .off-canvas .locale_flag
   height: 1.5rem
