@@ -1,8 +1,10 @@
 %head
   %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %meta{:charset => "utf-8"}/
-  <link href="" rel="stylesheet">
   %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", :name => "viewport"}/
+  - unless browser.ie? || browser.edge?
+    <link href="https://fonts.googleapis.com/css?family=Lato:300&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600&amp;subset=latin-ext" rel="stylesheet">
   %title= page_title
   = stylesheet_link_tag    "application"
   = yield :stylesheets

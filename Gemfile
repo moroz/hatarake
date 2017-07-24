@@ -3,6 +3,7 @@ ruby '2.4.1'
 
 gem 'activeadmin'
 gem 'activerecord-reputation-system'
+gem 'browser'
 gem 'cancancan', '~> 2.0'
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-passenger', '~> 0.2.0'
