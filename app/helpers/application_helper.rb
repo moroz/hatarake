@@ -74,8 +74,4 @@ module ApplicationHelper
   def add_soft_break_to_email(email)
     raw email.split('@').join('&#8203;&#64;')
   end
-
-  def link_back
-    link_to "&laquo; ".html_safe + t('link_back'), :back, class: 'link_back'
-  end
 end

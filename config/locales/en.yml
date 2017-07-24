@@ -5,8 +5,6 @@ en:
   'true': 'Yes'
   'false': 'No'
 
-  link_back: "Go back"
-
   currency_range:
     min: "%{min}+ %{currency}"
     max: "up to %{max} %{currency}"

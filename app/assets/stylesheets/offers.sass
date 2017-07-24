@@ -16,8 +16,6 @@
   font-weight: bold
 
 .description__preview-contents
-  +normal-weight-font
-
   height: auto
   display: table-row
 
@@ -66,7 +64,7 @@
     text-align: center
 
 .offer__company-name
-  font-size: 2rem
+  font-size: 26px
   color: $dark-blue
   display: inline-block
 
@@ -141,6 +139,16 @@ $avatar-margin: 5px
   font-size: 1rem
   color: $dark-blue
 
+.offer__header
+  font-size: 24px
+  padding-left: 0.5rem
+  text-align: center
+  @include breakpoint(medium)
+    font-size: 27px
+  @include breakpoint(large)
+    font-size: 2rem
+    text-align: left
+
 .offer__company,
 .offer__salary,
 .offer__location
@@ -163,8 +171,6 @@ a.offer-block__title
   font-size: 1.3rem
 
 a.offer-block__cta
-  +normal-weight-font
-
   color: #fff
   background-color: #333
   border-radius: 25px
@@ -179,6 +185,3 @@ a.offer-block__cta
 .offer-block__location
   font-family: $thin-font
   font-weight: 300
-
-.offer__description
-  +normal-weight-font

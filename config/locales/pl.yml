@@ -5,8 +5,6 @@ pl:
   'true': Tak
   'false': Nie
 
-  link_back: "Powrót"
-
   unauthorized:
     default: "Nie jesteś upoważniony do wyświetlania tej strony."
   errors:

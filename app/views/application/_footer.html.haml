@@ -1,19 +1,17 @@
-.columns.large-3.large-offset-3
-  %p
-    %strong InJobs.pl sp. z o.o.<br>
-    ul. Piotra Sobczyńskiego 2c<br>
-    11-700 Mrągowo
-    - unless current_locale == :pl
-      %br
-      Poland
-.columns.large-3
-  %p
-    %strong Kontakt e-mail:<br>
-    info&#64;injobs&#46;pl<br>
-    biuro&#64;injobs&#46;pl
-.columns.large-3
-  %p
-    %strong Kontakt telefoniczny:<br>
-    518-461-875<br>
-    607-968-294<br>
-    515-287-274
+.footer
+  .row
+    .columns.medium-3.medium-offset-4
+      %p
+        %strong InJobs.pl sp. z o.o.<br>
+        ul. Piotra Sobczyńskiego 2c<br>
+        11-700 Mrągowo#{current_locale == :pl ? '' : ', Poland'}
+    .columns.medium-2
+      %p
+        %strong Kontakt e-mail:<br>
+        info&#64;injobs&#46;pl<br>
+        biuro&#64;injobs&#46;pl
+    .columns.medium-3
+      %p
+        %strong Kontakt telefoniczny:<br>
+        518-461-875, 607-968-294<br>
+        515-287-274
