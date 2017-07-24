@@ -6,6 +6,7 @@
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'topbar' # topbar, visible for medium and above
       = render 'titlebar' # visible for small screens
+      = yield :banner
       .container
         .row.relative
           %button{type: 'button', 'data-open': 'offCanvas'}

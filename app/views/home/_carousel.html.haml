@@ -4,14 +4,14 @@
       .owl-slide__text
         %p.home__row1__upper-text= t('.slide1.upper_text') 
         %p.home__row1__lower-text= raw t('.slide1.lower_text') 
-        = link_to t('.slide1.offers'), offers_path, class: 'owl-slide-cta'
-        = link_to t('.slide1.sign_up'), sign_up_path, class: 'owl-slide-cta'
+        = link_to t('.slide1.offers'), offers_path, class: 'button large'
+        = link_to t('.slide1.sign_up'), sign_up_path, class: 'button large dark-green-bg'
   .owl-slide.owl-slide--warsaw
     .owl-slide__container
       .owl-slide__text
         %p.home__row1__upper-text= t('.slide2.upper_text') 
         %p.home__row1__lower-text= raw t('.slide2.lower_text') 
-        = link_to t('.slide2.sign_up'), new_company_registration_path, class: 'owl-slide-cta'
+        = link_to t('.slide2.sign_up'), new_company_registration_path, class: 'button large'
 
 :javascript
   $('.owl-carousel').owlCarousel({
@@ -20,5 +20,5 @@
     slideSpeed: 1000,
     autoplay: true,
     loop: true,
-    autoplayTimeout: 7000
+    autoplayTimeout: 10000
   });

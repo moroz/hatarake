@@ -1,8 +1,10 @@
 - breadcrumb :jobs_poland
-%h2.text-center= t('.heading')
+- content_for :banner do
+  .banner.banner--warsaw
+    %h2.text-center= t('.heading')
 
-.row
-  = render 'basic_search'
+    .row
+      = render 'basic_search'
 
 .offers__popular_locations.text-center
   %h4= t('offers.popular_voivodeships')

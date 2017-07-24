@@ -1,8 +1,10 @@
 - breadcrumb :jobs_abroad
 
-%h2.text-center= t('.heading')
-.row
-  = render partial: 'basic_search'
+- content_for :banner do
+  .banner.banner--chongqing
+    %h2.text-center= t('.heading')
+    .row
+      = render partial: 'basic_search'
 
 .offers__popular_locations.text-center
   %h4= t('offers.popular_countries')
