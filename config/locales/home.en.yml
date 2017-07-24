@@ -4,10 +4,19 @@ en:
       heading: Featured offers
       more: 'More offers...'
       subheader: "We think you may like these offers:"
+
     featured_companies:
       heading: "Featured companies"
       more: "More companies..."
+
     carousel:
       slide1:
-        upper_text: "InJobs.pl is a job board."
-        lower_text: "Find the job of your dreams or competent workers <strong>completely free!</strong>"
+        upper_text: "Browse all job offers without an account"
+        lower_text: "or sign up to let employers notice you!"
+        offers: "Browse offers"
+        sign_up: "Sign up"
+
+      slide2:
+        upper_text: "Publish your company’s offers for free"
+        lower_text: "You only pay for Premium features!"
+        sign_up: "Get your free Employer account"

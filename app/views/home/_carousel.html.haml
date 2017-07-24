@@ -1,16 +1,17 @@
 .owl-carousel.owl-theme
   .owl-slide.owl-slide--couple
-    .row.owl-slide__container
+    .row.owl-slide__container--left
       .owl-slide__text
         %p.home__row1__upper-text= t('.slide1.upper_text') 
         %p.home__row1__lower-text= raw t('.slide1.lower_text') 
-        = link_to t('nav.sign_up'), sign_up_path, class: 'home__row1__cta'
+        = link_to t('.slide1.offers'), offers_path, class: 'owl-slide-cta'
+        = link_to t('.slide1.sign_up'), sign_up_path, class: 'owl-slide-cta'
   .owl-slide.owl-slide--warsaw
-    .row.owl-slide__container
+    .owl-slide__container
       .owl-slide__text
-        %p.home__row1__upper-text= t('.slide1.upper_text') 
-        %p.home__row1__lower-text= raw t('.slide1.lower_text') 
-        = link_to t('nav.sign_up'), sign_up_path, class: 'home__row1__cta'
+        %p.home__row1__upper-text= t('.slide2.upper_text') 
+        %p.home__row1__lower-text= raw t('.slide2.lower_text') 
+        = link_to t('.slide2.sign_up'), new_company_registration_path, class: 'owl-slide-cta'
 
 :javascript
   $('.owl-carousel').owlCarousel({

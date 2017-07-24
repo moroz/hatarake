@@ -1,13 +1,20 @@
 @import colors
 @import settings
 
+@mixin flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
 .owl-carousel
   position: relative
 
   .owl-dots
     position: absolute
     bottom: 1.5rem
-    left: 49.5%
+    left: 48.5%
 
 .owl-slide
   height: auto
@@ -26,27 +33,39 @@
 .owl-slide--warsaw
   background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.27)), asset-data-url("warsaw-skyline.jpg")
 
-.owl-slide__container
+.owl-slide__container--left
+  +flexbox
   margin: 0 auto
   align-items: center
-  display: flex
   max-height: 550px
   min-height: 28vw
   width: $global-width
+  .owl-slide-cta
+    margin-right: 1rem
+
+.owl-slide__container
+  +flexbox
+  margin: 0 auto
+  align-items: center
+  justify-content: center
+  max-height: 550px
+  min-height: 28vw
+  text-align: center
 
 .owl-slide__text
   color: #fff
   font-weight: 300
 
 .home__row1__upper-text
-  font-size: 2rem
+  font-size: 2.2rem
 
 .home__row1__lower-text
-  font-size: 1.5rem
+  font-size: 1.8rem
 
-.home__row1__cta
+.owl-slide-cta
   margin-top: 0.65rem
   background: transparent
+  font-weight: 600
   display: inline-block
   border-radius: 20px
   border: 2px solid #fff

@@ -10,5 +10,12 @@ pl:
 
     carousel:
       slide1:
-        upper_text: "InJobs jest platformą poszukiwania pracy."
-        lower_text: "Znajdź <strong>za darmo</strong> wymarzoną pracę lub kompetentnych pracowników!"
+        upper_text: "Przeglądaj oferty pracy bez rejestracji"
+        lower_text: "lub zarejestruj się, by zwiększyć szanse na znalezienie pracy!"
+        offers: "Oferty pracy"
+        sign_up: "Załóż konto"
+
+      slide2:
+        upper_text: "Publikuj oferty Twojej firmy za darmo"
+        lower_text: "U nas płacisz wyłącznie za specjalne usługi!"
+        sign_up: "Załóż darmowe konto firmowe"
