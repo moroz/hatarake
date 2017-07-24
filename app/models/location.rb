@@ -42,6 +42,11 @@ class Location < ApplicationRecord
     !poland?
   end
 
+  # For Jooble feed in jooble#feed
+  def xml_region
+    [province.try(:name_en), city].reject(&:blank?).join(', ')
+  end
+
   private
 
   def short_format_base

@@ -49,6 +49,12 @@ module OffersHelper
     raw I18n.t('offers.search_description.basic', q: params[:q])
   end
 
+  def xml_salary_for(offer)
+    if offer.salary.present?
+      readable_currency_range(offer.salary, offer.currency) + " per month"
+    end
+  end
+
   def short_salary(offer)
     if offer.salary.present?
       readable_currency_range(offer.salary, offer.currency) +
@@ -121,6 +127,12 @@ module OffersHelper
 
   def high_bound(range)
     pretty_currency_value range.try(:last)
+  end
+
+  def application_url_for(offer)
+    offer.apply_on_website? ?
+      offer.application_url :
+      new_offer_application_url(offer_id: offer)
   end
 
   def application_link_for(offer, options = {})

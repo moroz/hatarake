@@ -13,8 +13,9 @@ Rails.application.routes.draw do
       patch :unpublish
       post :save
     end
-    resources :applications
+    resources :applications, except: :new
   end
+  get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application
   resources :resumes
   delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'candidate/edit_skills', to: 'candidates#edit_skills'
@@ -31,6 +32,9 @@ Rails.application.routes.draw do
     get 'provinces/(:country_id)' => 'provinces#index', as: :provinces
     scope '/dotpay' do
       post 'confirm_payment' => 'dotpay#confirm'
+    end
+    scope '/jooble' do
+      get 'jobs_feed.xml', to: 'jooble#feed'
     end
   end
 
