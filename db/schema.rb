@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721124846) do
+ActiveRecord::Schema.define(version: 20170724213037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 20170721124846) do
     t.string "language"
     t.text "description"
     t.string "filename"
+  end
+
+  create_table "blog_posts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_blog_posts_on_user_id"
   end
 
   create_table "candidate_profiles", id: :serial, force: :cascade do |t|
@@ -337,6 +345,7 @@ ActiveRecord::Schema.define(version: 20170721124846) do
   add_foreign_key "applications", "offers"
   add_foreign_key "applications", "users", column: "candidate_id"
   add_foreign_key "attachments", "users", column: "owner_id"
+  add_foreign_key "blog_posts", "users"
   add_foreign_key "candidate_profiles", "users"
   add_foreign_key "education_items", "locations"
   add_foreign_key "education_items", "users", column: "candidate_id"

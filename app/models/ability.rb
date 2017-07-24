@@ -10,8 +10,9 @@ class Ability
       can :read, [Company, Offer]
       can :manage, Attachment, owner_id: user.id
       if user.company?
-        can :create, Offer
+        can :create, [Offer, BlogPost]
         can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
+        can [:update, :destroy], BlogPost, user_id: user.id
         can :show, Candidate
         can :manage, Company, id: user.id
         can :read, Application do |a|

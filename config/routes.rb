@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   resources :candidates
   resources :companies, only: [:show,:index,:update,:edit] do
     resources :offers, only: [:index], controller: 'company_offers'
+    resources :blog_posts, only: [:index, :create, :new], path: '/blog'
     member do
       post :vote
     end

@@ -1,0 +1,7 @@
+.new_blog_post.card
+  .card-divider
+    %h4.text-center New post
+  .card-section
+    = simple_form_for BlogPost.new, url: new_company_blog_post_path(company_id: company) do |f|
+      = f.input :body, as: :text, label: false
+      = f.submit 'Submit', class: 'button expanded'

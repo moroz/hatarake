@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
     elsif company_signed_in?
       @rating = company.reputation_for(:avg_rating).round(2)
       @ratings_count = company.ratings_count
+      @blog_posts = company.blog_posts
       render 'companies/show'
     end
   end

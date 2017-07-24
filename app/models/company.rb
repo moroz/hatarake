@@ -4,6 +4,7 @@ class Company < User
   has_many :offers, dependent: :destroy
   has_many :applications, through: :offers
   has_many :subscriptions
+  has_many :blog_posts, foreign_key: :user_id
   belongs_to :location
   validates :name, uniqueness: true, presence: true 
 
