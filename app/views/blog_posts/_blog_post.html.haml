@@ -1,3 +1,6 @@
-.blog_post{id: dom_id(blog_post)}
- = l blog_post.created_at
- = markdown blog_post.body
+.blog_post.card{id: dom_id(blog_post)}
+  .card-section
+    .blog_post__date
+      - date = blog_post.created_at.day.ordinalize + blog_post.created_at.strftime(" %B %Y")
+      = fa_icon('calendar', text: date)
+    = markdown blog_post.body

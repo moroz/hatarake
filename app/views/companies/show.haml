@@ -16,7 +16,9 @@
         .card-section.company__description
           != markdown company.description
 
-    = render @blog_posts
+    - if @blog_posts.present?
+      %h3.text-center Company blog
+      = render @blog_posts
 
   .large-4.columns
     - if can? :edit, company

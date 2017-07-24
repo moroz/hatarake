@@ -2,6 +2,6 @@
   .card-divider
     %h4.text-center New post
   .card-section
-    = simple_form_for BlogPost.new, url: new_company_blog_post_path(company_id: company) do |f|
-      = f.input :body, as: :text, label: false
+    = simple_form_for BlogPost.new, url: company_blog_posts_path(company_id: company), method: :post do |f|
+      = f.input :body, as: :text, label: false, input_html: { rows: 4 }
       = f.submit 'Submit', class: 'button expanded'
