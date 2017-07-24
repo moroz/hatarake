@@ -13,11 +13,8 @@
           .padding-for-small
             = render 'messages'
           = yield
-        .row.padding-for-small
-          %hr/
-          InJobs
-          - if Rails.env.development? && false
-            %small= debug flash
-            %small= debug params
+      .footer
+        .row
+          = render 'footer'
       
     = render 'ga'

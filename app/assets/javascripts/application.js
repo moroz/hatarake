@@ -12,6 +12,7 @@
 //= require foundation.util.nest.js
 //= require foundation.offcanvas.js
 //= require foundation.dropdownMenu.js
+//= require offers
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller
