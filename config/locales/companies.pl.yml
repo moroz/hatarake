@@ -67,3 +67,4 @@ pl:
       placeholder: "Co nowego w firmie?"
       explanation: "W postach można używać znaczników Markdown. Ctrl-Enter wysyła formularz."
       submit: "Opublikuj"
+    edited: "edytowano: %{dt}"
