@@ -1,2 +1,2 @@
 :plain
-  $('#blog_post_#{blog_post.id}').html('#{j render blog_post}');
+  $('#blog_post_#{blog_post.id}').replaceWith('#{j render blog_post}');
