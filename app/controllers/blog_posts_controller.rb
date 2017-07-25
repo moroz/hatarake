@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  respond_to :html, :js
   expose(:blog_post)
 
   def index
@@ -40,7 +41,10 @@ class BlogPostsController < ApplicationController
 
   def update
     if blog_post.update(blog_post_params)
-      redirect_to [current_company, blog_post]
+      respond_to do |f|
+        f.js
+        f.html { redirect_to [current_company, blog_post] }
+      end
     end
   end
 
