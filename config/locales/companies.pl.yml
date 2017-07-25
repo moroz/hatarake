@@ -29,6 +29,11 @@ pl:
         name: "Nazwa firmy"
         website: "Strona WWW"
         description: "Opis"
+      blog_post:
+        body: ""
+
+    models:
+      blog_post: postu
 
     errors:
       models:
@@ -36,6 +41,14 @@ pl:
           attributes:
             website:
               invalid: "jest nieprawidłowa."
+
+        blog_post:
+          attributes:
+            body:
+              too_short: "Post jest za krótki (przynajmniej %{count} znaków)."
+              too_long: "Post jest za długi (max. %{count} znaków)."
+              taken: "Nie możesz dwa razy opublikować takiego samego postu."
+
 
   dashboards:
     company_dashboard:

@@ -16,6 +16,11 @@ class BlogPostsController < ApplicationController
         f.html {  redirect_to profile_path, notice: "Post saved!" }
         f.js
       end
+    else
+      respond_to do |f|
+        f.html { redirect_to profile_path, alert: "Post could not be saved!" }
+        f.js { render_js_errors_for blog_post }
+      end
     end
   end
 

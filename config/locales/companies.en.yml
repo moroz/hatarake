@@ -40,3 +40,20 @@ en:
       placeholder: "How are you doing?"
       explanation: "You can use Markdown here. Ctrl-Enter submits the form."
       submit: "Publish"
+
+  activerecord:
+    attributes:
+      blog_post:
+        body: ""
+
+    models:
+      blog_post: post
+
+    errors:
+      models:
+        blog_post:
+          attributes:
+            body:
+              too_short: "The post is too short (min. %{count} characters)."
+              too_long: "The post is too long (max. %{count} characters)."
+              taken: "You can't post an identical post twice."

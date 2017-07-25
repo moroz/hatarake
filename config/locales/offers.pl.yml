@@ -134,7 +134,7 @@ pl:
         offer:
           attributes:
             title:
-              too_short: "jest za krótki (przynajmniej %{count} znaków}."
+              too_short: "jest za krótki (przynajmniej %{count} znaków)."
               too_long: "jest za długi (max. %{count} znaków)."
           
     models:

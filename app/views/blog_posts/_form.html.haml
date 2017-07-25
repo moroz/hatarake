@@ -1,5 +1,6 @@
 .new_blog_post.card
   = simple_form_for (@blog_post || [current_company, BlogPost.new]),remote: true, authenticity_token: true do |f|
+    = error_messages_for f.object
     = f.input :body, as: :text, label: false, input_html: { class: 'new_blog_post__textarea', rows: 3, placeholder: t('.placeholder')}
     .new_blog_post__explanation.float-left
       %small= t('.explanation') 
