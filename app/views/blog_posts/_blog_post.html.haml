@@ -1,4 +1,8 @@
-.blog_post.card{id: dom_id(blog_post)}
+- if defined?(highlighted) && highlighted
+  - classNames = 'blog_post card blog_post--highlight'
+- else
+  - classNames = 'blog_post card'
+%div{class: classNames, id: dom_id(blog_post)}
   .card-section
     .blog_post__date
       - date = blog_post.created_at.day.ordinalize + blog_post.created_at.strftime(" %B %Y")
