@@ -20,7 +20,9 @@
       %h3.text-center= t('.company_blog')
     - if can? :edit, company
       = render 'blog_posts/form'
-    = render @blog_posts
+    - if @blog_posts.present? || can?(:edit, company)
+      #blog_posts
+        = render @blog_posts
 
   .large-4.columns
     - if can? :edit, company

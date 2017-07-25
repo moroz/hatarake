@@ -12,7 +12,10 @@ class BlogPostsController < ApplicationController
   def create
     blog_post.company = current_company
     if blog_post.save
-      redirect_to profile_path, notice: "Post saved!"
+      respond_to do |f|
+        f.html {  redirect_to profile_path, notice: "Post saved!" }
+        f.js
+      end
     end
   end
 

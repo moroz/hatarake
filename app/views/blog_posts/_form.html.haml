@@ -1,5 +1,5 @@
 .new_blog_post.card
-  = simple_form_for (@blog_post || [current_company, BlogPost.new]), id: 'blog_post_form' do |f|
+  = simple_form_for (@blog_post || [current_company, BlogPost.new]),remote: true, authenticity_token: true do |f|
     = f.input :body, as: :text, label: false, input_html: { class: 'new_blog_post__textarea', rows: 3, placeholder: t('.placeholder')}
     .new_blog_post__explanation.float-left
       %small= t('.explanation') 
@@ -8,6 +8,6 @@
 :javascript
   $("#blog_post_body").keydown(function(e) {
     if (e.ctrlKey && (e.keyCode == 10 || e.keyCode == 13)) {
-      e.target.form.submit();
+      $(e.target.form).trigger('submit.rails');
     }}).on('change keyup input', function(e) {
     e.target.style.height = '1px'; e.target.style.height = (16+e.target.scrollHeight)+'px'; });
