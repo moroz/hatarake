@@ -1,4 +1,5 @@
-.card#company_info
+- className = company.description.blank? ? 'card' : 'card card--no-bottom'
+%div{class: className, id: 'company_info'}
   .company__avatar
     = avatar_for company, editable: can?(:edit, company)
   .company__details

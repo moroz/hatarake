@@ -9,6 +9,7 @@ en:
       recent_offers: Recent offers
       all_offers: "See all..."
       rate_company: Rate this company
+      company_blog: "Company blog"
 
     edit:
       heading: Edit profile
@@ -33,3 +34,9 @@ en:
     index:
       breadcrumb: "Offers"
       heading: "Offers by company: %{company}"
+
+  blog_posts:
+    form:
+      placeholder: "How are you doing?"
+      explanation: "You can use Markdown here. Ctrl-Enter submits the form."
+      submit: "Publish"

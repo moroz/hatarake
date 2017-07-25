@@ -60,7 +60,7 @@ module ApplicationHelper
   end
 
   def edit_button(path)
-    link_to fa_icon('pencil', text: I18n.t('actions.edit')), path, class: 'custom_button'
+    link_to fa_icon('pencil', text: I18n.t('actions.edit')), path, class: 'button button--reduce-padding'
   end
 
   def divider_edit_button(path)

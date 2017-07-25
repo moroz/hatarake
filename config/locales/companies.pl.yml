@@ -9,6 +9,7 @@ pl:
       recent_offers: Ostatnie oferty
       all_offers: "Wszystkie oferty..."
       rate_company: "Oceń firmę"
+      company_blog: "Blog firmowy"
 
     edit:
       heading: Edycja profilu
@@ -48,3 +49,8 @@ pl:
       breadcrumb: "Oferty pracy"
       heading: "Oferty firmy: %{company}"
 
+  blog_posts:
+    form:
+      placeholder: "Co nowego w firmie?"
+      explanation: "W postach można używać znaczników Markdown. Ctrl-Enter wysyła formularz."
+      submit: "Opublikuj"

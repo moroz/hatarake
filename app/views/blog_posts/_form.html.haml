@@ -1,9 +1,9 @@
 .new_blog_post.card
   = simple_form_for BlogPost.new, url: company_blog_posts_path(company_id: company), method: :post do |f|
-    = f.input :body, as: :text, label: false, input_html: { class: 'new_blog_post__textarea', rows: 3, placeholder: "Co słychać?" }
+    = f.input :body, as: :text, label: false, input_html: { class: 'new_blog_post__textarea', rows: 3, placeholder: t('.placeholder')}
     .new_blog_post__explanation.float-left
-      %small You can use Markdown here. Ctrl-Enter submits the form.
-    = f.submit 'Opublikuj', class: 'button new_blog_post__submit', id: "submit_blog_post", name: nil
+      %small= t('.explanation') 
+    = f.submit t('.submit'), class: 'button new_blog_post__submit', id: "submit_blog_post", name: nil
 
 :javascript
   $("#blog_post_body").keydown(function(e) {
