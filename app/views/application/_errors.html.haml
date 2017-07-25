@@ -1,7 +1,6 @@
 - if object.errors.any?
-  #error_explanation
-    .callout.alert
-      = t('activerecord.errors.template.header', :count => object.errors.count, :model => object.model_name.human.downcase)
-      %ul
-        - object.errors.full_messages.each do |msg|
-          %li= msg
+  .callout.alert
+    = t('activerecord.errors.template.header', :count => object.errors.count, :model => object.model_name.human.downcase)
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li= msg
