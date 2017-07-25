@@ -12,10 +12,10 @@ RSpec.describe "Company adds Offer" do
     end
 
     subject { page.body }
-    it { is_expected.to have_content I18n.t('offers.add_new_offer') }
+    it { is_expected.to have_content I18n.t('nav.add_offer') }
 
     it "creates a new offer with correct attributes" do
-      click_link I18n.t('offers.add_new_offer')
+      click_link I18n.t('nav.add_offer'), match: :first
       expect(current_path).to eq(new_offer_path)
 
       page.find('#offer_title').set("Looking for welders")
