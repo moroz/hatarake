@@ -3,4 +3,5 @@
     .blog_post__date
       - date = blog_post.created_at.day.ordinalize + blog_post.created_at.strftime(" %B %Y")
       = fa_icon('calendar', text: date)
+    = link_to fa_icon('pencil', text: 'Edit'), edit_blog_post_path(blog_post)
     = markdown blog_post.body

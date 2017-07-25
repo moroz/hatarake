@@ -44,11 +44,12 @@ Rails.application.routes.draw do
   resources :candidates
   resources :companies, only: [:show,:index,:update,:edit] do
     resources :offers, only: [:index], controller: 'company_offers'
-    resources :blog_posts, only: [:index, :create, :new], path: '/blog'
+    resources :blog_posts, only: [:show, :index, :create, :new], path: '/blog'
     member do
       post :vote
     end
   end
+  resources :blog_posts, path: '/blog', only: [:show, :destroy, :edit, :update]
   resources :skill_items, path: 'skills', only: [:create, :destroy]
   resources :cv_items, path: 'cv_items', only: [:create, :destroy]
   get '/edit_avatar', to: 'avatars#new'

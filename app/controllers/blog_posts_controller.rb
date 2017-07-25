@@ -5,10 +5,24 @@ class BlogPostsController < ApplicationController
     
   end
 
+  def show
+
+  end
+
   def create
     blog_post.company = current_company
     if blog_post.save
       redirect_to profile_path, notice: "Post saved!"
+    end
+  end
+
+  def edit
+    @blog_post = blog_post
+  end
+
+  def update
+    if blog_post.update(blog_post_params)
+      redirect_to [current_company, blog_post]
     end
   end
 
