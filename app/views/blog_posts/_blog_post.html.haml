@@ -5,8 +5,7 @@
 %div{class: classNames, id: dom_id(blog_post)}
   .card-section
     %span.blog_post__date
-      - date = blog_post.created_at.day.ordinalize + blog_post.created_at.strftime(" %B %Y")
-      = fa_icon('calendar', text: date)
+      = fa_icon('calendar', text: datetime_with_ordinal_day(blog_post.created_at))
     - if can? :edit, blog_post
       .blog_post__actions.float-right
         = link_to fa_icon('pencil', text: 'Edit'), edit_blog_post_path(blog_post), remote: true, class: 'button small button--reduce-padding'

@@ -74,4 +74,12 @@ module ApplicationHelper
   def add_soft_break_to_email(email)
     raw email.split('@').join('&#8203;&#64;')
   end
+
+  def datetime_with_ordinal_day(dt)
+    if I18n.locale == :pl
+      I18n.l dt, format: :blog
+    else
+      dt.day.ordinalize + dt.strftime(" %B %Y, %I:%M %p")
+    end
+  end
 end
