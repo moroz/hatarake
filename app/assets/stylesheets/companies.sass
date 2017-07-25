@@ -63,6 +63,7 @@ $avatar-margin: 8px
 
 div.new_blog_post
   padding: 1rem
+  position: relative
 
 textarea.new_blog_post__textarea
   border: none
@@ -71,7 +72,7 @@ textarea.new_blog_post__textarea
   padding: 0
   resize: none
   box-shadow: none
-  margin-bottom: 0
+  margin-bottom: 1.5rem
 
 .new_blog_post__explanation
   font-size: 0.8rem
@@ -80,8 +81,10 @@ textarea.new_blog_post__textarea
     bottom: 0.85rem
 
 .new_blog_post__submit
+  position: absolute
+  right: 1rem
+  bottom: 1rem
   margin: 0
-  float: right
 
 @mixin color-fade($color)
   0%
@@ -101,3 +104,4 @@ textarea.new_blog_post__textarea
 
 .blog_post
   font-size: 1.2rem
+  position: relative

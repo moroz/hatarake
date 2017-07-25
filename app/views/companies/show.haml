@@ -19,7 +19,8 @@
     - if @blog_posts.present? || can?(:edit, company)
       %h3.text-center= t('.company_blog')
     - if can? :edit, company
-      = render 'blog_posts/form'
+      .card
+        = render 'blog_posts/form'
     - if @blog_posts.present? || can?(:edit, company)
       #blog_posts
         = render @blog_posts
