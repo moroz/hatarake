@@ -24,6 +24,16 @@ class BlogPostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post_id = blog_post.id
+    if blog_post.destroy
+      respond_to do |f|
+        f.html { redirect_to profile_path, notice: "Post deleted!" }
+        f.js 
+      end
+    end
+  end
+
   def edit
     @blog_post = blog_post
   end
