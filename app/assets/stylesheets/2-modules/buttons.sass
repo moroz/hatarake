@@ -1,0 +1,30 @@
+a.button:hover
+  text-decoration: none
+
+.button--reduce-padding
+  padding: 0.5rem
+
+.custom_button
+  border-radius: 3px
+  font-size: 1rem
+  font-weight: 400
+  padding: 0.3rem 0.5rem
+  border: 1px dashed lighten($dark-blue, 15%)
+
+  &:hover, &:active, &:focus
+    text-decoration: none
+    background-color: lighten($dark-blue, 15%)
+    border-color: transparent
+    transition: background-color ease 0.15s
+    color: #fff
+
+.custom_button--expanded
+  width: 100%
+  display: block
+
+.custom_button--small
+  font-size: 0.9rem
+textarea.text
+  font-family: monospace
+  font-size: 1.2rem
+

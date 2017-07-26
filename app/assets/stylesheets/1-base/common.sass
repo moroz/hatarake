@@ -1,0 +1,99 @@
+html
+  font-size: 100%
+  @include breakpoint(xlarge)
+    font-size: 110%
+  @include breakpoint(xxlarge)
+    font-size: 130%
+
+.container
+  max-width: 100vw
+  margin: 0
+
+@media screen and (max-width: 1024px)
+  .container
+    padding-left: 1rem
+    padding-right: 1rem
+
+  .center-for-mobile
+    text-align: center
+    padding-left: 0
+
+.center-for-mobile
+  text-align: left
+  padding-left: 0.5rem
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+
+a:hover, a:link
+  h1, h2, h3, h4, h5, h6
+    text-decoration: none
+
+.callout.notice
+  background-color: lighten($notice-color, 25%)
+
+.card-divider
+  padding: 0.4rem 1rem 0.4rem 1rem
+  position: relative
+
+  h1, h2, h3, h4, h5, h6
+    color: $dark-blue
+
+@media screen and (max-width: 640px)
+  .card-divider
+    h2, h3, h4
+      text-align: center
+
+    h3
+      font-size: 1.5rem
+
+    h4
+      font-size: 1.3rem
+
+@each $name, $color in $custom-palette
+  .#{$name}-bg
+    color: #fff
+    background-color: $color
+
+    a, a:visited
+      color: #fff
+
+    &:hover, &:active
+      background-color: darken($color, 6%)
+
+  .custom_button--#{$name}
+    color: $color
+    border-color: $color
+
+    &:hover, &:active, &:focus
+      background-color: $color
+      color: #fff
+
+a, th
+  font-weight: 400
+
+a:hover
+  text-decoration: underline
+
+table a
+  font-weight: 400
+
+.card-divider
+  clear: left
+
+h1, h2, h3, h4, h5, h6
+  +thin-font
+
+  & > a:hover
+    text-decoration: none
+
+@media screen and (max-width: 640px)
+  h1
+    font-size: 1.55rem
+  h2
+    font-size: 1.45rem
+  h3
+    font-size: 1.3rem
+

@@ -1,0 +1,57 @@
+.tile
+  background-color: $tile-bg
+  display: block
+  overflow: hidden
+  height: 115px
+  margin-bottom: 0.5rem
+  box-sizing: inherit
+  padding: 0.7rem
+
+  &:hover
+    background-color: darken($tile-bg, 6%)
+    text-decoration: none
+
+.tile__link:nth-of-type(even) div, .tile:nth-of-type(even)
+  $even-tile-bg: #f2f2f2
+
+  background-color: $even-tile-bg
+
+  &:hover
+    background-color: darken($even-tile-bg, 6%)
+
+.tile__link:nth-of-type(last), .tile:nth-of-type(last)
+  clear: right
+
+@media screen and (min-width: 640px) and (max-width: 1023px)
+  .tile
+    width: 50%
+    float: left
+    margin: 0
+    padding: 1rem
+    height: 150px
+
+  .tile__link:nth-of-type(4n+2) div, .tile:nth-of-type(4n+2),
+  .tile__link:nth-of-type(4n+3) div, .tile:nth-of-type(4n+3)
+    $even-tile-bg: #efefef
+
+    background-color: $even-tile-bg
+
+    &:hover
+      background-color: darken($even-tile-bg, 6%)
+
+  .tile__link:nth-of-type(4n+1) div, .tile:nth-of-type(4n+1),
+  .tile__link:nth-of-type(4n) div, .tile:nth-of-type(4n)
+    background-color: $tile-bg
+
+    &:hover
+      background-color: darken($tile-bg, 6%)
+
+@media screen and (min-width: 1024px)
+  .tile
+    width: 33.3%
+    float: left
+    margin: 0
+    padding: 1.4rem 1rem 0.5rem 1.4rem
+    height: 150px
+
+
