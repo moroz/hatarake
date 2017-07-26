@@ -4,9 +4,9 @@
   %div{class: cont_class}  
     - @companies.each_with_index do |company, i|
       - if i == @companies.size - 1
-        - classes = "large-#{12 / @companies.size} columns end centered"
+        - classes = "medium-6 large-#{12 / @companies.size} float-center columns end centered"
       - else
-        - classes = "large-#{12 / @companies.size} columns centered"
+        - classes = "medium-6 large-#{12 / @companies.size} float-center columns centered"
       %div{class: classes}
         = link_to company, title: company.name do
-          = avatar_for company, size: :normal
+          = avatar_for company, size: :normal, class: 'float-center'

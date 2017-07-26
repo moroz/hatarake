@@ -3,7 +3,7 @@
   - if current_user.avatar.present?
     .medium-6.columns.text-center
       %h3= t('avatars.new.current_avatar')
-      = avatar_for current_user, className: 'float-center'
+      = avatar_for current_user, class: 'float-center'
   .medium-6.columns
     .callout
       = form_for @avatar, url: avatar_path, remote: true, authenticity_token: true do |f|

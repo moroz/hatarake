@@ -16,7 +16,7 @@
     - url = new_offer_application_path(offer_id: offer)
   - else
     - url = new_user_session_path(return_to: new_offer_application_path(offer_id: offer))
-  .large-3.columns.offer-block{id: dom_id(offer)}
+  .medium-6.large-3.columns.offer-block{id: dom_id(offer)}
     = link_to offer.title.truncate(20, separator: /\s/), offer, class: 'offer-block__title'
     %span.offer-block__company= offer.company.name
     %span.offer-block__location= offer.location.short_format
