@@ -1,6 +1,6 @@
 class CompanyOffersController < ApplicationController
   expose(:company)
-  expose(:company_offers) { company.offers.includes(location: [:country, :province]).page(params[:page]) }
+  expose(:company_offers) { company.offers.published.includes(location: [:country, :province]).page(params[:page]) }
 
   def index
     respond_to do |f|

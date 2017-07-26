@@ -26,19 +26,17 @@
 - else
   = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]) do 
     %div{id: dom_id(offer), class: 'offer offer-row'}
-      .row
-        .medium-2.columns.hide-for-small-only
-          = avatar_for offer.company, size: :thumb
-        .medium-7.columns
-          %span.offer-row__title= offer.title
-          %span.offer-row__company= fa_icon 'building-o', text: offer.company_name
-          %span.offer-row__salary= fa_icon 'money', text: short_salary(offer)
-          %span.offer-row__published_at
-            - if offer.published?
-              = fa_icon 'clock-o', text: t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
-            - else
-              = fa_icon 'clock-o', text: t('offers.not_published')
-          %small.show-for-small-only= fa_icon 'map-marker', text: offer.location.short_format
-        .medium-3.columns.hide-for-small-only.offer-row__right
-          = fa_icon 'map-marker', text: offer.location.short_with_line_breaks
+      .offer-row__logo
+        = avatar_for offer.company, size: :thumb
+      .offer-row__details
+        %span.offer-row__title= offer.title
+        %span.offer-row__company= fa_icon 'building-o', text: offer.company_name
+        %span.offer-row__salary= fa_icon 'money', text: short_salary(offer)
+        %span.offer-row__published_at
+          - if offer.published?
+            = fa_icon 'clock-o', text: t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
+          - else
+            = fa_icon 'clock-o', text: t('offers.not_published')
+      .offer-row__right
+        %span.offer-row__location= fa_icon 'map-marker', text: offer.location
 

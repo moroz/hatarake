@@ -38,7 +38,7 @@
 
   background-color: $offer-row-bg
   padding: 1rem
-  border-bottom: $offer-row-border
+  border: $offer-row-border
 
   a &
     color: #333
@@ -50,6 +50,14 @@
   color: $dark-blue
   font-size: 1.2rem
   display: block
+
+.offer-row__logo
+  display: none
+
+  @include breakpoint(medium)
+    display: inline-block
+    width: 115px
+    float: left
 
 .offer-row__company,
 .offer-row__salary,
@@ -71,23 +79,30 @@
   a:hover &, a:link &
     text-decoration: none
 
-@media screen and (min-width: 640px)
-  .offer-row__right
+.offer-row__right
+  @include breakpoint(medium)
     font-size: 1.05rem
     line-height: 1.35
     text-align: center
 
+.offer-row__details
+  @include breakpoint(medium)
+    width: rem-calc(200)
+    float: left
+
 .offers__search_description
   padding: 0.5rem 1rem
 
-.pagination + .offer-list, .offers__search_description + .offer-list
+//.pagination + .offer-list, .offers__search_description + .offer-list
+  //border-top: $offer-row-border
+
+#offers a:first-child .offer-row
   border-top: $offer-row-border
 
 .offers__popular_location
   display: block
 
-@media screen and (min-width: 640px)
-  .offers__popular_location
+  @include breakpoint(medium)
     display: inline
 
 .fa-ul li
@@ -100,7 +115,6 @@
 .offer
   $offer-bg: #fafafa
 
-  background-color: $offer-bg
   display: block
   font-size: 0.8rem
   color: #333
@@ -123,12 +137,6 @@ $avatar-margin: 5px
   width: calc(100% - #{$left-width + $avatar-margin})
   padding: 0.5rem 1rem
   float: left
-
-@media screen and (min-width: 1024px)
-  .offer
-    float: left
-    padding: 0
-    margin: 0
 
 .offer__name
   color: #333
