@@ -8,4 +8,9 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( foundation_emails.scss pagedown.css pricing-table.scss Jcrop.js Jcrop.css jquery.rateyo.css jquery.rateyo.js Markdown.Converter.js Markdown.Editor.js Markdown.Sanitizer.js jquery.remotipart.js offers.js avatars.coffee owl.carousel.css owl.theme.css owl.carousel.js )
+#Rails.application.config.assets.precompile += %w( foundation_emails.scss pagedown.css pricing-table.scss Jcrop.js Jcrop.css jquery.rateyo.css jquery.rateyo.js Markdown.Converter.js Markdown.Editor.js Markdown.Sanitizer.js jquery.remotipart.js offers.js avatars.coffee owl.carousel.css owl.theme.css owl.carousel.js )
+
+stylesheets = Dir["vendor/assets/stylesheets/*"].map { |f| f.split('/').last }
+javascripts = Dir["vendor/assets/javascripts/*"].map { |f| f.split('/').last }
+others = %w( avatars.coffe offers.js )
+Rails.application.config.assets.precompile += (stylesheets + javascripts + others)

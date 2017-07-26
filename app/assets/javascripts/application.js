@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/autocomplete
 //= require turbolinks
-//= require Jcrop
 //= require autocomplete-rails
 //= require owl.carousel
 //= require foundation.core
