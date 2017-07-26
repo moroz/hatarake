@@ -13,6 +13,7 @@
 //= require foundation.offcanvas.js
 //= require foundation.dropdownMenu.js
 //= require offers
+//= require companies
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller

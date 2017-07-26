@@ -27,7 +27,7 @@ class CompaniesController < ApplicationController
     if request.path != company_path(company)
       redirect_to company, status: :moved_permanently
     end
-    @blog_posts = company.blog_posts
+    @blog_posts = company.blog_posts.ordered
     set_rating
   end
 

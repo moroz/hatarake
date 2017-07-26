@@ -2,4 +2,6 @@
   var textarea = $('#blog_post_#{@blog_post.id}').html('#{j render 'form'}').find('textarea')[0];
   textarea.style.height = '1px';
   textarea.style.height = (16+textarea.scrollHeight)+'px';
+  textarea.addEventListener('keydown', submitOnCtrlEnter);
+  $(textarea).on('change keyup input', resizeTextarea);
   textarea.focus();

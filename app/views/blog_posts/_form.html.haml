@@ -4,10 +4,3 @@
     = f.input :body, as: :text, label: false, input_html: { class: 'new_blog_post__textarea', rows: 3, placeholder: t('.placeholder')}
     .new_blog_post__explanation.float-left= t('.explanation') 
     = f.submit t('.submit'), class: 'button new_blog_post__submit button--reduce-padding', id: "submit_blog_post", name: nil
-
-:javascript
-  $(".new_blog_post__textarea").keydown(function(e) {
-    if (e.ctrlKey && (e.keyCode == 10 || e.keyCode == 13)) {
-      $(e.target.form).trigger('submit.rails');
-    }}).on('change keyup input', function(e) {
-    e.target.style.height = '1px'; e.target.style.height = (16+e.target.scrollHeight)+'px'; });

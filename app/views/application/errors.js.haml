@@ -1,5 +1,5 @@
 :plain
   var elem = document.getElementById('error_explanation');
   elem.innerHTML = '#{j render 'errors', object: @object}';
-  window.scroll(0, elem.offsetTop);
+  window.scroll(0, $(elem).offset().top);
   document.querySelector('input[type=submit]').disabled = false;
