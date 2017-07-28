@@ -1,0 +1,32 @@
+$overlay-color: rgba(darken(#175eba, 25%), 0.3)
+
+@mixin color-overlay($img)
+  background-image: linear-gradient($overlay-color, $overlay-color), $img
+
+.banner
+  padding: rem-calc(90) 0
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  color: #fff
+  font-weight: 400
+  h1, h2, h3, h4
+    font-family: $normal-font
+    font-weight: 400
+
+  @include breakpoint(small only)
+    h2
+      font-size: 2.4rem
+
+  a:link, a:visited, a:hover
+    color: #fff
+    font-weight: 600
+
+.banner--warsaw
+  @include color-overlay(image-url('warsaw-skyline.jpg'))
+
+.banner--chongqing
+  @include color-overlay(image-url('great-hall.jpg'))
+
+.banner--fjord
+  @include color-overlay(image-url('fjord.jpg'))

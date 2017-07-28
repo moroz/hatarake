@@ -16,11 +16,6 @@
 @mixin fixed-height
   height: rem-calc(360)
 
-$overlay-color: rgba(darken(#175eba, 20%), 0.3)
-
-@mixin color-overlay($img)
-  background-image: linear-gradient($overlay-color, $overlay-color), $img
-
 .owl-slide
   height: auto
   +fixed-height
