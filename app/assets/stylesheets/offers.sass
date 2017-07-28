@@ -1,35 +1,9 @@
 // Place all the styles related to the Offers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.description__preview
-  padding: 0.5rem
-  overflow-x: auto
-  min-height: 40vh
-  border: 1px dashed #333
-  margin-bottom: 1.5rem
-
-.description__preview--noscript
-  color: #a00
-  font-weight: bold
-
-.description__preview-contents
-  height: auto
-  display: table-row
-
-  &:empty
-    background-color: #ccc
-
 .offers
   .pagination
     text-align: center
-
-.markdown_info
-  padding: 0.8rem
-  margin: 0.5rem
-  font-size: 86%
-  background-color: lighten(SeaGreen, 39)
-  border: 1px dashed #666
 
 .offer-row
   $offer-row-bg: #fff
@@ -63,7 +37,7 @@
 .offer-row__location
   display: block
   font-size: 0.9rem
-  font-color: #333
+  color: #333
 
   .fa
     width: 1.2rem
@@ -73,9 +47,6 @@
   font-size: 26px
   color: $dark-blue
   display: inline-block
-
-  a:hover &, a:link &
-    text-decoration: none
 
 .offer-row__right
   @include breakpoint(medium)
