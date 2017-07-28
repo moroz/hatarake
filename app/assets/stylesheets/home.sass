@@ -16,6 +16,11 @@
 @mixin fixed-height
   height: rem-calc(360)
 
+$overlay-color: rgba(darken(#175eba, 20%), 0.3)
+
+@mixin color-overlay($img)
+  background-image: linear-gradient($overlay-color, $overlay-color), $img
+
 .owl-slide
   height: auto
   +fixed-height
@@ -27,13 +32,13 @@
   font-weight: 400
 
 .owl-slide--couple
-  background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.27)), image-url("beautiful-couple.jpg")
+  @include color-overlay(image-url('beautiful-couple.jpg'))
   @include breakpoint(small only)
     background-position: right -50px top 0
     background-image: image-url('beautiful-couple.jpg')
 
 .owl-slide--warsaw
-  background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.27)), image-url("warsaw-skyline.jpg")
+  @include color-overlay(image-url('warsaw-skyline.jpg'))
 
 .owl-slide__container--left
   +flexbox
