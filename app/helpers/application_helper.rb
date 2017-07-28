@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def mobile?
+    browser.platform.android? || browser.platform.ios? || browser.platform.windows_mobile?
+  end
+
   def javascript(*files)
     content_for(:javascripts) { javascript_include_tag(*files) }
   end

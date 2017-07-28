@@ -2,7 +2,7 @@
 %section{class: classes}
   = form_for offers_path, method: :get, remote: true do |f|
     .input-group
-      = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.basic_search.placeholder'), autocomplete: 'off', autofocus: '', id: "basic_search_q"
+      = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.basic_search.placeholder'), autocomplete: 'off', autofocus: !mobile?, id: "basic_search_q"
       .input-group-button
         = f.submit t('offers.basic_search.submit'), class: 'button primary', name: nil
   - unless defined?(hide_adv_link) && hide_adv_link
