@@ -6,8 +6,10 @@
     text-align: center
 
 div.new_blog_post
-  padding: 1rem
+  padding: 0.6rem
   position: relative
+  @include breakpoint(medium)
+    padding: 1rem
 
 textarea.new_blog_post__textarea
   border: none
@@ -17,18 +19,24 @@ textarea.new_blog_post__textarea
   resize: none
   box-shadow: none
   margin-bottom: 1.5rem
+  font-size: 1rem
+  @include breakpoint(medium)
+    font-size: 1.2rem
 
 .new_blog_post__explanation
   font-size: 0.8rem
-  @include breakpoint(large)
-    position: absolute
-    bottom: 0.85rem
+  position: absolute
+  bottom: 1rem
 
 .new_blog_post__submit
   position: absolute
   right: 1rem
   bottom: 1rem
   margin: 0
+  @include breakpoint(small only)
+    width: 40%
+    right: 0.6rem
+    bottom: 0.6rem
 
 @mixin color-fade($color)
   0%
@@ -47,5 +55,14 @@ textarea.new_blog_post__textarea
   animation: blog-post-fade 3s ease-in 1
 
 .blog_post
-  font-size: 1.2rem
   position: relative
+  @include breakpoint(medium)
+    font-size: 1.2rem
+
+.blog_post__actions
+  .button
+    margin: 0
+  @include breakpoint(medium)
+    position: absolute
+    top: 1rem
+    right: 1rem

@@ -10,7 +10,7 @@
         %br
         = fa_icon('pencil', text: t('blog_posts.edited', dt: datetime_with_ordinal_day(blog_post.updated_at)))
     - if can? :edit, blog_post
-      .blog_post__actions.float-right
+      .blog_post__actions
         = link_to fa_icon('pencil', text: t('actions.edit')), edit_blog_post_path(blog_post), remote: true, class: 'button small button--reduce-padding'
         = link_to fa_icon('trash-o', text: t('actions.delete')), blog_post, method: :delete, remote: true, class: 'button small dark-red-bg button--reduce-padding', data: { confirm: "Are you sure you want to delete this post?" }
     = markdown blog_post.body
