@@ -1,7 +1,7 @@
 .off-canvas.position-left#offCanvas{'data-off-canvas': ''}
   %button.close-button{'aria-label' => "Close menu", 'data-close': ''}
     %span{'aria-hidden': true} &times;
-  %ul.menu.vertical
+  %ul.menu.vertical.off-canvas__menu
     %li= locale_link((current_locale == :en ? :pl : :en))
     %li= link_to t('nav.home'), root_path
     %li= link_to t('nav.jobs_pl'), jobs_poland_path
@@ -11,7 +11,7 @@
       %li= link_to t('nav.add_offer'), new_offer_path
     %li= link_to t('nav.companies'), companies_path
   %hr/
-  %ul.menu.vertical
+  %ul.menu.vertical.off-canvas__menu
     - if logged_in?
       %li= link_to "Profile", profile_path
       %li= link_to "Sign out", destroy_user_session_path, method: :delete 

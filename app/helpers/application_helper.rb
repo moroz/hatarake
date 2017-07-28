@@ -52,7 +52,7 @@ module ApplicationHelper
   end
 
   def locale_flag(lang)
-    lang.to_s.upcase
+    image_tag("flag-#{lang}.svg", class: 'locale_flag')
   end
 
   def locale_link(lang)
