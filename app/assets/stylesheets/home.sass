@@ -28,6 +28,9 @@
 
 .owl-slide--couple
   background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.27)), image-url("beautiful-couple.jpg")
+  @include breakpoint(small only)
+    background-position: right -50px top 0
+    background-image: image-url('beautiful-couple.jpg')
 
 .owl-slide--warsaw
   background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.27)), image-url("warsaw-skyline.jpg")
@@ -38,6 +41,10 @@
   margin: 0 auto
   align-items: center
   text-align: center
+  @include breakpoint(small only)
+    background-color: rgba(0,0,0,0.27)
+
+
   @include breakpoint(medium)
     width: $global-width
     padding-left: 2rem
