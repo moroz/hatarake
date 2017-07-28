@@ -4,11 +4,11 @@
   - classNames = 'blog_post card'
 %div{class: classNames, id: dom_id(blog_post)}
   .card-section
-    %span.blog_post__date
-      - date = datetime_with_ordinal_day(blog_post.created_at) 
+    .blog_post__date
+      = fa_icon('calendar', text: datetime_with_ordinal_day(blog_post.created_at))
       - if blog_post.created_at != blog_post.updated_at
-        - date << (", " + t('blog_posts.edited', dt: datetime_with_ordinal_day(blog_post.updated_at)))
-      = fa_icon('calendar', text: date)
+        %br
+        = fa_icon('pencil', text: t('blog_posts.edited', dt: datetime_with_ordinal_day(blog_post.updated_at)))
     - if can? :edit, blog_post
       .blog_post__actions.float-right
         = link_to fa_icon('pencil', text: t('actions.edit')), edit_blog_post_path(blog_post), remote: true, class: 'button small button--reduce-padding'
