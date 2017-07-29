@@ -10,6 +10,9 @@ $alert-callout-subtle-color: #333;
   color: $alert-callout-subtle-color;
   border: 0;
   border-left: $alert-callout-subtle-border-left-width solid $dark-gray;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   box-shadow: 0 5px 8px -6px rgba(0,0,0, 0.2);
 
   &.success, &.notice {
