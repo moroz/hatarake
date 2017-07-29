@@ -9,6 +9,17 @@
             .input-group-button
               = f.submit t('offers.basic_search.submit'), class: 'button primary', name: nil
 
+%section
+  .row
+    .callout.alert-callout-subtle.success
+      Success callout
+    .callout.alert-callout-subtle.alert
+      Alert callout
+    .callout.alert-callout-subtle.notice
+      Notice callout
+    .callout.alert-callout-subtle.warning
+      Warning callout
+
 %section.home__row3
   .row
     = render 'featured_offers'

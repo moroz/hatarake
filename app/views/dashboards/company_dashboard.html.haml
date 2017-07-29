@@ -1,20 +1,20 @@
 %h1= t('.heading')
 
 %section.premium_membership
-  - if current_company.premium_membership
 
-%section.company_offers
-  %h3= t('.my_offers')
-  = render @offers
+.row
+  .columns.medium-6
+    .company_offers.card
+      .card-divider
+        %h3= t('.my_offers')
+      .card-section
+        = @offers.count
+        = link_to "All offers", company_offers_path(current_company)
 
-%section.applied_offers
-  %h3= t('.applications')
-  %table.hover#clickable_table
-    %thead
-      %td Offer title:
-      %td Applications
-    %tbody
-      - @applications.each do |offer, applications|
-        %tr{'data-link' => offer_applications_path(offer)}
-          %td= link_to offer.title, offer_applications_path(offer)
-          %td= offer.applications.count
+  .columns.medium-6
+    .offer_applications.card
+      .card-divider
+        %h3= t('.applications')
+
+      .card-section
+        = @applications.count
