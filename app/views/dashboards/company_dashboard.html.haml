@@ -1,14 +1,17 @@
 %h1= t('.heading')
 
-%section.company_offers.card.shadow
-  .card-divider
-    %h3= t('.my_offers')
+%section.company_offers
+  %h3= t('.my_offers')
   = render @offers
 
-%section.applied_offers.card.shadow
-  .card-divider
-    %h3= t('.applications')
-  - @applications.each do |offer, applications|
-    .card-divider
-      %h4= offer.title
-    = render applications
+%section.applied_offers
+  %h3= t('.applications')
+  %table.hover#clickable_table
+    %thead
+      %td Offer title:
+      %td Applications
+    %tbody
+      - @applications.each do |offer, applications|
+        %tr{'data-link' => offer_applications_path(offer)}
+          %td= link_to offer.title, offer_applications_path(offer)
+          %td= offer.applications.count

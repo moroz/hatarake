@@ -14,6 +14,7 @@
 //= require foundation.dropdownMenu.js
 //= require offers
 //= require companies
+//= require candidates
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller
