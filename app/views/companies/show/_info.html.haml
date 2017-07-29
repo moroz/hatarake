@@ -1,12 +1,13 @@
-- unless request.path == company_path(company)
-  = link_to company do
-    %h2.company__name.company__name--margin-top= company.name
-- else
-  %h2.company__name.company__name--margin-top= company.name
+%h2.company__name.company__name--margin-top
+  - unless request.path == company_path(company)
+    = link_to company.name, company
+  - else
+    = company.name
 
 - if company.website.present?
-  %span.label.dark-blue-bg
-    = link_to fa_icon('globe', text: strip_http(company.website)), company.website
+  = link_to company.website do
+    %span.label.dark-blue-bg.company__website
+      = fa_icon('globe', text: strip_http(company.website))
 .company__details__info
   - if company.location.present?
     %span= fa_icon('map-marker', text: company.location)
