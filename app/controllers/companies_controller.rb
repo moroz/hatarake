@@ -28,6 +28,7 @@ class CompaniesController < ApplicationController
       redirect_to company, status: :moved_permanently
     end
     @blog_posts = company.blog_posts.ordered
+    @recent_offers = company.recent_offers.with_associations
     set_rating
   end
 

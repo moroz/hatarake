@@ -58,8 +58,7 @@ class Company < User
   end
 
   # If this query proves hard on the database, please consider
-  # adding an offers_count to the database. However, Company is
-  # an abstract model, as it is stored in the users table.
+  # adding an offers_count to the database.
   def self.offer_counts
     self.unscoped.joins(:offers).select('users.id AS id, count(offers.id) AS count').group('users.id').reduce({}) do |acc, c|
       acc.merge({c.id => c.count})

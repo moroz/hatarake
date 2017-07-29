@@ -1,14 +1,18 @@
 class CompanyOffersController < ApplicationController
   expose(:company)
-  expose(:company_offers) { company.offers.published.includes(location: [:country, :province]).page(params[:page]) }
+  helper_method :company_offers
 
   def index
     respond_to do |f|
       f.html
       f.js do
-        @offers = company_offers
+        company_offers
         render 'offers/index.js'
       end
     end
+  end
+
+  def company_offers
+    @offers ||= company.offers.with_associations.page(params[:page])
   end
 end

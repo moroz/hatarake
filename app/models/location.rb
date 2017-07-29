@@ -51,7 +51,11 @@ class Location < ApplicationRecord
 
   def short_format_base
     if country_id == Country::POLAND_ID
-      [city, province.try(:local_name)]
+      if province_id.present?
+        [city, province.try(:local_name)]
+      else
+        [city]
+      end
     else
       [city, country.local_name]
     end

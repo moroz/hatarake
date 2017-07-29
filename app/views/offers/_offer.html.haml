@@ -38,5 +38,4 @@
           - else
             = fa_icon 'clock-o', text: t('offers.not_published')
       .offer-row__right
-        %span.offer-row__location= fa_icon 'map-marker', text: offer.location
-
+        %span.offer-row__location= fa_icon 'map-marker', text: offer.location.to_s

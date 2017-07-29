@@ -18,10 +18,10 @@ module ProfileHelper
   end
 
   def logo_for(company)
-    image_tag((company.avatar.present? ? company.avatar.file.normal.url : 'avatar.png'), class: 'logo')
+    image_tag((company.avatar.present? ? company.avatar.file.normal.url : default_avatar), class: 'logo')
   end
 
-  def default_avatar(sex)
+  def default_avatar(sex = 'male')
     if !sex || sex == 'male'
       image_path('avatar-male.svg')
     else

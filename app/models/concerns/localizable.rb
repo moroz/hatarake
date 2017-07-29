@@ -27,3 +27,4 @@ module Localizable
     super || name_en
   end
 end
+

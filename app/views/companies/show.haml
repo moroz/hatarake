@@ -33,6 +33,6 @@
     .card#recent_offers
       .card-divider
         %h3= t('companies.show.recent_offers')
-      = render company.recent_offers, short: true, ref: 'company'
+      = render @recent_offers, short: true, ref: 'company'
       .card-section
         = link_to t('.all_offers'), company_offers_path(company)
