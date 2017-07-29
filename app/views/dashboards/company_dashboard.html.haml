@@ -4,17 +4,11 @@
 
 .row
   .columns.medium-6
-    .company_offers.card
-      .card-divider
-        %h3= t('.my_offers')
-      .card-section
-        = @offers.count
-        = link_to "All offers", company_offers_path(current_company)
+    %a.dashboard-nav-card.dark-red-bg
+      %h3.dashboard-nav-card-title= t('.my_offers')
+      %span.dashboard-nav-card-icon= fa_icon 'briefcase', text: @offers.count
 
   .columns.medium-6
-    .offer_applications.card
-      .card-divider
-        %h3= t('.applications')
-
-      .card-section
-        = @applications.count
+    %a.dashboard-nav-card.dark-green-bg
+      %h3.dashboard-nav-card-title= t('.applications')
+      %span.dashboard-nav-card-icon= fa_icon 'address-card', text: @applications.count
