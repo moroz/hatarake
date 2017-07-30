@@ -19,6 +19,10 @@ class OffersController < ApplicationController
     end
   end
 
+  def my_offers
+    @offers = current_company.offers.with_associations
+  end
+
   def poland
     @offers = Offer.with_associations.poland.published_or_owned_by(current_user).advanced_search(params).page(params[:page])
     @popular_locations = Province.most_popular_voivodeships_with_counts

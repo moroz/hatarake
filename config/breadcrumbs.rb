@@ -45,3 +45,12 @@ crumb :offer_applications do |offer|
   link I18n.t('applications.breadcrumb'), offer_applications_path(offer)
   parent :offer, offer
 end
+
+crumb :company_dashboard do
+  link I18n.t('dashboards.company_dashboard.heading'), dashboard_path
+end
+
+crumb :my_offers do
+  link I18n.t('dashboards.company_dashboard.my_offers')
+  parent :company_dashboard
+end

@@ -13,6 +13,8 @@ class Ability
         can :create, [Offer, BlogPost]
         can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
         can [:update, :destroy], BlogPost, user_id: user.id
+        can :my_offers, Offer
+        can :my_offer_applications, Application
         can :show, Candidate
         can :manage, Company, id: user.id
         can :read, Application do |a|
