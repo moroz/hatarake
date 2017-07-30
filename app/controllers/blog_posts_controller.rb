@@ -2,6 +2,8 @@ class BlogPostsController < ApplicationController
   respond_to :html, :js
   expose(:blog_post)
 
+  invisible_captcha only: [:create, :update]
+
   def index
     
   end

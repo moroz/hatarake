@@ -1,4 +1,5 @@
 class Candidates::RegistrationsController < Devise::RegistrationsController
+  invisible_captcha only: :create
 
   def new
     if logged_in?

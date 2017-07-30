@@ -6,6 +6,8 @@ class OffersController < ApplicationController
   before_action :set_province_list, only: [:new, :edit, :poland]
   authorize_resource except: [:index, :poland, :abroad]
 
+  invisible_captcha only: [:create, :update]
+
   def new
     offer.build_location
   end
