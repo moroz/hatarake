@@ -41,6 +41,10 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_scope :candidate do
+    get '/sign_up', to: 'candidates/registrations#new'
+  end
+
   devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
@@ -59,5 +63,4 @@ Rails.application.routes.draw do
   get '/crop_avatar', to: 'avatars#crop'
   resource :avatar, only: [:create, :update]
   root to: 'home#home'
-  get '/sign_up' => 'pages#sign_up'
 end

@@ -1,0 +1,27 @@
+.split-screen-signup
+  @include breakpoint(medium)
+    padding: 0 1rem 1rem 1rem
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    overflow: hidden
+    align-items: center
+
+    form
+      width: 80%
+      margin-left: auto
+      margin-right: auto
+
+    label
+      text-align: left
+  @include breakpoint(xlarge)
+    padding: 0 2rem 2rem 2rem
+
+
+.border-right-for-medium
+  @include breakpoint(medium)
+    text-align: center
+    border-right: 1px solid #ddd
+  @include breakpoint(medium)
+    border-right-width: 2px
+

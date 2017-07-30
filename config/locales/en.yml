@@ -39,6 +39,9 @@ en:
     step1:
       subheader: "Step 1. Login credentials"
       explanation: "Please fill in your e-mail address and pick a password. We will send you an e-mail with the confirmation link."
+      not_a_candidate: "Not a candidate?"
+      company_registration: "Get a Company Account"
+      submit: 'Submit'
 
     step2:
       subheader: "Step 2. Personal and contact data"
