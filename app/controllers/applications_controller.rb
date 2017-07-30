@@ -23,6 +23,10 @@ class ApplicationsController < ApplicationController
     redirect_to offer
   end
 
+  def my_offer_applications
+    @applications = current_company.applications.includes(:offer).group_by(&:offer)
+  end
+
   def index
   end
 

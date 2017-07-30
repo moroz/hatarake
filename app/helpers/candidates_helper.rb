@@ -41,4 +41,8 @@ module CandidatesHelper
       str << "present" 
     end
   end
+
+  def yes_no_icon(val)
+    fa_icon(val ? 'check' : 'times')
+  end
 end
