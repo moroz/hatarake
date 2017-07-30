@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application
   get '/my_offers', to: 'offers#my_offers'
   get '/my_offer_applications', to: 'applications#my_offer_applications'
+  resources :applications, only: :show
   resources :resumes
   delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'candidate/edit_skills', to: 'candidates#edit_skills'

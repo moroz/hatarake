@@ -1,6 +1,6 @@
 %h1 Offer applications
 
-%table.hover#clickable-table
+%table#offer_applications
   %thead
     %td.offer_application__checkbox
     %td Name
@@ -9,20 +9,23 @@
     %td.offer_application__age Age
     %td.offer_application__memo Notes
     %td.offer_application__resumes CV
+    %td.offer_application__details Details
   %tbody
     - @applications.each do |offer, applications|
+      %tr.offer_applications__spacer
       %tr.offer_applications__divider
-        %td{colspan: 7}= "Oferta: "+ offer.title
+        %td{colspan: 8}= "Oferta: "+ offer.title
       - applications.each do |a|
         %tr
           %td.offer_application__checkbox
             %input{type: 'checkbox'}
-          %td= link_to a.candidate.display_name, a.candidate
+          %td= link_to a.candidate.display_name, a.candidate, title: 'Click to view candidate profile'
           %td= a.candidate.profession.local_name
           %td.offer_application__sex= fa_icon sex_icon(a.candidate.sex)
           %td.offer_application__age= a.candidate.age
           %td.offer_application__memo= fa_icon 'comment-o'
           %td.offer_application__resumes= yes_no_icon(a.candidate.resumes.present?) 
+          %td.offer_application__details= link_to 'Show', a
 
 = link_to "Mark selected as read", '#', class: 'button secondary'
 = link_to "Mark all as read", '#', class: 'button primary'
