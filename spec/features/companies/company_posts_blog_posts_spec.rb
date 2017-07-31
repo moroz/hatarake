@@ -27,9 +27,11 @@ RSpec.describe "Company posts blog posts" do
       end
 
       context "when filled in and submitted" do
-        within('.new_blog_post') do
-          find('#blog_post_body').set("Zażółć gęślą jaźń")
-          expect { submit_form }.to change { company.blog_posts.count }
+        it "creates a new post" do
+          within('.new_blog_post') do
+            find('#blog_post_body').set("Zażółć gęślą jaźń")
+            expect { submit_form }.to change { company.blog_posts.count }
+          end
         end
       end
     end
