@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
       @rating = company.reputation_for(:avg_rating).round(2)
       @ratings_count = company.ratings_count
       @blog_posts = company.blog_posts.ordered
+      @recent_offers = company.recent_offers.with_associations
       render 'companies/show'
     end
   end

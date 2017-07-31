@@ -28,9 +28,9 @@ RSpec.describe "Company posts blog posts" do
 
       context "when filled in and submitted" do
         it "creates a new post" do
-          within('.new_blog_post') do
+          within('.new_blog_post__container') do
             find('#blog_post_body').set("Zażółć gęślą jaźń")
-            expect { submit_form }.to change { company.blog_posts.count }
+            expect { click_button }.to change { company.blog_posts.count }
           end
         end
       end

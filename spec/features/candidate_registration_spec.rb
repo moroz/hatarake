@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "Candidate registration" do
   it "registers a candidate account" do
-    visit '/candidates/sign_up'
+    visit sign_up_path
 
     find("#candidate_email").set('foobar@example.com')
     find("#candidate_password").set('foobar')
     find("#candidate_password_confirmation").set('foobar')
-
+    
     expect { submit_form }.to change { Candidate.count }
   end
 

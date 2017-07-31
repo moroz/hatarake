@@ -1,4 +1,4 @@
-.new_blog_post
+.new_blog_post__container
   = simple_form_for (@blog_post || [current_company, BlogPost.new]),remote: true, authenticity_token: true do |f|
     = error_messages_for f.object
     = f.invisible_captcha :title
