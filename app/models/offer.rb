@@ -45,7 +45,6 @@ class Offer < ApplicationRecord
   end
   
   scope :with_min_salary, ->(min) { where("salary @> :min or lower(salary) > :min", min: min.to_d) }
-  scope :featured, -> { published.order('published_at DESC') }
   scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }
   scope :with_province_id, ->(province_id) { joins(:location).where('locations.province_id = ?', province_id) }
 

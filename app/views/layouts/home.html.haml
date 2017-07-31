@@ -3,7 +3,7 @@
   = render 'header'
   = stylesheet_link_tag 'owl.carousel'
   = stylesheet_link_tag 'owl.theme.css'
-  %body.home
+  %body.home{'data-turbolinks' => 'false'}
     = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'topbar'

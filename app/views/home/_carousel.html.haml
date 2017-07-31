@@ -1,4 +1,4 @@
-.owl-carousel.owl-theme
+.owl-carousel.owl-theme#banner-carousel
   .owl-slide.owl-slide--couple
     .row.owl-slide__container--left
       .owl-slide__text
@@ -14,7 +14,7 @@
         = link_to t('.slide2.sign_up'), new_company_registration_path, class: 'button large'
 
 :javascript
-  $('.owl-carousel').owlCarousel({
+  $('#banner-carousel').owlCarousel({
     items: 1,
     dots: true,
     slideSpeed: 1000,
