@@ -32,6 +32,7 @@ en:
     candidates: Candidates
     companies: Companies
     dashboard: Dashboard
+    premium: Premium
 
   registrations:
     candidate_heading: "Sign up for candidate account"

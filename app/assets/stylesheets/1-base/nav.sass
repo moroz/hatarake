@@ -1,12 +1,12 @@
 .top-bar
   a, a:visited
-    color: darken(#175eba, 10%)
+    color: darken($primary-color, 10%)
 
     border-bottom: 2px solid transparent
 
   a:hover
-    color: darken(#175eba, 10%)
-    border-color: #e6e6e6
+    color: darken($primary-color, 10%)
+    border-color: lighten($primary-color, 20%)
     text-decoration: none
 
 .topbar__logo
@@ -63,15 +63,15 @@ a.locale_link
 .title-bar__hamburger
   position: absolute
   font-size: 1.7rem
-  color: #175eba
+  color: $primary-color
   left: 0.8rem
   top: 0.55rem
 
 .close-button
-  color: #175eba
+  color: $primary-color
 
   &:focus, &:active
-    color: darken(#175eba, 10%)
+    color: darken($primary-color, 10%)
 
 .off-canvas__menu li
   font-size: 115%

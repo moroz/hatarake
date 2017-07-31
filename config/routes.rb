@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/dotpay_payment/:token' => 'dotpay#payment', as: :dotpay_payment
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
+  get '/premium', to: 'subscriptions#index'
 
   resources :offers, path: '/jobs' do
     member do

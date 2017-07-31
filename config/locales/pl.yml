@@ -36,6 +36,7 @@ pl:
     candidates: Kandydaci
     companies: Pracodawcy
     dashboard: Panel
+    premium: Premium
 
   registrations:
     candidate_heading: "Zarejestruj się jako kandydat"

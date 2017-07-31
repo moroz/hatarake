@@ -3,6 +3,10 @@ class SubscriptionsController < ApplicationController
 
   helper_method :company
 
+  def index
+
+  end
+
   def new
     @title = "Premium Accounts"
   end
