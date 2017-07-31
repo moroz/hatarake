@@ -11,6 +11,7 @@ FactoryGirl.define do
     contact_phone { Faker::PhoneNumber.cell_phone }
     apply_on_website false
     unpublished
+    unfeatured
 
     trait :random do
       association :location, :random
@@ -19,6 +20,24 @@ FactoryGirl.define do
     trait :published do
       published true
       published_at { 1.day.ago }
+    end
+
+    trait :homepage_featured do
+      featured_until { 2.weeks.from_now }
+    end
+
+    trait :category_featured do
+      category_until { 2.weeks.from_now }
+    end
+
+    trait :highlighted do
+      highlight_until { 2.weeks.from_now }
+    end
+
+    trait :unfeatured do
+      featured_until nil
+      category_until nil
+      highlight_until nil
     end
 
     %i{ russia poland germany }.each do |country|

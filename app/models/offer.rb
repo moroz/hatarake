@@ -25,7 +25,9 @@ class Offer < ApplicationRecord
   before_validation :make_hourly_wage
   after_validation :add_http_to_application_url
 
-  default_scope { order('published_at DESC NULLS FIRST') }
+  default_scope { order('published_at DESC') }
+
+  scope :by_publishing_date_nulls_first, -> { order('published_at DESC NULLS FIRST') }
   
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
@@ -36,7 +38,7 @@ class Offer < ApplicationRecord
   
   def self.published_or_owned_by(company)
     if company.present?
-      where('published = ? OR company_id = ?', true, company.id)
+      where('published = ? OR company_id = ?', true, company.id).by_publishing_date_nulls_first
     else
       published
     end
@@ -46,6 +48,11 @@ class Offer < ApplicationRecord
   scope :featured, -> { published.order('published_at DESC') }
   scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }
   scope :with_province_id, ->(province_id) { joins(:location).where('locations.province_id = ?', province_id) }
+
+  scope :homepage_featured, -> { where('featured_until > NOW()') }
+  scope :category_featured, -> { where('category_until > NOW()') }
+  scope :highlighted, -> { where('category_until > NOW()') }
+  scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
 
   def self.advanced_search(o = {})
     scope = self.all

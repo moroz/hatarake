@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725170956) do
+ActiveRecord::Schema.define(version: 20170731140519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,9 @@ ActiveRecord::Schema.define(version: 20170725170956) do
     t.date "valid_till"
     t.boolean "apply_on_website", default: false
     t.string "application_url"
+    t.datetime "featured_until", comment: "Featuring on the homepage"
+    t.datetime "category_until", comment: "Featuring on the category page"
+    t.datetime "highlight_until", comment: "Highlight with colors"
     t.index ["company_id"], name: "index_offers_on_company_id"
     t.index ["published_at"], name: "index_offers_on_published_at"
     t.index ["slug"], name: "index_offers_on_slug", unique: true

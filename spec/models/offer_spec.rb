@@ -135,5 +135,38 @@ RSpec.describe Offer, type: :model do
       end
 
     end
+
+    describe "featuring" do
+      let!(:unfeatured) { FactoryGirl.create(:offer, :unfeatured) }
+      let!(:homepage_featured) { FactoryGirl.create(:offer, :homepage_featured) }
+
+      describe "#homepage_featured" do
+        let!(:homepage_past) { FactoryGirl.create(:offer, featured_until: 2.weeks.ago) }
+
+        subject { Offer.homepage_featured }
+        it { is_expected.to include(homepage_featured) }
+        it { is_expected.not_to include(unfeatured) }
+        it { is_expected.not_to include(homepage_past) }
+      end
+
+      describe "offers featured within category" do
+        let!(:category_featured) { FactoryGirl.create(:offer, :category_featured) }
+        let!(:category_past) { FactoryGirl.create(:offer, category_until: 2.weeks.ago) }
+
+        describe "#category_featured" do
+          subject { Offer.category_featured }
+          it { is_expected.to include(category_featured) }
+          it { is_expected.not_to include(unfeatured) }
+          it { is_expected.not_to include(category_past) }
+        end
+
+        describe "#not_category_featured" do
+          subject { Offer.not_category_featured }
+          it { is_expected.not_to include(category_featured) }
+          it { is_expected.to include(unfeatured) }
+          it { is_expected.to include(category_past) }
+        end
+      end
+    end
   end
 end
