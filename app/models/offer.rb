@@ -27,7 +27,8 @@ class Offer < ApplicationRecord
 
   default_scope { order('published_at DESC') }
 
-  scope :by_publishing_date_nulls_first, -> { order('published_at DESC NULLS FIRST') }
+  scope :featured_first, -> { reorder('(category_until > NOW())', 'published_at DESC') }
+  scope :by_publishing_date_nulls_first, -> { reorder('published_at DESC NULLS FIRST') }
   
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
@@ -50,8 +51,9 @@ class Offer < ApplicationRecord
 
   scope :homepage_featured, -> { where('featured_until > NOW()') }
   scope :category_featured, -> { where('category_until > NOW()') }
-  scope :highlighted, -> { where('category_until > NOW()') }
+  scope :highlighted, -> { where('highlight_until > NOW()') }
   scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
+  scope :random_order, -> { reorder('RANDOM()') }
 
   def self.advanced_search(o = {})
     scope = self.all

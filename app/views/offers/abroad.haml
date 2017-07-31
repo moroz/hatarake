@@ -6,9 +6,11 @@
     .row
       = render partial: 'basic_search'
 
-.offers__popular_locations.text-center
-  %h4= t('offers.popular_countries')
-  - @popular_locations.each do |location|
-    = render 'popular_location', location: location, link_param: :cid
-#offer-list
-  = render 'offers'
+- content_for :full_width do
+  .row
+    .offers__popular_locations.text-center
+      %h4= t('offers.popular_countries')
+      - @popular_locations.each do |location|
+        = render 'popular_location', location: location, link_param: :cid
+  #offer-list
+    = render 'offers'

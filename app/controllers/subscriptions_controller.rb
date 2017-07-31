@@ -3,8 +3,6 @@ class SubscriptionsController < ApplicationController
 
   helper_method :company
 
-  layout 'home'
-
   def index
 
   end
