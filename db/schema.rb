@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801155925) do
+ActiveRecord::Schema.define(version: 20170801160729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "active_admin_comments", id: :serial, force: :cascade do |t|
     t.string "namespace"
@@ -341,6 +342,7 @@ ActiveRecord::Schema.define(version: 20170801155925) do
     t.string "phone"
     t.string "contact_email"
     t.string "locale"
+    t.hstore "premium_services"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["contact_email"], name: "index_users_on_contact_email"
     t.index ["email"], name: "index_users_on_email", unique: true
