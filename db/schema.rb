@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801134857) do
+ActiveRecord::Schema.define(version: 20170801150612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,13 @@ ActiveRecord::Schema.define(version: 20170801134857) do
     t.datetime "updated_at", null: false
     t.integer "sex", limit: 2, comment: "ISO/IEC 5218-compliant sex field, 1 male, 2 female"
     t.index ["user_id"], name: "index_candidate_profiles_on_user_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "companies_fields", id: false, force: :cascade do |t|
@@ -348,6 +355,7 @@ ActiveRecord::Schema.define(version: 20170801134857) do
   add_foreign_key "attachments", "users", column: "owner_id"
   add_foreign_key "blog_posts", "users"
   add_foreign_key "candidate_profiles", "users"
+  add_foreign_key "carts", "users"
   add_foreign_key "education_items", "locations"
   add_foreign_key "education_items", "users", column: "candidate_id"
   add_foreign_key "locations", "countries"
