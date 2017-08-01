@@ -1,7 +1,7 @@
 class Payment < ApplicationRecord
-  belongs_to :subscription
   validates_presence_of :currency, :description
   belongs_to :payer, class_name: 'Company'
+  has_one :subscription, required: true
 
   before_validation :set_description, :set_amount
 
@@ -17,8 +17,6 @@ class Payment < ApplicationRecord
   end
 
   def set_amount
-    self.amount ||= Subscription::PRICES[currency]
+    self.amount = Subscription::PRICES[currency]
   end
-
-  
 end

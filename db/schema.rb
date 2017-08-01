@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731140519) do
+ActiveRecord::Schema.define(version: 20170801134857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -186,8 +186,6 @@ ActiveRecord::Schema.define(version: 20170731140519) do
   end
 
   create_table "payments", id: :serial, force: :cascade do |t|
-    t.integer "subscription_id"
-    t.integer "subscription_price_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
@@ -195,11 +193,8 @@ ActiveRecord::Schema.define(version: 20170731140519) do
     t.string "description"
     t.string "unique_token"
     t.integer "payer_id"
-    t.integer "item_id"
     t.decimal "amount", precision: 6, scale: 2
     t.index ["description"], name: "index_payments_on_description", unique: true
-    t.index ["subscription_id"], name: "index_payments_on_subscription_id"
-    t.index ["subscription_price_id"], name: "index_payments_on_subscription_price_id"
     t.index ["unique_token"], name: "index_payments_on_unique_token", unique: true
   end
 
@@ -294,7 +289,9 @@ ActiveRecord::Schema.define(version: 20170731140519) do
     t.boolean "paid", default: false
     t.integer "duration", default: 2592000
     t.decimal "price", precision: 8, scale: 2
+    t.bigint "payment_id"
     t.index ["company_id"], name: "index_subscriptions_on_company_id"
+    t.index ["payment_id"], name: "index_subscriptions_on_payment_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -357,8 +354,6 @@ ActiveRecord::Schema.define(version: 20170731140519) do
   add_foreign_key "locations", "provinces"
   add_foreign_key "offer_saves", "offers"
   add_foreign_key "offers", "locations"
-  add_foreign_key "payments", "subscription_prices"
-  add_foreign_key "payments", "subscriptions"
   add_foreign_key "payments", "users", column: "payer_id"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"

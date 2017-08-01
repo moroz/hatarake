@@ -1,6 +1,10 @@
 class Subscription < ApplicationRecord
+  # This is a class used to order Premium Employer Bundles
+  # and nothing else, really
   belongs_to :company, required: true
-  has_many :payments
+  belongs_to :payment, required: true
+
+  before_create :set_price
 
   attr_accessor :currency
 
@@ -11,7 +15,7 @@ class Subscription < ApplicationRecord
 
   PRICES = {'eur' => 12.30, 'pln' => 49.19}
   DURATION = 2592000 # 30 days
-  PAYMENT_TITLE = "InJobs Premium "
+  PAYMENT_TITLE = "InJobs.pl Premium Employer "
 
   def active?
     !!valid_until && valid_until > Time.now
@@ -35,4 +39,5 @@ class Subscription < ApplicationRecord
   def set_price
     self.price ||= PRICES[currency]
   end
+
 end

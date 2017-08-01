@@ -12,8 +12,15 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    subscription.company = company
-    subscription.save
+    @subscription = current_company.subscriptions.new
+    @subscription.currency = params[:currency]
+    Subscription.transaction do
+      @payment = @subscription.build_payment(currency: params[:currency], payer: current_company)
+      @payment.save!
+      @subscription.save!
+      redirect_to @payment and return
+    end
+    redirect_to new_subscription_path, alert: "An error occured"
   end
 
   private
