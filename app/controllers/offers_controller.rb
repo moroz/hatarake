@@ -28,19 +28,20 @@ class OffersController < ApplicationController
     @offers = current_company.offers.with_associations
   end
 
-  # The tricky part of #poland and #abroad is getting a list of
-  # offers featured in their categories. Whether the user searched
-  # or not, we display featured offers in the given scope first.
-  #
-  # We need to keep in mind that if the user cannot find any offers
-  # because they are left behind premium offers, they will stop
-  # using the application.
+  # Getting random records from the database can be hard on performance
+  # TODO: Write a stored procedure to get random records
 
   def poland
-    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params).page(params[:page])
+    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params)
+    @total_count = @offers.count
+    ids = nil
+    if search_params_present? && @total_count < 50
+      ids = @offers.pluck(:id)
+    end
+    @offers = @offers.page(params[:page])
     @feat_count = @offers.category_featured.count
-    @total_count = @offers.total_count
     set_search_description
+    get_featured_offers(:poland, ids) if search_params_present? && @offers.last_page?
     @popular_locations = Province.most_popular_voivodeships_with_counts
     respond_to do |f|
       f.js { render 'index' }
@@ -49,12 +50,18 @@ class OffersController < ApplicationController
   end
 
   def abroad
-    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.advanced_search(params).page(params[:page])
+    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.advanced_search(params)
+    @total_count = @offers.count
+    ids = nil
+    if search_params_present? && @total_count < 50
+      ids = @offers.pluck(:id)
+    end
+    @offers = @offers.page(params[:page])
     @feat_count = @offers.category_featured.count
-    @total_count = @offers.total_count
     set_search_description
-    @popular_locations = Country.most_popular_with_offer_counts
     set_province_list if params[:cid].present?
+    @popular_locations = Country.most_popular_with_offer_counts
+    get_featured_offers(:abroad, ids) if search_params_present? && @offers.last_page?
     respond_to do |f|
       f.js { render 'index' }
       f.html
@@ -137,6 +144,16 @@ class OffersController < ApplicationController
       end
     end
     false
+  end
+
+  def get_featured_offers(scope, ids = nil, lim = CATEGORY_FEATURED_LIMIT)
+    @featured = Offer.published.with_associations.category_featured.random_order.limit(lim)
+    if scope == :poland
+      @featured = @featured.poland
+    else
+      @featured = @featured.abroad
+    end
+    @featured = @featured.where('offers.id NOT IN (?)', ids) if ids.present?
   end
 
   def page_present?

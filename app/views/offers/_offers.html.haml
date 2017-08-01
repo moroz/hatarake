@@ -14,6 +14,10 @@
         %h4 Zwyczajne oferty
         - featured_finished = true
       = render o
+    - if @featured.present?
+      %hr
+      %h4 Didn't find what you were looking for? Take a look at these offers:
+      = render @featured
   = paginate @offers
 - else
   = render 'no_offers_found'
