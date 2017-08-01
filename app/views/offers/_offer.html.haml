@@ -25,7 +25,7 @@
 
 - else
   = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]), class: 'no-underline' do 
-    %div{id: dom_id(offer), class: 'offer offer-row'}
+    %div{id: dom_id(offer), class: "offer offer-row #{offer.highlighted? ? 'offer-row--highlighted' : ''}"}
       .offer-row__logo
         = avatar_for offer.company, size: :thumb
       %span.offer-row__title

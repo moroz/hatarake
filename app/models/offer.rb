@@ -75,6 +75,10 @@ class Offer < ApplicationRecord
     scope
   end
 
+  def highlighted?
+    highlight_until && highlight_until > Time.now
+  end
+
   def category_featured?
     category_until && category_until > Time.now
   end
