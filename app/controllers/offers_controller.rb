@@ -43,20 +43,11 @@ class OffersController < ApplicationController
   # using the application.
 
   def poland
-    scope = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.page(params[:page])
-    if search_params_present?
-      @offers = scope.advanced_search(params)
-      @total_count = @offers.total_count
-      @featured = @offers.category_featured
-      @offers = @offers.not_category_featured
-      set_search_description
-    else
-      # when you just open /jobs/poland, we need to grab some
-      # featured offers at random
-      @featured = scope.category_featured
-      @offers = scope.not_category_featured
-      @total_count = scope.total_count
-    end
+    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.page(params[:page]).advanced_search(params)
+    set_search_description
+    @total_count = @offers.total_count
+    @featured = @offers.category_featured
+    @offers = @offers.not_category_featured
     @popular_locations = Province.most_popular_voivodeships_with_counts
     respond_to do |f|
       f.js { render 'index' }
@@ -65,20 +56,10 @@ class OffersController < ApplicationController
   end
 
   def abroad
-    scope = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.page(params[:page])
-    if search_params_present?
-      @offers = scope.advanced_search(params)
-      @total_count = @offers.total_count
-      @featured = @offers.category_featured
-      @offers = @offers.not_category_featured
-      set_search_description
-    else
-      # when you just open /jobs/abroad, we need to grab some
-      # featured offers at random
-      @featured = scope.category_featured
-      @offers = scope.not_category_featured
-      @total_count = scope.total_count
-    end
+    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.page(params[:page]).advanced_search(params)
+    @total_count = @offers.total_count
+    @featured = @offers.category_featured
+    @offers = @offers.not_category_featured
     @popular_locations = Country.most_popular_with_offer_counts
     set_search_description
     set_province_list if params[:cid].present?
