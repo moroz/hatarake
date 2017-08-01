@@ -29,25 +29,18 @@ class OffersController < ApplicationController
   end
 
   # The tricky part of #poland and #abroad is getting a list of
-  # offers featured in their categories. If there are no search
-  # params in the request, we get an array of 5 random category-
-  # featured offers and display non-featured offers afterwards.
-  #
-  # If there are any search params, we order search results so that
-  # featured offers are shown first (ORDER BY (category_until <
-  # NOW()), published_at DESC), and if there are not enough featured
-  # offers, we get more to make up for them.
+  # offers featured in their categories. Whether the user searched
+  # or not, we display featured offers in the given scope first.
   #
   # We need to keep in mind that if the user cannot find any offers
   # because they are left behind premium offers, they will stop
   # using the application.
 
   def poland
-    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.page(params[:page]).advanced_search(params)
-    set_search_description
+    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params).page(params[:page])
+    @feat_count = @offers.category_featured.count
     @total_count = @offers.total_count
-    @featured = @offers.category_featured
-    @offers = @offers.not_category_featured
+    set_search_description
     @popular_locations = Province.most_popular_voivodeships_with_counts
     respond_to do |f|
       f.js { render 'index' }
@@ -56,12 +49,11 @@ class OffersController < ApplicationController
   end
 
   def abroad
-    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.page(params[:page]).advanced_search(params)
+    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.advanced_search(params).page(params[:page])
+    @feat_count = @offers.category_featured.count
     @total_count = @offers.total_count
-    @featured = @offers.category_featured
-    @offers = @offers.not_category_featured
-    @popular_locations = Country.most_popular_with_offer_counts
     set_search_description
+    @popular_locations = Country.most_popular_with_offer_counts
     set_province_list if params[:cid].present?
     respond_to do |f|
       f.js { render 'index' }

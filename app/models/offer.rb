@@ -75,6 +75,10 @@ class Offer < ApplicationRecord
     scope
   end
 
+  def category_featured?
+    category_until && category_until > Time.now
+  end
+
   def publish
     self.update(published: true, published_at: Time.now)
   end

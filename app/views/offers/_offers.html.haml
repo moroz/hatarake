@@ -1,19 +1,19 @@
-- if @total_count > 0
+- if @offers.count > 0
   .row
     .offers__search_description
       = @search_description
       = t('offers.index.offer_count', count: @total_count)
       = reset_search_link if @search_description.present?
   .offer-list#offers
-    - if @featured.present?
-      .category_featured
-        %h4 Promowane oferty
-        - @featured.each do |f|
-          = render 'offer', offer: f
-    - if @offers.any?
-      = render @offers
-    - else
-      = t('offers.index.no_offers')
+    - featured_finished = true
+    - if @feat_count > 0
+      %h4 Promowane oferty
+      - featured_finished = false
+    - @offers.each do |o|
+      - if !o.category_featured? && !featured_finished
+        %h4 Zwyczajne oferty
+        - featured_finished = true
+      = render o
   = paginate @offers
 - else
   = render 'no_offers_found'
