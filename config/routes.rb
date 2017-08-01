@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
     resources :applications, except: :new
   end
+  get '/my_cart', to: 'cart#show', as: 'cart'
+  resources :cart_items, only: [:create, :update, :destroy]
   get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application
   get '/my_offers', to: 'offers#my_offers'
   get '/my_offer_applications', to: 'applications#my_offer_applications'

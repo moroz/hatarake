@@ -1,0 +1,19 @@
+%h1 My cart
+
+There are currently
+= @cart_items.count
+items in the cart.
+
+%table
+  %thead
+    %tr
+      %td Product Name
+      %td Unit Price
+      %td Quantity
+      %td Subtotal
+  %tbody
+    = render @cart_items
+  %tfoot
+    %tr
+      %td.text-right{colspan: 3} Total:
+      %td= @cart.total_to_s

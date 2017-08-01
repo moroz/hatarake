@@ -1,0 +1,6 @@
+%tr.cart_item{id: dom_id(cart_item)}
+  %td.cart_item__product_name= cart_item.product.local_name
+  %td.cart_item__unit_price= cart_item.product.unit_price
+  %td.cart_item__quantity= cart_item.quantity
+  %td.cart_item__subtotal= cart_item.subtotal_to_s
+

@@ -11,7 +11,10 @@
         Only 39.99 PLN or 10&euro; a month!
         %small / 49.19 PLN or 12.30&euro; incl. tax.
 
-      = link_to "Order now!", new_subscription_path, class: 'button primary large'
+      = form_with model: CartItem.new do |f|
+        = f.hidden_field :quantity, value: 1
+        = f.hidden_field :product_id, value: 1
+        = f.submit "Order now!", class: 'button primary large'
 
   %section.premium-landing-page__section
     .row
