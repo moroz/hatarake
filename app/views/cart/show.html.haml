@@ -17,3 +17,5 @@ items in the cart.
     %tr
       %td.text-right{colspan: 3} Total:
       %td= @cart.total_to_s
+
+= link_to "Empty Cart", @cart, method: :destroy

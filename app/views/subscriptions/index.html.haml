@@ -1,0 +1,15 @@
+- content_for :full_width do
+  - @products.each do |product|
+    %section.premium-landing-page__section
+      .row
+        %h1= product.local_name
+        != unsafe_markdown product.local_description
+
+        %p
+          Price:
+          = localized_currency_value net_price(product.price_pln)
+          PLN or
+          #{localized_currency_value net_price(product.price_eur)}&euro;
+        
+
+        = link_to "Zamów teraz!", new_subscription_path, class: "button primary large"

@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
   helper_method :company
 
   def index
-
+    @products = Product.all.order(:id)
   end
 
   def new
