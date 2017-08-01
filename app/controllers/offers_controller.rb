@@ -43,27 +43,19 @@ class OffersController < ApplicationController
   # using the application.
 
   def poland
-    scope = Offer.with_associations.poland.published_or_owned_by(current_user)
+    scope = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.page(params[:page])
     if search_params_present?
-      scope_after_search = scope.advanced_search(params).featured_first
-      # only get featured offers if we are getting first page
-      unless page_present?
-        @featured = scope_after_search.category_featured
-        feat_count = @featured.count
-        if feat_count < CATEGORY_FEATURED_LIMIT
-          ids = @featured.pluck(:id)
-          @featured += scope.category_featured.random_order.limit(CATEGORY_FEATURED_LIMIT - feat_count).where('offers.id NOT IN (?)', ids)
-        end
-      end
-      @offers = scope_after_search.not_category_featured.page(params[:page])
-      @total_count = @offers.total_count + feat_count
+      @offers = scope.advanced_search(params)
+      @total_count = @offers.total_count
+      @featured = @offers.category_featured
+      @offers = @offers.not_category_featured
       set_search_description
     else
       # when you just open /jobs/poland, we need to grab some
       # featured offers at random
-      @featured = scope.category_featured.random_order.limit(CATEGORY_FEATURED_LIMIT)
-      @offers = scope.not_category_featured.page(params[:page])
-      @total_count = scope.count unless page_present?
+      @featured = scope.category_featured
+      @offers = scope.not_category_featured
+      @total_count = scope.total_count
     end
     @popular_locations = Province.most_popular_voivodeships_with_counts
     respond_to do |f|
@@ -73,9 +65,20 @@ class OffersController < ApplicationController
   end
 
   def abroad
-    scope = Offer.with_associations.abroad.published_or_owned_by(current_user).advanced_search(params)
-    @featured = scope.category_featured.random_order.limit(5) unless params[:page].present? && params[:page] != '1'
-    @offers = scope.not_category_featured.page(params[:page])
+    scope = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.page(params[:page])
+    if search_params_present?
+      @offers = scope.advanced_search(params)
+      @total_count = @offers.total_count
+      @featured = @offers.category_featured
+      @offers = @offers.not_category_featured
+      set_search_description
+    else
+      # when you just open /jobs/abroad, we need to grab some
+      # featured offers at random
+      @featured = scope.category_featured
+      @offers = scope.not_category_featured
+      @total_count = scope.total_count
+    end
     @popular_locations = Country.most_popular_with_offer_counts
     set_search_description
     set_province_list if params[:cid].present?
