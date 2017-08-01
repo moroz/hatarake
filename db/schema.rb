@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801150932) do
+ActiveRecord::Schema.define(version: 20170801151301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -203,6 +203,15 @@ ActiveRecord::Schema.define(version: 20170801150932) do
     t.decimal "amount", precision: 6, scale: 2
     t.index ["description"], name: "index_payments_on_description", unique: true
     t.index ["unique_token"], name: "index_payments_on_unique_token", unique: true
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name_pl"
+    t.string "name_en"
+    t.decimal "price_pln", precision: 8, scale: 2
+    t.decimal "price_eur", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "professions", id: :serial, force: :cascade do |t|
