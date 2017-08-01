@@ -1,0 +1,49 @@
+- content_for :full_width do
+  %section.premium-landing-page__section
+    .row
+      %h1 Pakiet „Promowany Pracodawca”
+
+      %ul
+        %li Wyróżnienie profilu Twojej firmy na stronie głównej serwisu
+        %li Dostęp do bazy kandydatów poszukujących pracy
+
+      %p
+        Jedyne 39,99 PLN lub 10&euro; netto za miesiąc!
+        %small / 49,19 PLN lub 12,30&euro; brutto.
+
+      = link_to "Zamów teraz!", new_subscription_path, class: "button primary large"
+
+  %section.premium-landing-page__section
+    .row
+      %h1 Wypromuj ofertę na stronie głównej
+
+      %p
+        Jedyne 29,99 PLN lub 8&euro; netto za miesiąc!
+        %small / 36,89 PLN lub 9,84&euro; brutto.
+
+      = link_to "Zamów teraz!", '#', class: 'button primary large'
+
+  %section.premium-landing-page__section
+    .row
+      %h1 Wypromuj ofertę na początku kategorii
+
+      %p Twoja oferta będzie wyświetlać się na pierwszych miejscach w dziale „Praca za granicą” bądź „Praca w Polsce”.
+
+      %p
+        Koszt: 10,99 PLN lub 3&euro; netto za miesiąc!
+        %small / 13,51 PLN lub 3,69&euro; brutto.
+
+      = link_to "Zamów teraz!", '#', class: 'button primary large'
+
+  %section.premium-landing-page__section
+    .row
+      %h1 Podświetlenie oferty
+
+      %p
+        Twoja oferta będzie wyświetlana w innym kolorze, niż pozostałe oferty.
+
+      %p
+        Koszt: 5 PLN lub 1,50&euro; netto za miesiąc!
+        %small / 6,15 PLN lub 1,85&euro; brutto.
+
+      = link_to "Zamów teraz!", '#', class: 'button primary large'
