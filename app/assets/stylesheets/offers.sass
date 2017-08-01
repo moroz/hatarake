@@ -33,6 +33,7 @@
 
 .offer-row__company,
 .offer-row__salary,
+.offer-row__views,
 .offer-row__published_at,
 .offer-row__location
   display: block
@@ -40,7 +41,7 @@
   color: #333
 
   .fa
-    width: 1.2rem
+    width: 1.3rem
     text-align: center
 
 .offer__company-name
@@ -54,9 +55,17 @@
     line-height: 1.35
     text-align: center
 
+.offer__premium_label
+  display: inline-block
+  font-size: 0.7rem
+  background-color: $yellow
+  padding: 0.2rem 0.5rem
+  border-radius: 3px
+  color: #000
+
 .offer-row__details
   @include breakpoint(medium)
-    width: rem-calc(200)
+    width: rem-calc(350)
     float: left
 
 .offers__search_description

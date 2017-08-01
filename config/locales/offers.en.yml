@@ -1,6 +1,6 @@
 en:
   offers:
-    published_time_ago: "Published %{time} ago"
+    published_time_ago: "%{time} ago"
     not_published: "Not published"
     view_count:
       one: "1 view"

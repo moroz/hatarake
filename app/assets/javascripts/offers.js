@@ -43,7 +43,7 @@ document.addEventListener('turbolinks:load', function () {
       if (nextLink && nextLink.href) {
         // pure JS alternative to $(window).scrollTop()
         var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-        if (scrollTop > $(document).height() - $(window).height() - 90) {
+        if (scrollTop > $(document).height() - $(window).height() - 150) {
           $('.pagination').text('Loading...');
           console.log("Getting next page at " + new Date().toTimeString());
           $.getScript(nextLink.href);
