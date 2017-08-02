@@ -3,8 +3,30 @@ class Cart < ApplicationRecord
   belongs_to :user
   has_many :cart_items
 
+  def add_item(product, quantity = 1)
+    return false unless product.is_a?(Product) || product.is_a?(Integer)
+    return false if quantity.to_i < 1
+    if (item = self.cart_items.find_by(product_id: product))
+      item.update(quantity: item.quantity + quantity.to_i)
+    else
+      cart_items.create(product: product, quantity: quantity)
+    end
+  end
+
+  def finalize!
+    raise if finalized?
+    self.transaction do
+      Order.create!(cart: self, user: user)
+      self.update!(finalized_at: Time.now, finalized: true)
+    end
+  end
+
   def readonly?
-    order.present?
+    !changed.include?('finalized') && finalized?
+  end
+
+  def empty?
+    cart_items.empty?
   end
 
   def total(currency = 'pln')

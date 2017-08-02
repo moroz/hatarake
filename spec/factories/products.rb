@@ -1,8 +1,10 @@
 FactoryGirl.define do
   factory :product do
-    name_pl "MyString"
-    name_en "MyString"
-    price_pln "9.99"
-    price_eur "9.99"
+    sequence(:name_pl) { |n| "Tłusty Boczek #{n}" }
+    sequence(:name_en) { |n| "Chunky Bacon #{n}" }
+    price_pln "30.00"
+    price_eur "8.00"
+    description_pl "Tłusty boczek tłusty boczek"
+    description_en "Chunky bacon chunky bacon"
   end
 end
