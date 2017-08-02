@@ -9,4 +9,10 @@ class CartController < ApplicationController
     current_cart.destroy
     redirect_to cart_path
   end
+
+  def finalize
+    currency = params[:currency].present? ? params[:currency] : nil
+    order = current_cart.finalize!(currency)
+    redirect_to order_payment_path(order)
+  end
 end

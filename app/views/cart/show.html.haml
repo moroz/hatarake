@@ -20,5 +20,5 @@
 
 .text-right
   = link_to fa_icon('trash-o', text: t('.empty_cart')), cart_path, method: :delete, class: 'button secondary'
-  = link_to fa_icon('eur', text: t('.finalize_eur')), '#', class: 'button primary cart__pay_eur'
-  = link_to fa_icon('credit-card-alt', text: t('.finalize')), '#', class: 'button primary large'
+  = link_to fa_icon('eur', text: t('.finalize_eur')), finalize_cart_path(currency: 'eur'), method: :patch, class: 'button primary cart__pay_eur'
+  = link_to fa_icon('credit-card-alt', text: t('.finalize')), finalize_cart_path(currency: 'pln'), method: :patch, class: 'button primary large'
