@@ -1,22 +1,24 @@
-%h1= fa_icon 'shopping-cart', text: t('.heading')
+%h1.cart__heading= fa_icon 'shopping-cart', text: t('.heading')
 
 = t('.item_count', count: @cart_items.count)
 
-%table.hover
-  %thead
-    %tr
-      %td.cart_item__product_name= t('.product_name')
-      %td.cart_item__unit_price= t('.unit_price')
-      %td.cart_item__quantity{'colspan' => 2}= t('.quantity')
-      
-  %tbody
-    = render @cart_items
-  %tfoot
-    %tr
-      %td.text-right{colspan: 3} 👹 #{t('.total')}
-      %td= @cart.total_to_s
+.cart__table
+  %table.hover
+    %thead
+      %tr
+        %td.cart_item__product_name= t('.product_name')
+        %td.cart_item__unit_price= t('.unit_price')
+        %td.cart_item__quantity{'colspan' => 2}= t('.quantity')
+        
+    %tbody
+      = render @cart_items
+    %tfoot
+      %tr
+        -# Emoji 鬼 ogra U+1f479
+        %td.text-right{colspan: 3} 👹 #{t('.total')}
+        %td= @cart.total_to_s
 
 .text-right
   = link_to fa_icon('trash-o', text: t('.empty_cart')), cart_path, method: :delete, class: 'button secondary'
-  = link_to fa_icon('eur', text: t('.finalize_eur')), '#', class: 'button primary'
+  = link_to fa_icon('eur', text: t('.finalize_eur')), '#', class: 'button primary cart__pay_eur'
   = link_to fa_icon('credit-card-alt', text: t('.finalize')), '#', class: 'button primary large'
