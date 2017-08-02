@@ -12,4 +12,7 @@
           #{localized_currency_value net_price(product.price_eur)}&euro;
         
 
-        = link_to "Zamów teraz!", new_subscription_path, class: "button primary large"
+        = form_with model: CartItem.new do |f|
+          = f.hidden_field :product_id, value: product.id
+          = f.number_field :quantity, value: 1
+          = f.submit "Add To Cart", class: 'button primary'

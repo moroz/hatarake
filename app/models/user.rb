@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :phone, uniqueness: true, allow_blank: true
   validates :website, url: true, allow_blank: true
   has_one :avatar, foreign_key: 'owner_id'
-  has_one :cart
+  has_many :carts
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 

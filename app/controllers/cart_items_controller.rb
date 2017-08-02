@@ -1,9 +1,7 @@
 class CartItemsController < ApplicationController
   def create
-    @item = current_user.cart.cart_items.new(cart_item_params)
-    if @item.save
-      redirect_to cart_path
-    end
+    current_cart.add_item(cart_item_params[:product_id], cart_item_params[:quantity])
+    redirect_to cart_path
   end
 
   private

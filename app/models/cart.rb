@@ -1,11 +1,13 @@
 class Cart < ApplicationRecord
   has_one :order
   belongs_to :user
-  has_many :cart_items
+  has_many :cart_items, dependent: :destroy
+
+  scope :unfinalized, -> { where('NOT finalized') }
 
   def add_item(product, quantity = 1)
-    return false unless product.is_a?(Product) || product.is_a?(Integer)
-    return false if quantity.to_i < 1
+    product = Product.find_by(id: product.to_i) unless product.is_a?(Product)
+    return false if !product || quantity.to_i < 1
     if (item = self.cart_items.find_by(product_id: product))
       item.update(quantity: item.quantity + quantity.to_i)
     else

@@ -37,6 +37,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_cart
+    return unless logged_in?
+    current_user.carts.unfinalized.first || current_user.carts.create
+  end
+
   private
 
   def disable_turbolinks

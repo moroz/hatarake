@@ -18,4 +18,4 @@ items in the cart.
       %td.text-right{colspan: 3} Total:
       %td= @cart.total_to_s
 
-= link_to "Empty Cart", @cart, method: :destroy
+= link_to "Empty Cart", cart_path, method: :delete
