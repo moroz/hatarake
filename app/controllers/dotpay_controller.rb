@@ -1,10 +1,10 @@
-class DotpayController < PaymentsController
+class DotpayController < ordersController
   def confirm
     @dotpay = DotpayPayment.new(request.raw_post)
     if @dotpay.acknowledge
-      @payment = Payment.find_by(description: @dotpay.description)
-      @payment.update(status: @dotpay.status)
-      @payment.subscription.paid!
+      @order = Order.find_by(description: @dotpay.description)
+      @order.update(status: @dotpay.status)
+      @order.paid!
     else
       logger.error "Incorrect dotpay payment"
     end

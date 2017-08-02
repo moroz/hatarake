@@ -9,6 +9,14 @@ class Order < ApplicationRecord
   before_validation :set_token_description
   before_create :set_total
 
+  def to_param
+    unique_token
+  end
+
+  def paid!
+    self.update(paid_at: Time.now)
+  end
+
   private 
 
   def set_token_description
