@@ -20,3 +20,4 @@ pl:
       total: "Łącznie:"
       empty_cart: "Opróżnij Koszyk"
       finalize: "Złóż zamówienie"
+      finalize_eur: 'Zamów i zapłać w Euro'

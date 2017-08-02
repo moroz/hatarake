@@ -40,6 +40,9 @@ en:
 
     index:
       no_offers: "No offers found for the search criteria entered."
+      featured_offers: 'Featured offers'
+      remaining_offers: 'Remaining offers'
+      didnt_find_take_a_look: "Didn't find what you were looking for? Take a look at these offers:"
       advanced_search: "Advanced search"
       noscript: Please enable JS in your browser to search by region.
       basic_search: "Basic search"

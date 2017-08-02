@@ -7,16 +7,16 @@
   .offer-list#offers
     - featured_finished = true
     - if @feat_count > 0
-      %h4 Promowane oferty
+      %h4= t('offers.index.featured_offers')
       - featured_finished = false
     - @offers.each do |o|
       - if !o.category_featured? && !featured_finished
-        %h4 Zwyczajne oferty
+        %h4= t('offers.index.remaining_offers')
         - featured_finished = true
       = render o
     - if @featured.present?
       %hr
-      %h4 Didn't find what you were looking for? Take a look at these offers:
+      %h4= t('offers.index.didnt_find_take_a_look')
       = render @featured
   = paginate @offers
 - else

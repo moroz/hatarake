@@ -45,6 +45,9 @@ pl:
 
     index:
       no_offers: "Brak ofert spełniających kryteria wyszukiwania."
+      featured_offers: 'Oferty promowane'
+      remaining_offers: "Pozostałe oferty"
+      didnt_find_take_a_look: "Nie znalazłeś tego, czego szukałeś? Może zainteresują Cię poniższe oferty:"
       advanced_search: "Wyszukiwanie zaawansowane"
       noscript: Wyszukiwanie wg regionu wymaga włączonego JS w przeglądarce.
       basic_search: "Wyszukiwanie podstawowe"
@@ -86,9 +89,14 @@ pl:
       any_currency: Dowolna waluta
       any_country: Dowolny kraj
 
+    poland_search:
+      province: Województwo
+      placeholder: "Fragment tytułu, lokalizacja..."
+      submit: Szukaj
+
     basic_search:
       submit: "Szukaj"
-      placeholder: "Fragment tytułu, opisu, lokalizacja..."
+      placeholder: "Fragment tytułu, lokalizacja..."
       heading: "Wyszukiwanie ofert"
 
     edit:

@@ -8,20 +8,18 @@ Rails.application.routes.draw do
   get '/jobs/poland', to: 'offers#poland'
   get '/premium', to: 'products#index'
 
-  resources :offers, path: '/jobs' do
+  resources :offers, path: '/jobs', except: :index do
     member do
       patch :publish
       patch :unpublish
       post :save
     end
-    resources :applications, except: :new
+    resources :applications, only: :create
   end
   resource :cart, only: [:show, :destroy], controller: 'cart'
   resources :cart_items, only: [:create, :update, :destroy]
   get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application
   get '/my_offers', to: 'offers#my_offers'
-  get '/my_offer_applications', to: 'applications#my_offer_applications'
-  resources :applications, only: :show
   resources :resumes
   delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'candidate/edit_skills', to: 'candidates#edit_skills'

@@ -1,0 +1,12 @@
+- classes = 'poland_search large-8 large-offset-2 medium-10 medium-offset-1 columns padding-for-small'
+%section{class: classes}
+  = form_for offers_path, method: :get, remote: true do |f|
+    .row.collapse
+      .small-6.medium-6.columns
+        = f.text_field :q, name: 'q', id: "advanced_search_q", placeholder: t('.placeholder'), class: 'search_bar__left'
+      .small-6.medium-4.columns
+        = f.select :pid, localized_collection(@provinces || [], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', class: 'search_bar__center'
+      .medium-2.columns
+        = f.button fa_icon('search', text: t('.submit')), class: 'button primary expanded search_bar__right'
+
+
