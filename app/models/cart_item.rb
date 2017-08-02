@@ -5,15 +5,15 @@ class CartItem < ApplicationRecord
 
   delegate :name, to: :product, prefix: true
 
-  def subtotal_pln
-    quantity * product.price_pln
+  def readonly?
+    cart.readonly?
   end
 
-  def subtotal_eur
-    quantity * product.price_eur
+  def subtotal(currency = 'pln')
+    quantity * product["price_#{currency}"]
   end
 
   def subtotal_to_s
-    sprintf("%.2f PLN / %.2f&euro;", subtotal_pln, subtotal_eur).html_safe
+    sprintf("%.2f PLN / %.2f&euro;", subtotal, subtotal(:eur)).html_safe
   end
 end

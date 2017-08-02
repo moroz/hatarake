@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801160729) do
+ActiveRecord::Schema.define(version: 20170802072743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -203,6 +203,21 @@ ActiveRecord::Schema.define(version: 20170801160729) do
     t.index ["skill_id"], name: "index_offers_skills_on_skill_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cart_id"
+    t.string "currency", default: "pln"
+    t.string "unique_token"
+    t.string "payment_description"
+    t.string "payment_status"
+    t.datetime "paid_at"
+    t.decimal "total", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "payments", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -379,6 +394,8 @@ ActiveRecord::Schema.define(version: 20170801160729) do
   add_foreign_key "locations", "provinces"
   add_foreign_key "offer_saves", "offers"
   add_foreign_key "offers", "locations"
+  add_foreign_key "orders", "carts"
+  add_foreign_key "orders", "users"
   add_foreign_key "payments", "users", column: "payer_id"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
