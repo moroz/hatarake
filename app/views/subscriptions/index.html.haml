@@ -12,7 +12,11 @@
           #{localized_currency_value net_price(product.price_eur)}&euro;
         
 
-        = form_with model: CartItem.new do |f|
-          = f.hidden_field :product_id, value: product.id
-          = f.number_field :quantity, value: 1
-          = f.submit "Add To Cart", class: 'button primary'
+        .premium-landing-page__quantity_form
+          = form_with model: CartItem.new do |f|
+            = f.hidden_field :product_id, value: product.id
+            .input-group
+              %span.input-group-label Quantity:
+              = f.number_field :quantity, value: 1, class: 'input-group-field'
+              .input-group-button
+                = f.submit "Add To Cart", class: 'button primary'
