@@ -1,4 +1,4 @@
-class DotpayController < ordersController
+class DotpayController < PaymentsController
   def confirm
     @dotpay = DotpayPayment.new(request.raw_post)
     if @dotpay.acknowledge
