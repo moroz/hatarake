@@ -1,0 +1,22 @@
+pl:
+  products:
+    index:
+      add_to_cart: "Do Koszyka"
+      quantity: 'Liczba:'
+      price_net: "Koszt: %{price_pln} PLN lub %{price_eur}&euro; netto za miesiąc"
+      price_incl_tax: "/ %{price_pln} PLN lub %{price_eur}&euro; brutto."
+
+  cart:
+    show:
+      heading: Mój Koszyk
+      item_count:
+        zero: "Koszyk jest pusty."
+        one: "W koszyku znajduje się jeden przedmiot." 
+        few: "W koszyku znajdują się %{count} przedmioty."
+        many: "W koszyku znajduje się %{count} przedmiotów."
+      product_name: "Produkt"
+      unit_price: "Cena jednostkowa"
+      quantity: "Liczba"
+      total: "Łącznie:"
+      empty_cart: "Opróżnij Koszyk"
+      finalize: "Złóż zamówienie"

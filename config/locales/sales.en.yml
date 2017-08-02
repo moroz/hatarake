@@ -1,0 +1,22 @@
+en:
+  products:
+    index:
+      add_to_cart: Add to Cart
+      quantity: 'Quantity:'
+      price_net: "Price %{price_pln} PLN or %{price_eur} a month"
+      price_incl_tax: "/ %{price_pln} PLN or %{price_eur} including tax."
+
+  cart:
+    show:
+      heading: My Cart
+      item_count:
+        zero: "The Cart is currently empty."
+        one: "There is one item in the Cart."
+        other: "There are %{count} items in the Cart."
+      product_name: "Product name"
+      unit_price: "Unit price"
+      quantity: "Quantity"
+      total: "Total:"
+      empty_cart: "Empty Cart"
+      finalize: "Place Order"
+      finalize_eur: "Place Order in Euro"

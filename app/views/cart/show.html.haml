@@ -1,21 +1,22 @@
-%h1 My cart
+%h1= fa_icon 'shopping-cart', text: t('.heading')
 
-There are currently
-= @cart_items.count
-items in the cart.
+= t('.item_count', count: @cart_items.count)
 
-%table
+%table.hover
   %thead
     %tr
-      %td Product Name
-      %td Unit Price
-      %td Quantity
-      %td Subtotal
+      %td.cart_item__product_name= t('.product_name')
+      %td.cart_item__unit_price= t('.unit_price')
+      %td.cart_item__quantity{'colspan' => 2}= t('.quantity')
+      
   %tbody
     = render @cart_items
   %tfoot
     %tr
-      %td.text-right{colspan: 3} Total:
+      %td.text-right{colspan: 3} 👹 #{t('.total')}
       %td= @cart.total_to_s
 
-= link_to "Empty Cart", cart_path, method: :delete
+.text-right
+  = link_to fa_icon('trash-o', text: t('.empty_cart')), cart_path, method: :delete, class: 'button secondary'
+  = link_to fa_icon('eur', text: t('.finalize_eur')), '#', class: 'button primary'
+  = link_to fa_icon('credit-card-alt', text: t('.finalize')), '#', class: 'button primary large'

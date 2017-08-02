@@ -6,17 +6,15 @@
         != unsafe_markdown product.local_description
 
         %p
-          Price:
-          = localized_currency_value net_price(product.price_pln)
-          PLN or
-          #{localized_currency_value net_price(product.price_eur)}&euro;
+          != t('.price_net', price_pln: localized_currency_value(net_price(product.price_pln)), price_eur: localized_currency_value(net_price(product.price_eur)))
+          %small!= t('.price_incl_tax', price_pln: localized_currency_value(product.price_pln), price_eur: localized_currency_value(product.price_eur))
         
 
         .premium-landing-page__quantity_form
           = form_with model: CartItem.new do |f|
             = f.hidden_field :product_id, value: product.id
             .input-group
-              %span.input-group-label Quantity:
+              %span.input-group-label= t('.quantity')
               = f.number_field :quantity, value: 1, class: 'input-group-field'
               .input-group-button
-                = f.submit "Add To Cart", class: 'button primary'
+                = f.submit t('.add_to_cart'), class: 'button primary'
