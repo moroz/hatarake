@@ -59,15 +59,14 @@ RSpec.describe Company do
     end
   end
 
-  describe "scopes" do
-    let!(:company) { FactoryGirl.create(:company) }
-    let!(:premium_company) { FactoryGirl.create(:company, :premium) }
+  #describe "scopes" do
+    #let!(:company) { FactoryGirl.create(:company) }
     
-    describe "#premium_users" do
-      subject { Company.premium_users }
+    #describe "#premium_users" do
+      #subject { Company.premium_users }
 
-      it { is_expected.to include(premium_company) }
-      it { is_expected.not_to include(company) }
-    end
-  end
+      #it { is_expected.to include(premium_company) }
+      #it { is_expected.not_to include(company) }
+    #end
+  #end
 end

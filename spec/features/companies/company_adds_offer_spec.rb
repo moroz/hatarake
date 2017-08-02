@@ -8,7 +8,7 @@ RSpec.describe "Company adds Offer" do
   describe "offer creation" do
     before do
       login_as(company, scope: :company)
-      visit offers_path
+      visit root_path
     end
 
     subject { page.body }

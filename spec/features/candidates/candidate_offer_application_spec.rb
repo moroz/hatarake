@@ -6,7 +6,7 @@ RSpec.describe 'Candidate offer application' do
 
   before do
     login_as(candidate, scope: :candidate)
-    visit offers_path
+    visit jobs_abroad_path
   end
 
   describe 'applying for offer through application form' do

@@ -3,25 +3,21 @@ require 'rails_helper'
 RSpec.describe "Offer search" do
   describe "when visiting offers_path without params" do
     before do
-      visit offers_path
+      visit jobs_abroad_path
     end
 
     it "shows advanced search form" do
-      expect(page).to have_selector('.advanced_search form')
+      expect(page).to have_selector('.abroad_search form')
     end
 
     subject { page.body }
 
     # country select
-    it { is_expected.to have_selector('.advanced_search select[name="cid"]') }
+    it { is_expected.to have_selector('.abroad_search select[name="cid"]') }
     # province select
-    it { is_expected.to have_selector('.advanced_search select[name="pid"]') }
-    # currency select
-    it { is_expected.to have_selector('.advanced_search select[name="cur"]') }
-    # minimal salary input
-    it { is_expected.to have_selector('.advanced_search input[name="smin"]') }
+    it { is_expected.to have_selector('.abroad_search select[name="pid"]') }
     # query search
-    it { is_expected.to have_selector('.advanced_search input[name="smin"]') }
+    it { is_expected.to have_selector('.abroad_search input[name="q"]') }
   end
 
   describe "searching by name" do
@@ -29,8 +25,8 @@ RSpec.describe "Offer search" do
     let!(:other) { FactoryGirl.create(:offer, :published, title: "Computer programmer") }
 
     before(:each) do
-      visit offers_path(adv: 1)
-      within('.advanced_search') do
+      visit jobs_abroad_path
+      within('.abroad_search') do
         find('input[name="q"]').set("manga")
         click_button
       end
@@ -50,8 +46,8 @@ RSpec.describe "Offer search" do
     let!(:russia) { FactoryGirl.create(:offer, :published, :russia, title: "Offer in Russia") }
 
     before(:each) do
-      visit offers_path(lang: 'en')
-      within('.advanced_search') do
+      visit jobs_abroad_path(lang: 'en')
+      within('.abroad_search') do
         select("Germany", from: 'cid')
         click_button
       end

@@ -13,7 +13,6 @@ class Company < User
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
-  scope :premium_users, -> { joins(:subscriptions).where('subscriptions.valid_until > NOW()').distinct }
   scope :featured, -> { order('users.updated_at DESC') }
   scope :with_avg_rating, -> { find_with_reputation(:avg_rating, :all) }
 
@@ -31,22 +30,8 @@ class Company < User
     ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.try(:value)
   end
 
-  def subscriptions_valid_until
-    last_subscription.valid_until
-  end
-
-  def has_valid_subscription?
-    subscriptions.valid.exists?
-  end
-
-  alias :premium? :has_valid_subscription?
-
-  def current_subscription
-    subscriptions.valid.order('valid_until').first
-  end
-
-  def last_subscription
-    subscriptions.valid.order(valid_until: :desc).first
+  def premium?
+    true
   end
 
   def sex
