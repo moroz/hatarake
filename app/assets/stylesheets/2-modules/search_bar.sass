@@ -1,9 +1,15 @@
-@media screen and (min-width: 640px)
-  .search_bar__left
-    border-radius: $global-radius 0 0 $global-radius
+.search_bar__left
+  border-radius: $global-radius 0 0 $global-radius
 
-  .search_bar__center
+.search_bar__center
+  border-radius: 0 $global-radius $global-radius 0
+  @include breakpoint(medium)
     border-radius: 0
 
-  .search_bar__right
+.search_bar__right
+  @include breakpoint(medium)
     border-radius: 0 $global-radius $global-radius 0
+
+.abroad_search
+  select
+    color: #666

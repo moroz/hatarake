@@ -1,11 +1,15 @@
-- classes = 'basic_search columns medium-8 medium-offset-2'
+- classes = 'abroad_search columns medium-8 medium-offset-2'
 %section{class: classes}
   = form_for offers_path, method: :get, remote: true do |f|
     .input-group
       = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.basic_search.placeholder'), autocomplete: 'off', autofocus: !mobile?, id: "basic_search_q"
       .input-group-button
-        = f.submit t('offers.basic_search.submit'), class: 'button primary', name: nil
-  - unless defined?(hide_adv_link) && hide_adv_link
-    .text-center
-      = link_to t('offers.index.advanced_search'), offers_path, class: 'button', id: 'show_advanced_search'
+        = f.button fa_icon('search', text: t('.submit')), class: 'button primary expanded search_bar__right'
+    .row.collapse
+      .medium-6.columns
+        = f.select :cid, localized_collection(@countries, params[:cid] || 0, blank: t('offers.advanced_search.any_country')), {}, name: 'cid', data: {'country-select': ''}
+      .medium-6.columns
+        = f.select :pid, localized_collection(@provinces || [], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}, 'aria-describedby' => 'provinceSelectHelptext'
+    %noscript
+      %p.help-text#provinceSelectHelptext= t('offers.index.noscript')
   
