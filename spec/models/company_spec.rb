@@ -59,6 +59,29 @@ RSpec.describe Company do
     end
   end
 
+  describe "#premium?" do
+    context "when premium_until = nil" do
+      it "returns false" do
+        company = FactoryGirl.build(:company, premium_until: nil)
+        expect(company).not_to be_premium
+      end
+    end
+
+    context "when premium_until is in the past" do
+      it "returns false" do
+        company = FactoryGirl.build(:company, premium_until: 2.weeks.ago)
+        expect(company).not_to be_premium
+      end
+    end
+
+    context "when premium_until is in the future" do
+      it "returns false" do
+        company = FactoryGirl.build(:company, premium_until: 2.weeks.from_now)
+        expect(company).to be_premium
+      end
+    end
+  end
+
   describe "#add_premium_services" do
 
     context "with wrong type of argument" do

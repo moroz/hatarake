@@ -31,7 +31,7 @@ class Company < User
   end
 
   def premium?
-    self.premium_until > Time.now
+    premium_until && premium_until > Time.now
   end
 
   def sex
