@@ -86,6 +86,22 @@ RSpec.describe Company do
         expect(company.premium_services).to eq({'2' => '3', '3' => '9', '4' => '1'})
       end
     end
+
+    context "when hash has key = 1" do
+      it "changes premium_until" do
+        expect { company.add_premium_services({1 => 2}) }.to change { company.premium_until }
+      end
+
+      it "does not add 1 to premium_services" do
+        company.add_premium_services({1 => 2, 2 => 3})
+        expect(company.premium_services).to eq({'2' => '3'})
+      end
+
+      it "sets correct premium_until" do
+        company.add_premium_services({1 => 2, 2 => 3})
+        expect(company.premium_until).to be_within(1.second).of(2.months.from_now)
+      end
+    end
   end
 
   #describe "scopes" do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802142652) do
+ActiveRecord::Schema.define(version: 20170803125352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -346,6 +346,7 @@ ActiveRecord::Schema.define(version: 20170802142652) do
     t.string "contact_email"
     t.string "locale"
     t.hstore "premium_services"
+    t.datetime "premium_until"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["contact_email"], name: "index_users_on_contact_email"
     t.index ["email"], name: "index_users_on_email", unique: true

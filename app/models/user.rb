@@ -29,12 +29,23 @@ class User < ApplicationRecord
     self.save if self.persisted?
   end
 
+  def renew_premium_employer(months)
+    if self.premium_until.present?
+      update(premium_until: premium_until + months.months)
+    else
+      update(premium_until: months.months.from_now)
+    end
+  end
+
   def add_premium_services(hash)
     raise ArgumentError unless hash.is_a?(Hash)
+    hash.stringify_keys!
+    if hash.key?('1')
+      renew_premium_employer(hash.delete('1').to_i)
+    end
     if self.premium_services.nil?
       new_hash = hash
     else
-      hash.stringify_keys!
       new_hash = self.premium_services.stringify_keys
       hash.each do |k,v|
         if new_hash.key?(k)
