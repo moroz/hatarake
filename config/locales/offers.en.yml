@@ -56,6 +56,11 @@ en:
     abroad:
       heading: "Jobs abroad"
 
+    poland_search:
+      province: Voivodeship
+      placeholder: "Partial title, location..."
+      submit: Search
+
     popular_voivodeships: "Most popular regions"
     popular_countries: "Most popular countries"
 
