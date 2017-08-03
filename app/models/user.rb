@@ -29,6 +29,24 @@ class User < ApplicationRecord
     self.save if self.persisted?
   end
 
+  def add_premium_services(hash)
+    raise ArgumentError unless hash.is_a?(Hash)
+    if self.premium_services.nil?
+      new_hash = hash
+    else
+      hash.stringify_keys!
+      new_hash = self.premium_services.stringify_keys
+      hash.each do |k,v|
+        if new_hash.key?(k)
+          new_hash[k] = hash[k].to_i + new_hash[k].to_i
+        else
+          new_hash[k] = hash[k].to_i
+        end
+      end
+    end
+    self.update(premium_services: new_hash)
+  end
+
   protected
 
   def add_http_to_website

@@ -5,11 +5,10 @@ FactoryGirl.define do
     password "foobar2000"
     website { Faker::Internet.url }
     confirmed_at Time.now
+    premium_services nil
 
     trait :premium do
-      after(:create) do |company, evaluator|
-        create(:subscription, :paid, company: company)
-      end
+
     end
   end
 end

@@ -59,6 +59,35 @@ RSpec.describe Company do
     end
   end
 
+  describe "#add_premium_services" do
+
+    context "with wrong type of argument" do
+      it "raises ArgumentError" do
+        expect { company.add_premium_services("string") }.to raise_exception(ArgumentError)
+      end
+    end
+
+    context "when user has no premium services" do
+      let(:company) { FactoryGirl.create(:company, premium_services: nil) }
+      
+      it "sets premium_services to the hash" do
+        company.add_premium_services({2 => 1, 3 => 6})
+
+        expect(company.premium_services).to eq({'2' => '1', '3' => '6'})
+      end
+    end
+
+    context "when user already has premium services" do
+      let(:company) { FactoryGirl.create(:company, premium_services: {2 => 1, 3 => 6}) }
+
+      it "sets premium_services to sum of hashes" do
+        company.add_premium_services({2 => 2, 3 => 3, 4 => 1})
+
+        expect(company.premium_services).to eq({'2' => '3', '3' => '9', '4' => '1'})
+      end
+    end
+  end
+
   #describe "scopes" do
     #let!(:company) { FactoryGirl.create(:company) }
     
