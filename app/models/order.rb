@@ -9,12 +9,23 @@ class Order < ApplicationRecord
   before_validation :set_token_description
   before_create :set_total
 
+  scope :paid, -> { where('paid_at IS NOT NULL') }
+  scope :unpaid, -> { where(paid_at: nil) }
+
   def to_param
     unique_token
   end
 
   def paid!
-    self.update(paid_at: Time.now)
+    raise RuntimeError.new("Order is already paid") if paid_at.present?
+    self.transaction do
+      self.update!(paid_at: Time.now)
+      user.add_premium_services(self.to_h)
+    end
+  end
+
+  def to_h
+    cart.to_h
   end
 
   private 

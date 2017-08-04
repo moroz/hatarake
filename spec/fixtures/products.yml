@@ -1,0 +1,71 @@
+---
+1:
+  id: 1
+  name_pl: Promowany Pracodawca
+  name_en: Premium Employer Bundle
+  price_pln: !ruby/object:BigDecimal 27:0.4919e2
+  price_eur: !ruby/object:BigDecimal 27:0.123e2
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 17:25:29.554119000 Z
+    zone: &1 !ruby/object:ActiveSupport::TimeZone
+      name: Europe/Warsaw
+    time: 2017-08-01 19:25:29.554119000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 18:45:15.605658000 Z
+    zone: *1
+    time: 2017-08-01 20:45:15.605658000 Z
+  description_en: "* Your company profile will be featured on the homepage\r\n* Access
+    the database of candidates looking for work\r\n"
+  description_pl: "* Wyróżnienie profilu Twojej firmy na stronie głównej serwisu\r\n*
+    Dostęp do bazy kandydatów poszukujących pracy"
+2:
+  id: 2
+  name_pl: Promocja oferty na stronie głównej
+  name_en: Featured Offer
+  price_pln: !ruby/object:BigDecimal 27:0.3689e2
+  price_eur: !ruby/object:BigDecimal 27:0.984e1
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 17:56:58.300949000 Z
+    zone: *1
+    time: 2017-08-01 19:56:58.300949000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 19:01:17.931494000 Z
+    zone: *1
+    time: 2017-08-01 21:01:17.931494000 Z
+  description_en: ''
+  description_pl: ''
+3:
+  id: 3
+  name_pl: Promocja oferty na stronie kategorii
+  name_en: Highlight Offer on the category page
+  price_pln: !ruby/object:BigDecimal 27:0.1351e2
+  price_eur: !ruby/object:BigDecimal 27:0.369e1
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 17:58:09.339175000 Z
+    zone: *1
+    time: 2017-08-01 19:58:09.339175000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 19:00:56.031188000 Z
+    zone: *1
+    time: 2017-08-01 21:00:56.031188000 Z
+  description_en: Your offer will be displayed at the beginning of the category page
+    &ldquo;Jobs abroad&rdquo; or &ldquo;Jobs in Poland&rdquo;.
+  description_pl: Twoja oferta będzie wyświetlać się na pierwszych miejscach w dziale
+    „Praca za granicą” bądź „Praca w Polsce”.
+4:
+  id: 4
+  name_pl: Wyróżnienie kolorem
+  name_en: Color Highlight
+  price_pln: !ruby/object:BigDecimal 27:0.615e1
+  price_eur: !ruby/object:BigDecimal 27:0.185e1
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 17:58:46.979512000 Z
+    zone: *1
+    time: 2017-08-01 19:58:46.979512000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2017-08-01 19:00:06.175387000 Z
+    zone: *1
+    time: 2017-08-01 21:00:06.175387000 Z
+  description_en: Your offer will be highlighted with a bright color on the category
+    page.
+  description_pl: Twoja oferta będzie wyświetlana w innym kolorze, niż pozostałe oferty.

@@ -25,7 +25,7 @@ class Cart < ApplicationRecord
   end
 
   def readonly?
-    !changed.include?('finalized') && finalized?
+    saved_change_to_attribute?(:finalized) && finalized?
   end
 
   def empty?
@@ -35,6 +35,12 @@ class Cart < ApplicationRecord
   def total(currency = 'pln')
     cart_items.reduce(0) do |counter, item|
       counter + item.subtotal(currency)
+    end
+  end
+
+  def to_h
+    cart_items.reduce({}) do |acc, item|
+      acc.merge({item.product_id => item.quantity})
     end
   end
 

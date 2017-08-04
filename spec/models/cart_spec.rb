@@ -18,6 +18,17 @@ RSpec.describe Cart, type: :model do
     end
   end
 
+  describe "#to_h" do
+    let(:product2) { FactoryGirl.create(:product) }
+
+    it "returns a hash of product_ids => quantities" do
+      cart.add_item(product, 3)
+      cart.add_item(product2, 2)
+      
+      expect(cart.to_h).to eq({product.id => 3, product2.id => 2})
+    end
+  end
+
   describe "#add_item" do
     context 'when given item is not present' do
       before do
