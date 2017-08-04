@@ -23,7 +23,6 @@ class DashboardsController < ApplicationController
       offer_count: current_company.offers.count,
       unpaid_orders_count: current_company.orders.unpaid.count
     }
-
     render 'company_dashboard'
   end
 

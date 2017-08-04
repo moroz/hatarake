@@ -2,13 +2,37 @@
 
 %section.premium_membership
 
-- if @stats[:unpaid_orders_count] != 0
-  You have
-  = @stats[:unpaid_orders_count]
-  unpaid orders.
+.card
+  .card-divider
+    %h4 Premium Services
+  .card-section
+    - if current_company.premium?
+      %p
+        Your Premium Employer Bundle is valid until
+        = l current_company.premium_until
+    - if current_company.premium_services.present?
+      %p You can use the following Premium Services:
+      %ul
+      - current_company.premium_services.each do |k,v|
+        %li
+          = v
+          &times;
+          = Product.find_by(id: k).local_name
 
-.row
-  .columns.medium-6
-    %a.dashboard-nav-card.dark-red-bg{href: my_offers_path}
-      %h3.dashboard-nav-card-title= t('.my_offers')
-      %span.dashboard-nav-card-icon= fa_icon 'briefcase', text: @stats[:offer_count]
+- if @stats[:unpaid_orders_count] != 0
+  .card
+    .card-divider
+      %h4 Orders
+    .card-section
+      You have
+      = @stats[:unpaid_orders_count]
+      unpaid orders.
+
+.card
+  .card-divider
+    %h4 Offers
+  .card-section
+    You have
+    = link_to my_offers_path do
+      = @stats[:offer_count]
+      offers.
