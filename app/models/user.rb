@@ -30,11 +30,11 @@ class User < ApplicationRecord
     self.save if self.persisted?
   end
 
-  def renew_premium_employer(months)
+  def renew_premium_employer(duration)
     if self.premium_until.present?
-      update(premium_until: premium_until + months.months)
+      update(premium_until: premium_until + duration.months)
     else
-      update(premium_until: months.months.from_now)
+      update(premium_until: Time.now + duration.months)
     end
   end
 

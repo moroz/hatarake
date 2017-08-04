@@ -1,8 +1,3 @@
-%h2.company__name.company__name--margin-top
-  - unless request.path == company_path(company)
-    = link_to company.name, company
-  - else
-    = company.name
 
 - if company.website.present?
   = link_to company.website do
