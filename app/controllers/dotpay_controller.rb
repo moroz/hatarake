@@ -3,7 +3,7 @@ class DotpayController < PaymentsController
     @dotpay = DotpayPayment.new(request.raw_post)
     if @dotpay.acknowledge
       @order = Order.find_by(unique_token: @dotpay.control)
-      @order.update(status: @dotpay.status)
+      @order.update(payment_status: @dotpay.status)
       logger.info "Received Dotpay payment: #{@dotpay.amount} #{@dotpay.currency.upcase}"
       @order.paid!
     else

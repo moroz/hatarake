@@ -2,8 +2,13 @@
 
 %section.premium_membership
 
+- if @stats[:unpaid_orders_count] != 0
+  You have
+  = @stats[:unpaid_orders_count]
+  unpaid orders.
+
 .row
   .columns.medium-6
     %a.dashboard-nav-card.dark-red-bg{href: my_offers_path}
       %h3.dashboard-nav-card-title= t('.my_offers')
-      %span.dashboard-nav-card-icon= fa_icon 'briefcase', text: @offers.count
+      %span.dashboard-nav-card-icon= fa_icon 'briefcase', text: @stats[:offer_count]

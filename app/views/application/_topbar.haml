@@ -24,7 +24,10 @@
             %li= link_to 'Panel', admin_dashboard_path
           - else
             - if company_signed_in?
-              %li= link_to fa_icon('shopping-cart', text: sprintf("%.2f PLN", current_cart.total)), cart_path
+              %li
+                = link_to cart_path do
+                  %span.fa.fa-shopping-cart
+                  = sprintf("%.2f PLN", current_cart.total)
             %li= link_to t('nav.dashboard'), dashboard_path
             %li= link_to t('nav.profile'), profile_path
           %li= link_to t('nav.sign_out'), destroy_user_session_path, method: :delete 

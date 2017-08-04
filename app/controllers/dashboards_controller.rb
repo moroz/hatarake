@@ -19,8 +19,11 @@ class DashboardsController < ApplicationController
   end
 
   def company_dashboard
-    @offers = current_company.offers.includes(location: [:country, :province]).limit(12)
-    @applications = current_company.applications.includes(:offer).unread.group_by(&:offer)
+    @stats = {
+      offer_count: current_company.offers.count,
+      unpaid_orders_count: current_company.orders.unpaid.count
+    }
+
     render 'company_dashboard'
   end
 
