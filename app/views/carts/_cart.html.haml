@@ -1,0 +1,17 @@
+- if cart.cart_items.present?
+  %ul.cart
+    - cart.cart_items.each do |item|
+      %li
+        = item.quantity
+        &times;
+        = item.product.local_name
+        - if defined?(currency)
+          = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
+        - else
+          = item.subtotal_to_s
+  %strong
+    = t('cart.show.total')
+    - if defined?(currency)
+      = sprintf("%.2f %s", cart.total(currency), currency.upcase)
+    - else
+      = cart.total_to_s

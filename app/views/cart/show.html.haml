@@ -22,4 +22,4 @@
 
 .text-right
   = link_to fa_icon('trash-o', text: t('.empty_cart')), cart_path, method: :delete, class: 'button secondary'
-  = link_to fa_icon('credit-card-alt', text: t('.place')), place_order_path, method: :patch, class: 'button primary large'
+  = link_to fa_icon('credit-card-alt', text: t('.place')), place_order_path, class: 'button primary large'

@@ -17,11 +17,7 @@ class Cart < ApplicationRecord
 
   def finalize!(currency = 'pln')
     raise if finalized?
-    self.transaction do
-      Order.create!(cart: self, user: user)
-      self.update!(finalized_at: Time.now, finalized: true)
-    end
-    self.order
+    self.update!(finalized_at: Time.now, finalized: true)
   end
 
   def readonly?

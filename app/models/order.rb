@@ -4,16 +4,15 @@ class Order < ApplicationRecord
   has_one :billing_address
 
   validates :currency, inclusion: { in: %w( pln eur ) }
-  validates :unique_token, :payment_description, presence: true
+  validates :unique_token, presence: true
 
-  BASE_DESCRIPTION = "InJobs.pl Order #"
   before_validation :set_token_description
   before_create :set_total
 
   scope :paid, -> { where('paid_at IS NOT NULL') }
   scope :unpaid, -> { where(paid_at: nil) }
 
-  accepts_nested_attributes_for :billing_address
+  accepts_nested_attributes_for :billing_address, reject_if: :all_blank
 
   def to_param
     unique_token
@@ -35,7 +34,6 @@ class Order < ApplicationRecord
 
   def set_token_description
     self.unique_token ||= SecureRandom.hex(10)
-    self.payment_description ||= BASE_DESCRIPTION + id.to_s
   end
 
   def set_total

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804092441) do
+ActiveRecord::Schema.define(version: 20170804150502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -225,13 +225,13 @@ ActiveRecord::Schema.define(version: 20170804092441) do
     t.bigint "cart_id"
     t.string "currency", default: "pln"
     t.string "unique_token"
-    t.string "payment_description"
     t.string "payment_status"
     t.datetime "paid_at"
     t.decimal "total", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["unique_token"], name: "index_orders_on_unique_token", unique: true
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

@@ -19,11 +19,9 @@ Rails.application.routes.draw do
   resource :cart, only: [:show, :destroy], controller: 'cart' do
     patch :finalize
   end
-  resources :orders, only: [:show] do
+  get '/orders/place', to: 'orders#place', as: :place_order
+  resources :orders, only: [:create, :show] do
     get :payment
-    collection do
-      get :place, as: :place_order
-    end
   end
   resources :cart_items, only: [:create, :update, :destroy]
   get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application

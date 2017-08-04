@@ -1,15 +1,14 @@
-%h1 Order #{@order.unique_token}
-
-%p= @order.payment_description
+%h1= t('.heading', id: @order.id)
 
 %p
-  Amount:
-  = sprintf "%.2f %s", @order.total, @order.currency.upcase
+  %strong= t('.currency')
+  = @order.currency.upcase
+= render @order.cart, currency: @order.currency
 
 = form_with url: "https://ssl.dotpay.pl/test_payment/", method: :post, local: true do |f|
   = f.hidden_field :id, value: dotpay_id(@order.currency)
   = f.hidden_field :currency, value: @order.currency.upcase
   = f.hidden_field :amount, value: sprintf("%.2f", @order.total)
   = f.hidden_field :control, value: @order.unique_token
-  = f.hidden_field :description, value: @order.payment_description
-  = f.submit "Confirm and pay with Dotpay", class: 'button large'
+  = f.hidden_field :description, value: t('.payment_description')
+  = f.submit t('.confirm_and_pay'), class: 'button large'

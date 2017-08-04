@@ -1,0 +1,53 @@
+%h1= t('.heading')
+
+= render @cart
+
+= simple_form_for @order do |f|
+  %fieldset
+    %legend Currency:
+    = f.radio_button :currency, 'pln', checked: true
+    = f.label :currency, 'PLN', value: 'PLN'
+    = f.radio_button :currency, 'eur'
+    = f.label :currency, 'Euro', value: 'Euro'
+
+  = check_box_tag 'invoice', 'yes', false
+  = label_tag 'invoice', 'Potrzebuję faktury VAT'
+  = error_messages_for f.object
+  #billing_address
+    %h4 Dane do faktury:
+    = f.simple_fields_for :billing_address do |ff|
+      .row
+        .medium-6.columns
+          = ff.input :first_name
+        .medium-6.columns
+          = ff.input :last_name
+      .row
+        .medium-6.columns
+          = ff.input :street
+        .medium-3.small-6.columns
+          = ff.input :house_no
+        .medium-3.small-6.columns
+          = ff.input :apt_no
+      .row
+        .small-6.large-4.columns
+          = ff.input :postal_code
+        .small-6.large-4.columns
+          = ff.input :city
+        .large-4.columns
+          = ff.input :nip
+
+  = f.submit "Wyślij", class: 'button expanded'
+:javascript
+  function hideBillingFields() {
+    document.getElementById('billing_address').classList.add('hide');
+  }
+  $('#invoice').on('change', function(e) {
+    if (e.target.checked) {
+      document.getElementById('billing_address').classList.remove('hide');
+    } else {
+      hideBillingFields();
+    }
+  });
+- if @order.errors.empty?
+  :javascript
+    hideBillingFields();

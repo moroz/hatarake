@@ -20,3 +20,10 @@ en:
       empty_cart: "Empty Cart"
       finalize: "Place Order"
       finalize_eur: "Place Order in Euro"
+
+  orders:
+    payment:
+      payment_description: "InJobs.pl Premium Features"
+      confirm_and_pay: "Confirm and pay with Dotpay"
+      heading: "Order #%{id}"
+      currency: "Order currency:"

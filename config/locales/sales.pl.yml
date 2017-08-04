@@ -26,3 +26,9 @@ pl:
     place:
       heading: "Potwierdź zamówienie"
       cart_is_empty: "Koszyk jest pusty."
+
+    payment:
+      payment_description: "InJobs.pl usługi premium"
+      confirm_and_pay: "Zapłać w serwisie Dotpay.pl"
+      heading: "Zamówienie #%{id}"
+      currency: "Waluta zamówienia:"

@@ -4,13 +4,21 @@ class OrdersController < ApplicationController
   before_action :set_cart, only: [:place, :create]
 
   def place
+    @order = Order.new
+    @order.build_billing_address
   end
 
   def create
-    @order = current_cart.build_order(order_params)
-    if @order.save
-      redirect_to order_payment_path(@order)
+    @order = Order.new(order_params)
+    @order.cart = current_cart
+    @order.user = current_user
+    @order.transaction do
+      @order.save!
+      @order.cart.finalize!
     end
+    redirect_to order_payment_path(@order)
+  rescue ActiveRecord::RecordInvalid
+    render :place and return
   end
 
   def payment
