@@ -38,14 +38,38 @@ $avatar-margin: 8px
   font-weight: 400
   font-size: 1.25rem
 
-.card--no-bottom
-  margin-bottom: 0
-  border-bottom: none
-  border-radius: 3px 3px 0 0
-
-#company_description
-  border-top: none
-  border-radius: 0 0 3px 3px
+$company-avatar-size: 105px
+$offer-count-width: rem-calc(100)
 
 .company__website
   cursor: pointer
+
+.company__name_container
+  width: calc(100% - #{$company-avatar-size+20px} - #{$offer-count-width + 2rem})
+  float: left
+.company__name
+  color: $dark-blue
+  font-weight: 200
+  font-size: 2.5rem
+.company__name--margin-top
+  @include breakpoint(medium)
+    margin-top: 1.3rem
+
+
+.company__avatar
+  width: #{$company-avatar-size + 20px}
+  float: left
+  margin: 0
+
+.company__header__offer_count
+  margin: 1rem
+  background-color: $dark-red
+  color: $white
+  width: $offer-count-width
+  float: right
+  text-align: center
+
+  h1
+    font-size: 2.3rem
+    margin-bottom: 0
+  font-size: 1rem

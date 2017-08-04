@@ -1,6 +1,13 @@
-- className = company.description.blank? ? 'card' : 'card card--no-bottom'
-%div{class: className, id: 'company_info'}
+.card.company__header#company_info
   .company__avatar
-    = avatar_for company, editable: can?(:edit, company)
-  .company__details
-    = render 'companies/show/info'
+    = avatar_for company, size: :thumb, editable: can?(:edit, company)
+
+  .company__name_container
+    %h2.company__name.company__name--margin-top
+      - unless request.path == company_path(company)
+        = link_to company.name, company
+      - else
+        = company.name
+  .company__header__offer_count
+    %h1= company.offers.count
+    offers

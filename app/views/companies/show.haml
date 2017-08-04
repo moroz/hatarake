@@ -1,38 +1,31 @@
 - breadcrumb :company, company
 .row
-  .large-8.columns
-    = render 'companies/info_card'
+  = render 'companies/info_card'
 
-    - if company.description.present?
-      .card#company_description
-        .card-section.company__description
-          != markdown company.description
+  - if company.description.present?
+    .card#company_description
+      .card-section.company__description
+        != markdown company.description
 
-    - if can? :edit, company
-      .show-for-small-only
-        = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
+  - if can? :edit, company
+    .show-for-small-only
+      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
 
-    - if candidate_signed_in?
-      .card#rate_company
-        = render 'companies/show/rate'
+  - if candidate_signed_in?
+    .card#rate_company
+      = render 'companies/show/rate'
 
-    - if @blog_posts.present? || can?(:edit, company)
-      %h3.text-center= t('.company_blog')
-    - if can? :edit, company
-      .card
-        = render 'blog_posts/form'
-    - if @blog_posts.present? || can?(:edit, company)
-      #blog_posts
-        = render @blog_posts
+  - if @blog_posts.present? || can?(:edit, company)
+    %h3.text-center= t('.company_blog')
+  - if can? :edit, company
+    .card
+      = render 'blog_posts/form'
+  - if @blog_posts.present? || can?(:edit, company)
+    #blog_posts
+      = render @blog_posts
 
+- if false
   .large-4.columns
     - if can? :edit, company
       .hide-for-small-only
         = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded large'
-
-    .card#recent_offers
-      .card-divider
-        %h3= t('companies.show.recent_offers')
-      = render @recent_offers, short: true, ref: 'company'
-      .card-section
-        = link_to t('.all_offers'), company_offers_path(company)
