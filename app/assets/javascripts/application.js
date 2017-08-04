@@ -15,6 +15,9 @@
 //= require offers
 //= require companies
 //= require candidates
+//= require Markdown.Converter
+//= require Markdown.Sanitizer
+//= require Markdown.Editor
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller
@@ -24,4 +27,3 @@ Turbolinks.changeURL = function(url) {
 document.addEventListener('turbolinks:load', function () {
   $(document).foundation();
 });
-

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
   before_action :disable_turbolinks, only: [:new, :edit, :create, :update]
-  helper_method :current_user, :current_locale, :local_name, :page_title, :logged_in?, :translate_with_gender
+  helper_method :current_user, :current_locale, :local_name, :page_title, :logged_in?, :translate_with_gender, :current_cart
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, :alert => exception.message

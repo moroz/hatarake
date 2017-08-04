@@ -2,14 +2,10 @@
   .row
     .top-bar-left
       %ul.menu
-        %li.topbar__logo= link_to image_tag('/logo.svg'), root_path
+        %li.topbar__logo= link_to image_tag('/logo.svg'), root_path, data: { turbolinks: false }
         %li= link_to t('nav.poland'), jobs_poland_path
         %li= link_to t('nav.abroad'), jobs_abroad_path
-        - if company_signed_in?
-          %li= link_to t('nav.add_offer'), new_offer_path
-          %li= link_to fa_icon('star', text: t('nav.premium')), premium_path, class: 'yellow-bg'
-        -else
-          %li= link_to t('nav.companies'), companies_path
+        %li= link_to t('nav.companies'), companies_path
     .top-bar-right
       %ul.dropdown.menu{'data-dropdown-menu' => true}
         %li.is-dropdown-submenu-parent.locale_dropdown
@@ -19,7 +15,7 @@
           %ul.menu
             %li.locale_link
               - other_locale = current_locale == :pl ? 'en' : 'pl'
-              = link_to lang: other_locale do
+              = link_to lang: other_locale, data: { turbolinks: false } do
                 = image_tag("flag-#{other_locale}.svg", class: 'locale_flag')
                 = other_locale.upcase
 
@@ -27,6 +23,8 @@
           - if admin_user_signed_in?
             %li= link_to 'Panel', admin_dashboard_path
           - else
+            - if company_signed_in?
+              %li= link_to fa_icon('shopping-cart', text: sprintf("%.2f PLN", current_cart.total)), cart_path
             %li= link_to t('nav.dashboard'), dashboard_path
             %li= link_to t('nav.profile'), profile_path
           %li= link_to t('nav.sign_out'), destroy_user_session_path, method: :delete 
