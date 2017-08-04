@@ -40,7 +40,7 @@ class Cart < ApplicationRecord
 
   def to_h
     cart_items.reduce({}) do |acc, item|
-      acc.merge({item.product_id => item.quantity})
+      acc.merge({item.product_id.to_s => item.quantity.to_s})
     end
   end
 

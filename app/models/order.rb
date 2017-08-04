@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :cart
-  belongs_to :user
+  belongs_to :user, required: true
+  has_one :billing_address
 
   validates :currency, inclusion: { in: %w( pln eur ) }
   validates :unique_token, :payment_description, presence: true
@@ -31,8 +32,8 @@ class Order < ApplicationRecord
   private 
 
   def set_token_description
-    self.unique_token ||= SecureRandom.hex(4)
-    self.payment_description ||= BASE_DESCRIPTION + unique_token
+    self.unique_token ||= SecureRandom.hex(10)
+    self.payment_description ||= BASE_DESCRIPTION + id.to_s
   end
 
   def set_total

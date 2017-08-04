@@ -25,7 +25,7 @@ RSpec.describe Cart, type: :model do
       cart.add_item(product, 3)
       cart.add_item(product2, 2)
       
-      expect(cart.to_h).to eq({product.id => 3, product2.id => 2})
+      expect(cart.to_h).to eq({product.id.to_s => '3', product2.id.to_s => '2'})
     end
   end
 

@@ -16,6 +16,10 @@ class DotpayPayment
     @data['operation_status'][0]
   end
 
+  def control
+    @data['control'][0]
+  end
+
   def amount
     str = @data['operation_original_amount'][0]
     str.present? && str.to_d
