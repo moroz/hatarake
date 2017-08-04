@@ -8,6 +8,6 @@
         = link_to company.name, company
       - else
         = company.name
-  .company__header__offer_count
+  .company__header__offer_count.hide-for-small-only
     %h1= company.offers.count
     offers

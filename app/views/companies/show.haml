@@ -2,14 +2,14 @@
 .row
   = render 'companies/info_card'
 
+  - if can? :edit, company
+    .show-for-small-only
+      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
+
   - if company.description.present?
     .card#company_description
       .card-section.company__description
         != markdown company.description
-
-  - if can? :edit, company
-    .show-for-small-only
-      = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
 
   - if candidate_signed_in?
     .card#rate_company
