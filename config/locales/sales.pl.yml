@@ -19,5 +19,10 @@ pl:
       quantity: "Liczba"
       total: "Łącznie:"
       empty_cart: "Opróżnij Koszyk"
-      finalize: "Złóż zamówienie"
-      finalize_eur: 'Zamów i zapłać w Euro'
+      place: "Złóż zamówienie"
+      back_to_shop: "Powrót do sklepu"
+  
+  orders:
+    place:
+      heading: "Potwierdź zamówienie"
+      cart_is_empty: "Koszyk jest pusty."

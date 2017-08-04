@@ -13,6 +13,8 @@ class Order < ApplicationRecord
   scope :paid, -> { where('paid_at IS NOT NULL') }
   scope :unpaid, -> { where(paid_at: nil) }
 
+  accepts_nested_attributes_for :billing_address
+
   def to_param
     unique_token
   end
