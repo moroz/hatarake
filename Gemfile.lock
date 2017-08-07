@@ -71,7 +71,7 @@ GEM
     byebug (9.0.6)
     callsite (0.0.11)
     cancancan (2.0.0)
-    capistrano (3.9.0)
+    capistrano (3.8.2)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -426,7 +426,7 @@ DEPENDENCIES
   browser
   byebug
   cancancan (~> 2.0)
-  capistrano (~> 3.7, >= 3.7.1)
+  capistrano (~> 3.8.2)
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.2)
   capistrano-rbenv (~> 2.1)
