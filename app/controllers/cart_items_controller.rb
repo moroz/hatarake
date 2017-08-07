@@ -19,6 +19,26 @@ class CartItemsController < ApplicationController
     end
   end
 
+  def update
+    cart_item = CartItem.find(params[:id])
+    if params[:cart_item][:quantity].to_i < 1
+      cart_item.destroy
+    else
+      cart_item.update(quantity: params[:cart_item][:quantity])
+    end
+    respond_to do |f|
+      f.js
+      f.html { redirect_to cart_path }
+    end
+  end
+
+  def edit
+    @cart_item = CartItem.find(params[:id])
+    respond_to do |f|
+      f.js
+    end
+  end
+
   private
 
   def cart_item_params

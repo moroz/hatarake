@@ -1,0 +1,3 @@
+= form_with model: @cart_item, multipage: true do |f|
+  = f.number_field :quantity, class: 'cart_item__edit_quantity'
+  = button_tag fa_icon('check'), type: :submit, class: 'cart_item__edit_submit'

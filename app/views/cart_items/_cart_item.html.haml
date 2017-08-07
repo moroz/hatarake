@@ -8,6 +8,6 @@
     &times;
     = cart_item.quantity
     - unless cart_item.readonly?
-      = link_to fa_icon('pencil'), '#'
+      = link_to fa_icon('pencil'), edit_cart_item_path(cart_item), remote: true, data: { edit_cartitem: true }
   %td.cart_item__subtotal= cart_item.subtotal_to_s
 

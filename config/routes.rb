@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:create, :show] do
     get :payment
   end
-  resources :cart_items, only: [:create, :update, :destroy]
+  resources :cart_items, only: [:create, :edit, :update, :destroy]
   get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application
   get '/my_offers', to: 'offers#my_offers'
   resources :resumes

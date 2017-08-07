@@ -6,21 +6,25 @@ pl:
       price_net: "Koszt: %{price_pln} PLN lub %{price_eur}&euro; netto za miesiąc"
       price_incl_tax: "/ %{price_pln} PLN lub %{price_eur}&euro; brutto."
 
-  carts:
-    cart:
+  cart:
+    show:
       heading: Mój Koszyk
       item_count:
         zero: "Koszyk jest pusty."
         one: "W koszyku znajduje się jeden przedmiot." 
         few: "W koszyku znajdują się %{count} przedmioty."
         many: "W koszyku znajduje się %{count} przedmiotów."
+      back_to_shop: "Powrót do sklepu"
+
+  carts:
+    cart:
       product_name: "Produkt"
-      unit_price: "Cena jednostkowa"
+      unit_price: "Cena"
       quantity: "Liczba"
+      subtotal: "Podsuma"
       total: "Łącznie:"
       empty_cart: "Opróżnij Koszyk"
       place: "Złóż zamówienie"
-      back_to_shop: "Powrót do sklepu"
   
   orders:
     place:
