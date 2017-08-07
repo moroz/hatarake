@@ -1,4 +1,28 @@
 - breadcrumb :my_offers
 %h2= t('dashboards.company_dashboard.my_offers')
 
-= render @offers
+%table
+  %thead
+    %tr
+      %td= check_box_tag 'toggle_selection', false
+      %td Title
+      %td Location
+      %td Published
+  %tbody
+    = render @offers, dashboard: true
+  %tfoot
+    %tr
+      %td= check_box_tag 'toggle_selection', false
+
+:javascript
+  var checkedState = false;
+  var handler = function(e) {
+    checkedState = e.target.checked;
+    toggleSelection('offer_ids[]', checkedState);
+    toggleSelection('toggle_selection', checkedState);
+  };
+  var toggleSelectionElems = document.getElementsByName('toggle_selection');
+  for (var i=0; i < 2; i++) {
+    toggleSelectionElems[i].addEventListener("change", handler);
+  }
+

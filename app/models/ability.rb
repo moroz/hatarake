@@ -19,9 +19,11 @@ class Ability
         can :show, Candidate
         can :manage, Order, user_id: user.id
         can :manage, Company, id: user.id
-        can :read, Application do |a|
-          a.offer.company_id = user.id
-        end
+        # They can read offer applications, but we don't enable
+        # this feature in production yet
+        #can :read, Application do |a|
+          #a.offer.company_id = user.id
+        #end
 
         # only premium users
         if user.premium?

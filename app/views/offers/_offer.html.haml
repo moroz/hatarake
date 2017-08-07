@@ -22,6 +22,17 @@
     %span.offer-block__location= offer.location.short_format
     = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
 
+- elsif defined?(dashboard) && dashboard
+  %tr.offer-tr
+    %td= check_box_tag 'offer_ids[]', offer.id, false
+    %td= offer.title
+    %td= offer.location
+    %td
+      - if offer.published?
+        = offer.published_at.strftime("%Y-%m-%d")
+      - else
+        No
+
 
 - else
   = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]), class: 'no-underline' do 

@@ -27,3 +27,11 @@ Turbolinks.changeURL = function(url) {
 document.addEventListener('turbolinks:load', function () {
   $(document).foundation();
 });
+
+function toggleSelection(name, state) {
+  boxes = document.getElementsByName(name);
+  for (var i=0, n=boxes.length; i < n; i++) {
+    boxes[i].checked = state;
+  }
+}
+
