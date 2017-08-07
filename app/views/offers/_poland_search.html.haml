@@ -7,6 +7,6 @@
       .small-6.medium-4.columns
         = f.select :pid, localized_collection(@provinces || [], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', class: 'search_bar__center'
       .medium-2.columns
-        = f.button fa_icon('search', text: t('.submit')), class: 'button primary expanded search_bar__right'
+        = f.button t('.submit'), class: 'button primary expanded search_bar__right'
 
 
