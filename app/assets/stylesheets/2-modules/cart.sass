@@ -11,16 +11,14 @@
       color: darken($primary-color, 4%)
     tfoot td
       color: $dark-red
+    tfoot
+      background: transparent
 
-.cart_item__unit_price
-  text-align: right
+.cart_item__unit_price, .cart_item__subtotal
+  width: rem-calc(180)
 
 .cart_item__quantity
-  width: 4rem
-
-.cart_item__subtotal
-  white-space: nowrap
-  width: 10%
+  width: rem-calc(110)
 
 .button.cart__pay_eur
   color: yellow

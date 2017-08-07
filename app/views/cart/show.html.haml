@@ -2,7 +2,7 @@
 
 = t('.item_count', count: @cart_items.count)
 
-= link_to t('.back_to_shop'), premium_path, class: 'button'
+= link_to t('.back_to_shop'), premium_path, class: 'button float-right'
 
 .cart__table
   %table.hover
@@ -10,14 +10,16 @@
       %tr
         %td.cart_item__product_name= t('.product_name')
         %td.cart_item__unit_price= t('.unit_price')
-        %td.cart_item__quantity{'colspan' => 2}= t('.quantity')
+        %td.cart_item__quantity= t('.quantity')
+        %td.cart_item__subtotal= t('.subtotal')
         
     %tbody
       = render @cart_items
     %tfoot
       %tr
         -# Emoji 鬼 ogra U+1f479
-        %td.text-right{colspan: 3} 👹 #{t('.total')}
+        %td{colspan: 2}
+        %td 👹 #{t('.total')}
         %td= @cart.total_to_s
 
 .text-right
