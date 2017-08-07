@@ -1,18 +1,20 @@
 - breadcrumb :my_offers
 %h2= t('dashboards.company_dashboard.my_offers')
 
-%table.offer_dashboard.striped
-  %thead.offer_dashboard__thead
-    %tr
-      %td= check_box_tag 'toggle_selection', false
-      %td.offer_dashboard__thead__title Title
-      %td Details
-      %td Published
-  %tbody
-    = render @offers, dashboard: true
-  %tfoot
-    %tr
-      %td= check_box_tag 'toggle_selection', false
+= form_with url: update_many_offers_path do |f|
+  = f.select :action, options_from_collection_for_select(t('.bulk_actions'), :first, :last), {}, class: 'offer_dashboard__bulk_action'
+  %table.offer_dashboard.striped
+    %thead.offer_dashboard__thead
+      %tr
+        %td.offer_dashboard__checkbox= check_box_tag 'toggle_selection', false
+        %td.offer_dashboard__thead__title Title
+        %td Details
+        %td Published
+    %tbody
+      = render @offers, dashboard: true
+    %tfoot
+      %tr
+        %td= check_box_tag 'toggle_selection', false
 
 :javascript
   var checkedState = false;

@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       patch :unpublish
       post :save
     end
+
+    collection do
+      patch :update_many
+    end
     resources :applications, only: :create
   end
   resource :cart, only: [:show, :destroy], controller: 'cart' do

@@ -58,6 +58,12 @@ pl:
         many: "Znaleziono %{count} ofert."
       heading: "Wyszukiwarka ofert"
 
+    my_offers:
+      bulk_actions:
+        publish: Opublikuj zaznaczone
+        unpublish: Wycofaj zaznaczone
+        premium: Dodaj opcję premium
+
     poland:
       heading: Praca w Polsce
     abroad:
