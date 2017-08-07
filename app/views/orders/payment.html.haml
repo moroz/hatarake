@@ -3,7 +3,7 @@
 %p
   %strong= t('.currency')
   = @order.currency.upcase
-= render @order.cart, currency: @order.currency
+= render @order.cart, currency: @order.currency, view_format: :order
 
 = form_with url: "https://ssl.dotpay.pl/test_payment/", method: :post, local: true do |f|
   = f.hidden_field :id, value: dotpay_id(@order.currency)

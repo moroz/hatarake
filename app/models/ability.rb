@@ -9,6 +9,7 @@ class Ability
       cannot :manage, :all
       can :read, [Company, Offer]
       can :manage, Attachment, owner_id: user.id
+      cannot :manage, Order
       if user.company?
         can :create, [Offer, BlogPost]
         can [:update, :destroy, :publish, :unpublish], Offer, company_id: user.id
@@ -16,6 +17,7 @@ class Ability
         can :my_offers, Offer
         can :my_offer_applications, Application
         can :show, Candidate
+        can :manage, Order, user_id: user.id
         can :manage, Company, id: user.id
         can :read, Application do |a|
           a.offer.company_id = user.id
