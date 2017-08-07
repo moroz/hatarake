@@ -4,24 +4,4 @@
 
 = link_to t('.back_to_shop'), premium_path, class: 'button float-right'
 
-.cart__table
-  %table.hover
-    %thead
-      %tr
-        %td.cart_item__product_name= t('.product_name')
-        %td.cart_item__unit_price= t('.unit_price')
-        %td.cart_item__quantity= t('.quantity')
-        %td.cart_item__subtotal= t('.subtotal')
-        
-    %tbody
-      = render @cart_items
-    %tfoot
-      %tr
-        -# Emoji 鬼 ogra U+1f479
-        %td{colspan: 2}
-        %td 👹 #{t('.total')}
-        %td= @cart.total_to_s
-
-.text-right
-  = link_to fa_icon('trash-o', text: t('.empty_cart')), cart_path, method: :delete, class: 'button secondary'
-  = link_to fa_icon('credit-card-alt', text: t('.place')), place_order_path, class: 'button primary large'
+= render @cart

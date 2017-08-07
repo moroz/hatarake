@@ -7,6 +7,18 @@ class CartItemsController < ApplicationController
     end
   end
 
+  def destroy
+    cart_item = CartItem.find(params[:id])
+    if cart_item.destroy
+      respond_to do |f|
+        f.js { render :update }
+        f.html { redirect_to cart_path }
+      end
+    else
+      redirect_to cart_path, alert: "The item could not be removed."
+    end
+  end
+
   private
 
   def cart_item_params

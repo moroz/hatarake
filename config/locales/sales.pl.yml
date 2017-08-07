@@ -6,8 +6,8 @@ pl:
       price_net: "Koszt: %{price_pln} PLN lub %{price_eur}&euro; netto za miesiąc"
       price_incl_tax: "/ %{price_pln} PLN lub %{price_eur}&euro; brutto."
 
-  cart:
-    show:
+  carts:
+    cart:
       heading: Mój Koszyk
       item_count:
         zero: "Koszyk jest pusty."
@@ -32,3 +32,8 @@ pl:
       confirm_and_pay: "Zapłać w serwisie Dotpay.pl"
       heading: "Zamówienie #%{id}"
       currency: "Waluta zamówienia:"
+
+  cart_items:
+    actions:
+      destroy:
+        confirmation: "Czy na pewno chcesz usunąć ten produkt z koszyka?"

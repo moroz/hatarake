@@ -1,17 +1,44 @@
-- if cart.cart_items.present?
-  %ul.cart
-    - cart.cart_items.each do |item|
-      %li
-        = item.quantity
-        &times;
-        = item.product.local_name
-        - if defined?(currency)
-          = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
-        - else
-          = item.subtotal_to_s
-  %strong
-    = t('cart.show.total')
-    - if defined?(currency)
-      = sprintf("%.2f %s", cart.total(currency), currency.upcase)
-    - else
-      = cart.total_to_s
+- if defined?(view_format) && view_format == :order
+  - if cart.cart_items.present?
+    %ul.cart
+      - cart.cart_items.each do |item|
+        %li
+          = item.quantity
+          &times;
+          = item.product.local_name
+          - if defined?(currency)
+            = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
+          - else
+            = item.subtotal_to_s
+    %strong
+      = t('cart.show.total')
+      - if defined?(currency)
+        = sprintf("%.2f %s", cart.total(currency), currency.upcase)
+      - else
+        = cart.total_to_s
+- else
+  .cart__table#cart
+    %table.hover
+      %thead
+        %tr
+          - unless cart.readonly?
+            %td.cart_item__actions
+          %td.cart_item__product_name= t('.product_name')
+          %td.cart_item__unit_price= t('.unit_price')
+          %td.cart_item__quantity= t('.quantity')
+          %td.cart_item__subtotal= t('.subtotal')
+          
+      %tbody
+        = render cart.cart_items
+      %tfoot
+        %tr
+          -# Emoji 鬼 ogra U+1f479
+          - colspan = cart.readonly? ? 2 : 3
+          %td{colspan: colspan}
+          %td 👹 #{t('.total')}
+          %td= cart.total_to_s
+
+    .text-right
+      - unless cart.empty?
+        = link_to fa_icon('trash-o', text: t('.empty_cart')), cart_path, method: :delete, class: 'button secondary'
+      = link_to fa_icon('credit-card-alt', text: t('.place')), place_order_path, class: "button primary large #{cart.empty? ? 'disabled' : ''}"
