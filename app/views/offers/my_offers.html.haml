@@ -1,12 +1,12 @@
 - breadcrumb :my_offers
 %h2= t('dashboards.company_dashboard.my_offers')
 
-%table
-  %thead
+%table.offer_dashboard.striped
+  %thead.offer_dashboard__thead
     %tr
       %td= check_box_tag 'toggle_selection', false
-      %td Title
-      %td Location
+      %td.offer_dashboard__thead__title Title
+      %td Details
       %td Published
   %tbody
     = render @offers, dashboard: true

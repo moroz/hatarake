@@ -25,7 +25,17 @@
 - elsif defined?(dashboard) && dashboard
   %tr.offer-tr
     %td= check_box_tag 'offer_ids[]', offer.id, false
-    %td= offer.title
+    %td
+      .offer_dashboard__title= offer.title
+      .offer_dashboard__actions
+        = link_to 'View', offer
+        \|
+        = link_to 'Edit', edit_offer_path(offer)
+        \|
+        - if offer.published?
+          = link_to 'Unpublish', unpublish_offer_path(offer), method: :patch
+        - else
+          = link_to 'Publish', publish_offer_path(offer), method: :patch
     %td= offer.location
     %td
       - if offer.published?

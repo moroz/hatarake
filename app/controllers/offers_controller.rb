@@ -117,14 +117,12 @@ class OffersController < ApplicationController
 
   def unpublish
     offer.unpublish
-    flash[:notice] = "The offer has been unpublished."
-    redirect_to offer
+    redirect_to offer, notice: "The offer has been unpublished."
   end
 
   def publish
     offer.publish
-    flash[:notice] = "The offer has been published."
-    redirect_to offer
+    redirect_to offer, "The offer has been published."
   end
 
   def destroy
