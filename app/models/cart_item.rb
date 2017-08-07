@@ -5,6 +5,10 @@ class CartItem < ApplicationRecord
 
   delegate :name, to: :product, prefix: true
 
+  def unit_price(currency = 'pln')
+    product.price(currency)
+  end
+
   def readonly?
     cart.readonly?
   end

@@ -28,4 +28,6 @@ table.table__center {
 
 .float-center {
   text-align: center;
+  display: table;
+  margin: 0 auto;
 }

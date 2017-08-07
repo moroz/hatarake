@@ -1,4 +1,8 @@
 en:
   applications_mailer:
     new_application:
-      subject: "%{candidate} applied for the offer %{offer}"
+      subject: "[InJobs.pl] %{candidate} applied for the offer %{offer}"
+
+  orders_mailer:
+    order_placed:
+      subject: "[InJobs.pl] Order #%{order_id} received"

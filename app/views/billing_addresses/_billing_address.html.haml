@@ -1,0 +1,14 @@
+.float-center.billing_address{id: dom_id(billing_address)}
+  = billing_address.first_name
+  = billing_address.last_name
+  %br
+  = billing_address.street
+  - if billing_address.apt_no.present?
+    #{billing_address.house_no}/#{billing_address.apt_no}
+  %br
+  = billing_address.postal_code
+  = billing_address.city
+  %br
+  - if billing_address.nip.present?
+    NIP:
+    = billing_address.nip

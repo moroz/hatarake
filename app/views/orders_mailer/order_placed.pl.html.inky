@@ -1,0 +1,34 @@
+%p Szanowni Państwo,
+
+%p
+  W dniu
+  = @order.created_at.strftime('%d.%m.%Y')
+  o godzinie
+  = @order.created_at.strftime('%H:%M')
+  przyjęliśmy w serwisie
+  = link_to "InJobs.pl", "https://injobs.pl", target: "_blank"
+  zamówienie na następujące usługi:
+
+= render @cart, view_format: :order, currency: @order.currency
+
+- if @billing_address.present?
+  
+  %p W formularzu zamówienia wyrazili Państwo chęć otrzymania faktury VAT na następujące dane:
+
+  .text-center.float-center
+    = render @billing_address
+
+- else
+  %p W formularzu zamówienia nie wyrazili Państwo chęci otrzymania faktury VAT.
+
+%p
+  Jeśli chcą Państwo uiścić płatność za pośrednictwem serwisu Dotpay.pl, proszę o kliknięcie przycisku poniżej:
+
+%button.float-center.radius.large{href: order_payment_url(@order)} Przejdź do płatności
+
+%p Jeśli już dokonali Państwo płatności, prosimy o zignorowanie tej wiadomości.
+
+%p
+  Z poważaniem,
+%p
+  Załoga InJobs.pl

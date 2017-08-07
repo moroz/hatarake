@@ -23,8 +23,6 @@ en:
       quantity: "Qty"
       total: "Total:"
       empty_cart: "Empty Cart"
-      finalize: "Place Order"
-      finalize_eur: "Place Order in Euro"
       place: "Place order"
 
   orders:

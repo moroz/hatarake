@@ -7,11 +7,14 @@
           &times;
           = item.product.local_name
           - if defined?(currency)
+            &agrave;
+            = sprintf("%.2f %s", item.unit_price(currency), currency.upcase)
+            \=
             = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
           - else
             = item.subtotal_to_s
     %strong
-      = t('cart.show.total')
+      = t('.total')
       - if defined?(currency)
         = sprintf("%.2f %s", cart.total(currency), currency.upcase)
       - else
