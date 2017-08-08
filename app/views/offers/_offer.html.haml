@@ -28,14 +28,14 @@
     %td
       .offer_dashboard__title= offer.title
       .offer_dashboard__actions
-        = link_to 'View', offer
+        = link_to t('actions.view'), offer
         \|
-        = link_to 'Edit', edit_offer_path(offer)
+        = link_to t('actions.edit'), edit_offer_path(offer)
         \|
         - if offer.published?
-          = link_to 'Unpublish', unpublish_offer_path(offer), method: :patch
+          = link_to t('actions.unpublish'), unpublish_offer_path(offer), method: :patch
         - else
-          = link_to 'Publish', publish_offer_path(offer), method: :patch
+          = link_to t('actions.publish'), publish_offer_path(offer), method: :patch
     %td= offer.location
     %td
       - if offer.published?

@@ -116,8 +116,16 @@ class OffersController < ApplicationController
   end
 
   def update_many
+    if params[:offer_ids].blank?
+      redirect_to my_offers_path, alert: t('offers.my_offers.no_offers_selected') and return
+    end
     @offers = Offer.where(id: params[:offer_ids])
-    case params[:update_action]
+    if params.key?('apply_bulk_action_top')
+      update_action = params['update_action_top']
+    else
+      update_action = params['update_action']
+    end
+    case update_action
     when 'publish'
       # publish all of them
     when 'unpublish'

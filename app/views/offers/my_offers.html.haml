@@ -3,18 +3,16 @@
 
 = form_with url: update_many_offers_path, method: :patch do |f|
   = render 'bulk_actions', top: true
-  %table.offer_dashboard.striped
-    %thead.offer_dashboard__thead
-      %tr
-        %td.offer_dashboard__checkbox= check_box_tag 'toggle_selection', false
-        %td.offer_dashboard__thead__title= t('.title')
-        %td= t('.details')
-        %td= t('.published_at')
-    %tbody
-      = render @offers, dashboard: true
-    %tfoot
-      %tr
-        %td= check_box_tag 'toggle_selection', false
+  .responsive_table
+    %table.offer_dashboard.striped
+      %thead.offer_dashboard__thead
+        %tr
+          = render 'table_labels'
+      %tbody
+        = render @offers, dashboard: true
+      %tfoot.offer_dashboard__tfoot
+        %tr
+          = render 'table_labels'
   = render 'bulk_actions'
 
 :javascript

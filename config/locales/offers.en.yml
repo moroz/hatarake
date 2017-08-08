@@ -51,6 +51,18 @@ en:
         other: "%{count} offers found."
       heading: "Job search"
 
+    my_offers:
+      bulk_actions:
+        publish: Publish selected
+        unpublish: Unpublish selected
+        premium: Add premium features
+      title: Title
+      details: Details
+      published_at: Published
+      apply_bulk_action: Apply
+      bulk_action_placeholder: "Bulk action:"
+      no_offers_selected: "No offers were selected."
+
     poland:
       heading: "Jobs in Poland"
     abroad:

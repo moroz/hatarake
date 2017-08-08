@@ -93,6 +93,7 @@ en:
     publish: Publish
     unpublish: Unpublish
     edit: Edit
+    view: View
 
   date:
     formats:
