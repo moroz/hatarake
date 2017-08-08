@@ -107,6 +107,10 @@ class Offer < ApplicationRecord
     where(published: false).update_all(published:true, published_at: Time.now)
   end
 
+  def self.unpublish_all
+    where(published: true).update_all(published: false)
+  end
+
   def self.search_by_query(query)
     q = "%#{sanitize_sql_like(query)}%"
     joins(:location).where("title ILIKE :q OR locations.city ILIKE :q", q: q)

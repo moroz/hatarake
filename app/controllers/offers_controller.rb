@@ -127,12 +127,13 @@ class OffersController < ApplicationController
     end
     case update_action
     when 'publish'
-      # publish all of them
+      @offers.publish_all
     when 'unpublish'
-      # unpublish them
+      @offers.unpublish_all
     else
       raise ActionController::BadRequest.new, "Unrecognized action"
     end
+    redirect_to my_offers_path
   end
 
   def unpublish
