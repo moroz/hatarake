@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804150502) do
+ActiveRecord::Schema.define(version: 20170808153550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,7 +202,6 @@ ActiveRecord::Schema.define(version: 20170804150502) do
     t.numrange "salary"
     t.integer "location_id"
     t.integer "views", default: 0
-    t.date "valid_till"
     t.boolean "apply_on_website", default: false
     t.string "application_url"
     t.datetime "featured_until", comment: "Featuring on the homepage"

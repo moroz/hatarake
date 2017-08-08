@@ -1,0 +1,17 @@
+- if current_company.premium_services.present?
+  - hash = current_company.premium_services
+  %span.offer_dashboard__premium_services_remaining
+    = t('offers.my_offers.remaining')
+    - if hash.key?('2')
+      = hash['2']
+      &times;
+      = t('offers.my_offers.homepage_featured')
+    - if hash.key?('3')
+      = hash['3']
+      &times;
+      = t('offers.my_offers.category_featured')
+    - if hash.key('4')
+      = hash['4']
+      &times;
+      = t('offers.my_offers.highlighted')
+

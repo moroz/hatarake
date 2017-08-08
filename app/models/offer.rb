@@ -75,12 +75,20 @@ class Offer < ApplicationRecord
     scope
   end
 
+  def is_featured?
+    highlighted? || category_featured? || homepage_featured?
+  end
+
   def highlighted?
     highlight_until && highlight_until > Time.now
   end
 
   def category_featured?
     category_until && category_until > Time.now
+  end
+
+  def homepage_featured?
+    featured_until && featured_until > Time.now
   end
 
   def publish

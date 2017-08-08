@@ -69,6 +69,11 @@ pl:
       apply_bulk_action: Wykonaj
       bulk_action_placeholder: 'Modyfikuj zaznaczone:'
       no_offers_selected: "Nie wybrano żadnej oferty."
+
+      homepage_featured: Główna
+      category_featured: Kategoria
+      highlighted: Podświetlenie
+      remaining: "Do wykorzystania: "
     
     poland:
       heading: Praca w Polsce

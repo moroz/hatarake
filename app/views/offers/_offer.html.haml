@@ -36,7 +36,16 @@
           = link_to t('actions.unpublish'), unpublish_offer_path(offer), method: :patch
         - else
           = link_to t('actions.publish'), publish_offer_path(offer), method: :patch
-    %td= offer.location
+    %td
+      .offer_dashboard__location= offer.location
+      - if offer.is_featured?
+        .offer_dashboard__premium
+          - if offer.highlighted?
+            %span.offer_dashboard__highlighted= t('offers.my_offers.highlighted')
+          - if offer.category_featured?
+            %span.offer_dashboard__category_featured= t('offers.my_offers.category_featured')
+          - if offer.homepage_featured?
+            %span.offer_dashboard__homepage_featured= t('offers.my_offers.homepage_featured')
     %td
       - if offer.published?
         = offer.published_at.strftime("%Y-%m-%d")

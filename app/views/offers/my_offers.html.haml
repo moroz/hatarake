@@ -3,6 +3,7 @@
 
 = form_with url: update_many_offers_path, method: :patch do |f|
   = render 'bulk_actions', top: true
+  = render 'premium_services_left'
   .responsive_table
     %table.offer_dashboard.striped
       %thead.offer_dashboard__thead
