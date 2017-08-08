@@ -55,13 +55,22 @@ en:
       bulk_actions:
         publish: Publish selected
         unpublish: Unpublish selected
-        premium: Add premium features
+        category: Highlight on category page
+        highlight: Color highlight
+        homepage: Highlight on homepage
       title: Title
       details: Details
       published_at: Published
       apply_bulk_action: Apply
       bulk_action_placeholder: "Bulk action:"
       no_offers_selected: "No offers were selected."
+
+      homepage_featured: Homepage
+      category_featured: Category
+      highlighted: Color Highlight
+      remaining: "Premium services remaining:"
+
+      destructive_action_warning: "This action cannot be undone. Please make sure that you have selected the correct offers."
 
     poland:
       heading: "Jobs in Poland"

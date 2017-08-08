@@ -18,6 +18,7 @@
 
 :javascript
   var checkedState = false;
+  $('button[type="submit"]').prop('disabled', true);
   var handler = function(e) {
     checkedState = e.target.checked;
     toggleSelection('offer_ids[]', checkedState);
@@ -32,8 +33,15 @@
   for (var i=0; i<selects.length; i++) {
     selects[i].addEventListener('change', function(e) {
       var submitId = 'apply_bulk_action';
-      if (e.target.id.match(/top$/))
-        submitId += '_top';
+      var top = e.target.id.match(/top$/);
+      var value = e.target.value;
+      var warning = document.getElementById(('destructive_action_warning' + (top ? '_top' : '')));
+      if (value == 'highlight' || value == 'category' || value == 'homepage') {
+        warning.style.display = 'block';
+      } else {
+        warning.style.display = 'none';
+      }
+      if (top) submitId += '_top';
       document.getElementById(submitId).disabled = !e.target.value;
     }, false);
   }

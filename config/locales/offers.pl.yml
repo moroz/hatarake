@@ -62,18 +62,23 @@ pl:
       bulk_actions:
         publish: Opublikuj zaznaczone
         unpublish: Wycofaj zaznaczone
-        premium: Dodaj opcję premium
+        category: Promuj na stronie kategorii
+        highlight: Dodaj podświetlenie
+        homepage: Promuj na stronie głównej
       title: Tytuł
       details: Szczegóły
       published_at: Opublikowano
       apply_bulk_action: Wykonaj
       bulk_action_placeholder: 'Modyfikuj zaznaczone:'
       no_offers_selected: "Nie wybrano żadnej oferty."
+      order_premium_services: "Zamów usługi Premium"
 
       homepage_featured: Główna
       category_featured: Kategoria
       highlighted: Podświetlenie
-      remaining: "Do wykorzystania: "
+      remaining: "Do wykorzystania:"
+
+      destructive_action_warning: "Tej czynności nie da się cofnąć. Upewnij się, że wybrano właściwe oferty."
     
     poland:
       heading: Praca w Polsce
