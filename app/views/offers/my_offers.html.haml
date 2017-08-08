@@ -1,6 +1,7 @@
 - breadcrumb :my_offers
 %h2= t('dashboards.company_dashboard.my_offers')
 
+= link_to t('nav.add_offer'), new_offer_path, class: 'button'
 = form_with url: update_many_offers_path, method: :patch do |f|
   = render 'bulk_actions', top: true
   = render 'premium_services_left'

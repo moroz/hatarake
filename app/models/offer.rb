@@ -115,6 +115,28 @@ class Offer < ApplicationRecord
     where(published: false).update_all(published:true, published_at: Time.now)
   end
 
+  def self.add_premium(type)
+    case type
+    when 'highlight'
+      column = 'highlight_until'
+      key = 4
+    when 'homepage'
+      column = 'featured_until'
+      key = 2
+    when 'category'
+      column = 'category_until'
+      key = 3
+    else
+      raise ArgumentError.new
+    end
+    offers = where("#{column} is null or #{column} < now()")
+    count = offers.count
+    return true if count == 0
+    return false unless offers.first.company.reduce_premium_services(key, count)
+    offers.update_all(column => (Time.now + 1.month))
+    true
+  end
+
   def self.unpublish_all
     where(published: true).update_all(published: false)
   end

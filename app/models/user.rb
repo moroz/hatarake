@@ -59,6 +59,21 @@ class User < ApplicationRecord
     self.update(premium_services: new_hash)
   end
 
+  def reduce_premium_services(key, value)
+    if premium_services.blank? || !premium_services.key?(key.to_s) || (premium_services[key.to_s].to_i < value.to_i)
+      return false
+    end
+    balance = premium_services[key.to_s].to_i
+    new_hash = premium_services.dup
+    if balance == value.to_i
+      new_hash.delete(key.to_s)
+    else
+      new_hash[key.to_s] = balance - value.to_i
+    end
+    update!(premium_services: new_hash)
+    true
+  end
+
   protected
 
   def add_http_to_website

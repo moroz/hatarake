@@ -130,6 +130,8 @@ class OffersController < ApplicationController
       @offers.publish_all
     when 'unpublish'
       @offers.unpublish_all
+    when 'highlight', 'homepage', 'category'
+      @offers.add_premium(update_action)
     else
       raise ActionController::BadRequest.new, "Unrecognized action"
     end

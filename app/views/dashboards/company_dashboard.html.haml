@@ -10,7 +10,7 @@
       = link_to "Browse candidate profiles", candidates_path, class: 'button large'
     - else
       Only Premium Employers can browse candidate profiles.
-      = link_to "Become a Premium Employer", premium_path, class: 'button large expanded'
+      = link_to "Become a Premium Employer", premium_path, class: 'button large'
 
 .card
   .card-divider
@@ -21,7 +21,9 @@
       = @stats[:offer_count]
       offers.
 
-    = link_to "Manage offers", my_offers_path, class: 'button large expanded'
+    %div
+      = link_to t('nav.add_offer'), new_offer_path, class: 'button large'
+      = link_to "Manage offers", my_offers_path, class: 'button large'
 
 .card
   .card-divider
@@ -38,7 +40,7 @@
           = v
           &times;
           = Product.find_by(id: k).local_name
-    = link_to "Order Premium Services", premium_path, class: 'button large expanded'
+    = link_to "Order Premium Services", premium_path, class: 'button large'
 
 
 - if @stats[:unpaid_orders_count] != 0
