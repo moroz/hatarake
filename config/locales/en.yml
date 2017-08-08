@@ -99,6 +99,10 @@ en:
     formats:
       month_and_year: '%B %Y'
 
+  time:
+    formats:
+      blog: "%d %b %Y, %H:%M"
+
   education_items:
     index:
       heading: Edit education

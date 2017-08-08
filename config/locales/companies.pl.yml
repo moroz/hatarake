@@ -55,7 +55,10 @@ pl:
       heading: Panel pracodawcy
       my_offers: Moje oferty
       applications: Aplikacje
-      messages: Wiadomości
+      premium_services: Usługi Premium
+      orders: Zamówienia
+      premium_employer_valid_until: "Twój pakiet Promowanego Pracodawcy jest ważny do %{dt}."
+      premium_services_available: "Na Twoim koncie są do wykorzystania następujące usługi:"
 
   company_offers:
     index:

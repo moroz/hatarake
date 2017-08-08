@@ -4,14 +4,13 @@
 
 .card
   .card-divider
-    %h4 Premium Services
+    %h4= t('.premium_services')
   .card-section
     - if current_company.premium?
       %p
-        Your Premium Employer Bundle is valid until
-        = l current_company.premium_until
+        = t('.premium_employer_valid_until', dt: l(current_company.premium_until, format: :blog))
     - if current_company.premium_services.present?
-      %p You can use the following Premium Services:
+      %p= t('.premium_services_available')
       %ul
       - current_company.premium_services.each do |k,v|
         %li
@@ -22,7 +21,7 @@
 - if @stats[:unpaid_orders_count] != 0
   .card
     .card-divider
-      %h4 Orders
+      %h4= t('.orders')
     .card-section
       You have
       = @stats[:unpaid_orders_count]
@@ -30,7 +29,7 @@
 
 .card
   .card-divider
-    %h4 Offers
+    %h4= t('.my_offers')
   .card-section
     You have
     = link_to my_offers_path do
