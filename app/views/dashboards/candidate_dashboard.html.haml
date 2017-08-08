@@ -1,13 +1,4 @@
-- content_for :banner do
-  .banner.banner--fjord
-    %h1.text-center= t('.heading')
+%h1.text-center= t('.heading')
 
-%section.applied_offers.card.shadow
-  .card-divider
-    %h3= t('.applied_offers.heading')
-  = render @applied
-
-%section.saved_offers.card.shadow
-  .card-divider
-    %h3= t('.saved_offers.heading')
-  = render @saved
+%h3= t('.applied_offers.heading')
+= render @applied
