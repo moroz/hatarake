@@ -14,7 +14,7 @@ pl:
         one: "W koszyku znajduje się jeden przedmiot." 
         few: "W koszyku znajdują się %{count} przedmioty."
         many: "W koszyku znajduje się %{count} przedmiotów."
-      back_to_shop: "Powrót do sklepu"
+      back_to_shop: "Przejdź do sklepu"
 
   carts:
     cart:

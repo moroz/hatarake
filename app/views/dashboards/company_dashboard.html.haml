@@ -4,6 +4,27 @@
 
 .card
   .card-divider
+    %h4 Candidates
+  .card-section
+    - if current_company.premium?
+      = link_to "Browse candidate profiles", candidates_path, class: 'button large'
+    - else
+      Only Premium Employers can browse candidate profiles.
+      = link_to "Become a Premium Employer", premium_path, class: 'button large expanded'
+
+.card
+  .card-divider
+    %h4= t('.my_offers')
+  .card-section
+    You have
+    = link_to my_offers_path do
+      = @stats[:offer_count]
+      offers.
+
+    = link_to "Manage offers", my_offers_path, class: 'button large expanded'
+
+.card
+  .card-divider
     %h4= t('.premium_services')
   .card-section
     - if current_company.premium?
@@ -17,6 +38,8 @@
           = v
           &times;
           = Product.find_by(id: k).local_name
+    = link_to "Order Premium Services", premium_path, class: 'button large expanded'
+
 
 - if @stats[:unpaid_orders_count] != 0
   .card
@@ -26,12 +49,3 @@
       You have
       = @stats[:unpaid_orders_count]
       unpaid orders.
-
-.card
-  .card-divider
-    %h4= t('.my_offers')
-  .card-section
-    You have
-    = link_to my_offers_path do
-      = @stats[:offer_count]
-      offers.

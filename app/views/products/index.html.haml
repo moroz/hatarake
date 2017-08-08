@@ -1,7 +1,7 @@
 - content_for :full_width do
   - @products.each do |product|
     %section.premium-landing-page__section
-      .row
+      .row.container
         %h1= product.local_name
         != unsafe_markdown product.local_description
 

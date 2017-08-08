@@ -7,14 +7,15 @@
       = render 'topbar' # topbar, visible for medium and above
       = render 'titlebar' # visible for small screens
       = yield :banner
-      .container.content
+      - container_classes = content_for(:full_width).present? ? 'container' : 'container content'
+      %div{class: container_classes}
         .row.relative
           %button{type: 'button', 'data-open': 'offCanvas'}
           = breadcrumbs separator: " &raquo; "
           .padding-for-small
             = render 'messages'
           = yield
-        = yield :full_width
+      = yield :full_width
       = render 'footer'
       
     = render 'ga'

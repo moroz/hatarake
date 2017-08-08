@@ -21,6 +21,7 @@ class DashboardsController < ApplicationController
   def company_dashboard
     @stats = {
       offer_count: current_company.offers.count,
+      published_offer_count: current_company.offers.published.count,
       unpaid_orders_count: current_company.orders.unpaid.count
     }
     render 'company_dashboard'
