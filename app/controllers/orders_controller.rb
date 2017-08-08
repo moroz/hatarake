@@ -27,6 +27,13 @@ class OrdersController < ApplicationController
     @order = Order.find_by(unique_token: params[:order_id])
   end
 
+  def thank_you
+    @order = Order.find_by(unique_token: params[:order_id])
+    unless @order.paid?
+      redirect_to payment_path(@order) and return
+    end
+  end
+
   private
 
   def order_params

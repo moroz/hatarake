@@ -28,7 +28,6 @@ en:
       heading: Company dashboard
       my_offers: My jobs
       applications: Applications
-      messages: Messages
       premium_services: Premium Services
       orders: Orders
       premium_employer_valid_until: "Your Premium Employer Bundle is valid until %{dt}."

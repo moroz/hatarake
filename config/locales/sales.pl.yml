@@ -5,6 +5,8 @@ pl:
       quantity: 'Liczba:'
       price_net: "Koszt: %{price_pln} PLN lub %{price_eur}&euro; netto za miesiąc"
       price_incl_tax: "/ %{price_pln} PLN lub %{price_eur}&euro; brutto."
+      item_added: "Produkt został dodany do koszyka."
+      go_to_cart: "Przejdź do koszyka"
 
   cart:
     show:

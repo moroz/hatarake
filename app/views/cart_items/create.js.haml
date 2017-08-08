@@ -1,2 +1,4 @@
 :plain
   $('#current_cart_total').text('#{j sprintf("%.2f PLN", current_cart.total)}');
+  $('.premium-landing-page__item_added').addClass('hide');
+  $('#item_added_#{@product_id}').removeClass('hide');

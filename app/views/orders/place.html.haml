@@ -1,6 +1,6 @@
 %h1= t('.heading')
 
-= render @cart
+= render @cart, view_format: :order
 
 = simple_form_for @order do |f|
   %fieldset

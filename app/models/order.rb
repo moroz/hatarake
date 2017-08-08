@@ -19,11 +19,15 @@ class Order < ApplicationRecord
   end
 
   def paid!
-    raise RuntimeError.new("Order is already paid") if paid_at.present?
+    raise RuntimeError.new("Order is already paid") if paid?
     self.transaction do
       self.update!(paid_at: Time.now)
       user.add_premium_services(self.to_h)
     end
+  end
+
+  def paid?
+    paid_at.present?
   end
 
   def to_h
