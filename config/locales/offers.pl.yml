@@ -63,7 +63,12 @@ pl:
         publish: Opublikuj zaznaczone
         unpublish: Wycofaj zaznaczone
         premium: Dodaj opcję premium
-
+      title: Tytuł
+      details: Szczegóły
+      published_at: Opublikowano
+      apply_bulk_action: Wykonaj
+      bulk_action_placeholder: 'Modyfikuj zaznaczone:'
+    
     poland:
       heading: Praca w Polsce
     abroad:

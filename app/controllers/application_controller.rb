@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :current_locale, :local_name, :page_title, :logged_in?, :translate_with_gender, :current_cart
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to main_app.root_url, :alert => exception.message
+    redirect_back fallback_location: main_app.root_url, alert: exception.message
   end
 
   rescue_from ActionController::BadRequest do |exception|

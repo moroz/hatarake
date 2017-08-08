@@ -134,7 +134,7 @@ class OffersController < ApplicationController
 
   def publish
     offer.publish
-    redirect_to offer, "The offer has been published."
+    redirect_to offer, notice: "The offer has been published."
   end
 
   def destroy

@@ -7,7 +7,7 @@
       = render 'topbar' # topbar, visible for medium and above
       = render 'titlebar' # visible for small screens
       = yield :banner
-      .container
+      .container.content
         .row.relative
           %button{type: 'button', 'data-open': 'offCanvas'}
           = breadcrumbs separator: " &raquo; "

@@ -2,20 +2,20 @@
 %h2= t('dashboards.company_dashboard.my_offers')
 
 = form_with url: update_many_offers_path, method: :patch do |f|
-  = f.select :update_action, options_from_collection_for_select(t('.bulk_actions'), :first, :last), {}, class: 'offer_dashboard__bulk_action'
-  = button_tag "Apply", type: :submit, class: 'button hollow success small offer_dashboard__apply_bulk_action'
+  = render 'bulk_actions', top: true
   %table.offer_dashboard.striped
     %thead.offer_dashboard__thead
       %tr
         %td.offer_dashboard__checkbox= check_box_tag 'toggle_selection', false
-        %td.offer_dashboard__thead__title Title
-        %td Details
-        %td Published
+        %td.offer_dashboard__thead__title= t('.title')
+        %td= t('.details')
+        %td= t('.published_at')
     %tbody
       = render @offers, dashboard: true
     %tfoot
       %tr
         %td= check_box_tag 'toggle_selection', false
+  = render 'bulk_actions'
 
 :javascript
   var checkedState = false;
@@ -29,3 +29,12 @@
     toggleSelectionElems[i].addEventListener("change", handler);
   }
 
+  var selects = document.querySelectorAll('select.offer_dashboard__bulk_action');
+  for (var i=0; i<selects.length; i++) {
+    selects[i].addEventListener('change', function(e) {
+      var submitId = 'apply_bulk_action';
+      if (e.target.id.match(/top$/))
+        submitId += '_top';
+      document.getElementById(submitId).disabled = !e.target.value;
+    }, false);
+  }

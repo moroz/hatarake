@@ -23,7 +23,7 @@
     = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
 
 - elsif defined?(dashboard) && dashboard
-  %tr.offer-tr
+  %tr.offer-tr{id: dom_id(offer)}
     %td= check_box_tag 'offer_ids[]', offer.id, false
     %td
       .offer_dashboard__title= offer.title
@@ -41,7 +41,7 @@
       - if offer.published?
         = offer.published_at.strftime("%Y-%m-%d")
       - else
-        No
+        = t('false')
 
 
 - else
