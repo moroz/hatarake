@@ -4,6 +4,7 @@ pl:
   motto: 働けば自由になります
   'true': Tak
   'false': Nie
+  bad_request_alert: "W czasie przetwarzania zapytania wystąpił błąd: "
 
   unauthorized:
     default: "Nie jesteś upoważniony do wyświetlania tej strony."

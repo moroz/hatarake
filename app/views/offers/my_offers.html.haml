@@ -1,8 +1,9 @@
 - breadcrumb :my_offers
 %h2= t('dashboards.company_dashboard.my_offers')
 
-= form_with url: update_many_offers_path do |f|
-  = f.select :action, options_from_collection_for_select(t('.bulk_actions'), :first, :last), {}, class: 'offer_dashboard__bulk_action'
+= form_with url: update_many_offers_path, method: :patch do |f|
+  = f.select :update_action, options_from_collection_for_select(t('.bulk_actions'), :first, :last), {}, class: 'offer_dashboard__bulk_action'
+  = button_tag "Apply", type: :submit, class: 'button hollow success small offer_dashboard__apply_bulk_action'
   %table.offer_dashboard.striped
     %thead.offer_dashboard__thead
       %tr

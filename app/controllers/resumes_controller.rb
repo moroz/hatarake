@@ -10,8 +10,7 @@ class ResumesController < ApplicationController
     else
       respond_to do |f|
         f.html do
-          flash.now.alert = I18n.t("errors.generic")
-          render 'new'
+          raise ActionController::BadRequest.new, "File could not be saved"
         end
         f.js { render_js_errors_for @resume }
       end

@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_url, :alert => exception.message
   end
 
+  rescue_from ActionController::BadRequest do |exception|
+    redirect_back fallback_location: root_path, alert: I18n.t('bad_request_alert') + exception.message.to_s 
+  end
+
   def current_user
     super || current_candidate || current_company || current_admin_user
   end

@@ -4,6 +4,7 @@ en:
   motto: 働けば自由になります
   'true': 'Yes'
   'false': 'No'
+  bad_request_alert: "An error occurred while processing your request: "
 
   currency_range:
     min: "%{min}+ %{currency}"

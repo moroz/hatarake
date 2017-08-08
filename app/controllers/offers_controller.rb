@@ -115,6 +115,18 @@ class OffersController < ApplicationController
     end
   end
 
+  def update_many
+    @offers = Offer.where(id: params[:offer_ids])
+    case params[:update_action]
+    when 'publish'
+      # publish all of them
+    when 'unpublish'
+      # unpublish them
+    else
+      raise ActionController::BadRequest.new, "Unrecognized action"
+    end
+  end
+
   def unpublish
     offer.unpublish
     redirect_to offer, notice: "The offer has been unpublished."
