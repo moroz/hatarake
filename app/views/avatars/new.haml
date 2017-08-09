@@ -23,7 +23,7 @@
 
 :javascript
   document.getElementById('uploaded_file').addEventListener('change', function(e) {
-    var allowed_formats = #{Avatar::EXTENSIONS.to_json};
+    var allowed_formats = #{raw Avatar::EXTENSIONS.to_json};
     var extension = e.target.value.split('.').pop().toLowerCase();
     var tooBigDiv = document.getElementById('file_too_big');
     var formatWarningDiv = document.getElementById('unsupported_format');
