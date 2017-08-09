@@ -4,15 +4,13 @@ class DotpayController < PaymentsController
     if @dotpay.acknowledge
       @order = Order.find_by(unique_token: @dotpay.control)
       @order.update(payment_status: @dotpay.status)
-      logger.info "Received Dotpay payment: #{@dotpay.amount} #{@dotpay.currency.upcase}"
-      @order.paid!
+      if @dotpay.status == 'completed'
+        logger.info "Received Dotpay payment: #{@dotpay.amount} #{@dotpay.currency.upcase}"
+        @order.paid!
+      end
     else
-      logger.error "Incorrect dotpay payment"
+      logger.error "Unrecognized dotpay payment"
     end
     render plain: 'OK'
-  end
-
-  def dotpay_id
-    '767542'
   end
 end
