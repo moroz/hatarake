@@ -47,6 +47,8 @@ en:
       explanation: "You can use Markdown here. Ctrl-Enter submits the form."
       submit: "Publish"
     edited: "edited: %{dt}"
+    index:
+      company_blog: Company blog
 
   activerecord:
     attributes:

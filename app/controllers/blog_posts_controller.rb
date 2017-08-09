@@ -1,11 +1,12 @@
 class BlogPostsController < ApplicationController
   respond_to :html, :js
   expose(:blog_post)
+  expose(:company)
 
   invisible_captcha only: [:create, :update]
 
   def index
-    
+    @blog_posts = company.blog_posts
   end
 
   def show

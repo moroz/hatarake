@@ -1,6 +1,7 @@
 - breadcrumb :company_offers, company
-= render 'companies/info_card'
-%h2.text-center= t('.heading', company: company.name)
+.row
+  = render company
+  = render 'companies/menu'
 - if company == current_company
   .text-center
     = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'

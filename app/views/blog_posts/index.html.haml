@@ -1,0 +1,14 @@
+- breadcrumb :company, company
+
+.row
+  = render company
+
+= render 'companies/menu'
+
+.row
+  - if can? :edit, company
+    .card
+      = render 'blog_posts/form'
+  - if @blog_posts.present? || can?(:edit, company)
+    #blog_posts
+      = render @blog_posts

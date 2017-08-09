@@ -1,34 +1,20 @@
 - breadcrumb :company, company
 .row
-  = render 'companies/info_card'
-
-.row
-  %ul.menu.align-center.company__menu
-    %li= link_to "Description", '#'
-    %li= link_to "Blog", "#"
-    %li= link_to "Offers", "#"
-
+  = render company
   - if can? :edit, company
     .show-for-small-only
       = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'
+  = render 'menu'
+
+.row
+  - if candidate_signed_in?
+    .card#rate_company
+      = render 'companies/show/rate'
 
   - if company.description.present?
     .card#company_description
       .card-section.company__description
         != markdown company.description
-
-  - if candidate_signed_in?
-    .card#rate_company
-      = render 'companies/show/rate'
-
-  - if @blog_posts.present? || can?(:edit, company)
-    %h3.text-center= t('.company_blog')
-  - if can? :edit, company
-    .card
-      = render 'blog_posts/form'
-  - if @blog_posts.present? || can?(:edit, company)
-    #blog_posts
-      = render @blog_posts
 
 - if false
   .large-4.columns

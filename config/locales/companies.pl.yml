@@ -76,3 +76,6 @@ pl:
       explanation: "W postach można używać znaczników Markdown. Ctrl-Enter wysyła formularz."
       submit: "Opublikuj"
     edited: "edytowano: %{dt}"
+
+    index:
+      company_blog: Blog firmowy
