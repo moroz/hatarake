@@ -12,5 +12,5 @@ Rails.application.config.assets.version = '1.0'
 
 stylesheets = Dir["vendor/assets/stylesheets/*"].map { |f| f.split('/').last }
 javascripts = Dir["vendor/assets/javascripts/*"].map { |f| f.split('/').last }
-others = %w( avatars.coffe offers.js )
+others = %w( avatars.coffee offers.js jquery.remotipart.js )
 Rails.application.config.assets.precompile += (stylesheets + javascripts + others)
