@@ -19,12 +19,4 @@
   %li
     = fa_icon('eye li')
     = t('offers.view_count', count: offer.views)
-  %li
-    - if logged_in? && current_user.id == offer.company_id
-      = link_to offer_applications_path(offer) do
-        = fa_icon('user li')
-        = offer.applicant_count_in_words
-    - else
-      = fa_icon('user li')
-      = offer.applicant_count_in_words
-
+  
