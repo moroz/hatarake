@@ -5,8 +5,10 @@
 - if company == current_company
   .text-center
     = link_to (fa_icon 'plus', text: t('offers.add_new_offer')), new_offer_path, class: 'custom_button'
-.offers__search_description
-  = t('offers.index.offer_count', count: company_offers.total_count)
-.offers#offers
-  = render company_offers, ref: 'company'
-= paginate company_offers, remote: true, params: { ref: 'company' }
+- if company_offers.present?
+  .offers__search_description= t('offers.index.offer_count', count: company_offers.total_count)
+  .offers#offers
+    = render company_offers, ref: 'company'
+  = paginate company_offers, remote: true, params: { ref: 'company' }
+- else
+  .row= blank_slate

@@ -6,6 +6,7 @@ pl:
       no_offers: Brak ofert.
       website: 'Strona WWW:'
       description: Opis
+      no_description: "Ta firma nie posiada opisu."
       recent_offers: Ostatnie oferty
       all_offers: "Wszystkie oferty..."
       rate_company: "Oceń firmę"
@@ -66,6 +67,7 @@ pl:
       premium_services_available: "Na Twoim koncie są do wykorzystania następujące usługi:"
 
   company_offers:
+    blank_slate: "Ta firma nie opublikowała żadnych ofert."
     index:
       breadcrumb: "Oferty pracy"
       heading: "Oferty firmy: %{company}"
@@ -76,6 +78,7 @@ pl:
       explanation: "W postach można używać znaczników Markdown. Ctrl-Enter wysyła formularz."
       submit: "Opublikuj"
     edited: "edytowano: %{dt}"
+    blank_slate: "Ta firma nie opublikowała żadnych postów."
 
     index:
       company_blog: Blog firmowy

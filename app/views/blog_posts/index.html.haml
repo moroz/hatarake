@@ -3,7 +3,7 @@
 .row
   = render company
 
-= render 'companies/menu'
+  = render 'companies/menu'
 
 .row
   - if can? :edit, company
@@ -12,3 +12,5 @@
   - if @blog_posts.present? || can?(:edit, company)
     #blog_posts
       = render @blog_posts
+  - else
+    = blank_slate

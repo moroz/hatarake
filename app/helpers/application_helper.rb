@@ -86,4 +86,11 @@ module ApplicationHelper
       dt.day.ordinalize + dt.strftime(" %B %Y, %I:%M %p")
     end
   end
+
+  def blank_slate(text = nil)
+    text ||= I18n.t( [controller_name, 'blank_slate'].join('.'))
+    content_tag :div, class: 'blank_slate' do
+      text.to_s + "😞"
+    end
+  end
 end
