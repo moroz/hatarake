@@ -110,6 +110,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    cookies_eu (1.6.2)
+      js_cookie_rails
     css_parser (1.5.0)
       addressable
     database_cleaner (1.6.1)
@@ -223,6 +225,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    js_cookie_rails (2.1.4)
+      railties (>= 3.1)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -435,6 +439,7 @@ DEPENDENCIES
   carrierwave-i18n
   carrierwave-unoconv
   coffee-rails (~> 4.2)
+  cookies_eu
   database_cleaner
   db_fixtures_dump
   decent_exposure
@@ -487,4 +492,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.1
+   1.15.3

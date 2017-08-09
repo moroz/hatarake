@@ -14,6 +14,7 @@
 //= require foundation.dropdownMenu.js
 //= require offers
 //= require companies
+//= require cookies_eu
 //= require candidates
 //= require Markdown.Converter
 //= require Markdown.Sanitizer
