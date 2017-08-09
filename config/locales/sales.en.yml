@@ -33,6 +33,10 @@ en:
       confirm_and_pay: "Confirm and pay with Dotpay"
       heading: "Order #%{id}"
       currency: "Order currency:"
+    
+    thank_you:
+      heading: Thank you for your purchase!
+      we_have_registered_your_payment: "We have registered your payment via Dotpay.pl and activated the following services on your account:"
 
   cart_items:
     actions:

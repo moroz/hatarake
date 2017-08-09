@@ -39,6 +39,10 @@ pl:
       heading: "Zamówienie #%{id}"
       currency: "Waluta zamówienia:"
 
+    thank_you:
+      heading: Dziękujemy za zakup!
+      we_have_registered_your_payment: "Odnotowaliśmy płatność za pośrednictwem Dotpay.pl i aktywowaliśmy następujące usługi na Twoim koncie:"
+
   cart_items:
     actions:
       destroy:

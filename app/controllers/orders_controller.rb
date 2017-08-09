@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   def thank_you
     @order = Order.find_by(unique_token: params[:order_id])
     unless @order.paid?
-      redirect_to payment_path(@order) and return
+      redirect_to order_payment_path(@order) and return
     end
   end
 
