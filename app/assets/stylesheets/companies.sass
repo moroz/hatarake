@@ -39,7 +39,7 @@ $avatar-margin: 8px
   font-size: 1.25rem
 
 $company-avatar-size: 105px
-$offer-count-width: rem-calc(100)
+$offer-count-width: rem-calc(120)
 
 .company__website
   cursor: pointer
@@ -63,21 +63,31 @@ $offer-count-width: rem-calc(100)
     float: left
     margin: 0
 
+.company__header
+  padding: 0.75rem
+  margin-bottom: 0.7rem
+
 @media screen and (min-width: 640px)
   .company__name_container
     width: calc(100% - #{$company-avatar-size+20px} - #{$offer-count-width + 2rem})
     float: left
     text-align: left
 
-  .company__header__offer_count
-    margin: 1rem
-    background-color: $dark-red
-    color: $white
+.company__header__offer_count
+  background-color: lighten($dark-red, 8%)
+  color: $white
+  text-align: center
+  margin: 0 0 0.7rem 0
+  padding: 0.3rem 0 1rem 0
+  font-size: 1.15rem
+
+  @include breakpoint(medium)
+    margin: 0
+    height: rem-calc(105)
     width: $offer-count-width
     float: right
-    text-align: center
+    font-size: 0.85rem
 
-    h1
-      font-size: 2.3rem
-      margin-bottom: 0
-    font-size: 1rem
+  h1
+    font-size: 2.5rem
+    margin-bottom: 0

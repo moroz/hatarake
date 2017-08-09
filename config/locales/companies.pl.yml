@@ -10,6 +10,11 @@ pl:
       all_offers: "Wszystkie oferty..."
       rate_company: "Oceń firmę"
       company_blog: "Blog firmowy"
+      active_job_offers:
+        zero: aktywnych ofert pracy
+        one: aktywna oferta pracy
+        few: aktywne oferty pracy
+        many: aktywnych ofert pracy
 
     edit:
       heading: Edycja profilu

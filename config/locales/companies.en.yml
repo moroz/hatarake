@@ -10,6 +10,9 @@ en:
       all_offers: "See all..."
       rate_company: Rate this company
       company_blog: "Company blog"
+      active_job_offers:
+        one: active job offer
+        other: active job offers
 
     edit:
       heading: Edit profile

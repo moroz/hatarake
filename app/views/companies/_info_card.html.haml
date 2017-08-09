@@ -9,5 +9,10 @@
       - else
         = company.name
   .company__header__offer_count.hide-for-small-only
-    %h1= company.offers.count
-    offers
+    %h1= (count = company.offers.published.count)
+    = t('companies.show.active_job_offers', count: count)
+
+.row.container.show-for-small-only
+  .company__header__offer_count
+    %h1= count
+    = t('companies.show.active_job_offers', count: count)
