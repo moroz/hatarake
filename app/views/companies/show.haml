@@ -2,6 +2,12 @@
 .row
   = render 'companies/info_card'
 
+.row
+  %ul.menu.align-center.company__menu
+    %li= link_to "Description", '#'
+    %li= link_to "Blog", "#"
+    %li= link_to "Offers", "#"
+
   - if can? :edit, company
     .show-for-small-only
       = link_to t('offers.add_new_offer'), new_offer_path, class: 'button expanded'

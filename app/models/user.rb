@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :contact_email, uniqueness: true, allow_blank: true
   validates :phone, uniqueness: true, allow_blank: true
   validates :website, url: true, allow_blank: true
+  validates :description, length: { maximum: 10_000 }
   has_one :avatar, foreign_key: 'owner_id'
   has_many :carts
   has_many :orders

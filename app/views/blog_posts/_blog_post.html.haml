@@ -13,4 +13,8 @@
       .blog_post__actions
         = link_to fa_icon('pencil', text: t('actions.edit')), edit_blog_post_path(blog_post), remote: true, class: 'button small button--reduce-padding'
         = link_to fa_icon('trash-o', text: t('actions.delete')), blog_post, method: :delete, remote: true, class: 'button small dark-red-bg button--reduce-padding', data: { confirm: "Are you sure you want to delete this post?" }
-    = markdown blog_post.body
+    - if blog_post.body.length > 350
+      - class_names = 'blog_post__body blog_post__body--long'
+    - else
+      - class_names = 'blog_post__body'
+    %div{class: class_names}= markdown blog_post.body

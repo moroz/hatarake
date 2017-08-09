@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :blog_post do
-    user nil
-    body "MyText"
+    company
+    body "Zażółć gęślą jaźń"
   end
 end

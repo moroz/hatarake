@@ -1,5 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe BlogPost, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:company) { FactoryGirl.create(:company) }
+  describe "validations" do
+    describe "uniqueness validation in user scope" do
+      let!(:post1) { FactoryGirl.create(:blog_post, company: company, body: "Zażółć gęślą jaźń.") }
+      let(:new_post) { FactoryGirl.build(:blog_post, company: company) }
+
+      context "when new post has identical body" do
+        it "is invalid" do
+          new_post.body = "Zażółć gęślą jaźń."
+          expect(new_post).not_to be_valid
+        end
+      end
+
+      context "when new post has identical body but with trailing newlines" do
+        it "is invalid" do
+          new_post.body = "Zażółć gęślą jaźń.\n\n\n"
+          expect(new_post).not_to be_valid
+        end
+      end
+    end
+  end
 end

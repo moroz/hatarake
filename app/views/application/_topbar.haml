@@ -15,7 +15,7 @@
           %ul.menu
             %li.locale_link
               - other_locale = current_locale == :pl ? 'en' : 'pl'
-              = link_to lang: other_locale, data: { turbolinks: false } do
+              = link_to lang: other_locale do
                 = image_tag("flag-#{other_locale}.svg", class: 'locale_flag')
                 = other_locale.upcase
 
