@@ -2,28 +2,36 @@
 
 = simple_form_for offer, remote: true, authenticity_token: true do |f|
   = error_messages_for f.object
+  .page-header
+    %h4= t('.basic_information')
   = f.invisible_captcha :subtitle
-  = f.input :title, label: t('offers.fields.title')
+  = f.input :title, label: t('offers.fields.title'), input_html: { size: 50, class: 'auto-width' }
+  = f.simple_fields_for :location do |ff|
+    = render 'location_fields', f: ff
+  .page-header
+    %h4= t('.wages')
   = f.label :currency, t('offers.fields.currency')
-  = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last, offer.currency)
+  .auto-width
+    = f.select :currency, options_from_collection_for_select(t('currencies'), :first, :last, offer.currency)
   %h5= t('offers.fields.salary_html')
   .row
     .medium-6.columns
       = f.input :salary_min, label: t('offers.fields.salary_min'), input_html: { 'aria-describedby' => 'salary_help_text', value: low_bound(offer.salary) }
+      %p.help-text#salary_help_text= t('offers.fields.salary_help_text')
     .medium-6.columns
       = f.input :salary_max, label: t('offers.fields.salary_max'), input_html: { 'aria-describedby' => 'salary_help_text', value: high_bound(offer.salary) }
-  %p.help-text#salary_help_text= t('offers.fields.salary_help_text')
   %h5= t('offers.fields.hourly_wage_html')
   .row
     .medium-6.columns
       = f.input :hourly_wage_min, label: t('offers.fields.hourly_wage_min'), input_html: { 'aria-describedby' => 'hourly_wage_help_text', value: low_bound(offer.hourly_wage) }
+      %p.help-text#hourly_wage_help_text= t('offers.fields.hourly_wage_help_text')
     .medium-6.columns
       = f.input :hourly_wage_max, label: t('offers.fields.hourly_wage_max'), input_html: { 'aria-describedby' => 'hourly_wage_help_text', value: high_bound(offer.hourly_wage) }
-  %p.help-text#hourly_wage_help_text= t('offers.fields.hourly_wage_help_text')
-  = f.input :contact_email, label: t('offers.fields.contact_email')
-  = f.input :contact_phone, label: t('offers.fields.contact_phone')
-  = f.simple_fields_for :location do |ff|
-    = render 'location_fields', f: ff
+  .row
+    .medium-6.columns
+      = f.input :contact_email, label: t('offers.fields.contact_email')
+    .medium-6.columns
+      = f.input :contact_phone, label: t('offers.fields.contact_phone')
   = render 'pagedown', f: f
   = f.submit "Save", class: 'button success expanded'
 

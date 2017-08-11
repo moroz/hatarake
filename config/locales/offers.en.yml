@@ -37,6 +37,8 @@ en:
     new:
       heading: "Create new offer"
       title: "Create new offer"
+      basic_information: "Basic information"
+      wages: "Wages"
 
     index:
       no_offers: "No offers found for the search criteria entered."
@@ -128,6 +130,7 @@ en:
       hourly_wage_html: "Hourly wage: <small>(optional)</small>"
       hourly_wage_min: "Maximal hourly wage:"
       hourly_wage_max: "Minimal hourly wage:"
+      application_method: "Application via:"
       contact_email: "Contact e-mail:"
       contact_phone: "Contact phone:"
       country: "Country:"
