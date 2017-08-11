@@ -1,12 +1,13 @@
-%h1 Your orders
+- breadcrumb :orders
+%h1= t('.heading')
 
 - if @orders.present?
-  %table.orders
+  %table.orders.hover
     %thead
       %tr
         %td #
-        %td Total
-        %td Date
+        %td= t('.total')
+        %td= t('.date')
         %td Status
     %tbody#clickable_table
       - @orders.each do |order|
@@ -17,10 +18,10 @@
         %tr{class: class_names, id: dom_id(order), 'data-link' => order_path(order)}
           %td= order.id
           %td= "%.2f %s" % [order.total, order.currency.upcase]
-          %td= l order.created_at, format: :short
+          %td= l order.created_at, format: :long
           %td
             - if order.paid?
-              PAID
+              %span.order__status.order__status--paid= fa_icon('thumbs-up', text: t('.paid'))
             - else
-              UNPAID
+              %span.order__status.order__status--unpaid= fa_icon('thumbs-down', text: t('.unpaid'))
 

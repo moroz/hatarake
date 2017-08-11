@@ -28,6 +28,13 @@ en:
       place: "Place order"
 
   orders:
+    index:
+      heading: My orders
+      total: Total
+      date: Date
+      paid: Paid
+      unpaid: Unpaid
+
     payment:
       payment_description: "InJobs.pl Premium Features"
       confirm_and_pay: "Confirm and pay with Dotpay"

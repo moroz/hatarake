@@ -54,3 +54,8 @@ crumb :my_offers do
   link I18n.t('dashboards.company_dashboard.my_offers')
   parent :company_dashboard
 end
+
+crumb :orders do
+  link I18n.t('orders.index.heading')
+  parent :company_dashboard
+end

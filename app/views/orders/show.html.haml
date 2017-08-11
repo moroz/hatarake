@@ -5,3 +5,5 @@
 - unless @order.paid?
   = link_to fa_icon('credit-card', text: 'Przejdź do płatności'), order_payment_path(@order), class: 'button'
   = link_to fa_icon('ban', text: 'Anuluj zamówienie'), @order, method: :delete, class: 'button dark-red-bg'
+- else
+  Zamówienie opłacone &mdash; nie możesz go zmodyfikować ani anulować.

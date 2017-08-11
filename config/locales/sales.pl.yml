@@ -29,6 +29,13 @@ pl:
       place: "Złóż zamówienie"
   
   orders:
+    index:
+      heading: "Zamówienia"
+      total: Na sumę
+      date: Data
+      paid: Opłacone
+      unpaid: Nieopłacone
+
     place:
       heading: "Potwierdź zamówienie"
       cart_is_empty: "Koszyk jest pusty."
