@@ -30,8 +30,17 @@ en:
     company_dashboard:
       heading: Company dashboard
       my_offers: My jobs
-      applications: Applications
+      candidates: Candidates
+      browse_candidate_profiles: Browse candidate profiles
+      become_premium: Become a Premium Employer
+      not_premium_employer: Only Premium Employers can browse candidate profiles.
+      manage_offers: Manage offers
+      order_premium: Order Premium Services
       premium_services: Premium Services
+      unpaid_order:
+        one: one unpaid order.
+        other: '%{count} unpaid orders.'
+      you_have_orders: You have
       orders: Orders
       premium_employer_valid_until: "Your Premium Employer Bundle is valid until %{dt}."
       premium_services_available: "You can use the following premium services:"

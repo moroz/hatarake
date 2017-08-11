@@ -1,54 +1,55 @@
 %h1= t('.heading')
 
-%section.premium_membership
+.row
+  .columns.medium-6
 
-.card
-  .card-divider
-    %h4 Candidates
-  .card-section
-    - if current_company.premium?
-      = link_to "Browse candidate profiles", candidates_path, class: 'button large'
-    - else
-      Only Premium Employers can browse candidate profiles.
-      = link_to "Become a Premium Employer", premium_path, class: 'button large'
-
-.card
-  .card-divider
-    %h4= t('.my_offers')
-  .card-section
-    You have
-    = link_to my_offers_path do
-      = @stats[:offer_count]
-      offers.
-
-    %div
-      = link_to t('nav.add_offer'), new_offer_path, class: 'button large'
-      = link_to "Manage offers", my_offers_path, class: 'button large'
-
-.card
-  .card-divider
-    %h4= t('.premium_services')
-  .card-section
-    - if current_company.premium?
-      %p
-        = t('.premium_employer_valid_until', dt: l(current_company.premium_until, format: :blog))
-    - if current_company.premium_services.present?
-      %p= t('.premium_services_available')
-      %ul
-      - current_company.premium_services.each do |k,v|
-        %li
-          = v
-          &times;
-          = Product.find_by(id: k).local_name
-    = link_to "Order Premium Services", premium_path, class: 'button large'
+    .card.dashboard_card
+      .card-divider
+        %h4= t('.premium_services')
+      .card-section
+        - if current_company.premium?
+          %p
+            = t('.premium_employer_valid_until', dt: l(current_company.premium_until, format: :blog))
+        - if current_company.premium_services.present?
+          %p= t('.premium_services_available')
+          %ul
+          - current_company.premium_services.each do |k,v|
+            %li
+              = v
+              &times;
+              = Product.find_by(id: k).local_name
+        = link_to t('.order_premium'), premium_path, class: 'button '
 
 
-- if @stats[:unpaid_orders_count] != 0
-  .card
-    .card-divider
-      %h4= t('.orders')
-    .card-section
-      You have
-      = link_to orders_path do
-        = @stats[:unpaid_orders_count]
-        unpaid orders.
+  .columns.medium-6
+    .card.dashboard_card
+      .card-divider
+        %h4= t('.my_offers')
+      .card-section
+        %p
+          You have
+          = link_to my_offers_path do
+            = @stats[:offer_count]
+            offers.
+
+        %div
+          = link_to t('nav.add_offer'), new_offer_path, class: 'button '
+          = link_to t('.manage_offers'), my_offers_path, class: 'button '
+
+    .card.dashboard_card
+      .card-divider
+        %h4= t('.candidates')
+      .card-section
+        - if current_company.premium?
+          = link_to t('.browse_candidate_profiles'), candidates_path, class: 'button '
+        - else
+          = t('.not_premium_employer')
+          = link_to t('.become_premium'), premium_path, class: 'button '
+    .card.dashboard_card
+      .card-divider
+        %h4= t('.orders')
+      .card-section
+        - if @stats[:unpaid_orders_count] != 0
+          = t('.you_have_orders')
+          = link_to orders_path do
+            = t('.unpaid_order', count: @stats[:unpaid_orders_count])
