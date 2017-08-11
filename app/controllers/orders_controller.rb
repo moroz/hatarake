@@ -9,6 +9,10 @@ class OrdersController < ApplicationController
     @orders = current_user.orders
   end
 
+  def show
+    @order = Order.find_by(unique_token: params[:id])
+  end
+
   def place
     @order = Order.new
     @order.build_billing_address

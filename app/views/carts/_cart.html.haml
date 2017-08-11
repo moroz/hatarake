@@ -1,24 +1,31 @@
 - if defined?(view_format) && view_format == :order
-  - if cart.cart_items.present?
-    %ul.cart
-      - cart.cart_items.each do |item|
-        %li
-          = item.quantity
-          &times;
-          = item.product.local_name
-          - if defined?(currency)
-            &agrave;
-            = sprintf("%.2f %s", item.unit_price(currency), currency.upcase)
-            \=
-            = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
-          - else
-            = item.subtotal_to_s
-    %strong
-      = t('.total')
-      - if defined?(currency)
-        = sprintf("%.2f %s", cart.total(currency), currency.upcase)
-      - else
-        = cart.total_to_s
+  .order
+    - if cart.cart_items.present?
+      %table
+        %tbody
+          - cart.cart_items.each do |item|
+            %tr
+              %td!= item.quantity.to_s + " &times;".html_safe
+              %td= item.product.local_name
+              - if defined?(currency)
+                %td.text-right
+                  &agrave;
+                  = sprintf("%.2f %s", item.unit_price(currency), currency.upcase)
+                %td
+                  \=
+                  = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
+              - else
+                %td= item.subtotal_to_s
+        %tfoot
+          %tr
+            %td.text-right{colspan: 3}
+              = t('.total')
+            %td
+              - if defined?(currency)
+                = sprintf("%.2f %s", cart.total(currency), currency.upcase)
+              - else
+                = cart.total_to_s
+
 - else
   .cart__table#cart
     %table.hover

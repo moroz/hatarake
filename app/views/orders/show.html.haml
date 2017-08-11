@@ -1,0 +1,7 @@
+%h1 Zamówienie ##{@order.id}
+
+= render @order.cart, currency: @order.currency, view_format: :order
+
+- unless @order.paid?
+  = link_to fa_icon('credit-card', text: 'Przejdź do płatności'), order_payment_path(@order), class: 'button'
+  = link_to fa_icon('ban', text: 'Anuluj zamówienie'), @order, method: :delete, class: 'button dark-red-bg'
