@@ -49,5 +49,6 @@
       %h4= t('.orders')
     .card-section
       You have
-      = @stats[:unpaid_orders_count]
-      unpaid orders.
+      = link_to orders_path do
+        = @stats[:unpaid_orders_count]
+        unpaid orders.

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     patch :finalize
   end
   get '/orders/place', to: 'orders#place', as: :place_order
-  resources :orders, only: [:create, :show] do
+  resources :orders, only: [:index, :create, :show] do
     get :payment
     get :thank_you
   end

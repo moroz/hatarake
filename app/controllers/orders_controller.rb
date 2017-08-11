@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
 
   authorize_resource
 
+  def index
+    @orders = current_user.orders
+  end
+
   def place
     @order = Order.new
     @order.build_billing_address
@@ -18,6 +22,7 @@ class OrdersController < ApplicationController
       @order.save!
       @order.cart.finalize!
     end
+    OrdersMailer.order_placed(@order).deliver
     redirect_to order_payment_path(@order)
   rescue ActiveRecord::RecordInvalid
     render :place and return

@@ -1,0 +1,26 @@
+%h1 Your orders
+
+- if @orders.present?
+  %table.orders
+    %thead
+      %tr
+        %td #
+        %td Total
+        %td Date
+        %td Status
+    %tbody#clickable_table
+      - @orders.each do |order|
+        - if order.paid?
+          - class_names = 'order order--paid'
+        - else
+          - class_names = 'order order--unpaid'
+        %tr{class: class_names, id: dom_id(order), 'data-link' => order_path(order)}
+          %td= order.id
+          %td= "%.2f %s" % [order.total, order.currency.upcase]
+          %td= l order.created_at, format: :short
+          %td
+            - if order.paid?
+              PAID
+            - else
+              UNPAID
+
