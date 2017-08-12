@@ -12,6 +12,12 @@
         %span.home__row1__upper-text= t('.slide2.upper_text') 
         %span.home__row1__lower-text= raw t('.slide2.lower_text') 
         = link_to t('.slide2.sign_up'), new_company_registration_path, class: 'button large'
+  .owl-slide.owl-slide--harold
+    .owl-slide__container
+      .owl-slide__text
+        %span.home__row1__upper-text Sign up for our newsletter
+        %span.home__row1__lower-text and get interesting offers every week!
+        = link_to "Subscribe", '#', class: 'button large'
 
 :javascript
   $('#banner-carousel').owlCarousel({
