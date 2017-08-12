@@ -20,3 +20,8 @@ en:
         upper_text: "Publish your company’s offers for free"
         lower_text: "You only pay for Premium features!"
         sign_up: "Get your free Employer account"
+
+      slide3:
+        upper_text: "Subscribe for our free newsletter"
+        lower_text: "and get the most interesting offers delivered to your mailbox!"
+        subscribe: "Subscribe now"

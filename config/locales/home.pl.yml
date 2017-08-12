@@ -19,3 +19,8 @@ pl:
         upper_text: "Publikuj oferty Twojej firmy za darmo"
         lower_text: "U nas płacisz wyłącznie za specjalne usługi!"
         sign_up: "Załóż darmowe konto firmowe"
+
+      slide3:
+        upper_text: "Zaprenumeruj nasz darmowy newsletter"
+        lower_text: "i otrzymuj najciekawsze oferty prosto na swoją skrzynkę!"
+        subscribe: "Subskrybuj"

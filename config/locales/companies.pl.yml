@@ -29,6 +29,11 @@ pl:
       your_rating: "Twoja ocena: %{user_rating}."
       not_voted_yet: "Jeszcze nie oceniłeś tej firmy."
 
+    menu:
+      description: O nas
+      blog: Blog firmowy
+      offers: Oferty pracy
+
   activerecord:
     attributes:
       company:

@@ -8,7 +8,7 @@ RSpec.describe "Company posts blog posts" do
     context "when not signed in" do
       before do
         login_as(candidate, scope: :candidate)
-        visit company_path(company)
+        visit company_blog_posts_path(company)
       end
 
       it "doesn't show new post form" do
@@ -19,7 +19,7 @@ RSpec.describe "Company posts blog posts" do
     context "when signed in" do
       before do
         login_as(company, scope: :company)
-        visit profile_path
+        visit company_blog_posts_path(company)
       end
 
       it "shows a new post form" do

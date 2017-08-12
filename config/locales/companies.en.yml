@@ -26,6 +26,11 @@ en:
       your_rating: "Your rating: %{user_rating}."
       not_voted_yet: "You have not rated this company yet."
 
+    menu:
+      description: "About us"
+      blog: "Company blog"
+      offers: "Job offers"
+
   dashboards:
     company_dashboard:
       heading: Company dashboard
