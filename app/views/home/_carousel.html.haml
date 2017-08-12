@@ -17,7 +17,7 @@
       .owl-slide__text
         %span.home__row1__upper-text= t('.slide3.upper_text')
         %span.home__row1__lower-text= t('.slide3.lower_text')
-        = link_to t('.slide3.subscribe'), '#', class: 'button large'
+        = link_to t('.slide3.subscribe'), new_newsletter_subscription_path, class: 'button large'
 
 :javascript
   $('#banner-carousel').owlCarousel({

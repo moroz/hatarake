@@ -1,0 +1,9 @@
+%h1= t('.heading')
+
+= form_with model: @subscription || NewsletterSubscription.new, remote: true do |f|
+  = error_messages_for f.object
+  = f.label :name, t('newsletter_subscriptions.labels.name')
+  = f.text_field :name, size: 30, class: 'auto-width' 
+  = f.label :email, t('newsletter_subscriptions.labels.email')
+  = f.text_field :email, size: 40, class: 'auto-width' 
+  = f.submit t('.submit'), class: 'button '

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
   get '/premium', to: 'products#index'
+  resources :newsletter_subscriptions, only: [:new, :create, :destroy], path: '/subscribe'
+  get '/unsubscribe', to: 'newsletter_subscriptions#unsubscribe'
 
   resources :offers, path: '/jobs', except: :index do
     member do

@@ -1,0 +1,17 @@
+pl:
+  active_record:
+    attributes:
+      newsletter_subscription:
+        name: 'Imię i/lub nazwisko'
+        email: 'Adres e-mail'
+    
+  newsletter_subscriptions:
+    labels:
+      name: 'Imię i/lub nazwisko (opcjonalnie):'
+      email: 'Adres e-mail:'
+
+    new:
+      heading: 'Zaprenumeruj newsletter InJobs.pl'
+      submit: 'Wyślij'
+
+      
