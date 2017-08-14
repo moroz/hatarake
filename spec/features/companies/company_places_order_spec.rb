@@ -35,10 +35,22 @@ RSpec.describe 'Company places Order' do
     before do
       cart.add_item(1, 2)
     end
+
     it 'creates Order with associated BillingAddress' do
       visit cart_path
       click_link_or_button I18n.t('carts.cart.place')
       expect(current_path).to eq(place_order_path)
+      find('#order_invoice').set(true)
+      find('#order_billing_address_attributes_first_name').set('Miś')
+      find('#order_billing_address_attributes_last_name').set('Uszatek')
+      find('#order_billing_address_attributes_street').set('ul. Stepana Bandery')
+      find('#order_billing_address_attributes_house_no').set('69')
+      find('#order_billing_address_attributes_postal_code').set('75-100')
+      find('#order_billing_address_attributes_city').set('Ostrowiec Świętokrzyski')
+      find('#order_billing_address_attributes_nip').set('100500100900')
+      expect { submit_form }.to change { Order.count }
+      o = Order.last
+      expect(o.billing_address).to be_persisted
     end
   end
 end
