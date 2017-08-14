@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :subscriptions
   post '/dotpay_payment/:token' => 'dotpay#payment', as: :dotpay_payment
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
   get '/premium', to: 'products#index'
-  resources :newsletter_subscriptions, only: [:new, :create, :destroy], path: '/subscribe'
+  get '/subscribe', to: 'newsletter_subscriptions#new', as: :new_newsletter_subscription
+  resources :newsletter_subscriptions, only: [:create, :destroy], path: '/subscribe'
   get '/unsubscribe', to: 'newsletter_subscriptions#unsubscribe'
 
   resources :offers, path: '/jobs', except: :index do

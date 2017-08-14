@@ -1,10 +1,18 @@
 pl:
-  active_record:
+  activerecord:
     attributes:
       newsletter_subscription:
         name: 'Imię i/lub nazwisko'
         email: 'Adres e-mail'
     
+    errors:
+      models:
+        newsletter_subscription:
+          attributes:
+            email:
+              invalid: 'jest nieprawidłowy'
+              taken: 'został już zajęty'
+              blank: 'nie może być pusty'
   newsletter_subscriptions:
     labels:
       name: 'Imię i/lub nazwisko (opcjonalnie):'
@@ -14,4 +22,6 @@ pl:
       heading: 'Zaprenumeruj newsletter InJobs.pl'
       submit: 'Wyślij'
 
-      
+    unsubscribe:
+      heading: 'Rezygnacja z newslettera'
+      submit: 'Usuń mój adres e-mail z bazy'
