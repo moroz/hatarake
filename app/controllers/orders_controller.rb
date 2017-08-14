@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).
-      permit(:currency, billing_address_attributes: [
+      permit(:currency, :invoice, billing_address_attributes: [
         :first_name, :last_name, :street, :house_no,
         :apt_no, :postal_code, :city, :nip
     ])

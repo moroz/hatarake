@@ -14,6 +14,8 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :billing_address, reject_if: :all_blank
 
+  before_validation :clear_billing_address_attributes_if_no_invoice
+
   def to_param
     unique_token
   end
@@ -35,6 +37,10 @@ class Order < ApplicationRecord
   end
 
   private 
+
+  def clear_billing_address_attributes_if_no_invoice
+    billing_address.destroy if !invoice && billing_address.present?
+  end
 
   def set_token_description
     self.unique_token ||= SecureRandom.hex(10)

@@ -39,6 +39,10 @@ pl:
     place:
       heading: "Potwierdź zamówienie"
       cart_is_empty: "Koszyk jest pusty."
+      i_need_invoice: "Potrzebuję faktury VAT"
+      payment_currency: 'Płacę w walucie:'
+      billing_address: 'Dane do faktury:'
+      submit: 'Wyślij'
 
     payment:
       payment_description: "InJobs.pl usługi premium"
@@ -54,3 +58,16 @@ pl:
     actions:
       destroy:
         confirmation: "Czy na pewno chcesz usunąć ten produkt z koszyka?"
+
+  activerecord:
+    attributes:
+      billing_address:
+        first_name: Imię
+        last_name: Nazwisko
+        nip: NIP
+        postal_code: Kod pocztowy
+        street: Ulica
+        house_no: Nr domu
+        apt_no: Nr mieszkania
+        city: Miejscowość
+

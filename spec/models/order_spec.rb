@@ -25,4 +25,24 @@ RSpec.describe Order, type: :model do
       end
     end
   end
+
+  describe "nested attributes for BillingAddress" do
+    let(:order) { FactoryGirl.build(:order, :with_billing_address_attributes) }
+
+    context 'when invoice = true' do
+      it 'saves BillingAddress' do
+        order.invoice = true
+        order.save
+        expect(order.billing_address).to be_persisted
+      end
+    end
+
+    context 'when invoice = false' do
+      it 'does not save BillingAddress' do
+        order.invoice = false
+        order.save
+        expect(order.billing_address).not_to be_persisted
+      end
+    end
+  end
 end

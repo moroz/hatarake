@@ -35,6 +35,14 @@ en:
       paid: Paid
       unpaid: Unpaid
 
+    place:
+      heading: Place order
+      cart_is_empty: Your cart is empty.
+      i_need_invoice: I need an invoice
+      payment_currency: 'I would like to pay in:'
+      billing_address: "Billing address:"
+      submit: Submit
+
     payment:
       payment_description: "InJobs.pl Premium Features"
       confirm_and_pay: "Confirm and pay with Dotpay"
@@ -49,3 +57,15 @@ en:
     actions:
       destroy:
         confirmation: "Are you sure you want to remove this item from your Shopping Cart?"
+
+  activerecord:
+    attributes:
+      billing_address:
+        first_name: First name
+        last_name: Last name
+        nip: 'NIP (Taxpayer ID)'
+        postal_code: Postal code
+        street: Street
+        house_no: 'House no.'
+        apt_no: 'Apt no.'
+        city: 'City'

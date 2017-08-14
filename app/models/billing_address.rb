@@ -1,7 +1,7 @@
 class BillingAddress < ApplicationRecord
   belongs_to :order, required: true
-  validates_presence_of :first_name, :last_name, :street, :house_no, :nip
-  validate :check_nip_validity
+  # validates_presence_of :first_name, :last_name, :street, :house_no, :nip
+  # validate :check_nip_validity
 
   private
 

@@ -1,0 +1,44 @@
+require 'rails_helper'
+
+RSpec.describe 'Company places Order' do
+  fixtures :products
+  let(:company) { FactoryGirl.create(:company) }
+  before do
+    login_as(company, scope: :company)
+  end
+
+  describe 'displaying products in products#index' do
+    it 'displays all products' do
+      visit premium_path
+      expect(page).to have_selector('.product', count: Product.count)
+    end
+  end
+
+  describe 'adding items to cart' do
+    it 'adds new items to cart' do
+      visit premium_path
+
+      within '#product_1' do
+        find('input[type="number"]').set(2)
+        submit_form
+      end
+      visit cart_path
+      expect(page).to have_selector('.cart_item', count: 1)
+      within('.cart_item') do
+        expect(page).to have_content('2')
+      end
+    end
+  end
+
+  describe 'checking out' do
+    let(:cart) { FactoryGirl.create(:cart, user: company) }
+    before do
+      cart.add_item(1, 2)
+    end
+    it 'creates Order with associated BillingAddress' do
+      visit cart_path
+      click_link_or_button I18n.t('carts.cart.place')
+      expect(current_path).to eq(place_order_path)
+    end
+  end
+end
