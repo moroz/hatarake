@@ -2,8 +2,14 @@
 
 = simple_form_for company, remote: true, authenticity_token: true do |f|
   = error_messages_for company
-  = f.input :name
-  = f.input :website
+  = f.input :name, input_html: { size: 35, class: 'auto-width' }
+  .row
+    .columns.medium-4
+      = f.input :website
+    .columns.medium-4
+      = f.input :phone
+    .columns.medium-4
+      = f.input :contact_email
   = f.simple_fields_for :location do |ff|
     = render 'location_fields', f: ff
   = render 'pagedown', f: f

@@ -41,6 +41,8 @@ pl:
         name: "Nazwa firmy"
         website: "Strona WWW"
         description: "Opis"
+        phone: "Telefon kontaktowy"
+        contact_email: "E-mail kontaktowy"
       blog_post:
         body: ""
 
