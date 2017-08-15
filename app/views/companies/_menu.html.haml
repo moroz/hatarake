@@ -6,3 +6,5 @@
       %li.tabs__tab= link_to name, path
 
 
+  - if can? :edit, company
+    %li.tabs__tab.blue-bg= link_to fa_icon('pencil', text: t('actions.edit')), edit_company_path(company)
