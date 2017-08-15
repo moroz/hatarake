@@ -1,0 +1,30 @@
+.tabs
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+.tabs__tab
+  display: inline-block
+  padding: 3px 8px
+  border:
+    width: 1px
+    style: solid
+    color: #ccc
+    radius: 3px 3px 0 0
+  border-bottom: none
+  a:link, a:visited
+    color: #555
+  a:hover
+    text-decoration: none
+
+  &:hover
+    background-color: darken(#fff, 6%)
+
+.tabs__tab--active
+  background-color: $primary-color
+  border-color: darken($primary-color, 15%)
+  a:link, a:visited
+    color: #fff
+
+  &:hover
+    background-color: lighten($primary-color, 5%)
