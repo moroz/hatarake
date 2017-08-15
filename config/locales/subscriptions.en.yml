@@ -1,0 +1,9 @@
+en:
+  newsletter_subscriptions:
+    new:
+      heading: Subscribe for the InJobs.pl newsletter
+      submit: Subscribe
+
+    labels:
+      name: 'Your name (optional):'
+      email: 'E-mail address:'
