@@ -13,8 +13,12 @@
 
   - if company.description.present?
     .card#company_description
-      .card-section.company__description
-        != markdown company.description
+      .row
+        .columns.medium-4.medium-push-8
+          = render 'companies/show/contact_data'
+        .columns.medium-8.medium-pull-4
+          .card-section.company__description
+            != markdown company.description
   - else
     = blank_slate t('companies.show.no_description')
 

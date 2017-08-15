@@ -1,4 +1,4 @@
-%ul.tabs
+.tabs
   - {t('.description') => company_path(company), t('.blog') => company_blog_posts_path(company_id: company), t('.offers') => company_offers_path(company_id: company)}.each do |name, path|
     - if current_page?(path)
       %li.tabs__tab.tabs__tab--active= link_to name, path

@@ -1,0 +1,6 @@
+.card-divider
+  %h4= t('companies.show.contact_data')
+.card-section.company__contact_data
+  %span= fa_icon 'map-marker', text: company.location if company.location.present?
+  %span= fa_icon 'phone', text: company.phone if company.phone.present?
+  %span= fa_icon 'globe', text: link_to(strip_http(company.website), company.website) if company.website.present?

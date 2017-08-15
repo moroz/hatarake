@@ -10,6 +10,7 @@ en:
       all_offers: "See all..."
       rate_company: Rate this company
       company_blog: "Company blog"
+      contact_data: Contact data
       active_job_offers:
         one: active job offer
         other: active job offers
@@ -61,6 +62,7 @@ en:
       explanation: "You can use Markdown here. Ctrl-Enter submits the form."
       submit: "Publish"
     edited: "edited: %{dt}"
+    blank_slate: "This company has not published any posts"
     index:
       company_blog: Company blog
 

@@ -11,6 +11,7 @@ pl:
       all_offers: "Wszystkie oferty..."
       rate_company: "Oceń firmę"
       company_blog: "Blog firmowy"
+      contact_data: Dane kontaktowe
       active_job_offers:
         zero: aktywnych ofert pracy
         one: aktywna oferta pracy
