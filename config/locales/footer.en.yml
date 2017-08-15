@@ -1,0 +1,7 @@
+en:
+  application:
+    footer:
+      email_contact: 'E-mail:'
+      phone_contact: 'Phone:'
+      mobile: 'mobile:'
+      payments_powered_by: Payments powered by Dotpay S.A.

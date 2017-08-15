@@ -7,18 +7,20 @@
         11-700 Mrągowo#{current_locale == :pl ? '' : ', Poland'}
     .columns.medium-4
       %p
-        %strong Kontakt e-mail:<br>
+        %strong= t('.email_contact')
+        %br
         info&#64;injobs&#46;pl<br>
         biuro&#64;injobs&#46;pl
     .columns.medium-4
       %p
-        %strong Kontakt telefoniczny:<br>
+        %strong= t('.phone_contact')
+        %br
         (+48) 897-627-448<br>
         mobile (+48) 515-287-274
 
   .row
-    .payment_icon
+    .payment_icon.payment_icon--visa
     .payment_icon.payment_icon--mastercard
     .payment_icon.payment_icon--paypal
     %br
-    %small Płatności obsługiwane przez firmę Dotpay.pl SA
+    %small= t('.payments_powered_by')

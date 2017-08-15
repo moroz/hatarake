@@ -1,0 +1,6 @@
+pl:
+  application:
+    footer:
+      email_contact: 'Kontakt e-mail:'
+      phone_contact: 'Kontakt telefoniczny:'
+      payments_powered_by: 'Płatności obsługiwane przez firmę Dotpay S.A.'
