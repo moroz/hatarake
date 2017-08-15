@@ -1,1 +1,7 @@
 %h1= t('.heading')
+
+= form_with url: newsletter_subscription_path, method: :delete do |f|
+  = f.label :email, t('newsletter_subscriptions.labels.email')
+  = f.email_field :email, size: 40, class: 'auto-width'
+
+  = f.submit t('.submit'), class: 'button'

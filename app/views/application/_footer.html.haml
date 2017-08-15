@@ -1,4 +1,4 @@
-.footer
+%footer.footer
   .row
     .columns.medium-4
       %p
@@ -19,8 +19,14 @@
         mobile (+48) 515-287-274
 
   .row
-    .payment_icon.payment_icon--visa
-    .payment_icon.payment_icon--mastercard
-    .payment_icon.payment_icon--paypal
-    %br
-    %small= t('.payments_powered_by')
+    .columns.medium-8
+      %nav.footer__menu
+        = link_to t('.subscribe'), new_newsletter_subscription_path
+        %br
+        = link_to t('.unsubscribe'), unsubscribe_path
+    .columns.medium-4
+      .payment_icon.payment_icon--visa
+      .payment_icon.payment_icon--mastercard
+      .payment_icon.payment_icon--paypal
+      %br
+      %small= t('.payments_powered_by')

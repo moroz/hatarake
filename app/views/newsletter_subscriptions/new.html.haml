@@ -1,6 +1,6 @@
 %h1= t('.heading')
 
-= form_with model: @subscription || NewsletterSubscription.new, remote: true do |f|
+= form_with model: @subscription || NewsletterSubscription.new, remote: true, url: newsletter_subscription_path do |f|
   = error_messages_for f.object
   = f.label :name, t('newsletter_subscriptions.labels.name')
   = f.text_field :name, size: 30, class: 'auto-width' 

@@ -12,10 +12,16 @@ class NewsletterSubscriptionsController < ApplicationController
   end
 
   def unsubscribe
-
   end
 
   def destroy
+    @subscription = NewsletterSubscription.find_by(email: params[:email])
+    if @subscription.present?
+      @subscription.destroy
+      redirect_to root_path, notice: 'Your e-mail has been removed from our database.'
+    else
+      redirect_to unsubscribe_path, alert: 'This e-mail address does not exist in our database.'
+    end
   end
 
   private

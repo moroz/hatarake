@@ -7,3 +7,7 @@ en:
     labels:
       name: 'Your name (optional):'
       email: 'E-mail address:'
+
+    unsubscribe:
+      heading: 'Cancel Newsletter subscription'
+      submit: 'Unsubscribe'
