@@ -20,6 +20,12 @@
 
 .offer__description
   word-wrap: break-word
+  @include breakpoint(medium)
+    background-color: #efefef
+    padding: 1em
+
+.offer__sidebar
+  padding: 1em
 
 .offer-row__title
   color: $dark-blue
@@ -137,8 +143,12 @@ $avatar-margin: 5px
   font-size: 24px
   padding-left: 0.5rem
   text-align: center
+  background-color: $primary-color
+  color: #fff
+  padding: 10px 20px
   @include breakpoint(medium)
     font-size: 27px
+    margin: 0
   @include breakpoint(large)
     font-size: 2rem
     text-align: left
