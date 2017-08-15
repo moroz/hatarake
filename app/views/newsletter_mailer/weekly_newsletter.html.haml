@@ -1,0 +1,30 @@
+%h1.text-center Newsletter InJobs.pl
+
+%p.text-right
+  Mrągowo,
+  = Time.now.strftime('%d.%m.%Y')
+
+%p
+  - if @name.present?
+    Szanowny/a #{@name},
+  - else
+    Szanowni Państwo,
+
+%p Mamy przyjemność zaprezentować Państwu #{t '.offer_count', count: @offers.size}, które w przeciągu minionego tygodnia cieszyły się największym powodzeniem na naszym portalu:
+
+- @offers.each do |offer|
+  .offer
+    %span.offer__title= link_to offer.title, offer
+    %br
+    %span.offer__company_name @#{offer.company_name},
+    %span.offer__location= offer.location || ''
+
+%p Życzymy szybkiego znalezienia pracy,
+%p Zespół InJobs.pl
+
+%small.text-center
+  Otrzymali Państwo tę wiadomość, ponieważ zaprenumerowali Państwo newsletter
+  #{link_to 'InJobs.pl', root_url}.
+  Aby zrezygnować z prenumeraty, proszę usunąć swój adres e-mail z listy mailingowej przy pomocy
+  #{link_to 'formularza na naszej stronie', unsubscribe_url}.
+

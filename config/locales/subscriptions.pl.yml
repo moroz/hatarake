@@ -25,3 +25,10 @@ pl:
     unsubscribe:
       heading: 'Rezygnacja z newslettera'
       submit: 'Usuń mój adres e-mail z bazy'
+
+  newsletter_mailer:
+    weekly_newsletter:
+      offer_count:
+        one: 'jedną ofertę'
+        few: '%{count} oferty'
+        many: '%{count} ofert'

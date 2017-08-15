@@ -3,13 +3,12 @@
 - else
   - breadcrumb :offer, offer
 
-.row
+.row.collapse
   %h2.offer__header= offer.title
   .columns.large-4.large-push-8
-    .card.shadow.offer__sidebar
-      .card-section
-        = render 'offers/show/company_desc'
-        = render 'offers/show/details'
+    .offer__sidebar
+      = render 'offers/show/company_desc'
+      = render 'offers/show/details'
   .columns.large-8.large-pull-4.padding-for-small
     .offer__description
       = render 'offers/show/description'

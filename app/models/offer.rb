@@ -75,6 +75,10 @@ class Offer < ApplicationRecord
     scope
   end
 
+  def self.newsletter_digest
+    published.where('published_at > ?', 1.week.ago).order(views: :desc).limit(10)
+  end
+
   def is_featured?
     highlighted? || category_featured? || homepage_featured?
   end
