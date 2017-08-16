@@ -12,22 +12,22 @@ ActiveAdmin.register Candidate do
   index title: 'Candidates' do
     column :id
     column :full_name do |c|
-      c.display_name
+      c.profile.present? ? c.display_name : c.email
     end
     column :slug
-    column :profession { |c| c.profession.name_en }
+    column :profession { |c| c.profession.try(:name_en) }
     actions
   end
 
   filter :profession { |c| c.profession.name_en }
 
-  show title: proc { |c| 'Candidate: ' +c.display_name } do
+  show title: proc { |c| 'Candidate: ' + c.profile.present? ? c.display_name : c.email } do
     attributes_table do
       row :avatar { |c| avatar_for c }
-      row :full_name { |c| c.display_name }
-      row :age
-      row :sex
-      row :looking_for_work
+      row :full_name { |c| c.display_name } if c.profile.present?
+      row :age if c.profile.present?
+      row :sex if c.profile.present?
+      row :looking_for_work if c.profile.present?
       row :profession { |c| c.profession.name_en }
       row :description
       row :applications { |c| c.applications.count }

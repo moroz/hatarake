@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
+  namespace :admin do
+    resources :orders
+  end
   ActiveAdmin.routes(self)
-  post '/dotpay_payment/:token' => 'dotpay#payment', as: :dotpay_payment
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
   get '/premium', to: 'products#index'
@@ -21,25 +23,31 @@ Rails.application.routes.draw do
     end
     resources :applications, only: :create
   end
+
   resource :cart, only: [:show, :destroy], controller: 'cart' do
     patch :finalize
   end
+  resources :cart_items, only: [:create, :edit, :update, :destroy]
+
   get '/orders/place', to: 'orders#place', as: :place_order
+
   resources :orders, only: [:index, :create, :show] do
     get :payment
     get :thank_you
   end
-  resources :cart_items, only: [:create, :edit, :update, :destroy]
+
   get '/offers/:offer_id/apply', to: 'applications#new', as: :new_offer_application
   get '/my_offers', to: 'offers#my_offers'
+
   resources :resumes
-  delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
+  #delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'candidate/edit_skills', to: 'candidates#edit_skills'
   get 'candidate/edit_profile', to: "candidates#edit", as: :edit_candidate_profile
   resource :profile, only: :show
   resource :dashboard, only: :show
   resources :education_items, except: [:new, :edit]
   resources :work_items, except: [:new, :edit]
+
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
