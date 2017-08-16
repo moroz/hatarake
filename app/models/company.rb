@@ -13,7 +13,7 @@ class Company < User
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
-  scope :featured, -> { order('users.updated_at DESC') }
+  scope :featured, -> { where('premium_until > NOW()').order('users.updated_at DESC') }
   scope :with_avg_rating, -> { find_with_reputation(:avg_rating, :all) }
 
   has_reputation :avg_rating, source: :user, aggregated_by: :average

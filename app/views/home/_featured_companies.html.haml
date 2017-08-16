@@ -1,12 +1,22 @@
 %h2.text-center= t('home.featured_companies.heading')
-.row
-  - cont_class = "large-#{@companies.size*3} columns collapse small-centered"
-  %div{class: cont_class}  
-    - @companies.each_with_index do |company, i|
-      - if i == @companies.size - 1
-        - classes = "medium-6 large-#{12 / @companies.size} float-center columns end centered"
-      - else
-        - classes = "medium-6 large-#{12 / @companies.size} float-center columns centered"
-      %div{class: classes}
-        = link_to company, title: company.name do
-          = avatar_for company, size: :normal, class: 'float-center'
+#company-carousel
+  - @companies.each do |company|
+    .company-block
+      = link_to company, title: company.name do
+        = avatar_for company, size: :normal
+- if @companies.size > 4
+  :javascript
+    $(document).on('turbolinks:load', function(e) {
+      $('#company-carousel').addClass('owl-carousel owl-theme').owlCarousel({
+        dots: true,
+        nav: true,
+        stagePadding: 10,
+        loop: true,
+        center: true,
+        navText: ["<i class=\"fa fa-arrow-left\"></i>", "<i class=\"fa fa-arrow-right\"></i>"],
+        autoWidth: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        autoplayTimeout: 1750
+      });
+    });
