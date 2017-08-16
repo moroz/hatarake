@@ -42,6 +42,15 @@ pl:
     new:
       title: "Utwórz nową ofertę"
       heading: "Utwórz ofertę"
+      basic_information: Podstawowe informacje
+      wages: Wynagrodzenie
+      application: Aplikacja
+      application_method: Sposób aplikacji
+      apply_on_website:
+        'false': 'Aplikacja w serwisie InJobs.pl'
+        'true': 'Formularz zgłoszeniowy na Twojej stronie'
+      apply_via_injobs_desc: "Aplikacje będą wysyłane pocztą elektroniczną na adres kontaktowy Twojej firmy lub na adres podany poniżej."
+      external_form_desc: "Zaznacz tę opcję, jeżeli posiadasz stronę internetową z formularzem aplikacyjnym."
 
     index:
       no_offers: "Brak ofert spełniających kryteria wyszukiwania."
@@ -133,6 +142,7 @@ pl:
       hourly_wage_html: "Stawka godzinowa: <small>(opcjonalnie)</small>"
       hourly_wage_min: "od"
       hourly_wage_max: "do"
+      application_url: "Adres URL formularza zgłoszeniowego: (wymagane)"
       contact_email: "E-mail kontaktowy:"
       contact_phone: "Numer kontaktowy:"
       country: "Kraj:"

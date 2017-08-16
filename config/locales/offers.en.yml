@@ -7,6 +7,7 @@ en:
       other: "%{count} views"
 
     apply_now: Apply now
+    apply_on_website: Apply on employer's website
     delete_confirm: "Are you sure you want to permanently delete this offer and all associated objects?"
     applicant_count:
       zero: "0 applications"
@@ -39,6 +40,14 @@ en:
       title: "Create new offer"
       basic_information: "Basic information"
       wages: "Wages"
+      application: How to apply
+      application_method: Application method
+      apply_on_website:
+        'false': 'Apply via InJobs.pl'
+        'true': Application form on your website
+
+      apply_via_injobs_desc: "All applications will be sent to your company's contact e-mail, or to the address given below."
+      external_form_desc: "Select this option if you have a website with an application form."
 
     index:
       no_offers: "No offers found for the search criteria entered."
@@ -131,6 +140,7 @@ en:
       hourly_wage_min: "Maximal hourly wage:"
       hourly_wage_max: "Minimal hourly wage:"
       application_method: "Application via:"
+      application_url: "URL of the application form: (required)"
       contact_email: "Contact e-mail:"
       contact_phone: "Contact phone:"
       country: "Country:"

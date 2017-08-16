@@ -97,11 +97,11 @@ module OffersHelper
     url = offer.apply_on_website? ?
       offer.application_url :
       new_offer_application_path(offer_id: offer)
-    url = new_user_session_path(return_to: url) unless logged_in?
+    url = new_user_session_path(return_to: url) unless logged_in? || offer.apply_on_website?
     if offer.apply_on_website?
-      link_to I18n.t('offers.apply_on_website'), url, class: options[:class]
+      link_to I18n.t('offers.apply_on_website'), url, class: 'button expanded dark-green-bg', target: '_blank'
     else
-      link_to I18n.t('offers.apply_now'), url, class: options[:class]
+      link_to I18n.t('offers.apply_now'), url, class: 'button expanded'
     end
   end
 end

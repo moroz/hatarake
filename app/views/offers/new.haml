@@ -4,6 +4,7 @@
   = error_messages_for f.object
   .page-header
     %h4= t('.basic_information')
+  = invisible_captcha
   = f.invisible_captcha :subtitle
   = f.input :title, label: t('offers.fields.title'), input_html: { size: 50, class: 'auto-width' }
   = f.simple_fields_for :location do |ff|
@@ -27,6 +28,23 @@
       %p.help-text#hourly_wage_help_text= t('offers.fields.hourly_wage_help_text')
     .medium-6.columns
       = f.input :hourly_wage_max, label: t('offers.fields.hourly_wage_max'), input_html: { 'aria-describedby' => 'hourly_wage_help_text', value: high_bound(offer.hourly_wage) }
+  .page-header
+    %h4= t('.application')
+  %fieldset.fieldset
+    %legend= t('.application_method')
+    .row
+
+      = f.input :apply_on_website, as: :radio_buttons,
+        collection: t('.apply_on_website'), label_method: :last,
+        value_method: :first, label: false, item_wrapper_class: 'columns medium-6'
+    .row.hide-for-small-only
+      .medium-6.columns
+        %small= t('.apply_via_injobs_desc')
+
+      .medium-6.columns
+        %small= t('.external_form_desc')
+  = f.input :application_url, label: t('offers.fields.application_url'), as: :url
+
   .row
     .medium-6.columns
       = f.input :contact_email, label: t('offers.fields.contact_email')
@@ -35,3 +53,11 @@
   = render 'pagedown', f: f
   = f.submit "Save", class: 'button success expanded'
 
+:javascript
+  $('.offer_application_url').addClass('hide');
+  $('.offer_apply_on_website input').click(function(e) {
+    if ($(this).val() == 'true')
+      $('.offer_application_url').removeClass('hide');
+    else
+      $('.offer_application_url').addClass('hide');
+  });

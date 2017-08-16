@@ -4,6 +4,6 @@
       %span.offer__already-applied
         = translate_with_gender('applications.already_applied', current_candidate.profile.sex)
     - else
-      = application_link_for(offer, class: 'button primary expanded')
+      = application_link_for(offer)
 - else
-  = application_link_for(offer, class: 'button primary expanded')
+  = application_link_for(offer)

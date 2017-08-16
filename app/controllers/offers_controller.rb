@@ -198,6 +198,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :description, :hourly_wage_min, :hourly_wage_max, location_attributes: [:id, :country_id, :province_id, :city])
+    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, location_attributes: [:id, :country_id, :province_id, :city])
   end
 end
