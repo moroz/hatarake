@@ -1,0 +1,519 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+==	app/models/location.rb	/^  def ==(other)$/;"	f	class:Location
+Ability	app/models/ability.rb	/^class Ability$/;"	c
+ActsLikeAutocompletable	app/models/concerns/acts_like_autocompletable.rb	/^module ActsLikeAutocompletable$/;"	m
+AddBodyPlToPages	db/migrate/20170501065513_add_body_pl_to_pages.rb	/^class AddBodyPlToPages < ActiveRecord::Migration[5.0]$/;"	c
+AddCategoryToEducationItems	db/migrate/20170420083324_add_category_to_education_items.rb	/^class AddCategoryToEducationItems < ActiveRecord::Migration[5.0]$/;"	c
+AddCategoryToSkills	db/migrate/20170414085713_add_category_to_skills.rb	/^class AddCategoryToSkills < ActiveRecord::Migration[5.0]$/;"	c
+AddCategoryToWorkItems	db/migrate/20170421065709_add_category_to_work_items.rb	/^class AddCategoryToWorkItems < ActiveRecord::Migration[5.0]$/;"	c
+AddContactPhoneEmailToUsers	db/migrate/20170623132153_add_contact_phone_email_to_users.rb	/^class AddContactPhoneEmailToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddCountryToOffer	db/migrate/20170421163525_add_country_to_offer.rb	/^class AddCountryToOffer < ActiveRecord::Migration[5.0]$/;"	c
+AddDataToEvaluations	db/migrate/20170617082008_add_data_to_evaluations.rb	/^class AddDataToEvaluations < ActiveRecord::Migration$/;"	c
+AddDataToReputations	db/migrate/20170617082007_add_data_to_reputations.rb	/^class AddDataToReputations < ActiveRecord::Migration$/;"	c
+AddDefaultValueToPaidInSubscriptions	db/migrate/20170630092131_add_default_value_to_paid_in_subscriptions.rb	/^class AddDefaultValueToPaidInSubscriptions < ActiveRecord::Migration[5.0]$/;"	c
+AddDefaultValueToReadInApplications	db/migrate/20170626155146_add_default_value_to_read_in_applications.rb	/^class AddDefaultValueToReadInApplications < ActiveRecord::Migration[5.0]$/;"	c
+AddDescriptionLanguageToAttachments	db/migrate/20170529061957_add_description_language_to_attachments.rb	/^class AddDescriptionLanguageToAttachments < ActiveRecord::Migration[5.0]$/;"	c
+AddDescriptionToUsers	db/migrate/20170508170817_add_description_to_users.rb	/^class AddDescriptionToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddDeviseToCandidates	db/migrate/20170412100204_add_devise_to_candidates.rb	/^class AddDeviseToCandidates < ActiveRecord::Migration[5.0]$/;"	c
+AddDeviseToEmployers	db/migrate/20170412094653_add_devise_to_employers.rb	/^class AddDeviseToEmployers < ActiveRecord::Migration[5.0]$/;"	c
+AddDurationRenameValidThruInSubscriptions	db/migrate/20170630162954_add_duration_rename_valid_thru_in_subscriptions.rb	/^class AddDurationRenameValidThruInSubscriptions < ActiveRecord::Migration[5.0]$/;"	c
+AddEvaluationsIndex	db/migrate/20170617082002_add_evaluations_index.rb	/^class AddEvaluationsIndex < ActiveRecord::Migration$/;"	c
+AddFilenameToAttachments	db/migrate/20170704155938_add_filename_to_attachments.rb	/^class AddFilenameToAttachments < ActiveRecord::Migration[5.0]$/;"	c
+AddForeignKeyOnOwnerToAttachments	db/migrate/20170529062116_add_foreign_key_on_owner_to_attachments.rb	/^class AddForeignKeyOnOwnerToAttachments < ActiveRecord::Migration[5.0]$/;"	c
+AddHourlyWageToOffers	db/migrate/20170510153901_add_hourly_wage_to_offers.rb	/^class AddHourlyWageToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddIndexOnPublishedAtToOffers	db/migrate/20170605212650_add_index_on_published_at_to_offers.rb	/^class AddIndexOnPublishedAtToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddIndexOnUsersConfirmationToken	db/migrate/20170707141333_add_index_on_users_confirmation_token.rb	/^class AddIndexOnUsersConfirmationToken < ActiveRecord::Migration[5.0]$/;"	c
+AddLocaleToUsers	db/migrate/20170706212536_add_locale_to_users.rb	/^class AddLocaleToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddLocationToEducationItems	db/migrate/20170614133356_add_location_to_education_items.rb	/^class AddLocationToEducationItems < ActiveRecord::Migration[5.0]$/;"	c
+AddLocationToUsers	db/migrate/20170516084904_add_location_to_users.rb	/^class AddLocationToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddLocationToWorkItems	db/migrate/20170614133403_add_location_to_work_items.rb	/^class AddLocationToWorkItems < ActiveRecord::Migration[5.0]$/;"	c
+AddLookingForWorkToUsers	db/migrate/20170421164905_add_looking_for_work_to_users.rb	/^class AddLookingForWorkToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddNameToUsers	db/migrate/20170418061954_add_name_to_users.rb	/^class AddNameToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddPersonalDataToUsers	db/migrate/20170413073549_add_personal_data_to_users.rb	/^class AddPersonalDataToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddProfessionToUsers	db/migrate/20170421171839_add_profession_to_users.rb	/^class AddProfessionToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddProvinceToOffers	db/migrate/20170429080147_add_province_to_offers.rb	/^class AddProvinceToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddPublishedPublishedAtToOffers	db/migrate/20170426080211_add_published_published_at_to_offers.rb	/^class AddPublishedPublishedAtToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddReputationMessagesIndex	db/migrate/20170617082003_add_reputation_messages_index.rb	/^class AddReputationMessagesIndex < ActiveRecord::Migration$/;"	c
+AddReputationsIndex	db/migrate/20170617082001_add_reputations_index.rb	/^class AddReputationsIndex < ActiveRecord::Migration$/;"	c
+AddSexToCandidateProfile	db/migrate/20170426062642_add_sex_to_candidate_profile.rb	/^class AddSexToCandidateProfile < ActiveRecord::Migration[5.0]$/;"	c
+AddSkillToSkillItems	db/migrate/20170415093853_add_skill_to_skill_items.rb	/^class AddSkillToSkillItems < ActiveRecord::Migration[5.0]$/;"	c
+AddSlugToOffers	db/migrate/20170428053513_add_slug_to_offers.rb	/^class AddSlugToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddSlugToUsers	db/migrate/20170428050014_add_slug_to_users.rb	/^class AddSlugToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddTitleLocationToOffers	db/migrate/20170418061742_add_title_location_to_offers.rb	/^class AddTitleLocationToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddTypeToAttachments	db/migrate/20170529034704_add_type_to_attachments.rb	/^class AddTypeToAttachments < ActiveRecord::Migration[5.0]$/;"	c
+AddTypeToSkills	db/migrate/20170414075306_add_type_to_skills.rb	/^class AddTypeToSkills < ActiveRecord::Migration[5.0]$/;"	c
+AddTypeToUsers	db/migrate/20170413042836_add_type_to_users.rb	/^class AddTypeToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AddValidTillToOffers	db/migrate/20170605212444_add_valid_till_to_offers.rb	/^class AddValidTillToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddViewsToOffers	db/migrate/20170528044248_add_views_to_offers.rb	/^class AddViewsToOffers < ActiveRecord::Migration[5.0]$/;"	c
+AddWebsiteToUsers	db/migrate/20170516035408_add_website_to_users.rb	/^class AddWebsiteToUsers < ActiveRecord::Migration[5.0]$/;"	c
+AdminUser	app/models/admin_user.rb	/^class AdminUser < ApplicationRecord$/;"	c
+AllowNullInUsersContactEmail	db/migrate/20170709083510_allow_null_in_users_contact_email.rb	/^class AllowNullInUsersContactEmail < ActiveRecord::Migration[5.0]$/;"	c
+Application	app/models/application.rb	/^class Application < ApplicationRecord$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:InJobs
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+ApplicationsController	app/controllers/applications_controller.rb	/^class ApplicationsController < ApplicationController$/;"	c
+ApplicationsMailer	app/mailers/applications_mailer.rb	/^class ApplicationsMailer < ApplicationMailer$/;"	c
+ApplicationsPreview	spec/mailers/previews/applications_preview.rb	/^class ApplicationsPreview < ActionMailer::Preview$/;"	c
+Attachment	app/models/attachment.rb	/^class Attachment < ApplicationRecord$/;"	c
+AutocompleteController	app/controllers/autocomplete_controller.rb	/^class AutocompleteController < ApplicationController$/;"	c
+AutocompleteHelper	app/helpers/autocomplete_helper.rb	/^module AutocompleteHelper$/;"	m
+Avatar	app/models/avatar.rb	/^class Avatar < Attachment$/;"	c
+AvatarUploader	app/uploaders/avatar_uploader.rb	/^class AvatarUploader < CarrierWave::Uploader::Base$/;"	c
+AvatarsController	app/controllers/avatars_controller.rb	/^class AvatarsController < ApplicationController$/;"	c
+Candidate	app/models/candidate.rb	/^class Candidate < User$/;"	c
+CandidateProfile	app/models/candidate_profile.rb	/^class CandidateProfile < ApplicationRecord$/;"	c
+Candidates	app/controllers/candidates/registrations_controller.rb	/^class Candidates::RegistrationsController < Devise::RegistrationsController$/;"	c
+CandidatesController	app/controllers/candidates_controller.rb	/^class CandidatesController < ApplicationController$/;"	c
+CandidatesHelper	app/helpers/candidates_helper.rb	/^module CandidatesHelper$/;"	m
+ChangeDefaultValuePublishedInOffers	db/migrate/20170427082147_change_default_value_published_in_offers.rb	/^class ChangeDefaultValuePublishedInOffers < ActiveRecord::Migration[5.0]$/;"	c
+ChangeEvaluationsIndexToUnique	db/migrate/20170617082004_change_evaluations_index_to_unique.rb	/^class ChangeEvaluationsIndexToUnique < ActiveRecord::Migration$/;"	c
+ChangeReputationMessagesIndexToUnique	db/migrate/20170617082005_change_reputation_messages_index_to_unique.rb	/^class ChangeReputationMessagesIndexToUnique < ActiveRecord::Migration$/;"	c
+ChangeReputationsIndexToUnique	db/migrate/20170617082006_change_reputations_index_to_unique.rb	/^class ChangeReputationsIndexToUnique < ActiveRecord::Migration$/;"	c
+ChangeSalaryToRange	db/migrate/20170510160503_change_salary_to_range.rb	/^class ChangeSalaryToRange < ActiveRecord::Migration[5.0]$/;"	c
+ChangeSkillItemLevelStringInteger	db/migrate/20170428030935_change_skill_item_level_string_integer.rb	/^class ChangeSkillItemLevelStringInteger < ActiveRecord::Migration[5.0]$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Companies	app/controllers/companies/registrations_controller.rb	/^class Companies::RegistrationsController < Devise::RegistrationsController$/;"	c
+CompaniesController	app/controllers/companies_controller.rb	/^class CompaniesController < ApplicationController$/;"	c
+Company	app/models/company.rb	/^class Company < User$/;"	c
+CompanyOffersController	app/controllers/company_offers_controller.rb	/^class CompanyOffersController < ApplicationController$/;"	c
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+Country	app/models/country.rb	/^class Country < ApplicationRecord$/;"	c
+CreateActiveAdminComments	db/migrate/20170701084932_create_active_admin_comments.rb	/^class CreateActiveAdminComments < ActiveRecord::Migration::Current$/;"	c
+CreateApplications	db/migrate/20170508164710_create_applications.rb	/^class CreateApplications < ActiveRecord::Migration[5.0]$/;"	c
+CreateAttachments	db/migrate/20170529032447_create_attachments.rb	/^class CreateAttachments < ActiveRecord::Migration[5.0]$/;"	c
+CreateAvatars	db/migrate/20170417072152_create_avatars.rb	/^class CreateAvatars < ActiveRecord::Migration[5.0]$/;"	c
+CreateCandidateProfiles	db/migrate/20170425091747_create_candidate_profiles.rb	/^class CreateCandidateProfiles < ActiveRecord::Migration[5.0]$/;"	c
+CreateCandidates	db/migrate/20170412100135_create_candidates.rb	/^class CreateCandidates < ActiveRecord::Migration[5.0]$/;"	c
+CreateCountries	db/migrate/20170421131714_create_countries.rb	/^class CreateCountries < ActiveRecord::Migration[5.0]$/;"	c
+CreateCvItems	db/migrate/20170415104202_create_cv_items.rb	/^class CreateCvItems < ActiveRecord::Migration[5.0]$/;"	c
+CreateEducationItems	db/migrate/20170420081741_create_education_items.rb	/^class CreateEducationItems < ActiveRecord::Migration[5.0]$/;"	c
+CreateEmployers	db/migrate/20170412094019_create_employers.rb	/^class CreateEmployers < ActiveRecord::Migration[5.0]$/;"	c
+CreateFields	db/migrate/20170613092947_create_fields.rb	/^class CreateFields < ActiveRecord::Migration[5.0]$/;"	c
+CreateFriendlyIdSlugs	db/migrate/20170502055925_create_friendly_id_slugs.rb	/^class CreateFriendlyIdSlugs < ActiveRecord::Migration$/;"	c
+CreateJoinTableCompaniesFields	db/migrate/20170613093624_create_join_table_companies_fields.rb	/^class CreateJoinTableCompaniesFields < ActiveRecord::Migration[5.0]$/;"	c
+CreateLocations	db/migrate/20170516084828_create_locations.rb	/^class CreateLocations < ActiveRecord::Migration[5.0]$/;"	c
+CreateOfferSaves	db/migrate/20170524072533_create_offer_saves.rb	/^class CreateOfferSaves < ActiveRecord::Migration[5.0]$/;"	c
+CreateOffers	db/migrate/20170418053134_create_offers.rb	/^class CreateOffers < ActiveRecord::Migration[5.0]$/;"	c
+CreateOffersSkillsJoinTable	db/migrate/20170418055131_create_offers_skills_join_table.rb	/^class CreateOffersSkillsJoinTable < ActiveRecord::Migration[5.0]$/;"	c
+CreateOrganizations	db/migrate/20170416051144_create_organizations.rb	/^class CreateOrganizations < ActiveRecord::Migration[5.0]$/;"	c
+CreatePages	db/migrate/20170419090606_create_pages.rb	/^class CreatePages < ActiveRecord::Migration[5.0]$/;"	c
+CreatePayments	db/migrate/20170708115337_create_payments.rb	/^class CreatePayments < ActiveRecord::Migration[5.0]$/;"	c
+CreateProfessions	db/migrate/20170421171655_create_professions.rb	/^class CreateProfessions < ActiveRecord::Migration[5.0]$/;"	c
+CreateProvinces	db/migrate/20170429075013_create_provinces.rb	/^class CreateProvinces < ActiveRecord::Migration[5.0]$/;"	c
+CreateReputationSystem	db/migrate/20170617082000_create_reputation_system.rb	/^class CreateReputationSystem < ActiveRecord::Migration$/;"	c
+CreateSkills	db/migrate/20170414070034_create_skills.rb	/^class CreateSkills < ActiveRecord::Migration[5.0]$/;"	c
+CreateSubscriptionPrices	db/migrate/20170703155939_create_subscription_prices.rb	/^class CreateSubscriptionPrices < ActiveRecord::Migration[5.0]$/;"	c
+CreateSubscriptions	db/migrate/20170630084219_create_subscriptions.rb	/^class CreateSubscriptions < ActiveRecord::Migration[5.0]$/;"	c
+CreateTableSkills	db/migrate/20170415074936_create_table_skills.rb	/^class CreateTableSkills < ActiveRecord::Migration[5.0]$/;"	c
+CreateWorkItems	db/migrate/20170420082101_create_work_items.rb	/^class CreateWorkItems < ActiveRecord::Migration[5.0]$/;"	c
+CvItem	app/models/cv_item.rb	/^class CvItem < ApplicationRecord$/;"	c
+CvItemsController	app/controllers/cv_items_controller.rb	/^class CvItemsController < ApplicationController$/;"	c
+DashboardsController	app/controllers/dashboards_controller.rb	/^class DashboardsController < ApplicationController$/;"	c
+DeleteTableAvatars	db/migrate/20170529032303_delete_table_avatars.rb	/^class DeleteTableAvatars < ActiveRecord::Migration[5.0]$/;"	c
+DeviseCreateAdminUsers	db/migrate/20170701084921_devise_create_admin_users.rb	/^class DeviseCreateAdminUsers < ActiveRecord::Migration[5.0]$/;"	c
+DeviseCreateUsers	db/migrate/20170412085314_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration[5.0]$/;"	c
+DeviseHelper	app/helpers/devise_helper.rb	/^module DeviseHelper$/;"	m
+DotpayController	app/controllers/dotpay_controller.rb	/^class DotpayController < ApplicationController$/;"	c
+DropTableCvItems	db/migrate/20170420081439_drop_table_cv_items.rb	/^class DropTableCvItems < ActiveRecord::Migration[5.0]$/;"	c
+DropTablePages	db/migrate/20170708135629_drop_table_pages.rb	/^class DropTablePages < ActiveRecord::Migration[5.0]$/;"	c
+DropTablesCandidatesEmployers	db/migrate/20170413042800_drop_tables_candidates_employers.rb	/^class DropTablesCandidatesEmployers < ActiveRecord::Migration[5.0]$/;"	c
+EducationItem	app/models/education_item.rb	/^class EducationItem < CvItem$/;"	c
+EducationItemsController	app/controllers/education_items_controller.rb	/^class EducationItemsController < CvItemsController$/;"	c
+Field	app/models/field.rb	/^class Field < ApplicationRecord$/;"	c
+FieldsHelper	app/helpers/fields_helper.rb	/^module FieldsHelper$/;"	m
+FindOrCreate	app/models/concerns/find_or_create.rb	/^module FindOrCreate$/;"	m
+FormHelpers	spec/support/form_helpers.rb	/^module FormHelpers$/;"	m
+HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+InJobs	config/application.rb	/^module InJobs$/;"	m
+Localizable	app/models/concerns/localizable.rb	/^module Localizable$/;"	m
+Location	app/models/location.rb	/^class Location < ApplicationRecord$/;"	c
+MoveOfferLocationToTableLocations	db/migrate/20170518070642_move_offer_location_to_table_locations.rb	/^class MoveOfferLocationToTableLocations < ActiveRecord::Migration[5.0]$/;"	c
+Offer	app/models/offer.rb	/^class Offer < ApplicationRecord$/;"	c
+OfferSave	app/models/offer_save.rb	/^class OfferSave < ApplicationRecord$/;"	c
+OfferSavesController	app/controllers/offer_saves_controller.rb	/^class OfferSavesController < ApplicationController$/;"	c
+OffersController	app/controllers/offers_controller.rb	/^class OffersController < ApplicationController$/;"	c
+OffersHelper	app/helpers/offers_helper.rb	/^module OffersHelper$/;"	m
+PagesController	app/controllers/pages_controller.rb	/^class PagesController < ApplicationController$/;"	c
+PagesHelper	app/helpers/pages_helper.rb	/^module PagesHelper$/;"	m
+Payment	app/models/payment.rb	/^class Payment < ApplicationRecord$/;"	c
+Profession	app/models/profession.rb	/^class Profession < ApplicationRecord$/;"	c
+ProfileHelper	app/helpers/profile_helper.rb	/^module ProfileHelper$/;"	m
+ProfilesController	app/controllers/profiles_controller.rb	/^class ProfilesController < ApplicationController$/;"	c
+Province	app/models/province.rb	/^class Province < ApplicationRecord$/;"	c
+ProvincesController	app/controllers/provinces_controller.rb	/^class ProvincesController < ApplicationController$/;"	c
+RemoveCandidateDataFromUsers	db/migrate/20170425092025_remove_candidate_data_from_users.rb	/^class RemoveCandidateDataFromUsers < ActiveRecord::Migration[5.0]$/;"	c
+RemoveProfessionFromCandidateProfiles	db/migrate/20170425102350_remove_profession_from_candidate_profiles.rb	/^class RemoveProfessionFromCandidateProfiles < ActiveRecord::Migration[5.0]$/;"	c
+RemoveTableOrganizations	db/migrate/20170517070127_remove_table_organizations.rb	/^class RemoveTableOrganizations < ActiveRecord::Migration[5.0]$/;"	c
+RemoveTimestampsFromCountries	db/migrate/20170422072044_remove_timestamps_from_countries.rb	/^class RemoveTimestampsFromCountries < ActiveRecord::Migration[5.0]$/;"	c
+RemoveTypeFromSkills	db/migrate/20170414085538_remove_type_from_skills.rb	/^class RemoveTypeFromSkills < ActiveRecord::Migration[5.0]$/;"	c
+RenameCvItemsTypeCategory	db/migrate/20170416053325_rename_cv_items_type_category.rb	/^class RenameCvItemsTypeCategory < ActiveRecord::Migration[5.0]$/;"	c
+RenameNameNameEnTables	db/migrate/20170430144126_rename_name_name_en_tables.rb	/^class RenameNameNameEnTables < ActiveRecord::Migration[5.0]$/;"	c
+RenameTableSkillsSkillItems	db/migrate/20170415072628_rename_table_skills_skill_items.rb	/^class RenameTableSkillsSkillItems < ActiveRecord::Migration[5.0]$/;"	c
+Resume	app/models/resume.rb	/^class Resume < Attachment$/;"	c
+ResumeUploader	app/uploaders/resume_uploader.rb	/^class ResumeUploader < CarrierWave::Uploader::Base$/;"	c
+ResumesController	app/controllers/resumes_controller.rb	/^class ResumesController < ApplicationController$/;"	c
+SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < Devise::SessionsController$/;"	c
+Skill	app/models/skill.rb	/^class Skill < ApplicationRecord$/;"	c
+SkillItem	app/models/skill_item.rb	/^class SkillItem < ApplicationRecord$/;"	c
+SkillItemsController	app/controllers/skill_items_controller.rb	/^class SkillItemsController < ApplicationController$/;"	c
+Subscription	app/models/subscription.rb	/^class Subscription < ApplicationRecord$/;"	c
+SubscriptionPrice	app/models/subscription_price.rb	/^class SubscriptionPrice < ApplicationRecord$/;"	c
+SubscriptionsController	app/controllers/subscriptions_controller.rb	/^class SubscriptionsController < ApplicationController$/;"	c
+SubscriptionsHelper	app/helpers/subscriptions_helper.rb	/^module SubscriptionsHelper$/;"	m
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+WorkItem	app/models/work_item.rb	/^class WorkItem < CvItem$/;"	c
+WorkItemsController	app/controllers/work_items_controller.rb	/^class WorkItemsController < CvItemsController$/;"	c
+abroad	app/controllers/offers_controller.rb	/^  def abroad$/;"	f	class:OffersController
+abroad?	app/models/location.rb	/^  def abroad?$/;"	f	class:Location
+accepted_language	app/controllers/application_controller.rb	/^  def accepted_language$/;"	f	class:ApplicationController
+active?	app/models/subscription.rb	/^  def active?$/;"	f	class:Subscription
+add_soft_break_to_email	app/helpers/application_helper.rb	/^  def add_soft_break_to_email(email)$/;"	f	class:ApplicationHelper
+advanced_search	app/models/offer.rb	/^  def self.advanced_search(o = {})$/;"	F	class:Offer
+advanced_search_description	app/helpers/offers_helper.rb	/^  def advanced_search_description(params)$/;"	f	class:OffersHelper
+after_sign_in_path_for	app/controllers/sessions_controller.rb	/^  def after_sign_in_path_for(resource)$/;"	f	class:SessionsController
+after_sign_up_path_for	app/controllers/candidates/registrations_controller.rb	/^  def after_sign_up_path_for(resource)$/;"	f	class:Candidates
+age	app/helpers/candidates_helper.rb	/^  def age(dob)$/;"	f	class:CandidatesHelper
+age	app/models/candidate_profile.rb	/^  def age$/;"	f	class:CandidateProfile
+applicant_count_in_words	app/models/offer.rb	/^  def applicant_count_in_words$/;"	f	class:Offer
+application_email	app/models/offer.rb	/^  def application_email$/;"	f	class:Offer
+application_params	app/controllers/applications_controller.rb	/^  def application_params$/;"	f	class:ApplicationsController
+auto_orient	app/uploaders/avatar_uploader.rb	/^  def auto_orient$/;"	f	class:AvatarUploader
+autocomplete	app/controllers/autocomplete_controller.rb	/^  def autocomplete(model)$/;"	f	class:AutocompleteController
+avatar	app/controllers/avatars_controller.rb	/^  def avatar$/;"	f	class:AvatarsController
+avatar_for	app/helpers/profile_helper.rb	/^  def avatar_for(user, size: 'normal', editable: false, className: '')$/;"	f	class:ProfileHelper
+avatar_params	app/controllers/avatars_controller.rb	/^  def avatar_params$/;"	f	class:AvatarsController
+basic_search_description	app/helpers/offers_helper.rb	/^  def basic_search_description(params)$/;"	f	class:OffersHelper
+candidate	app/controllers/candidates_controller.rb	/^  def candidate$/;"	f	class:CandidatesController
+candidate	app/controllers/profiles_controller.rb	/^  def candidate$/;"	f	class:ProfilesController
+candidate?	app/models/user.rb	/^  def candidate?$/;"	f	class:User
+candidate_applied?	app/models/offer.rb	/^  def candidate_applied?(candidate)$/;"	f	class:Offer
+candidate_dashboard	app/controllers/dashboards_controller.rb	/^  def candidate_dashboard$/;"	f	class:DashboardsController
+candidate_params	app/controllers/candidates_controller.rb	/^  def candidate_params$/;"	f	class:CandidatesController
+change	db/migrate/20170412085314_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	db/migrate/20170412094019_create_employers.rb	/^  def change$/;"	f	class:CreateEmployers
+change	db/migrate/20170412100135_create_candidates.rb	/^  def change$/;"	f	class:CreateCandidates
+change	db/migrate/20170413042800_drop_tables_candidates_employers.rb	/^  def change$/;"	f	class:DropTablesCandidatesEmployers
+change	db/migrate/20170413042836_add_type_to_users.rb	/^  def change$/;"	f	class:AddTypeToUsers
+change	db/migrate/20170413073549_add_personal_data_to_users.rb	/^  def change$/;"	f	class:AddPersonalDataToUsers
+change	db/migrate/20170414070034_create_skills.rb	/^  def change$/;"	f	class:CreateSkills
+change	db/migrate/20170414075306_add_type_to_skills.rb	/^  def change$/;"	f	class:AddTypeToSkills
+change	db/migrate/20170414085538_remove_type_from_skills.rb	/^  def change$/;"	f	class:RemoveTypeFromSkills
+change	db/migrate/20170414085713_add_category_to_skills.rb	/^  def change$/;"	f	class:AddCategoryToSkills
+change	db/migrate/20170415072628_rename_table_skills_skill_items.rb	/^  def change$/;"	f	class:RenameTableSkillsSkillItems
+change	db/migrate/20170415074936_create_table_skills.rb	/^  def change$/;"	f	class:CreateTableSkills
+change	db/migrate/20170415093853_add_skill_to_skill_items.rb	/^  def change$/;"	f	class:AddSkillToSkillItems
+change	db/migrate/20170415104202_create_cv_items.rb	/^  def change$/;"	f	class:CreateCvItems
+change	db/migrate/20170416051144_create_organizations.rb	/^  def change$/;"	f	class:CreateOrganizations
+change	db/migrate/20170416053325_rename_cv_items_type_category.rb	/^  def change$/;"	f	class:RenameCvItemsTypeCategory
+change	db/migrate/20170417072152_create_avatars.rb	/^  def change$/;"	f	class:CreateAvatars
+change	db/migrate/20170418053134_create_offers.rb	/^  def change$/;"	f	class:CreateOffers
+change	db/migrate/20170418055131_create_offers_skills_join_table.rb	/^  def change$/;"	f	class:CreateOffersSkillsJoinTable
+change	db/migrate/20170418061742_add_title_location_to_offers.rb	/^  def change$/;"	f	class:AddTitleLocationToOffers
+change	db/migrate/20170418061954_add_name_to_users.rb	/^  def change$/;"	f	class:AddNameToUsers
+change	db/migrate/20170419090606_create_pages.rb	/^  def change$/;"	f	class:CreatePages
+change	db/migrate/20170420081439_drop_table_cv_items.rb	/^  def change$/;"	f	class:DropTableCvItems
+change	db/migrate/20170420081741_create_education_items.rb	/^  def change$/;"	f	class:CreateEducationItems
+change	db/migrate/20170420082101_create_work_items.rb	/^  def change$/;"	f	class:CreateWorkItems
+change	db/migrate/20170420083324_add_category_to_education_items.rb	/^  def change$/;"	f	class:AddCategoryToEducationItems
+change	db/migrate/20170421065709_add_category_to_work_items.rb	/^  def change$/;"	f	class:AddCategoryToWorkItems
+change	db/migrate/20170421131714_create_countries.rb	/^  def change$/;"	f	class:CreateCountries
+change	db/migrate/20170421163525_add_country_to_offer.rb	/^  def change$/;"	f	class:AddCountryToOffer
+change	db/migrate/20170421164905_add_looking_for_work_to_users.rb	/^  def change$/;"	f	class:AddLookingForWorkToUsers
+change	db/migrate/20170421171655_create_professions.rb	/^  def change$/;"	f	class:CreateProfessions
+change	db/migrate/20170421171839_add_profession_to_users.rb	/^  def change$/;"	f	class:AddProfessionToUsers
+change	db/migrate/20170422072044_remove_timestamps_from_countries.rb	/^  def change$/;"	f	class:RemoveTimestampsFromCountries
+change	db/migrate/20170425091747_create_candidate_profiles.rb	/^  def change$/;"	f	class:CreateCandidateProfiles
+change	db/migrate/20170425092025_remove_candidate_data_from_users.rb	/^  def change$/;"	f	class:RemoveCandidateDataFromUsers
+change	db/migrate/20170425102350_remove_profession_from_candidate_profiles.rb	/^  def change$/;"	f	class:RemoveProfessionFromCandidateProfiles
+change	db/migrate/20170426062642_add_sex_to_candidate_profile.rb	/^  def change$/;"	f	class:AddSexToCandidateProfile
+change	db/migrate/20170426080211_add_published_published_at_to_offers.rb	/^  def change$/;"	f	class:AddPublishedPublishedAtToOffers
+change	db/migrate/20170427082147_change_default_value_published_in_offers.rb	/^  def change$/;"	f	class:ChangeDefaultValuePublishedInOffers
+change	db/migrate/20170428050014_add_slug_to_users.rb	/^  def change$/;"	f	class:AddSlugToUsers
+change	db/migrate/20170428053513_add_slug_to_offers.rb	/^  def change$/;"	f	class:AddSlugToOffers
+change	db/migrate/20170429075013_create_provinces.rb	/^  def change$/;"	f	class:CreateProvinces
+change	db/migrate/20170429080147_add_province_to_offers.rb	/^  def change$/;"	f	class:AddProvinceToOffers
+change	db/migrate/20170430144126_rename_name_name_en_tables.rb	/^  def change$/;"	f	class:RenameNameNameEnTables
+change	db/migrate/20170501065513_add_body_pl_to_pages.rb	/^  def change$/;"	f	class:AddBodyPlToPages
+change	db/migrate/20170502055925_create_friendly_id_slugs.rb	/^  def change$/;"	f	class:CreateFriendlyIdSlugs
+change	db/migrate/20170508164710_create_applications.rb	/^  def change$/;"	f	class:CreateApplications
+change	db/migrate/20170508170817_add_description_to_users.rb	/^  def change$/;"	f	class:AddDescriptionToUsers
+change	db/migrate/20170510153901_add_hourly_wage_to_offers.rb	/^  def change$/;"	f	class:AddHourlyWageToOffers
+change	db/migrate/20170516035408_add_website_to_users.rb	/^  def change$/;"	f	class:AddWebsiteToUsers
+change	db/migrate/20170516084828_create_locations.rb	/^  def change$/;"	f	class:CreateLocations
+change	db/migrate/20170516084904_add_location_to_users.rb	/^  def change$/;"	f	class:AddLocationToUsers
+change	db/migrate/20170524072533_create_offer_saves.rb	/^  def change$/;"	f	class:CreateOfferSaves
+change	db/migrate/20170528044248_add_views_to_offers.rb	/^  def change$/;"	f	class:AddViewsToOffers
+change	db/migrate/20170529032303_delete_table_avatars.rb	/^  def change$/;"	f	class:DeleteTableAvatars
+change	db/migrate/20170529032447_create_attachments.rb	/^  def change$/;"	f	class:CreateAttachments
+change	db/migrate/20170529034704_add_type_to_attachments.rb	/^  def change$/;"	f	class:AddTypeToAttachments
+change	db/migrate/20170529061957_add_description_language_to_attachments.rb	/^  def change$/;"	f	class:AddDescriptionLanguageToAttachments
+change	db/migrate/20170529062116_add_foreign_key_on_owner_to_attachments.rb	/^  def change$/;"	f	class:AddForeignKeyOnOwnerToAttachments
+change	db/migrate/20170605212444_add_valid_till_to_offers.rb	/^  def change$/;"	f	class:AddValidTillToOffers
+change	db/migrate/20170605212650_add_index_on_published_at_to_offers.rb	/^  def change$/;"	f	class:AddIndexOnPublishedAtToOffers
+change	db/migrate/20170613092947_create_fields.rb	/^  def change$/;"	f	class:CreateFields
+change	db/migrate/20170613093624_create_join_table_companies_fields.rb	/^  def change$/;"	f	class:CreateJoinTableCompaniesFields
+change	db/migrate/20170614133356_add_location_to_education_items.rb	/^  def change$/;"	f	class:AddLocationToEducationItems
+change	db/migrate/20170614133403_add_location_to_work_items.rb	/^  def change$/;"	f	class:AddLocationToWorkItems
+change	db/migrate/20170623132153_add_contact_phone_email_to_users.rb	/^  def change$/;"	f	class:AddContactPhoneEmailToUsers
+change	db/migrate/20170630084219_create_subscriptions.rb	/^  def change$/;"	f	class:CreateSubscriptions
+change	db/migrate/20170630092131_add_default_value_to_paid_in_subscriptions.rb	/^  def change$/;"	f	class:AddDefaultValueToPaidInSubscriptions
+change	db/migrate/20170630162954_add_duration_rename_valid_thru_in_subscriptions.rb	/^  def change$/;"	f	class:AddDurationRenameValidThruInSubscriptions
+change	db/migrate/20170701084921_devise_create_admin_users.rb	/^  def change$/;"	f	class:DeviseCreateAdminUsers
+change	db/migrate/20170703155939_create_subscription_prices.rb	/^  def change$/;"	f	class:CreateSubscriptionPrices
+change	db/migrate/20170704155938_add_filename_to_attachments.rb	/^  def change$/;"	f	class:AddFilenameToAttachments
+change	db/migrate/20170706212536_add_locale_to_users.rb	/^  def change$/;"	f	class:AddLocaleToUsers
+change	db/migrate/20170707141333_add_index_on_users_confirmation_token.rb	/^  def change$/;"	f	class:AddIndexOnUsersConfirmationToken
+change	db/migrate/20170708115337_create_payments.rb	/^  def change$/;"	f	class:CreatePayments
+change	db/migrate/20170708135629_drop_table_pages.rb	/^  def change$/;"	f	class:DropTablePages
+company	app/controllers/companies_controller.rb	/^  def company$/;"	f	class:CompaniesController
+company	app/controllers/profiles_controller.rb	/^  def company$/;"	f	class:ProfilesController
+company	app/controllers/subscriptions_controller.rb	/^  def company$/;"	f	class:SubscriptionsController
+company?	app/models/user.rb	/^  def company?$/;"	f	class:User
+company_dashboard	app/controllers/dashboards_controller.rb	/^  def company_dashboard$/;"	f	class:DashboardsController
+company_params	app/controllers/companies_controller.rb	/^  def company_params$/;"	f	class:CompaniesController
+configure_permitted_parameters	app/controllers/application_controller.rb	/^  def configure_permitted_parameters$/;"	f	class:ApplicationController
+configure_sign_up_params	app/controllers/candidates/registrations_controller.rb	/^  def configure_sign_up_params$/;"	f	class:Candidates
+create	app/controllers/applications_controller.rb	/^  def create$/;"	f	class:ApplicationsController
+create	app/controllers/avatars_controller.rb	/^  def create$/;"	f	class:AvatarsController
+create	app/controllers/education_items_controller.rb	/^  def create$/;"	f	class:EducationItemsController
+create	app/controllers/offer_saves_controller.rb	/^  def create$/;"	f	class:OfferSavesController
+create	app/controllers/offers_controller.rb	/^  def create$/;"	f	class:OffersController
+create	app/controllers/resumes_controller.rb	/^  def create$/;"	f	class:ResumesController
+create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
+create	app/controllers/skill_items_controller.rb	/^  def create$/;"	f	class:SkillItemsController
+create	app/controllers/subscriptions_controller.rb	/^  def create$/;"	f	class:SubscriptionsController
+create	app/controllers/work_items_controller.rb	/^  def create$/;"	f	class:WorkItemsController
+create_item	spec/support/localizable.rb	/^  def create_item(name_en, name_pl = nil)$/;"	f
+crop	app/controllers/avatars_controller.rb	/^  def crop$/;"	f	class:AvatarsController
+crop	app/uploaders/avatar_uploader.rb	/^  def crop$/;"	f	class:AvatarUploader
+crop_avatar	app/models/avatar.rb	/^  def crop_avatar$/;"	f	class:Avatar
+croppable?	app/models/avatar.rb	/^  def croppable?$/;"	f	class:Avatar
+current_locale	app/controllers/application_controller.rb	/^  def current_locale$/;"	f	class:ApplicationController
+current_subscription	app/models/company.rb	/^  def current_subscription$/;"	f	class:Company
+current_user	app/controllers/application_controller.rb	/^  def current_user$/;"	f	class:ApplicationController
+current_user_is_a?	app/controllers/application_controller.rb	/^  def current_user_is_a?(type)$/;"	f	class:ApplicationController
+deny_access_if_logged_in	app/controllers/application_controller.rb	/^  def deny_access_if_logged_in$/;"	f	class:ApplicationController
+destroy	app/controllers/education_items_controller.rb	/^  def destroy$/;"	f	class:EducationItemsController
+destroy	app/controllers/offer_saves_controller.rb	/^  def destroy$/;"	f	class:OfferSavesController
+destroy	app/controllers/offers_controller.rb	/^  def destroy$/;"	f	class:OffersController
+destroy	app/controllers/resumes_controller.rb	/^  def destroy$/;"	f	class:ResumesController
+destroy	app/controllers/sessions_controller.rb	/^  def destroy$/;"	f	class:SessionsController
+destroy	app/controllers/skill_items_controller.rb	/^  def destroy$/;"	f	class:SkillItemsController
+destroy	app/controllers/work_items_controller.rb	/^  def destroy$/;"	f	class:WorkItemsController
+destroy_all	app/controllers/skill_items_controller.rb	/^  def destroy_all$/;"	f	class:SkillItemsController
+devise_error_messages!	app/helpers/devise_helper.rb	/^  def devise_error_messages!$/;"	f	class:DeviseHelper
+devise_error_messages?	app/helpers/devise_helper.rb	/^  def devise_error_messages?$/;"	f	class:DeviseHelper
+disable_turbolinks	app/controllers/application_controller.rb	/^  def disable_turbolinks$/;"	f	class:ApplicationController
+display_name	app/models/candidate_profile.rb	/^  def display_name$/;"	f	class:CandidateProfile
+display_name	app/models/company.rb	/^  def display_name$/;"	f	class:Company
+distinct_organizations_like	app/models/cv_item.rb	/^  def self.distinct_organizations_like(term)$/;"	F	class:CvItem
+divider_edit_button	app/helpers/application_helper.rb	/^  def divider_edit_button(path)$/;"	f	class:ApplicationHelper
+dom_id	spec/support/form_helpers.rb	/^  def dom_id(object)$/;"	f	class:FormHelpers
+down	db/migrate/20170412094653_add_devise_to_employers.rb	/^  def self.down$/;"	F	class:AddDeviseToEmployers
+down	db/migrate/20170412100204_add_devise_to_candidates.rb	/^  def self.down$/;"	F	class:AddDeviseToCandidates
+down	db/migrate/20170428030935_change_skill_item_level_string_integer.rb	/^  def down$/;"	f	class:ChangeSkillItemLevelStringInteger
+down	db/migrate/20170510160503_change_salary_to_range.rb	/^  def down$/;"	f	class:ChangeSalaryToRange
+down	db/migrate/20170518070642_move_offer_location_to_table_locations.rb	/^  def down$/;"	f	class:MoveOfferLocationToTableLocations
+down	db/migrate/20170617082000_create_reputation_system.rb	/^  def self.down$/;"	F	class:CreateReputationSystem
+down	db/migrate/20170617082001_add_reputations_index.rb	/^  def self.down$/;"	F	class:AddReputationsIndex
+down	db/migrate/20170617082002_add_evaluations_index.rb	/^  def self.down$/;"	F	class:AddEvaluationsIndex
+down	db/migrate/20170617082003_add_reputation_messages_index.rb	/^  def self.down$/;"	F	class:AddReputationMessagesIndex
+down	db/migrate/20170617082004_change_evaluations_index_to_unique.rb	/^  def self.down$/;"	F	class:ChangeEvaluationsIndexToUnique
+down	db/migrate/20170617082005_change_reputation_messages_index_to_unique.rb	/^  def self.down$/;"	F	class:ChangeReputationMessagesIndexToUnique
+down	db/migrate/20170617082006_change_reputations_index_to_unique.rb	/^  def self.down$/;"	F	class:ChangeReputationsIndexToUnique
+down	db/migrate/20170617082007_add_data_to_reputations.rb	/^  def self.down$/;"	F	class:AddDataToReputations
+down	db/migrate/20170617082008_add_data_to_evaluations.rb	/^  def self.down$/;"	F	class:AddDataToEvaluations
+down	db/migrate/20170626155146_add_default_value_to_read_in_applications.rb	/^  def down$/;"	f	class:AddDefaultValueToReadInApplications
+down	db/migrate/20170701084932_create_active_admin_comments.rb	/^  def self.down$/;"	F	class:CreateActiveAdminComments
+down	db/migrate/20170709083510_allow_null_in_users_contact_email.rb	/^  def down$/;"	f	class:AllowNullInUsersContactEmail
+edit	app/controllers/candidates_controller.rb	/^  def edit$/;"	f	class:CandidatesController
+edit	app/controllers/companies_controller.rb	/^  def edit$/;"	f	class:CompaniesController
+edit	app/controllers/offers_controller.rb	/^  def edit$/;"	f	class:OffersController
+edit_button	app/helpers/application_helper.rb	/^  def edit_button(path)$/;"	f	class:ApplicationHelper
+edit_skills	app/controllers/candidates_controller.rb	/^  def edit_skills$/;"	f	class:CandidatesController
+education_item_params	app/controllers/education_items_controller.rb	/^  def education_item_params$/;"	f	class:EducationItemsController
+error_messages_for	app/helpers/application_helper.rb	/^  def error_messages_for(object)$/;"	f	class:ApplicationHelper
+extension_whitelist	app/uploaders/avatar_uploader.rb	/^  def extension_whitelist$/;"	f	class:AvatarUploader
+extension_whitelist	app/uploaders/resume_uploader.rb	/^  def extension_whitelist$/;"	f	class:ResumeUploader
+factory_key	spec/support/autocompletable.rb	/^  def factory_key$/;"	f
+factory_key	spec/support/cv_item.rb	/^  def factory_key$/;"	f
+factory_key	spec/support/localizable.rb	/^  def factory_key$/;"	f
+filename	app/uploaders/resume_uploader.rb	/^  def filename$/;"	f	class:ResumeUploader
+fill_in_with_valid_attributes	spec/features/candidates/candidate_edits_cv_items_spec.rb	/^        def fill_in_with_valid_attributes$/;"	f
+find_by_local_name	app/models/concerns/localizable.rb	/^    def find_by_local_name(name)$/;"	f	class:Localizable
+find_by_name	app/models/concerns/find_or_create.rb	/^    def find_by_name(name)$/;"	f	class:FindOrCreate
+find_candidate	app/controllers/candidates_controller.rb	/^  def find_candidate$/;"	f	class:CandidatesController
+find_country_and_province	app/models/location.rb	/^  def find_country_and_province$/;"	f	class:Location
+find_or_create_by_name	app/models/concerns/find_or_create.rb	/^    def find_or_create_by_name(name)$/;"	f	class:FindOrCreate
+find_or_create_skill	app/models/skill_item.rb	/^  def find_or_create_skill$/;"	f	class:SkillItem
+find_profession	app/models/candidate.rb	/^  def find_profession$/;"	f	class:Candidate
+find_user	app/controllers/companies_controller.rb	/^  def find_user$/;"	f	class:CompaniesController
+full_filename	app/uploaders/resume_uploader.rb	/^    def full_filename(for_file = model.file)$/;"	f	class:ResumeUploader
+full_location	app/models/offer.rb	/^  def full_location$/;"	f	class:Offer
+full_name	app/models/candidate_profile.rb	/^  def full_name$/;"	f	class:CandidateProfile
+has_valid_subscription?	app/models/company.rb	/^  def has_valid_subscription?$/;"	f	class:Company
+high_bound	app/helpers/offers_helper.rb	/^  def high_bound(range)$/;"	f
+highlight_search_term	app/helpers/autocomplete_helper.rb	/^  def highlight_search_term(str, term, highlight_class: 'ui-state-highlight')$/;"	f	class:AutocompleteHelper
+highlight_search_term_in_collection	app/helpers/autocomplete_helper.rb	/^  def highlight_search_term_in_collection(collection, term, highlight_class: 'ui-state-highlight')$/;"	f	class:AutocompleteHelper
+home	app/controllers/home_controller.rb	/^  def home$/;"	f	class:HomeController
+index	app/controllers/applications_controller.rb	/^  def index$/;"	f	class:ApplicationsController
+index	app/controllers/candidates_controller.rb	/^  def index$/;"	f	class:CandidatesController
+index	app/controllers/companies_controller.rb	/^  def index$/;"	f	class:CompaniesController
+index	app/controllers/company_offers_controller.rb	/^  def index$/;"	f	class:CompanyOffersController
+index	app/controllers/offers_controller.rb	/^  def index$/;"	f	class:OffersController
+index	app/controllers/provinces_controller.rb	/^  def index$/;"	f	class:ProvincesController
+initialize	app/models/ability.rb	/^  def initialize(user)$/;"	f	class:Ability
+last_subscription	app/models/company.rb	/^  def last_subscription$/;"	f	class:Company
+level_key	app/models/skill_item.rb	/^  def level_key$/;"	f	class:SkillItem
+link_back	app/helpers/application_helper.rb	/^  def link_back$/;"	f	class:ApplicationHelper
+local_name	app/controllers/application_controller.rb	/^  def local_name$/;"	f	class:ApplicationController
+local_name	app/models/concerns/localizable.rb	/^  def local_name$/;"	f	class:Localizable
+local_order	app/models/concerns/localizable.rb	/^    def local_order$/;"	f	class:Localizable
+locale_flag	app/helpers/application_helper.rb	/^  def locale_flag(lang)$/;"	f	class:ApplicationHelper
+locale_link	app/helpers/application_helper.rb	/^  def locale_link(lang)$/;"	f	class:ApplicationHelper
+localized_collection	app/helpers/offers_helper.rb	/^  def localized_collection(collection, value = nil, blank: nil)$/;"	f	class:OffersHelper
+localized_currency_value	app/helpers/offers_helper.rb	/^  def localized_currency_value(value)$/;"	f	class:OffersHelper
+logged_in?	app/controllers/application_controller.rb	/^  def logged_in?$/;"	f	class:ApplicationController
+logo_for	app/helpers/profile_helper.rb	/^  def logo_for(company)$/;"	f
+looking_for_work_label	app/helpers/candidates_helper.rb	/^  def looking_for_work_label(lfw)$/;"	f	class:CandidatesHelper
+low_bound	app/helpers/offers_helper.rb	/^  def low_bound(range)$/;"	f
+make_hourly_wage	app/models/offer.rb	/^  def make_hourly_wage$/;"	f	class:Offer
+make_range	app/models/offer.rb	/^  def make_range(min, max)$/;"	f	class:Offer
+make_salary_range	app/models/offer.rb	/^  def make_salary_range$/;"	f	class:Offer
+mark_all_as_read	app/models/application.rb	/^  def self.mark_all_as_read$/;"	F	class:Application
+mark_as_read	app/models/application.rb	/^  def mark_as_read$/;"	f	class:Application
+markdown	app/helpers/application_helper.rb	/^  def markdown(text)$/;"	f	class:ApplicationHelper
+most_popular_voivodeships_with_counts	app/models/province.rb	/^  def self.most_popular_voivodeships_with_counts$/;"	F	class:Province
+most_popular_with_offer_counts	app/models/country.rb	/^  def self.most_popular_with_offer_counts$/;"	F	class:Country
+name_for_slug	app/models/candidate.rb	/^  def name_for_slug$/;"	f	class:Candidate
+name_for_slug	app/models/offer.rb	/^  def name_for_slug$/;"	f	class:Offer
+name_pl	app/models/concerns/localizable.rb	/^  def name_pl$/;"	f	class:Localizable
+new	app/controllers/applications_controller.rb	/^  def new$/;"	f	class:ApplicationsController
+new	app/controllers/avatars_controller.rb	/^  def new$/;"	f	class:AvatarsController
+new	app/controllers/candidates/registrations_controller.rb	/^  def new$/;"	f	class:Candidates
+new	app/controllers/companies/registrations_controller.rb	/^  def new$/;"	f	class:Companies
+new	app/controllers/offers_controller.rb	/^  def new$/;"	f	class:OffersController
+new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
+new	app/controllers/subscriptions_controller.rb	/^  def new$/;"	f	class:SubscriptionsController
+new_application	app/mailers/applications_mailer.rb	/^  def new_application(application)$/;"	f	class:ApplicationsMailer
+new_application	spec/mailers/previews/applications_preview.rb	/^  def new_application$/;"	f	class:ApplicationsPreview
+not_pdf?	app/uploaders/resume_uploader.rb	/^  def not_pdf?(new_file)$/;"	f	class:ResumeUploader
+offer	app/controllers/offer_saves_controller.rb	/^  def offer$/;"	f	class:OfferSavesController
+offer_counts	app/models/company.rb	/^  def self.offer_counts$/;"	F	class:Company
+offer_params	app/controllers/offers_controller.rb	/^  def offer_params$/;"	f	class:OffersController
+offers	app/controllers/offers_controller.rb	/^  def offers$/;"	f	class:OffersController
+order_candidates	app/controllers/candidates_controller.rb	/^  def order_candidates(param)$/;"	f	class:CandidatesController
+organizations	app/controllers/autocomplete_controller.rb	/^  def organizations$/;"	f	class:AutocompleteController
+page_title	app/controllers/application_controller.rb	/^  def page_title$/;"	f	class:ApplicationController
+paid!	app/models/subscription.rb	/^  def paid!$/;"	f	class:Subscription
+pdf?	app/models/resume.rb	/^  def pdf?$/;"	f	class:Resume
+pdf_url	app/models/resume.rb	/^  def pdf_url$/;"	f	class:Resume
+poland	app/controllers/offers_controller.rb	/^  def poland$/;"	f	class:OffersController
+poland?	app/models/location.rb	/^  def poland?$/;"	f	class:Location
+pretty_currency_value	app/helpers/offers_helper.rb	/^  def pretty_currency_value(value)$/;"	f	class:OffersHelper
+profession_name	app/models/candidate.rb	/^  def profession_name$/;"	f	class:Candidate
+professions	app/controllers/autocomplete_controller.rb	/^  def professions$/;"	f	class:AutocompleteController
+publish	app/controllers/offers_controller.rb	/^  def publish$/;"	f	class:OffersController
+publish	app/models/offer.rb	/^  def publish$/;"	f	class:Offer
+publish_all	app/models/offer.rb	/^  def self.publish_all$/;"	F	class:Offer
+published_or_owned_by	app/models/offer.rb	/^  def self.published_or_owned_by(company)$/;"	F	class:Offer
+ratings_count	app/models/company.rb	/^  def ratings_count$/;"	f	class:Company
+readable_currency_range	app/helpers/offers_helper.rb	/^  def readable_currency_range(range, currency)$/;"	f	class:OffersHelper
+recent_offers	app/models/company.rb	/^  def recent_offers(limit = 5)$/;"	f	class:Company
+render_js_errors_for	app/controllers/application_controller.rb	/^  def render_js_errors_for(object)$/;"	f	class:ApplicationController
+reset_search_link	app/helpers/offers_helper.rb	/^  def reset_search_link(options = {})$/;"	f	class:OffersHelper
+resume_params	app/controllers/resumes_controller.rb	/^  def resume_params$/;"	f	class:ResumesController
+salary_and_wage_for	app/helpers/offers_helper.rb	/^  def salary_and_wage_for(offer)$/;"	f	class:OffersHelper
+salary_for	app/helpers/offers_helper.rb	/^  def salary_for(offer)$/;"	f	class:OffersHelper
+salary_string	spec/helpers/offers_helper_spec.rb	/^    def salary_string(format, min, max, currency)$/;"	f
+schools	app/controllers/autocomplete_controller.rb	/^  def schools$/;"	f	class:AutocompleteController
+scoped_collection	app/admin/candidate.rb	/^    def scoped_collection$/;"	f
+scoped_collection	app/admin/company.rb	/^    def scoped_collection$/;"	f
+scoped_collection	app/admin/offer.rb	/^    def scoped_collection$/;"	f
+search	app/models/candidate.rb	/^  def self.search(term)$/;"	F	class:Candidate
+search	app/models/concerns/acts_like_autocompletable.rb	/^    def search(q)$/;"	f	class:ActsLikeAutocompletable
+search_by_query	app/models/offer.rb	/^  def self.search_by_query(query)$/;"	F	class:Offer
+search_description	app/helpers/offers_helper.rb	/^  def search_description(params)$/;"	f	class:OffersHelper
+serialize_for_autocomplete	app/models/concerns/acts_like_autocompletable.rb	/^    def serialize_for_autocomplete(label_method: "name_en", value_method: "name_#{I18n.locale}")$/;"	f	class:ActsLikeAutocompletable
+serialized_collection	spec/support/autocompletable.rb	/^    def serialized_collection$/;"	f
+set_admin_locale	app/controllers/application_controller.rb	/^  def set_admin_locale$/;"	f	class:ApplicationController
+set_country_list	app/controllers/offers_controller.rb	/^  def set_country_list$/;"	f	class:OffersController
+set_duration	app/models/subscription.rb	/^  def set_duration$/;"	f	class:Subscription
+set_locale	app/controllers/application_controller.rb	/^  def set_locale$/;"	f	class:ApplicationController
+set_locale	app/models/user.rb	/^  def set_locale(locale = I18n.locale)$/;"	f	class:User
+set_price	app/models/subscription.rb	/^  def set_price$/;"	f	class:Subscription
+set_professions_list	app/controllers/candidates_controller.rb	/^  def set_professions_list$/;"	f	class:CandidatesController
+set_province_list	app/controllers/offers_controller.rb	/^  def set_province_list$/;"	f	class:OffersController
+set_rating	app/controllers/companies_controller.rb	/^  def set_rating$/;"	f	class:CompaniesController
+set_search_description	app/controllers/offers_controller.rb	/^  def set_search_description$/;"	f	class:OffersController
+sex_age_label	app/helpers/candidates_helper.rb	/^  def sex_age_label(sex, age)$/;"	f	class:CandidatesHelper
+sex_icon	app/helpers/candidates_helper.rb	/^  def sex_icon(sex)$/;"	f	class:CandidatesHelper
+short_format	app/models/location.rb	/^  def short_format$/;"	f	class:Location
+short_format_base	app/models/location.rb	/^  def short_format_base$/;"	f	class:Location
+short_salary	app/helpers/offers_helper.rb	/^  def short_salary(offer)$/;"	f	class:OffersHelper
+short_sex	app/models/candidate.rb	/^  def short_sex$/;"	f	class:Candidate
+short_with_line_breaks	app/models/location.rb	/^  def short_with_line_breaks$/;"	f	class:Location
+should_generate_new_friendly_id?	app/models/offer.rb	/^  def should_generate_new_friendly_id?$/;"	f	class:Offer
+show	app/controllers/avatars_controller.rb	/^  def show$/;"	f	class:AvatarsController
+show	app/controllers/candidates_controller.rb	/^  def show$/;"	f	class:CandidatesController
+show	app/controllers/companies_controller.rb	/^  def show$/;"	f	class:CompaniesController
+show	app/controllers/dashboards_controller.rb	/^  def show$/;"	f	class:DashboardsController
+show	app/controllers/offers_controller.rb	/^  def show$/;"	f	class:OffersController
+show	app/controllers/profiles_controller.rb	/^  def show$/;"	f	class:ProfilesController
+sign_up	app/controllers/pages_controller.rb	/^  def sign_up$/;"	f	class:PagesController
+skill_item_params	app/controllers/skill_items_controller.rb	/^  def skill_item_params$/;"	f	class:SkillItemsController
+skills	app/controllers/autocomplete_controller.rb	/^  def skills$/;"	f	class:AutocompleteController
+store_dir	app/uploaders/avatar_uploader.rb	/^  def store_dir$/;"	f	class:AvatarUploader
+store_dir	app/uploaders/resume_uploader.rb	/^  def store_dir$/;"	f	class:ResumeUploader
+strip_http	app/helpers/application_helper.rb	/^  def strip_http(url)$/;"	f	class:ApplicationHelper
+submit_form	spec/support/form_helpers.rb	/^  def submit_form$/;"	f	class:FormHelpers
+subscriptions_valid_until	app/models/company.rb	/^  def subscriptions_valid_until$/;"	f	class:Company
+swap_dates	app/models/cv_item.rb	/^  def swap_dates$/;"	f	class:CvItem
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+timespan	app/helpers/candidates_helper.rb	/^  def timespan(start_date, end_date = nil)$/;"	f	class:CandidatesHelper
+to_s	app/models/location.rb	/^  def to_s$/;"	f	class:Location
+translate_with_gender	app/controllers/application_controller.rb	/^  def translate_with_gender(key, gender = 'male')$/;"	f	class:ApplicationController
+unpublish	app/controllers/offers_controller.rb	/^  def unpublish$/;"	f	class:OffersController
+unpublish	app/models/offer.rb	/^  def unpublish$/;"	f	class:Offer
+unsafe_markdown	app/helpers/application_helper.rb	/^  def unsafe_markdown(text)$/;"	f	class:ApplicationHelper
+up	db/migrate/20170412094653_add_devise_to_employers.rb	/^  def self.up$/;"	F	class:AddDeviseToEmployers
+up	db/migrate/20170412100204_add_devise_to_candidates.rb	/^  def self.up$/;"	F	class:AddDeviseToCandidates
+up	db/migrate/20170428030935_change_skill_item_level_string_integer.rb	/^  def up$/;"	f	class:ChangeSkillItemLevelStringInteger
+up	db/migrate/20170510160503_change_salary_to_range.rb	/^  def up$/;"	f	class:ChangeSalaryToRange
+up	db/migrate/20170517070127_remove_table_organizations.rb	/^  def up$/;"	f	class:RemoveTableOrganizations
+up	db/migrate/20170518070642_move_offer_location_to_table_locations.rb	/^  def up$/;"	f	class:MoveOfferLocationToTableLocations
+up	db/migrate/20170617082000_create_reputation_system.rb	/^  def self.up$/;"	F	class:CreateReputationSystem
+up	db/migrate/20170617082001_add_reputations_index.rb	/^  def self.up$/;"	F	class:AddReputationsIndex
+up	db/migrate/20170617082002_add_evaluations_index.rb	/^  def self.up$/;"	F	class:AddEvaluationsIndex
+up	db/migrate/20170617082003_add_reputation_messages_index.rb	/^  def self.up$/;"	F	class:AddReputationMessagesIndex
+up	db/migrate/20170617082004_change_evaluations_index_to_unique.rb	/^  def self.up$/;"	F	class:ChangeEvaluationsIndexToUnique
+up	db/migrate/20170617082005_change_reputation_messages_index_to_unique.rb	/^  def self.up$/;"	F	class:ChangeReputationMessagesIndexToUnique
+up	db/migrate/20170617082006_change_reputations_index_to_unique.rb	/^  def self.up$/;"	F	class:ChangeReputationsIndexToUnique
+up	db/migrate/20170617082007_add_data_to_reputations.rb	/^  def self.up$/;"	F	class:AddDataToReputations
+up	db/migrate/20170617082008_add_data_to_evaluations.rb	/^  def self.up$/;"	F	class:AddDataToEvaluations
+up	db/migrate/20170626155146_add_default_value_to_read_in_applications.rb	/^  def up$/;"	f	class:AddDefaultValueToReadInApplications
+up	db/migrate/20170701084932_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments
+up	db/migrate/20170709083510_allow_null_in_users_contact_email.rb	/^  def up$/;"	f	class:AllowNullInUsersContactEmail
+update	app/controllers/avatars_controller.rb	/^  def update$/;"	f	class:AvatarsController
+update	app/controllers/candidates_controller.rb	/^  def update$/;"	f	class:CandidatesController
+update	app/controllers/companies_controller.rb	/^  def update$/;"	f	class:CompaniesController
+update	app/controllers/offers_controller.rb	/^  def update$/;"	f	class:OffersController
+user_locale	app/controllers/application_controller.rb	/^  def user_locale$/;"	f	class:ApplicationController
+user_rating	app/models/company.rb	/^  def user_rating(user)$/;"	f	class:Company
+user_saved?	app/models/offer.rb	/^  def user_saved?(user)$/;"	f	class:Offer
+vector?	app/models/avatar.rb	/^  def vector?$/;"	f	class:Avatar
+vote	app/controllers/companies_controller.rb	/^  def vote$/;"	f	class:CompaniesController
+with_profession	app/models/candidate.rb	/^  def self.with_profession(profession)$/;"	F	class:Candidate
+work_item_params	app/controllers/work_items_controller.rb	/^  def work_item_params$/;"	f	class:WorkItemsController
