@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :find_user, only: :show
+  before_action :find_user, only: [:show, :edit, :update]
   helper_method :company
 
   before_action :set_province_list, only: :edit
@@ -72,7 +72,7 @@ class CompaniesController < ApplicationController
   def find_user
     if params[:id].present?
       @company = User.find(params[:id])
-    elsif logged_in?
+    elsif company_signed_in?
       @company = current_user
     end
   end
@@ -82,8 +82,8 @@ class CompaniesController < ApplicationController
   end
 
   def set_province_list
-    if current_company.location.country.present?
-      @provinces = current_company.location.country.provinces.local_order
+    if @company.location.country.present?
+      @provinces = @company.location.country.provinces.local_order
     end
   end
 end

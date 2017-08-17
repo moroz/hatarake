@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   namespace :admin do
-    resources :orders
+    resources :orders do
+      member do
+        patch :mark_paid
+      end
+    end
   end
   ActiveAdmin.routes(self)
   get '/jobs/abroad', to: 'offers#abroad'

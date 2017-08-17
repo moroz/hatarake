@@ -1,0 +1,12 @@
+%h1 Orders
+
+%table.orders.hover
+  %thead
+    %tr
+      %td #
+      %td Suma
+      %td Data
+      %td Zamawiający
+      %td Opłacone
+  %tbody#clickable_table
+    = render partial: 'orders/order', collection: orders

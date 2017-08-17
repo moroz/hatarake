@@ -1,0 +1,15 @@
+- if order.paid?
+  - class_names = 'order order--paid'
+- else
+  - class_names = 'order order--unpaid'
+%tr{class: class_names, id: dom_id(order), 'data-link' => order_path(order)}
+  %td= order.id
+  %td= "%.2f %s" % [order.total, order.currency.upcase]
+  %td= l order.created_at, format: :long
+  %td= link_to order.user.display_name, order.user, target: '_blank'
+  %td
+    - if order.paid?
+      %span.order__status.order__status--paid TAK
+    - else
+      %span.order__status.order__status--unpaid NIE
+
