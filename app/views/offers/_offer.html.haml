@@ -28,7 +28,7 @@
     %td
       .offer_dashboard__title= offer.title
       .offer_dashboard__actions
-        = link_to '#' do
+        = link_to promote_offer_path(offer) do
           %strong= t('actions.promote')
         \|
         = link_to t('actions.view'), offer

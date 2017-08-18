@@ -51,8 +51,13 @@ crumb :company_dashboard do
 end
 
 crumb :my_offers do
-  link I18n.t('dashboards.company_dashboard.my_offers')
+  link I18n.t('dashboards.company_dashboard.my_offers'), my_offers_path
   parent :company_dashboard
+end
+
+crumb :promote_offer do
+  link I18n.t('offers.promote.breadcrumb')
+  parent :my_offers
 end
 
 crumb :orders do

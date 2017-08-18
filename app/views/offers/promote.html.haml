@@ -1,0 +1,5 @@
+- breadcrumb :promote_offer
+%h1= t('.heading') + offer.title
+
+= form_with url: promote_offer_path(offer), method: :patch do |f|
+  = f.submit

@@ -67,6 +67,11 @@ pl:
         many: "Znaleziono %{count} ofert."
       heading: "Wyszukiwarka ofert"
 
+    promote:
+      breadcrumb: Wypromuj ofertę
+      heading: 'Wypromuj ofertę: '
+      select_method: "Wybierz metodę promowania:"
+
     my_offers:
       bulk_actions:
         category: Promuj na stronie kategorii

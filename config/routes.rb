@@ -19,13 +19,13 @@ Rails.application.routes.draw do
     member do
       patch :publish
       patch :unpublish
-      patch :add_premium
       get :promote
+      patch :promote, to: 'offers#add_premium'
       post :save
     end
 
     collection do
-      patch :update_many
+      patch :batch_action
     end
     resources :applications, only: :create
   end

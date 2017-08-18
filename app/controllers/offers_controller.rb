@@ -28,6 +28,12 @@ class OffersController < ApplicationController
     @offers = current_company.offers.with_associations
   end
 
+  def promote
+  end
+
+  def add_premium
+  end
+
   # Getting random records from the database can be hard on performance
   # TODO: Write a stored procedure to get random records
 
@@ -115,7 +121,7 @@ class OffersController < ApplicationController
     end
   end
 
-  def update_many
+  def batch_action
     if params[:offer_ids].blank?
       redirect_to my_offers_path, alert: t('offers.my_offers.no_offers_selected') and return
     end

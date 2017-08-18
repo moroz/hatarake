@@ -12,7 +12,7 @@ class Ability
       cannot :manage, Order
       if user.company?
         can :create, [Offer, BlogPost]
-        can [:update, :update_many, :destroy, :publish, :unpublish], Offer, company_id: user.id
+        can [:promote, :add_premium, :update, :batch_action, :destroy, :publish, :unpublish], Offer, company_id: user.id
         can [:update, :destroy], BlogPost, user_id: user.id
         can :my_offers, Offer
         can :my_offer_applications, Application
