@@ -64,17 +64,18 @@ en:
 
     my_offers:
       bulk_actions:
+        category: Highlight on category page
+        homepage: Highlight on homepage
+        highlight: Color highlight
         publish: Publish selected
         unpublish: Unpublish selected
-        category: Highlight on category page
-        highlight: Color highlight
-        homepage: Highlight on homepage
       title: Title
       details: Details
       published_at: Published
       apply_bulk_action: Apply
       bulk_action_placeholder: "Bulk action:"
       no_offers_selected: "No offers were selected."
+      bulk_action_label: "Promote or modify selected offers:"
 
       homepage_featured: Homepage
       category_featured: Category

@@ -59,3 +59,8 @@ crumb :orders do
   link I18n.t('orders.index.heading')
   parent :company_dashboard
 end
+
+crumb :order_premium do
+  link I18n.t('products.index.breadcrumb')
+  parent :company_dashboard
+end

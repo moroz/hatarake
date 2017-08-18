@@ -1,7 +1,7 @@
 - if current_company.premium_services.present?
   - hash = current_company.premium_services
   %span.offer_dashboard__premium_services_remaining
-    = t('offers.my_offers.remaining')
+    %strong= t('offers.my_offers.remaining')
     - if hash.key?('2')
       = hash['2']
       &times;

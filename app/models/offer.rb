@@ -119,20 +119,15 @@ class Offer < ApplicationRecord
     where(published: false).update_all(published:true, published_at: Time.now)
   end
 
+  def add_premium(type)
+    column, key = premium_column_key(type)
+    return false if self[column] > Time.now
+    return false unless company.reduce_premium_services(key, count)
+    update(column => (Time.now + 1.month))
+  end
+
   def self.add_premium(type)
-    case type
-    when 'highlight'
-      column = 'highlight_until'
-      key = 4
-    when 'homepage'
-      column = 'featured_until'
-      key = 2
-    when 'category'
-      column = 'category_until'
-      key = 3
-    else
-      raise ArgumentError.new
-    end
+    column, key = premium_column_key(type)
     offers = where("#{column} is null or #{column} < now()")
     count = offers.count
     return true if count == 0
@@ -208,6 +203,19 @@ class Offer < ApplicationRecord
 
   def add_http_to_application_url
     application_url = add_http_to_url(application_url)
+  end
+
+  def self.premium_column_key(type)
+    case type
+    when 'highlight'
+      return 'highlight_until', 4
+    when 'homepage'
+      return 'featured_until', 2
+    when 'category'
+      return 'category_until', 3
+    else
+      raise ArgumentError.new
+    end
   end
 
 end

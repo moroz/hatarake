@@ -4,6 +4,7 @@ en:
       add_to_cart: Add to Cart
       quantity: 'Quantity:'
       price_net: "Price %{price_pln} PLN or %{price_eur}&euro; a month"
+      breadcrumb: 'Premium Services'
       price_incl_tax: "/ %{price_pln} PLN or %{price_eur}&euro; including tax."
       item_added: "The product was added to Cart."
       go_to_cart: "Go to Cart"

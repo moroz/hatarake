@@ -96,6 +96,7 @@ pl:
   actions:
     delete: Usuń
     publish: Opublikuj
+    promote: Promuj
     unpublish: Wycofaj
     edit: Edycja
     view: Podgląd

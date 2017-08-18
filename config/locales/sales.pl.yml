@@ -3,6 +3,7 @@ pl:
     index:
       add_to_cart: "Do Koszyka"
       quantity: 'Liczba:'
+      breadcrumb: 'Zamów usługi Premium'
       price_net: "Koszt: %{price_pln} PLN lub %{price_eur}&euro; netto za miesiąc"
       price_incl_tax: "/ %{price_pln} PLN lub %{price_eur}&euro; brutto."
       item_added: "Produkt został dodany do koszyka."

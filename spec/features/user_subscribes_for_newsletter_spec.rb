@@ -19,7 +19,7 @@ RSpec.describe 'User subscribes for newsletter' do
     context 'when e-mail present in the DB is input in unsubscription form' do
       it 'changes NewsletterSubscription count' do
         visit unsubscribe_path
-        find('input[name="newsletter_subscription[email]"]').set('user')
+        find('input[type="email"]').set('user')
       end
     end
 

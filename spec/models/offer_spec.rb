@@ -136,7 +136,7 @@ RSpec.describe Offer, type: :model do
 
     end
 
-    describe "featuring" do
+    describe "featured scopes" do
       let!(:unfeatured) { FactoryGirl.create(:offer, :unfeatured) }
       let!(:homepage_featured) { FactoryGirl.create(:offer, :homepage_featured) }
 
@@ -166,6 +166,15 @@ RSpec.describe Offer, type: :model do
           it { is_expected.to include(unfeatured) }
           it { is_expected.to include(category_past) }
         end
+      end
+    end
+
+    describe "adding premium services" do
+      let(:offer) { FactoryGirl.create(:offer, :published) }
+
+      describe "self.add_premium" do
+        let!(:offers) { FactoryGirl.create_list(:offer, 3) }
+
       end
     end
   end

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     member do
       patch :publish
       patch :unpublish
+      patch :add_premium
+      get :promote
       post :save
     end
 

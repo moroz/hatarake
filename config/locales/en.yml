@@ -90,6 +90,7 @@ en:
 
   actions:
     delete: Delete
+    promote: Promote
     publish: Publish
     unpublish: Unpublish
     edit: Edit

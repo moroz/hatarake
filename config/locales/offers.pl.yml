@@ -69,18 +69,19 @@ pl:
 
     my_offers:
       bulk_actions:
+        category: Promuj na stronie kategorii
+        homepage: Promuj na stronie głównej
+        highlight: Dodaj podświetlenie
         publish: Opublikuj zaznaczone
         unpublish: Wycofaj zaznaczone
-        category: Promuj na stronie kategorii
-        highlight: Dodaj podświetlenie
-        homepage: Promuj na stronie głównej
       title: Tytuł
       details: Szczegóły
       published_at: Opublikowano
       apply_bulk_action: Wykonaj
-      bulk_action_placeholder: 'Modyfikuj zaznaczone:'
+      bulk_action_placeholder: 'Wybierz akcję:'
       no_offers_selected: "Nie wybrano żadnej oferty."
       order_premium_services: "Zamów usługi Premium"
+      bulk_action_label: "Wypromuj lub modyfikuj zaznaczone oferty:"
 
       homepage_featured: Główna
       category_featured: Kategoria

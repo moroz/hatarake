@@ -1,7 +1,9 @@
+%label= t('offers.my_offers.bulk_action_label')
 - name = (defined?(top) && top) ? 'update_action_top' : 'update_action'
 = select_tag name, options_from_collection_for_select(t('offers.my_offers.bulk_actions'), :first, :last), include_blank: t('offers.my_offers.bulk_action_placeholder'), class: 'offer_dashboard__bulk_action'
 - name = (defined?(top) && top) ? 'apply_bulk_action_top' : 'apply_bulk_action'
 = button_tag t('offers.my_offers.apply_bulk_action'), type: :submit, class: 'button hollow success small offer_dashboard__apply_bulk_action', name: name, id: name
+= link_to fa_icon('star', text: t('offers.my_offers.order_premium_services')), premium_path, class: 'button hollow small offer_dashboard__order_premium_services'
 - name = (defined?(top) && top) ? 'destructive_action_warning_top' : 'destructive_action_warning'
 .offer_dashboard__destructive_action{id: name}
   = t('offers.my_offers.destructive_action_warning')
