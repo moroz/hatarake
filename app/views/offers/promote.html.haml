@@ -1,5 +1,16 @@
 - breadcrumb :promote_offer
 %h1= t('.heading') + offer.title
 
+- if offer.category_featured?
+  Category
+- if offer.highlighted?
+  Highlighted
+- if offer.homepage_featured?
+  Homepage
+
 = form_with url: promote_offer_path(offer), method: :patch do |f|
-  = f.submit
+  .input-group
+    = f.label :method, t('.select_method')
+    = f.select :method, options_from_collection_for_select(t('.methods'), :first, :last), {}, class: 'auto-width'
+    = render 'premium_services_left'
+  = f.submit t('.submit'), class: 'button'

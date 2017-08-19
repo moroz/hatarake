@@ -71,6 +71,11 @@ pl:
       breadcrumb: Wypromuj ofertę
       heading: 'Wypromuj ofertę: '
       select_method: "Wybierz metodę promowania:"
+      methods:
+        category: "Promowanie na stronie kategorii"
+        homepage: "Promowanie na stronie głównej"
+        highlight: "Wyróżnienie kolorem"
+      submit: "Zatwierdź"
 
     my_offers:
       bulk_actions:

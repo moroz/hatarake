@@ -120,9 +120,9 @@ class Offer < ApplicationRecord
   end
 
   def add_premium(type)
-    column, key = premium_column_key(type)
-    return false if self[column] > Time.now
-    return false unless company.reduce_premium_services(key, count)
+    column, key = Offer.premium_column_key(type)
+    return false if self[column].present? && self[column] > Time.now
+    return false unless company.reduce_premium_services(key, 1)
     update(column => (Time.now + 1.month))
   end
 
