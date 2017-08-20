@@ -14,6 +14,8 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
+  PREMIUM_KEYS = {'highlight' => 4, 'homepage' => 2, 'category' => 3}
+
   before_create :set_locale
 
   after_validation :add_http_to_website
@@ -61,6 +63,7 @@ class User < ApplicationRecord
   end
 
   def reduce_premium_services(key, value)
+    key = PREMIUM_KEYS[key] if key.is_a?(String) && key.to_i == 0
     if premium_services.blank? || !premium_services.key?(key.to_s) || (premium_services[key.to_s].to_i < value.to_i)
       return false
     end

@@ -79,8 +79,19 @@ class Offer < ApplicationRecord
     published.where('published_at > ?', 1.week.ago).order(views: :desc).limit(10)
   end
 
-  def is_featured?
-    highlighted? || category_featured? || homepage_featured?
+  def is_featured?(type = nil)
+    case type
+    when 'highlight'
+      highlighted?
+    when 'category'
+      category_featured?
+    when 'homepage'
+      homepage_featured?
+    when nil
+      highlighted? || category_featured? || homepage_featured?
+    else
+      raise ArgumentError
+    end
   end
 
   def highlighted?
@@ -120,18 +131,17 @@ class Offer < ApplicationRecord
   end
 
   def add_premium(type)
-    column, key = Offer.premium_column_key(type)
+    column = Offer.premium_column(type)
     return false if self[column].present? && self[column] > Time.now
-    return false unless company.reduce_premium_services(key, 1)
     update(column => (Time.now + 1.month))
   end
 
   def self.add_premium(type)
-    column, key = premium_column_key(type)
+    column = premium_column(type)
     offers = where("#{column} is null or #{column} < now()")
     count = offers.count
     return true if count == 0
-    return false unless offers.first.company.reduce_premium_services(key, count)
+    return false unless offers.first.company.reduce_premium_services(type, count)
     offers.update_all(column => (Time.now + 1.month))
     true
   end
@@ -205,14 +215,14 @@ class Offer < ApplicationRecord
     application_url = add_http_to_url(application_url)
   end
 
-  def self.premium_column_key(type)
+  def self.premium_column(type)
     case type
     when 'highlight'
-      return 'highlight_until', 4
+      return 'highlight_until'
     when 'homepage'
-      return 'featured_until', 2
+      return 'featured_until'
     when 'category'
-      return 'category_until', 3
+      return 'category_until'
     else
       raise ArgumentError.new
     end

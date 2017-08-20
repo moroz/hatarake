@@ -98,7 +98,11 @@ en:
         category: "The offer has been highlighted on the category page."
         homepage: "The offer has been highlighted on the homepage."
         highlight: "The offer has been highlighted."
-      error: "There was an error highlighting the offer."
+      already_featured:
+        category: "This offer is already featured on the category page."
+        homepage: "This offer is already featured on the homepage."
+        highlight: "This offer is already highlighted."
+      balance_insufficient: "The Premium services balance in your account is insufficient."
 
     poland:
       heading: "Jobs in Poland"

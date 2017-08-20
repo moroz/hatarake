@@ -32,8 +32,16 @@ class OffersController < ApplicationController
   end
 
   def add_premium
+    method = params[:method]
+    if offer.is_featured?(method)
+      redirect_to promote_offer_path(offer), alert: t("offers.promote.already_featured.#{method}")
+      return
+    end
+    unless offer.company.reduce_premium_services(method, 1)
+      redirect_to promote_offer_path(offer), alert: t("offers.promote.balance_insufficient")
+    end
     if offer.add_premium(params[:method])
-      redirect_to my_offers_path, notice: t("offers.promote.success.#{params[:method]}")
+      redirect_to my_offers_path, notice: t("offers.promote.success.#{method}")
     else
       redirect_to promote_offer_path(offer), alert: t("offers.promote.error")
     end
