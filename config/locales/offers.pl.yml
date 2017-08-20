@@ -76,6 +76,11 @@ pl:
         homepage: "Promowanie na stronie głównej"
         highlight: "Wyróżnienie kolorem"
       submit: "Zatwierdź"
+      success:
+        category: "Oferta została wypromowana na stronie kategorii."
+        homepage: "Oferta została wypromowana na stronie głównej."
+        highlight: "Oferta została podświetlona."
+      error: "Przy podświetlaniu oferty wystąpił błąd."
 
     my_offers:
       bulk_actions:

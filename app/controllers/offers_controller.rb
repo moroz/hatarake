@@ -33,9 +33,9 @@ class OffersController < ApplicationController
 
   def add_premium
     if offer.add_premium(params[:method])
-      redirect_to my_offers_path, notice: 'Success'
+      redirect_to my_offers_path, notice: t("offers.promote.success.#{params[:method]}")
     else
-      redirect_to promote_offer_path(offer), notice: 'Error'
+      redirect_to promote_offer_path(offer), alert: t("offers.promote.error")
     end
   end
 

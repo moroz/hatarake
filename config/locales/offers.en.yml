@@ -76,6 +76,7 @@ en:
       bulk_action_placeholder: "Bulk action:"
       no_offers_selected: "No offers were selected."
       bulk_action_label: "Promote or modify selected offers:"
+      order_premium_services: "Order Premium services"
 
       homepage_featured: Homepage
       category_featured: Category
@@ -88,7 +89,16 @@ en:
       heading: "Promote offer: "
       breadcrumb: "Promote offer"
       select_method: "Select promotion method:"
-
+      methods:
+        category: Highlight on category page
+        homepage: Highlight on homepage
+        highlight: Color highlight
+      submit: Confirm
+      success:
+        category: "The offer has been highlighted on the category page."
+        homepage: "The offer has been highlighted on the homepage."
+        highlight: "The offer has been highlighted."
+      error: "There was an error highlighting the offer."
 
     poland:
       heading: "Jobs in Poland"
