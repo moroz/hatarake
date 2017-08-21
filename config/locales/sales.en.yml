@@ -53,6 +53,7 @@ en:
     thank_you:
       heading: Thank you for your purchase!
       we_have_registered_your_payment: "We have registered your payment via Dotpay.pl and activated the following services on your account:"
+      back_to_dashboard: Back to Dashboard
 
   cart_items:
     actions:

@@ -6,6 +6,8 @@ class Order < ApplicationRecord
   validates :currency, inclusion: { in: %w( pln eur ) }
   validates :unique_token, presence: true
 
+  delegate :cart_items, to: :cart
+
   before_validation :set_token_description
   before_create :set_total
 
