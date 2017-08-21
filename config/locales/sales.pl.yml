@@ -50,11 +50,18 @@ pl:
       confirm_and_pay: "Zapłać w serwisie Dotpay.pl"
       heading: "Zamówienie #%{id}"
       currency: "Waluta zamówienia:"
+    
+    show:
+      heading: "Zamówienie #%{id}"
 
     thank_you:
       heading: Dziękujemy za zakup!
       we_have_registered_your_payment: "Odnotowaliśmy płatność za pośrednictwem Dotpay.pl i aktywowaliśmy następujące usługi na Twoim koncie:"
       back_to_dashboard: Powrót do Panelu
+
+    destroy:
+      success: "Zamówienie zostało anulowane."
+      already_paid: "To zamówienie zostało już opłacone i nie można go anulować."
 
   cart_items:
     actions:

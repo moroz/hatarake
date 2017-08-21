@@ -1,4 +1,5 @@
-%h1 Zamówienie ##{@order.id}
+- breadcrumb :order, @order
+%h1= t('.heading', id: @order.id)
 
 = render @order.cart, currency: @order.currency, view_format: :order
 

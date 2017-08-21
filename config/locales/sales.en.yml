@@ -55,6 +55,13 @@ en:
       we_have_registered_your_payment: "We have registered your payment via Dotpay.pl and activated the following services on your account:"
       back_to_dashboard: Back to Dashboard
 
+    show:
+      heading: "Order #%{id}"
+
+    destroy:
+      success: "The order has been cancelled."
+      already_paid: "This order has already been paid and cannot be cancelled."
+
   cart_items:
     actions:
       destroy:

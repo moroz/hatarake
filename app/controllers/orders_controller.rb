@@ -2,15 +2,12 @@ class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   before_action :set_cart, only: [:place, :create], if: :logged_in?
+  before_action :find_order, only: [:show, :payment, :thank_you, :destroy]
 
   authorize_resource
 
   def index
     @orders = current_user.orders
-  end
-
-  def show
-    @order = Order.find_by(unique_token: params[:id])
   end
 
   def place
@@ -32,18 +29,27 @@ class OrdersController < ApplicationController
     render :place and return
   end
 
-  def payment
-    @order = Order.find_by(unique_token: params[:order_id])
-  end
-
   def thank_you
-    @order = Order.find_by(unique_token: params[:order_id])
     unless @order.paid?
       redirect_to order_payment_path(@order) and return
     end
   end
 
+  def destroy
+    if @order.paid?
+      redirect_to @order, alert: t('orders.destroy.already_paid')
+      return
+    end
+    if @order.destroy
+      redirect_to orders_path, notice: t('orders.destroy.success')
+    end
+  end
+
   private
+
+  def find_order
+    @order = Order.find_by(unique_token: params[:id])
+  end
 
   def order_params
     params.require(:order).

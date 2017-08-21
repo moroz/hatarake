@@ -61,8 +61,13 @@ crumb :promote_offer do
 end
 
 crumb :orders do
-  link I18n.t('orders.index.heading')
+  link I18n.t('orders.index.heading'), orders_path
   parent :company_dashboard
+end
+
+crumb :order do |order|
+  link I18n.t('orders.show.heading', id: order.id)
+  parent :orders
 end
 
 crumb :order_premium do

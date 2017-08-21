@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   get '/orders/place', to: 'orders#place', as: :place_order
 
-  resources :orders, only: [:index, :create, :show] do
+  resources :orders, only: [:index, :create, :show, :destroy] do
     get :payment
     get :thank_you
   end
