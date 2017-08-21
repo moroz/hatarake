@@ -8,7 +8,7 @@ FactoryGirl.define do
     premium_services nil
 
     trait :premium do
-
+      premium_until 2.weeks.from_now
     end
   end
 end
