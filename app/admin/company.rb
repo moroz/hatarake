@@ -33,7 +33,7 @@ ActiveAdmin.register Company do
       row :updated_at
       row :slug
       row :premium { |company| company.premium? }
-      row :premium_until { |company| company.subscriptions_valid_until }
+      row :premium_until
       row :offers { |company| company.offers.count }
       row :description do
         markdown company.description.truncate(300, separator: /\s/)
@@ -47,10 +47,4 @@ ActiveAdmin.register Company do
   filter :phone
 
   form partial: 'form'
-
-  controller do
-    def scoped_collection
-      super.includes(:subscriptions)
-    end
-  end
 end

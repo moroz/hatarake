@@ -21,14 +21,14 @@ ActiveAdmin.register Candidate do
 
   filter :profession { |c| c.profession.name_en }
 
-  show title: proc { |c| 'Candidate: ' + c.profile.present? ? c.display_name : c.email } do
+  show title: proc { |c| 'Candidate: ' + (c.profile.present? ? c.display_name : c.email) } do
     attributes_table do
-      row :avatar { |c| avatar_for c }
-      row :full_name { |c| c.display_name } if c.profile.present?
-      row :age if c.profile.present?
-      row :sex if c.profile.present?
-      row :looking_for_work if c.profile.present?
-      row :profession { |c| c.profession.name_en }
+      row :avatar { |c| avatar_for c if c.avatar.present? }
+      row :full_name { |c| c.display_name if c.profile.present? }
+      row :age { |c| c.age if c.profile.present? }
+      row :sex { |c| c.sex if c.profile.present? }
+      row :looking_for_work { |c| c.looking_for_work if c.profile.present? }
+      row :profession { |c| c.profession.try(:name_en) }
       row :description
       row :applications { |c| c.applications.count }
       row :resumes { |c| c.resumes.count }
