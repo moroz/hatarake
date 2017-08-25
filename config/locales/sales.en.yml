@@ -45,6 +45,7 @@ en:
       submit: Submit
 
     payment:
+      redirection_notice: "Please sign in to proceed."
       payment_description: "InJobs.pl Premium Features"
       confirm_and_pay: "Confirm and pay with Dotpay"
       heading: "Order #%{id}"

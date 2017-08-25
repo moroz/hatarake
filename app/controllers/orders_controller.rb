@@ -3,8 +3,9 @@ class OrdersController < ApplicationController
 
   before_action :set_cart, only: [:place, :create], if: :logged_in?
   before_action :find_order, only: [:show, :payment, :thank_you, :destroy]
+  before_action :sign_in_to_proceed, only: [:payment, :thank_you]
 
-  authorize_resource
+  authorize_resource except: [:payment, :thank_you]
 
   def index
     @orders = current_user.orders
@@ -29,6 +30,8 @@ class OrdersController < ApplicationController
     render :place and return
   end
 
+  def payment; end
+
   def thank_you
     unless @order.paid?
       redirect_to order_payment_path(@order) and return
@@ -48,7 +51,15 @@ class OrdersController < ApplicationController
   private
 
   def find_order
-    @order = Order.find_by(unique_token: params[:id])
+    @order = Order.find_by(unique_token: params[:id] || params[:order_id])
+  end
+
+  def sign_in_to_proceed
+    if current_user.try(:id) != @order.user_id
+      sign_out(current_user) if logged_in?
+      session[:return_to] = request.url
+      redirect_to new_user_session_path, notice: I18n.t('orders.payment.redirection_notice') and return
+    end
   end
 
   def order_params

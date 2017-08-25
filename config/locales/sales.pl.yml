@@ -50,6 +50,7 @@ pl:
       confirm_and_pay: "Zapłać w serwisie Dotpay.pl"
       heading: "Zamówienie #%{id}"
       currency: "Waluta zamówienia:"
+      redirection_notice: "Zaloguj się, aby przejść dalej."
     
     show:
       heading: "Zamówienie #%{id}"
