@@ -36,7 +36,9 @@ ActiveAdmin.register Company do
       row :premium_until
       row :offers { |company| company.offers.count }
       row :description do
-        markdown company.description.truncate(300, separator: /\s/)
+        if company.description.present?
+          markdown company.description.truncate(300, separator: /\s/)
+        end
       end
     end
   end
