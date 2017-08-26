@@ -18,11 +18,14 @@
         (+48) 897-627-448
 
   .row
-    .columns.medium-8
+    .columns.medium-4
       %nav.footer__menu
         = link_to t('.subscribe'), new_newsletter_subscription_path
         %br
         = link_to t('.unsubscribe'), unsubscribe_path
+    .columns.medium-4
+      %nav.footer__menu
+        = link_to t('.terms_of_service'), regulamin_path
     .columns.medium-4
       .payment_icon.payment_icon--visa
       .payment_icon.payment_icon--mastercard
