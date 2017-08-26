@@ -1,7 +1,7 @@
 class Avatar < Attachment
   mount_uploader :file, AvatarUploader
 
-  belongs_to :owner, class_name: "User", dependent: :destroy
+  belongs_to :owner, class_name: "User"
 
   MAX_SIZE = 5242880 # 5 megabytes
   EXTENSIONS = %w(jpg jpeg gif png svg)

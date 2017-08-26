@@ -8,9 +8,9 @@ class User < ApplicationRecord
   validates :phone, uniqueness: true, allow_blank: true
   validates :website, url: true, allow_blank: true
   validates :description, length: { maximum: 10_000 }
-  has_one :avatar, foreign_key: 'owner_id'
-  has_many :carts
-  has_many :orders
+  has_one :avatar, foreign_key: 'owner_id', dependent: :destroy
+  has_many :carts, dependent: :destroy
+  has_many :orders, dependent: :destroy
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
