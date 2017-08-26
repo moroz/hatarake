@@ -65,6 +65,20 @@ crumb :orders do
   parent :company_dashboard
 end
 
+crumb :admin_dashboard do
+  link "Panel administracyjny", admin_dashboard_path
+end
+
+crumb :admin_orders do
+  link I18n.t('orders.index.heading'), admin_orders_path
+  parent :admin_dashboard
+end
+
+crumb :admin_order do |order|
+  link I18n.t('orders.show.heading', id: order.id)
+  parent :admin_orders
+end
+
 crumb :order do |order|
   link I18n.t('orders.show.heading', id: order.id)
   parent :orders

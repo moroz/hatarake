@@ -1,4 +1,5 @@
-%h1 Orders
+- breadcrumb :admin_orders
+%h1 Zamówienia
 
 %table.orders.hover
   %thead
@@ -8,5 +9,6 @@
       %td Data
       %td Zamawiający
       %td Opłacone
+      %td Faktura
   %tbody#clickable_table
     = render partial: 'orders/order', collection: orders

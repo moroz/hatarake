@@ -3,4 +3,7 @@ class AdminUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
+
+  def set_locale(lang)
+  end
 end

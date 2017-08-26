@@ -20,8 +20,9 @@
                 = other_locale.upcase
 
         - if logged_in?
-          %li= link_to t('nav.dashboard'), dashboard_path
-          %li= link_to t('nav.profile'), profile_path
+          - unless admin_user_signed_in?
+            %li= link_to t('nav.dashboard'), dashboard_path
+            %li= link_to t('nav.profile'), profile_path
           - if admin_user_signed_in?
             %li= link_to 'Panel', admin_dashboard_path
           - else

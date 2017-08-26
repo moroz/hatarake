@@ -54,6 +54,10 @@ pl:
     
     show:
       heading: "Zamówienie #%{id}"
+      invoice:
+        'true': "Zamawiający prosi o wystawienie faktury VAT."
+        'false': "Zamawiający nie potrzebuje faktury VAT."
+      billing_address: "Dane do faktury:"
 
     thank_you:
       heading: Dziękujemy za zakup!

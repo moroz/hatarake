@@ -1,8 +1,20 @@
-- breadcrumb :order, @order
+- if company_signed_in?
+  - breadcrumb :order, @order
+- else
+  - breadcrumb :admin_order, @order
+
 %h1= t('.heading', id: @order.id)
 
 = render @order.cart, currency: @order.currency, view_format: :order
 
+- if @order.invoice?
+  %p= t('orders.show.invoice.true')
+  %h4= t('orders.show.billing_address')
+  = render @order.billing_address
+
+- else
+  %p= t('orders.show.invoice.false')
+ 
 - unless @order.paid?
   = link_to fa_icon('credit-card', text: 'Przejdź do płatności'), order_payment_path(@order), class: 'button'
   = link_to fa_icon('ban', text: 'Anuluj zamówienie'), @order, method: :delete, class: 'button dark-red-bg'

@@ -58,6 +58,10 @@ en:
 
     show:
       heading: "Order #%{id}"
+      invoice:
+        'true': "The purchaser needs an invoice."
+        'false': "The purchaser does not need an invoice."
+      billing_address: "Billing address:"
 
     destroy:
       success: "The order has been cancelled."

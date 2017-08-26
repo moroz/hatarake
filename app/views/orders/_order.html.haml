@@ -13,3 +13,8 @@
     - else
       %span.order__status.order__status--unpaid NIE
 
+  %td
+    - if order.invoice?
+      %span.order__status.order__status--paid TAK
+    - else
+      %span.order__status.order__status--unpaid NIE
