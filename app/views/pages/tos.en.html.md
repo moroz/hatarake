@@ -18,24 +18,24 @@
 
 8. The User accepts the fact that they have no right whatsoever to make any claims regarding any malfunction of the Website.
 
-**Service Provider** &ndash; the owner of the website [www.injobs.pl](https://www.injobs.pl), the company InJobs.pl Sp. z. o.o.
+**Service Provider** &mdash; the owner of the website [www.injobs.pl](https://www.injobs.pl), the company InJobs.pl Sp. z. o.o.
 
-**Website** &ndash; the website [www.injobs.pl](https://www.injobs.pl), owned by the Service Provider.
+**Website** &mdash; the website [www.injobs.pl](https://www.injobs.pl), owned by the Service Provider.
 
-**User** &ndash; any natural person of age that uses the services provided by InJobs.pl that do not require registration.
+**User** &mdash; any natural person of age that uses the services provided by InJobs.pl that do not require registration.
 
-**Service Recipient (or Employer)** &ndash; a natural person of age that owns an Account and uses services provided electronically by the Service Provider.
+**Service Recipient (or Employer)** &mdash; a natural person of age that owns an Account and uses services provided electronically by the Service Provider.
 
-**Services** &ndash; all services provided electronically by the Service Provider for Users and Service Recipient, in accordance with the Terms of Service.  
-A list and description of Services is included in the Appendix 1, which constitutes an integral part of this document.
+**Services** &mdash; all services provided electronically by the Service Provider for Users and Service Recipient, in accordance with the Terms of Service.  
+A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1), which constitutes an integral part of this document.
 
-**Registration form** &ndash; the form filled in by the User with the goal of creating an Account.
+**Registration form** &mdash; the form filled in by the User with the goal of creating an Account.
 
-**Account** &ndash; a set of resources and settings stored for the Service Recipient within the Website [www.injobs.pl](https://www.injobs.pl). The Service Provider may use the Account to manage Services.
+**Account** &mdash; a set of resources and settings stored for the Service Recipient within the Website [www.injobs.pl](https://www.injobs.pl). The Service Provider may use the Account to manage Services.
 
-**Profile** &ndash; the feature of the Account that enables the Service Recipient to gather selected information regarding his or her professional career, education, or other skills.
+**Profile** &mdash; the feature of the Account that enables the Service Recipient to gather selected information regarding his or her professional career, education, or other skills.
 
-**Terms of Service** &ndash; this document.
+**Terms of Service** &mdash; this document.
 
 ### I. This document defines:
 
@@ -85,9 +85,9 @@ A list and description of Services is included in the Appendix 1, which constitu
 
      a. an Internet connection,
 
-     b. a Web browser to display HTML documents on a computer screen. The browser should accept &ldquo;cookies&rdquo;.
+     b. a Web browser to display HTML documents on a computer screen. The browser should accept cookies.
 
-2. When using Services available on mobile devices&ndash;an appropriate mobile device with Internet access.
+2. When using Services available on mobile devices&mdash;an appropriate mobile device with Internet access.
 
 3. The Service Provider informs that using the Services bears the usual risks related to using Internet and recommends that the Users and Service Recipients take appropriate measures to eliminate these risks.
 
@@ -115,23 +115,23 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 6. The Users and Service Recipients who use the Services are obliged to refrain from:
 
-     a. publishing or sending any content that is offensive, illegal, or which violates ##dobra osobiste## of third parties.
+     a. publishing or sending any content that is offensive, indecent, illegal, or which violates the personality rights of third parties, or the legitimate interest of the Service Provider,
 
      b. using the Services to publish advertisements of goods or services or any other commercial information,
 
-     c. copying, modifying, propagating, transmitting or using in any other way the data published on the Website, except within permitted ##w ramach dozwolonego użytku##.
+     c. copying, modifying, propagating, transmitting or using in any other way the data published on the Website, except within the scope of exceptions and limitations to copyright,
 
-     d. undertaking any action that may ##utrudnić## or disturb proper functioning of the Website for other Users or Service Recipients.
+     d. undertaking any action that may hinder or disturb proper functioning of the Website for other Users or Service Recipients,
 
-     e. using the Services in any way that is in violation of the law, ##dobrych obyczajów##, the ##dobra osobiste## of third parties or ##uzasadnione interesy## of the Service Provider.
+     e. using the Services in any way that is indecent, illegal, or which violates the personality rights of third parties, or the legitimate interest of the Service Provider,
 
 7. The Service Provider reserves the right to:
     
-     a. block the access to any resources of the Users or Service Recipients containing erotic or pornographic material, containing illegal software or any information on how to obtain it, or other material that is in violation of the law, ##dobrych obyczajów##, the ##dobra osobiste## of third parties or ##uzasadnione interesy## of the Service Provider, if reliable and justified information about it is obtained.
+     a. block the access to any resources of the Users or Service Recipients containing erotic or pornographic material, containing illegal software or any information on how to obtain it, or other material that is indecent, illegal, or which violates the personality rights of third parties, or the legitimate interest of the Service Provider, if reliable and justified information about it is obtained.
 
      b. remove any content shared by the Service Recipient on the Website, if that content violates any regulations of this document.
 
-8. The Service Provider responds to the Users' and Service Recipients' ##dispositions##, defined in this document, within 48 hours of receiving them. If a disposition is given on a ##legal holiday##, then any reaction to it would happen before the end of the first working day following the disposition.
+8. The Service Provider responds to the Users' and Service Recipients' dispositions, defined in this document, within 48 hours of receiving them. If a disposition is given on a public holiday, then any reaction to it would happen before the end of the first working day following the disposition.
 
 ### V. Payment conditions
 
@@ -141,15 +141,15 @@ A list and description of Services is included in the Appendix 1, which constitu
 
      a. The User and Service Recipient will be informed about payment conditions every time before using a paid service. The use of paid Services by the Users and Service Recipients is voluntary.
 
-     b. A list and description of Services is included in the Appendix 1 to this document.
+     b. A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1) to this document.
 
-3. The Service Provider is not an Internet Service Provider. In order to use the Services, the User and Service Provider should ##we własnym zakresie## gain access to a computer workstation or terminal that allows using the Services using the Website.
+3. The Service Provider is not an Internet Service Provider. In order to use the Services, the User and Service Provider should on their own gain access to a computer workstation or terminal that allows using the Services using the Website.
 
 ### VI. The responsibilities of the Service Provider
 
 1. Should the Service Provider receive an official notification or a reliable information about the illegality of data given by a Service Recipient and deny the Service Recipient access to that data, the Service Provider is not liable to that Service Recipient for the caused damage.
 
-2. The Service Provider is not liable to the User or Service Recipient who violate the regulations of this document for any damage caused by the ##cessation## of Services, including damage caused by removing the account of the Service Recipient who violates the Terms of Service.
+2. The Service Provider is not liable to the User or Service Recipient who violate the regulations of this document for any damage caused by the cessation of Services, including the damage caused by removing the account of the Service Recipient who violates the Terms of Service.
 
 3. The Service Provider is not liable to the User and Service Recipient for the content of job offers published by Employers on the Website.
 
@@ -161,9 +161,9 @@ A list and description of Services is included in the Appendix 1, which constitu
 
      c. informations and materials downloaded, published on the Service Provider's Website or transferred through the Internet by the Users and Service Recipients,
 
-     d. the loss of the Users' or Service Providers' data caused by outer conditions (eg. hardware malfunction) or other circumstances independent from the Service Provider (actions of third parties,)
+     d. the loss of the Users' or Service Providers' data caused by outer conditions (e.g. hardware malfunction) or other circumstances independent from the Service Provider (actions of third parties,)
 
-     e. any damage caused by the interruption of Services due to circumstances the Service Provider is not responsible for (##siła wyzsza##, actions and ##zaniechania## of third parties, etc.,)
+     e. any damage caused by the interruption of Services due to circumstances the Service Provider is not responsible for (*force majeure*, actions and omissions of third parties, etc.,)
 
      f. the submission of incorrect or incomplete data or information by the Users or Service Recipients, including submitting them during registration,
 
@@ -173,19 +173,19 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 1. Every User and Service Recipient is entitled to expect the Service Provider to protect their privacy.
 
-2. The administrator of the personal data submitted by the Users and Service Providers through the Website is the company InJobs.pl Sp. z o.o., whose headquarters is ul. Sobczyńskiego 2c, Mrągowo, Poland. The administrator of personal data is responsible for protecting the personal data in accordance with the Personal Data Protection Act. The personal data of the Users and Service Recipients is processed for purposes of providing the Services, described in this document. The subject of the data is entitled to access their data and correct them. Submitting the data is required by the provisions of the Electronic Service Provision Act as of 18th July 2002, (consolidated text: Journal of Laws 2014, item 1182,) and is necessary for the realisation of the agreement.
+2. The administrator of the personal data submitted by the Users and Service Providers through the Website is the company InJobs.pl Sp. z o.o., whose headquarters is ul. Sobczyńskiego 2c, Mrągowo, Poland. The administrator of personal data is responsible for protecting the personal data in accordance with the Personal Data Protection Act. The personal data of the Users and Service Recipients is processed for purposes of the provision of the Services described in this document. The subject of the data is entitled to access their data and correct them. Submitting the data is required by the provisions of the Electronic Service Provision Act as of 18th July 2002, (consolidated text: Journal of Laws 2014, item 1182,) and is necessary for the realisation of the agreement.
 
-3. Every User who creates an Account and every Service Recipient who uses the job application service agrees to the processing of their data by InJobs.pl Sp. z o.o. and to making their their data available to ##subjects## within and outside the boundaries of the ##European Obszar Gospodarczy##, for purposes of ##job search## and recruitment, both presently and in the future. The Users and Service Recipients have been informed that submitting their data is voluntary, but is necessary to use the Website [www.injobs.pl](https://www.injobs.pl). A User or Service Recipient can lodge a notice of objection in writing against further processing of their data at any time.
+3. Every User who creates an Account and every Service Recipient who uses the job application service agrees to the processing of their data by InJobs.pl Sp. z o.o. and to making their their data available to entities within and outside the boundaries of the European Economic Area, for purposes of job search and recruitment, both presently and in the future. The Users and Service Recipients have been informed that submitting their data is voluntary, but is necessary to use the Website [www.injobs.pl](https://www.injobs.pl). A User or Service Recipient can lodge a notice of objection in writing against further processing of their data at any time.
 
 4. The Service Provider has the right to process the personal data of Users and Service Recipients who have submitted their data and agreed to its processing, for purposes of marketing the Provider's own services, in accordance with the law in force.
 
-5. The administrator of personal data can entrust the processing of personal data to other subject on the basis of a written agreement, concluded in accordance with the Personal Data Protection Act as of 29th August 1997, consolidated text: Journal of Laws 2014, item 1182.
+5. The administrator of personal data can entrust the processing of personal data to other subject on the basis of a written agreement, concluded in compliance with the Personal Data Protection Act as of 29th August 1997, consolidated text: Journal of Laws 2014, item 1182.
 
 6. The administrator of personal data can share the data of a User or Service Recipient with his partners, with the User's or Service Recipient's prior consent, for purposes of telephonic or email contact. The shared data may be processed for marketing purposes. The User or Service Recipient has been informed that submitting their personal data is voluntary, and that they can lodge a notice of objection in writing against further processing of their data at any time.
 
 7. The administrator of personal data can share the data of a User or Service Recipient with other employers, customers of the Website, who search for employers by means of the Website, with the User's or Service Recipient's prior consent. This consent is given separately in the processes of applying for a job and creating a Service Recipient Account. The User or Service Recipient has been informed that submitting their personal data is voluntary, and that they can lodge a notice of objection in writing against further processing of their data at any time.
 
-8. The Service Provider processes the personal data of a User or Service Recipient that are necessary for him to conclude, shape, change, or terminate the Service Agreement, and only for the purposes of the correct provision of Services, defined by this document, in accordance with the Electronic Service Provision Act as of 18th July 2002 (consolidated text: Journal of Laws 2002, No. 144, item 1204, as amended.) The personal data of a User or Service Recipient are processed in compliance with the safety rules set by the Personal Data Protection Act as of 29th August 1997, consolidated text: Journal of Laws 2014, item 1182.
+8. The Service Provider processes the personal data of a User or Service Recipient that are necessary for him to conclude, shape, change, or terminate the Service Agreement, and only for the purposes of the correct provision of Services, defined by this document, in accordance with the Electronic Service Provision Act as of 18th July 2002 (consolidated text: Journal of Laws 2002, No. 144, item 1204, as amended.) The personal data of a User or Service Recipient is processed in compliance with the safety rules set by the Personal Data Protection Act as of 29th August 1997, consolidated text: Journal of Laws 2014, item 1182.
 
 9. The Service Provider can protect all personal data published on the Website [www.injobs.pl](https://www.injobs.pl). The set of personal data may vary depending on the service being provided.
 
@@ -215,9 +215,9 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 5. The complaints should be sent to the e-mail address [biuro@injobs.pl](mailto:biuro@injobs.pl) (please include the word &ldquo;complaint&rdquo; in the message subject.)
 
-6. The Service Provider will make all efforts to ensure that the complaints be handled at most within 14 days of receiving the User's or Service Recipient's complaint. The Service Provider will immediately send the decision made as a result of considering the complaint to the e-mail address given in the complaint by the User or Service Recipient.
+6. The Service Provider will make all efforts to ensure that the complaints be handled within 14 days of receiving the User's or Service Recipient's complaint. The Service Provider will immediately send the decision made as a result of considering the complaint to the e-mail address given in the complaint by the User or Service Recipient.
 
-7. A complaint that has been handled in accordance with the Terms of Service shall not be handled any further or reconsidered.
+7. A complaint that has been handled in accordance with the Terms of Service will not be handled any further or reconsidered.
 
 ### IX. The termination of the Service Agreement
 
@@ -235,7 +235,7 @@ A list and description of Services is included in the Appendix 1, which constitu
 
     a. the breach of important regulations of the Terms of Service by a User or Service Recipient,
 
-    b. if the Service Provider obtains reliable and legitimate information, that the name of an Account is indecent, or violates the law, personality rights of third parties, or the legitimate interest of the Service Provider,
+    b. if the Service Provider obtains reliable and legitimate information, that the name of an Account is indecent, illegal, or violates the personality rights of third parties or the legitimate interest of the Service Provider,
 
     c. if a User or Service Recipient publishes any material that violates the law in force,
 
@@ -255,7 +255,7 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 2. The Owner reserves the right to cease providing any of the services or launch new ones.
 
-3. Any attempt to break into the Website, break passwords or codes or use them in any manner that violates the Terms of Service, will result in legal consequences.
+3. Any attempt to break into the Website, break passwords or codes or use them in any manner that violates the Terms of Service will result in legal consequences.
 
 4. The Owner reserves the right to modify the Terms of Service without prior notice. The up-to-date version of the Terms of Service will be published on the Website every time.
 
@@ -283,7 +283,7 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 2. A User can remove their e-mail address at any time after receiving a notification.
 
-3. The job offers published on the [www.injobs.pl](https://www.injobs.pl) Website are not offers of portals but the users who publish them.
+3. The job offers published on the [www.injobs.pl](https://www.injobs.pl) Website are not offers of the Website but the users who publish them.
 
 4. In case of a suspected fraud, the User is kindly asked to contact the Service Provider by e-mail to remove the suspected job offers.
 
@@ -293,7 +293,7 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 2. Every user may only create one Account.
 
-3. The portal does not charge any fees for publishing offers&ndash;it is entirely free of charge.
+3. The portal does not charge any fees for publishing offers&mdash;it is entirely free of charge.
 
 4. The User agrees to receive commercial information of the Website Owner and the Owner's Customers in the confirmation message.
 
@@ -321,7 +321,7 @@ A list and description of Services is included in the Appendix 1, which constitu
 
 3. The account of a user who notoriously acts against the Website will be banned, and all of their job offers removed.
 
-4. A banned user may solicit the unlocking of their account once every 2 months on the condition that they purchase a Premium Service Bundle for at least 99 PLN.
+4. A banned user may solicit the unlocking of their account once every 2 months on the condition that they purchase a bundle of paid services for at least 99 PLN.
 
 ## Means of contact.
 
@@ -331,4 +331,4 @@ If you have any questions or doubts, please contact us:
 
 2. By mail: InJobs.pl Sp. z o.o., ul. Sobczyńskiego 2c, 11-700 Mrągowo, Poland.
 
-**Appendix 1. Advertisements, services and payments on InJobs.pl**
+[**Appendix 1. Advertisements, services and payments on InJobs.pl**](/regulamin/zalacznik1)
