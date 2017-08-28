@@ -1,8 +1,6 @@
-Regulamin serwisu In Jobs.pl
-============================
+# Regulamin serwisu In Jobs.pl
 
-Zasady ogólne.
---------------
+## Zasady ogólne.
 
 1.  Właścicielem i usługodawcą serwisu
     [www.injobs.pl](http://www.injobs.pl) jest firma InJobs.pl
@@ -41,14 +39,11 @@ Zasady ogólne.
 7.  Użytkownik akceptuje fakt, iż nie ma prawa rościć jakichkolwiek
     pretensji wynikłych z wadliwego działania serwisu.
 
-**Usługodawca**- właściciel serwisu
-[www.injobs.pl](http://www.injobs.pl) - firma In InJobs.pl
+**Usługodawca**- właściciel serwisu [www.injobs.pl](http://www.injobs.pl) - firma In InJobs.pl
 
-**Serwis** – portal internetowy [www.injobs.pl](http://www.injobs.pl)
-należący do Usługodawcy.
+**Serwis** – portal internetowy [www.injobs.pl](http://www.injobs.pl), należący do Usługodawcy.
 
-**Użytkownik** – pełnoletnia osoba fizyczna, korzystająca z Usług
-oferowanych przez InJobs.pl, które nie wymagają założenia Konta.
+**Użytkownik** – pełnoletnia osoba fizyczna, korzystająca z Usług oferowanych przez InJobs.pl, które nie wymagają założenia Konta.
 
 **Usługobiorca (lub Pracodawca)** – pełnoletnia osoba fizyczna, która
 posiada Konto i korzysta z Usług świadczonych drogą elektroniczną przez
@@ -58,8 +53,8 @@ Usługodawcę.
 Usługodawcę na rzecz Użytkowników i Usługobiorców w oparciu o niniejszy
 Regulamin.
 
-Wykaz i opis Usług zawiera Załączniku nr 1 do niniejszego Regulaminu,
-stanowiącym jego integralną część.
+Wykaz i opis Usług zawiera [**Załącznik nr 1**](/regulamin/zalacznik1)
+do niniejszego Regulaminu, stanowiący jego integralną część.
 
 **Formularz rejestracyjny** – formularz wypełniany przez Użytkownika,
 służący do założenia Konta.
@@ -74,7 +69,7 @@ zawodowej, edukacji oraz innych umiejętności.
 
 **Regulamin** – niniejszy Regulamin.
 
-**I. NIENIEJSZY REGULAMIN OKREŚLA:**
+### I. Niniejszy Regulamin określa:
 
 -   prawa i obowiązki Usługodawcy oraz Użytkowników i Usługobiorców,
     związane ze świadczeniem Usług drogą elektroniczną,
@@ -95,7 +90,7 @@ zawodowej, edukacji oraz innych umiejętności.
     postanowień Regulaminu oraz „**Zasad Ogólnych**” od chwili jego
     akceptacji.
 
-**II. ZAWARCIE UMOWY, ZŁOŻENIE APLIKACJI I ZAŁOŻENIE KONTA**
+### II. Zawarcie Umowy, złożenie aplikacji i założenie Konta
 
 1.  Umowa o świadczenie Usług drogą elektroniczną zostaje zawarta przez
     Użytkownika z chwilą skorzystania Usług oferowanych przez Serwis
@@ -146,7 +141,7 @@ zawodowej, edukacji oraz innych umiejętności.
 
 8.  Umowa zawierana jest na czas nieokreślony.
 
-> **III. WARUNKI ŚWIADCZENIA USŁUG PRZEZ USŁUGODAWCĘ **
+### III. Warunki świadczenia Usług przez Usługodawcę
 
 1.  Wymagania techniczne niezbędne do współpracy z systemem
     teleinformatycznym, którym posługuje się Użytkownik i Usługodawca są
@@ -170,7 +165,7 @@ zawodowej, edukacji oraz innych umiejętności.
 4.  Usługodawca zobowiązuje się do niezwłocznego rozpoczęcia świadczenia
     Usług wybranych przez Użytkownika i Usługobiorcę.
 
-> **IV. PRAWA I OBOWIĄZKI USŁUGODAWCY, UŻYTKOWNIKÓW I USŁUGOBIORCÓW**
+### IV. Prawa i obowiązki Usługodawcy, Użytkowników i Usługobiorców
 
 1.  Usługodawca zobowiązuje się do stałego i nieprzerwanego świadczenia
     Usług.
@@ -249,7 +244,7 @@ zawodowej, edukacji oraz innych umiejętności.
     od pracy, wówczas reakcja na nią nastąpi najpóźniej do końca
     pierwszego, następującego po nim dnia roboczego.
 
-> **V. WARUNKI PŁATNOŚCI**
+### V. Warunki płatności
 
 1.  Usługi świadczone przez Usługodawcę dla Użytkowników i Usługobiorców
     (w szczególności Usługa aplikowania na oferty pracy oraz Konto
@@ -264,7 +259,7 @@ zawodowej, edukacji oraz innych umiejętności.
         Usługobiorców jest dobrowolne.
 
     b.  Wykaz Usług wraz z informacją o ich charakterze jest dostępny w
-        Załączniku nr 1 do niniejszego Regulaminu.
+        [**Załączniku nr 1**](/regulamin/zalacznik1) do niniejszego Regulaminu.
 
 3.  Usługodawca nie jest dostawcą usługi Internetu. W celu korzystania z
     Usług Użytkownik i Usługobiorca powinien we własnym zakresie uzyskać
@@ -272,7 +267,7 @@ zawodowej, edukacji oraz innych umiejętności.
     pomocą którego możliwe jest korzystanie z Usług za pośrednictwem
     Serwisu.
 
-> **VI. ODPOWIEDZIALNOŚĆ USŁUGODAWCY **
+### VI. Odpowiedzialność Usługodawcy
 
 1.  Usługodawca, który otrzymał urzędowe zawiadomienie lub wiarygodną
     wiadomość o bezprawnym charakterze danych przekazanych przez
@@ -320,7 +315,7 @@ zawodowej, edukacji oraz innych umiejętności.
     g.  nieprzestrzeganie przez Użytkowników i Usługobiorców warunków
         Regulaminu.
 
-**VII. OCHRONA DANYCH OSOBOWYCH**
+### VII. Ochrona danych osobowych
 
 1.  Każdy Użytkownik i Usługobiorca mają prawo do ochrony ich
     prywatności przez Usługodawcę.
@@ -406,7 +401,7 @@ zawodowej, edukacji oraz innych umiejętności.
     zakresem danych osobowych Usługobiorcy lub Użytkownika oraz za
     szkody powstałe w ich następstwie dla Usługobiorcy lub Użytkownika.
 
-> **VIII. POSTĘPOWANIE REKLAMACYJNE**
+### VIII. Postępowanie reklamacyjne
 
 1.  Użytkownicy i Usługobiorcy mają prawo składać reklamacje w sprawach
     dotyczących realizacji Usług.
@@ -439,7 +434,7 @@ zawodowej, edukacji oraz innych umiejętności.
 7.  Reklamacja rozpatrzona zgodnie z postanowieniami Regulaminu nie
     podlega dalszemu ani ponownemu rozpatrzeniu.
 
-> **IX. ROZWIĄZANIE UMOWY**
+### IX. Rozwiązanie Umowy
 
 1.  Umowa o świadczenie Usług drogą elektroniczną może być rozwiązana
     przez którąkolwiek ze stron.
@@ -496,7 +491,7 @@ zawodowej, edukacji oraz innych umiejętności.
     jeżeli zostało ono założone po raz kolejny po usunięciu Konta
     wynikającym z naruszenia Regulaminu.
 
-> **X. POSTANOWIENIA KOŃCOWE**
+### X. Postanowienia końcowe
 
 1.  Użytkownik uznaje, że całość praw autorskich, wszystkie znaki
     towarowe, konta użytkowników oraz pozostałe prawa własności
@@ -553,18 +548,17 @@ Osoby poszukujące pracy.
 ------------------------
 
 1.  Adres e-mail oraz imię użytkowników aplikujących na oferty pracy w
-    > serwisie [www.injobs.pl](http://www.injobs.pl) może zostać
-    > zapisany w bazie w celu przesyłania powiadomień o nowych ofertach.
+    serwisie [www.injobs.pl](http://www.injobs.pl) może zostać
+    zapisany w bazie w celu przesyłania powiadomień o nowych ofertach.
 
 2.  Użytkownik może usunąć swój adres e-mail z bazy w każdej chwili po
-    > otrzymaniu powiadomienia.
+    otrzymaniu powiadomienia.
 
-3.  Oferty pracy publikowane w serwisie
-    > [www.injobs.pl](http://www.injobs.pl) nie są w ofertami portali
-    > tylko użytkowników, którzy je dodają.
+3.  Oferty pracy publikowane w serwisie [www.injobs.pl](http://www.injobs.pl)
+    nie są w ofertami portalu, lecz użytkowników, którzy je dodają.
 
 4.  W razie podejrzenia oszustwa, Użytkownik proszony jest o kontakt
-    > e-mailowy z portalem w celu usunięcia podejrzanych ofert pracy.
+    e-mailowy z portalem w celu usunięcia podejrzanych ofert pracy.
 
 Rejestracja – dodanie oferty.
 -----------------------------
@@ -601,11 +595,11 @@ Usunięcie ofert oraz zablokowanie użytkownika.
 
 1.  Serwis zastrzega sobie prawo do usunięcia ofert użytkownika : 
 
-    -   łamiącego którekolwiek z postanowień niniejszego regulaminu
+  -   łamiącego którekolwiek z postanowień niniejszego regulaminu
 
-    -   reklamującego serwis konkurencyjny,
+  -   reklamującego serwis konkurencyjny,
 
-    -   uznanego przez administrację [www.injobs.pl](http://www.injobs.pl) za szkodliwego dla serwisu,
+  -   uznanego przez administrację [www.injobs.pl](http://www.injobs.pl) za szkodliwego dla serwisu,
 
 1.  Serwis zastrzega sobie prawo do nie poinformowania użytkownika o
     wykonaniu powyższej czynności.
@@ -614,18 +608,16 @@ Usunięcie ofert oraz zablokowanie użytkownika.
     blokowane, a wszystkie oferty usuwane.
 
 3.  Zablokowany użytkownik może raz na 2 miesiące ubiegać się o
-    > odblokowanie konta pod warunkiem, że wykupi pakiet wyróżnień na
-    > kwotę co najmniej 99 zł.
+    odblokowanie konta pod warunkiem, że wykupi pakiet wyróżnień na
+    kwotę co najmniej 99 zł.
 
 Formy kontaktu.
 ---------------
 
 W razie pytań lub wątpliwości prosimy kontaktować się:
 
-1.  Drogą mailową: na adres: [*injobs@biuro.pl*](mailto:injobs@biuro.pl)
+1.  Drogą mailową: na adres: [biuro@injobs.pl](mailto:biuro@injobs.pl).
 
-2.  Listownie na adres : InJobs.pl ul. Sobczyńskiego 2c , 11-700 Mrągowo
+2.  Listownie na adres: InJobs.pl, ul. Sobczyńskiego 2c, 11-700 Mrągowo.
 
-Załącznik nr. 1
-
-**Ogłoszenia, usługi i płatności w InJobs.pl**
+[**Załącznik nr. 1 Ogłoszenia, usługi i płatności w InJobs.pl**](/regulamin/zalacznik1)

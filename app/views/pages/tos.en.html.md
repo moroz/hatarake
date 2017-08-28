@@ -14,7 +14,7 @@
 
 6. Any misunderstandings with regard to the content of the job offers or unfinalised transactions should be solved by the users themselves. The service provider does not take part in any legal action related to resolving these disputes.
 
-7. The Website can only be used in accordance with the applicable law. Using the Website to distribute any materials protected by the Polish or international copyright laws, offensive, slandering or pornographic,or whose distribution is prohibited by law, is not allowed.
+7. The Website can only be used in accordance with the applicable law. Using the Website to distribute any materials protected by the Polish or international copyright laws, offensive, slandering or pornographic, or whose distribution is prohibited by law, is not allowed.
 
 8. The User accepts the fact that they have no right whatsoever to make any claims regarding any malfunction of the Website.
 

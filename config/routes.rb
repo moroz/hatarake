@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resource :newsletter_subscription, only: [:create, :destroy], path: '/subscribe'
   get '/unsubscribe', to: 'newsletter_subscriptions#unsubscribe'
   get '/regulamin', to: 'pages#tos'
+  get '/regulamin/zalacznik1', to: 'pages#appendix1'
 
   resources :offers, path: '/jobs', except: :index do
     member do
