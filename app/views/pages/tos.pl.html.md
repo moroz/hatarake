@@ -427,7 +427,7 @@ zawodowej, edukacji oraz innych umiejętności.
 4.  Reklamacje nie zawierające powyższych danych nie będą rozpatrywane.
 
 5.  Reklamacje należy składać na adres poczty elektronicznej:
-    [*biuro@injobs.pl*](mailto:biuro@injobs.pl) (w tytule prosimy
+    [biuro@injobs.pl](mailto:biuro@injobs.pl) (w tytule prosimy
     napisać „reklamacja”) .
 
 6.  Usługodawca dołoży starań, aby reklamacje były rozpatrzone w
@@ -448,9 +448,9 @@ zawodowej, edukacji oraz innych umiejętności.
     o świadczenie Usług droga elektroniczną poprzez:
 
     a.  w przypadku Usługobiorców: wysłanie na adres
-        [*kontakt@injobs.pl*](mailto:kontakt@injobs.pl)  wiadomości z
+        [*kontakt@injobs.pl*](mailto:kontakt@injobs.pl) wiadomości z
         prośbą o usunięcie Konta (w tytule prosimy napisać „rozwiązanie
-        umowy”) , zawierając w niej adres e-mail, na który Konto zostało
+        umowy”), zawierając w niej adres e-mail, na który Konto zostało
         utworzone
 
     b.  w przypadku Użytkowników: zaprzestanie używania Usług
@@ -458,9 +458,9 @@ zawodowej, edukacji oraz innych umiejętności.
 3.  Usługobiorca i Użytkownik uprawniony jest do odstąpienia od umowy o
     świadczenie Usług, bez podawania przyczyny i bez ponoszenia kosztów
     z tym związanych. Oświadczenie o odstąpieniu można wysłać e-mailem
-    na adres [*kontakt@injobs.pl*](mailto:kontakt@injobs.pl) , (w tytule
+    na adres [kontakt@injobs.pl](mailto:kontakt@injobs.pl), (w tytule
     prosimy napisać „odstąpienie”) bądź na pisemnie na adres - In
-    Jobs.pl., ul. Sobczyńskiego 2c ,11-700 Mrągowo ..
+    Jobs.pl Sp. z o.o., ul. Sobczyńskiego 2c, 11-700 Mrągowo.
 
 4.  Usługodawca ma prawo rozwiązać umowę o świadczenie Usług drogą
     elektroniczną, w tym usunąć Konto Usługobiorcy w następujących
@@ -582,10 +582,7 @@ Rejestracja – dodanie oferty.
 5.  Użytkownik zgadza się na otrzymywanie okresowych informacji
     handlowych Właściciela serwisu.
 
-6.  Użytkownik przekazuje wszelkie prawa do publikacji treści ogłoszeń
-    właścicielowi Serwisu
-
-> [www.injobs.pl](http://www.injobs.pl) .
+6.  Użytkownik przekazuje wszelkie prawa do publikacji treści ogłoszeń właścicielowi Serwisu [www.injobs.pl](http://www.injobs.pl).
 
 1.  Oferty mogą być publikowane na stronach partnerskich wyszukiwarek
     ofert pracy.
@@ -608,14 +605,13 @@ Usunięcie ofert oraz zablokowanie użytkownika.
 
     -   reklamującego serwis konkurencyjny,
 
-uznanego przez administrację [www.injobs.pl](http://www.injobs.pl) za
-szkodliwe dla serwisu,
+    -   uznanego przez administrację [www.injobs.pl](http://www.injobs.pl) za szkodliwego dla serwisu,
 
 1.  Serwis zastrzega sobie prawo do nie poinformowania użytkownika o
-    > wykonaniu powyższej czynności.
+    wykonaniu powyższej czynności.
 
 2.  Konto użytkownika, który notorycznie działa na szkodę serwisu będzie
-    > blokowane, a wszystkie oferty usuwane.
+    blokowane, a wszystkie oferty usuwane.
 
 3.  Zablokowany użytkownik może raz na 2 miesiące ubiegać się o
     > odblokowanie konta pod warunkiem, że wykupi pakiet wyróżnień na
