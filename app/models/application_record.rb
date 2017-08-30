@@ -1,5 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
+  scope :random_order, -> { reorder('RANDOM()') }
 
   protected
 

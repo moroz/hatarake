@@ -17,7 +17,7 @@
   - else
     - url = new_user_session_path(return_to: new_offer_application_path(offer_id: offer))
   .offer-block{id: dom_id(offer)}
-    = link_to offer.title.truncate(20, separator: /\s/), offer, class: 'offer-block__title'
+    = link_to offer.title, offer, class: "offer-block__title #{offer.title.length > 23 ? 'offer-block__title--long' : nil}"
     %span.offer-block__company= offer.company.name
     %span.offer-block__location= offer.location.short_format
     = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'

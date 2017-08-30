@@ -53,7 +53,6 @@ class Offer < ApplicationRecord
   scope :category_featured, -> { where('category_until > NOW()') }
   scope :highlighted, -> { where('highlight_until > NOW()') }
   scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
-  scope :random_order, -> { reorder('RANDOM()') }
 
   def self.advanced_search(o = {})
     scope = self.all

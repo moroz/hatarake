@@ -1,29 +1,4 @@
 %h2.text-center= t('home.featured_offers.heading')
 %h4.text-center= t('home.featured_offers.subheader') 
-.owl-carousel.owl-theme#offer-carousel
+.featured_offers
   = render @offers, block: true
-
-:javascript
-  $(document).on('turbolinks:load', function(e) {
-    $('#offer-carousel').owlCarousel({
-      dots: true,
-      nav: true,
-      loop: true,
-      responsive: {
-        0 : {
-          items: 2
-        },
-        640: {
-          items: 4
-        },
-        800: {
-          items: 5
-        }
-      },
-      items: 5,
-      navText: ["<i class=\"fa fa-arrow-left\"></i>", "<i class=\"fa fa-arrow-right\"></i>"],
-      autoplay: true,
-      autoplayHoverPause: true,
-      autoplayTimeout: 2500
-    });
-  });
