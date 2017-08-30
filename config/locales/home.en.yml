@@ -18,11 +18,13 @@ en:
         sign_up: "Sign up"
 
       slide2:
+        long_text: "We put a lot of effort to make adding offers as easy as possible."
         upper_text: "Publish your company’s offers for free"
         lower_text: "You only pay for Premium features!"
         sign_up: "Get your free Employer account"
 
       slide3:
+        long_text: "A job offer search engine and recruitment platform in one place!"
         upper_text: "Subscribe for our free newsletter"
         lower_text: "and get the most interesting offers delivered to your mailbox!"
         subscribe: "Subscribe now"
