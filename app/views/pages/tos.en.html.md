@@ -1,3 +1,4 @@
+<% breadcrumb :tos %>
 # InJobs.pl Terms of Service
 
 ## General rules
@@ -27,7 +28,7 @@
 **Service Recipient (or Employer)** &mdash; a natural person of age that owns an Account and uses services provided electronically by the Service Provider.
 
 **Services** &mdash; all services provided electronically by the Service Provider for Users and Service Recipient, in accordance with the Terms of Service.  
-A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1), which constitutes an integral part of this document.
+A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1) (only available in Polish,) which constitutes an integral part of this document.
 
 **Registration form** &mdash; the form filled in by the User with the goal of creating an Account.
 
@@ -141,7 +142,7 @@ A list and description of Services is included in the [**Appendix 1**](/regulami
 
      a. The User and Service Recipient will be informed about payment conditions every time before using a paid service. The use of paid Services by the Users and Service Recipients is voluntary.
 
-     b. A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1) to this document.
+     b. A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1) to this document (only available in Polish.)
 
 3. The Service Provider is not an Internet Service Provider. In order to use the Services, the User and Service Provider should on their own gain access to a computer workstation or terminal that allows using the Services using the Website.
 
@@ -331,4 +332,4 @@ If you have any questions or doubts, please contact us:
 
 2. By mail: InJobs.pl Sp. z o.o., ul. Sobczyńskiego 2c, 11-700 Mrągowo, Poland.
 
-[**Appendix 1. Advertisements, services and payments on InJobs.pl**](/regulamin/zalacznik1)
+[**Appendix 1. Advertisements, services and payments on InJobs.pl**](/regulamin/zalacznik1) (only available in Polish)

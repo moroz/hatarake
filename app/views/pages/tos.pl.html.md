@@ -1,3 +1,4 @@
+<% breadcrumb :tos %>
 # Regulamin serwisu In Jobs.pl
 
 ## Zasady ogólne.

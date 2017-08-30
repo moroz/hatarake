@@ -5,6 +5,7 @@ en:
   'true': 'Yes'
   'false': 'No'
   bad_request_alert: "An error occurred while processing your request: "
+  terms_of_service: "Terms of service"
 
   currency_range:
     min: "%{min}+ %{currency}"

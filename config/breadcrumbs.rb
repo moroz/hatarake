@@ -88,3 +88,12 @@ crumb :order_premium do
   link I18n.t('products.index.breadcrumb')
   parent :company_dashboard
 end
+
+crumb :tos do
+  link I18n.t('terms_of_service'), regulamin_path
+end
+
+crumb :tos_appendix do
+  link "Załącznik 1"
+  parent :tos
+end
