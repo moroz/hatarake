@@ -2,6 +2,7 @@
   .owl-slide.owl-slide--couple
     .row.owl-slide__container--left
       .owl-slide__text
+        %span.home__row1__long-text= t('.slide1.long_text')
         %span.home__row1__upper-text= t('.slide1.upper_text') 
         %span.home__row1__lower-text= raw t('.slide1.lower_text') 
         = link_to t('.slide1.offers'), jobs_poland_path, class: 'button large'

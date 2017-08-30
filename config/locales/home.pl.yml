@@ -10,6 +10,7 @@ pl:
 
     carousel:
       slide1:
+        long_text: "Znajdź pracę dla siebie z InJobs.pl!"
         upper_text: "Przeglądaj oferty pracy bez rejestracji"
         lower_text: "lub zarejestruj się, by zwiększyć szanse na znalezienie pracy!"
         offers: "Oferty pracy"
