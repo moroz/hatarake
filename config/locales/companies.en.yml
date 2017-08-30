@@ -6,6 +6,7 @@ en:
       no_offers: No offers.
       website: 'Website:'
       description: Description
+      no_description: "This company has no description."
       recent_offers: Recent offers
       all_offers: "See all..."
       rate_company: Rate this company

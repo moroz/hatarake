@@ -2,25 +2,24 @@
   .row
     .columns.medium-4
       %p
-        %strong InJobs.pl sp. z o.o.<br>
-        ul. Piotra Sobczyńskiego 2c<br>
-        11-700 Mrągowo#{current_locale == :pl ? '' : ', Poland'}
+        Hatarake (in Japanese: <em>work!</em>) is an open-source job board
+        written in Ruby on Rails and maintained
+        by the Polish developer Karol Moroz.
+      %p
+        The application is currently available in English and Polish. Other languages, including Traditional Chinese, Russian, and German, are available on demand.
     .columns.medium-4
       %p
-        %strong= t('.email_contact')
-        %br
-        info&#64;injobs&#46;pl<br>
-        biuro&#64;injobs&#46;pl
-      %p
-        %strong= t('.phone_contact')
-        %br
-        +48 (89) 762-74-48
-
-    .columns.medium-4
+        Ruby on Rails is a powerful and innovative framework for designing Web applications. Written entirely in Ruby, a fully object-oriented programming language, it enables developers like me to make even better software in next to no time.
       %nav.footer__menu
-        = link_to t('.subscribe'), new_newsletter_subscription_path
+        = link_to "Hatarake on Github", "https://github.com/moroz/hatarake", target: :blank
+    .columns.medium-4
+      %p
+        Now the dream of your own job board can be closer than you think!
+
+      %p
+        %strong Contact me:
+        +48 735 935 972
         %br
-        = link_to t('.unsubscribe'), unsubscribe_path
-        %br
-        = link_to t('.terms_of_service'), regulamin_path
+        or
+        k&#46;j&#46;moroz&#64;gmail&#46;com
       = render 'payments'
