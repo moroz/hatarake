@@ -5,13 +5,6 @@
   display: -webkit-flex
   display: flex
 
-.company-block
-  width: 50%
-  margin: 0 auto
-  @include breakpoint(medium)
-    display: inline-block
-    width: 25%
-
 .owl-carousel
   position: relative
 
@@ -139,3 +132,15 @@
   @include breakpoint(medium)
     grid:
       template-columns: repeat(4, 1fr)
+
+.featured_companies
+  @include breakpoint(medium)
+    display: grid
+    grid:
+      template-columns: repeat(4, 1fr)
+
+@media screen and (max-width: 640px)
+  .company-block
+    width: 180px
+    display: block
+    margin: 0 auto
