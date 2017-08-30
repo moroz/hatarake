@@ -22,7 +22,7 @@
   %p W formularzu zamówienia nie wyrazili Państwo chęci otrzymania faktury VAT.
 
 %p
-  Jeśli chcą Państwo uiścić płatność za pośrednictwem serwisu Dotpay.pl, proszę o kliknięcie przycisku poniżej:
+  Jeśli chcą Państwo dokonać płatności za pośrednictwem serwisu Dotpay.pl, proszę o kliknięcie przycisku poniżej:
 
 %button.float-center.radius.large{href: order_payment_url(@order)} Przejdź do płatności
 
