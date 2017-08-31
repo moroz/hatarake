@@ -46,7 +46,7 @@ pl:
       submit: 'Wyślij'
 
     payment:
-      payment_description: "InJobs.pl usługi premium"
+      payment_description: "Hatarake usługi premium"
       confirm_and_pay: "Zapłać w serwisie Dotpay.pl"
       heading: "Zamówienie #%{id}"
       currency: "Waluta zamówienia:"

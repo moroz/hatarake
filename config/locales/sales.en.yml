@@ -46,7 +46,7 @@ en:
 
     payment:
       redirection_notice: "Please sign in to proceed."
-      payment_description: "InJobs.pl Premium Features"
+      payment_description: "Hatarake Premium Features"
       confirm_and_pay: "Confirm and pay with Dotpay"
       heading: "Order #%{id}"
       currency: "Order currency:"

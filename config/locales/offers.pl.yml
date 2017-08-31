@@ -47,7 +47,7 @@ pl:
       application: Aplikacja
       application_method: Sposób aplikacji
       apply_on_website:
-        'false': 'Aplikacja w serwisie InJobs.pl'
+        'false': 'Aplikacja w serwisie Hatarake!'
         'true': 'Formularz zgłoszeniowy na Twojej stronie'
       apply_via_injobs_desc: "Aplikacje będą wysyłane pocztą elektroniczną na adres kontaktowy Twojej firmy lub na adres podany poniżej."
       external_form_desc: "Zaznacz tę opcję, jeżeli posiadasz stronę internetową z formularzem aplikacyjnym."

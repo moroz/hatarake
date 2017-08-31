@@ -43,7 +43,7 @@ en:
       application: How to apply
       application_method: Application method
       apply_on_website:
-        'false': 'Apply via InJobs.pl'
+        'false': 'Apply via Hatarake!'
         'true': Application form on your website
 
       apply_via_injobs_desc: "All applications will be sent to your company's contact e-mail, or to the address given below."
