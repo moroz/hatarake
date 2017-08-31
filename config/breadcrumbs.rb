@@ -97,3 +97,12 @@ crumb :tos_appendix do
   link "Załącznik 1"
   parent :tos
 end
+
+crumb :profile do
+  link I18n.t('nav.profile'), profile_path
+end
+
+crumb :edit_skills do
+  link I18n.t('candidates.edit_skills.heading')
+  parent :profile
+end
