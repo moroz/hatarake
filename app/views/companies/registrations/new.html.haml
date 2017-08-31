@@ -8,5 +8,6 @@
       = f.input :password_confirmation, required: true
       = f.input :name, label: "Company name"
     .form-actions
-      = f.button :submit, "Sign up"
+      = render 'acceptance_fields', f: f
+      = f.submit t('registrations.step1.submit'), class: 'button primary expanded', id: 'submit_button', disabled: true
   = render "devise/shared/links"
