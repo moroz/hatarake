@@ -4,7 +4,7 @@
       .owl-slide__text
         %span.home__row1__long-text= t('.slide1.long_text')
         %span.home__row1__upper-text= t('.slide1.upper_text') 
-        %span.home__row1__lower-text= raw t('.slide1.lower_text') 
+        %span.home__row1__lower-text!= t('.slide1.lower_text') 
         = link_to t('.slide1.offers'), jobs_poland_path, class: 'button large'
         = link_to t('.slide1.sign_up'), sign_up_path, class: 'button large dark-green-bg'
   .owl-slide.owl-slide--lornetka
@@ -15,11 +15,11 @@
         %span.home__row1__lower-text= raw t('.slide2.lower_text') 
         = link_to t('.slide2.sign_up'), new_company_registration_path, class: 'button large'
   .owl-slide.owl-slide--smiling-dude
-    .owl-slide__container
+    .owl-slide__container--left
       .owl-slide__text
-        %span.home__row1__long-text= t('.slide3.long_text')
+        -#%span.home__row1__long-text= t('.slide3.long_text')
         %span.home__row1__upper-text= t('.slide3.upper_text')
-        %span.home__row1__lower-text= t('.slide3.lower_text')
+        %span.home__row1__lower-text!= t('.slide3.lower_text')
         = link_to t('.slide3.subscribe'), new_newsletter_subscription_path, class: 'button large'
 
 :javascript

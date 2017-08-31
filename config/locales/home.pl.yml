@@ -12,7 +12,7 @@ pl:
       slide1:
         long_text: "Znajdź pracę dla siebie z InJobs.pl!"
         upper_text: "Przeglądaj oferty pracy bez rejestracji"
-        lower_text: "lub zarejestruj się, by zwiększyć szanse na znalezienie pracy!"
+        lower_text: "lub zarejestruj się, by zwiększyć szanse<br>na znalezienie pracy!"
         offers: "Oferty pracy"
         sign_up: "Załóż konto"
 
@@ -24,6 +24,6 @@ pl:
 
       slide3:
         long_text: "Wyszukiwarka ofert pracy i portal rekrutacyjny w jednym!"
-        upper_text: "Zaprenumeruj nasz darmowy newsletter"
-        lower_text: "i otrzymuj najciekawsze oferty prosto na swoją skrzynkę!"
-        subscribe: "Subskrybuj"
+        upper_text: "Zaprenumeruj nasz newsletter"
+        lower_text: "i otrzymuj najciekawsze oferty<br>prosto na swoją skrzynkę!"
+        subscribe: "Tak, poproszę!"
