@@ -1,11 +1,20 @@
 .row
   .columns.small-1
-    = f.check_box :terms_of_service
+    = f.check_box :terms_of_service, id: 'terms_of_service_checkbox'
   .columns.small-11
     = f.label :terms_of_service, raw(t('.terms_of_service')) 
 .row
   .columns.small-1
-    = f.check_box :personal_data
+    = f.check_box :personal_data, id: 'personal_data_checkbox'
   .columns.small-11
     = f.label :personal_data, t('.personal_data')
 
+:javascript
+  var personalData = false, tos = false;
+  $('#terms_of_service_checkbox, #personal_data_checkbox').on('change', function() {
+    if (this.id == 'personal_data_checkbox')
+      personalData = this.checked;
+    else
+      tos = this.checked;
+    $('#submit_button').prop('disabled', (!personalData || !tos));
+  });
