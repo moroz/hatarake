@@ -2,9 +2,9 @@
   - if skill_items.any?
     %thead
       %tr
-        %td Skill name
-        %td Level
-        %td Actions
+        %td= t('.table.name')
+        %td= t('.table.level')
+        %td
     %tbody
       - for skill_item in skill_items do
         %tr{id: dom_id(skill_item)}
@@ -12,4 +12,4 @@
             = skill_item.skill.local_name
           %td.skill_item__level
             = t(skill_item.level_key)
-          %td= link_to "Delete", skill_item, method: :delete, class: 'button alert', remote: true
+          %td= link_to t('actions.delete'), skill_item, method: :delete, class: 'button alert', remote: true

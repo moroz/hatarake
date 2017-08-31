@@ -1,16 +1,16 @@
-%h1 Edit skills
 
 = link_to "Back to profile", profile_path
 
-%h3 Your skills
-= render partial: 'skill_items/skill_items_w_actions', locals: { skill_items: @skill_items }
+%h1= t('.heading')
+= render 'skill_items/skill_items_w_actions', skill_items: @skill_items
       
 #skill_item_errors.callout.alert{style: "display: none"}
 = simple_form_for @skill_items.new, remote: true, authenticity_token: true do |f|
   .row
     .medium-4.columns
-      = f.input :skill_name, label: false, placeholder: "Skill name", url: autocomplete_skills_path, as: :autocomplete, input_html: { autofocus: true }
+      = f.input :skill_name, label: false, placeholder: t('.skill_name'), url: autocomplete_skills_path, as: :autocomplete, input_html: { autofocus: true }
     .medium-4.columns
       = f.select :level, options_from_collection_for_select(I18n.t('skill_levels'), :first, :last)
-    .medium-4.columns
-      = f.submit "Add skill", class: 'button primary expanded'
+    .medium-2.columns
+      = f.submit t('.add_skill'), class: 'button primary expanded'
+    .medium-2.columns

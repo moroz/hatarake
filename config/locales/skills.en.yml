@@ -1,0 +1,12 @@
+en:
+  candidates:
+    edit_skills:
+      heading: Your skills
+      skill_name: Skill name
+      add_skill: Add skill
+  skill_items:
+    skill_items_w_actions:
+      table:
+        name: Skill name
+        level: Level
+

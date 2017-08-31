@@ -1,0 +1,12 @@
+pl:
+  candidates:
+    edit_skills:
+      heading: Twoje umiejętności
+      skill_name: Nazwa umiejętności
+      add_skill: Zapisz
+  skill_items:
+    skill_items_w_actions:
+      table:
+        name: Nazwa umiejętności
+        level: Poziom
+
