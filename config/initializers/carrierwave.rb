@@ -2,9 +2,9 @@ CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'                        # required
   config.fog_credentials = {
     provider:              'AWS',                        # required
-    aws_access_key_id:     Rails.application.secrets.AWS_ACCESS_KEY_ID,                        # required
-    aws_secret_access_key: Rails.application.secrets.AWS_SECRET_ACCESS_KEY,                        # required
-    region:                Rails.application.secrets.AWS_REGION,                  # optional, defaults to 'us-east-1'
+    aws_access_key_id:     ENV.fetch['AWS_ACCESS_KEY_ID'],
+    aws_secret_access_key: ENV.fetch['AWS_SECRET_ACCESS_KEY'],
+    region:                ENV.fetch['AWS_REGION']
   }
 
   # For testing, upload files to local `tmp` folder.
