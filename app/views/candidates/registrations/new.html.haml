@@ -6,7 +6,6 @@
     %hr.show-for-small-only
   .medium-7.medium-pull-5.columns.border-right-for-medium
     %h3= t('registrations.candidate_heading')
-    %p= t('registrations.step1.explanation')
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
       = f.invisible_captcha :username
