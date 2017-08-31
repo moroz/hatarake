@@ -13,4 +13,5 @@
       = f.input :email
       = f.input :password
       = f.input :password_confirmation
+      = render 'acceptance_fields', f: f
       = f.submit t('registrations.step1.submit'), class: 'button primary expanded'

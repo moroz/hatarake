@@ -1,0 +1,11 @@
+.row
+  .columns.small-1
+    = f.check_box :terms_of_service
+  .columns.small-11
+    = f.label :terms_of_service, raw(t('.terms_of_service')) 
+.row
+  .columns.small-1
+    = f.check_box :personal_data
+  .columns.small-11
+    = f.label :personal_data, t('.personal_data')
+
