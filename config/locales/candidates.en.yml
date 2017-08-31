@@ -105,5 +105,5 @@ en:
 
   file_max_size: "The file size should not exceed %{size}."
   file_allowed_formats: "Allowed extensions: %{formats}."
-  file_too_big: "The selected file is too big. Maximum file size is %{size}."
+  file_too_big: "The selected file is too large. Maximum file size is %{size}."
   file_unsupported_format: "Unsupported file format. Please choose a file with the extension: %{formats}."
