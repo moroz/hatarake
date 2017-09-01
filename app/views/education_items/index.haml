@@ -1,16 +1,19 @@
-= link_to "Back to profile", profile_path
-.card
-  .card-divider
-    %h3= t('.heading')
+- breadcrumb :education
+.row
+  .large-10.columns.large-offset-1
+    = breadcrumbs separator: " &raquo; "
+    .card
+      .card-divider
+        %h3= t('.heading')
 
-  .card-section
-    - education_items.each do |item|
-      = render 'cv_item', item: item, destroyable: true
+      .card-section
+        - education_items.each do |item|
+          = render 'cv_item', item: item, destroyable: true
 
-.card
-  .card-divider
-    %h3= t('.add_new')
-  .card-section
-    = simple_form_for @education_item || education_items.new, remote: true do |f|
-      = render 'fields', f: f
-      = f.submit t('.submit'), class: 'button primary expanded'
+    .card
+      .card-divider
+        %h3= t('.add_new')
+      .card-section
+        = simple_form_for @education_item || education_items.new, remote: true do |f|
+          = render 'fields', f: f
+          = f.submit t('.submit'), class: 'button primary expanded'

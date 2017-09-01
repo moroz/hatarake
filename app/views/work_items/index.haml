@@ -1,6 +1,7 @@
+-breadcrumb :work_experience
 .row
   .large-10.columns.large-offset-1
-    = link_to "Back to profile", profile_path
+    = breadcrumbs separator: " &raquo; "
     .card
       .card-divider
         %h3= t('.heading')

@@ -106,3 +106,13 @@ crumb :edit_skills do
   link I18n.t('candidates.edit_skills.heading')
   parent :profile
 end
+
+crumb :work_experience do
+  link I18n.t('candidates.show.work_experience')
+  parent :profile
+end
+
+crumb :education do
+  link I18n.t('candidates.show.education')
+  parent :profile
+end
