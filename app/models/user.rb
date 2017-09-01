@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :phone, uniqueness: true, allow_blank: true
   validates :website, url: true, allow_blank: true
   validates :description, length: { maximum: 10_000 }
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
 
   validates_acceptance_of :terms_of_service, accept: '1', on: :create
   validates_acceptance_of :personal_data, accept: '1', on: :create

@@ -18,7 +18,10 @@ en:
       profession: "Profession:"
       submit: "Next"
       heading: "Please fill in your profile to start looking for work."
-      
+      phone: "Phone number:"
+      contact_email: "Contact e-mail (optional):"
+      description: "Tell us something about yourself:"
+
     show:
       looking_for_work:
         'true': Looking for work

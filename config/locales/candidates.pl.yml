@@ -19,6 +19,9 @@ pl:
       profession: "Zawód:"
       submit: "Dalej"
       heading: "Uzupełnij profil, aby rozpocząć poszukiwanie pracy."
+      phone: "Telefon kontaktowy:"
+      contact_email: "Kontaktowy adres e-mail (opcjonalnie):"
+      description: "W tej rubryce możesz napisać coś o sobie:"
 
     show:
       looking_for_work:
