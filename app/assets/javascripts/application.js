@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/widgets/autocomplete
+//= require jquery.remotipart
 //= require turbolinks
 //= require autocomplete-rails
 //= require owl.carousel
@@ -20,6 +21,8 @@
 //= require Markdown.Converter
 //= require Markdown.Sanitizer
 //= require Markdown.Editor
+//= require Jcrop
+//= require avatars
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller
