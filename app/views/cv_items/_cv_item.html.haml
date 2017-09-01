@@ -11,6 +11,11 @@
       - if item.respond_to?(:specialization) && item.specialization.present?
         %br/
         %span.cv_item__specialization= item.specialization
+      &ndash;
+      - if item.is_a?(WorkItem)
+        = t("cv_items.work_categories.#{item.category}")
+      - else
+        = t("cv_items.education_categories.#{item.category}")
     .columns.medium-4.cv_item__location
       - if item.location.present?
         = fa_icon 'map-marker'
