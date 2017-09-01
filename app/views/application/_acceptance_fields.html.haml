@@ -1,13 +1,11 @@
-.row
-  .columns.small-1
-    = f.check_box :terms_of_service, id: 'terms_of_service_checkbox'
-  .columns.small-11
-    = f.label :terms_of_service, raw(t('.terms_of_service')) 
-.row
-  .columns.small-1
-    = f.check_box :personal_data, id: 'personal_data_checkbox'
-  .columns.small-11
-    = f.label :personal_data, t('.personal_data')
+.checkbox-group__checkbox
+  = f.check_box :terms_of_service, id: 'terms_of_service_checkbox'
+.checkbox-group__label
+  = f.label :terms_of_service, raw(t('.terms_of_service')) 
+.checkbox-group__checkbox
+  = f.check_box :personal_data, id: 'personal_data_checkbox'
+.checkbox-group__label
+  = f.label :personal_data, t('.personal_data')
 
 :javascript
   var personalData = false, tos = false;

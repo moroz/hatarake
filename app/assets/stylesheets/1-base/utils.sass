@@ -14,3 +14,16 @@
 .no-underline
   &:hover, &:focus, &:active
     text-decoration: none
+
+$checkbox-width: rem-calc(35)
+.checkbox-group__checkbox
+  width: $checkbox-width
+  float: left
+  clear: left
+
+.checkbox-group__label
+  width: calc(100% - #{$checkbox-width})
+  float: left
+
+.checkbox-group
+  display: block
