@@ -66,6 +66,7 @@ pl:
       name: Imię i nazwisko
       submit: Szukaj
       order_cols:
+        4: Daty poszukiwania pracy
         0: Imienia i nazwiska
         1: Wieku
         2: Płci

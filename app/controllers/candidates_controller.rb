@@ -58,7 +58,7 @@ class CandidatesController < ApplicationController
   end
 
   def order_candidates(param)
-    orders = ['candidate_profiles.first_name, candidate_profiles.last_name', 'candidate_profiles.birth_date', 'candidate_profiles.sex', 'professions.name_pl, professions.name_en']
+    orders = ['candidate_profiles.first_name, candidate_profiles.last_name', 'candidate_profiles.birth_date', 'candidate_profiles.sex', 'professions.name_pl, professions.name_en', 'candidate_profiles.lfw_at']
     @candidates = @candidates.order(orders[param.to_i])
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815082011) do
+ActiveRecord::Schema.define(version: 20170901111935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20170815082011) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "sex", limit: 2, comment: "ISO/IEC 5218-compliant sex field, 1 male, 2 female"
+    t.datetime "lfw_at"
     t.index ["user_id"], name: "index_candidate_profiles_on_user_id"
   end
 
@@ -341,6 +342,26 @@ ActiveRecord::Schema.define(version: 20170815082011) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "subscription_prices", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", id: :serial, force: :cascade do |t|
+    t.integer "company_id"
+    t.datetime "valid_until"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "paid_at"
+    t.boolean "paid", default: false
+    t.integer "duration", default: 2592000
+    t.decimal "price", precision: 8, scale: 2
+    t.index ["company_id"], name: "index_subscriptions_on_company_id"
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -411,6 +432,7 @@ ActiveRecord::Schema.define(version: 20170815082011) do
   add_foreign_key "payments", "users", column: "payer_id"
   add_foreign_key "provinces", "countries"
   add_foreign_key "skill_items", "skills"
+  add_foreign_key "subscriptions", "users", column: "company_id"
   add_foreign_key "users", "locations"
   add_foreign_key "work_items", "locations"
   add_foreign_key "work_items", "users", column: "candidate_id"

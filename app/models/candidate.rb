@@ -19,6 +19,7 @@ class Candidate < User
   belongs_to :profession
   attr_accessor :profession_name
   before_validation :find_profession
+  before_update :bump_lfw_at
 
   delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :age, to: :profile
 
@@ -51,6 +52,12 @@ class Candidate < User
   end
 
   private
+
+  def bump_lfw_at
+    if profile.present?
+      profile.bump_lfw_at!
+    end
+  end
 
   def name_for_slug
     if profile.present?

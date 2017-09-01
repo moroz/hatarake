@@ -63,6 +63,7 @@ en:
       order: Order by
       submit: Search
       order_cols:
+        4: Time they were looking for work
         0: Name
         1: Age
         2: Sex
