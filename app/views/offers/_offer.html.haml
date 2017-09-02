@@ -18,8 +18,9 @@
     - url = new_user_session_path(return_to: new_offer_application_path(offer_id: offer))
   .offer-block{id: dom_id(offer)}
     = link_to offer.title, offer, class: "offer-block__title #{offer.title.length > 23 ? 'offer-block__title--long' : nil}"
-    %span.offer-block__company= offer.company.name
-    %span.offer-block__location= offer.location.short_format
+    .text-center
+      %span.offer-block__location= offer.location.short_format
+    %span.offer-block__company= avatar_for(offer.company, size: :thumb)
     = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
 
 - elsif defined?(dashboard) && dashboard

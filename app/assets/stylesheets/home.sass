@@ -142,11 +142,14 @@
 
 .featured_offers
   display: grid
+  align-items: center
   grid:
     template-columns: repeat(2, 1fr)
   @include breakpoint(medium)
     grid:
       template-columns: repeat(4, 1fr)
+  div
+    margin: 0 auto
 
 .featured_companies
   @include breakpoint(medium)
