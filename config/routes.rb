@@ -68,6 +68,7 @@ Rails.application.routes.draw do
     scope '/jooble' do
       get 'jobs_feed.xml', to: 'jooble#feed'
     end
+    post '/bump_lfw_at', to: 'candidates#bump_lfw_at'
   end
 
   devise_scope :candidate do

@@ -19,12 +19,15 @@ class Candidate < User
   belongs_to :profession
   attr_accessor :profession_name
   before_validation :find_profession
-  before_update :bump_lfw_at
 
   delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :age, to: :profile
 
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
+
+  def should_confirm_lfw?
+    profile.present? && looking_for_work && profile.lfw_at < 2.days.ago
+  end
 
   def self.with_profession(profession)
     if profession.class == Profession
@@ -52,12 +55,6 @@ class Candidate < User
   end
 
   private
-
-  def bump_lfw_at
-    if profile.present?
-      profile.bump_lfw_at!
-    end
-  end
 
   def name_for_slug
     if profile.present?

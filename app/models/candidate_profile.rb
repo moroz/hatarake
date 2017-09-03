@@ -18,17 +18,4 @@ class CandidateProfile < ApplicationRecord
     now = Time.now.utc.to_date
     now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end
-
-  def bump_lfw_at
-    if looking_for_work?
-      self.lfw_at = Time.now
-    else
-      self.lfw_at = nil
-    end
-  end
-
-  def bump_lfw_at!
-    bump_lfw_at
-    save
-  end
 end
