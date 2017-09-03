@@ -3,6 +3,8 @@ en:
     acceptance_fields:
       terms_of_service: "I have read and agree to the <a href=\"/regulamin\">Terms of Service</a>."
       personal_data: "I agree to make my personal data available for purposes of marketing of the www.injobs.pl Website's own services. The data of Users and Service Recipients, contained in the profile, will be made available to potential employers (users of the Website) to enable for email or phone contact and to the partners of InJobs.pl via e-mail."
+    confirm_lfw:
+      question: "Are you still looking for work?"
 
   candidates:
     registrations:
@@ -72,6 +74,9 @@ en:
     update:
       success: 'Your profile has been saved.'
 
+    confirm_lfw:
+      notice: "Thank you for your feedback."
+
   dashboards:
     candidate_dashboard:
       heading: Candidate Dashboard
@@ -99,6 +104,18 @@ en:
 
   cv_items:
     delete_confirm: "Are you sure you want to delete this item?"
+
+  activerecord:
+    attributes:
+      candidate/profile:
+        first_name: "First name"
+        last_name: "Last name"
+      resume:
+        description: Description
+        language: Language
+
+    models:
+      candidate: Profile
 
   avatars:
     success: "Your avatar has been saved."

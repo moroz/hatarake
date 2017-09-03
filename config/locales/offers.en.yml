@@ -182,3 +182,8 @@ en:
     breadcrumb: Applications
     new:
       heading: "Apply for offer: %{title}"
+
+  activerecord:
+    models:
+      offer: Offer
+      company: Company profile

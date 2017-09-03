@@ -1,0 +1,7 @@
+:plain
+  $('#confirm_lfw_callout').
+  removeClass('primary').addClass('notice').
+  text('#{j t('candidates.confirm_lfw.notice')}').
+  fadeOut(3000, function() {
+    $(this).hide();
+  });

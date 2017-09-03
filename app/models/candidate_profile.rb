@@ -1,6 +1,5 @@
 class CandidateProfile < ApplicationRecord
   belongs_to :candidate, dependent: :destroy
-  before_save :bump_lfw_at
 
   validates_presence_of :first_name, :last_name, :sex, :birth_date
 

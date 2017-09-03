@@ -77,6 +77,9 @@ pl:
     update:
       success: "Profil został zapisany."
 
+    confirm_lfw:
+      notice: "Dziękujemy za informację zwrotną."
+
   activerecord:
     attributes:
       candidate/profile:
