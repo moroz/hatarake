@@ -1,5 +1,5 @@
 - if candidate_signed_in? && current_candidate.should_confirm_lfw?
-  .callout.primary.confirm_lfw#confirm_lfw_callout
-    %h4= t('.question')
-    = button_tag t('true'), class: 'button', data: { value: '1' }
-    = button_tag t('false'), class: 'button alert', data: { value: '0' }
+  .callout.alert-callout-subtle.primary#confirm_lfw_callout
+    = t('.question')
+    = link_to t('true'), confirm_lfw_path(v: '1'), class: 'inline-button inline-button--yes', method: :post
+    = link_to t('false'), confirm_lfw_path(v: '0'), class: 'inline-button inline-button--no', method: :post

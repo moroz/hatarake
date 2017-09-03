@@ -51,7 +51,7 @@ class CandidatesController < ApplicationController
     @candidate.build_profile unless @candidate.profile.present?
   end
 
-  def bump_lfw_at
+  def confirm_lfw
     return if profile.blank?
     if params[:v].blank? || params[:v].to_i == '1'
       @candidate.profile.update(looking_for_work: true, lfw_at: Time.now)

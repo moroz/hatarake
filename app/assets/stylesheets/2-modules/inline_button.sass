@@ -1,0 +1,25 @@
+$inline-button-yes-bg: $primary-color
+$inline-button-no-bg: $dark-red
+
+.inline-button
+  display: inline
+  padding: 0.35em 0.6em
+  margin-left: 0.3em
+  background-color: #ccc
+  border-radius: 3px
+  &:link, &:visited, &:hover, &:active, &:focus
+    color: #fff
+  &:hover, &:active
+    text-decoration: none
+
+.inline-button--yes
+  background-color: $inline-button-yes-bg
+
+  &:hover, &:active
+    background-color: darken($inline-button-yes-bg, 5%)
+
+.inline-button--no
+  background-color: $inline-button-no-bg
+
+  &:hover, &:active
+    background-color: darken($inline-button-no-bg, 5%)

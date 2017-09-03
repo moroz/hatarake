@@ -19,7 +19,7 @@
   .offer-block{id: dom_id(offer)}
     = link_to offer.title, offer, class: "offer-block__title #{offer.title.length > 23 ? 'offer-block__title--long' : nil}"
     %span.offer-block__location= offer.location.short_format
-    = link_to offer do
+    = link_to offer, title: offer.company.name do
       %span.offer-block__company= avatar_for(offer.company, size: :thumb)
     = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
 
