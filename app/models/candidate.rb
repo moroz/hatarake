@@ -26,8 +26,7 @@ class Candidate < User
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
 
   def should_confirm_lfw?
-    profile.present? && looking_for_work && (!profile.lfw_at || profile.lfw_at < 2.days.ago)
-    true # Only for testing
+    profile.present? && (!profile.lfw_at || profile.lfw_at < 2.days.ago)
   end
 
   def self.with_profession(profession)

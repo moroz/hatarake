@@ -58,6 +58,7 @@ class CandidatesController < ApplicationController
     else
       @candidate.profile.update(looking_for_work: false, lfw_at: nil)
     end
+    session[:lfw_confirmed] = true
     respond_to do |f|
       f.html { redirect_to profile_path, notice: t('candidates.confirm_lfw.notice') }
       f.js
