@@ -5,6 +5,7 @@ en:
       personal_data: "I agree to make my personal data available for purposes of marketing of the www.injobs.pl Website's own services. The data of Users and Service Recipients, contained in the profile, will be made available to potential employers (users of the Website) to enable for email or phone contact and to the partners of InJobs.pl via e-mail."
     confirm_lfw:
       question: "Are you still looking for work?"
+      question_not_lfw: "Are you looking for work?"
 
   candidates:
     registrations:

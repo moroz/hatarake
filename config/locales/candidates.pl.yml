@@ -5,6 +5,7 @@ pl:
       personal_data: "Wyrażam zgodę na udostępnianie moich danych osobowych w celu marketingu usług własnych serwisu www.injobs.pl. Zawarte w Profilu dane Użytkownika i Usługobiorcy będą udostępniane potencjalnym pracodawcom (zarejestrowanym w Serwisie) w celu kontaktu telefonicznego oraz e-mail lub za pośrednictwem e-mail partnerom Serwisu."
     confirm_lfw:
       question: "Czy nadal poszukujesz pracy?"
+      question_not_lfw: "Czy poszukujesz pracy?"
 
   candidates:
     registrations:

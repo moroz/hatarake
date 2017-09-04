@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
   before_action :find_candidate
   helper_method :candidate
+  after_action :set_lfw_at, only: :update
   authorize_resource
 
   def index
@@ -66,6 +67,14 @@ class CandidatesController < ApplicationController
   end
 
   private
+
+  def set_lfw_at
+    if @candidate.profile.looking_for_work?
+      @candidate.profile.touch(:lfw_at) 
+    else
+      @candidate.update_column(:lfw_at, nil)
+    end
+  end
 
   def set_professions_list
     @professions = Profession.all

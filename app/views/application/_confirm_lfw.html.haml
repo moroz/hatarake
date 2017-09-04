@@ -1,6 +1,9 @@
-- if can?(:confirm_lfw, current_candidate) && current_candidate.should_confirm_lfw? && !session.key?(:lfw_confirmed)
+- if can?(:confirm_lfw, current_candidate) && current_candidate.should_confirm_lfw? && !session[:lfw_confirmed]
   .callout.alert-callout-subtle.primary.confirm_lfw_callout#confirm_lfw_callout
-    = t('.question')
+    - if current_candidate.looking_for_work
+      = t('.question')
+    - else
+      = t('.question_not_lfw')
     .confirm_lfw_buttons
       = link_to t('true'), confirm_lfw_path(v: '1'), class: 'inline-button inline-button--yes', method: :post, remote: true
       = link_to t('false'), confirm_lfw_path(v: '0'), class: 'inline-button inline-button--no', method: :post, remote: true
