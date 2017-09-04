@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Candidate saves offer" do
+RSpec.xdescribe "Candidate saves offer" do
   let(:candidate) { FactoryGirl.create(:candidate) }
   let!(:offer) { FactoryGirl.create(:offer, :published) }
 

@@ -44,7 +44,7 @@ RSpec.describe "Candidate registration" do
       context "submitted with correct attributes" do
         it "saves candidate's profile data" do
           within '.candidate_profile_looking_for_work' do
-            choose "Yes"
+            choose I18n.t('true')
           end
           within '.candidate_profile_sex' do
             choose I18n.t('sexes.long.male')
