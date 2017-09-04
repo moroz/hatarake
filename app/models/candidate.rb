@@ -27,6 +27,7 @@ class Candidate < User
 
   def should_confirm_lfw?
     profile.present? && looking_for_work && profile.lfw_at < 2.days.ago
+    true # Only for testing
   end
 
   def self.with_profession(profession)

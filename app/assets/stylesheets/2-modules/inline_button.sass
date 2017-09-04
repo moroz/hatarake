@@ -1,6 +1,20 @@
 $inline-button-yes-bg: $primary-color
 $inline-button-no-bg: $dark-red
 
+.confirm_lfw_callout
+  text-align: center
+
+  @include breakpoint(400px)
+    text-align: left
+
+  .confirm_lfw_buttons
+    @include breakpoint(400px)
+      display: inline-block
+      margin-top: 0
+
+    margin-top: 0.8rem
+    text-align: center
+
 .inline-button
   display: inline
   padding: 0.35em 0.6em
