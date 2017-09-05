@@ -17,11 +17,12 @@
   - else
     - url = new_user_session_path(return_to: new_offer_application_path(offer_id: offer))
   .offer-block{id: dom_id(offer)}
-    = link_to offer.title, offer, class: "offer-block__title #{offer.title.length > 23 ? 'offer-block__title--long' : nil}"
-    %span.offer-block__location= offer.location.short_format
-    = link_to offer, title: offer.company.name do
-      %span.offer-block__company= avatar_for(offer.company, size: :thumb)
-    = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
+    .offer-block__content
+      = link_to offer.title, offer, class: "offer-block__title"
+      %span.offer-block__location= offer.location.short_format
+      = link_to offer, title: offer.company.name do
+        %span.offer-block__company= avatar_for(offer.company, size: :thumb)
+      = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
 
 - elsif defined?(dashboard) && dashboard
   %tr.offer-tr{id: dom_id(offer)}
