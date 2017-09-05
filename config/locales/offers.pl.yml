@@ -71,6 +71,8 @@ pl:
       breadcrumb: Wypromuj ofertę
       heading: 'Wypromuj ofertę: '
       select_method: "Wybierz metodę promowania:"
+      offer_is_featured: "Oferta jest promowana:"
+      offer_not_featured: "Oferta nie jest promowana."
       methods:
         category: "Promowanie na stronie kategorii"
         homepage: "Promowanie na stronie głównej"

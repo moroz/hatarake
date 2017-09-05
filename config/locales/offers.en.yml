@@ -89,6 +89,8 @@ en:
       heading: "Promote offer: "
       breadcrumb: "Promote offer"
       select_method: "Select promotion method:"
+      offer_is_featured: "This offer is featured:"
+      offer_not_featured: "This offer is not featured."
       methods:
         category: Highlight on category page
         homepage: Highlight on homepage

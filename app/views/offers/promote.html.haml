@@ -1,12 +1,16 @@
 - breadcrumb :promote_offer
 %h1= t('.heading') + offer.title
 
-- if offer.category_featured?
-  Category
-- if offer.highlighted?
-  Highlighted
-- if offer.homepage_featured?
-  Homepage
+- if offer.is_featured?
+  = t('.offer_is_featured')
+  - if offer.highlighted?
+    %span.offer_dashboard__highlighted= t('offers.my_offers.highlighted')
+  - if offer.category_featured?
+    %span.offer_dashboard__category_featured= t('offers.my_offers.category_featured')
+  - if offer.homepage_featured?
+    %span.offer_dashboard__homepage_featured= t('offers.my_offers.homepage_featured')
+- else
+  = t('.offer_not_featured')
 
 = form_with url: promote_offer_path(offer), method: :patch do |f|
   .input-group
