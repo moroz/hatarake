@@ -41,6 +41,7 @@ class OffersController < ApplicationController
       redirect_to promote_offer_path(offer), alert: t("offers.promote.balance_insufficient")
       return
     end
+    offer.publish unless offer.published?
     if offer.add_premium(params[:method])
       redirect_to my_offers_path, notice: t("offers.promote.success.#{method}")
     else

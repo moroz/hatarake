@@ -2,6 +2,7 @@
   - if can? :update, offer
     = link_to fa_icon('pencil', text: t('actions.edit')), edit_offer_path(offer), class: "button small"
     - if offer.published?
+      = link_to fa_icon('star', text: t('actions.promote')), promote_offer_path(offer), class: 'button small dark-green-bg'
       = link_to fa_icon('undo', text: t('actions.unpublish')), unpublish_offer_path(offer), method: :patch, class: "button small dark-red-bg"
     - else
       = link_to fa_icon('space-shuttle', text: t('actions.publish')), publish_offer_path(offer), method: :patch, class: "button small dark-green-bg"
