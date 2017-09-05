@@ -1,26 +1,15 @@
 %footer.footer
   .row
-    .columns.medium-4
+    .columns.medium-8
       %p
         %strong InJobs.pl sp. z o.o.<br>
-        ul. Piotra Sobczyńskiego 2c<br>
-        11-700 Mrągowo#{current_locale == :pl ? '' : ', Poland'}
-    .columns.medium-4
-      %p
-        %strong= t('.email_contact')
-        %br
-        info&#64;injobs&#46;pl<br>
-        biuro&#64;injobs&#46;pl
-      %p
-        %strong= t('.phone_contact')
-        %br
-        +48 (89) 762-74-48
-
-    .columns.medium-4
       %nav.footer__menu
+        = link_to t('nav.contact'), contact_path
+        &bull;
         = link_to t('.subscribe'), new_newsletter_subscription_path
-        %br
+        &bull;
         = link_to t('.unsubscribe'), unsubscribe_path
-        %br
+        &bull;
         = link_to t('.terms_of_service'), regulamin_path
+    .columns.medium-4
       = render 'payments'

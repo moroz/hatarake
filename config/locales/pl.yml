@@ -39,6 +39,7 @@ pl:
     companies: Pracodawcy
     dashboard: Panel
     premium: Premium
+    contact: Kontakt
 
   registrations:
     candidate_heading: "Zarejestruj się jako kandydat"
