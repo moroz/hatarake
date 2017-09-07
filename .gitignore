@@ -22,3 +22,6 @@ public/assets/**
 
 # Ignore application configuration
 /config/application.yml
+
+# SimpleCov test coverage reports
+coverage
