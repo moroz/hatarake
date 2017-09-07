@@ -4,5 +4,18 @@
     = f.text_field :views
     = f.label :title
     = f.text_field :title
+    .callout.primary
+      Daty spokojnie można pisać w dowolnym formacie, z czasem lub bez. Testowałem na formatach:
+      &bdquo;#{Time.now.strftime("%d.%m.%Y")}&rdquo;,
+      &bdquo;#{Time.now.strftime("%d %B %Y")}&rdquo;,
+      a także
+      &bdquo;2 april 2005 21:37 CEST&rdquo;.
+      (Ale po polsku nie ogarnie)
+    = f.label :featured_until, "Data ważności promowania na stronie głównej:"
+    = f.text_field :featured_until
+    = f.label :category_until, "Data ważności promowania na stronie kategorii:"
+    = f.text_field :category_until
+    = f.label :highlight_until, "Data ważności wyróżnienia kolorem:"
+    = f.text_field :highlight_until
     = render 'pagedown', f: f, no_simple_form: true
     = f.actions

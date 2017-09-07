@@ -18,6 +18,7 @@
 
 @include foundation-grid;
 @include foundation-forms;
+@include foundation-callout;
 
 @import "variables";
 @import 'pagedown';
@@ -33,7 +34,7 @@
 
 body {
   font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 105%;
+  font-size: 115%;
 }
 
 #header {
