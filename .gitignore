@@ -25,3 +25,4 @@ public/assets/**
 
 # SimpleCov test coverage reports
 coverage
+tags
