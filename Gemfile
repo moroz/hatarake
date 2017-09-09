@@ -49,6 +49,10 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'valid_url'
 
+group :production, :staging do
+  gem 'rollbar'
+end
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug', platform: :mri
