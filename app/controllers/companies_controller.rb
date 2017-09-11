@@ -18,6 +18,7 @@ class CompaniesController < ApplicationController
   def edit
     if company_signed_in?
       @company = current_company
+      @company.build_location
     else
       redirect_to root_path
     end
@@ -82,8 +83,14 @@ class CompaniesController < ApplicationController
   end
 
   def set_province_list
-    if @company.location.country.present?
+    if @company.location.try(:country).present?
       @provinces = @company.location.country.provinces.local_order
+    else
+      @provinces = Province.where(country_id: Country::POLAND_ID).local_order
     end
+  end
+
+  def set_country_list
+    @countries = Country.local_order
   end
 end

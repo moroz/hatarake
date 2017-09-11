@@ -74,6 +74,7 @@ pl:
       premium_employer_valid_until: "Twój pakiet Promowanego Pracodawcy jest ważny do %{dt}."
       premium_services_available: "Na Twoim koncie są do wykorzystania następujące usługi:"
       not_premium_employer: Tylko Promowani Pracodawcy mogą przeglądać profile kandydatów.
+      become_premium: Zostań Promowanym Pracodawcą
       candidates: Profile kandydatów
       manage_offers: Zarządzaj ofertami
       order_premium: Zamów usługi Premium
