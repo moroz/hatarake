@@ -6,7 +6,7 @@ class BlogPostsController < ApplicationController
   invisible_captcha only: [:create, :update]
 
   def index
-    @blog_posts = company.blog_posts
+    @blog_posts = company.blog_posts.order(updated_at: :desc)
   end
 
   def show
