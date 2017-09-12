@@ -30,6 +30,10 @@ pl:
       your_rating: "Twoja ocena: %{user_rating}."
       not_voted_yet: "Jeszcze nie oceniłeś tej firmy."
 
+    registrations:
+      new:
+        heading: "Rejestracja konta pracodawcy"
+
     menu:
       description: O nas
       blog: Blog firmowy

@@ -33,6 +33,10 @@ en:
       blog: "Company blog"
       offers: "Job offers"
 
+    registrations:
+      new:
+        heading: "Sign up for a company account"
+
   dashboards:
     company_dashboard:
       heading: Company dashboard
@@ -71,6 +75,9 @@ en:
     attributes:
       blog_post:
         body: ""
+
+      company:
+        name: 'Company name'
 
     models:
       blog_post: post

@@ -1,12 +1,12 @@
 .padding-for-small
-  %h2 Sign up for company account
+  %h2= t('.heading')
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { 'data-behavior' => 'turbolinks-form' }) do |f|
     = render partial: 'errors', locals: { object: f.object }
     .form-inputs
       = f.input :email, required: true, autofocus: true
       = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
       = f.input :password_confirmation, required: true
-      = f.input :name, label: "Company name"
+      = f.input :name
     .form-actions
       = render 'acceptance_fields', f: f
       = f.submit t('registrations.step1.submit'), class: 'button primary expanded', id: 'submit_button', disabled: true
