@@ -207,3 +207,4 @@ pl:
     breadcrumb: Aplikacje
     new:
       heading: "Aplikacja na stanowisko"
+      candidate_profile_blank: "Musisz uzupełnić swoje dane, aby wysyłać aplikacje za pośrednictwem InJobs.pl."

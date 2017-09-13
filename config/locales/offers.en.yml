@@ -184,6 +184,7 @@ en:
     breadcrumb: Applications
     new:
       heading: "Apply for offer: %{title}"
+      candidate_profile_blank: "Please fill in your data to apply for jobs via InJobs.pl."
 
   activerecord:
     models:
