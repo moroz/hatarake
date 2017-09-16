@@ -34,6 +34,8 @@ en:
       skills: Skills
       contact_data: Contact data
       about: About me
+      phone: 'Phone number:'
+      contact_email: 'E-mail address:'
       education: "Education"
       work_experience: "Work experience"
       edit_skills: "Edit your skills..."

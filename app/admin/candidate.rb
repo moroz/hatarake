@@ -2,7 +2,7 @@ ActiveAdmin.register Candidate do
   menu label: 'Candidates'
 
   action_item :show, only: :show do
-    link_to "View on Website", candidate_path(candidate), target: '_blank'
+    link_to "View on Website", candidate_path(candidate), target: '_blank' unless candidate.profile.blank?
   end
 
   order_by(:full_name) do |order_clause|
