@@ -1,0 +1,6 @@
+:plain
+  $('#companies').append('#{j render companies, tile: true}');
+- if companies.last_page?
+  $('.pagination').remove();
+- else
+  $('.pagination').html('#{j paginate companies}');
