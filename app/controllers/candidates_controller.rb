@@ -54,12 +54,9 @@ class CandidatesController < ApplicationController
 
   def confirm_lfw
     return if current_candidate.profile.blank?
-    if params[:v].blank? || params[:v].to_i == 1
-      @candidate.profile.update(looking_for_work: true, lfw_at: Time.now)
-    else
-      @candidate.profile.update(looking_for_work: false, lfw_at: nil)
-    end
-    session[:lfw_confirmed] = true
+    # confirm or disable, depending on what the user clicked
+    lfw = params[:v].blank? || params[:v].to_i == 1
+    @candidate.confirm_lfw(lfw)
     respond_to do |f|
       f.html { redirect_to profile_path, notice: t('candidates.confirm_lfw.notice') }
       f.js

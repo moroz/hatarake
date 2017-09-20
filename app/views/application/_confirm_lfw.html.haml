@@ -1,4 +1,4 @@
-- if logged_in? && current_user.is_a?(Candidate) && !session[:lfw_confirmed]
+- if candidate_signed_in? && current_candidate.should_confirm_lfw?
   .callout.alert-callout-subtle.primary.confirm_lfw_callout#confirm_lfw_callout
     - if current_candidate.looking_for_work
       = t('.question')
