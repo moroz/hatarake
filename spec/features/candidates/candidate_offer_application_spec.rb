@@ -4,12 +4,12 @@ RSpec.describe 'Candidate offer application' do
   let(:candidate) { FactoryGirl.create(:candidate) }
   let!(:offer) { FactoryGirl.create(:offer, :published) }
 
-  before do
-    login_as(candidate, scope: :candidate)
-    visit jobs_abroad_path
-  end
-
   describe 'applying for offer through application form' do
+    before do
+      login_as(candidate, scope: :candidate)
+      visit jobs_abroad_path
+    end
+
     it "creates an Application" do
       expect(page).to have_selector(dom_id(offer))
       click_link offer.title
@@ -20,6 +20,23 @@ RSpec.describe 'Candidate offer application' do
       expect { submit_form }.to change { Application.count }
 
       expect(ActionMailer::Base.deliveries).not_to be_empty
+    end
+  end
+
+  context "when Candidate has no CandidateProfile" do
+    let(:no_profile_candidate) { FactoryGirl.create(:candidate, :only_login_credentials) }
+
+    before do
+      login_as(no_profile_candidate, scope: :candidate)
+      visit new_offer_application_path(offer)
+    end
+
+    it "redirects to edit_candidate_profile_path" do
+      expect(current_path).to eq(edit_candidate_profile_path)
+    end
+
+    it "displays an alert callout" do
+      expect(page).to have_selector('.alert')
     end
   end
 end
