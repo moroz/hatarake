@@ -66,8 +66,8 @@ RSpec.describe "Candidate confirms looking for work" do
         expect(candidate.profile.looking_for_work).to be_falsy
       end
 
-      it 'sets lfw_at to nil' do
-        expect(candidate.profile.lfw_at).to be_nil
+      it 'touches lfw_at' do
+        expect(candidate.profile.lfw_at).to be_within(1.second).of(Time.now)
       end
     end
   end

@@ -19,10 +19,6 @@ class CandidateProfile < ApplicationRecord
   end
 
   def confirm_lfw(looking_for_work = true)
-    if looking_for_work
-      update(looking_for_work: true, lfw_at: Time.now)
-    else
-      update(looking_for_work: false, lfw_at: nil)
-    end
+    update(looking_for_work: looking_for_work, lfw_at: Time.now)
   end
 end
