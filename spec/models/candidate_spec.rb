@@ -58,4 +58,65 @@ RSpec.describe Candidate, type: :model do
     end
   end
 
+  describe "#should_confirm_lfw?" do
+    context 'when profile is not present' do
+      it 'returns false' do
+        no_profile_candidate = FactoryGirl.create(:candidate, :only_login_credentials)
+        expect(no_profile_candidate.should_confirm_lfw?).to be false
+      end
+    end
+
+    context 'when profile is present' do
+      def create_candidate(looking_for_work, lfw_at)
+        profile = FactoryGirl.create(:candidate_profile, looking_for_work: looking_for_work, lfw_at: lfw_at)
+        FactoryGirl.create(:candidate, profile: profile)
+      end
+
+      context 'when candidate is looking for work' do
+        context 'when lfw_at is blank' do
+          it 'returns true' do
+            candidate = create_candidate(true, nil)
+            expect(candidate.should_confirm_lfw?).to be true
+          end
+        end
+
+        context 'when lfw_at is < 2 days ago' do
+          it 'returns true' do
+            candidate = create_candidate(true, 1.week.ago)
+            expect(candidate.should_confirm_lfw?).to be true
+          end
+        end
+
+        context 'when lfw_at is > 2 days ago' do
+          it 'returns false' do
+            candidate = create_candidate(true, 1.hour.ago)
+            expect(candidate.should_confirm_lfw?).to be false
+          end
+        end
+      end
+
+      context 'when candidate is not looking for work' do
+        context 'when lfw_at is blank' do
+          it 'returns true' do
+            candidate = create_candidate(false, nil)
+            expect(candidate.should_confirm_lfw?).to be true
+          end
+        end
+
+        context 'when lfw_at is < 2 days ago' do
+          it 'returns true' do
+            candidate = create_candidate(false, 1.week.ago)
+            expect(candidate.should_confirm_lfw?).to be true
+          end
+        end
+
+        context 'when lfw_at is > 2 days ago' do
+          it 'returns false' do
+            candidate = create_candidate(false, 1.hour.ago)
+            expect(candidate.should_confirm_lfw?).to be false
+          end
+        end
+      end
+    end
+  end
 end
