@@ -3,7 +3,11 @@
     .company.company-row.company-row--tile{id: dom_id(company)}
       .company-row__left
         = avatar_for company, size: 'thumb'
-      .company-row__center
+      - if company.name.present? && company.name.length > 32
+        - containerClasses = 'company-row__center company-row__center--no-margin-top'
+      - else
+        - containerClasses = 'company-row__center'
+      %div{class: containerClasses}
         - if company.name.present? && company.name.length > 25
           - classNames = 'company-row__name company-row__name--long'
         - else
