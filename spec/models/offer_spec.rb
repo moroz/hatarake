@@ -77,10 +77,72 @@ RSpec.describe Offer, type: :model do
     end
   end
 
+  describe "make_hourly_wage" do
+    let(:offer) { FactoryGirl.build(:offer) }
+
+    context 'upon save' do
+      context "when given numbers with point as decimal separator" do
+        before(:each) do
+          offer.hourly_wage_min = '10.5'
+          offer.hourly_wage_max = '13.0'
+          offer.save
+        end
+
+        describe "makes a correct range" do
+          it 'lower bound is correct' do
+            expect(offer.hourly_wage.first).to eq(10.5)
+          end
+
+          it 'upper bound is correct' do
+            expect(offer.hourly_wage.last).to eq(13)
+          end
+        end
+      end
+
+      context 'when given numbers with comma as decimal separator' do
+        before(:each) do
+          offer.hourly_wage_min = '17,5'
+          offer.hourly_wage_max = '19,5'
+          offer.save
+        end
+
+        describe "makes a correct range" do
+          it 'lower bound is correct' do
+            expect(offer.hourly_wage.first).to eq(17.5)
+          end
+
+          it 'upper bound is correct' do
+            expect(offer.hourly_wage.last).to eq(19.5)
+          end
+        end
+      end
+
+      context 'when min > max' do
+        context 'upon save' do
+          describe 'swaps min and max' do
+            before(:each) do
+              offer.hourly_wage_min = '25.5'
+              offer.hourly_wage_max = '15.5'
+              offer.save
+            end
+
+            it 'lower bound is correct' do
+              expect(offer.hourly_wage.first).to eq(15.5)
+            end
+
+            it 'upper bound is correct' do
+              expect(offer.hourly_wage.last).to eq(25.5)
+            end
+          end
+        end
+      end
+    end
+  end
+
   describe "publishing" do
     context "when created" do
       let(:offer) { FactoryGirl.create(:offer) }
-      
+
       it "published is false" do
         expect(offer).not_to be_published
       end
@@ -94,7 +156,7 @@ RSpec.describe Offer, type: :model do
       before do
         offer.publish
       end
-      
+
       it "published is true" do
         expect(offer).to be_published
       end
