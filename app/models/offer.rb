@@ -203,7 +203,7 @@ class Offer < ApplicationRecord
 
   def make_range(min, max)
     if min.present? && max.present?
-      [min, max].each { |n| n.sub!(',', '.') } if [min, max].any? { |n| n.is_a?(String) }
+      [min, max].each { |n| n.sub!(',', '.') if n.is_a?(String) }
       if min.to_d > max.to_d
         min, max = max, min
       end
