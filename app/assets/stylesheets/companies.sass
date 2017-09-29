@@ -23,20 +23,22 @@ $avatar-margin: 8px
 
 .candidate-row__center, .company-row__center
   width: calc(100% - #{$left-width + $avatar-margin})
-  padding-top: 1rem
+  //padding-top: 1rem
   float: left
 
 .company-row--tile, .candidate-row
-  @include breakpoint(large)
-    width: 33.3%
-    float: left
-    padding: 0
-    margin: 0.5rem 0 0 0
+  padding: 0
+  margin: 0.5rem 0 0 0
 
 .candidate-row__name, .company-row__name
+  @extend .break_words
   color: #333
   font-weight: 400
+  margin-top: 1rem
   font-size: 1.25rem
+
+.company-row__name--long
+  font-size: 1.1rem
 
 $company-avatar-size: 105px
 $offer-count-width: rem-calc(120)

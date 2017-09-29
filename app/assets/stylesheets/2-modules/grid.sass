@@ -1,0 +1,7 @@
+.three-column-grid
+  display: grid
+  align-items: center
+  @include breakpoint(medium)
+    grid:
+      template-columns: repeat(3, 1fr)
+      row-gap: 10px

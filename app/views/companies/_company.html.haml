@@ -4,7 +4,11 @@
       .company-row__left
         = avatar_for company, size: 'thumb'
       .company-row__center
-        %span.company-row__name= company.name
+        - if company.name.present? && company.name.length > 25
+          - classNames = 'company-row__name company-row__name--long'
+        - else
+          - classNames = 'company-row__name'
+        %span{class: classNames}= company.name
         %br/
         %small
           = t('plurals.offer', count: @offer_counts[company.id] || 0)
