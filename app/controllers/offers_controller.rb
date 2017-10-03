@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   expose :offer, scope: -> { Offer.friendly }
   helper_method :offers
 
-  before_action :set_country_list, only: [:new, :edit, :abroad]
+  before_action :set_country_list, only: %i[new edit abroad]
   before_action :set_province_list, only: [:new, :edit, :poland]
   authorize_resource except: [:index, :poland, :abroad]
 
@@ -28,8 +28,7 @@ class OffersController < ApplicationController
     @offers = current_company.offers.with_associations
   end
 
-  def promote
-  end
+  def promote; end
 
   def add_premium
     method = params[:method]
