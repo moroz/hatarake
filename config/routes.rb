@@ -6,6 +6,11 @@ Rails.application.routes.draw do
         patch :mark_paid
       end
     end
+    resources :avatars do
+      member do
+        get :crop
+      end
+    end
   end
   ActiveAdmin.routes(self)
   get '/jobs/abroad', to: 'offers#abroad'

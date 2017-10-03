@@ -1,12 +1,27 @@
+:ruby
+  if current_user.is_a?(AdminUser)
+    user = company
+    if user.avatar.present?
+      form_action = admin_avatar_path(id: company.to_param)
+    else
+      form_action = admin_avatars_path
+    end
+  else
+    user = current_user
+    form_action = avatar_path
+  end
+
 .row.padding-for-small
-  - if current_user.avatar.present?
+  - if user.avatar.present?
     .medium-6.columns.text-center
       %h3= t('avatars.new.current_avatar')
-      = avatar_for current_user, class: 'float-center'
+      = avatar_for user, class: 'float-center'
   .medium-6.columns
     .callout
-      = form_for @avatar, url: avatar_path, remote: true, authenticity_token: true do |f|
+      = form_with model: avatar, url: form_action, remote: true, authenticity_token: true do |f|
         = error_messages_for f.object
+        - unless current_user == user
+          = f.hidden_field :owner_id, value: company.id
         - allowed_formats = Avatar::EXTENSIONS.map(&:upcase).join(', ')
         .field
           = t('file_allowed_formats', formats: allowed_formats)

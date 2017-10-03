@@ -1,8 +1,17 @@
+:ruby
+  if current_user.is_a?(AdminUser)
+    skip_url = admin_company_path(company)
+    form_action = admin_avatar_path(id: company.to_param)
+  else
+    skip_url = profile_path
+    form_action = avatar_path
+  end
+
 %h1= t('.heading')
-= link_to t('.skip'), profile_path, class: 'button alert expanded'
+= link_to t('.skip'), skip_url, class: 'button alert expanded'
 = image_tag avatar.file_url, id: "cropbox"
-= form_for avatar do |f|
+= form_with model: avatar, url: form_action do |f|
   - %w[x y w h].each do |attribute|
-    = f.hidden_field "crop_#{attribute}"
+    = f.hidden_field "crop_#{attribute}", id: "avatar_crop_#{attribute}"
   .actions
     = f.submit t('.submit'), class: 'button success expanded'

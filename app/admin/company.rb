@@ -27,6 +27,14 @@ ActiveAdmin.register Company do
 
   show do |company|
     attributes_table do
+      row :avatar do
+        content = if company.avatar.present?
+          avatar_for company
+        else
+          "No avatar<br/>".html_safe
+        end
+        content + (link_to "Edit avatar", new_admin_avatar_path(id: company.to_param), class: 'button')
+      end
       row :email
       row :name
       row :created_at
