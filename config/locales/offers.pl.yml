@@ -144,12 +144,12 @@ pl:
 
     poland_search:
       province: Województwo
-      placeholder: "Fragment tytułu, lokalizacja..."
+      placeholder: "Fragment tytułu, zawodu, lokalizacji..."
       submit: Szukaj
 
     basic_search:
       submit: "Szukaj"
-      placeholder: "Fragment tytułu, lokalizacja..."
+      placeholder: "Fragment tytułu, zawodu, lokalizacji..."
       heading: "Wyszukiwanie ofert"
 
     edit:
