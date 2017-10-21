@@ -25,6 +25,8 @@ class Offer < ApplicationRecord
   before_validation :make_hourly_wage
   after_validation :add_http_to_application_url
 
+  after_create :publish
+
   default_scope { order('published_at DESC') }
 
   scope :featured_first, -> { reorder('(category_until > NOW())', 'published_at DESC') }
@@ -106,7 +108,7 @@ class Offer < ApplicationRecord
   end
 
   def publish
-    self.update(published: true, published_at: Time.now)
+    update(published: true, published_at: Time.now)
   end
 
   def candidate_applied?(candidate)
@@ -118,7 +120,7 @@ class Offer < ApplicationRecord
   end
 
   def applicant_count_in_words
-    I18n.t('offers.applicant_count', count: self.applications.count)
+    I18n.t('offers.applicant_count', count: applications.count)
   end
 
   def application_email
@@ -126,7 +128,7 @@ class Offer < ApplicationRecord
   end
 
   def self.publish_all
-    where(published: false).update_all(published:true, published_at: Time.now)
+    where(published: false).update_all(published: true, published_at: Time.now)
   end
 
   def add_premium(type)
@@ -139,7 +141,7 @@ class Offer < ApplicationRecord
     column = premium_column(type)
     offers = where("#{column} is null or #{column} < now()")
     count = offers.count
-    return true if count == 0
+    return true if count.zero?
     return false unless offers.first.company.reduce_premium_services(type, count)
     offers.update_all(column => (Time.now + 1.month))
     true
@@ -151,18 +153,18 @@ class Offer < ApplicationRecord
 
   def self.search_by_query(query)
     q = "%#{sanitize_sql_like(query)}%"
-    joins(:location).where("title ILIKE :q OR locations.city ILIKE :q", q: q)
+    joins(:location).where('title ILIKE :q OR locations.city ILIKE :q', q: q)
   end
 
   def unpublish
-    self.update(published: false)
+    update(published: false)
   end
 
   def full_location
     if province.present?
       [location, province.local_name, country.local_name].join(', ')
     else
-      country.local_name + " – " + I18n.t('offers.provinces.blank')
+      country.local_name + ' – ' + I18n.t('offers.provinces.blank')
     end
   end
 
@@ -170,13 +172,13 @@ class Offer < ApplicationRecord
 
   def name_for_slug
     [
-      [:title, self.location.city],
-      [:title, self.location.city, SecureRandom.hex(3)]
+      [:title, location.city],
+      [:title, location.city, SecureRandom.hex(3)]
     ]
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || title_changed? || location_id_changed?
+    slug.blank? || will_save_change_to_attribute?(:title) || will_save_change_to_attribute?(:location_id)
   end
 
   def make_salary_range
