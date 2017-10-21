@@ -18,7 +18,6 @@ FactoryGirl.define do
     end
 
     trait :published do
-      published true
       published_at { 1.day.ago }
     end
 
@@ -47,7 +46,6 @@ FactoryGirl.define do
     end
 
     trait :unpublished do
-      published false
       published_at nil
     end
 

@@ -37,11 +37,11 @@ class Offer < ApplicationRecord
 
   scope :with_associations, -> { includes(company: [:avatar], location: [:country, :province]) }
 
-  scope :published, -> { where('published') }
-  
+  scope :published, -> { where('published_at IS NOT NULL') }
+
   def self.published_or_owned_by(company)
     if company.present?
-      where('published = ? OR company_id = ?', true, company.id).by_publishing_date_nulls_first
+      where('published_at IS NOT NULL OR company_id = ?', company.id).by_publishing_date_nulls_first
     else
       published
     end
@@ -95,6 +95,10 @@ class Offer < ApplicationRecord
     end
   end
 
+  def published?
+    !!published_at
+  end
+
   def highlighted?
     highlight_until && highlight_until > Time.now
   end
@@ -108,7 +112,7 @@ class Offer < ApplicationRecord
   end
 
   def publish
-    update(published: true, published_at: Time.now)
+    update(published_at: Time.now)
   end
 
   def candidate_applied?(candidate)
@@ -128,7 +132,7 @@ class Offer < ApplicationRecord
   end
 
   def self.publish_all
-    where(published: false).update_all(published: true, published_at: Time.now)
+    where('published_at IS NULL').update_all(published_at: Time.now)
   end
 
   def add_premium(type)
@@ -148,7 +152,7 @@ class Offer < ApplicationRecord
   end
 
   def self.unpublish_all
-    where(published: true).update_all(published: false)
+    published.update_all(published_at: nil)
   end
 
   def self.search_by_query(query)
@@ -157,7 +161,7 @@ class Offer < ApplicationRecord
   end
 
   def unpublish
-    update(published: false)
+    update(published_at: nil)
   end
 
   def full_location
