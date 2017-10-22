@@ -22,8 +22,8 @@ gem 'faker', '~> 1.7.3'
 gem 'file_validators'
 gem 'fog-aws'
 gem 'font-awesome-rails'
-gem 'foundation_emails'
 gem 'foundation-rails', '= 6.3.1.0'
+gem 'foundation_emails'
 gem 'friendly_id'
 gem 'gretel'
 gem 'haml', '~> 5.0.0'
@@ -49,6 +49,11 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'valid_url'
 
+# For XSLX exports
+gem 'axlsx', '2.1.0.pre'
+gem 'axlsx_rails'
+gem 'rubyzip', '~> 1.1.0'
+
 group :production, :staging do
   gem 'rollbar'
 end
@@ -62,8 +67,8 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'simplecov', require: false
   gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 group :development do
