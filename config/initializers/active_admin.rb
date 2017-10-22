@@ -228,6 +228,7 @@ ActiveAdmin.setup do |config|
     admin.build_menu :default do |menu|
       menu.add label: "Orders", url: "/admin/orders"
     end
+    admin.download_links = false
   end
 
   # == Download Links

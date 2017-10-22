@@ -13,6 +13,14 @@ ActiveAdmin.register Company do
     link_to "View on Website", companies_path, target: '_blank'
   end
 
+  action_item :index, only: :index do
+    link_to 'Download as XLSX', candidates_path(format: 'xlsx')
+  end
+
+  action_item :mailing_list, only: :index do
+    link_to "Mailing list", mailing_list_companies_path, target: '_blank'
+  end
+
   index title: "Companies" do
     column :premium do |company|
       company.premium?
