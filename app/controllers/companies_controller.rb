@@ -11,8 +11,20 @@ class CompaniesController < ApplicationController
   }
   authorize_resource
   def index
-
+    respond_to do |f|
+      f.html
+      f.js
+      f.xlsx do
+        @companies = Company.order('LOWER(name) COLLATE "pl_PL"')
+        render xlsx: 'index', filename: Time.zone.now.strftime('%Y%m%d_pracodawcy.xlsx')
+      end
+    end
     @offer_counts = companies.offer_counts
+  end
+
+  def mailing_list
+    @collection = Company.order('LOWER(name) COLLATE "pl_PL"') 
+    render 'mailing_list.txt', layout: false, content_type: 'text/plain'
   end
 
   def edit

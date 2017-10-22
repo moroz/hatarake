@@ -84,8 +84,11 @@ Rails.application.routes.draw do
   devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
-  resources :candidates
-  resources :companies, only: [:show,:index,:update,:edit] do
+  resources :candidates do
+    get :mailing_list, on: :collection
+  end
+  resources :companies, only: [:show, :index, :update, :edit] do
+    get :mailing_list, on: :collection
     resources :offers, only: [:index], controller: 'company_offers'
     resources :blog_posts, only: [:show, :index, :create, :new], path: '/blog'
     member do

@@ -8,6 +8,7 @@ class Ability
     else
       cannot :manage, :all
       can :read, [Company, Offer]
+      cannot :mailing_list, [Company, Candidate]
       can :manage, Attachment, owner_id: user.id
       cannot :manage, Order
       if user.company?

@@ -1,0 +1,6 @@
+:ruby
+  emails = @collection.map do |elem|
+    name = elem.display_name.gsub(/[\,<>]/, '')
+    "#{name} <#{elem.email}>".squish
+  end.join(",\n")
+!= emails

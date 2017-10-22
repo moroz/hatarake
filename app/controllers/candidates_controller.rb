@@ -29,6 +29,11 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def mailing_list
+    @collection = Candidate.order_by_full_name
+    render 'mailing_list.txt', layout: false, content_type: 'text/plain'
+  end
+
   def show
     redirect_to edit_candidate_profile_path if @candidate.profile.nil?
   end
