@@ -18,12 +18,25 @@ ActiveAdmin.register Offer do
   action_item :index, only: :index do
     link_to "View on Website", offers_path, target: '_blank'
   end
-#
+
+  member_action :increment_views, method: :patch do
+    by = params[:by] || 10
+    resource.increment!(:views, by)
+    respond_to do |f|
+      f.js
+    end
+  end
   index do
     column :title { |o| link_to o.title, admin_offer_path(o) }
     column :company
     column :published_at
-    column :views
+    column :views do |o|
+      str = content_tag :span, id: "offer_#{o.id}_views" do
+        o.views.to_s
+      end
+      str += link_to '+10', increment_views_admin_offer_path(id: o.id), method: :patch, class: 'increment-button', remote: true
+      raw(str)
+    end
     actions
   end
 

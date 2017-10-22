@@ -1,4 +1,4 @@
-- if current_company.premium_services.present?
+- if current_company&.premium_services.present?
   - hash = current_company.premium_services
   %span.offer_dashboard__premium_services_remaining
     %strong= t('offers.my_offers.remaining')

@@ -19,6 +19,7 @@
 @include foundation-grid;
 @include foundation-forms;
 @include foundation-callout;
+@include foundation-button;
 
 @import "variables";
 @import 'pagedown';
@@ -52,4 +53,24 @@ body {
 form textarea {
   font-family: "Inconsolata", monospace;
   font-size: 1rem;
+}
+
+$increment-button-bg: #388E3C;
+a.increment-button {
+  background-color: $increment-button-bg;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.1em 0.25em;
+  margin-left: 0.5em;
+  border-radius: 2px;
+  transition: 0.2s background-color ease-in;
+  &:link, &:visited {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:hover, &:active {
+    background-color: lighten($increment-button-bg, 6%);
+  }
 }
