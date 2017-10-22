@@ -1,0 +1,10 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: 'Kandydaci') do |sheet|
+  wb.styles do |s|
+    bold = s.add_style b: true
+    sheet.add_row ['Imię i nazwisko', 'Adres e-mail'], style: bold
+    @candidates.each do |candidate|
+      sheet.add_row [candidate.display_name.squish, candidate.email]
+    end
+  end
+end

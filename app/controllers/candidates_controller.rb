@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CandidatesController < ApplicationController
   before_action :find_candidate
   helper_method :candidate
@@ -5,26 +7,30 @@ class CandidatesController < ApplicationController
   authorize_resource
 
   def index
-    @candidates = Candidate.joins(:profile).includes(:profile, :profession, :avatar).page(params[:page])
-    if params[:o].present?
-      order_candidates(params[:o])
+    respond_to do |format|
+      format.html do
+        @candidates = Candidate.joins(:profile).includes(:profile, :profession, :avatar).page(params[:page])
+        order_candidates(params[:o]) if params[:o].present?
+        if params[:prid].present?
+          @candidates = @candidates.where(profession_id: params[:prid])
+        end
+        if params[:sex].present?
+          @candidates = @candidates.where('candidate_profiles.sex = ?', params[:sex])
+        end
+        @candidates = @candidates.search(params[:q]) if params[:q].present?
+        set_professions_list
+      end
+      format.xlsx do
+        raise CanCan::AccessDenied unless admin_user_signed_in?
+        @candidates = Candidate.order_by_full_name
+        filename = Time.zone.now.strftime('%Y%m%d_kandydaci.xlsx')
+        render xlsx: 'index', filename: filename
+      end
     end
-    if params[:prid].present?
-      @candidates = @candidates.where(profession_id: params[:prid])
-    end
-    if params[:sex].present?
-      @candidates = @candidates.where('candidate_profiles.sex = ?', params[:sex])
-    end
-    if params[:q].present?
-      @candidates = @candidates.search(params[:q])
-    end
-    set_professions_list
   end
 
   def show
-    if @candidate.profile.nil?
-      redirect_to edit_candidate_profile_path
-    end
+    redirect_to edit_candidate_profile_path if @candidate.profile.nil?
   end
 
   def update

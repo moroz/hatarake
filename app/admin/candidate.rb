@@ -5,6 +5,10 @@ ActiveAdmin.register Candidate do
     link_to "View on Website", candidate_path(candidate), target: '_blank' unless candidate.profile.blank?
   end
 
+  action_item :index, only: :index do
+    link_to 'Download as XLSX', candidates_path(format: 'xlsx')
+  end
+
   order_by(:full_name) do |order_clause|
     binding.pry
     'first_name ' + order_clause.order + ', last_name ' + order_clause.order

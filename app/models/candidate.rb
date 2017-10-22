@@ -41,6 +41,10 @@ class Candidate < User
     end
   end
 
+  def self.order_by_full_name
+    joins(:profile).order('LOWER(candidate_profiles.first_name) COLLATE "pl_PL", LOWER(candidate_profiles.last_name) COLLATE "pl_PL"')
+  end
+
   def self.search(term)
     joins(:profile).where("concat(candidate_profiles.first_name, ' ', candidate_profiles.last_name) ILIKE :q",
                           q: "%#{sanitize_sql_like(term)}%")
