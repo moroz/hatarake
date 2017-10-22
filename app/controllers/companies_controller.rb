@@ -15,7 +15,7 @@ class CompaniesController < ApplicationController
       f.html
       f.js
       f.xlsx do
-        @companies = Company.order('LOWER(name) COLLATE "pl_PL"')
+        @companies = Company.order('LOWER(name)')
         render xlsx: 'index', filename: Time.zone.now.strftime('%Y%m%d_pracodawcy.xlsx')
       end
     end
@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
   end
 
   def mailing_list
-    @collection = Company.order('LOWER(name) COLLATE "pl_PL"') 
+    @collection = Company.order('LOWER(name)') 
     render 'mailing_list.txt', layout: false, content_type: 'text/plain'
   end
 

@@ -42,7 +42,7 @@ class Candidate < User
   end
 
   def self.order_by_full_name
-    joins(:profile).order('LOWER(candidate_profiles.first_name) COLLATE "pl_PL", LOWER(candidate_profiles.last_name) COLLATE "pl_PL"')
+    joins(:profile).order('LOWER(candidate_profiles.first_name), LOWER(candidate_profiles.last_name)')
   end
 
   def self.search(term)
