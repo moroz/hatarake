@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 class Offer < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:slugged, :finders, :history]
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
-  belongs_to :company, required: true
+  belongs_to :company, required: true, counter_cache: :published_offers_count
   belongs_to :location, required: true
   accepts_nested_attributes_for :location
 
   has_many :applications, dependent: :destroy
   has_many :candidates, through: :applications
-  has_many :offer_saves, dependent: :destroy, class_name: "OfferSave"
+  has_many :offer_saves, dependent: :destroy, class_name: 'OfferSave'
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
-  CURRENCIES = %w( pln eur chf usd gbp czk nok sek dkk )
+  CURRENCIES = %w(pln eur chf usd gbp czk nok sek dkk).freeze
   validates :currency, inclusion: { in: CURRENCIES }
   validates :application_url, url: true, if: :apply_on_website?
 
@@ -26,12 +28,13 @@ class Offer < ApplicationRecord
   after_validation :add_http_to_application_url
 
   after_create :publish
+  after_create :update_counter_cache
 
   default_scope { order('published_at DESC') }
 
   scope :featured_first, -> { reorder('(category_until > NOW())', 'published_at DESC') }
   scope :by_publishing_date_nulls_first, -> { reorder('published_at DESC NULLS FIRST') }
-  
+
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
 
@@ -234,4 +237,9 @@ class Offer < ApplicationRecord
     end
   end
 
+  def update_counter_cache
+    count = Offer.where('published_at IS NOT NULL AND company_id = ?', company_id).count
+    return if company.published_offers_count == count
+    company.update_column(published_offers_count: company.published_offers.count)
+  end
 end

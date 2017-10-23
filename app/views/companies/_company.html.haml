@@ -15,7 +15,7 @@
         %span{class: classNames}= company.name
         %br/
         %small
-          = t('plurals.offer', count: @offer_counts[company.id] || 0)
+          = t('plurals.offer', count: company.published_offers_count || 0)
           |
           = fa_icon('star-o', text: "%.2f" % (company.avg_rating))
 

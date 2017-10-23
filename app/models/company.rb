@@ -7,6 +7,10 @@ class Company < User
   belongs_to :location
   validates :name, uniqueness: true, presence: true 
 
+  def self.published_offers
+    offers.where('published_at IS NOT NULL')
+  end
+
   accepts_nested_attributes_for :location
 
   extend FriendlyId
@@ -39,14 +43,14 @@ class Company < User
   end
 
   def recent_offers(limit = 5)
-    self.offers.order(:published_at).limit(limit)
+    offers.order(:published_at).limit(limit)
   end
 
   # If this query proves hard on the database, please consider
   # adding an offers_count to the database.
   def self.offer_counts
-    self.unscoped.joins(:offers).select('users.id AS id, count(offers.id) AS count').group('users.id').reduce({}) do |acc, c|
-      acc.merge({c.id => c.count})
+    unscoped.joins(:offers).select('users.id AS id, count(offers.id) AS count').group('users.id').reduce({}) do |acc, c|
+      acc.merge(c.id => c.count)
     end
   end
 end

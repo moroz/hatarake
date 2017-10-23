@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CompaniesController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
   helper_method :company
@@ -5,11 +7,14 @@ class CompaniesController < ApplicationController
   before_action :set_province_list, only: :edit
   before_action :set_country_list, only: :edit
 
-  expose :companies {
-    Company.includes(:avatar).with_avg_rating.
-      page(params[:page])
-  }
+  expose :companies do
+    Company.includes(:avatar).with_avg_rating
+           .order('premium_until DESC NULLS LAST, published_offers_count DESC')
+           .page(params[:page])
+  end
+
   authorize_resource
+
   def index
     respond_to do |f|
       f.html
@@ -19,7 +24,6 @@ class CompaniesController < ApplicationController
         render xlsx: 'index', filename: Time.zone.now.strftime('%Y%m%d_pracodawcy.xlsx')
       end
     end
-    @offer_counts = companies.offer_counts
   end
 
   def mailing_list
