@@ -127,6 +127,20 @@ RSpec.describe Company do
     end
   end
 
+  describe 'published_offers_count' do
+    context 'upon creation' do
+      it '== 0'
+    end
+
+    context 'when a new offer is created and published' do
+      it '== 1'
+    end
+
+    context 'when a previously published offer is unpublished' do
+      it 'decrements'
+    end
+  end
+
   #describe "scopes" do
     #let!(:company) { FactoryGirl.create(:company) }
     
