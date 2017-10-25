@@ -29,6 +29,7 @@ class Offer < ApplicationRecord
 
   after_create :publish
   after_create :update_counter_cache
+  after_update :update_counter_cache
 
   default_scope { order('published_at DESC') }
 

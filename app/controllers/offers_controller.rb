@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OffersController < ApplicationController
   expose :offer, scope: -> { Offer.friendly }
   helper_method :offers
