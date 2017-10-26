@@ -1,6 +1,9 @@
 :plain
-  $('#companies').append('#{j render companies, tile: true}');
-- if companies.last_page?
+- if @companies.first_page? && params[:q].present?
+  $('#companies').html('#{j render @companies, tile: true}');
+- else
+  $('#companies').append('#{j render @companies, tile: true}');
+- if @companies.last_page?
   $('.pagination').remove();
 - else
-  $('.pagination').html('#{j paginate companies}');
+  $('.pagination').html('#{j paginate @companies}');

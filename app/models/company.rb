@@ -22,6 +22,10 @@ class Company < User
 
   has_reputation :avg_rating, source: :user, aggregated_by: :average
 
+  def self.search(query)
+    where('name ILIKE ?', '%' + sanitize_sql_like(query) + '%')
+  end
+
   def display_name
     name
   end
