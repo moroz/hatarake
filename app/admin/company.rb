@@ -1,5 +1,5 @@
 ActiveAdmin.register Company do
-  permit_params :name, :description, :website
+  permit_params :name, :description, :website, :email, :contact_email
   menu label: "Companies"
 
   scope :all
