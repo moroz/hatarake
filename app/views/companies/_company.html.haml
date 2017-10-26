@@ -16,9 +16,6 @@
         %br/
         %small
           = t('plurals.offer', count: company.published_offers_count || 0)
-          - if company.respond_to?(:avg_rating)
-            |
-            = fa_icon('star-o', text: "%.2f" % (company.avg_rating))
 
 -else
   .card.company__header#company_info

@@ -11,11 +11,11 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.includes(:avatar).page(params[:page])
-    if params[:q].present?
-      @companies = @companies.order('LOWER(name)').search(params[:q])
-    else
-      @companies = @companies.order('premium_until DESC NULLS LAST, published_offers_count DESC').with_avg_rating
-    end
+    @companies = if params[:q].present?
+                   @companies.order('LOWER(name)').search(params[:q])
+                 else
+                   @companies.order('premium_until DESC NULLS LAST, published_offers_count DESC')
+                 end
     respond_to do |f|
       f.html
       f.js

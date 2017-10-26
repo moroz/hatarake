@@ -1,5 +1,8 @@
 - breadcrumb :companies
-%h1= t('.heading')
+- content_for :banner do
+  .row
+    %h2.text-center= t('.heading')
+    = render 'search'
 
 .three-column-grid#companies= render @companies, tile: true
 

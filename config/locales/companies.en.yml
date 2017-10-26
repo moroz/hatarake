@@ -22,6 +22,10 @@ en:
     index:
       heading: Company profiles
 
+    search:
+      placeholder: 'Search by company name...'
+      submit: 'Go!'
+
     vote:
       success: 'Thank you for voting!'
       avg_rating: "Average rating: %{rating} from %{ratings} votes."

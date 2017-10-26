@@ -24,6 +24,10 @@ pl:
     index:
       heading: Profile pracodawców
 
+    search:
+      placeholder: 'Wpisz fragment nazwy...'
+      submit: 'Szukaj'
+
     vote:
       success: 'Dziękujemy za oddanie głosu.'
       avg_rating: "Średnia ocena: %{rating} z %{ratings} głosów."
