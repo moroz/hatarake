@@ -4,7 +4,7 @@
 = paginate @candidates
 
 - @candidates.to_a.each_slice(3) do |slice|
-  .candidate-grid
+  .three-column-grid
     - slice.each do |candidate|
       = render candidate
 
