@@ -93,4 +93,9 @@ module ApplicationHelper
       text.to_s + "😞"
     end
   end
+
+  def highlight_substring(text, substring)
+    reg = Regexp.new("(" + Regexp.escape(substring) + ")", Regexp::IGNORECASE)
+    raw text.gsub(reg, '<span class="search_hl">\1</span>')
+  end
 end

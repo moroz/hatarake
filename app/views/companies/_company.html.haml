@@ -12,7 +12,9 @@
           - classNames = 'company-row__name company-row__name--long'
         - else
           - classNames = 'company-row__name'
-        %span{class: classNames}= company.name
+        - name = company.name
+        - name = highlight_substring(name, params[:q]) if params[:q].present?
+        %span{class: classNames}= name
         %br/
         %small
           = t('plurals.offer', count: company.published_offers_count || 0)
