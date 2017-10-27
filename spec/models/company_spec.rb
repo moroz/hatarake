@@ -129,15 +129,27 @@ RSpec.describe Company do
 
   describe 'published_offers_count' do
     context 'upon creation' do
-      it '== 0'
+      it '== 0' do
+        expect(company.published_offers_count).to eq 0
+      end
     end
 
     context 'when a new offer is created and published' do
-      it '== 1'
+      it '== 1' do
+        FactoryGirl.create(:offer, :published, company: company)
+        expect(company.published_offers_count).to eq 1
+      end
     end
 
     context 'when a previously published offer is unpublished' do
-      it 'decrements'
+      before do
+        FactoryGirl.create_list(:offer, 2, :published, company: company)
+      end
+
+      it 'decrements' do
+        company.offers.last.unpublish
+        expect(company.published_offers_count).to eq 1
+      end
     end
   end
 

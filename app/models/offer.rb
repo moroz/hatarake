@@ -5,7 +5,7 @@ class Offer < ApplicationRecord
   friendly_id :name_for_slug, use: [:slugged, :finders, :history]
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
-  belongs_to :company, required: true, counter_cache: :published_offers_count
+  belongs_to :company, required: true
   belongs_to :location, required: true
   accepts_nested_attributes_for :location
 
@@ -241,6 +241,6 @@ class Offer < ApplicationRecord
   def update_counter_cache
     count = Offer.where('published_at IS NOT NULL AND company_id = ?', company_id).count
     return if company.published_offers_count == count
-    company.update_column(published_offers_count: company.published_offers.count)
+    company.update_column(:published_offers_count, count)
   end
 end
