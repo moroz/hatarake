@@ -57,9 +57,7 @@ class OffersController < ApplicationController
     @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params)
     @total_count = @offers.count
     ids = nil
-    if search_params_present? && @total_count < 50
-      ids = @offers.pluck(:id)
-    end
+    ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
     @offers = @offers.page(params[:page])
     @feat_count = @offers.category_featured.count
     set_search_description

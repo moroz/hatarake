@@ -14,7 +14,7 @@ class Offer < ApplicationRecord
   has_many :offer_saves, dependent: :destroy, class_name: 'OfferSave'
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
-  CURRENCIES = %w(pln eur chf usd gbp czk nok sek dkk).freeze
+  CURRENCIES = %w[pln eur chf usd gbp czk nok sek dkk].freeze
   validates :currency, inclusion: { in: CURRENCIES }
   validates :application_url, url: true, if: :apply_on_website?
 
@@ -27,9 +27,9 @@ class Offer < ApplicationRecord
   before_validation :make_hourly_wage
   after_validation :add_http_to_application_url
 
-  after_create :publish
-  after_create :update_counter_cache
-  after_update :update_counter_cache
+  before_create :publish
+  after_create :update_offers_count_on_company
+  after_update :update_offers_count_on_company
 
   default_scope { order('published_at DESC') }
 
@@ -116,7 +116,8 @@ class Offer < ApplicationRecord
   end
 
   def publish
-    update(published_at: Time.now)
+    self.published_at = Time.now
+    save if persisted?
   end
 
   def candidate_applied?(candidate)
@@ -238,7 +239,7 @@ class Offer < ApplicationRecord
     end
   end
 
-  def update_counter_cache
+  def update_offers_count_on_company
     count = Offer.where('published_at IS NOT NULL AND company_id = ?', company_id).count
     return if company.published_offers_count == count
     company.update_column(:published_offers_count, count)
