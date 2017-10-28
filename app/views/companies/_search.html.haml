@@ -2,18 +2,16 @@
   = form_for companies_path, method: :get, remote: true do |f|
     .row
       .input-group
-        = f.text_field :q, name: 'q', id: "company_search_q", placeholder: t('.placeholder'), class: 'input-group-field'
+        = f.text_field :q, name: 'q', id: "company_search_q", placeholder: t('.placeholder'), class: 'input-group-field', autocomplete: 'off', autofocus: !mobile?
         .input-group-button
           = f.button t('.submit'), class: 'button primary expanded search_bar__right'
 
 :javascript
-  var formSubmitTimeout;
-  document.getElementById('company_search_q').addEventListener('keyup', e => {
-    clearTimeout(formSubmitTimeout);
-    if (e.target.value === '') {
-      document.getElementById('companies').innerHTML = '';
-    }
-    formSubmitTimeout = setTimeout(function() {
-      $(this).trigger('submit.rails');
-    }.bind(e.target.form), 500);
+  var previousVal = '';
+  document.getElementById('company_search_q').addEventListener('input', e => {
+    let currentVal = e.target.value;
+    if (currentVal == previousVal) return;
+    previousVal = currentVal;
+    if (!currentVal) document.getElementById('companies').innerHTML = '';
+    $(e.target.form).trigger('submit.rails');
   });

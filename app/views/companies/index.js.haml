@@ -3,7 +3,5 @@
   $('#companies').html('#{j render @companies, tile: true}');
 - else
   $('#companies').append('#{j render @companies, tile: true}');
-- if @companies.last_page?
-  $('.pagination').remove();
-- else
-  $('.pagination').html('#{j paginate @companies}');
+- pagination = @companies.last_page? ? '' : j(paginate @companies)
+document.getElementById('pagination').innerHTML = '#{pagination}';
