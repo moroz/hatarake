@@ -5,6 +5,8 @@ class Avatar < Attachment
 
   belongs_to :owner, class_name: 'User'
 
+  before_save :update_vector
+
   MAX_SIZE = 5242880 # 5 megabytes
   EXTENSIONS = %w[jpg jpeg gif png svg].freeze
 
@@ -18,7 +20,15 @@ class Avatar < Attachment
     file.recreate_versions! if crop_x.present?
   end
 
-  def croppable
+  def croppable?
     !vector?
+  end
+
+  private
+
+  def update_vector
+    if file.present? && file_changed?
+      self.vector = (file.content_type == 'image/svg+xml')
+    end
   end
 end

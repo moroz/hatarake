@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ProfileHelper
   def avatar_for(user, options = {})
     size = options[:size] || :normal
@@ -12,7 +14,8 @@ module ProfileHelper
           end
     content_tag :div, class: "avatar avatar--#{size} #{options[:class]}", style: "background-image: url(#{url})" do
       if options[:editable]
-        link_to fa_icon('pencil'), edit_avatar_path, title: I18n.t('candidates.show.change_picture'), class: 'avatar__edit_button'
+        link_to fa_icon('pencil'), edit_avatar_path, title: I18n.t('candidates.show.change_picture'),
+                                                     class: 'avatar__edit_button'
       end
     end
   end

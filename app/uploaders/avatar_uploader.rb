@@ -3,8 +3,6 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  after :store, :set_vector
-
   storage :fog
 
   def store_dir
