@@ -43,6 +43,7 @@ en:
       payment_currency: 'I would like to pay in:'
       billing_address: "Billing address:"
       submit: Submit
+      are_you_polish_taxpayer: "Are you a Polish VAT payer?"
 
     payment:
       redirection_notice: "Please sign in to proceed."
@@ -83,3 +84,6 @@ en:
         house_no: 'House no.'
         apt_no: 'Apt no.'
         city: 'City'
+
+      order:
+        polish_taxpayer: Polish taxpayer

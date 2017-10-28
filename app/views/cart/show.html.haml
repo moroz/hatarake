@@ -1,7 +1,4 @@
 %h1.cart__heading= fa_icon 'shopping-cart', text: t('.heading')
-
 = t('.item_count', count: @cart_items.count)
-
 = link_to t('.back_to_shop'), premium_path, class: 'button float-right'
-
 = render @cart

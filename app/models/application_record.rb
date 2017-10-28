@@ -11,4 +11,10 @@ class ApplicationRecord < ActiveRecord::Base
       url
     end
   end
+
+  private
+
+  def net_price(price)
+    (price * (100.0/(100+23))).round(2)
+  end
 end

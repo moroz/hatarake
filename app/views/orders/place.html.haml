@@ -3,12 +3,21 @@
 = render @cart, view_format: :order
 
 = simple_form_for @order do |f|
-  %fieldset.fieldset#order-currency
-    %legend= t('.payment_currency')
-    = f.radio_button :currency, 'pln', checked: true
-    = f.label :currency, 'PLN', value: 'PLN'
-    = f.radio_button :currency, 'eur'
-    = f.label :currency, 'Euro', value: 'Euro'
+  .row
+    .medium-6.columns
+      %fieldset.fieldset#order-currency
+        %legend= t('.payment_currency')
+        = f.radio_button :currency, 'pln', checked: true
+        = f.label :currency, 'PLN', value: 'PLN'
+        = f.radio_button :currency, 'eur'
+        = f.label :currency, 'Euro', value: 'Euro'
+    .medium-6.columns
+      %fieldset.fieldset#order-polish-taxpayer
+        %legend= t('.are_you_polish_taxpayer')
+        = f.radio_button :polish_taxpayer, true, checked: true
+        = f.label :polish_taxpayer, t('true'), value: true
+        = f.radio_button :polish_taxpayer, false
+        = f.label :polish_taxpayer, t('false'), value: false
 
   = f.check_box 'invoice'#, false
   = f.label 'invoice', t('.i_need_invoice')

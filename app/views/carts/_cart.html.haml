@@ -2,6 +2,12 @@
   .order
     - if cart.cart_items.present?
       %table
+        %thead
+          %tr
+            %td Qty
+            %td Product
+            %td Net
+            %td Incl. Tax
         %tbody
           - cart.cart_items.each do |item|
             %tr
@@ -15,14 +21,21 @@
                   \=
                   = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
               - else
+                %td= item.subtotal_to_s(net: true)
                 %td= item.subtotal_to_s
         %tfoot
           %tr
-            %td.text-right{colspan: 3}
-              = t('.total')
+            %td
+            %td= t('.total')
+
             %td
               - if defined?(currency)
-                = sprintf("%.2f %s", cart.total(currency), currency.upcase)
+                = cart.total_to_s(net: true, currency: currency)
+              - else
+                = cart.total_to_s(net: true)
+            %td
+              - if defined?(currency)
+                = cart.total_to_s(currency: currency)
               - else
                 = cart.total_to_s
 

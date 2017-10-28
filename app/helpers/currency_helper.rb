@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 module CurrencyHelper
   VAT_RATE = 23
+
   def net_price(price)
-    (price * (100.0/(100+VAT_RATE))).round(2)
+    (price * (100.0/(100 + VAT_RATE))).round(2)
   end
 
   def low_bound(range)
@@ -11,7 +14,6 @@ module CurrencyHelper
   def high_bound(range)
     pretty_currency_value range.try(:last)
   end
-
 
   def readable_currency_range(range, currency)
     return I18n.t('currency_range.none') if range.blank?

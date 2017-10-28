@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Cart < ApplicationRecord
   has_one :order
   belongs_to :user
@@ -8,16 +10,16 @@ class Cart < ApplicationRecord
   def add_item(product, quantity = 1)
     product = Product.find_by(id: product.to_i) unless product.is_a?(Product)
     return false if !product || quantity.to_i < 1
-    if (item = self.cart_items.find_by(product_id: product))
+    if (item = cart_items.find_by(product_id: product))
       item.update(quantity: item.quantity + quantity.to_i)
     else
       cart_items.create(product: product, quantity: quantity)
     end
   end
 
-  def finalize!(currency = 'pln')
+  def finalize!
     raise if finalized?
-    self.update!(finalized_at: Time.now, finalized: true)
+    update!(finalized_at: Time.now, finalized: true)
   end
 
   def readonly?
@@ -28,19 +30,23 @@ class Cart < ApplicationRecord
     cart_items.empty?
   end
 
-  def total(currency = 'pln')
-    cart_items.reduce(0) do |counter, item|
-      counter + item.subtotal(currency)
-    end
+  def total(currency = 'pln', net: false)
+    amount = cart_items.joins(:product).sum("cart_items.quantity * products.price_#{currency}")
+    amount = net_price(amount) if net
+    amount
   end
 
   def to_h
     cart_items.reduce({}) do |acc, item|
-      acc.merge({item.product_id.to_s => item.quantity.to_s})
+      acc.merge(item.product_id.to_s => item.quantity.to_s)
     end
   end
 
-  def total_to_s
-    sprintf("%.2f PLN / %.2f&euro;", total, total(:eur)).html_safe
+  def total_to_s(net: false, currency: nil)
+    if currency
+      format('%.2f %s', total(currency), currency.to_s.upcase).html_safe
+    else
+      format('%.2f PLN / %.2f&euro;', total(net: net), total(:eur, net: net)).html_safe
+    end
   end
 end

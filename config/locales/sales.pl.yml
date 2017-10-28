@@ -1,4 +1,4 @@
-pl:
+p Are you a Polish taxpayer?l:
   products:
     index:
       add_to_cart: "Do Koszyka"
@@ -44,6 +44,7 @@ pl:
       payment_currency: 'Płacę w walucie:'
       billing_address: 'Dane do faktury:'
       submit: 'Wyślij'
+      are_you_polish_taxpayer: "Czy jesteś polskim płatnikiem VAT?"
 
     payment:
       payment_description: "InJobs.pl usługi premium"
@@ -85,3 +86,5 @@ pl:
         apt_no: Nr mieszkania
         city: Miejscowość
 
+      order:
+        polish_taxpayer: Polski płatnik VAT
