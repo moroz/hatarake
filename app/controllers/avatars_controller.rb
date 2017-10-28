@@ -6,11 +6,9 @@ class AvatarsController < ApplicationController
     @avatar = current_user.avatar || current_user.build_avatar
   end
 
-  def show
-  end
+  def show; end
 
-  def crop
-  end
+  def crop; end
 
   def create
     @avatar = current_user.build_avatar(avatar_params)
@@ -28,7 +26,6 @@ class AvatarsController < ApplicationController
     end
   end
 
-
   def update
     @avatar = current_user.avatar
     if @avatar.update(avatar_params)
@@ -39,7 +36,7 @@ class AvatarsController < ApplicationController
       end
     else
       respond_to do |f|
-        f.html { redirect_to edit_avatar_path, warning: "Failure" }
+        f.html { redirect_to edit_avatar_path, warning: 'Failure' }
         f.js { render_js_errors_for(@avatar) }
       end
     end

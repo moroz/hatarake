@@ -9,15 +9,15 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process :auto_orient
-  process resize_to_limit: [600, 600]
+  process :auto_orient, if: :croppable?
+  process resize_to_limit: [600, 600], if: :croppable?
 
-  version :thumb do
+  version :thumb, if: :croppable? do
     process :crop
     resize_to_fit(105, 105)
   end
 
-  version :normal do
+  version :normal, if: :croppable? do
     process :crop
     resize_to_fit(180, 180)
   end
@@ -42,5 +42,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.tap(&:auto_orient)
     end
+  end
+
+  private
+
+  def croppable?(new_file)
+    new_file.content_type != 'image/svg+xml'
   end
 end
