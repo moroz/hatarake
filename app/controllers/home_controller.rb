@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
   layout 'home'
 
   def home
     @offers = Offer.includes(:company, location: [:country]).homepage_featured.random_order.limit(20)
-    @companies = Company.includes(:avatar).featured.with_avg_rating.random_order
+    @companies = Company.includes(:avatar).featured.random_order
     @offer_counts = @companies.offer_counts
   end
 end

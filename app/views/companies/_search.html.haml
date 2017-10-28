@@ -6,4 +6,14 @@
         .input-group-button
           = f.button t('.submit'), class: 'button primary expanded search_bar__right'
 
-
+:javascript
+  var formSubmitTimeout;
+  document.getElementById('company_search_q').addEventListener('keyup', e => {
+    clearTimeout(formSubmitTimeout);
+    if (e.target.value === '') {
+      document.getElementById('companies').innerHTML = '';
+    }
+    formSubmitTimeout = setTimeout(function() {
+      $(this).trigger('submit.rails');
+    }.bind(e.target.form), 500);
+  });
