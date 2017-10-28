@@ -12,6 +12,9 @@
     let currentVal = e.target.value;
     if (currentVal == previousVal) return;
     previousVal = currentVal;
-    if (!currentVal) document.getElementById('companies').innerHTML = '';
+    if (!currentVal) {
+      document.getElementById('companies').innerHTML = '';
+      document.getElementById('pagination').innerHTML = '';
+    }
     $(e.target.form).trigger('submit.rails');
   });
