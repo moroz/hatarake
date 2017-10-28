@@ -77,6 +77,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'listen', '~> 3.0.5'
   gem 'meta_request'
+  gem 'rack-mini-profiler'
   gem 'seed_dump'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

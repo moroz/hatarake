@@ -302,6 +302,8 @@ GEM
     rack (2.0.3)
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
+    rack-mini-profiler (0.10.5)
+      rack (>= 1.2.0)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -490,6 +492,7 @@ DEPENDENCIES
   premailer-rails
   pry
   puma (~> 3.0)
+  rack-mini-profiler
   rails (~> 5.1)
   rails-i18n
   rails-jquery-autocomplete
