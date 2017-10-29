@@ -40,6 +40,10 @@ class Order < ApplicationRecord
     cart.to_h
   end
 
+  def net?
+    !polish_taxpayer
+  end
+
   private
 
   def clear_billing_address_attributes_if_no_invoice
@@ -51,6 +55,6 @@ class Order < ApplicationRecord
   end
 
   def set_total
-    self.total = cart.total(currency: currency, net: !polish_taxpayer)
+    self.total = cart.total(currency: currency, net: net?)
   end
 end

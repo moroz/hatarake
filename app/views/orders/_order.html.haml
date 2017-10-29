@@ -18,3 +18,8 @@
       %span.order__status.order__status--paid TAK
     - else
       %span.order__status.order__status--unpaid NIE
+  %td
+    - if order.net?
+      %span.order__status.order__status--unpaid netto
+    - else
+      %span brutto

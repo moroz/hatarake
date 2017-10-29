@@ -14,12 +14,14 @@
 
 - else
   %p= t('orders.show.invoice.false')
+
+%p= t("orders.show.polish_taxpayer.#{@order.polish_taxpayer}")
  
 - unless @order.paid?
   = link_to fa_icon('credit-card', text: 'Przejdź do płatności'), order_payment_path(@order), class: 'button'
   = link_to fa_icon('ban', text: 'Anuluj zamówienie'), @order, method: :delete, class: 'button dark-red-bg'
   - if admin_user_signed_in?
-    = link_to fa_icon('lock', text: "Oznacz jako opłacone"), mark_paid_admin_order_path(@order), class: 'button dark-green-bg'
+    = link_to fa_icon('lock', text: "Oznacz jako opłacone"), mark_paid_admin_order_path(@order), class: 'button dark-green-bg', method: :patch
 - else
   Zamówienie opłacone &mdash; nie możesz go zmodyfikować ani anulować.
 
