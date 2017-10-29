@@ -31,6 +31,7 @@ en:
       gross_subtotal: Subtotal incl. tax
       empty_cart: "Empty Cart"
       place: "Place order"
+      amount_due: "Amount due:"
 
   orders:
     index:
@@ -68,8 +69,8 @@ en:
         'true': "The purchaser needs an invoice."
         'false': "The purchaser does not need an invoice."
       polish_taxpayer:
-        'true': "The purchaser is a Polish taxpayer – 23% VAT is included in the total amount due."
-        'false': "The purchaser is not a Polish VAT payer – they pay according to the net price."
+        'true': "The purchaser is a Polish taxpayer — 23% VAT is included in the total amount due."
+        'false': "The purchaser is not a Polish VAT payer — they pay according to the net price."
       billing_address: "Billing address:"
 
     destroy:

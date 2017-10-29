@@ -32,6 +32,7 @@ pl:
       total: "Łącznie:"
       empty_cart: "Opróżnij Koszyk"
       place: "Złóż zamówienie"
+      amount_due: "Do zapłaty:"
   
   orders:
     index:
@@ -64,8 +65,8 @@ pl:
         'true': "Zamawiający prosi o wystawienie faktury VAT."
         'false': "Zamawiający nie potrzebuje faktury VAT."
       polish_taxpayer:
-        'true': "Zamawiający jest polskim płatnikiem VAT – do zamówienia doliczono 23% VAT."
-        'false': "Zamawiający nie jest polskim płatnikiem VAT – płaci według stawki netto."
+        'true': "Zamawiający jest polskim płatnikiem VAT — do zamówienia doliczono 23% VAT."
+        'false': "Zamawiający nie jest polskim płatnikiem VAT — płaci według stawki netto."
       billing_address: "Dane do faktury:"
 
     thank_you:

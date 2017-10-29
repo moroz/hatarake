@@ -5,7 +5,7 @@
 
 %h1= t('.heading', id: @order.id)
 
-= render @order.cart, currency: @order.currency, view_format: :order
+= render @order.cart, currency: @order.currency, view_format: :order, total: @order.total
 
 - if @order.invoice?
   %p= t('orders.show.invoice.true')
