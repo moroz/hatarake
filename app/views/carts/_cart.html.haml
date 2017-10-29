@@ -1,43 +1,32 @@
 - if defined?(view_format) && view_format == :order
   .order
     - if cart.cart_items.present?
+      - currency = nil unless defined?(currency)
       %table
         %thead
           %tr
-            %td Qty
-            %td Product
-            %td Net
-            %td Incl. Tax
+            %td= t('.quantity')
+            %td= t('.product_name')
+            %td= t('.unit_price')
+            %td= t('.net_subtotal')
+            %td= t('.gross')
         %tbody
           - cart.cart_items.each do |item|
             %tr
               %td!= item.quantity.to_s + " &times;".html_safe
               %td= item.product.local_name
-              - if defined?(currency)
-                %td.text-right
-                  &agrave;
-                  = sprintf("%.2f %s", item.unit_price(currency), currency.upcase)
-                %td
-                  \=
-                  = sprintf("%.2f %s", item.subtotal(currency), currency.upcase)
-              - else
-                %td= item.subtotal_to_s(net: true)
-                %td= item.subtotal_to_s
+              %td= item.unit_price_to_s(currency: currency)
+              %td= item.subtotal_to_s(net: true, currency: currency)
+              %td= item.subtotal_to_s(currency: currency)
         %tfoot
           %tr
             %td
-            %td= t('.total')
+            %td{colspan: 2}= t('.total')
 
             %td
-              - if defined?(currency)
-                = cart.total_to_s(net: true, currency: currency)
-              - else
-                = cart.total_to_s(net: true)
+              = cart.total_to_s(net: true, currency: currency)
             %td
-              - if defined?(currency)
-                = cart.total_to_s(currency: currency)
-              - else
-                = cart.total_to_s
+              = cart.total_to_s(currency: currency)
 
 - else
   .cart__table#cart

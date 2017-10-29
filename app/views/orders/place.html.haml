@@ -18,6 +18,8 @@
         = f.label :polish_taxpayer, t('true'), value: true
         = f.radio_button :polish_taxpayer, false
         = f.label :polish_taxpayer, t('false'), value: false
+        %p
+          %small= t('.polish_taxpayer_explanation')
 
   = f.check_box 'invoice'#, false
   = f.label 'invoice', t('.i_need_invoice')

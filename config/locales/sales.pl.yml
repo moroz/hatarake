@@ -1,4 +1,4 @@
-p Are you a Polish taxpayer?l:
+pl:
   products:
     index:
       add_to_cart: "Do Koszyka"
@@ -22,9 +22,13 @@ p Are you a Polish taxpayer?l:
   carts:
     cart:
       product_name: "Produkt"
-      unit_price: "Cena"
+      unit_price: "Cena jedn."
       quantity: "Liczba"
       subtotal: "Podsuma"
+      net_subtotal: "Podsuma netto"
+      gross_subtotal: "Podsuma brutto"
+      net: Netto
+      gross: Brutto
       total: "Łącznie:"
       empty_cart: "Opróżnij Koszyk"
       place: "Złóż zamówienie"
@@ -45,6 +49,7 @@ p Are you a Polish taxpayer?l:
       billing_address: 'Dane do faktury:'
       submit: 'Wyślij'
       are_you_polish_taxpayer: "Czy jesteś polskim płatnikiem VAT?"
+      polish_taxpayer_explanation: "Jeżeli płacisz w Polsce podatek VAT, zamówienie zostanie rozliczone według stawki brutto, tj. z doliczeniem 23% podatku VAT."
 
     payment:
       payment_description: "InJobs.pl usługi premium"

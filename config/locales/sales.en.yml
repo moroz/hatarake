@@ -21,10 +21,14 @@ en:
   carts:
     cart:
       product_name: "Product"
-      unit_price: "Price"
+      unit_price: "Unit price"
       subtotal: Subtotal
       quantity: "Qty"
       total: "Total:"
+      net: Net
+      gross: Incl. tax
+      net_subtotal: Net subtotal
+      gross_subtotal: Subtotal incl. tax
       empty_cart: "Empty Cart"
       place: "Place order"
 
@@ -44,6 +48,7 @@ en:
       billing_address: "Billing address:"
       submit: Submit
       are_you_polish_taxpayer: "Are you a Polish VAT payer?"
+      polish_taxpayer_explanation: "If you pay taxes in Poland, 23% Value Added Tax (VAT) will be included. Otherwise, you pay the net price."
 
     payment:
       redirection_notice: "Please sign in to proceed."

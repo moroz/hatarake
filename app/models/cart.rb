@@ -30,7 +30,7 @@ class Cart < ApplicationRecord
     cart_items.empty?
   end
 
-  def total(currency = 'pln', net: false)
+  def total(currency: 'pln', net: false)
     amount = cart_items.joins(:product).sum("cart_items.quantity * products.price_#{currency}")
     amount = net_price(amount) if net
     amount
@@ -44,9 +44,9 @@ class Cart < ApplicationRecord
 
   def total_to_s(net: false, currency: nil)
     if currency
-      format('%.2f %s', total(currency), currency.to_s.upcase).html_safe
+      format('%.2f %s', total(currency: currency, net: net), currency.to_s.upcase).html_safe
     else
-      format('%.2f PLN / %.2f&euro;', total(net: net), total(:eur, net: net)).html_safe
+      format('%.2f PLN / %.2f&euro;', total(net: net), total(currency: :eur, net: net)).html_safe
     end
   end
 end
