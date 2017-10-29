@@ -8,16 +8,14 @@ class CartItem < ApplicationRecord
   delegate :name, to: :product, prefix: true
 
   def unit_price(currency: 'pln')
-    product.price(currency || 'pln')
+    product.price(currency)
   end
 
   def unit_price_to_s(currency: 'pln')
     if currency
-      format('%.2f %s', unit_price(currency: currency), currency.to_s.upcase)
+      Prices.formatted_price(unit_price(currency: currency), currency)
     else
-      %w[pln eur].map do |cur|
-        format('%.2f %s', unit_price(currency: cur), cur.to_s.upcase)
-      end.join(' / ')
+      Prices.formatted_prices(unit_price(currency: :pln), unit_price(currency: :eur))
     end
   end
 
@@ -27,17 +25,15 @@ class CartItem < ApplicationRecord
 
   def subtotal(currency: 'pln', net: false)
     gross = quantity * product["price_#{currency}"]
-    return net_price(gross) if net
+    return Prices.net_price(gross) if net
     gross
   end
 
   def subtotal_to_s(net: false, currency: nil)
-    amount_pln = subtotal(net: net)
-    amount_pln = format('%.2f PLN', amount_pln)
-    amount_eur = subtotal(currency: :eur, net: net)
-    amount_eur = format('%.2f EUR', amount_eur)
-    return [amount_pln, amount_eur].join(' / ') unless currency
-    return amount_pln if currency.to_sym == :pln
-    amount_eur
+    if currency
+      Prices.formatted_price(subtotal(currency: currency), currency, net: net)
+    else
+      Prices.formatted_prices(subtotal(currency: :pln), subtotal(currency: :eur), net: net)
+    end
   end
 end

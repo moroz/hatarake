@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
 module CurrencyHelper
-  VAT_RATE = 23
-
-  def net_price(price)
-    (price * (100.0/(100 + VAT_RATE))).round(2)
-  end
-
   def low_bound(range)
     pretty_currency_value range.try(:first)
   end
@@ -48,5 +42,4 @@ module CurrencyHelper
     return if value.nil?
     value.infinite? ? nil : number_with_precision(value, separator: '.', strip_insignificant_zeros: true, precision: 2)
   end
-
 end

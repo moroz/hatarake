@@ -73,9 +73,8 @@ class OrdersController < ApplicationController
 
   def set_cart
     @cart = current_cart
-    if @cart.empty?
-      redirect_to cart_path, alert: t('orders.place.cart_is_empty')
-      return
-    end
+    return unless @cart.empty?
+    redirect_to cart_path, alert: t('orders.place.cart_is_empty')
+    nil
   end
 end
