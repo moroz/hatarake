@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Order < ApplicationRecord
   belongs_to :cart
   belongs_to :user, required: true
   has_one :billing_address
 
-  validates :currency, inclusion: { in: %w( pln eur ) }
+  validates :currency, inclusion: { in: %w[pln eur] }
   validates :unique_token, presence: true
 
   delegate :cart_items, to: :cart
@@ -23,10 +25,10 @@ class Order < ApplicationRecord
   end
 
   def paid!
-    raise RuntimeError.new("Order is already paid") if paid?
-    self.transaction do
-      self.update!(paid_at: Time.now)
-      user.add_premium_services(self.to_h)
+    raise 'Order is already paid' if paid?
+    transaction do
+      update!(paid_at: Time.now)
+      user.add_premium_services(to_h)
     end
   end
 
@@ -38,7 +40,7 @@ class Order < ApplicationRecord
     cart.to_h
   end
 
-  private 
+  private
 
   def clear_billing_address_attributes_if_no_invoice
     billing_address.destroy if !invoice && billing_address.present?
@@ -49,6 +51,6 @@ class Order < ApplicationRecord
   end
 
   def set_total
-    self.total = cart.total(currency)
+    self.total = cart.total(currency: currency, net: !polish_taxpayer)
   end
 end
