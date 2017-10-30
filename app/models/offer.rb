@@ -214,12 +214,11 @@ class Offer < ApplicationRecord
 
   def make_range(min, max)
     if min.present? && max.present?
-      [min, max].each { |n| n.sub!(',', '.') if n.is_a?(String) }
-      if min.to_d > max.to_d
-        min, max = max, min
-      end
+      min = min.sub(',', '.').gsub(/[^\d\.]/, '') if min.is_a?(String)
+      max = max.sub(',', '.').gsub(/[^\d\.]/, '') if max.is_a?(String)
+      min, max = max, min if min.to_d > max.to_d
     end
-    return "[#{min},#{max}]"
+    "[#{min},#{max}]"
   end
 
   def add_http_to_application_url
