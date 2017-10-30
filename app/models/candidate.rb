@@ -25,14 +25,14 @@ class Candidate < User
   delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :age, to: :profile
   delegate :confirm_lfw, to: :profile
 
-  scope :for_index, -> { joins(:profile).includes(:profile, :profession, :avatar) }
+  scope :for_index, -> { joins(:profile, :profession).includes(:profile, :profession, :avatar) }
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
 
   def self.scope_from_params(params)
     raise ArgumentError, 'params should be an instance of Hash' unless params.is_a?(Hash)
     scope = order_by_param(params[:o])
-    scope = scope.where(profession_id: params[:prid]) if params[:prid].present?
+    scope = scope.where('professions.name_en ILIKE ?', "%#{sanitize_sql_like(params[:prid])}%") if params[:prid].present?
     scope = scope.where('candidate_profiles.sex = ?', params[:sex]) if params[:sex].present?
     scope = scope.search(params[:q]) if params[:q].present?
     scope

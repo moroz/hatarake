@@ -8,7 +8,7 @@
             = f.text_field :q, value: params[:q], name: 'q'
           .medium-6.columns
             = f.label :prid, t('candidates.search.profession')
-            = f.select :prid, localized_collection(@professions, params[:prid] || 0, blank: t('candidates.search.any_profession')), {}, name: 'prid'
+            = f.text_field :prid, value: params[:prid], name: 'prid'
         .row
           .medium-6.columns
             = f.label :sex, t('candidates.search.sex')
