@@ -2,7 +2,10 @@
   .row
     .columns.medium-8
       %p
-        %strong InJobs.pl sp. z o.o.<br>
+        %nav.footer__menu
+          %strong InJobs.pl sp. z o.o.
+          &bull;
+          = link_to raw(t('.find_us_on_facebook') + fa_icon('facebook-official')), 'https://www.facebook.com/InJobspl-150172078909014/', target: '_blank'
       %nav.footer__menu
         = link_to t('nav.contact'), contact_path
         &bull;
