@@ -1,7 +1,7 @@
 .candidate_search
   .row
     .columns.medium-8.medium-offset-2
-      = form_for candidates_path, method: :get do |f|
+      = form_for candidates_path, method: :get, remote: true do |f|
         .row
           .medium-6.columns
             = f.label :q, t('candidates.search.name')

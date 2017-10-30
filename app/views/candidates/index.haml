@@ -1,11 +1,7 @@
 %h2.text-center= t('.title')
 
 = render 'search_form'
-= paginate @candidates
+.three-column-grid#candidates
+  = render @candidates
 
-- @candidates.to_a.each_slice(3) do |slice|
-  .three-column-grid
-    - slice.each do |candidate|
-      = render candidate
-
-= paginate @candidates
+#pagination= paginate @candidates

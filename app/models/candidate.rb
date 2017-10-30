@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Candidate < User
   devise :registerable
 
@@ -10,21 +12,31 @@ class Candidate < User
   has_many :applications
   has_many :resumes, foreign_key: 'owner_id', dependent: :destroy
   has_many :applied_offers, through: :applications, source: :offer
-  has_many :offer_saves, class_name: "OfferSave", foreign_key: :user_id
+  has_many :offer_saves, class_name: 'OfferSave', foreign_key: :user_id
   has_many :saved_offers, through: :offer_saves, source: :offer
   has_one :profile, class_name: 'CandidateProfile', foreign_key: :user_id, dependent: :destroy
 
   accepts_nested_attributes_for :profile
 
   belongs_to :profession
-  attr_accessor :profession_name
+  attr_writer :profession_name
   before_validation :find_profession
 
   delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :age, to: :profile
   delegate :confirm_lfw, to: :profile
 
+  scope :for_index, -> { joins(:profile).includes(:profile, :profession, :avatar) }
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
+
+  def self.scope_from_params(params)
+    raise ArgumentError, 'params should be an instance of Hash' unless params.is_a?(Hash)
+    scope = order_by_param(params[:o])
+    scope = scope.where(profession_id: params[:prid]) if params[:prid].present?
+    scope = scope.where('candidate_profiles.sex = ?', params[:sex]) if params[:sex].present?
+    scope = scope.search(params[:q]) if params[:q].present?
+    scope
+  end
 
   def should_confirm_lfw?
     profile.present? && (!profile.lfw_at || profile.lfw_at < 2.days.ago)
@@ -59,14 +71,20 @@ class Candidate < User
     I18n.t("sexes.short.#{sex}")
   end
 
+  def self.order_by_param(param)
+    return all if param.blank?
+    orders = ['candidate_profiles.first_name, candidate_profiles.last_name', 'candidate_profiles.birth_date',
+              'candidate_profiles.sex', 'professions.name_pl, professions.name_en', 'candidate_profiles.lfw_at']
+    order(orders[param.to_i])
+  end
+
   private
 
   def name_for_slug
     if profile.present?
       [:full_name,
        [:full_name, SecureRandom.hex(3)],
-       [:full_name, profile.age]
-      ] 
+       [:full_name, profile.age]]
     else
       SecureRandom.hex(8)
     end

@@ -8,18 +8,12 @@ class CandidatesController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html do
-        @candidates = Candidate.joins(:profile).includes(:profile, :profession, :avatar).page(params[:page])
-        order_candidates(params[:o]) if params[:o].present?
-        if params[:prid].present?
-          @candidates = @candidates.where(profession_id: params[:prid])
-        end
-        if params[:sex].present?
-          @candidates = @candidates.where('candidate_profiles.sex = ?', params[:sex])
-        end
-        @candidates = @candidates.search(params[:q]) if params[:q].present?
-        set_professions_list
+      unless request.format.xlsx?
+        @candidates = Candidate.for_index.page(params[:page])
+        @candidates = @candidates.scope_from_params(search_params)
       end
+      format.js
+      format.html { set_professions_list }
       format.xlsx do
         raise CanCan::AccessDenied unless admin_user_signed_in?
         @candidates = Candidate.order_by_full_name
@@ -88,11 +82,6 @@ class CandidatesController < ApplicationController
     @professions = Profession.all
   end
 
-  def order_candidates(param)
-    orders = ['candidate_profiles.first_name, candidate_profiles.last_name', 'candidate_profiles.birth_date', 'candidate_profiles.sex', 'professions.name_pl, professions.name_en', 'candidate_profiles.lfw_at']
-    @candidates = @candidates.order(orders[param.to_i])
-  end
-
   def candidate
     @candidate ||= find_candidate
   end
@@ -103,6 +92,10 @@ class CandidatesController < ApplicationController
     elsif logged_in?
       @candidate = current_candidate
     end
+  end
+
+  def search_params
+    params.permit(:o, :q, :prid, :sex).to_h
   end
 
   def candidate_params

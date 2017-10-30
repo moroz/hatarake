@@ -1,0 +1,7 @@
+- as_html = j(render @candidates, tile: true)
+- if @candidates.first_page?
+  document.getElementById('candidates').innerHTML = '#{as_html}';
+- else
+  $('#candidates').append('#{as_html}');
+- pagination = @candidates.last_page? ? '' : j(paginate @candidates)
+document.getElementById('pagination').innerHTML = '#{pagination}';
