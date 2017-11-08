@@ -159,8 +159,14 @@
 .featured_companies
   @include breakpoint(medium)
     display: grid
+    justify-items: center
     grid:
       template-columns: repeat(4, 1fr)
+      row-gap: 1rem
+
+.company-block
+  border: 1px solid lighten($primary-color, 40%)
+  padding: 1rem
 
 @media screen and (max-width: 640px)
   .company-block
