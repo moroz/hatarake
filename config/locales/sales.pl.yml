@@ -50,7 +50,7 @@ pl:
       billing_address: 'Dane do faktury:'
       submit: 'Wyślij'
       are_you_polish_taxpayer: "Czy jesteś polskim płatnikiem VAT?"
-      polish_taxpayer_explanation: "Jeżeli płacisz w Polsce podatek VAT, zamówienie zostanie rozliczone według stawki brutto, tj. z doliczeniem 23% podatku VAT."
+      polish_taxpayer_explanation: "Jeżeli jesteś obywatelem Rzeczypospolitej Polskiej lub przedstawicielem firmy zarejestrowanej w Polsce, Twoje zamówienie zostanie rozliczone według stawki brutto, tj. z doliczeniem 23% podatku VAT, zgodnie z obowiązującym prawem.<br/>Możliwość rozliczenia się wg stawki netto jest dostępna wyłącznie dla osób prawnych zarejestrowanych poza terytorium Rzeczypospolitej Polskiej."
 
     payment:
       payment_description: "InJobs.pl usługi premium"

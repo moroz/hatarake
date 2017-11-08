@@ -14,7 +14,7 @@ ActiveAdmin.register Company do
   end
 
   action_item :index, only: :index do
-    link_to 'Download as XLSX', candidates_path(format: 'xlsx')
+    link_to 'Download as XLSX', companies_path(format: 'xlsx')
   end
 
   action_item :mailing_list, only: :index do
