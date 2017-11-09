@@ -2,9 +2,18 @@ FactoryGirl.define do
   factory :candidate do
     email { Faker::Internet.email }
     password "foobar2000"
-    profession_name "Carpenter"
     confirmed_at Time.now
     association :profile, factory: :candidate_profile
+
+    transient do
+      profession_name nil
+    end
+
+    after(:create) do |cand, ev|
+      if ev.profession_name && cand.profile.present?
+        cand.profile.update_column(:profession_name, ev.profession_name)
+      end
+    end
 
     trait :only_login_credentials do
       profession_name nil

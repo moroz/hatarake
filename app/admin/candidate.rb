@@ -22,12 +22,12 @@ ActiveAdmin.register Candidate do
     column :full_name do |c|
       c.profile.present? ? c.display_name : c.email
     end
+    column :profession { |c| c&.profile&.profession_name }
     column :slug
-    column :profession { |c| c.profession.try(:name_en) }
     actions
   end
 
-  filter :profession { |c| c.profession.name_en }
+  filter :profile_profession_name, as: :string, label: 'Profession name'
 
   show title: proc { |c| 'Candidate: ' + (c.profile.present? ? c.display_name : c.email) } do
     attributes_table do
@@ -36,7 +36,7 @@ ActiveAdmin.register Candidate do
       row :age { |c| c.age if c.profile.present? }
       row :sex { |c| c.sex if c.profile.present? }
       row :looking_for_work { |c| c.looking_for_work if c.profile.present? }
-      row :profession { |c| c.profession.try(:name_en) }
+      row :profession { |c| c&.profile&.profession_name }
       row :description
       row :applications { |c| c.applications.count }
       row :resumes { |c| c.resumes.count }
@@ -45,7 +45,7 @@ ActiveAdmin.register Candidate do
 
   controller do
     def scoped_collection
-      super.friendly.includes(:profession, :resumes, :profile)
+      super.friendly.includes(:resumes, :profile)
     end
   end
 end

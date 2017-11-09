@@ -7,7 +7,7 @@
       %br/
       %small
         = fa_icon sex_icon(candidate.profile.sex), text: candidate.profile.age
-        - if candidate.profession
+        - if candidate.profession_name.present?
           |
-          = candidate.profession.local_name
+          = candidate.profession_name
         

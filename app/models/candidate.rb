@@ -18,21 +18,17 @@ class Candidate < User
 
   accepts_nested_attributes_for :profile
 
-  belongs_to :profession
-  attr_writer :profession_name
-  before_validation :find_profession
-
-  delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :age, to: :profile
+  delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :profession_name, :age, to: :profile
   delegate :confirm_lfw, to: :profile
 
-  scope :for_index, -> { joins(:profile, :profession).includes(:profile, :profession, :avatar) }
+  scope :for_index, -> { joins(:profile).includes(:profile, :avatar) }
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
 
   def self.scope_from_params(params)
     raise ArgumentError, 'params should be an instance of Hash' unless params.is_a?(Hash)
     scope = order_by_param(params[:o])
-    scope = scope.where('professions.name_en ILIKE ?', "%#{sanitize_sql_like(params[:prid])}%") if params[:prid].present?
+    scope = scope.search_by_profession_name(params[:prid]) if params[:prid].present? 
     scope = scope.where('candidate_profiles.sex = ?', params[:sex]) if params[:sex].present?
     scope = scope.search(params[:q]) if params[:q].present?
     scope
@@ -42,15 +38,18 @@ class Candidate < User
     profile.present? && (!profile.lfw_at || profile.lfw_at < 2.days.ago)
   end
 
+  def self.search_by_profession_name(profession)
+    joins(:profile).where('candidate_profiles.profession_name ILIKE ?', "%#{sanitize_sql_like(profession.to_s)}%")
+  end
+
+  ransacker :by_profession_name, proc { |v|
+    candidates = Arel::Table.new(:users)
+    profiles = Arel::Table.new(:candidate_profiles)
+    candidates.join(profiles).on(profiles[:user_id].eq(candidates[:id])).where(profiles[:profession_name].matches("%#{v}%"))
+  }
+
   def self.with_profession(profession)
-    if profession.class == Profession
-      where(profession: profession)
-    elsif profession.class == String
-      joins(:profession).
-        where("professions.name_en = :q OR professions.name_pl = :q", q: profession)
-    else
-      nil
-    end
+    where(profession_name: profession)
   end
 
   def self.order_by_full_name
@@ -62,11 +61,6 @@ class Candidate < User
                           q: "%#{sanitize_sql_like(term)}%")
   end
 
-  def profession_name
-    return @profession_name if @profession_name.present?
-    profession.try(:name_en)
-  end
-
   def short_sex
     I18n.t("sexes.short.#{sex}")
   end
@@ -74,7 +68,7 @@ class Candidate < User
   def self.order_by_param(param)
     return all if param.blank?
     orders = ['candidate_profiles.first_name, candidate_profiles.last_name', 'candidate_profiles.birth_date',
-              'candidate_profiles.sex', 'professions.name_pl, professions.name_en', 'candidate_profiles.lfw_at']
+              'candidate_profiles.sex', 'candidate_profiles.profession_name', 'candidate_profiles.lfw_at']
     order(orders[param.to_i])
   end
 
@@ -87,12 +81,6 @@ class Candidate < User
        [:full_name, profile.age]]
     else
       SecureRandom.hex(8)
-    end
-  end
-
-  def find_profession
-    if self.profession_name.present?
-      self.profession = Profession.find_or_create_by_name(self.profession_name)
     end
   end
 end
