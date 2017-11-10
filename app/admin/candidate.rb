@@ -17,17 +17,20 @@ ActiveAdmin.register Candidate do
     binding.pry
     'first_name ' + order_clause.order + ', last_name ' + order_clause.order
   end
+
   index title: 'Candidates' do
     column :id
     column :full_name do |c|
       c.profile.present? ? c.display_name : c.email
     end
     column :profession { |c| c&.profile&.profession_name }
-    column :slug
+    column :age { |c| c&.profile&.age }
     actions
   end
 
   filter :profile_profession_name, as: :string, label: 'Profession name'
+  filter :profile_first_name, as: :string, label: 'First name'
+  filter :profile_last_name, as: :string, label: 'Last name'
 
   show title: proc { |c| 'Candidate: ' + (c.profile.present? ? c.display_name : c.email) } do
     attributes_table do
