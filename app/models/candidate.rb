@@ -42,14 +42,8 @@ class Candidate < User
     joins(:profile).where('candidate_profiles.profession_name ILIKE ?', "%#{sanitize_sql_like(profession.to_s)}%")
   end
 
-  ransacker :by_profession_name, proc { |v|
-    candidates = Arel::Table.new(:users)
-    profiles = Arel::Table.new(:candidate_profiles)
-    candidates.join(profiles).on(profiles[:user_id].eq(candidates[:id])).where(profiles[:profession_name].matches("%#{v}%"))
-  }
-
   def self.with_profession(profession)
-    where(profession_name: profession)
+    joins(:profile).where(candidate_profiles: { profession_name: profession })
   end
 
   def self.order_by_full_name

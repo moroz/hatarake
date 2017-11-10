@@ -25,7 +25,7 @@
     %td= @candidate.sex
   %tr
     %th{scope: 'row'} Zawód
-    %td= @candidate.profession.try(:local_name)
+    %td= @candidate.profession_name
 
 %p
   Mogą Państwo przejść do profilu kandydata w serwisie InJobs.pl przy pomocy linku poniżej:

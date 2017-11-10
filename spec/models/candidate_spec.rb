@@ -21,14 +21,6 @@ RSpec.describe Candidate, type: :model do
         it { is_expected.to include carpenter }
         it { is_expected.not_to include welder }
       end
-
-      context "when given Profession object" do
-        let(:profession) { Profession.find_or_create_by_name("Carpenter") }
-
-        subject { Candidate.with_profession profession }
-
-        it { is_expected.to include carpenter }
-      end
     end
 
     describe "search" do

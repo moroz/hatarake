@@ -35,7 +35,7 @@ RSpec.describe "Candidate registration" do
         end
 
         it "shows field for profession name" do
-          expect(page).to have_selector '.candidate_profession_name'
+          expect(page).to have_selector '.candidate_profile_profession_name'
         end
       end
     end
@@ -52,7 +52,7 @@ RSpec.describe "Candidate registration" do
 
           find("#candidate_profile_attributes_first_name").set("John")
           find("#candidate_profile_attributes_last_name").set("Smith")
-          find("#candidate_profession_name").set("Fireman")
+          find("#candidate_profile_attributes_profession_name").set("Fireman")
 
           submit_form
 
