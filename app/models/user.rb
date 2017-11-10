@@ -40,7 +40,7 @@ class User < ApplicationRecord
   end
 
   def renew_premium_employer(duration)
-    if self.premium_until.present?
+    if premium_until.present? && premium_until > Time.now
       update(premium_until: premium_until + duration.months)
     else
       update(premium_until: Time.now + duration.months)
@@ -50,26 +50,24 @@ class User < ApplicationRecord
   def add_premium_services(hash)
     raise ArgumentError unless hash.is_a?(Hash)
     hash.stringify_keys!
-    if hash.key?('1')
-      renew_premium_employer(hash.delete('1').to_i)
-    end
-    if self.premium_services.nil?
+    renew_premium_employer(hash.delete('1').to_i) if hash.key?('1')
+    if premium_services.nil?
       new_hash = hash
     else
-      new_hash = self.premium_services.stringify_keys
-      hash.each do |k,v|
-        if new_hash.key?(k)
-          new_hash[k] = hash[k].to_i + new_hash[k].to_i
-        else
-          new_hash[k] = hash[k].to_i
-        end
+      new_hash = premium_services.stringify_keys
+      hash.each_key do |k|
+        new_hash[k] = if new_hash.key?(k)
+                        hash[k].to_i + new_hash[k].to_i
+                      else
+                        hash[k].to_i
+                      end
       end
     end
-    self.update(premium_services: new_hash)
+    update(premium_services: new_hash)
   end
 
   def reduce_premium_services(key, value)
-    key = PREMIUM_KEYS[key] if key.is_a?(String) && key.to_i == 0
+    key = PREMIUM_KEYS[key] if key.is_a?(String) && key.to_i.zero?
     if premium_services.blank? || !premium_services.key?(key.to_s) || (premium_services[key.to_s].to_i < value.to_i)
       return false
     end
