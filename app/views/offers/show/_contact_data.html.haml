@@ -1,0 +1,10 @@
+.offer_description__contact_data.hide-for-small-only.row
+  - if offer.contact_phone.present?
+    .medium-5.columns
+      = fa_icon('phone')
+      = offer.contact_phone
+  - if offer.contact_email.present?
+    .medium-7.columns
+      = fa_icon('envelope')
+      = link_to add_soft_break_to_email(offer.contact_email), "mailto:#{offer.contact_email}"
+

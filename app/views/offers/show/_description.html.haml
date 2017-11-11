@@ -1,3 +1,6 @@
 = render 'actions'
+= render 'offers/show/contact_data', offer: offer
 = markdown offer.description
+- if offer.description.length > 800
+  = render 'offers/show/contact_data', offer: offer
 
