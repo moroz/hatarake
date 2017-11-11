@@ -4,7 +4,7 @@
       = fa_icon('phone')
       = offer.contact_phone
   - if offer.contact_email.present?
-    .medium-7.columns
+    .medium-7.columns.lowercase
       = fa_icon('envelope')
       = link_to add_soft_break_to_email(offer.contact_email), "mailto:#{offer.contact_email}"
 
