@@ -47,6 +47,10 @@ class Location < ApplicationRecord
     [province.try(:name_en), city].reject(&:blank?).join(', ')
   end
 
+  def trovit_region
+    [province&.name_en, country&.name_en].reject(&:blank?).join(', ')
+  end
+
   private
 
   def short_format_base

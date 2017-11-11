@@ -72,7 +72,10 @@ Rails.application.routes.draw do
       post 'confirm_payment' => 'dotpay#confirm'
     end
     scope '/jooble' do
-      get 'jobs_feed.xml', to: 'jooble#feed'
+      get 'jobs_feed.xml', to: 'feed#jooble'
+    end
+    scope '/trovit' do
+      get 'trovit_feed.xml', to: 'feed#trovit'
     end
     post '/confirm_lfw', to: 'candidates#confirm_lfw'
   end
