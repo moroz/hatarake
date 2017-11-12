@@ -1,10 +1,8 @@
-class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  # :registerable, :recoverable, :rememberable, :trackable, :validatable
-  devise :database_authenticatable, :rememberable, :confirmable, :recoverable
+# frozen_string_literal: true
 
-  validates :email, presence: true, uniqueness: true
+class User < ApplicationRecord
+  devise :database_authenticatable, :rememberable, :confirmable, :recoverable, :validatable
+
   validates :contact_email, uniqueness: true, allow_blank: true
   validates :phone, uniqueness: true, allow_blank: true
   validates :website, url: true, allow_blank: true
@@ -20,7 +18,7 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
-  PREMIUM_KEYS = {'highlight' => 4, 'homepage' => 2, 'category' => 3}
+  PREMIUM_KEYS = { 'highlight' => 4, 'homepage' => 2, 'category' => 3 }.freeze
 
   before_create :set_locale
 

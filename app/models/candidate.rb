@@ -51,7 +51,7 @@ class Candidate < User
   end
 
   def self.order_by_full_name
-    joins(:profile).order('LOWER(candidate_profiles.first_name), LOWER(candidate_profiles.last_name)')
+    left_joins(:profile).order('LOWER(candidate_profiles.first_name), LOWER(candidate_profiles.last_name), email')
   end
 
   def self.search(term)
