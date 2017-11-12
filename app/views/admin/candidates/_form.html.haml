@@ -1,0 +1,22 @@
+= form_for [:admin, @candidate], builder: ActiveAdmin::FormBuilder do |f|
+  .row
+    = f.label :email, 'E-mail:'
+    = f.text_field :email
+    = f.label :phone, 'Telefon kontaktowy:'
+    = f.text_field :phone
+    = f.label :contact_email, 'E-mail kontaktowy:'
+    = f.text_field :contact_email
+    - if f.object.profile.present?
+      = f.fields_for :profile do |ff|
+        = ff.label :first_name, 'Imię:'
+        = ff.text_field :first_name
+        = ff.label :last_name, 'Nazwisko:'
+        = ff.text_field :last_name
+        = ff.label :profession_name, 'Zawód:'
+        = ff.text_field :profession_name
+    - else
+      .callout
+        Kandydat(ka) nie wypełnił(a) profilu kandydata. Brak informacji nt. imienia i nazwiska, płci, zawodu.
+    = f.label :description, 'O mnie:'
+    = f.text_area :description, rows: 8
+    = f.actions

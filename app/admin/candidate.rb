@@ -5,6 +5,8 @@ ActiveAdmin.register Candidate do
     link_to "View on Website", candidate_path(candidate), target: '_blank' unless candidate.profile.blank?
   end
 
+  form partial: 'form'
+
   action_item :index, only: :index do
     link_to 'Download as XLSX', candidates_path(format: 'xlsx')
   end
@@ -31,11 +33,15 @@ ActiveAdmin.register Candidate do
   filter :profile_profession_name, as: :string, label: 'Profession name'
   filter :profile_first_name, as: :string, label: 'First name'
   filter :profile_last_name, as: :string, label: 'Last name'
+  filter :email, as: :string, label: 'E-mail'
+  filter :phone, as: :string, label: 'Phone'
 
-  show title: proc { |c| 'Candidate: ' + (c.profile.present? ? c.display_name : c.email) } do
+  show title: proc { |c| 'Candidate: ' + c.table_name } do
     attributes_table do
       row :avatar { |c| avatar_for c if c.avatar.present? }
       row :full_name { |c| c.display_name if c.profile.present? }
+      row :email
+      row :contact_email
       row :age { |c| c.age if c.profile.present? }
       row :sex { |c| c.sex if c.profile.present? }
       row :looking_for_work { |c| c.looking_for_work if c.profile.present? }
@@ -49,6 +55,10 @@ ActiveAdmin.register Candidate do
   controller do
     def scoped_collection
       super.friendly.includes(:resumes, :profile)
+    end
+
+    def edit
+      @page_title = "Edycja kandydata: #{resource.table_name}"
     end
   end
 end

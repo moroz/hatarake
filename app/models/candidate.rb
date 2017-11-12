@@ -25,6 +25,10 @@ class Candidate < User
   scope :with_associations, -> { includes(:skill_items, :education_items, :work_items, :profile) }
   scope :looking_for_work, -> { joins(:profile).where('candidate_profiles.looking_for_work = ?', true) }
 
+  def table_name
+    profile&.display_name || email
+  end
+
   def self.scope_from_params(params)
     raise ArgumentError, 'params should be an instance of Hash' unless params.is_a?(Hash)
     scope = order_by_param(params[:o])
