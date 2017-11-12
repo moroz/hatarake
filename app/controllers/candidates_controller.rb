@@ -13,7 +13,7 @@ class CandidatesController < ApplicationController
         @candidates = @candidates.scope_from_params(search_params)
       end
       format.js
-      format.html { set_professions_list }
+      format.html
       format.xlsx do
         raise CanCan::AccessDenied unless admin_user_signed_in?
         @candidates = Candidate.order_by_full_name
@@ -76,10 +76,6 @@ class CandidatesController < ApplicationController
     else
       @candidate.update_column(:lfw_at, nil)
     end
-  end
-
-  def set_professions_list
-    @professions = Profession.all
   end
 
   def candidate
