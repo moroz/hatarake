@@ -62,10 +62,11 @@ class OffersController < ApplicationController
     @feat_count = @offers.category_featured.count
     set_search_description
     get_featured_offers(:poland, ids) if search_params_present? && @offers.last_page?
-    @popular_locations = Province.most_popular_voivodeships_with_counts
     respond_to do |f|
       f.js { render 'index' }
-      f.html
+      f.html do
+        @popular_locations = Province.most_popular_voivodeships_with_counts
+      end
     end
   end
 
@@ -78,11 +79,12 @@ class OffersController < ApplicationController
     @feat_count = @offers.category_featured.count
     set_search_description
     set_province_list if params[:cid].present?
-    @popular_locations = Country.most_popular_with_offer_counts
     get_featured_offers(:abroad, ids) if search_params_present? && @offers.last_page?
     respond_to do |f|
       f.js { render 'index' }
-      f.html
+      f.html do
+        @popular_locations = Country.most_popular_with_offer_counts
+      end
     end
   end
 

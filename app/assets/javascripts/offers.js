@@ -37,7 +37,7 @@ document.addEventListener('turbolinks:load', function () {
   }, false);
 
   // infinite scroll
-  if (document.querySelectorAll('.pagination').length) {
+  if (document.querySelectorAll('.pagination').length && !document.getElementsByClassName('offers').length) {
     document.addEventListener('scroll', function (e) {
       var nextLink = document.querySelector('.pagination a[rel="next"]');
       if (nextLink && nextLink.href) {

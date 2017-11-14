@@ -18,6 +18,6 @@
       %hr
       %h4= t('offers.index.didnt_find_take_a_look')
       = render @featured
-  = paginate @offers
+  = paginate @offers, remote: true
 - else
   = render 'no_offers_found'

@@ -46,6 +46,7 @@ gem 'remotipart'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
+gem 'turbo_react-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'valid_url'
 

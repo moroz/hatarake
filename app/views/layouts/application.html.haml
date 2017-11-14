@@ -1,7 +1,7 @@
 !!!
 %html{:lang => "en"}
   = render 'header'
-  %body
+  %body{class: controller_name + ' ' + action_name}
     = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'topbar' # topbar, visible for medium and above
