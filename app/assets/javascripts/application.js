@@ -3,7 +3,6 @@
 //= require jquery-ui/widgets/autocomplete
 //= require jquery.remotipart
 //= require turbolinks
-//= require turbo-react
 //= require autocomplete-rails
 //= require owl.carousel
 //= require foundation.core
