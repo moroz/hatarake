@@ -18,7 +18,7 @@ module ProfileHelper
   end
 
   def logo_for(company)
-    image_tag((company.avatar.present? ? company.avatar.file.normal.url : default_avatar), class: 'logo')
+    image_tag((company.avatar.present? ? company.avatar.normal_url : default_avatar), class: 'logo')
   end
 
   def default_avatar(sex = 'male')

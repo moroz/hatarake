@@ -21,6 +21,10 @@ class Avatar < Attachment
     "https://injobs.s3.amazonaws.com/uploads/avatar/file/#{id}/#{size}#{attributes['file']}"
   end
 
+  def normal_url
+    "https://injobs.s3.amazonaws.com/uploads/avatar/file/#{id}/#{attributes['file']}"
+  end
+
   def crop_avatar
     file.recreate_versions! if crop_x.present?
   end
