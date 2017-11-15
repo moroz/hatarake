@@ -16,6 +16,11 @@ class Avatar < Attachment
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
 
+  def thumb_url
+    size = vector ? 'thumb_' : ''
+    "https://injobs.s3.amazonaws.com/uploads/avatar/file/#{id}/#{size}#{attributes['file']}"
+  end
+
   def crop_avatar
     file.recreate_versions! if crop_x.present?
   end

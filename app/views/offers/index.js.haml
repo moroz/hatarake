@@ -1,18 +1,9 @@
 :plain
-- if params[:page].blank? || params[:page] == '1'
   document.getElementById('offer-list').innerHTML = '#{j render partial: 'offers'}';
   Turbolinks.changeURL('#{raw request.url}');
-  - if params[:adv].blank? || params[:adv] == '0'
-    document.querySelector('.basic_search form').reset();
-  - if @search_description.blank?
-    resetSearchForms();
-  - elsif params[:q].present?
-    $('#filter_sidebar_q').val('#{j params[:q]}');
-- else
-  $('#offers').append('#{j render @offers}');
-  Turbolinks.changeURL('#{raw request.url}');
-  - if @offers.last_page?
-    $('.pagination').remove();
-  - else
-    - ref = controller_name == 'CompanyOffers' ? 'company' : nil
-    $('.pagination').html('#{j paginate @offers, ref: ref, remote: true}');
+- if params[:adv].blank? || params[:adv] == '0'
+  document.querySelector('.basic_search form').reset();
+- if @search_description.blank?
+  resetSearchForms();
+- elsif params[:q].present?
+  $('#filter_sidebar_q').val('#{j params[:q]}');

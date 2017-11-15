@@ -3,12 +3,9 @@
 module ProfileHelper
   def avatar_for(user, options = {})
     size = options[:size] || :normal
-    url = if user.avatar.present?
-            if user.avatar.vector?
-              user.avatar.file_url
-            else
-              user.avatar.file_url(size)
-            end
+    avatar = user.avatar
+    url = if avatar.present?
+            avatar.thumb_url
           else
             default_avatar(user.sex)
           end

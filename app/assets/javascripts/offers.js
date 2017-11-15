@@ -37,18 +37,22 @@ document.addEventListener('turbolinks:load', function () {
   }, false);
 
   // infinite scroll
-  if (document.querySelectorAll('.pagination').length && !document.getElementsByClassName('offers').length) {
-    document.addEventListener('scroll', function (e) {
-      var nextLink = document.querySelector('.pagination a[rel="next"]');
-      if (nextLink && nextLink.href) {
-        // pure JS alternative to $(window).scrollTop()
-        var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-        if (scrollTop > $(document).height() - $(window).height() - 150) {
-          $('.pagination').text('Loading...');
-          $.getScript(nextLink.href);
+  var bodyClass = document.getElementsByTagName('body')[0].className;
+  debugger;
+  if (bodyClass != "offers abroad" && bodyClass != "offers poland") {
+    if (document.querySelectorAll('.pagination').length) {
+      document.addEventListener('scroll', function (e) {
+        var nextLink = document.querySelector('.pagination a[rel="next"]');
+        if (nextLink && nextLink.href) {
+          // pure JS alternative to $(window).scrollTop()
+          var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+          if (scrollTop > $(document).height() - $(window).height() - 150) {
+            $('.pagination').text('Loading...');
+            $.getScript(nextLink.href);
+          }
         }
-      }
-    }, false);
+      }, false);
+    }
   }
 });
 
