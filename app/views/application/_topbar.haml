@@ -2,7 +2,7 @@
   .row
     .top-bar-left
       %ul.menu
-        %li.topbar__logo= link_to image_tag('/logo.svg'), root_path, data: { turbolinks: false }
+        %li.topbar__logo= link_to image_tag('/logo.svg'), root_path
         %li= link_to t('nav.poland'), jobs_poland_path
         %li= link_to t('nav.abroad'), jobs_abroad_path
         %li= link_to t('nav.companies'), companies_path
