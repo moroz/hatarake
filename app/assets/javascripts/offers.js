@@ -38,8 +38,8 @@ document.addEventListener('turbolinks:load', function () {
 
   // infinite scroll
   var bodyClass = document.getElementsByTagName('body')[0].className;
-  debugger;
-  if (bodyClass != "offers abroad" && bodyClass != "offers poland") {
+  var disabledActions = ["offers abroad", "offers poland", "company_offers index"];
+  if (!disabledActions.includes(bodyClass)) {
     if (document.querySelectorAll('.pagination').length) {
       document.addEventListener('scroll', function (e) {
         var nextLink = document.querySelector('.pagination a[rel="next"]');

@@ -16,7 +16,6 @@
 //= require offers
 //= require companies
 //= require cookies_eu
-//= require jquery.rateyo.js
 //= require candidates
 //= require Markdown.Converter
 //= require Markdown.Sanitizer

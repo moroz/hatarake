@@ -4,7 +4,9 @@ class AutocompleteController < ApplicationController
   end
 
   def professions
-    autocomplete(Profession)
+    q = ActiveRecord::Base.send(:sanitize_sql_like, params[:term])
+    collection = CandidateProfile.distinct.where('profession_name ILIKE ?', "%#{q}%").pluck(:profession_name)
+    render json: collection
   end
 
   def schools
