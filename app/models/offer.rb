@@ -33,7 +33,7 @@ class Offer < ApplicationRecord
 
   default_scope { order('published_at DESC') }
 
-  scope :featured_first, -> { reorder('(category_until > NOW()) DESC NULLS LAST', 'published_at DESC') }
+  scope :featured_first, -> { reorder('(category_until IS NOT NULL AND category_until > NOW()) DESC', 'published_at DESC') }
   scope :by_publishing_date_nulls_first, -> { reorder('published_at DESC NULLS FIRST') }
 
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
