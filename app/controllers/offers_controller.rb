@@ -59,7 +59,6 @@ class OffersController < ApplicationController
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
     @offers = @offers.page(params[:page])
-    @feat_count = @offers.category_featured.count
     set_search_description
     get_featured_offers(:poland, ids) if search_params_present? && @offers.last_page?
     respond_to do |f|
@@ -76,7 +75,6 @@ class OffersController < ApplicationController
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
     @offers = @offers.page(params[:page])
-    @feat_count = @offers.category_featured.count
     set_search_description
     set_province_list if params[:cid].present?
     get_featured_offers(:abroad, ids) if search_params_present? && @offers.last_page?

@@ -5,15 +5,15 @@
       = t('offers.index.offer_count', count: @total_count)
       = reset_search_link if @search_description.present?
   .offer-list#offers
-    - featured_finished = true
-    - if @feat_count > 0
+    - check_feat = false
+    - if @offers.first.category_featured?
       %h4= t('offers.index.featured_offers')
-      - featured_finished = false
-    - @offers.each do |o|
-      - if !o.category_featured? && !featured_finished
+      check_feat = true
+    - @offers.count.times do |i|
+      = render @offers[i]
+      - if check_feat && @offers[i].category_featured? && !@offers[i+1].category_featured?
         %h4= t('offers.index.remaining_offers')
-        - featured_finished = true
-      = render o
+        - check_feat = false
     - if @featured.present?
       %hr
       %h4= t('offers.index.didnt_find_take_a_look')
