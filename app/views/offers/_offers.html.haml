@@ -8,7 +8,7 @@
     - check_feat = false
     - if @offers.first.category_featured?
       %h4= t('offers.index.featured_offers')
-      check_feat = true
+      - check_feat = true
     - @offers.count.times do |i|
       = render @offers[i]
       - if check_feat && @offers[i].category_featured? && !@offers[i+1].category_featured?
