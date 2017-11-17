@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112120426) do
+ActiveRecord::Schema.define(version: 20171116195505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,8 +217,13 @@ ActiveRecord::Schema.define(version: 20171112120426) do
     t.datetime "featured_until", comment: "Featuring on the homepage"
     t.datetime "category_until", comment: "Featuring on the category page"
     t.datetime "highlight_until", comment: "Highlight with colors"
+    t.integer "req_lang_1", limit: 2
+    t.integer "req_lang_2", limit: 2
+    t.integer "field_id"
     t.index ["company_id"], name: "index_offers_on_company_id"
     t.index ["published_at"], name: "index_offers_on_published_at"
+    t.index ["req_lang_1"], name: "index_offers_on_req_lang_1"
+    t.index ["req_lang_2"], name: "index_offers_on_req_lang_2"
     t.index ["slug"], name: "index_offers_on_slug", unique: true
   end
 
@@ -401,6 +406,7 @@ ActiveRecord::Schema.define(version: 20171112120426) do
   add_foreign_key "locations", "countries"
   add_foreign_key "locations", "provinces"
   add_foreign_key "offer_saves", "offers"
+  add_foreign_key "offers", "fields"
   add_foreign_key "offers", "locations"
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"

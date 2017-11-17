@@ -45,6 +45,7 @@ pl:
       basic_information: Podstawowe informacje
       wages: Wynagrodzenie
       application: Aplikacja
+      language_requirements: "Wymagania językowe"
       application_method: Sposób aplikacji
       apply_on_website:
         'false': 'Aplikacja w serwisie InJobs.pl'
@@ -173,6 +174,10 @@ pl:
       location: "Miejscowość:"
       salary_help_text: "Jeżeli pensja jest stałą, proszę wpisać tę samą liczbę w obu polach."
       hourly_wage_help_text: "Jeżeli stawka jest stałą, proszę wpisać tę samą liczbę w obu polach."
+      req_lang_1: "1. wymagany język:"
+      req_lang_2: "2. wymagany język:"
+      field: "Branża:"
+
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.
     provinces:
@@ -208,3 +213,20 @@ pl:
     new:
       heading: "Aplikacja na stanowisko"
       candidate_profile_blank: "Musisz uzupełnić swoje dane, aby wysyłać aplikacje za pośrednictwem InJobs.pl."
+
+  language_requirements:
+    placeholder: "Wybierz język:"
+    none: "Nie podano"
+    languages:
+      1: bez języka/polski
+      2: niemiecki
+      3: angielski
+      4: niderlandzki
+      5: francuski
+      6: norweski
+      7: szwedzki
+      8: duński
+      9: czeski
+      10: słowacki
+      11: fiński
+      12: inny

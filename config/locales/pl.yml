@@ -6,6 +6,7 @@ pl:
   'false': Nie
   bad_request_alert: "W czasie przetwarzania zapytania wystąpił błąd: "
   terms_of_service: "Regulamin"
+  and_or: "i/lub"
 
   unauthorized:
     default: "Nie jesteś upoważniony do wyświetlania tej strony."

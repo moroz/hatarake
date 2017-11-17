@@ -41,6 +41,7 @@ en:
       basic_information: "Basic information"
       wages: "Wages"
       application: How to apply
+      language_requirements: Language requirements
       application_method: Application method
       apply_on_website:
         'false': 'Apply via InJobs.pl'
@@ -172,6 +173,9 @@ en:
       location: "City or village:"
       salary_help_text: "If the salary is a fixed value, please put the same value in both fields."
       hourly_wage_help_text: "If the hourly wage is a fixed value, please put the same value in both fields."
+      req_lang_1: "1st required language:"
+      req_lang_2: "2nd required language:"
+      field: "Field:"
     placeholders:
       preview: A preview of your description will appear here.
     provinces:
@@ -190,3 +194,20 @@ en:
     models:
       offer: Offer
       company: Company profile
+
+  language_requirements:
+    placeholder: "Pick a language:"
+    none: "none given"
+    languages:
+      1: no language/Polish
+      2: German
+      3: English
+      4: Dutch
+      5: French
+      6: Norwegian
+      7: Swedish
+      8: Danish
+      9: Czech
+      10: Slovak
+      11: Finnish
+      12: other
