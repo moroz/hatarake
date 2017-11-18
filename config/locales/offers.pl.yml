@@ -180,6 +180,8 @@ pl:
 
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.
+      field: "Wybierz branżę:"
+
     provinces:
       blank: Cały kraj
 

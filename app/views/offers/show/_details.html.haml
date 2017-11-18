@@ -19,4 +19,8 @@
   %li
     = fa_icon('eye li')
     = t('offers.view_count', count: offer.views)
-  
+  - if offer.field.present?
+    %li
+      = fa_icon('briefcase li')
+      = offer.field.local_name
+

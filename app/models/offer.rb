@@ -7,6 +7,7 @@ class Offer < ApplicationRecord
 
   belongs_to :company, required: true
   belongs_to :location, required: true
+  belongs_to :field
   accepts_nested_attributes_for :location
 
   has_many :applications, dependent: :destroy

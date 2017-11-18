@@ -7,7 +7,7 @@ en:
       other: "%{count} views"
 
     apply_now: Apply now
-    apply_on_website: Apply on employer's website
+    apply_on_website: "Apply on employer's website"
     delete_confirm: "Are you sure you want to permanently delete this offer and all associated objects?"
     applicant_count:
       zero: "0 applications"
@@ -175,9 +175,12 @@ en:
       hourly_wage_help_text: "If the hourly wage is a fixed value, please put the same value in both fields."
       req_lang_1: "1st required language:"
       req_lang_2: "2nd required language:"
-      field: "Field:"
+      field: "Field or industry:"
+
     placeholders:
       preview: A preview of your description will appear here.
+      field: "Select field or industry:"
+
     provinces:
       blank: Everywhere
 
