@@ -24,6 +24,7 @@ class Offer < ApplicationRecord
 
   delegate :name, to: :company, prefix: true
 
+  before_validation :make_required_languages
   before_validation :make_salary_range
   before_validation :make_hourly_wage
   after_validation :add_http_to_application_url
@@ -196,6 +197,12 @@ class Offer < ApplicationRecord
 
   def should_generate_new_friendly_id?
     slug.blank? || will_save_change_to_attribute?(:title) || will_save_change_to_attribute?(:location_id)
+  end
+
+  def make_required_languages
+    if req_lang_1.nil? || req_lang_1.to_i == 1 || req_lang_2 == req_lang_1
+      self.req_lang_2 = nil
+    end
   end
 
   def make_salary_range

@@ -77,7 +77,38 @@ RSpec.describe Offer, type: :model do
     end
   end
 
-  describe "make_hourly_wage" do
+  describe 'make_required_languages' do
+    let(:offer) { FactoryGirl.build(:offer) }
+
+    before(:each) do
+      offer.req_lang_2 = 5
+    end
+
+    after(:each) do
+      offer.validate
+      expect(offer.req_lang_2).to be nil
+    end
+
+    context 'when req_lang_2 == req_lang_1' do
+      it 'sets req_lang_2 to nil' do
+        offer.req_lang_1 = 5
+      end
+    end
+
+    context 'when req_lang_1 is nil' do
+      it 'sets req_lang_2 to nil' do
+        offer.req_lang_1 = nil
+      end
+    end
+
+    context 'when req_lang_1 == 1' do
+      it 'sets req_lang_2 to nil' do
+        offer.req_lang_1 = 1
+      end
+    end
+  end
+
+  describe 'make_hourly_wage' do
     let(:offer) { FactoryGirl.build(:offer) }
 
     context 'upon save' do
