@@ -220,15 +220,15 @@ pl:
     placeholder: "Wybierz język:"
     none: "Nie podano"
     languages:
-      1: bez języka/polski
-      2: niemiecki
-      3: angielski
-      4: niderlandzki
-      5: francuski
-      6: norweski
-      7: szwedzki
-      8: duński
-      9: czeski
-      10: słowacki
-      11: fiński
-      12: inny
+      :1: bez języka/polski
+      :2: niemiecki
+      :3: angielski
+      :4: niderlandzki
+      :5: francuski
+      :6: norweski
+      :7: szwedzki
+      :8: duński
+      :9: czeski
+      :10: słowacki
+      :11: fiński
+      :12: inny

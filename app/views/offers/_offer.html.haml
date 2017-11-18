@@ -43,7 +43,7 @@
           = link_to t('actions.publish'), publish_offer_path(offer), method: :patch
     %td
       .offer_dashboard__location= offer.location
-      - if offer.is_featured?
+      - if offer.featured?
         .offer_dashboard__premium
           - if offer.highlighted?
             %span.offer_dashboard__highlighted= t('offers.my_offers.highlighted')

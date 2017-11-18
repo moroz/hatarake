@@ -35,7 +35,7 @@ class OffersController < ApplicationController
 
   def add_premium
     method = params[:method]
-    if offer.is_featured?(method)
+    if offer.featured?(method)
       redirect_to promote_offer_path(offer), alert: t("offers.promote.already_featured.#{method}")
       return
     end

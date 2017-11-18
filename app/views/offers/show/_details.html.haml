@@ -4,6 +4,14 @@
     %li
       = fa_icon('calendar li fw')
       = t('offers.published_time_ago', time: time_ago_in_words(offer.published_at))
+  - if offer.field.present?
+    %li
+      = fa_icon('briefcase li')
+      = offer.field.local_name
+  - if offer.required_languages
+    %li
+      = fa_icon('language li')
+      = offer.required_languages
   %li
     = fa_icon('money li')
     != salary_and_wage_for(offer)
@@ -19,8 +27,4 @@
   %li
     = fa_icon('eye li')
     = t('offers.view_count', count: offer.views)
-  - if offer.field.present?
-    %li
-      = fa_icon('briefcase li')
-      = offer.field.local_name
 

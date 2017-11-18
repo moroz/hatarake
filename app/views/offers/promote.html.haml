@@ -1,7 +1,7 @@
 - breadcrumb :promote_offer
 %h1= t('.heading') + offer.title
 
-- if offer.is_featured?
+- if offer.featured?
   = t('.offer_is_featured')
   - if offer.highlighted?
     %span.offer_dashboard__highlighted= t('offers.my_offers.highlighted')

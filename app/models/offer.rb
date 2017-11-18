@@ -85,7 +85,14 @@ class Offer < ApplicationRecord
     published.where('published_at > ?', 1.week.ago).order(views: :desc).limit(10)
   end
 
-  def is_featured?(type = nil)
+  def required_languages
+    return if req_lang_1.nil?
+    [req_lang_1, req_lang_2].map do |lang|
+      I18n.t(lang, scope: 'language_requirements.languages') if lang
+    end.compact.join(', ')
+  end
+
+  def featured?(type = nil)
     case type
     when 'highlight'
       highlighted?

@@ -202,15 +202,15 @@ en:
     placeholder: "Pick a language:"
     none: "none given"
     languages:
-      1: no language/Polish
-      2: German
-      3: English
-      4: Dutch
-      5: French
-      6: Norwegian
-      7: Swedish
-      8: Danish
-      9: Czech
-      10: Slovak
-      11: Finnish
-      12: other
+      :1: no language/Polish
+      :2: German
+      :3: English
+      :4: Dutch
+      :5: French
+      :6: Norwegian
+      :7: Swedish
+      :8: Danish
+      :9: Czech
+      :10: Slovak
+      :11: Finnish
+      :12: other
