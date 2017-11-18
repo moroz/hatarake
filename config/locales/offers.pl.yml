@@ -148,7 +148,7 @@ pl:
       placeholder: "Fragment tytułu, zawodu, lokalizacji..."
       submit: Szukaj
 
-    basic_search:
+    abroad_search:
       submit: "Szukaj"
       placeholder: "Fragment tytułu, zawodu, lokalizacji..."
       heading: "Wyszukiwanie ofert"

@@ -72,9 +72,10 @@
   = f.submit "Save", class: 'button success expanded'
 
 :javascript
-  $('.offer_application_url, .second_language').addClass('hide');
+  var req2 = document.getElementById('offer_req_lang_2').value;
+  !req2 && $('.offer_application_url, .second_language').addClass('hide');
   document.getElementById('offer_req_lang_1').addEventListener('change', e => {
-    if (e.target.value === "1")
+    if (!e.target.value || e.target.value === "1")
       $('.second_language').addClass('hide');
     else
       $('.second_language').removeClass('hide');

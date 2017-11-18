@@ -1,7 +1,0 @@
-%h4 Filters
-= form_for request.path, method: :get, remote: true, html: {id: 'search_filters'} do |f|
-  = f.hidden_field :q, id: 'filter_sidebar_q', name: :q
-  = f.label :pid, t('offers.advanced_search.province')
-  = f.select :pid, localized_collection(@provinces, 0, blank: t('offers.provinces.blank')), {}, name: 'pid'
-  = f.label :smin, t('offers.advanced_search.salary_min')
-  = f.text_field :smin, value: params[:smin], name: :smin
