@@ -8,10 +8,10 @@
     %li
       = fa_icon('briefcase li')
       = offer.field.local_name
-  - if offer.required_languages
+  - if offer.language_requirements
     %li
       = fa_icon('language li')
-      = offer.required_languages
+      = offer.language_requirements
   %li
     = fa_icon('money li')
     != salary_and_wage_for(offer)
