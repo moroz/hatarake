@@ -172,7 +172,7 @@ class Offer < ApplicationRecord
 
   def full_location
     if province.present?
-      [location, province.local_name, country.local_name].join(', ')
+      [location, province.local_name, country.local_name].uniq.join(', ')
     else
       country.local_name + ' – ' + I18n.t('offers.provinces.blank')
     end
@@ -199,25 +199,17 @@ class Offer < ApplicationRecord
   end
 
   def make_salary_range
-    min = self.salary_min
-    max = self.salary_max
-    if min.present? || max.present?
-      self.salary = make_range(min, max)
-    end
-    if min == '' && max == ''
-      self.salary = nil
-    end
+    min = salary_min
+    max = salary_max
+    self.salary = make_range(min, max) if min.present? || max.present?
+    self.salary = nil if min == '' && max == ''
   end
 
   def make_hourly_wage
-    min = self.hourly_wage_min
-    max = self.hourly_wage_max
-    if min.present? || max.present?
-      self.hourly_wage = make_range(min, max)
-    end
-    if min == '' && max == ''
-      self.hourly_wage = nil
-    end
+    min = hourly_wage_min
+    max = hourly_wage_max
+    self.hourly_wage = make_range(min, max) if min.present? || max.present?
+    self.hourly_wage = nil if min == '' && max == ''
   end
 
   def make_range(min, max)
