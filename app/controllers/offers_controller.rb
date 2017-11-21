@@ -5,7 +5,7 @@ class OffersController < ApplicationController
   helper_method :offers
 
   before_action :set_country_list, only: %i[new edit abroad]
-  before_action :set_province_list, only: [:new, :edit, :poland]
+  before_action :set_province_list, only: [:new, :edit]
   authorize_resource except: [:index, :poland, :abroad]
 
   invisible_captcha only: [:create, :update]
@@ -65,6 +65,8 @@ class OffersController < ApplicationController
     respond_to do |f|
       f.js { render 'index' }
       f.html do
+        set_province_list
+        @fields = Field.all
         @popular_locations = Province.most_popular_voivodeships_with_counts
       end
     end

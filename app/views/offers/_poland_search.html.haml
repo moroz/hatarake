@@ -1,12 +1,14 @@
 - classes = 'poland_search large-8 large-offset-2 medium-10 medium-offset-1 columns padding-for-small'
 %section{class: classes}
   = form_for offers_path, method: :get, remote: true do |f|
-    .row.collapse
-      .small-6.medium-6.columns
-        = f.text_field :q, name: 'q', id: "advanced_search_q", placeholder: t('.placeholder'), class: 'search_bar__left'
-      .small-6.medium-4.columns
-        = f.select :pid, localized_collection(@provinces || [], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', class: 'search_bar__center'
-      .medium-2.columns
+    .input-group
+      = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.poland_search.placeholder'), autocomplete: 'off', autofocus: !mobile?, id: "basic_search_q"
+      .input-group-button
         = f.button t('.submit'), class: 'button primary expanded search_bar__right'
+    .row.collapse
+      .medium-6.columns
+        = f.select :cid, localized_collection(@fields, params[:cid] || 0, blank: t('offers.fields.field')), {}, name: 'fid'
+      .medium-6.columns
+        = f.select :pid, localized_collection(@provinces, params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}, 'aria-describedby' => 'provinceSelectHelptext'
 
 
