@@ -41,7 +41,7 @@ class Offer < ApplicationRecord
   scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
   scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
 
-  scope :with_associations, -> { includes(company: [:avatar], location: [:country, :province]) }
+  scope :with_associations, -> { includes(company: :avatar, location: %i[country province]) }
 
   scope :published, -> { where('published_at IS NOT NULL') }
 
@@ -52,8 +52,8 @@ class Offer < ApplicationRecord
       published
     end
   end
-  
-  scope :with_min_salary, ->(min) { where("salary @> :min or lower(salary) > :min", min: min.to_d) }
+
+  scope :with_min_salary, ->(min) { where('salary @> :min or lower(salary) > :min', min: min.to_d) }
   scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }
   scope :with_province_id, ->(province_id) { joins(:location).where('locations.province_id = ?', province_id) }
 
@@ -64,21 +64,13 @@ class Offer < ApplicationRecord
 
   def self.advanced_search(o = {})
     scope = self.all
-    if o[:cid].present?
-      scope = scope.with_country_id(o[:cid])
-    end
-    if o[:pid].present?
-      scope = scope.with_province_id(o[:pid])
-    end
-    if o[:q].present?
-      scope = scope.search_by_query(o[:q])
-    end
-    if o[:smin].present?
-      scope = scope.with_min_salary(o[:smin])
-    end
-    if o[:cur].present?
-      scope = scope.where(currency: o[:cur])
-    end
+    scope = scope.with_country_id(o[:cid]) if o[:cid].present?
+    scope = scope.with_province_id(o[:pid]) if o[:pid].present?
+    scope = scope.search_by_query(o[:q]) if o[:q].present?
+    scope = scope.with_min_salary(o[:smin]) if o[:smin].present?
+    scope = scope.where(currency: o[:cur]) if o[:cur].present?
+    scope = scope.where(field_id: o[:fid]) if o[:fid].present?
+    scope = scope.where(req_lang_1: 1) if o[:lr].present? && o[:lr].to_i == 1
     scope
   end
 

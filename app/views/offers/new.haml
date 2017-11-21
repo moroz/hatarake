@@ -44,7 +44,7 @@
         %strong.offer_form__and_or= t('and_or')
     .medium-4.columns.second_language
       = f.label :req_lang_2, t('offers.fields.req_lang_2')
-      = f.select :req_lang_2, options_from_collection_for_select(t('language_requirements.languages'), :first, :last, offer.req_lang_2 || 3), include_blank: t('language_requirements.placeholder')
+      = f.select :req_lang_2, options_from_collection_for_select(t('language_requirements.languages'), :first, :last, offer.req_lang_2), include_blank: true
     .medium-3.column
 
   .page-header
@@ -72,8 +72,8 @@
   = f.submit "Save", class: 'button success expanded'
 
 :javascript
-  var req2 = document.getElementById('offer_req_lang_2').value;
-  !req2 && $('.offer_application_url, .second_language').addClass('hide');
+  var req1 = document.getElementById('offer_req_lang_1').value;
+  !req1 && $('.offer_application_url, .second_language').addClass('hide');
   document.getElementById('offer_req_lang_1').addEventListener('change', e => {
     if (!e.target.value || e.target.value === "1")
       $('.second_language').addClass('hide');

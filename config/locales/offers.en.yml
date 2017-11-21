@@ -145,7 +145,7 @@ en:
       submit: "Search"
       term: "Search term"
 
-    basic_search:
+    abroad_search:
       heading: "Search for offers"
       placeholder: "Partial title, description, location..."
       submit: "Search"
