@@ -192,7 +192,8 @@ class Offer < ApplicationRecord
   end
 
   def make_required_languages
-    if req_lang_1.nil? || req_lang_1.to_i == 1 || req_lang_2 == req_lang_1
+    if req_lang_1.nil? || req_lang_1.to_i == 1 ||
+       req_lang_2 == req_lang_1 || req_lang_2.to_i == 1
       self.req_lang_2 = nil
     end
   end

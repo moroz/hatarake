@@ -106,6 +106,12 @@ RSpec.describe Offer, type: :model do
         offer.req_lang_1 = 1
       end
     end
+
+    context 'when req_lang_2 == 1' do
+      it 'sets req_lang_2 to nil' do
+        offer.req_lang_2 = 1
+      end
+    end
   end
 
   describe 'make_hourly_wage' do
