@@ -152,6 +152,7 @@ pl:
       submit: "Szukaj"
       placeholder: "Fragment tytułu, zawodu, lokalizacji..."
       heading: "Wyszukiwanie ofert"
+      no_language_required: "Bez znajomości języka"
 
     edit:
       title: "Edycja oferty: "

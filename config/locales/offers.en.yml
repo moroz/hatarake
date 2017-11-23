@@ -149,6 +149,7 @@ en:
       heading: "Search for offers"
       placeholder: "Partial title, description, location..."
       submit: "Search"
+      no_language_required: "No language required"
 
     edit:
       heading: "Edit offer"

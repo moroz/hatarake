@@ -84,6 +84,7 @@ class OffersController < ApplicationController
     respond_to do |f|
       f.js { render 'index' }
       f.html do
+        @fields = Field.all
         @popular_locations = Country.most_popular_with_offer_counts
       end
     end

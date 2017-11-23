@@ -12,4 +12,13 @@
         = f.select :pid, localized_collection(@provinces || [], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}, 'aria-describedby' => 'provinceSelectHelptext'
     %noscript
       %p.help-text#provinceSelectHelptext= t('offers.index.noscript')
-  
+
+    .row.collapse
+      .medium-6.columns
+        = f.select :fid, localized_collection(@fields, params[:fid] || 0, blank: t('offers.fields.field')), {}, name: 'fid'
+      .medium-6.columns
+        .abroad_search__lr_container
+          .lr_container__check_box
+            = check_box_tag :lr, 1, false, name: 'lr', id: '_jobs_lr'
+          .lr_container__label
+            = f.label :lr, t('.no_language_required')

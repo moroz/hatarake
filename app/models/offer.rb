@@ -56,6 +56,7 @@ class Offer < ApplicationRecord
   scope :with_min_salary, ->(min) { where('salary @> :min or lower(salary) > :min', min: min.to_d) }
   scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }
   scope :with_province_id, ->(province_id) { joins(:location).where('locations.province_id = ?', province_id) }
+  scope :no_lang_required, -> { where(req_lang_1: 1) }
 
   scope :homepage_featured, -> { where('featured_until > NOW()') }
   scope :category_featured, -> { where('category_until > NOW()') }
@@ -63,14 +64,14 @@ class Offer < ApplicationRecord
   scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
 
   def self.advanced_search(o = {})
-    scope = self.all
+    scope = all
     scope = scope.with_country_id(o[:cid]) if o[:cid].present?
     scope = scope.with_province_id(o[:pid]) if o[:pid].present?
     scope = scope.search_by_query(o[:q]) if o[:q].present?
     scope = scope.with_min_salary(o[:smin]) if o[:smin].present?
     scope = scope.where(currency: o[:cur]) if o[:cur].present?
     scope = scope.where(field_id: o[:fid]) if o[:fid].present?
-    scope = scope.where(req_lang_1: 1) if o[:lr].present? && o[:lr].to_i == 1
+    scope = scope.no_lang_required if o[:lr].to_i == 1
     scope
   end
 
