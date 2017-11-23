@@ -133,6 +133,8 @@ en:
         cur: "currency: <strong>%{val}</strong>"
         smin: "minimal salary: <strong>%{val}</strong>"
         q: "term: <strong>%{val}</strong>"
+        lr: "no language required"
+        fid: "field: <strong>%{val}</strong>"
 
     advanced_search:
       heading: "Advanced search"

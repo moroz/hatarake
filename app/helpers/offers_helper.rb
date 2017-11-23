@@ -1,38 +1,35 @@
 module OffersHelper
   def localized_collection(collection, value = nil, blank: nil)
-    str = ""
-    if blank.present?
-      str = content_tag :option, blank, value: ""
-    end
+    str = ''
+    str = content_tag :option, blank, value: '' if blank.present?
     value ||= collection.first.id if collection.any?
     str << options_from_collection_for_select(collection, :id, local_name, value)
     raw str
   end
 
   def search_description(params)
-    if params[:cid].present? || params[:pid].present? ||
-      params[:smin].present? || params[:cur].present?
+    if %i[cid pid smin cur fid lr].any? { |k| params.key?(k) }
       advanced_search_description(params)
     elsif params[:q].present?
       basic_search_description(params)
-    else
-      nil
     end
   end
 
   def reset_search_link(options = {})
-    link_to I18n.t('offers.search_description.reset'), request.path, options.merge({id: 'reset_search', remote: true})
+    link_to I18n.t('offers.search_description.reset'), request.path, options.merge({ id: 'reset_search', remote: true })
   end
 
   def advanced_search_description(params)
     msg = []
     key_prefix = 'offers.search_description.advanced.'
     search_params = {
-      cid: -> { Country.find_by(id: params[:cid]).try(:local_name) },
-      pid: -> { Province.find_by(id: params[:pid]).try(:local_name) },
+      cid: -> { Country.find_by(id: params[:cid])&.local_name },
+      pid: -> { Province.find_by(id: params[:pid])&.local_name },
       cur: -> { I18n.t('currencies.' + params[:cur]) },
       q: -> { params[:q] },
-      smin: -> { params[:smin] }
+      smin: -> { params[:smin] },
+      fid: -> { Field.find(params[:fid])&.local_name },
+      lr: -> { '' }
     }
     search_params.each do |k,v|
       if params[k].present?

@@ -11,7 +11,7 @@
       - check_feat = true
     - @offers.count.times do |i|
       = render @offers[i]
-      - if check_feat && @offers[i].category_featured? && !@offers[i+1].category_featured?
+      - if check_feat && @offers[i].category_featured? && @offers[i+1].present? && !@offers[i+1].category_featured?
         %h4= t('offers.index.remaining_offers')
         - check_feat = false
     - if @featured.present?

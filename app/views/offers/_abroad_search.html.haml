@@ -4,7 +4,7 @@
     .input-group
       = f.text_field :q, name: 'q', class: 'input-group-field', placeholder: t('offers.abroad_search.placeholder'), autocomplete: 'off', autofocus: !mobile?, id: "basic_search_q"
       .input-group-button
-        = f.button t('.submit'), class: 'button primary expanded search_bar__right'
+        = f.button t('.submit'), class: 'button primary expanded search_bar__right', name: nil
     .row.collapse
       .medium-6.columns
         = f.select :cid, localized_collection(@countries, params[:cid] || 0, blank: t('offers.advanced_search.any_country')), {}, name: 'cid', data: {'country-select': ''}

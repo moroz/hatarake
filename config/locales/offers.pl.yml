@@ -132,6 +132,8 @@ pl:
         cur: "waluty: <strong>%{val}</strong>"
         smin: "pensji minimalnej: <strong>%{val}</strong>"
         q: "frazy: <strong>%{val}</strong>"
+        fid: "branży: <strong>%{val}</strong>"
+        lr: "bez znajomości języka"
 
     advanced_search:
       country: Kraj
