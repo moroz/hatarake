@@ -9,8 +9,9 @@
 
 - if @order.invoice?
   %p= t('orders.show.invoice.true')
-  %h4= t('orders.show.billing_address')
-  = render @order.billing_address
+  - if @order.billing_address
+    %h4= t('orders.show.billing_address')
+    = render @order.billing_address
 
 - else
   %p= t('orders.show.invoice.false')
