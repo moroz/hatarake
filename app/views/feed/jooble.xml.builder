@@ -15,6 +15,7 @@ xml.jobs do
       xml.salary { xml.cdata! xml_salary_for(offer) } if offer.salary.present?
       xml.phone { xml.cdata! offer.contact_phone } if offer.contact_phone.present?
       xml.description { xml.cdata! markdown(offer.description) }
+      xml.segmentation { xml.cdata! "promo_#{(!!offer.featured?).to_s}" }
     end
   end
 end
