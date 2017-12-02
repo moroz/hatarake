@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Company < User
   devise :registerable
   has_many :offers, dependent: :destroy
@@ -5,7 +7,7 @@ class Company < User
   has_many :subscriptions
   has_many :blog_posts, foreign_key: :user_id
   belongs_to :location
-  validates :name, uniqueness: true, presence: true 
+  validates :name, uniqueness: true, presence: true
 
   def self.published_offers
     offers.where('published_at IS NOT NULL')
@@ -14,47 +16,38 @@ class Company < User
   accepts_nested_attributes_for :location
 
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
+  friendly_id :name, use: %i[slugged finders]
 
   scope :premium_users, -> { where('premium_until > NOW()') }
   scope :featured, -> { premium_users.order('users.updated_at DESC') }
-  scope :with_avg_rating, -> { find_with_reputation(:avg_rating, :all) }
-
-  has_reputation :avg_rating, source: :user, aggregated_by: :average
 
   def self.search(query)
     where('name ILIKE ?', '%' + sanitize_sql_like(query) + '%')
-  end
-
-  def display_name
-    name
-  end
-
-  def ratings_count
-    ReputationSystem::Evaluation.where(target_id: id).count
-  end
-
-  def user_rating(user)
-    ReputationSystem::Evaluation.where(target_id: id, source_id: user.id).last.try(:value)
   end
 
   def premium?
     premium_until && premium_until > Time.now
   end
 
-  def sex
-    nil
+  def display_name
+    name
   end
 
-  def recent_offers(limit = 5)
-    offers.order(:published_at).limit(limit)
-  end
+  def sex; end
 
-  # If this query proves hard on the database, please consider
-  # adding an offers_count to the database.
-  def self.offer_counts
-    unscoped.joins(:offers).select('users.id AS id, count(offers.id) AS count').group('users.id').reduce({}) do |acc, c|
-      acc.merge(c.id => c.count)
+  # balance is the amount of money given to a Company so they can buy premium services
+  # when placing an order, Company's balance is reduced, and the same amount is deducted
+  # from the order's total to calculate amount due.
+  def reduce_balance(total)
+    return if balance.nil? || balance.zero?
+    total = total.to_d
+    if balance > total
+      update(balance: balance - total)
+      total
+    else
+      rval = balance
+      update(balance: 0)
+      rval
     end
   end
 end

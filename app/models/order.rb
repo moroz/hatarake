@@ -44,6 +44,10 @@ class Order < ApplicationRecord
     !polish_taxpayer
   end
 
+  def amount_due
+    super || total
+  end
+
   private
 
   def clear_billing_address_attributes_if_no_invoice
@@ -56,5 +60,6 @@ class Order < ApplicationRecord
 
   def set_total
     self.total = cart.total(currency: currency, net: net?)
+    self.amount_due = total - (deduction || 0)
   end
 end

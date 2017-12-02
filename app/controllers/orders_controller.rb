@@ -23,8 +23,16 @@ class OrdersController < ApplicationController
     @order.cart = current_cart
     @order.user = current_user
     @order.transaction do
+      if @order.currency == 'pln'
+        @order.deduction = current_user.reduce_balance(current_cart.total)
+      end
       @order.save!
       @order.cart.finalize!
+    end
+    if @order.amount_due.zero?
+      @order.paid!
+      redirect_to order_thank_you_path(order_id: @order.id)
+      return
     end
     OrdersMailer.order_placed(@order).deliver
     redirect_to order_payment_path(@order)
@@ -35,8 +43,7 @@ class OrdersController < ApplicationController
   def payment; end
 
   def thank_you
-    return if @order.paid?
-    redirect_to order_payment_path(@order)
+    redirect_to order_payment_path(@order) unless @order.paid?
   end
 
   def destroy
