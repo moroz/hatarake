@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116195505) do
+ActiveRecord::Schema.define(version: 20171202112709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -371,6 +371,7 @@ ActiveRecord::Schema.define(version: 20171116195505) do
     t.hstore "premium_services"
     t.datetime "premium_until"
     t.integer "published_offers_count", default: 0
+    t.decimal "balance", precision: 8, scale: 2
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["contact_email"], name: "index_users_on_contact_email"
     t.index ["email"], name: "index_users_on_email", unique: true
