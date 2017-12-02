@@ -32,6 +32,8 @@ en:
       empty_cart: "Empty Cart"
       place: "Place order"
       amount_due: "Amount due:"
+      discount: "Discount:"
+      discount_disclaimer: "The discount amount is deducted from the gross total. Only available for orders settled in PLN."
 
   orders:
     index:

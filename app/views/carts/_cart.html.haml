@@ -35,6 +35,7 @@
               %td.text-center{colspan: 2}= Prices.formatted_price(total, currency)
 
 - else
+  - colspan = cart.readonly? ? 2 : 3
   .cart__table#cart
     %table.hover
       %thead
@@ -45,16 +46,26 @@
           %td.cart_item__unit_price= t('.unit_price')
           %td.cart_item__quantity= t('.quantity')
           %td.cart_item__subtotal= t('.subtotal')
-          
+
       %tbody
         = render cart.cart_items
-      %tfoot
-        %tr
+        %tr.cart__total
           -# Emoji 鬼 ogra U+1f479
-          - colspan = cart.readonly? ? 2 : 3
           %td{colspan: colspan}
           %td 👹 #{t('.total')}
           %td= cart.total_to_s
+        - if company_signed_in? && current_company.balance != 0
+          %tr.cart__discount
+            %td{colspan: colspan}
+            %td= t('.discount')
+            %td= Prices.formatted_price(current_company.balance, 'pln')
+          %tr.cart__amount_due
+            %td{colspan: colspan}
+            %td= t('.amount_due')
+            %td= Prices.formatted_discounted_price(cart.total, current_company.balance)
+    - if company_signed_in? && current_company.balance != 0
+      .cart__discount__disclaimer
+        %small= t('.discount_disclaimer')
 
     .text-right
       - unless cart.empty?

@@ -1,5 +1,5 @@
 ActiveAdmin.register Company do
-  permit_params :name, :description, :website, :email, :contact_email
+  permit_params :name, :description, :website, :email, :contact_email, :balance
   menu label: "Companies"
 
   scope :all
@@ -35,8 +35,8 @@ ActiveAdmin.register Company do
       !!company.confirmed_at
     end
     column :name { |company| link_to company.name, admin_company_path(company) }
-    column :email
-    column :contact_email
+    column :email { |company| [company.email, company.contact_email].compact.join(', ') }
+    column :balance { |company| Prices.formatted_price(company.balance, 'pln') if company.balance? }
     column :phone
     column :offer_count { |company| company.offers.count }
     actions
@@ -59,6 +59,7 @@ ActiveAdmin.register Company do
       end
       row :email
       row :name
+      row :balance { |company| Prices.formatted_price(company.balance || 0, 'pln') }
       row :created_at
       row :updated_at
       row :slug

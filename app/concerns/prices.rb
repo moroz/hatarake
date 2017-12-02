@@ -20,4 +20,14 @@ module Prices
     end
     format('%.2f&nbsp;PLN%s%.2f&nbsp;EUR', pln, PRICE_SEPARATOR, eur).html_safe
   end
+
+  def self.discounted_price(total, discount)
+    difference = total.to_d - discount.to_d
+    return 0 if difference <= 0
+    difference
+  end
+
+  def self.formatted_discounted_price(total, discount, currency = 'pln')
+    formatted_price(discounted_price(total, discount), currency)
+  end
 end

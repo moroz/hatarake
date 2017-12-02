@@ -2,17 +2,16 @@
   color: darken($primary-color, 8%)
 
 .cart__table
-  overlay: scroll
+  overflow-x: auto
+  width: 100%
 
   table
+    border-collapse: collapse
+
     thead td
+      color: darken($primary-color, 4%)
       font-family: $thin-font
       font-size: 1.1rem
-      color: darken($primary-color, 4%)
-    tfoot td
-      color: $dark-red
-    tfoot
-      background: transparent
 
 .cart_item__unit_price, .cart_item__subtotal
   width: rem-calc(180)
@@ -24,15 +23,34 @@
   width: rem-calc(25)
 
 .cart_item__edit_quantity
-  width: rem-calc(55)
   display: inline
   margin-bottom: 0
+  width: rem-calc(55)
+
 .cart_item__edit_submit
   display: inline
   margin-bottom: 0
 
 .fieldset
   @include breakpoint(small only)
+    border: 0
     margin: 0
-    padding: 0.5em
-    border: none
+    padding: .5em
+
+.cart__total
+  color: darken($primary-color, 15%)
+  font-weight: bold
+
+.cart__amount_due
+  @extend .cart__total
+  background-color: transparentize($primary-color, 0.9)
+
+.cart__discount
+  background-color: transparentize($dark-green, 0.9)
+  color: darken($dark-green, 15%)
+  font-weight: bold
+
+.cart__discount__disclaimer
+  margin-bottom: .5em
+  margin-top: -1em
+  text-align: right

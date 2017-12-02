@@ -29,10 +29,12 @@ pl:
       gross_subtotal: "Podsuma brutto"
       net: Netto
       gross: Brutto
-      total: "Łącznie:"
+      total: "Suma:"
       empty_cart: "Opróżnij Koszyk"
       place: "Złóż zamówienie"
       amount_due: "Do zapłaty:"
+      discount: "Upust:"
+      discount_disclaimer: "Kwota upustu jest odliczana od sumy brutto. Dotyczy zamówień rozliczanych w PLN."
   
   orders:
     index:
