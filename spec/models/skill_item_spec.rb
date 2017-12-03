@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe SkillItem, type: :model do
-  let(:skill_item) { FactoryGirl.build(:skill_item) }
+  let(:skill_item) { FactoryBot.build(:skill_item) }
 
   describe 'validations' do
     describe 'level' do
@@ -26,7 +26,7 @@ RSpec.describe SkillItem, type: :model do
   end
 
   describe "auto-creating Skill" do
-    let(:skill) { FactoryGirl.create(:skill, name_en: "Bazz") }
+    let(:skill) { FactoryBot.create(:skill, name_en: "Bazz") }
 
     context "when Skill doesn't exist" do
       it "creates a new Skill" do

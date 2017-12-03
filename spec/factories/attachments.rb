@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :attachment do
     file "MyString"
     owner_id 1

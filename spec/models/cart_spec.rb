@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Cart, type: :model do
-  let(:cart) { FactoryGirl.create(:cart) }
-  let(:product) { FactoryGirl.create(:product) }
+  let(:cart) { FactoryBot.create(:cart) }
+  let(:product) { FactoryBot.create(:product) }
 
   describe 'when created' do
     it 'has no items' do
@@ -21,7 +21,7 @@ RSpec.describe Cart, type: :model do
   end
 
   describe '#to_h' do
-    let(:product2) { FactoryGirl.create(:product) }
+    let(:product2) { FactoryBot.create(:product) }
 
     it 'returns a hash of product_ids => quantities' do
       cart.add_item(product, 3)
@@ -91,8 +91,8 @@ RSpec.describe Cart, type: :model do
     end
 
     context 'when items are present in the cart' do
-      let(:prod1) { FactoryGirl.create(:product, price_pln: 10, price_eur: 3) }
-      let(:prod2) { FactoryGirl.create(:product, price_pln: 20, price_eur: 5) }
+      let(:prod1) { FactoryBot.create(:product, price_pln: 10, price_eur: 3) }
+      let(:prod2) { FactoryBot.create(:product, price_pln: 20, price_eur: 5) }
 
       before do
         cart.add_item(prod1, 3)

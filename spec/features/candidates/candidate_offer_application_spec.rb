@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Candidate offer application' do
-  let(:candidate) { FactoryGirl.create(:candidate) }
-  let!(:offer) { FactoryGirl.create(:offer, :published) }
+  let(:candidate) { FactoryBot.create(:candidate) }
+  let!(:offer) { FactoryBot.create(:offer, :published) }
 
   describe 'applying for offer through application form' do
     before do
@@ -24,7 +24,7 @@ RSpec.describe 'Candidate offer application' do
   end
 
   context "when Candidate has no CandidateProfile" do
-    let(:no_profile_candidate) { FactoryGirl.create(:candidate, :only_login_credentials) }
+    let(:no_profile_candidate) { FactoryBot.create(:candidate, :only_login_credentials) }
 
     before do
       login_as(no_profile_candidate, scope: :candidate)

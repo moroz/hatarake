@@ -5,7 +5,7 @@ RSpec.shared_examples "cv item" do
     described_class.model_name.singular
   end
 
-  let(:item) { FactoryGirl.build(factory_key) }
+  let(:item) { FactoryBot.build(factory_key) }
 
   describe "validations" do
     context "with valid attributes" do
@@ -16,7 +16,7 @@ RSpec.shared_examples "cv item" do
 
     context "with no dates" do
       it "is invalid" do
-        no_date_item = FactoryGirl.build(factory_key, :no_dates)
+        no_date_item = FactoryBot.build(factory_key, :no_dates)
         expect(no_date_item).not_to be_valid
       end
     end

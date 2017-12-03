@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :province do
     country { Country.first || create(:country) }
     name_en "Brandenburg"

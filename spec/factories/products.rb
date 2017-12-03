@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :product do
     sequence(:name_pl) { |n| "Tłusty Boczek #{n}" }
     sequence(:name_en) { |n| "Chunky Bacon #{n}" }

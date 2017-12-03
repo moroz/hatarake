@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :offer_safe, class: 'OfferSave' do
     user_id 1
     offer nil

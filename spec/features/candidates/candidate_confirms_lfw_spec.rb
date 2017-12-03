@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Candidate confirms looking for work" do
-  let(:candidate) { FactoryGirl.create(:candidate, :looking_for_work) }
+  let(:candidate) { FactoryBot.create(:candidate, :looking_for_work) }
 
   before do
     login_as(candidate, scope: :candidate)
@@ -29,7 +29,7 @@ RSpec.describe "Candidate confirms looking for work" do
   end
 
   context "when candidate isn't looking for work and lfw_at < 2 days ago" do
-    let(:candidate) { FactoryGirl.create(:candidate, :not_looking_for_work) }
+    let(:candidate) { FactoryBot.create(:candidate, :not_looking_for_work) }
 
     it "shows callout to ask" do
       expect(page).to have_selector('#confirm_lfw_callout')

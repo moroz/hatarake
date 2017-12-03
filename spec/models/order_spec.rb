@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Order, type: :model do
-  let(:order) { FactoryGirl.create(:order) }
+  let(:order) { FactoryBot.create(:order) }
 
   describe '#paid!' do
     context 'when called on a paid order' do
-      let(:paid_order) { FactoryGirl.create(:order, :paid) }
+      let(:paid_order) { FactoryBot.create(:order, :paid) }
       it 'raises an exception' do
         expect { paid_order.paid! }.to raise_exception RuntimeError
       end
@@ -29,7 +29,7 @@ RSpec.describe Order, type: :model do
   end
 
   describe 'upon creation' do
-    let(:order) { FactoryGirl.build(:order) }
+    let(:order) { FactoryBot.build(:order) }
     context 'when deduction is nil' do
       it 'amount_due == total' do
         order.save
@@ -57,7 +57,7 @@ RSpec.describe Order, type: :model do
   end
 
   describe 'nested attributes for BillingAddress' do
-    let(:order) { FactoryGirl.build(:order, :with_billing_address_attributes) }
+    let(:order) { FactoryBot.build(:order, :with_billing_address_attributes) }
 
     context 'when invoice = true' do
       it 'saves BillingAddress' do

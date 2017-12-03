@@ -6,7 +6,7 @@ RSpec.shared_examples "acts like localizable" do
   end
 
   def create_item(name_en, name_pl = nil)
-    FactoryGirl.create(factory_key, name_en: name_en,
+    FactoryBot.create(factory_key, name_en: name_en,
                        name_pl: name_pl)
   end
 

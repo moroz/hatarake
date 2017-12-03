@@ -2,8 +2,8 @@ require 'rails_helper'
 
 
 RSpec.describe "Company adds Offer" do
-  let(:company) { Company.first || FactoryGirl.create(:company) }
-  let!(:country) { FactoryGirl.create(:country) }
+  let(:company) { Company.first || FactoryBot.create(:company) }
+  let!(:country) { FactoryBot.create(:country) }
 
   describe "offer creation" do
     before do
@@ -33,7 +33,7 @@ RSpec.describe "Company adds Offer" do
   end
 
   describe 'offer publishing' do
-    let(:offer) { FactoryGirl.create(:offer, :unpublished, company: company) }
+    let(:offer) { FactoryBot.create(:offer, :unpublished, company: company) }
     before do
       login_as(company, scope: :company)
       visit offer_path(offer)

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :field do
     name_en "MyString"
     name_pl "MyString"

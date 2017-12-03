@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Company do
-  let(:company) { FactoryGirl.build(:company) }
+  let(:company) { FactoryBot.build(:company) }
 
   describe "validations" do
     describe "website URL format" do
@@ -62,21 +62,21 @@ RSpec.describe Company do
   describe "#premium?" do
     context "when premium_until = nil" do
       it "returns false" do
-        company = FactoryGirl.build(:company, premium_until: nil)
+        company = FactoryBot.build(:company, premium_until: nil)
         expect(company).not_to be_premium
       end
     end
 
     context "when premium_until is in the past" do
       it "returns false" do
-        company = FactoryGirl.build(:company, premium_until: 2.weeks.ago)
+        company = FactoryBot.build(:company, premium_until: 2.weeks.ago)
         expect(company).not_to be_premium
       end
     end
 
     context "when premium_until is in the future" do
       it "returns false" do
-        company = FactoryGirl.build(:company, premium_until: 2.weeks.from_now)
+        company = FactoryBot.build(:company, premium_until: 2.weeks.from_now)
         expect(company).to be_premium
       end
     end
@@ -91,7 +91,7 @@ RSpec.describe Company do
     end
 
     context "when user has no premium services" do
-      let(:company) { FactoryGirl.create(:company, premium_services: nil) }
+      let(:company) { FactoryBot.create(:company, premium_services: nil) }
       
       it "sets premium_services to the hash" do
         company.add_premium_services({2 => 1, 3 => 6})
@@ -101,7 +101,7 @@ RSpec.describe Company do
     end
 
     context "when user already has premium services" do
-      let(:company) { FactoryGirl.create(:company, premium_services: {2 => 1, 3 => 6}) }
+      let(:company) { FactoryBot.create(:company, premium_services: {2 => 1, 3 => 6}) }
 
       it "sets premium_services to sum of hashes" do
         company.add_premium_services({2 => 2, 3 => 3, 4 => 1})
@@ -136,14 +136,14 @@ RSpec.describe Company do
 
     context 'when a new offer is created and published' do
       it '== 1' do
-        FactoryGirl.create(:offer, :published, company: company)
+        FactoryBot.create(:offer, :published, company: company)
         expect(company.published_offers_count).to eq 1
       end
     end
 
     context 'when a previously published offer is unpublished' do
       before do
-        FactoryGirl.create_list(:offer, 2, :published, company: company)
+        FactoryBot.create_list(:offer, 2, :published, company: company)
       end
 
       it 'decrements' do
@@ -154,7 +154,7 @@ RSpec.describe Company do
   end
 
   #describe "scopes" do
-    #let!(:company) { FactoryGirl.create(:company) }
+    #let!(:company) { FactoryBot.create(:company) }
     
     #describe "#premium_users" do
       #subject { Company.premium_users }

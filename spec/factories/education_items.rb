@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :education_item do
     candidate { Candidate.first || create(:candidate) }
     category "ba"

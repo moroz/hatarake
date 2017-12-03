@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Company manages offers' do
-  let(:company) { FactoryGirl.create(:company) }
-  let!(:offers) { FactoryGirl.create_list(:offer, 4, company: company) }
+  let(:company) { FactoryBot.create(:company) }
+  let!(:offers) { FactoryBot.create_list(:offer, 4, company: company) }
   
   before do
     login_as(company, scope: :company)

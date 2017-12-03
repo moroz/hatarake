@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :order do
-    user { Company.first || FactoryGirl.create(:company) }
+    user { Company.first || FactoryBot.create(:company) }
     cart { create :cart, :with_items, user: user }
     payment_status 'new'
     paid_at nil

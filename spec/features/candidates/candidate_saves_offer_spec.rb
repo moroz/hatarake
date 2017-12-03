@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.xdescribe "Candidate saves offer" do
-  let(:candidate) { FactoryGirl.create(:candidate) }
-  let!(:offer) { FactoryGirl.create(:offer, :published) }
+  let(:candidate) { FactoryBot.create(:candidate) }
+  let!(:offer) { FactoryBot.create(:offer, :published) }
 
   describe "in offers#index" do 
     context "when not signed in" do

@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe BlogPost, type: :model do
-  let(:company) { FactoryGirl.create(:company) }
+  let(:company) { FactoryBot.create(:company) }
   describe "validations" do
     describe "uniqueness validation in user scope" do
-      let!(:post1) { FactoryGirl.create(:blog_post, company: company, body: "Zażółć gęślą jaźń.") }
-      let(:new_post) { FactoryGirl.build(:blog_post, company: company) }
+      let!(:post1) { FactoryBot.create(:blog_post, company: company, body: "Zażółć gęślą jaźń.") }
+      let(:new_post) { FactoryBot.build(:blog_post, company: company) }
 
       context "when new post has identical body" do
         it "is invalid" do

@@ -12,7 +12,7 @@ RSpec.describe "Candidate registration" do
   end
 
   describe "second step" do
-    let(:candidate) { FactoryGirl.create(:candidate, :only_login_credentials) }
+    let(:candidate) { FactoryBot.create(:candidate, :only_login_credentials) }
     before do
       login_as(candidate, scope: :candidate)
       visit profile_path

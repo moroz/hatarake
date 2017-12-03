@@ -21,8 +21,8 @@ RSpec.describe "Offer search" do
   end
 
   describe "searching by name" do
-    let!(:matching) { FactoryGirl.create(:offer, :published, title: "Manga reader") }
-    let!(:other) { FactoryGirl.create(:offer, :published, title: "Computer programmer") }
+    let!(:matching) { FactoryBot.create(:offer, :published, title: "Manga reader") }
+    let!(:other) { FactoryBot.create(:offer, :published, title: "Computer programmer") }
 
     before(:each) do
       visit jobs_abroad_path
@@ -42,8 +42,8 @@ RSpec.describe "Offer search" do
   end
 
   describe "searching by country" do
-    let!(:germany) { FactoryGirl.create(:offer, :published, :germany, title: "Offer in Germany") }
-    let!(:russia) { FactoryGirl.create(:offer, :published, :russia, title: "Offer in Russia") }
+    let!(:germany) { FactoryBot.create(:offer, :published, :germany, title: "Offer in Germany") }
+    let!(:russia) { FactoryBot.create(:offer, :published, :russia, title: "Offer in Russia") }
 
     before(:each) do
       visit jobs_abroad_path(lang: 'en')

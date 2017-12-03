@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe OfferSave, type: :model do
-  let(:offer) { FactoryGirl.create(:offer) }
-  let(:user) { FactoryGirl.create(:candidate) }
+  let(:offer) { FactoryBot.create(:offer) }
+  let(:user) { FactoryBot.create(:candidate) }
   let(:save) { OfferSave.new(offer: offer, user: user) }
   
   describe "validations" do

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Company places Order' do
   fixtures :products
-  let(:company) { FactoryGirl.create(:company) }
+  let(:company) { FactoryBot.create(:company) }
   before do
     login_as(company, scope: :company)
   end
@@ -31,7 +31,7 @@ RSpec.describe 'Company places Order' do
   end
 
   describe 'checking out' do
-    let(:cart) { FactoryGirl.create(:cart, user: company) }
+    let(:cart) { FactoryBot.create(:cart, user: company) }
     before do
       cart.add_item(1, 2)
     end

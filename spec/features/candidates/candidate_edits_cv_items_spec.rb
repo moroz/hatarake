@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Candidate edits CV items' do
-  let(:candidate) { FactoryGirl.create(:candidate) }
+  let(:candidate) { FactoryBot.create(:candidate) }
   
   before(:each) do
     login_as(candidate, scope: :candidate)
@@ -66,7 +66,7 @@ RSpec.describe 'Candidate edits CV items' do
     end
 
     describe 'deleting items' do
-      let!(:work_item) { FactoryGirl.create(:work_item, candidate: candidate) }
+      let!(:work_item) { FactoryBot.create(:work_item, candidate: candidate) }
 
       before do
         visit work_items_path 

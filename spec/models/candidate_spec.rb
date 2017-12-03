@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Candidate, type: :model do
   describe "scopes" do
-    let!(:candidate) { FactoryGirl.create(:candidate, :looking_for_work) }
-    let!(:not_looking_candidate) { FactoryGirl.create(:candidate, :not_looking_for_work) }
+    let!(:candidate) { FactoryBot.create(:candidate, :looking_for_work) }
+    let!(:not_looking_candidate) { FactoryBot.create(:candidate, :not_looking_for_work) }
     describe "looking_for_work" do
       subject { Candidate.looking_for_work }
 
@@ -12,8 +12,8 @@ RSpec.describe Candidate, type: :model do
     end
 
     describe "with_profession" do
-      let!(:carpenter) { FactoryGirl.create(:candidate, profession_name: "Carpenter") }
-      let!(:welder) { FactoryGirl.create(:candidate, profession_name: "Welder") }
+      let!(:carpenter) { FactoryBot.create(:candidate, profession_name: "Carpenter") }
+      let!(:welder) { FactoryBot.create(:candidate, profession_name: "Welder") }
 
       context "when given profession name" do
         subject { Candidate.with_profession "Carpenter" }
@@ -24,8 +24,8 @@ RSpec.describe Candidate, type: :model do
     end
 
     describe "search" do
-      let!(:smith) { FactoryGirl.create(:candidate, profile: FactoryGirl.create(:candidate_profile, first_name: "John", last_name: "Smith")) }
-      let!(:kowalski) { FactoryGirl.create(:candidate, profile: FactoryGirl.create(:candidate_profile, first_name: "Jan", last_name: "Kowalski")) }
+      let!(:smith) { FactoryBot.create(:candidate, profile: FactoryBot.create(:candidate_profile, first_name: "John", last_name: "Smith")) }
+      let!(:kowalski) { FactoryBot.create(:candidate, profile: FactoryBot.create(:candidate_profile, first_name: "Jan", last_name: "Kowalski")) }
 
       context "by first name" do
         subject { Candidate.search("john") }
@@ -53,15 +53,15 @@ RSpec.describe Candidate, type: :model do
   describe "#should_confirm_lfw?" do
     context 'when profile is not present' do
       it 'returns false' do
-        no_profile_candidate = FactoryGirl.create(:candidate, :only_login_credentials)
+        no_profile_candidate = FactoryBot.create(:candidate, :only_login_credentials)
         expect(no_profile_candidate.should_confirm_lfw?).to be false
       end
     end
 
     context 'when profile is present' do
       def create_candidate(looking_for_work, lfw_at)
-        profile = FactoryGirl.create(:candidate_profile, looking_for_work: looking_for_work, lfw_at: lfw_at)
-        FactoryGirl.create(:candidate, profile: profile)
+        profile = FactoryBot.create(:candidate_profile, looking_for_work: looking_for_work, lfw_at: lfw_at)
+        FactoryBot.create(:candidate, profile: profile)
       end
 
       context 'when candidate is looking for work' do

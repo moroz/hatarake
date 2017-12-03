@@ -9,11 +9,11 @@ RSpec.shared_examples "acts like autocompletable" do
     described_class.model_name.singular
   end
 
-  let!(:item) { FactoryGirl.create(factory_key,
+  let!(:item) { FactoryBot.create(factory_key,
                                    name_en: "Foobar in English",
                                    name_pl: "Cośtam po polsku"
                                   ) }
-  let!(:other) { FactoryGirl.create(factory_key,
+  let!(:other) { FactoryBot.create(factory_key,
                                     name_en: "Another thing",
                                     name_pl: "Jeszcze coś innego"
                                    ) }

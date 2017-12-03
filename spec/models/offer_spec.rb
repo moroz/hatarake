@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Offer, type: :model do
-  let(:offer) { FactoryGirl.build(:offer) }
+  let(:offer) { FactoryBot.build(:offer) }
   describe "validations" do
     context "with valid attributes" do
       it "is valid" do
@@ -42,7 +42,7 @@ RSpec.describe Offer, type: :model do
     end
 
     context "when apply_on_website is false" do
-      let(:offer) { FactoryGirl.build(:offer, apply_on_website: false) }
+      let(:offer) { FactoryBot.build(:offer, apply_on_website: false) }
       context 'without application_url' do
         it 'is valid' do
           offer.application_url = nil
@@ -52,7 +52,7 @@ RSpec.describe Offer, type: :model do
     end
 
     context "when apply_on_website is true" do
-      let(:offer) { FactoryGirl.build(:offer, :apply_on_website) }
+      let(:offer) { FactoryBot.build(:offer, :apply_on_website) }
 
       context "without application_url" do
         it "is invalid" do
@@ -78,7 +78,7 @@ RSpec.describe Offer, type: :model do
   end
 
   describe 'make_required_languages' do
-    let(:offer) { FactoryGirl.build(:offer) }
+    let(:offer) { FactoryBot.build(:offer) }
 
     before(:each) do
       offer.req_lang_2 = 5
@@ -115,7 +115,7 @@ RSpec.describe Offer, type: :model do
   end
 
   describe 'make_hourly_wage' do
-    let(:offer) { FactoryGirl.build(:offer) }
+    let(:offer) { FactoryBot.build(:offer) }
 
     context 'upon save' do
       context "when given numbers with point as decimal separator" do
@@ -178,7 +178,7 @@ RSpec.describe Offer, type: :model do
 
   describe "publishing" do
     context "when created" do
-      let(:offer) { FactoryGirl.create(:offer) }
+      let(:offer) { FactoryBot.create(:offer) }
 
       it 'published is true' do
         expect(offer.reload).to be_published
@@ -212,8 +212,8 @@ RSpec.describe Offer, type: :model do
     end
 
     describe "offers in Poland and abroad" do
-      let!(:offer_pl) { FactoryGirl.create(:offer, :published, :poland) }
-      let!(:offer_de) { FactoryGirl.create(:offer, :published, :germany) }
+      let!(:offer_pl) { FactoryBot.create(:offer, :published, :poland) }
+      let!(:offer_de) { FactoryBot.create(:offer, :published, :germany) }
 
       describe "poland" do
         subject { Offer.poland.to_a }
@@ -232,11 +232,11 @@ RSpec.describe Offer, type: :model do
     end
 
     describe "featured scopes" do
-      let!(:unfeatured) { FactoryGirl.create(:offer, :unfeatured) }
-      let!(:homepage_featured) { FactoryGirl.create(:offer, :homepage_featured) }
+      let!(:unfeatured) { FactoryBot.create(:offer, :unfeatured) }
+      let!(:homepage_featured) { FactoryBot.create(:offer, :homepage_featured) }
 
       describe "#homepage_featured" do
-        let!(:homepage_past) { FactoryGirl.create(:offer, featured_until: 2.weeks.ago) }
+        let!(:homepage_past) { FactoryBot.create(:offer, featured_until: 2.weeks.ago) }
 
         subject { Offer.homepage_featured }
         it { is_expected.to include(homepage_featured) }
@@ -245,8 +245,8 @@ RSpec.describe Offer, type: :model do
       end
 
       describe "offers featured within category" do
-        let!(:category_featured) { FactoryGirl.create(:offer, :category_featured) }
-        let!(:category_past) { FactoryGirl.create(:offer, category_until: 2.weeks.ago) }
+        let!(:category_featured) { FactoryBot.create(:offer, :category_featured) }
+        let!(:category_past) { FactoryBot.create(:offer, category_until: 2.weeks.ago) }
 
         describe "#category_featured" do
           subject { Offer.category_featured }
@@ -265,10 +265,10 @@ RSpec.describe Offer, type: :model do
     end
 
     describe "adding premium services" do
-      let(:offer) { FactoryGirl.create(:offer, :published) }
+      let(:offer) { FactoryBot.create(:offer, :published) }
 
       describe "self.add_premium" do
-        let!(:offers) { FactoryGirl.create_list(:offer, 3) }
+        let!(:offers) { FactoryBot.create_list(:offer, 3) }
 
       end
     end

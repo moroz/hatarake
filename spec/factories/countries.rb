@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :country do
     iso "UA"
     name_pl "Ukraina"
