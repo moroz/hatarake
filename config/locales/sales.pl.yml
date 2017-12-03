@@ -35,6 +35,9 @@ pl:
       amount_due: "Do zapłaty:"
       discount: "Upust:"
       discount_disclaimer: "Kwota upustu jest odliczana od sumy brutto. Dotyczy zamówień rozliczanych w PLN."
+    actions:
+      destroy:
+        confirmation: "Czy na pewno chcesz anulować to zamówienie?"
   
   orders:
     index:

@@ -10,7 +10,7 @@
   = f.hidden_field :api_version, value: 'dev'
   = f.hidden_field :url, value: order_thank_you_path(order_id: @order)
   = f.hidden_field :currency, value: @order.currency.upcase
-  = f.hidden_field :amount, value: sprintf("%.2f", @order.total)
+  = f.hidden_field :amount, value: sprintf("%.2f", @order.amount_due)
   = f.hidden_field :control, value: @order.unique_token
   = f.hidden_field :description, value: t('.payment_description')
   = f.submit t('.confirm_and_pay'), class: 'button large'

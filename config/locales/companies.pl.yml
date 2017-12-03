@@ -88,6 +88,9 @@ pl:
       order_premium: Zamów usługi Premium
       browse_candidate_profiles: Przeglądaj kandydatów
       you_have_orders: "Masz"
+      vouchers: Twoje premie
+      vouchers_text: "Na Twoim koncie jest <span class=\"balance-hl\">%{balance}</span> do wykorzystania na usługi Premium."
+      manage_orders: "Zarządzaj zamówieniami"
       unpaid_order:
         one: jedno nieopłacone zamówienie.
         few: '%{count} nieopłacone zamówienia.'

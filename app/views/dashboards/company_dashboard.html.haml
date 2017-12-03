@@ -3,6 +3,15 @@
 .row
   .columns.medium-6
 
+    - if current_company.balance.to_f != 0
+      .card.dashboard_card
+        .card-divider
+          %h4= t('.vouchers')
+        .card-section
+          %p
+            != t('.vouchers_text', balance: Prices.formatted_price(current_company.balance, 'pln'))
+            = link_to t('.order'), premium_path
+
     .card.dashboard_card
       .card-divider
         %h4= t('.premium_services')
@@ -51,5 +60,5 @@
       .card-section
         - if @stats[:unpaid_orders_count] != 0
           = t('.you_have_orders')
-          = link_to orders_path do
-            = t('.unpaid_order', count: @stats[:unpaid_orders_count])
+          = t('.unpaid_order', count: @stats[:unpaid_orders_count])
+        = link_to t('.manage_orders'), orders_path, class: 'button primary'

@@ -13,6 +13,8 @@ class Order < ApplicationRecord
   before_validation :set_token_description
   before_create :set_total
 
+  before_destroy :revert_balance
+
   scope :paid, -> { where('paid_at IS NOT NULL') }
   scope :unpaid, -> { where(paid_at: nil) }
 
@@ -61,6 +63,10 @@ class Order < ApplicationRecord
   def set_total
     self.total = cart.total(currency: currency, net: net?)
     self.amount_due = total - (deduction || 0)
-    self.amount_due = 0 if amount_due < 0
+    self.amount_due = 0 if amount_due.negative?
+  end
+
+  def revert_balance
+    user.update(balance: user.balance + deduction) if deduction
   end
 end

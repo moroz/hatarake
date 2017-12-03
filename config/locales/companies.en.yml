@@ -56,6 +56,10 @@ en:
         one: one unpaid order.
         other: '%{count} unpaid orders.'
       you_have_orders: You have
+      vouchers: Your Vouchers
+      order: Order...
+      vouchers_text: "You have <span class=\"balance-hl\">%{balance}</span> remaining on your account to spend on Premium services."
+      manage_orders: "Manage orders"
       orders: Orders
       premium_employer_valid_until: "Your Premium Employer Bundle is valid until %{dt}."
       premium_services_available: "You can use the following premium services:"

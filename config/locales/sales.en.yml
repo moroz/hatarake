@@ -34,6 +34,9 @@ en:
       amount_due: "Amount due:"
       discount: "Discount:"
       discount_disclaimer: "The discount amount is deducted from the gross total. Only available for orders settled in PLN."
+    actions:
+      destroy:
+        confirmation: "Are you sure you want to cancel this order?"
 
   orders:
     index:

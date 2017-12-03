@@ -26,15 +26,10 @@
               = cart.total_to_s(net: true, currency: currency)
             %td
               = cart.total_to_s(currency: currency)
-          = render 'carts/discount_rows', cart: cart
-
-          - if defined?(total)
-            %tr
-              %td
-              %td{colspan: 2}= t('.amount_due')
-              %td.text-center{colspan: 2}= Prices.formatted_price(total, currency)
+            = render 'carts/discount_rows', cart: cart
 
 - else
+  - colspan = cart.readonly? ? 2 : 3
   .cart__table#cart
     %table.hover
       %thead
