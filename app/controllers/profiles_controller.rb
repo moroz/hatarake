@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
   helper_method :company, :candidate
 
   def show
-    unless logged_in?
-      redirect_to root_path and return
-    end
+    return redirect_to root_path unless logged_in?
     if candidate_signed_in?
       if candidate.profile.nil?
         redirect_to edit_candidate_profile_path
@@ -12,8 +12,6 @@ class ProfilesController < ApplicationController
         render 'candidates/show'
       end
     elsif company_signed_in?
-      @rating = company.reputation_for(:avg_rating).round(2)
-      @ratings_count = company.ratings_count
       @blog_posts = company.blog_posts.ordered
       render 'companies/show'
     end
