@@ -16,7 +16,7 @@ ActiveAdmin.register Company do
   sidebar :actions, only: :index, priority: 0 do
     str = link_to "Mailing list", mailing_list_companies_path, target: '_blank', class: 'button'
     str += link_to 'Download as XLSX', companies_path(format: 'xlsx'), class: 'button'
-    str += link_to 'Wszyscy +10 PLN', increment_balance_admin_companies_path, class: 'button', method: :patch
+    str += link_to 'Wszyscy +10 PLN', increment_all_admin_companies_path, class: 'button', method: :patch
     str
   end
 
@@ -26,7 +26,14 @@ ActiveAdmin.register Company do
     redirect_to admin_company_path(id: resource.id)
   end
 
-  collection_action :increment_balance, method: :patch do
+  member_action :increment_balance, method: :patch do
+    resource.increment!(:balance, 10)
+    respond_to do |f|
+      f.js
+    end
+  end
+
+  collection_action :increment_all, method: :patch do
     q = %{update users set balance = coalesce(balance, 0) + 10 where type = 'Company'}
     User.connection.execute(q)
     redirect_to admin_companies_path, success: 'Zwiększono stan konta wszystkich firm o 10 PLN.'
@@ -41,7 +48,13 @@ ActiveAdmin.register Company do
     end
     column :name { |company| link_to company.name, admin_company_path(company) }
     column :email { |company| [company.email, company.contact_email].compact.join(', ') }
-    column :balance { |company| Prices.formatted_price(company.balance, 'pln') if company.balance? }
+    column :balance do |c|
+      str = content_tag :span, id: "company_#{c.id}_balance" do
+        Prices.formatted_price(c.balance, 'pln') if c.balance
+      end
+      str += link_to '+10', increment_balance_admin_company_path(id: c.id), method: :patch, class: 'increment-button', remote: true
+      raw(str)
+    end
     column :phone
     column :offer_count { |company| company.offers.count }
     actions

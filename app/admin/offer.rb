@@ -26,6 +26,7 @@ ActiveAdmin.register Offer do
       f.js
     end
   end
+
   index do
     column :title { |o| link_to o.title, admin_offer_path(o) }
     column :company
