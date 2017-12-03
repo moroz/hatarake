@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     end
     if @order.amount_due.zero?
       @order.paid!
-      redirect_to order_thank_you_path(order_id: @order.id)
+      redirect_to order_thank_you_path(order_id: @order.to_param)
       return
     end
     OrdersMailer.order_placed(@order).deliver

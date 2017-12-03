@@ -1,0 +1,10 @@
+- colspan = cart.readonly? ? 2 : 3
+- if company_signed_in? && current_company.balance.to_f != 0
+  %tr.cart__discount
+    %td{colspan: colspan}
+    %td= t('carts.cart.discount')
+    %td= Prices.formatted_price(current_company.balance, 'pln')
+  %tr.cart__amount_due
+    %td{colspan: colspan}
+    %td= t('carts.cart.amount_due')
+    %td= Prices.formatted_discounted_price(cart.total, current_company.balance)
