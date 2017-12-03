@@ -63,18 +63,6 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def vote
-    value = Integer(params[:v]) rescue false
-    if !value || !(1..5).include?(value)
-      head 400 and return
-    end
-    company.add_or_update_evaluation(:avg_rating, value, current_user)
-    set_rating
-    respond_to do |f|
-      f.js
-    end
-  end
-
   private
 
   def set_rating

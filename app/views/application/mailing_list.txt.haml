@@ -1,6 +1,6 @@
 :ruby
   emails = @collection.map do |elem|
-    name = elem.profile&.display_name&.gsub(/[\,<>]/, '')
+    name = elem&.display_name&.gsub(/[\,<>]/, '')
     if name
       "#{name} <#{elem.email}>".squish
     else

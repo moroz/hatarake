@@ -13,18 +13,23 @@ ActiveAdmin.register Company do
     link_to "View on Website", companies_path, target: '_blank'
   end
 
-  action_item :index, only: :index do
-    link_to 'Download as XLSX', companies_path(format: 'xlsx')
-  end
-
-  action_item :mailing_list, only: :index do
-    link_to "Mailing list", mailing_list_companies_path, target: '_blank'
+  sidebar :actions, only: :index, priority: 0 do
+    str = link_to "Mailing list", mailing_list_companies_path, target: '_blank', class: 'button'
+    str += link_to 'Download as XLSX', companies_path(format: 'xlsx'), class: 'button'
+    str += link_to 'Wszyscy +10 PLN', increment_balance_admin_companies_path, class: 'button', method: :patch
+    str
   end
 
   member_action :activate, method: :patch do
     resource.update(confirmed_at: Time.now) if resource.is_a?(User)
     flash[:success] = 'Account has been activated.'
     redirect_to admin_company_path(id: resource.id)
+  end
+
+  collection_action :increment_balance, method: :patch do
+    q = %{update users set balance = coalesce(balance, 0) + 10 where type = 'Company'}
+    User.connection.execute(q)
+    redirect_to admin_companies_path, success: 'Zwiększono stan konta wszystkich firm o 10 PLN.'
   end
 
   index title: "Companies" do

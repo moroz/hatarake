@@ -16,7 +16,6 @@ ActiveAdmin.register Candidate do
   end
 
   order_by(:full_name) do |order_clause|
-    binding.pry
     'first_name ' + order_clause.order + ', last_name ' + order_clause.order
   end
 

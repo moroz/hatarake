@@ -18,7 +18,8 @@ class Candidate < User
 
   accepts_nested_attributes_for :profile
 
-  delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :display_name, :profession_name, :age, to: :profile
+  delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :profession_name, :age, to: :profile
+  delegate :display_name, to: :profile, allow_nil: true
   delegate :confirm_lfw, to: :profile
 
   scope :for_index, -> { joins(:profile).includes(:profile, :avatar) }
