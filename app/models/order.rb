@@ -61,5 +61,6 @@ class Order < ApplicationRecord
   def set_total
     self.total = cart.total(currency: currency, net: net?)
     self.amount_due = total - (deduction || 0)
+    self.amount_due = 0 if amount_due < 0
   end
 end

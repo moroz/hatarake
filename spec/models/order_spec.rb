@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Order, type: :model do
   let(:order) { FactoryGirl.create(:order) }
 
-  describe "#paid!" do
-    context "when called on a paid order" do
+  describe '#paid!' do
+    context 'when called on a paid order' do
       let(:paid_order) { FactoryGirl.create(:order, :paid) }
-      it "raises an exception" do
+      it 'raises an exception' do
         expect { paid_order.paid! }.to raise_exception RuntimeError
       end
     end
 
-    context "when called on an unpaid order" do
+    context 'when called on an unpaid order' do
       before do
         order.paid!
       end
 
-      it "sets paid_at" do
+      it 'sets paid_at' do
         expect(order.paid_at).to be_within(1.second).of(Time.now)
       end
 
@@ -26,7 +28,35 @@ RSpec.describe Order, type: :model do
     end
   end
 
-  describe "nested attributes for BillingAddress" do
+  describe 'upon creation' do
+    let(:order) { FactoryGirl.build(:order) }
+    context 'when deduction is nil' do
+      it 'amount_due == total' do
+        order.save
+        expect(order.amount_due).to eq(order.total)
+      end
+    end
+
+    context 'when deduction is not nil' do
+      it 'amount_due = total - deduction' do
+        allow(order).to receive(:total).and_return(69)
+        order.deduction = 27
+        order.save
+        expect(order.amount_due).to eq(42)
+      end
+    end
+
+    context 'when deduction > total' do
+      it 'amount_due = 0' do
+        allow(order).to receive(:total).and_return(42)
+        order.deduction = 69
+        order.save
+        expect(order.amount_due).to eq(0)
+      end
+    end
+  end
+
+  describe 'nested attributes for BillingAddress' do
     let(:order) { FactoryGirl.build(:order, :with_billing_address_attributes) }
 
     context 'when invoice = true' do
