@@ -40,14 +40,8 @@ class Company < User
   # from the order's total to calculate amount due.
   def reduce_balance(total)
     return if balance.nil? || balance.zero?
-    total = total.to_d
-    if balance > total
-      update(balance: balance - total)
-      total
-    else
-      rval = balance
-      update(balance: 0)
-      rval
-    end
+    discount = Prices.discount(total.to_d, balance)
+    update(balance: balance - discount)
+    discount
   end
 end

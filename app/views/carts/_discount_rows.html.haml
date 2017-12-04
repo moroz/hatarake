@@ -1,10 +1,10 @@
 - colspan = cart.readonly? ? 2 : 3
-- if cart.user.balance.to_f != 0 || defined?(@order)
+- if cart.user.balance.to_f != 0 || (defined?(@order) && @order.deduction)
   :ruby
     deduction = if defined?(@order) && @order.persisted?
                  @order.deduction
                else
-                 cart.user.balance
+                 Prices.discount(cart.total, cart.user.balance)
                end
   %tr.cart__discount
     %td{colspan: colspan}

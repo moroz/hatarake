@@ -6,6 +6,7 @@ FactoryBot.define do
     website { Faker::Internet.url }
     confirmed_at Time.now
     premium_services nil
+    balance nil
 
     trait :premium do
       premium_until 2.weeks.from_now
