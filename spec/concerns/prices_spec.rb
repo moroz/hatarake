@@ -48,4 +48,20 @@ RSpec.describe Prices do
       end
     end
   end
+
+  describe '#discount/2' do
+    context 'when total <= balance' do
+      it 'returns total' do
+        actual = Prices.discount(10, 20)
+        expect(actual).to eq(10)
+      end
+    end
+
+    context 'when total > balance' do
+      it 'returns balance' do
+        actual = Prices.discount(40, 15)
+        expect(actual).to eq(15)
+      end
+    end
+  end
 end

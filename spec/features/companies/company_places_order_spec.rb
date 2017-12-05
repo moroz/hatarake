@@ -87,8 +87,8 @@ RSpec.describe 'Company places Order' do
         end
       end
 
-      context 'when there is a difference to pay' do
-        it 'does not mark order and calculates correct amount due' do
+      context 'when there is a difference to pay and order is cancelled' do
+        it 'calculates amount due, returns balance to user' do
           cart.add_item(1, 2)
           allow_any_instance_of(Order).to receive(:total).and_return(80)
           visit cart_path
@@ -98,6 +98,11 @@ RSpec.describe 'Company places Order' do
           o = Order.last
           expect(o).not_to be_paid
           expect(o.amount_due).to eq(30)
+          company.reload
+          expect(company.balance).to eq(0)
+          o.destroy
+          company.reload
+          expect(company.balance).to eq(50)
         end
       end
     end

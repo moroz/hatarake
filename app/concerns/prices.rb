@@ -29,8 +29,11 @@ module Prices
 
   def self.discount(total, balance)
     return 0 if balance.to_i.zero?
-    return balance if total > balance
-    balance - total
+    if total <= balance
+      total
+    else
+      balance
+    end
   end
 
   def self.formatted_discounted_price(total, discount, currency = 'pln')
