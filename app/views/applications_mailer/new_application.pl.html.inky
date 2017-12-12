@@ -32,6 +32,11 @@
   .float-center
     %button.radius.large{href: candidate_url(@candidate)}= @candidate.display_name
 
+%p
+  W przypadku, gdyby powyższy link nie działał, proszę skopiować poniższy adres URL i wkleić go w pasku adresu przeglądarki:
+  .application__memo
+    = candidate_url(@candidate)
+
 - if @application.memo.present?
   %p
     %strong
