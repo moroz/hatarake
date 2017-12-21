@@ -6,10 +6,11 @@
                else
                  Prices.discount(cart.total, cart.user.balance)
                end
-  %tr.cart__discount
-    %td{colspan: colspan}
-    %td= t('carts.cart.discount')
-    %td= Prices.formatted_price(deduction, 'pln')
+  - if deduction
+    %tr.cart__discount
+      %td{colspan: colspan}
+      %td= t('carts.cart.discount')
+      %td= Prices.formatted_price(deduction, 'pln')
   %tr.cart__amount_due
     %td{colspan: colspan}
     %td= t('carts.cart.amount_due')
