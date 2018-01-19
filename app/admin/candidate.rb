@@ -24,8 +24,12 @@ ActiveAdmin.register Candidate do
     column :full_name do |c|
       c.profile.present? ? c.display_name : c.email
     end
-    column :profession { |c| c&.profile&.profession_name }
-    column :age { |c| c&.profile&.age }
+    column :profession do |c|
+      c&.profile&.profession_name
+    end
+    column :age do |c|
+      c&.profile&.age
+    end
     actions
   end
 
@@ -37,17 +41,33 @@ ActiveAdmin.register Candidate do
 
   show title: proc { |c| 'Candidate: ' + c.table_name } do
     attributes_table do
-      row :avatar { |c| avatar_for c if c.avatar.present? }
-      row :full_name { |c| c.display_name if c.profile.present? }
+      row :avatar do |c|
+        avatar_for c if c.avatar.present?
+      end
+      row :full_name do |c|
+        c.display_name if c.profile.present?
+      end
       row :email
       row :contact_email
-      row :age { |c| c.age if c.profile.present? }
-      row :sex { |c| c.sex if c.profile.present? }
-      row :looking_for_work { |c| c.looking_for_work if c.profile.present? }
-      row :profession { |c| c&.profile&.profession_name }
+      row :age do |c|
+        c.age if c.profile.present?
+      end
+      row :sex do |c|
+        c.sex if c.profile.present?
+      end
+      row :looking_for_work do |c|
+        c.looking_for_work if c.profile.present?
+      end
+      row :profession do |c|
+        c&.profile&.profession_name
+      end
       row :description
-      row :applications { |c| c.applications.count }
-      row :resumes { |c| c.resumes.count }
+      row :applications do |c|
+        c.applications.count
+      end
+      row :resumes do |c|
+        c.resumes.count
+      end
     end
   end
 

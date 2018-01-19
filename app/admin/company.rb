@@ -46,8 +46,12 @@ ActiveAdmin.register Company do
     column :active do |company|
       !!company.confirmed_at
     end
-    column :name { |company| link_to company.name, admin_company_path(company) }
-    column :email { |company| [company.email, company.contact_email].compact.join(', ') }
+    column :name do |company|
+      link_to company.name, admin_company_path(company) 
+    end
+    column :email do |company|
+      [company.email, company.contact_email].compact.join(', ')
+    end
     column :balance do |c|
       str = content_tag :span, id: "company_#{c.id}_balance" do
         Prices.formatted_price(c.balance, 'pln') if c.balance
@@ -56,7 +60,9 @@ ActiveAdmin.register Company do
       raw(str)
     end
     column :phone
-    column :offer_count { |company| company.offers.count }
+    column :offer_count do |company|
+      company.offers.count
+    end
     actions
   end
 
@@ -64,10 +70,10 @@ ActiveAdmin.register Company do
     attributes_table do
       row :avatar do
         content = if company.avatar.present?
-          avatar_for company
-        else
-          "No avatar<br/>".html_safe
-        end
+                    avatar_for company
+                  else
+                    "No avatar<br/>".html_safe
+                  end
         content + (link_to "Edit avatar", new_admin_avatar_path(id: company.to_param), class: 'button')
       end
       row :active do
@@ -77,13 +83,19 @@ ActiveAdmin.register Company do
       end
       row :email
       row :name
-      row :balance { |company| Prices.formatted_price(company.balance || 0, 'pln') }
+      row :balance do |company|
+        Prices.formatted_price(company.balance || 0, 'pln')
+      end
       row :created_at
       row :updated_at
       row :slug
-      row :premium { |company| company.premium? }
+      row :premium do |company|
+        company.premium?
+      end
       row :premium_until
-      row :offers { |company| company.offers.count }
+      row :offers do |company|
+        company.offers.count
+      end
       row :description do
         if company.description.present?
           markdown company.description.truncate(300, separator: /\s/)

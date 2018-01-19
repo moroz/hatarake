@@ -28,7 +28,9 @@ ActiveAdmin.register Offer do
   end
 
   index do
-    column :title { |o| link_to o.title, admin_offer_path(o) }
+    column :title do |o|
+      link_to o.title, admin_offer_path(o)
+    end
     column :company
     column :published_at
     column :views do |o|
@@ -49,7 +51,9 @@ ActiveAdmin.register Offer do
       row :category_until
       row :highlight_until
       row :location
-      row :company { |o| link_to o.company.name, o.company, target: '_blank' }
+      row :company do |o|
+        link_to o.company.name, o.company, target: '_blank'
+      end
       row :description do
         markdown offer.description.truncate(300, separator: /\s/)
       end
