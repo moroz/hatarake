@@ -71,11 +71,7 @@ class CandidatesController < ApplicationController
   private
 
   def set_lfw_at
-    if @candidate.profile.looking_for_work?
-      @candidate.profile.touch(:lfw_at) 
-    else
-      @candidate.update_column(:lfw_at, nil)
-    end
+    @candidate.profile&.lfw_at = Time.utc.now if @candidate.profile.persisted?
   end
 
   def candidate
