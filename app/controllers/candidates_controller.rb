@@ -71,7 +71,7 @@ class CandidatesController < ApplicationController
   private
 
   def set_lfw_at
-    @candidate.profile&.lfw_at = Time.utc.now if @candidate.profile.persisted?
+    @candidate.profile.lfw_at = Time.now.utc if @candidate.profile&.persisted?
   end
 
   def candidate
