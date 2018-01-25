@@ -59,3 +59,16 @@
       submitButton.disabled = !valid;
     }
   }, false);
+
+  var uploadForm = document.forms[0];
+  uploadForm.addEventListener('ajax:remotipartComplete', function(xhr, status) {
+    console.log('AJAX transfer complete');
+    console.log(status);
+  });
+  uploadForm.addEventListener('ajax:error', function(xhr, data, status) {
+    console.log('AJAX transfer failed');
+    console.log(data);
+  });
+  uploadForm.addEventListener('ajax:success', function(xhr, data, status) {
+     console.log('AJAX upload succeeded');
+  })
