@@ -7,13 +7,13 @@ ActiveAdmin.register Candidate do
 
   form partial: 'form'
 
-  action_item :index, only: :index do
-    link_to 'Download as XLSX', candidates_path(format: 'xlsx')
-  end
+  #action_item :index, only: :index do
+  #  link_to 'Download as XLSX', candidates_path(format: 'xlsx')
+  #end
 
-  action_item :mailing_list, only: :index do
-    link_to "Mailing list", mailing_list_candidates_path, target: '_blank'
-  end
+  #action_item :mailing_list, only: :index do
+  #  link_to "Mailing list", mailing_list_candidates_path, target: '_blank'
+  #end
 
   order_by(:full_name) do |order_clause|
     'first_name ' + order_clause.order + ', last_name ' + order_clause.order
