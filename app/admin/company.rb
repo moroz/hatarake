@@ -50,7 +50,7 @@ ActiveAdmin.register Company do
       link_to company.name, admin_company_path(company) 
     end
     column :email do |company|
-      content_tag :span, ([company.email, company.contact_email].compact.join(', ')), class: 'unselectable'
+      [company.email, company.contact_email].compact.join(', ')
     end
     #column :balance do |c|
     #  str = content_tag :span, id: "company_#{c.id}_balance" do
