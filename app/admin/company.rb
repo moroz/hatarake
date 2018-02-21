@@ -52,13 +52,13 @@ ActiveAdmin.register Company do
     column :email do |company|
       [company.email, company.contact_email].compact.join(', ')
     end
-    column :balance do |c|
-      str = content_tag :span, id: "company_#{c.id}_balance" do
-        Prices.formatted_price(c.balance, 'pln') if c.balance
-      end
-      str += link_to '+10', increment_balance_admin_company_path(id: c.id), method: :patch, class: 'increment-button', remote: true
-      raw(str)
-    end
+    #column :balance do |c|
+    #  str = content_tag :span, id: "company_#{c.id}_balance" do
+    #    Prices.formatted_price(c.balance, 'pln') if c.balance
+    #  end
+    #  str += link_to '+10', increment_balance_admin_company_path(id: c.id), method: :patch, class: 'increment-button', remote: true
+    #  raw(str)
+    #end
     column :phone
     column :offer_count do |company|
       company.offers.count
@@ -83,9 +83,9 @@ ActiveAdmin.register Company do
       end
       row :email
       row :name
-      row :balance do |company|
-        Prices.formatted_price(company.balance || 0, 'pln')
-      end
+      #row :balance do |company|
+      #  Prices.formatted_price(company.balance || 0, 'pln')
+      #end
       row :created_at
       row :updated_at
       row :slug
