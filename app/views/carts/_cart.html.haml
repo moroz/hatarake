@@ -1,5 +1,5 @@
 - if defined?(view_format) && view_format == :order
-  .cart__table
+  .order
     - if cart.cart_items.present?
       - currency = nil unless defined?(currency)
       %table
@@ -18,7 +18,8 @@
               %td= item.unit_price_to_s(currency: currency)
               %td= item.subtotal_to_s(net: true, currency: currency)
               %td= item.subtotal_to_s(currency: currency)
-          %tr.cart__total
+        %tfoot
+          %tr
             %td
             %td{colspan: 2}= t('.total')
 
@@ -26,10 +27,14 @@
               = cart.total_to_s(net: true, currency: currency)
             %td
               = cart.total_to_s(currency: currency)
-            = render 'carts/discount_rows', cart: cart
+
+          - if defined?(total)
+            %tr
+              %td
+              %td{colspan: 2}= t('.amount_due')
+              %td.text-center{colspan: 2}= Prices.formatted_price(total, currency)
 
 - else
-  - colspan = cart.readonly? ? 2 : 3
   .cart__table#cart
     %table.hover
       %thead
@@ -40,18 +45,16 @@
           %td.cart_item__unit_price= t('.unit_price')
           %td.cart_item__quantity= t('.quantity')
           %td.cart_item__subtotal= t('.subtotal')
-
+          
       %tbody
         = render cart.cart_items
-        %tr.cart__total
+      %tfoot
+        %tr
           -# Emoji 鬼 ogra U+1f479
+          - colspan = cart.readonly? ? 2 : 3
           %td{colspan: colspan}
           %td 👹 #{t('.total')}
           %td= cart.total_to_s
-          = render 'carts/discount_rows', cart: cart
-    - if company_signed_in? && current_company.balance != 0
-      .cart__discount__disclaimer
-        %small= t('.discount_disclaimer')
 
     .text-right
       - unless cart.empty?
