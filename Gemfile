@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.5.0'
 
 gem 'activeadmin'
+gem 'activerecord-reputation-system'
 gem 'browser'
 gem 'cancancan', '~> 2.0'
 gem 'capistrano', '~> 3.8.2'

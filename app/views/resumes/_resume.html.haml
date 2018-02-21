@@ -2,11 +2,8 @@
   %td.resume__language= t("languages.#{resume.language}")
   %td.resume__original
     - unless resume.pdf?
-      - extension = resume.file.file.extension.upcase
-      = link_to fa_icon('file-word-o', text: extension), resume.file_url, target: '_blank', title: t('resumes.download', ext: extension), class: 'custom_button custom_button--bold'
-  %td.resume__pdf= link_to fa_icon('file-pdf-o', text: 'PDF'), resume.pdf_url, target: '_blank', title: t('resumes.download', ext: 'PDF'), class: 'custom_button custom_button--bold'
+      = link_to fa_icon('file-word-o'), resume.file_url, target: '_blank', title: t('resumes.download', ext: resume.file.file.extension.upcase)
+  %td.resume__pdf= link_to fa_icon('file-pdf-o'), resume.pdf_url, target: '_blank', title: t('resumes.download', ext: 'PDF')
   %td.resume__delete
     - if can? :destroy, resume
-      = link_to resume, method: :delete, title: t('actions.delete'), data: { confirm: t('resumes.delete_confirm') }, class: 'custom_button custom_button--red' do
-        = fa_icon('trash')
-        %span.hide-for-small-only= t('actions.delete')
+      = link_to fa_icon('trash'), resume, method: :delete, title: t('actions.delete'), data: { confirm: t('resumes.delete_confirm') }

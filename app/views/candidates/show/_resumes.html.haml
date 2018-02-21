@@ -4,12 +4,6 @@
   .card-section
     - if candidate.resumes.any?
       %table.resumes
-        %thead
-          %tr
-            %td
-            %td.text-center Word
-            %td.text-center PDF
-
         %tbody
           = render candidate.resumes
     - else
