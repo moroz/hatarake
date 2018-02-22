@@ -76,7 +76,5 @@
           - else
             = fa_icon 'clock-o', text: t('offers.not_published')
       .offer-row__right
-        - if offer.language_requirements
-          %span.offer-row__languages= fa_icon 'language', text: offer.language_requirements
         %span.offer-row__location= fa_icon 'map-marker', text: offer.location.to_s
         %span.offer-row__views.hide-for-small-only= fa_icon 'eye', text: t('offers.view_count', count: offer.views)

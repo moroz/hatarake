@@ -70,8 +70,8 @@ class Offer < ApplicationRecord
     scope = scope.search_by_query(o[:q]) if o[:q].present?
     scope = scope.with_min_salary(o[:smin]) if o[:smin].present?
     scope = scope.where(currency: o[:cur]) if o[:cur].present?
-    scope = scope.where(field_id: o[:fid]) if o[:fid].present?
-    scope = scope.no_lang_required if o[:lr].to_i == 1
+    #scope = scope.where(field_id: o[:fid]) if o[:fid].present?
+    #scope = scope.no_lang_required if o[:lr].to_i == 1
     scope
   end
 

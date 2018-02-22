@@ -33,21 +33,6 @@
       = f.input :hourly_wage_max, label: t('offers.fields.hourly_wage_max'), input_html: { 'aria-describedby' => 'hourly_wage_help_text', value: high_bound(offer.hourly_wage) }
 
   .page-header
-    %h4= t('.language_requirements')
-  .row
-    .medium-4.columns
-      = f.label :req_lang_1, t('offers.fields.req_lang_1')
-      = f.select :req_lang_1, options_from_collection_for_select(t('language_requirements.languages'), :first, :last, offer.req_lang_1), include_blank: t('language_requirements.placeholder')
-    .medium-1.columns.second_language
-      &nbsp;
-      .relative
-        %strong.offer_form__and_or= t('and_or')
-    .medium-4.columns.second_language
-      = f.label :req_lang_2, t('offers.fields.req_lang_2')
-      = f.select :req_lang_2, options_from_collection_for_select(t('language_requirements.languages'), :first, :last, offer.req_lang_2), include_blank: true
-    .medium-3.column
-
-  .page-header
     %h4= t('.application')
   %fieldset.fieldset
     %legend= t('.application_method')
