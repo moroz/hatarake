@@ -16,16 +16,16 @@ ActiveAdmin.register Offer do
   end
 
   action_item :index, only: :index do
-    link_to "View on Website", offers_path, target: '_blank'
+    link_to "View on Website", jobs_abroad_path, target: '_blank'
   end
 
-  member_action :increment_views, method: :patch do
-    by = params[:by] || 10
-    resource.increment!(:views, by)
-    respond_to do |f|
-      f.js
-    end
-  end
+  #member_action :increment_views, method: :patch do
+  #  by = params[:by] || 10
+  #  resource.increment!(:views, by)
+  #  respond_to do |f|
+  #    f.js
+  #  end
+  #end
 
   index do
     column :title do |o|

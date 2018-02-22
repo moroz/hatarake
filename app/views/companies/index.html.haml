@@ -2,7 +2,7 @@
 - content_for :banner do
   .row
     %h2.text-center= t('.heading')
-    .row= render 'search'
+    -#.row= render 'search'
 
 .three-column-grid#companies= render @companies, tile: true
 #pagination= paginate @companies

@@ -38,9 +38,12 @@ document.addEventListener('turbolinks:load', function () {
 
   // infinite scroll
   var bodyClass = document.getElementsByTagName('body')[0].className;
-  var disabledActions = ["offers abroad", "offers poland", "company_offers index"];
+  var disabledActions = ["abroad", "poland", "company_offers", "active_admin"];
   if (document.querySelectorAll('.pagination').length) {
-      if (disabledActions.includes(bodyClass)) {
+      var included = disabledActions.some(function(action) {
+          return bodyClass.includes(action);
+      });
+      if (included) {
           if (window.infiniteScrollSet) {
               document.removeEventListener('scroll', infiniteScroll);
               window.infiniteScrollSet = false;
