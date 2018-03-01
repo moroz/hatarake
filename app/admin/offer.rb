@@ -2,7 +2,7 @@ ActiveAdmin.register Offer do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :title, :description, :featured_until, :category_until, :highlight_until
+  permit_params :views, :title, :description, :featured_until, :category_until, :highlight_until
   menu label: "Offers"
 #
 # or
