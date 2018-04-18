@@ -59,6 +59,17 @@ RSpec.describe Cart, type: :model do
         expect { cart.add_item(product, 3) }.not_to change { cart.cart_items.count }
       end
     end
+
+    context 'when given offer_ids' do
+      before do
+        offer = FactoryBot.create(:offer)
+        cart.add_item(product, 1, [offer.id])
+      end
+
+      it 'create cart item with offer id' do
+        expect(cart.cart_items.first.offer_ids).not_to eq(nil)
+      end
+    end
   end
 
   describe '#finalize' do

@@ -1,3 +1,6 @@
+- set_meta_tags title: [t('offers.search_description.advanced.all'), company.name].join(' '),
+                description: prepare_company_meta_description(company)
+
 - breadcrumb :company_offers, company
 .row
   = render company

@@ -176,6 +176,42 @@ RSpec.describe Offer, type: :model do
     end
   end
 
+  describe 'search_by_query' do
+    context "examples for foregin query" do
+      query = "hannover"
+      subject { described_class.query_variations(query) }
+
+      it 'return query' do
+        expect(subject).to include(query)
+      end
+
+      it 'return squeezed name' do
+        expect(subject).to include('hanover')
+      end
+
+      it  'return query with v replaced by w' do
+        expect(subject).to include('hannower')
+      end
+
+      it  'return squeezed query with v replaced by w' do
+        expect(subject).to include('hanower')
+      end
+    end
+    
+    context "examples for polish query" do
+      query = "hanower"
+      subject { described_class.query_variations(query) }
+
+      it 'return query with double n character' do
+        expect(subject).to include("hannower")
+      end
+
+      it 'return query with double n character and w replaced by v' do
+        expect(subject).to include("hannover")
+      end
+    end
+  end
+
   describe "publishing" do
     context "when created" do
       let(:offer) { FactoryBot.create(:offer) }
@@ -269,7 +305,6 @@ RSpec.describe Offer, type: :model do
 
       describe "self.add_premium" do
         let!(:offers) { FactoryBot.create_list(:offer, 3) }
-
       end
     end
   end

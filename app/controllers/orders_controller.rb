@@ -31,6 +31,12 @@ class OrdersController < ApplicationController
     end
     if @order.amount_due.zero?
       @order.paid!
+      @order.cart.cart_items.each do |cart_item|
+        next if cart_item.offer_ids.nil?
+        @offers = Offer.where(id: cart_item.offer_ids.split(','))
+        premium_type = Product.product_name_to_id(cart_item.product_id)
+        @offers.add_premium(premium_type)
+      end
       redirect_to order_thank_you_path(order_id: @order.to_param)
       return
     end

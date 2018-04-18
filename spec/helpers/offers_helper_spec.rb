@@ -17,6 +17,7 @@ RSpec.describe OffersHelper do
     end
   end
 
+  #moved to currency helper
   describe "#readable_currency_range" do
     def salary_string(format, min, max, currency)
       I18n.t('currency_range.' + format, min: min, max: max, currency: currency.upcase)
@@ -66,6 +67,14 @@ RSpec.describe OffersHelper do
         expect(helper.readable_currency_range(nil, "pln")).to eq(salary_string('none', nil, nil, 'pln'))
       end
     end
+  end
 
+  describe '#prepare_offer_meta_description' do
+    it "returns properly formated meta description" do
+      offer = FactoryBot.build(:offer)
+      company = FactoryBot.build(:company)
+      expect(helper.prepare_offer_meta_description(offer, company)).to include(company.name.gsub(/\./mi, ''),
+                                                                              offer.location.to_s.split(',')[0], salary_and_wage_for(offer))
+    end
   end
 end

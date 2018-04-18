@@ -45,6 +45,9 @@ pl:
   registrations:
     candidate_heading: "Zarejestruj się jako kandydat"
     company_heading: "Zarejestruj się jako firma"
+    heading: Rejestracja
+    meta_title: Zarejestruj się jako kandydat | Zobacz oferty pracy
+    meta_description: Zarejestruj się jako kandydat! Przejrzyj oferty pracy z Polski oraz UE(Unii Europejskie) i na nie aplikuj!
 
     step1:
       subheader: "Krok 1. Dane do logowania"

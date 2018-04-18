@@ -163,9 +163,15 @@ class Offer < ApplicationRecord
   end
 
   def self.search_by_query(query)
-    q = "%#{sanitize_sql_like(query)}%"
-    joins(:location).where('title ILIKE :q OR locations.city ILIKE :q', q: q)
+    queries = query_variations(query)
+    sanitized_queries = queries.map { |q| "%#{sanitize_sql_like(q)}%" }
+    joins(:location).where("title ILIKE ANY(ARRAY[:q]) OR locations.city ILIKE ANY(ARRAY[:q])", q: sanitized_queries)
   end
+
+  def self.query_variations(query)
+    query = [query, query.squeeze, query.gsub('v','w'), query.squeeze.gsub('n','nn'), query.squeeze.gsub('v','w'),
+            query.squeeze.gsub('w','v'), query.squeeze.gsub('n','nn').gsub('w','v')].uniq
+  end  
 
   def unpublish
     update(published_at: nil)
@@ -177,6 +183,10 @@ class Offer < ApplicationRecord
     else
       country.local_name + ' – ' + I18n.t('offers.provinces.blank')
     end
+  end
+
+  def short_location
+    self.location.to_s.split(',')[0].split('–')[0].strip
   end
 
   private

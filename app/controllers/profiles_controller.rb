@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
       end
     elsif company_signed_in?
       @blog_posts = company.blog_posts.ordered
+      @company = company
       render 'companies/show'
     end
   end

@@ -1,3 +1,6 @@
+- set_meta_tags title: [t('offers.show.company'), @company.name].join(' '),
+                description: t('offers.show.meta_description', company: @company.name)
+
 - breadcrumb :company, company
 .row
   = render company
@@ -7,7 +10,7 @@
   = render 'companies/menu'
 
 .row
-  - if candidate_signed_in?
+  -# if candidate_signed_in?
     .card#rate_company
       = render 'companies/show/rate'
 

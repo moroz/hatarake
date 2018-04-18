@@ -101,4 +101,12 @@ module OffersHelper
       link_to I18n.t('offers.apply_now'), url, class: 'button expanded'
     end
   end
+
+  def prepare_offer_meta_description(offer, company)
+    location = offer.location.to_s.split(',')[0]
+    location = location.split('–')[0].strip
+    company = company.name
+    description = "Praca, oferta pracy #{offer.title} w firmie #{company}, #{location}. InJobs.pl aktualne ogłoszenia o pracę.
+                  Atrakcyjne wynagrodzenie, pracuj w Polsce i UE."
+  end
 end

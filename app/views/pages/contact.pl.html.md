@@ -1,3 +1,6 @@
+<% set_meta_tags title: "Kontakt z InJobs.pl - oferty pracy z Polski oraz UE",
+                description: "Kontakt z portalem z ofertami pracy z Polski i z zagranicy (Unii Europejskiej). Praca na magzynie, na produkcji, jako opiekunka osób starszych, kierowca lub operator wózka widłowego." %>
+
 # Kontakt
 
 __InJobs.pl sp. z o.o.__  

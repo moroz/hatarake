@@ -1,3 +1,5 @@
+<% set_meta_tags title: "Contact with Injobs.pl - job offers from Poland and EU",
+                description: "Contact with Injobs.pl - website where you can find job offers from Poland and EU. Work in magazine, on production, as elderly carer, driver and forklift operator." %>
 # Contact us
 
 __InJobs.pl sp. z o.o.__  

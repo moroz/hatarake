@@ -7,13 +7,14 @@ class Cart < ApplicationRecord
 
   scope :unfinalized, -> { where('NOT finalized') }
 
-  def add_item(product, quantity = 1)
+  def add_item(product, quantity = 1, offer_ids = nil)
+    offer_ids = offer_ids.join(',') unless offer_ids.nil?
     product = Product.find_by(id: product.to_i) unless product.is_a?(Product)
     return false if !product || quantity.to_i < 1
     if (item = cart_items.find_by(product_id: product))
       item.update(quantity: item.quantity + quantity.to_i)
     else
-      cart_items.create(product: product, quantity: quantity)
+      cart_items.create(product: product, quantity: quantity, offer_ids: offer_ids)
     end
   end
 

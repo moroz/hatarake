@@ -21,6 +21,7 @@ en:
 
     index:
       heading: Company profiles
+      meta_description: Here you can find all employer profiles available on our website.
 
     search:
       placeholder: 'Search by company name...'

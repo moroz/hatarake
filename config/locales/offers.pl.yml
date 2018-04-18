@@ -18,6 +18,8 @@ pl:
       published_at: "Opublikowano"
       details: "Szczegóły"
       description: "Opis stanowiska"
+      meta_description: "Strona domowa firmy %{company} w serwisie InJobs.pl. 
+                        Tutaj znajdziesz najnowsze oferty pracy oraz szczegółwe informacje o firmie %{company}"
 
     published_time_ago: "%{time} temu"
     not_published: "Nie opublikowano"
@@ -104,6 +106,7 @@ pl:
       no_offers_selected: "Nie wybrano żadnej oferty."
       order_premium_services: "Zamów usługi Premium"
       bulk_action_label: "Wypromuj lub modyfikuj zaznaczone oferty:"
+      no_premium_services: Nie wykupiłeś w tym momencie żadnej usługi premium!
 
       homepage_featured: Główna
       category_featured: Kategoria
@@ -114,8 +117,12 @@ pl:
     
     poland:
       heading: Praca w Polsce
+      meta_description: "Oferty pracy Polska: dolnośląskie, mazowieckie, małópolskie, śląskie, pomorskie, łódzkie, lubuskie. 
+                        Oferty pracy dla opiekunek osób starszych, sprawdź!"
     abroad:
       heading: Praca za granicą
+      meta_description: "Ciekawe oferty pracy za granicą, UE bez języka: Holandia, Niemcy, Belgia, Francja. Praca na magazynie. 
+                        Opiekunka osób starszych. Praca za granicą czeka na Ciebie!"
     popular_countries: "Najpopularniejsze kraje"
     popular_voivodeships: "Najpopularniejsze województwa"
 

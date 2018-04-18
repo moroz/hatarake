@@ -18,6 +18,7 @@ pl:
         few: "W koszyku znajdują się %{count} przedmioty."
         many: "W koszyku znajduje się %{count} przedmiotów."
       back_to_shop: "Przejdź do sklepu"
+      empty_cart: Dodaj usługi do koszyka
 
   carts:
     cart:
@@ -77,6 +78,10 @@ pl:
     thank_you:
       heading: Dziękujemy za zakup!
       we_have_registered_your_payment: "Odnotowaliśmy płatność za pośrednictwem Dotpay.pl i aktywowaliśmy następujące usługi na Twoim koncie:"
+      premium_services_count:
+        one: "Aktywowaliśmy usługę premium dla wybranej oferty!"
+        few: "Aktywowaliśmy usługi premium dla wybranych ofert!"
+        many: "Aktywowaliśmy usługi premium dla wybranych ofert!"
       back_to_dashboard: Powrót do Panelu
 
     destroy:

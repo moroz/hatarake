@@ -40,6 +40,9 @@ en:
   registrations:
     candidate_heading: "Sign up for candidate account"
     company_heading: "Sign up for company account"
+    heading: Sign up
+    meta_title: Register as Candidate | Local job postings
+    meta_description: Register as candidate! Find suitable job for you from variety of postings from Poland and EU.
     step1:
       subheader: "Step 1. Login credentials"
       explanation: "Please fill in your e-mail address and pick a password. We will send you an e-mail with the confirmation link."

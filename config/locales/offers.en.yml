@@ -26,6 +26,8 @@ en:
       published_at: Published on
       details: "Details"
       description: "Job description"
+      meta_description: "Home page of %{company} at InJobs.pl. 
+                        Here you can find newest jobs posting and detailed informations about %{company}"
 
     table:
       title: "Title"
@@ -78,6 +80,7 @@ en:
       no_offers_selected: "No offers were selected."
       bulk_action_label: "Promote or modify selected offers:"
       order_premium_services: "Order Premium services"
+      no_premium_services: You don't have any premium services now!
 
       homepage_featured: Homepage
       category_featured: Category
@@ -109,8 +112,12 @@ en:
 
     poland:
       heading: "Jobs in Poland"
+      meta_description: "Job postings in Poland: Lower Silesia, Mazovia, Lesser Poland, Silesia, Pomerania, Lodz, Lubuskie.
+                        Job offers for the elderly sitters. Check this out. "
     abroad:
       heading: "Jobs abroad"
+      meta_description: "Intresting job postings. EU without language: Netherlands, Germany, Belgium, France. Work in a warehouse, elderly sitter.
+                        Abroad jobs are waiting for You!"
 
     poland_search:
       province: Voivodeship

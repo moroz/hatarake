@@ -1,5 +1,9 @@
 en:
   home:
+    heading: Homepage
+    meta_title: Job offers in Poland and EU, work abroad and in European Union.
+    meta_description: "Website with jobs offers from Poland, Germany, Netherland, France, Belgium and other European Union countries. 
+                      Work in EU is waiting for you! Look through job postings!"
     featured_offers:
       heading: Featured offers
       more: 'More offers...'

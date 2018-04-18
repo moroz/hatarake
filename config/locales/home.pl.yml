@@ -1,5 +1,9 @@
 pl:
   home:
+    heading: Strona główna
+    meta_title: Oferty pracy w Polsce i UE, praca za granicą i w Unii Europejskiej.
+    meta_description: "Portal z ofertami pracy w Polsce, Niemczech, Holandii, Francji, Belgii i innych krajach Unii Europejskiej
+                      Praca w UE czeka na ciebie! Przejrzyj oferty pracy!"
     featured_offers:
       heading: Najciekawsze oferty
       more: 'Więcej ofert...'

@@ -40,8 +40,8 @@ class OffersController < ApplicationController
       return
     end
     unless offer.company.reduce_premium_services(method, 1)
-      redirect_to promote_offer_path(offer), alert: t("offers.promote.balance_insufficient")
-      return
+      current_cart.add_item(Product.product_name_to_id(method),1,[offer.id])
+      redirect_to cart_path and return
     end
     offer.publish unless offer.published?
     if offer.add_premium(params[:method])
@@ -96,7 +96,7 @@ class OffersController < ApplicationController
     end
     offer.increment!(:views) unless offer.company_id == current_user&.id
     @company = offer.company
-    @title = t('.title') + offer.title
+    @title = t('.title') + offer.title + ', ' + offer.short_location
   end
 
   def edit
@@ -153,7 +153,11 @@ class OffersController < ApplicationController
     when 'unpublish'
       @offers.unpublish_all
     when 'highlight', 'homepage', 'category'
-      @offers.add_premium(update_action)
+      offers = @offers.add_premium(update_action)
+      if offers == false
+        current_cart.add_item(Product.product_name_to_id(update_action),@offers.count,params[:offer_ids])
+        redirect_to cart_path and return
+      end
     else
       raise ActionController::BadRequest.new, "Unrecognized action"
     end

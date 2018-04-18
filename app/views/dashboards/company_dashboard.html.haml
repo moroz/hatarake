@@ -10,7 +10,7 @@
         .card-section
           %p
             != t('.vouchers_text', balance: Prices.formatted_price(current_company.balance, 'pln'))
-            = link_to t('.order'), premium_path
+            = link_to t('.orders'), premium_path
 
     .card.dashboard_card
       .card-divider

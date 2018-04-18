@@ -91,6 +91,7 @@ pl:
       already_signed_out: Wylogowano pomyślnie.
       new:
         sign_in: Zaloguj się
+        meta_description: Aby móc w pełni korzystać z tego serwisu polecamy się zalogować.
       signed_in: Zalogowano pomyślnie.
       signed_out: Wylogowano pomyślnie.
     shared:
