@@ -18,8 +18,8 @@ pl:
       published_at: "Opublikowano"
       details: "Szczegóły"
       description: "Opis stanowiska"
-      meta_description: "Strona domowa firmy %{company} w serwisie InJobs.pl. 
-                        Tutaj znajdziesz najnowsze oferty pracy oraz szczegółwe informacje o firmie %{company}"
+      meta_description: "Praca, oferta pracy %{title} w firmie %{company}, %{location}. InJobs.pl aktualne ogłoszenia o pracę.
+                        Atrakcyjne wynagrodzenie, pracuj w Polsce i UE"
 
     published_time_ago: "%{time} temu"
     not_published: "Nie opublikowano"
@@ -80,6 +80,8 @@ pl:
         category: "Promowanie na stronie kategorii"
         homepage: "Promowanie na stronie głównej"
         highlight: "Wyróżnienie kolorem"
+        social: "Promowanie w Social Media"
+        special: "Promowanie specjalne"
       submit: "Zatwierdź"
       success:
         category: "Oferta została wypromowana na stronie kategorii."
@@ -96,6 +98,8 @@ pl:
         category: Promuj na stronie kategorii
         homepage: Promuj na stronie głównej
         highlight: Dodaj podświetlenie
+        social: Promuj w portalach społecznościowych
+        special: Promocja Specjalna
         publish: Opublikuj zaznaczone
         unpublish: Wycofaj zaznaczone
       title: Tytuł
@@ -111,6 +115,8 @@ pl:
       homepage_featured: Główna
       category_featured: Kategoria
       highlighted: Podświetlenie
+      social_featured: Social Media
+      special_featured: Promowanie Specjalne
       remaining: "Do wykorzystania:"
 
       destructive_action_warning: "Tej czynności nie da się cofnąć. Upewnij się, że wybrano właściwe oferty."

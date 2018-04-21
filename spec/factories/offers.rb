@@ -33,10 +33,20 @@ FactoryBot.define do
       highlight_until { 2.weeks.from_now }
     end
 
+    trait :social_featured do
+      social_until { 2.weeks.from_now }
+    end
+
+    trait :special_featured do
+      special_until { 2.weeks.from_now }
+    end
+
     trait :unfeatured do
       featured_until nil
       category_until nil
       highlight_until nil
+      social_until nil
+      special_until nil
     end
 
     %i{ russia poland germany }.each do |country|

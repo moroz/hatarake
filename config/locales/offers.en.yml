@@ -26,8 +26,8 @@ en:
       published_at: Published on
       details: "Details"
       description: "Job description"
-      meta_description: "Home page of %{company} at InJobs.pl. 
-                        Here you can find newest jobs posting and detailed informations about %{company}"
+      meta_description: "Work as %{title} at %{company}, %{location}. InJobs.pl everyday new job postings. 
+                        Attractive salary, work in Poland and EU!"
 
     table:
       title: "Title"
@@ -70,6 +70,8 @@ en:
         category: Highlight on category page
         homepage: Highlight on homepage
         highlight: Color highlight
+        social: Promote in Social Media
+        special: Special Promotion
         publish: Publish selected
         unpublish: Unpublish selected
       title: Title
@@ -85,6 +87,8 @@ en:
       homepage_featured: Homepage
       category_featured: Category
       highlighted: Color Highlight
+      social_featured: Social Media
+      special_featured: Special Promotion
       remaining: "Premium services remaining:"
 
       destructive_action_warning: "This action cannot be undone. Please make sure that you have selected the correct offers."
@@ -99,6 +103,8 @@ en:
         category: Highlight on category page
         homepage: Highlight on homepage
         highlight: Color highlight
+        social: Promotion in Social Media
+        special: Special Promotion
       submit: Confirm
       success:
         category: "The offer has been highlighted on the category page."

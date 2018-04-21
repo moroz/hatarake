@@ -105,8 +105,8 @@ module OffersHelper
   def prepare_offer_meta_description(offer, company)
     location = offer.location.to_s.split(',')[0]
     location = location.split('–')[0].strip
+    location = offer.location.only_city_format
     company = company.name
-    description = "Praca, oferta pracy #{offer.title} w firmie #{company}, #{location}. InJobs.pl aktualne ogłoszenia o pracę.
-                  Atrakcyjne wynagrodzenie, pracuj w Polsce i UE."
+    description = t('.meta_description', title: offer.title, company: company, location: location)
   end
 end

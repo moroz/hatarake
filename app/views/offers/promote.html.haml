@@ -9,6 +9,10 @@
     %span.offer_dashboard__category_featured= t('offers.my_offers.category_featured')
   - if offer.homepage_featured?
     %span.offer_dashboard__homepage_featured= t('offers.my_offers.homepage_featured')
+  - if offer.social_featured?
+    %span.offer_dashboard__social_featured= t('offers.my_offers.social_featured')
+  - if offer.special_featured?
+    %span.offer_dashboard__special_featured= t('offers.my_offers.special_featured')
 - else
   = t('.offer_not_featured')
 

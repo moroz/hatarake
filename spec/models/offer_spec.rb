@@ -178,37 +178,20 @@ RSpec.describe Offer, type: :model do
 
   describe 'search_by_query' do
     context "examples for foregin query" do
-      query = "hannover"
+      let(:query) { "hannover" }
       subject { described_class.query_variations(query) }
-
-      it 'return query' do
-        expect(subject).to include(query)
-      end
-
-      it 'return squeezed name' do
-        expect(subject).to include('hanover')
-      end
-
-      it  'return query with v replaced by w' do
-        expect(subject).to include('hannower')
-      end
-
-      it  'return squeezed query with v replaced by w' do
-        expect(subject).to include('hanower')
-      end
+      it { is_expected.to include(query) }
+      it { is_expected.to include('hanover') }
+      it { is_expected.to include('hannower') }
+      it { is_expected.to include('hanower') }
     end
     
     context "examples for polish query" do
-      query = "hanower"
+      let(:query) { "hanower" }
       subject { described_class.query_variations(query) }
-
-      it 'return query with double n character' do
-        expect(subject).to include("hannower")
-      end
-
-      it 'return query with double n character and w replaced by v' do
-        expect(subject).to include("hannover")
-      end
+      it { is_expected.to include(query) }
+      it { is_expected.to include('hannower') }
+      it { is_expected.to include('hannover') }
     end
   end
 
@@ -265,11 +248,14 @@ RSpec.describe Offer, type: :model do
         it { is_expected.not_to include offer_pl }
       end
 
+      describe "social_featured"
+
     end
 
     describe "featured scopes" do
       let!(:unfeatured) { FactoryBot.create(:offer, :unfeatured) }
       let!(:homepage_featured) { FactoryBot.create(:offer, :homepage_featured) }
+      let!(:social_featured) { FactoryBot.create(:offer, :social_featured ) }
 
       describe "#homepage_featured" do
         let!(:homepage_past) { FactoryBot.create(:offer, featured_until: 2.weeks.ago) }
@@ -278,6 +264,15 @@ RSpec.describe Offer, type: :model do
         it { is_expected.to include(homepage_featured) }
         it { is_expected.not_to include(unfeatured) }
         it { is_expected.not_to include(homepage_past) }
+      end
+
+      describe "#{social_featured}" do
+        let!(:social_past) { FactoryBot.create(:offer, social_until: 2.weeks.ago) }
+
+        subject { Offer.social_featured }
+        it { is_expected.to include(social_featured)}
+        it { is_expected.not_to include(social_past)}
+        it { is_expected.not_to include(unfeatured)}
       end
 
       describe "offers featured within category" do

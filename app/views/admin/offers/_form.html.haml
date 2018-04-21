@@ -17,5 +17,9 @@
     = f.text_field :category_until
     = f.label :highlight_until, "Data ważności wyróżnienia kolorem:"
     = f.text_field :highlight_until
+    = f.label :social_until, "Data ważności promowania w portalach społecznościowych:"
+    = f.text_field :social_until
+    = f.label :special_until, "Data ważności promowania na stronie kategorii:"
+    = f.text_field :special_until
     = render 'pagedown', f: f, no_simple_form: true
     = f.actions

@@ -24,6 +24,10 @@ class Location < ApplicationRecord
     short_format_base.reject(&:blank?).join(', ')
   end
 
+  def only_city_format
+    to_s.split(',')[0].split('–')[0].strip
+  end
+
   def short_with_line_breaks
     short_format_base.reject(&:blank?).join('<br/>').html_safe
   end

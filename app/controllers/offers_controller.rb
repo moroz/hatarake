@@ -40,7 +40,7 @@ class OffersController < ApplicationController
       return
     end
     unless offer.company.reduce_premium_services(method, 1)
-      current_cart.add_item(Product.product_name_to_id(method),1,[offer.id])
+      current_cart.add_item(Product.find_by(backend_name: method).id,1,[offer.id])
       redirect_to cart_path and return
     end
     offer.publish unless offer.published?
@@ -96,7 +96,7 @@ class OffersController < ApplicationController
     end
     offer.increment!(:views) unless offer.company_id == current_user&.id
     @company = offer.company
-    @title = t('.title') + offer.title + ', ' + offer.short_location
+    @title = t('.title') + offer.title + ', ' + offer.location.only_city_format
   end
 
   def edit
@@ -152,10 +152,10 @@ class OffersController < ApplicationController
       @offers.publish_all
     when 'unpublish'
       @offers.unpublish_all
-    when 'highlight', 'homepage', 'category'
+    when 'highlight', 'homepage', 'category', 'social', 'special'
       offers = @offers.add_premium(update_action)
       if offers == false
-        current_cart.add_item(Product.product_name_to_id(update_action),@offers.count,params[:offer_ids])
+        current_cart.add_item(Product.find_by(backend_name: update_action).id, @offers.count, params[:offer_ids])
         redirect_to cart_path and return
       end
     else

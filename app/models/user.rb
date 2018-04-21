@@ -18,7 +18,7 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 
-  PREMIUM_KEYS = { 'highlight' => 4, 'homepage' => 2, 'category' => 3 }.freeze
+  PREMIUM_KEYS = { 'highlight' => 4, 'homepage' => 2, 'category' => 3, 'social' => 8, 'special' => 9 }.freeze
 
   before_create :set_locale
 
@@ -49,6 +49,16 @@ class User < ApplicationRecord
     raise ArgumentError unless hash.is_a?(Hash)
     hash.stringify_keys!
     renew_premium_employer(hash.delete('1').to_i) if hash.key?('1')
+    hash['3'] = 0 if hash['3'].nil?
+    hash.each do |k, v|
+      v = v.to_i
+      case k
+      when '5'; hash['3'] = 5 * v
+      when '6'; hash['3'] = 10 * v
+      when '7'; hash['3'] = 15 * v
+      end
+    end
+    hash.except!('5','6','7')
     if premium_services.nil?
       new_hash = hash
     else

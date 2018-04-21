@@ -61,6 +61,8 @@ class Offer < ApplicationRecord
   scope :homepage_featured, -> { where('featured_until > NOW()') }
   scope :category_featured, -> { where('category_until > NOW()') }
   scope :highlighted, -> { where('highlight_until > NOW()') }
+  scope :social_featured, -> { where('social_until > NOW()') }
+  scope :special_featured, -> { where('special_until > NOW()') }
   scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
 
   def self.advanced_search(o = {})
@@ -117,6 +119,14 @@ class Offer < ApplicationRecord
     featured_until && featured_until > Time.now
   end
 
+  def social_featured?
+    social_until && social_until > Time.now
+  end
+
+  def special_featured?
+    special_until && special_until > Time.now
+  end
+
   def publish
     self.published_at = Time.now
     save if persisted?
@@ -171,7 +181,8 @@ class Offer < ApplicationRecord
   def self.query_variations(query)
     query = [query, query.squeeze, query.gsub('v','w'), query.squeeze.gsub('n','nn'), query.squeeze.gsub('v','w'),
             query.squeeze.gsub('w','v'), query.squeeze.gsub('n','nn').gsub('w','v')].uniq
-  end  
+  end
+  private_class_method :query_variations
 
   def unpublish
     update(published_at: nil)
@@ -183,10 +194,6 @@ class Offer < ApplicationRecord
     else
       country.local_name + ' – ' + I18n.t('offers.provinces.blank')
     end
-  end
-
-  def short_location
-    self.location.to_s.split(',')[0].split('–')[0].strip
   end
 
   private
@@ -244,6 +251,10 @@ class Offer < ApplicationRecord
       return 'featured_until'
     when 'category'
       return 'category_until'
+    when 'social'
+      return 'social_until'
+    when 'special'
+      return 'special_until'
     else
       raise ArgumentError.new
     end

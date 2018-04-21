@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416195641) do
+ActiveRecord::Schema.define(version: 20180421111542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -221,6 +221,8 @@ ActiveRecord::Schema.define(version: 20180416195641) do
     t.integer "req_lang_1", limit: 2
     t.integer "req_lang_2", limit: 2
     t.integer "field_id"
+    t.date "social_until"
+    t.date "special_until"
     t.index ["company_id"], name: "index_offers_on_company_id"
     t.index ["published_at"], name: "index_offers_on_published_at"
     t.index ["req_lang_1"], name: "index_offers_on_req_lang_1"
@@ -276,6 +278,8 @@ ActiveRecord::Schema.define(version: 20180416195641) do
     t.datetime "updated_at", null: false
     t.text "description_en"
     t.text "description_pl"
+    t.string "backend_name"
+    t.index ["backend_name"], name: "index_products_on_backend_name", unique: true
   end
 
   create_table "provinces", id: :serial, force: :cascade do |t|

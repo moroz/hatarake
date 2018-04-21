@@ -2,7 +2,7 @@ ActiveAdmin.register Offer do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :views, :title, :description, :featured_until, :category_until, :highlight_until
+  permit_params :views, :title, :description, :featured_until, :category_until, :highlight_until, :social_until, :special_until
   menu label: "Offers"
 #
 # or
@@ -10,6 +10,7 @@ ActiveAdmin.register Offer do
   scope :all, default: true
   scope :poland
   scope :abroad
+  scope :social_featured
 
   action_item :show, only: :show do
     link_to "View on Website", offer_path(offer), target: '_blank'
@@ -50,6 +51,8 @@ ActiveAdmin.register Offer do
       row :featured_until
       row :category_until
       row :highlight_until
+      row :social_until
+      row :special_until
       row :location
       row :company do |o|
         link_to o.company.name, o.company, target: '_blank'

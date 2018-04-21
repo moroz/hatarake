@@ -61,8 +61,8 @@ RSpec.describe Cart, type: :model do
     end
 
     context 'when given offer_ids' do
+      let(:offer) { create(:offer) }
       before do
-        offer = FactoryBot.create(:offer)
         cart.add_item(product, 1, [offer.id])
       end
 
