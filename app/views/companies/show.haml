@@ -1,5 +1,5 @@
-- set_meta_tags title: [t('offers.show.company'), @company.name].join(' '),
-                description: t('offers.show.meta_description', company: @company.name)
+- set_meta_tags title: [t('offers.show.company'), @company.name, @company.location].join(' '),
+                description: prepare_company_meta_description(@company)
 
 - breadcrumb :company, company
 .row

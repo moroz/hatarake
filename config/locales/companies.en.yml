@@ -15,6 +15,8 @@ en:
       active_job_offers:
         one: active job offer
         other: active job offers
+      meta_description: "Home page of %{company} at InJobs.pl. 
+                        Here you can find newest jobs posting and detailed informations about %{company}"
 
     edit:
       heading: Edit profile

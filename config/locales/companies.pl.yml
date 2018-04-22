@@ -17,6 +17,8 @@ pl:
         one: aktywna oferta pracy
         few: aktywne oferty pracy
         many: aktywnych ofert pracy
+      meta_description: "Strona domowa firmy %{company} w serwisie InJobs.pl. 
+                        Tutaj znajdziesz najnowsze oferty pracy oraz szczegółwe informacje o firmie %{company}"
 
     edit:
       heading: Edycja profilu
