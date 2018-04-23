@@ -1,0 +1,16 @@
+#facebook_like_box 
+  #facebook_right 
+    #facebook_div
+      = image_tag("/facebook.png")
+      %iframe{:src => "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FInJobspl-150172078909014%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId", :width => "350", :height => "350", :scrolling => "no", :frameborder => "0", :allowTransparency => "true", :allow => "encrypted-media"}
+
+
+:javascript
+  jQuery(document).ready(function () {
+  jQuery("#facebook_right").hover(function () {
+  jQuery(this)
+  .stop(true, false)
+  .animate({ right: 0 }, 500); }, function () {
+  jQuery("#facebook_right")
+  .stop(true, false).animate({ right: -350 }, 500); });
+  });

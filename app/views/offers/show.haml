@@ -1,5 +1,6 @@
 - set_meta_tags title: @title,
-                description: prepare_offer_meta_description(offer, @company)
+                description: prepare_offer_meta_description(offer, @company),
+                og: { title: @title, description: prepare_offer_meta_description(offer, @company) }
 
 - if params[:ref] == 'company'
   - breadcrumb :company_offer, offer
@@ -12,6 +13,7 @@
     .offer__sidebar
       = render 'offers/show/company_desc'
       = render 'offers/show/details'
+      = render 'offers/show/social_share'
   .columns.large-8.large-pull-4.padding-for-small
     .offer__description
       = render 'offers/show/description'

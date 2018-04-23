@@ -96,8 +96,12 @@ class Offer < ApplicationRecord
       category_featured?
     when 'homepage'
       homepage_featured?
+    when 'social'
+      social_featured?
+    when 'special'
+      special_featured?
     when nil
-      highlighted? || category_featured? || homepage_featured?
+      highlighted? || category_featured? || homepage_featured? || social_featured? || special_featured?
     else
       raise ArgumentError
     end
