@@ -4,6 +4,7 @@
   = stylesheet_link_tag 'owl.carousel'
   = stylesheet_link_tag 'owl.theme.css'
   %body.home{'data-turbolinks' => 'false'}
+    = render 'facebook_like_box'
     = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'topbar'

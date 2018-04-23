@@ -2,11 +2,11 @@
 %html{:lang => I18n.locale}
   = render 'header'
   %body{class: controller_name + ' ' + action_name}
+    = render 'facebook_like_box'
     = render 'offcanvas'
     .off-canvas-content{'data-off-canvas-content': ''}
       = render 'topbar' # topbar, visible for medium and above
       = render 'titlebar' # visible for small screens
-      = render 'facebook_like_box'
       = yield :banner
       - container_classes = content_for(:full_width).present? ? 'container' : 'container content'
       %div{class: container_classes}
