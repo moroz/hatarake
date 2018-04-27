@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   authorize_resource except: %i[payment thank_you]
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders.order(:created_at)
   end
 
   def place

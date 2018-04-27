@@ -1,3 +1,5 @@
 .center
-	%iframe{:src => "https://www.facebook.com/plugins/share_button.php?href=#{request.original_url}&layout=button&size=large&mobile_iframe=true&width=72&height=28&appId", :width => "72", :height => "28", :scrolling => "no", :frameborder => "0", :allowTransparency => "false", :allow => "encrypted-media"}
-	%iframe{:src => "https://platform.twitter.com/widgets/tweet_button.html?size=l&url=#{request.original_url}&via=injobs&related=twitterapi%2Ctwitter&text=#{@title}&hashtags=job%2Cpraca", :width => "140", :height => "28", :frameborder => "0", :scrolling => "no"}
+  .social-share
+    %iframe{:src => "https://www.facebook.com/plugins/share_button.php?href=#{request.original_url}&layout=button&size=large&mobile_iframe=true&width=72&height=28&appId", :width => "108", :height => "28", :scrolling => "no", :frameborder => "0", :allowTransparency => "false", :allow => "encrypted-media"}
+  .social-share
+    %iframe{:src => "https://platform.twitter.com/widgets/tweet_button.html?size=l&url=#{request.original_url}&via=injobs&related=twitterapi%2Ctwitter&text=#{@title}&hashtags=job%2Cpraca", :width => "140", :height => "28", :frameborder => "0", :scrolling => "no"}

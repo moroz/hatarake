@@ -2,7 +2,7 @@
 
 module Admin
   class OrdersController < Admin::BaseController
-    expose(:orders) { Order.all }
+    expose(:orders) { Order.all.order(created_at: :desc) }
 
     def index; end
 

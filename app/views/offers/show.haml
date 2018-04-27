@@ -1,6 +1,6 @@
 - set_meta_tags title: @title,
                 description: prepare_offer_meta_description(offer, @company),
-                og: { title: @title, description: prepare_offer_meta_description(offer, @company) }
+                og: { title: @title, description: prepare_offer_meta_description(offer, @company), image: 'http://injobs.pl/logo.svg' }
 
 - if params[:ref] == 'company'
   - breadcrumb :company_offer, offer
