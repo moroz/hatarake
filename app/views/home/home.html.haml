@@ -4,7 +4,11 @@
 = render 'carousel'
 
 %section.home__row3
-  .row 
+  .row
+    %center
+      = link_to t('home.carousel.slide1.sign_up'), sign_up_path, class: 'button large dark-green-bg'
+      = link_to t('home.carousel.slide2.sign_up'), new_company_registration_path, class: 'button large'
+  .row
     = render 'featured_offers'
 %section.home__row4
   .row
