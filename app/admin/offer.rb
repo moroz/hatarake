@@ -17,8 +17,9 @@ ActiveAdmin.register Offer do
   end
 
   action_item :index, only: :index do
-    link_to "View on Website", jobs_abroad_path, target: '_blank'
-  end
+    str = link_to "View on Website", jobs_abroad_path, target: '_blank'
+    str += link_to "Increment all views", increment_all_views_admin_offers_path
+  end  
 
   member_action :increment_views, method: :patch do
     by = params[:by] || 10
@@ -26,6 +27,12 @@ ActiveAdmin.register Offer do
     respond_to do |f|
       f.js
     end
+  end
+
+  collection_action :increment_all_views, method: :get do
+    q = %{update offers set views = coalesce(views, 0) + 1}
+    Offer.connection.execute(q)
+    redirect_to admin_offers_path, success: 'Zwiększono ilość wyświetleń wszystkich ogłoszeń o 1'
   end
 
   index do
