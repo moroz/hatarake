@@ -12,6 +12,9 @@
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
       = f.invisible_captcha :username
+      = f.fields_for :profile do |p|
+        = p.input :first_name
+        = p.input :last_name
       = f.input :email
       = f.input :password
       = f.input :password_confirmation

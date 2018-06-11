@@ -4,16 +4,22 @@ RSpec.describe "Candidate registration" do
   it "registers a candidate account" do
     visit sign_up_path
 
+    find("#candidate_profile_attributes_first_name").set("Jakub")
+    find("#candidate_profile_attributes_last_name").set("Ąkowski")
     find("#candidate_email").set('foobar@example.com')
     find("#candidate_password").set('foobar')
     find("#candidate_password_confirmation").set('foobar')
+    find("#terms_of_service_checkbox").set(true)
+    find("#personal_data_checkbox").set(true)
     
     expect { submit_form }.to change { Candidate.count }
   end
 
   describe "second step" do
-    let(:candidate) { FactoryBot.create(:candidate, :only_login_credentials) }
+    let(:candidate) { FactoryBot.build(:candidate, :only_login_credentials) }
+
     before do
+      candidate.save(validate: false)
       login_as(candidate, scope: :candidate)
       visit profile_path
     end

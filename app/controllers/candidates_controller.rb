@@ -29,7 +29,7 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    redirect_to edit_candidate_profile_path if @candidate.profile.nil?
+    redirect_to edit_candidate_profile_path && return if @candidate.not_updated_profile?
   end
 
   def update
@@ -58,7 +58,7 @@ class CandidatesController < ApplicationController
   end
 
   def confirm_lfw
-    return if current_candidate.profile.blank?
+    return if current_candidate.not_updated_profile?
     # confirm or disable, depending on what the user clicked
     lfw = params[:v].blank? || params[:v].to_i == 1
     @candidate.confirm_lfw(lfw)

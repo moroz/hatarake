@@ -1,5 +1,5 @@
 ActiveAdmin.register Company do
-  permit_params :name, :description, :website, :email, :contact_email, :balance
+  permit_params :name, :description, :website, :email, :contact_email, :balance, :published_offers_count
   menu label: "Companies"
 
   scope :all
@@ -39,7 +39,12 @@ ActiveAdmin.register Company do
     redirect_to admin_companies_path, success: 'Zwiększono stan konta wszystkich firm o 10 PLN.'
   end
 
+  batch_action :email_list do |ids|
+    redirect_to mailing_list_companies_path(ids), target: '_blank', class: 'button'
+  end
+
   index title: "Companies" do
+    selectable_column
     column :premium do |company|
       company.premium?
     end
@@ -59,10 +64,8 @@ ActiveAdmin.register Company do
       str += link_to '+10', increment_balance_admin_company_path(id: c.id), method: :patch, class: 'increment-button', remote: true
       raw(str)
     end
-    column :phone
-    column :offer_count do |company|
-      company.offers.count
-    end
+    column :email
+    column :published_offers_count
     actions
   end
 

@@ -17,6 +17,7 @@ class Candidate < User
   has_one :profile, class_name: 'CandidateProfile', foreign_key: :user_id, dependent: :destroy
 
   accepts_nested_attributes_for :profile
+  validates_presence_of :email
 
   delegate :sex, :looking_for_work, :first_name, :last_name, :full_name, :profession_name, :age, to: :profile
   delegate :display_name, to: :profile, allow_nil: true
@@ -40,7 +41,7 @@ class Candidate < User
   end
 
   def should_confirm_lfw?
-    profile.present? && (!profile.lfw_at || profile.lfw_at < 2.days.ago)
+    !not_updated_profile? && (!profile.lfw_at || profile.lfw_at < 2.days.ago)
   end
 
   def self.search_by_profession_name(profession)
@@ -71,6 +72,11 @@ class Candidate < User
     order(orders[param.to_i])
   end
 
+  def not_updated_profile?
+    return true if profile.sex.nil? ||  profile.birth_date.nil? || profile.profession_name.nil? || profile.blank?
+    return false
+  end
+
   private
 
   def name_for_slug
@@ -82,4 +88,5 @@ class Candidate < User
       SecureRandom.hex(8)
     end
   end
+
 end

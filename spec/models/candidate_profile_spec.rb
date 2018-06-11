@@ -25,9 +25,9 @@ RSpec.describe CandidateProfile, type: :model do
       end
 
       context "without sex" do
-        it "is invalid" do
+        it "is valid on create" do
           profile.sex = nil
-          expect(profile).not_to be_valid
+          expect(profile).to be_valid
         end
       end
     end

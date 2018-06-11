@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
     @companies = if params[:q].present?
                    @companies.order('LOWER(name)').search(params[:q])
                  else
-                   @companies.order('premium_until DESC NULLS LAST, published_offers_count DESC')
+                   @companies.order('premium_until DESC NULLS LAST, published_offers_count DESC, updated_at DESC')
                  end
     respond_to do |f|
       f.html
@@ -27,7 +27,11 @@ class CompaniesController < ApplicationController
   end
 
   def mailing_list
-    @collection = Company.order('LOWER(name)') 
+    if params["format"].nil?
+      @collection = Company.order('LOWER(name)')
+    else
+      @collection = Company.where('id in (?)', params["format"].split('/')) 
+    end
     render 'mailing_list.txt', layout: false, content_type: 'text/plain'
   end
 

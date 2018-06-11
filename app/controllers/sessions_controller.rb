@@ -28,8 +28,8 @@ class SessionsController < Devise::SessionsController
     session.delete(:return_to) ||
     case resource.type
       when "Candidate"
-        return resource.profile.present? ? dashboard_path
-          : edit_candidate_profile_path(ref: 'signup')
+        return resource.not_updated_profile? ? edit_candidate_profile_path(ref: 'signup')
+          : dashboard_path
       when "Company"
         dashboard_path
       else

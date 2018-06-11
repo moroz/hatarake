@@ -1,7 +1,8 @@
 class CandidateProfile < ApplicationRecord
   belongs_to :candidate, dependent: :destroy
 
-  validates_presence_of :first_name, :last_name, :sex, :birth_date, :profession_name
+  validates_presence_of :first_name, :last_name
+  validates_presence_of :sex, :birth_date, :profession_name, on: :update
   validates_format_of :first_name, :last_name, :with => /[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]/
 
   enum sex: {male: 1, female: 2}
@@ -15,6 +16,7 @@ class CandidateProfile < ApplicationRecord
   end
 
   def age
+    return if birth_date.nil?
     now = Time.now.utc.to_date
     now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end

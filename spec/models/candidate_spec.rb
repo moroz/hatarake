@@ -51,10 +51,11 @@ RSpec.describe Candidate, type: :model do
   end
 
   describe "#should_confirm_lfw?" do
-    context 'when profile is not present' do
+    context 'when profile is not updated after registration' do
       it 'returns false' do
-        no_profile_candidate = FactoryBot.create(:candidate, :only_login_credentials)
-        expect(no_profile_candidate.should_confirm_lfw?).to be false
+        only_name_candidate = FactoryBot.build(:candidate, :only_login_credentials)
+        only_name_candidate.save(validation: false)
+        expect(only_name_candidate.should_confirm_lfw?).to be false
       end
     end
 
@@ -108,6 +109,24 @@ RSpec.describe Candidate, type: :model do
             expect(candidate.should_confirm_lfw?).to be false
           end
         end
+      end
+    end
+  end
+
+  describe "#not_updated_profile?" do
+    context "when candidated just registred" do
+      it "returns true" do
+        candidate = FactoryBot.build(:candidate, :only_login_credentials)
+        candidate.save(validate: false)
+        expect(candidate.not_updated_profile?).to be true
+      end
+    end
+
+    context "candidate with full credentials" do
+      let (:candidate) { FactoryBot.create(:candidate) }
+
+      it "returns false" do
+        expect(candidate.not_updated_profile?).to be false
       end
     end
   end

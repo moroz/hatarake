@@ -6,6 +6,9 @@
         %li= link_to t('nav.poland'), jobs_poland_path
         %li= link_to t('nav.abroad'), jobs_abroad_path
         %li= link_to t('nav.companies'), companies_path
+        %li
+          = link_to "https://www.facebook.com/InJobspl-150172078909014", class: "fb-link", target: "_blank" do
+            = fa_icon "facebook", class: "fa-lg"
     .top-bar-right
       %ul.dropdown.menu{'data-dropdown-menu' => true}
         %li.is-dropdown-submenu-parent.locale_dropdown

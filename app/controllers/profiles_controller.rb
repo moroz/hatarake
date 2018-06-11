@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   def show
     return redirect_to root_path unless logged_in?
     if candidate_signed_in?
-      if candidate.profile.nil?
+      if candidate.profile.sex.nil?
         redirect_to edit_candidate_profile_path
       else
         render 'candidates/show'

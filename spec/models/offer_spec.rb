@@ -266,7 +266,7 @@ RSpec.describe Offer, type: :model do
         it { is_expected.not_to include(homepage_past) }
       end
 
-      describe "#{social_featured}" do
+      describe "#social_featured" do
         let!(:social_past) { FactoryBot.create(:offer, social_until: 2.weeks.ago) }
 
         subject { Offer.social_featured }

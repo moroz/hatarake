@@ -27,6 +27,8 @@ ActiveAdmin.register Candidate do
     column :profession do |c|
       c&.profile&.profession_name
     end
+        column :phone
+    column :email
     column :age do |c|
       c&.profile&.age
     end

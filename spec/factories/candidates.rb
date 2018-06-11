@@ -16,8 +16,7 @@ FactoryBot.define do
     end
 
     trait :only_login_credentials do
-      profession_name nil
-      profile nil
+      association :profile, factory: [:candidate_profile, :only_name]
     end
 
     trait :no_profession do
