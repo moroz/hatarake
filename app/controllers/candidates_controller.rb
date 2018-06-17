@@ -8,7 +8,9 @@ class CandidatesController < ApplicationController
   #authorize_resource # FIX: Something not working here!
 
   def index
-    redirect_to root_path, alert: "Access Denied" and return unless current_user.premium? || admin_user_signed_in?
+    unless admin_user_signed_in?
+      redirect_to root_path, alert: "Access Denied" and return unless current_user.premium?
+    end
     respond_to do |format|
       unless request.format.xlsx?
         @candidates = Candidate.for_index.page(params[:page])
