@@ -182,12 +182,6 @@ class Offer < ApplicationRecord
     joins(:location).where("title ILIKE ANY(ARRAY[:q]) OR locations.city ILIKE ANY(ARRAY[:q])", q: sanitized_queries)
   end
 
-  def self.query_variations(query)
-    query = [query, query.squeeze, query.gsub('v','w'), query.squeeze.gsub('n','nn'), query.squeeze.gsub('v','w'),
-            query.squeeze.gsub('w','v'), query.squeeze.gsub('n','nn').gsub('w','v')].uniq
-  end
-  private_class_method :query_variations
-
   def unpublish
     update(published_at: nil)
   end
@@ -201,6 +195,11 @@ class Offer < ApplicationRecord
   end
 
   private
+
+  def self.query_variations(query)
+    query = [query, query.squeeze, query.gsub('v','w'), query.squeeze.gsub('n','nn'), query.squeeze.gsub('v','w'),
+            query.squeeze.gsub('w','v'), query.squeeze.gsub('n','nn').gsub('w','v')].uniq
+  end
 
   def name_for_slug
     [

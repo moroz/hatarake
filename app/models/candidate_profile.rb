@@ -3,7 +3,7 @@ class CandidateProfile < ApplicationRecord
 
   validates_presence_of :first_name, :last_name
   validates_presence_of :sex, :birth_date, :profession_name, on: :update
-  validates_format_of :first_name, :last_name, :with => /[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]/
+  validates :first_name, :last_name, format: { with: /\A([^\d\W]|[-]|[zżźćńółęąśŻŹĆĄŚĘŁÓŃ])*\Z/ }
 
   enum sex: {male: 1, female: 2}
 

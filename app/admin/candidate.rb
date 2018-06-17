@@ -1,4 +1,5 @@
 ActiveAdmin.register Candidate do
+  config.per_page = [50, 250, 500]
   menu label: 'Candidates'
 
   action_item :show, only: :show do
@@ -12,14 +13,19 @@ ActiveAdmin.register Candidate do
   end
 
   action_item :mailing_list, only: :index do
-    link_to "Mailing list", mailing_list_candidates_path, target: '_blank'
+    link_to "Mailing list", mailing_list_candidates_path(format: :xlsx), target: '_blank'
   end
 
   order_by(:full_name) do |order_clause|
     'first_name ' + order_clause.order + ', last_name ' + order_clause.order
   end
 
+  batch_action :email_list do |ids|
+    redirect_to mailing_list_candidates_path(format: :xlsx, ids: ids.join(',')), target: '_blank', class: 'button'
+  end
+
   index title: 'Candidates' do
+    selectable_column
     column :id
     column :full_name do |c|
       c.profile.present? ? c.display_name : c.email

@@ -34,6 +34,22 @@ class Order < ApplicationRecord
     end
   end
 
+  def self.process_premium_services_hash(hash)
+    raise ArgumentError unless hash.is_a?(Hash)
+    hash.stringify_keys!
+    hash['3'] = 0 if hash['3'].nil?
+    hash.each do |k, v|
+      v = v.to_i
+      case k
+      when '5'; hash['3'] += 5 * v
+      when '6'; hash['3'] += 10 * v
+      when '7'; hash['3'] += 15 * v
+      end
+    end
+    hash.except!('3') if hash['3'] == 0
+    hash.except!('5','6','7')
+  end
+
   def paid?
     paid_at.present?
   end

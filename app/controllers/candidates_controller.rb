@@ -4,9 +4,11 @@ class CandidatesController < ApplicationController
   before_action :find_candidate
   helper_method :candidate
   after_action :set_lfw_at, only: :update
-  authorize_resource
+  skip_authorize_resource only: [:mailing_list, :index] 
+  #authorize_resource # FIX: Something not working here!
 
   def index
+    redirect_to root_path, alert: "Access Denied" and return unless current_user.premium? || admin_user_signed_in?
     respond_to do |format|
       unless request.format.xlsx?
         @candidates = Candidate.for_index.page(params[:page])
@@ -24,12 +26,21 @@ class CandidatesController < ApplicationController
   end
 
   def mailing_list
-    @collection = Candidate.order_by_full_name
-    render 'mailing_list.txt', layout: false, content_type: 'text/plain'
+    raise CanCan::AccessDenied unless admin_user_signed_in?
+    @collection = if params["ids"].nil?
+                    Candidate.order_by_full_name
+                  else
+                    Candidate.where('id in (?)', params["ids"].split(','))
+                  end
+    respond_to do |f|
+      f.xlsx {
+        response.headers['Content-Disposition'] = "attachment; filename=#{Time.zone.now.strftime('%Y_%m_%d_mailing_kandydaci.xlsx')}"
+      }
+    end
   end
 
   def show
-    redirect_to edit_candidate_profile_path && return if @candidate.not_updated_profile?
+    redirect_to edit_candidate_profile_path and return if @candidate.not_updated_profile?
   end
 
   def update

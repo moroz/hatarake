@@ -17,6 +17,7 @@ RSpec.describe "Dotpay confirmation", type: :request do
   end
 
   it "sets user's premium_services" do
+    order.paid!
     expect(order.user.premium_services).to eq(order.to_h)
   end
 

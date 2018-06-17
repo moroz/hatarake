@@ -11,6 +11,8 @@ ActiveAdmin.register Offer do
   scope :poland
   scope :abroad
   scope :social_featured
+  scope :homepage_featured
+  scope :highlighted
 
   action_item :show, only: :show do
     link_to "View on Website", offer_path(offer), target: '_blank'

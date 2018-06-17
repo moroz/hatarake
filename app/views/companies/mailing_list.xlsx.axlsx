@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: 'Mailing list') do |sheet|
+  wb.styles do |s|
+    bold = s.add_style b: true
+    sheet.add_row ['Nazwa Firmy', 'Telefon', 'E-mail'], style: bold
+    @collection.each do |company|
+      name = company.name.gsub(/[\,<>]/, '')
+      sheet.add_row [name, company.phone, company.email]
+    end
+  end
+end

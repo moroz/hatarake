@@ -1,0 +1,12 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: 'Mailing list') do |sheet|
+  wb.styles do |s|
+    bold = s.add_style b: true
+    sheet.add_row ['Imię i Nazwisko', 'Telefon', 'E-mail', 'Zawód'], style: bold
+    @collection.each do |candidate|
+    	name = !candidate.profile.blank? ? candidate.profile.full_name : nil
+      profession = !candidate.profile.blank? ? candidate.profile.profession_name : nil
+      sheet.add_row [name, candidate.phone, candidate.email, profession]
+    end
+  end
+end

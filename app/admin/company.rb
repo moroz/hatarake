@@ -1,7 +1,7 @@
 ActiveAdmin.register Company do
-  permit_params :name, :description, :website, :email, :contact_email, :balance, :published_offers_count
+  config.per_page = [50, 250, 500]
+  permit_params :name, :description, :website, :email, :contact_email, :balance
   menu label: "Companies"
-
   scope :all
   scope :premium_users
 
@@ -14,7 +14,7 @@ ActiveAdmin.register Company do
   end
 
   sidebar :actions, only: :index, priority: 0 do
-    str = link_to "Mailing list", mailing_list_companies_path, target: '_blank', class: 'button'
+    str = link_to "Mailing list", mailing_list_companies_path(format: :xlsx), target: '_blank', class: 'button'
     str += link_to 'Download as XLSX', companies_path(format: 'xlsx'), class: 'button'
     str += link_to 'Wszyscy +10 PLN', increment_all_admin_companies_path, class: 'button', method: :patch
     str
@@ -40,7 +40,7 @@ ActiveAdmin.register Company do
   end
 
   batch_action :email_list do |ids|
-    redirect_to mailing_list_companies_path(ids), target: '_blank', class: 'button'
+    redirect_to mailing_list_companies_path(format: :xlsx, ids: ids.join(',')), target: '_blank', class: 'button'
   end
 
   index title: "Companies" do

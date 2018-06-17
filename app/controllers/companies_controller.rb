@@ -27,12 +27,16 @@ class CompaniesController < ApplicationController
   end
 
   def mailing_list
-    if params["format"].nil?
-      @collection = Company.order('LOWER(name)')
-    else
-      @collection = Company.where('id in (?)', params["format"].split('/')) 
+    @collection = if params["ids"].nil?
+                    Company.order('LOWER(name)')
+                  else
+                    Company.where('id in (?)', params["ids"].split(','))
+                  end
+    respond_to do |f|
+      f.xlsx {
+        response.headers['Content-Disposition'] = "attachment; filename=#{Time.zone.now.strftime('%Y_%m_%d_mailing_pracodawcy.xlsx')}"
+      }
     end
-    render 'mailing_list.txt', layout: false, content_type: 'text/plain'
   end
 
   def edit
