@@ -7,6 +7,10 @@
     %li= link_to t('nav.jobs_pl'), jobs_poland_path
     %li= link_to t('nav.jobs_abroad'), jobs_abroad_path
     %li= link_to t('nav.companies'), companies_path
+    %li= link_to t('nav.bus'), "https://buszagranica.pl", target: "_blank"
+    %li
+      %center
+        %iframe{:src => "https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FInJobspl-150172078909014&width=50&layout=box_count&action=like&size=small&show_faces=false&share=false&height=65&appId=217910758674540", :width => "75", :height => "40", :scrolling => "no", :frameborder => "0", :allowTransparency => "true", :allow => "encrypted-media"}
     - if company_signed_in?
       %li= link_to t('nav.add_offer'), new_offer_path
   %hr/

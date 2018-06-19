@@ -33,3 +33,10 @@ en:
         upper_text: "Subscribe for our newsletter"
         lower_text: "and get the most interesting offers<br>delivered to your mailbox for free!"
         subscribe: "Subscribe now"
+
+      slide4:
+        long_text: Do you need transport?
+        upper_text: We organised it for you!
+        lower_text: Fast and secure transport <br>go where you want <br> with comfort!
+        link: Check out our offer!
+

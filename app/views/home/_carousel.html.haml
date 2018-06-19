@@ -21,6 +21,14 @@
         %span.home__row1__upper-text= t('.slide3.upper_text')
         %span.home__row1__lower-text!= t('.slide3.lower_text')
         = link_to t('.slide3.subscribe'), new_newsletter_subscription_path, class: 'button large'
+  .owl-slide.owl-slide--bus
+    .owl-slide__container--left
+      .owl-slide__text
+        %span.home__row1__long-text= t('.slide4.long_text')
+        %span.home__row1__upper-text= t('.slide4.upper_text')
+        %span.home__row1__lower-text!= t('.slide4.lower_text')
+        = link_to t('.slide4.link'), "https://buszagranica.pl/", class: 'button large', target: "_blank"
+
 
 :javascript
   $('#banner-carousel').owlCarousel({

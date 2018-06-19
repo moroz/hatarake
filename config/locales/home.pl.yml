@@ -32,3 +32,9 @@ pl:
         upper_text: "Zaprenumeruj nasz newsletter"
         lower_text: "i otrzymuj najciekawsze oferty<br>prosto na swoją skrzynkę!"
         subscribe: "Tak, poproszę!"
+
+      slide4:
+        long_text: Potrzebujesz transportu?
+        upper_text: Organizujemy go dla ciebie!
+        lower_text: Szybki i bezpieczny transport <b>za <br>granicę</b> w komfortowych <br>warunkach!
+        link: Sprawdź naszą ofertę!
