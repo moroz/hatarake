@@ -95,6 +95,7 @@ en:
     dkk: Danish krone
 
   actions:
+    new: New Offer
     delete: Delete
     promote: Promote
     publish: Publish

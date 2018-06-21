@@ -101,6 +101,7 @@ pl:
     dkk: Korona duńska
 
   actions:
+    new: Nowa Oferta
     delete: Usuń
     publish: Opublikuj
     promote: Promuj
