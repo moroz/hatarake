@@ -7,6 +7,8 @@ pl:
   bad_request_alert: "W czasie przetwarzania zapytania wystąpił błąd: "
   terms_of_service: "Regulamin"
   and_or: "i/lub"
+  fb_sign_up: "Zarejestruj się poprzez Facebooka"
+  fb_sign_in: "Zaloguj się poprzez Facebooka"
 
   unauthorized:
     default: "Nie jesteś upoważniony do wyświetlania tej strony."
@@ -53,6 +55,7 @@ pl:
     step1:
       subheader: "Krok 1. Dane do logowania"
       explanation: "Wpisz swój adres e-mail i hasło. Na podany adres wyślemy wiadomość zawierającą link niezbędny do aktywacji konta."
+      facebook_information: "Od niedawna możesz również zarejestrować sie poprzez Facebooka!"
       not_a_candidate: "Nie jesteś pracownikiem?"
       company_registration: "Załóż konto firmowe"
       submit: "Wyślij"

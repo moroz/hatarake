@@ -84,4 +84,5 @@ class User < ApplicationRecord
   def add_http_to_website
     self.website = add_http_to_url(website)
   end
+
 end

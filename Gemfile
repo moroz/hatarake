@@ -48,7 +48,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'valid_url'
 gem 'meta-tags'
-
+gem 'omniauth-facebook'
+gem 'thin'
 # For XSLX exports
 gem 'axlsx', '2.1.0.pre'
 gem 'axlsx_rails'

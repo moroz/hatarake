@@ -10,4 +10,6 @@
         = f.input :remember_me, as: :boolean
       .actions
         = f.submit t('.sign_in'), class: 'button success expanded'
+        = link_to candidate_facebook_omniauth_authorize_path, class: 'button expanded' do
+          = fa_icon('thumbs-up', text: t('fb_sign_in'))
     = render "devise/shared/links"

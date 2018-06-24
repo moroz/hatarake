@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   ActiveAdmin.routes(self)
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
@@ -86,7 +87,10 @@ Rails.application.routes.draw do
     get '/sign_up', to: 'candidates/registrations#new'
   end
 
-  devise_for :candidates, controllers: { registrations: 'candidates/registrations', sessions: 'sessions' }
+  devise_for :candidates, controllers: { 
+    omniauth_callbacks: "candidates/omniauth_callbacks",
+    registrations: 'candidates/registrations', sessions: 'sessions'
+  }
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
   resources :candidates do

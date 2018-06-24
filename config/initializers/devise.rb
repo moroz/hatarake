@@ -14,4 +14,7 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
+  config.omniauth :facebook, Rails.application.secrets.FB_APP_ID, Rails.application.secrets.FB_SECRET_KEY,
+    callback_url: "https://staging.injobs.pl/api/users/auth/facebook/callback"
+  config.omniauth_path_prefix = '/api/users/auth'
 end

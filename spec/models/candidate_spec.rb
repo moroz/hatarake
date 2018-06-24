@@ -130,4 +130,34 @@ RSpec.describe Candidate, type: :model do
       end
     end
   end
+
+  describe "#from_omniauth" do
+    let!(:facebook_hash) { FactoryBot.create(:facebook_auth) }
+    context "Candidate already not registred" do
+      subject { described_class.from_omniauth(facebook_hash) }
+      it "create new user" do
+        expect { subject }.to change { User.count }
+      end
+      it "return created user" do
+        expect(subject[0]).to eq User.last
+      end
+      it "return true - is new candidate?" do
+        expect(subject[1]).to eq true
+      end
+    end
+
+    context "Candidate already registred" do
+      before do
+        User.delete_all
+      end
+      let!(:candidate) { FactoryBot.create(:candidate, email: facebook_hash.info.email) }
+      subject { described_class.from_omniauth(facebook_hash) }
+      it "return candidate object" do
+        expect(subject[0]).to eq candidate 
+      end
+      it "return false - is new candidate?" do
+        expect(subject[1]).to eq false
+      end
+    end
+  end
 end

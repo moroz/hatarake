@@ -6,6 +6,8 @@ en:
   bad_request_alert: "An error occurred while processing your request: "
   terms_of_service: "Terms of service"
   and_or: "and/or"
+  fb_sign_up: "Sign Up with Facebook"
+  fb_sign_in: "Sign In with Facebook"
 
   currency_range:
     min: "%{min}+ %{currency}"
@@ -47,6 +49,7 @@ en:
     step1:
       subheader: "Step 1. Login credentials"
       explanation: "Please fill in your e-mail address and pick a password. We will send you an e-mail with the confirmation link."
+      facebook_information: "You can Sign up with your Facebook account!"
       not_a_candidate: "Not a candidate?"
       company_registration: "Get a Company Account"
       submit: 'Submit'

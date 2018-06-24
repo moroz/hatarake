@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Candidate < User
-  devise :registerable
+  devise :registerable, :omniauthable, :omniauth_providers => [:facebook]
 
   extend FriendlyId
   friendly_id :name_for_slug, use: [:slugged]
@@ -75,6 +75,32 @@ class Candidate < User
   def not_updated_profile?
     return true if profile.sex.nil? ||  profile.birth_date.nil? || profile.profession_name.nil? || profile.blank?
     return false
+  end
+
+  # Facebook login methods
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
+  def self.from_omniauth(auth)
+    # REVIEW: Consider adding provider column to users
+    is_new_candidate = false
+    record = where(email: auth.info.email).first_or_create do |candidate|
+      is_new_candidate = candidate.new_record?
+      candidate.email = auth.info.email
+      candidate.password = Devise.friendly_token[0,20]
+      candidate.type = "Candidate"
+      candidate.build_profile
+      candidate.profile.first_name = auth.info.name.split(" ")[0]
+      candidate.profile.last_name = auth.info.name.split(" ")[1]
+      candidate.skip_confirmation! 
+      #user.avatar = auth.info.image # TODO
+    end
+    return [record, is_new_candidate]
   end
 
   private
