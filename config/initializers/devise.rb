@@ -17,6 +17,6 @@ Devise.setup do |config|
   require "omniauth-facebook"
   OmniAuth.config.logger = Rails.logger
   config.omniauth :facebook, Rails.application.secrets.FB_APP_ID, Rails.application.secrets.FB_SECRET_KEY,
-    callback_url: "https://localhost:3000/api/users/auth/facebook/callback", token_params: { parse: :json }
+    callback_url: "https://injobs.pl/api/users/auth/facebook/callback", token_params: { parse: :json }
   config.omniauth_path_prefix = '/api/users/auth'
 end
