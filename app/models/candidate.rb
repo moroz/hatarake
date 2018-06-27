@@ -89,7 +89,7 @@ class Candidate < User
   def self.from_omniauth(auth)
     # REVIEW: Consider adding provider column to users
     is_new_candidate = false
-    record = where(email: auth.info.email).first_or_create do |candidate|
+    record = User.where(email: auth.info.email).first_or_create do |candidate|
       is_new_candidate = candidate.new_record?
       candidate.email = auth.info.email
       candidate.password = Devise.friendly_token[0,20]
