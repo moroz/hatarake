@@ -6,21 +6,23 @@ class Offer < ApplicationRecord
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
   belongs_to :company, required: true
-  belongs_to :location, required: true
   belongs_to :field
-  accepts_nested_attributes_for :location
 
   has_many :applications, dependent: :destroy
   has_many :candidates, through: :applications
   has_many :offer_saves, dependent: :destroy, class_name: 'OfferSave'
+  has_many :locations, dependent: :destroy
+
+  accepts_nested_attributes_for :locations
+
   validates_presence_of :currency
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
   CURRENCIES = %w[pln eur chf usd gbp czk nok sek dkk].freeze
   validates :currency, inclusion: { in: CURRENCIES }
   validates :application_url, url: true, if: :apply_on_website?
 
-  delegate :country_id, to: :location
-  delegate :province_id, to: :location
+  delegate :country_id, to: :locations
+  delegate :province_id, to: :locations
 
   delegate :name, to: :company, prefix: true
 
@@ -38,10 +40,10 @@ class Offer < ApplicationRecord
   scope :featured_first, -> { reorder('(category_until IS NOT NULL AND category_until > NOW()) DESC', 'published_at DESC') }
   scope :by_publishing_date_nulls_first, -> { reorder('published_at DESC NULLS FIRST') }
 
-  scope :poland, -> { joins(:location).where('locations.country_id = ?', Country::POLAND_ID) }
-  scope :abroad, -> { joins(:location).where('locations.country_id != ?', Country::POLAND_ID) }
+  scope :poland, -> { joins(:locations).where('locations.country_id = ?', Country::POLAND_ID) }
+  scope :abroad, -> { joins(:locations).where('locations.country_id != ?', Country::POLAND_ID) }
 
-  scope :with_associations, -> { includes(company: :avatar, location: %i[country province]) }
+  scope :with_associations, -> { includes(company: :avatar, locations: %i[country province]) }
 
   scope :published, -> { where('published_at IS NOT NULL') }
 
@@ -54,8 +56,8 @@ class Offer < ApplicationRecord
   end
 
   scope :with_min_salary, ->(min) { where('salary @> :min or lower(salary) > :min', min: min.to_d) }
-  scope :with_country_id, ->(country_id) { joins(:location).where('locations.country_id = ?', country_id) }
-  scope :with_province_id, ->(province_id) { joins(:location).where('locations.province_id = ?', province_id) }
+  scope :with_country_id, ->(country_id) { joins(:locations).where('locations.country_id = ?', country_id) }
+  scope :with_province_id, ->(province_id) { joins(:locations).where('locations.province_id = ?', province_id) }
   scope :no_lang_required, -> { where(req_lang_1: 1) }
 
   scope :homepage_featured, -> { where('featured_until > NOW()') }
@@ -179,7 +181,7 @@ class Offer < ApplicationRecord
   def self.search_by_query(query)
     queries = query_variations(query)
     sanitized_queries = queries.map { |q| "%#{sanitize_sql_like(q)}%" }
-    joins(:location).where("title ILIKE ANY(ARRAY[:q]) OR locations.city ILIKE ANY(ARRAY[:q])", q: sanitized_queries)
+    joins(:locations).where("title ILIKE ANY(ARRAY[:q]) OR locations.city ILIKE ANY(ARRAY[:q])", q: sanitized_queries)
   end
 
   def unpublish
@@ -202,14 +204,19 @@ class Offer < ApplicationRecord
   end
 
   def name_for_slug
+    slug_locations = []
+    locations.each do |location|
+      slug_locations << location.city
+    end
+
     [
-      [:title, location.city],
-      [:title, location.city, SecureRandom.hex(3)]
+      [:title, slug_locations.join('-')],
+      [:title, slug_locations.join('-'), SecureRandom.hex(3)]
     ]
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || will_save_change_to_attribute?(:title) || will_save_change_to_attribute?(:location_id)
+    slug.blank? || will_save_change_to_attribute?(:title) #||  will_save_change_to_attribute?(:location_id) # REVIEW
   end
 
   def make_required_languages

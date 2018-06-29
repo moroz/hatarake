@@ -3,6 +3,7 @@ FactoryBot.define do
     country { Country.first || create(:country) }
     province { Province.first || create(:province) }
     city { Faker::Address.city }
+    offer
     
     trait :russia do
       country { Country.find_by(iso: "RU") || create(:country, :russia) }

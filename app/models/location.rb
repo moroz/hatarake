@@ -1,11 +1,11 @@
 class Location < ApplicationRecord
   belongs_to :country, required: true
   belongs_to :province
+  belongs_to :offer
 
   attr_accessor :country_name, :province_name
 
   has_one :company
-  has_one :offer
 
   before_validation :find_country_and_province
 

@@ -10,8 +10,11 @@
   = f.label :field_id, t('offers.fields.field')
   .auto-width= f.select :field_id, options_from_collection_for_select(@fields, :id, :local_name, offer.field_id), include_blank: t('offers.placeholders.field')
 
-  = f.simple_fields_for :location do |ff|
+  = f.simple_fields_for :locations do |ff|
     = render 'location_fields', f: ff
+    #locations
+      = link_to_add_association 'Add Location', f, :locations
+      = link_to_remove_association('Remove Location', f, { wrapper_class: '.nested-fields' })
   .page-header
     %h4= t('.wages')
   = f.label :currency, t('offers.fields.currency')

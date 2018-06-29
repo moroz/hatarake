@@ -42,7 +42,7 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    redirect_to edit_candidate_profile_path and return if @candidate.not_updated_profile?
+    redirect_to edit_candidate_profile_path and return if @candidate.not_updated_profile? && !admin_user_signed_in?
   end
 
   def update
@@ -67,6 +67,7 @@ class CandidatesController < ApplicationController
   end
 
   def edit
+    redirect_to candidates_path, flash: { alert: "Try to edit profile via admin panel!" } and return if admin_user_signed_in?
     @candidate.build_profile unless @candidate.profile.present?
   end
 

@@ -18,7 +18,7 @@ end
 
 crumb :offer do |offer|
   link offer.title, offer_path(offer)
-  parent offer.location.poland? ? :jobs_poland : :jobs_abroad
+  parent offer.locations.first.poland? ? :jobs_poland : :jobs_abroad
 end
 
 crumb :companies do

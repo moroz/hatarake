@@ -22,6 +22,7 @@
 //= require Markdown.Editor
 //= require Jcrop
 //= require avatars
+//= require cocoon
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller

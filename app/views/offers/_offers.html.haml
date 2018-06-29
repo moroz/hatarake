@@ -1,4 +1,4 @@
-- if @offers.count > 0
+- if !@offers.nil?
   .row
     .offers__search_description
       = @search_description
@@ -9,7 +9,8 @@
     - if @offers.first.category_featured?
       %h4= t('offers.index.featured_offers')
       - check_feat = true
-    - @offers.count.times do |i|
+
+    - @offers.length.times do |i|
       = render @offers[i]
       - if check_feat && @offers[i].category_featured? && @offers[i+1].present? && !@offers[i+1].category_featured?
         %h4= t('offers.index.remaining_offers')

@@ -9,7 +9,11 @@
         - if defined?(show_company) && show_company
           %span.offer__company= fa_icon('building-o', text: offer.company_name)
         %span.offer__salary= fa_icon 'money', text: short_salary(offer)
-        %span.offer__location= fa_icon 'map-marker', text: offer.location.short_format
+        %span.offer__location
+          = fa_icon 'map-marker'
+          - offer.locations.each do |location|
+            = "/" if !location.eql?(offer.locations.first) && offer.locations.size != 1
+            = location.short_format
 
 - elsif defined?(block) && block
   - if logged_in?
@@ -19,7 +23,10 @@
   .offer-block{id: dom_id(offer)}
     .offer-block__content
       = link_to offer.title, offer, class: "offer-block__title"
-      %span.offer-block__location= offer.location.short_format
+      %span.offer-block__location
+      - offer.locations.each do |location|
+        = "/" if !location.eql?(offer.locations.first) && offer.locations.size != 1
+        = location.short_format
       = link_to offer, title: offer.company.name do
         %span.offer-block__company= avatar_for(offer.company, size: :thumb)
       = link_to t('offers.apply_now'), url, class: 'button offer-block__cta'
@@ -42,7 +49,10 @@
         - else
           = link_to t('actions.publish'), publish_offer_path(offer), method: :patch
     %td
-      .offer_dashboard__location= offer.location
+      .offer_dashboard__location
+        - offer.locations.each do |location|
+          = "/" if !location.eql?(offer.locations.first) && offer.locations.size != 1
+          = location.short_format
       - if offer.featured?
         .offer_dashboard__premium
           - if offer.highlighted?
@@ -82,5 +92,9 @@
       .offer-row__right
         - if offer.language_requirements
           %span.offer-row__languages= fa_icon 'language', text: offer.language_requirements
-        %span.offer-row__location= fa_icon 'map-marker', text: offer.location.to_s
+        %span.offer-row__location
+          = fa_icon 'map-marker'
+          - offer.locations.each do |location|
+            = "/" if !location.eql?(offer.locations.first) && offer.locations.size > 1
+            = location.to_s
         %span.offer-row__views.hide-for-small-only= fa_icon 'eye', text: t('offers.view_count', count: offer.views)

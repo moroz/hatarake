@@ -50,6 +50,7 @@ gem 'valid_url'
 gem 'meta-tags'
 gem 'omniauth-facebook'
 gem 'thin'
+gem "cocoon"
 # For XSLX exports
 gem 'axlsx', '2.1.0.pre'
 gem 'axlsx_rails'

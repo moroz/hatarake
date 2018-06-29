@@ -14,7 +14,7 @@ class OffersController < ApplicationController
   CATEGORY_FEATURED_LIMIT = 5
 
   def new
-    offer.build_location
+    offer.locations.build
     @fields = Field.all
   end
 
@@ -55,8 +55,9 @@ class OffersController < ApplicationController
   # TODO: Write a stored procedure to get random records
 
   def poland
-    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params)
-    @total_count = @offers.count
+    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params).group(:id)
+    puts @offers.length
+    @total_count = @offers.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
     @offers = @offers.page(params[:page])
@@ -73,8 +74,8 @@ class OffersController < ApplicationController
   end
 
   def abroad
-    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.advanced_search(params)
-    @total_count = @offers.count
+    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.advanced_search(params).group(:id)
+    @total_count = @offers.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
     @offers = @offers.page(params[:page])
@@ -96,7 +97,7 @@ class OffersController < ApplicationController
     end
     offer.increment!(:views) unless offer.company_id == current_user&.id
     @company = offer.company
-    @title = t('.title') + offer.title + ', ' + offer.location.only_city_format
+    @title = t('.title') + offer.title + ', ' + offer.locations.first.only_city_format
   end
 
   def edit
@@ -224,6 +225,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, location_attributes: [:id, :country_id, :province_id, :city])
+    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, locations_attributes: [:id, :country_id, :province_id, :city])
   end
 end

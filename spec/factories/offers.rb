@@ -2,7 +2,6 @@ FactoryBot.define do
   factory :offer do
     company { Company.first || create(:company) }
     title { Faker::Job.title }
-    location
     salary_min { @smin = rand(10) * 1000 }
     salary_max { @smin + 2500 }
     currency "pln"
@@ -14,7 +13,7 @@ FactoryBot.define do
     unfeatured
 
     trait :random do
-      association :location, :random
+      #association :location, :random
     end
 
     trait :published do

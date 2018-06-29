@@ -1,7 +1,7 @@
 -breadcrumb :order_premium
 - content_for :full_width do
   - @products.each do |product|
-    %section.premium-landing-page__section.product{id: dom_id(product)}
+    %section.premium-landing-page__section.product{id: dom_id(product), style: "text-align: left;"}
       .row.container
         %h1= product.local_name
         != unsafe_markdown product.local_description
@@ -22,4 +22,3 @@
         .callout.alert-callout-subtle.success.premium-landing-page__item_added.hide{id: "item_added_#{product.id}"}
           = t('.item_added')
           = link_to t('.go_to_cart'), cart_path
-

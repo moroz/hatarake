@@ -21,6 +21,7 @@ ActiveAdmin.register Offer do
   action_item :index, only: :index do
     str = link_to "View on Website", jobs_abroad_path, target: '_blank'
     str += link_to "Increment all views", increment_all_views_admin_offers_path
+    str += link_to "Update Offers", update_offers_admin_offers_path
   end  
 
   member_action :increment_views, method: :patch do
@@ -28,6 +29,16 @@ ActiveAdmin.register Offer do
     resource.increment!(:views, by)
     respond_to do |f|
       f.js
+    end
+  end
+
+  collection_action :update_offers do
+    locations = Location.where(offer_id: nil)
+    locations.each do |location|
+      new_id = Offer.find_by(location_id: location.id)
+      next if new_id.nil?
+      location.offer_id = new_id.id
+      location.save
     end
   end
 
@@ -62,7 +73,7 @@ ActiveAdmin.register Offer do
       row :highlight_until
       row :social_until
       row :special_until
-      row :location
+      row :locations
       row :company do |o|
         link_to o.company.name, o.company, target: '_blank'
       end
@@ -79,7 +90,7 @@ ActiveAdmin.register Offer do
 
   controller do
     def scoped_collection
-      super.includes(:location, :company)
+      super.includes(:locations, :company)
     end
   end
 end

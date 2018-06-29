@@ -103,10 +103,8 @@ module OffersHelper
   end
 
   def prepare_offer_meta_description(offer, company)
-    location = offer.location.to_s.split(',')[0]
-    location = location.split('–')[0].strip
-    location = offer.location.only_city_format
+    location = offer.locations.pluck(:city)
     company = company.name
-    description = t('.meta_description', title: offer.title, company: company, location: location)
+    description = t('.meta_description', title: offer.title, company: company, location: location.join('/'))
   end
 end

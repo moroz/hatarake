@@ -1,11 +1,14 @@
 - javascript 'offers'
 .row
-  .medium-4.columns
-    = f.label :country, t('offers.fields.country')
-    = f.select :country_id, localized_collection(@countries, f.object.try(:country_id) || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id'
-  .medium-4.columns
-    = f.label :province, label: t('offers.fields.province')
-    = f.select :province_id, localized_collection(@provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {'province-select': ''}, id: 'location_province_id'
-  .medium-4.columns
-    = f.input :city, label: t('offers.fields.location'), input_html: { disabled: f.object.try(:province_id) == 0, data: { 'city-input': '' }, id: 'location_city' }
+  .nested-fields
+    .medium-4.columns
+      = f.label :country, t('offers.fields.country')
+      = f.select :country_id, localized_collection(@countries, f.object.try(:country_id) || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id'
+    .medium-4.columns
+      = f.label :province, label: t('offers.fields.province')
+      = f.select :province_id, localized_collection(@provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {'province-select': ''}, id: 'location_province_id'
+    .medium-4.columns
+      = f.input :city, label: t('offers.fields.location'), input_html: { disabled: f.object.try(:province_id) == 0, data: { 'city-input': '' }, id: 'location_city' }
+
+
 

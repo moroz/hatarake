@@ -15,7 +15,11 @@
   %li
     = fa_icon('money li')
     != salary_and_wage_for(offer)
-  %li= fa_icon('map-marker li', text: offer.location.to_s)
+  %li
+    = fa_icon('map-marker li')
+    - offer.locations.each do |location|
+      = "/" if !location.eql?(offer.locations.first) && offer.locations.size != 1
+      = location.to_s
   - if offer.contact_email.present?
     %li.lowercase
       = fa_icon('envelope li')
