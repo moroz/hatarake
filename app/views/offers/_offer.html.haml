@@ -75,12 +75,12 @@
 - else
   = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]), class: 'no-underline' do 
     %div{id: dom_id(offer), class: "offer offer-row #{offer.highlighted? ? 'offer-row--highlighted' : ''}"}
-      .offer-row__logo
-        = avatar_for offer.company, size: :thumb
       %span.offer-row__title
         = offer.title
         - if offer.category_featured?
           %span.offer__premium_label PREMIUM
+      .offer-row__logo
+        = avatar_for offer.company, size: :thumb
       .offer-row__details
         %span.offer-row__company= fa_icon 'building-o', text: offer.company_name
         %span.offer-row__salary= fa_icon 'money', text: short_salary(offer)

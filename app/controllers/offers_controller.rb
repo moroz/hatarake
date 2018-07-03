@@ -214,7 +214,7 @@ class OffersController < ApplicationController
 
   def set_province_list
     if offer.present? && offer.persisted?
-      @provinces = offer.location.country.provinces.local_order
+      @provinces = offer.locations.first.country.provinces.local_order
     else
       @provinces = Province.where(country_id: params[:cid] || Country::POLAND_ID).local_order
     end
