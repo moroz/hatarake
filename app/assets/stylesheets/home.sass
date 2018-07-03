@@ -152,13 +152,23 @@
   display: grid
   align-items: center
   grid:
-    template-columns: repeat(2, 1fr)
+    template-columns: repeat(1, 1fr)
+  @include breakpoint(small)
+    template-columns: repeat(2, lfr)
   @include breakpoint(medium)
     grid:
       template-columns: repeat(3, 1fr)
       gap: 10px
   div
     margin: 0 auto
+
+  .offer.offer-row
+    min-height: 19rem
+
+  .offer-row__logo
+    display: block
+    float: none
+    margin: auto
 
 .featured_companies
   @include breakpoint(medium)
