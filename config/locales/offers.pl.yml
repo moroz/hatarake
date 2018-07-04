@@ -193,6 +193,8 @@ pl:
       req_lang_1: "1. wymagany język:"
       req_lang_2: "2. wymagany język:"
       field: "Branża:"
+      add_location: Dodaj Lokację
+      remove_location: Usuń lokację
 
     placeholders:
       preview: W tym miejscu pojawi się podgląd opisu.

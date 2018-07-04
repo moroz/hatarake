@@ -124,6 +124,7 @@ class OffersController < ApplicationController
 
   def update
     if offer.update(offer_params)
+      offer.remove_locations(offer_params["locations_attributes"])
       flash[:success] = "The offer was updated."
       redirect_to offer
     else
@@ -214,7 +215,8 @@ class OffersController < ApplicationController
 
   def set_province_list
     if offer.present? && offer.persisted?
-      @provinces = offer.locations.first.country.provinces.local_order
+      @provinces = []
+      offer.locations.each { |o| @provinces << o.country.provinces.local_order }
     else
       @provinces = Province.where(country_id: params[:cid] || Country::POLAND_ID).local_order
     end
@@ -225,6 +227,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, locations_attributes: [:id, :country_id, :province_id, :city])
+    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, locations_attributes: [:id, :country_id, :province_id, :city, :_destroy])
   end
 end

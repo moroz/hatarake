@@ -192,6 +192,8 @@ en:
       req_lang_1: "1st required language:"
       req_lang_2: "2nd required language:"
       field: "Field or industry:"
+      add_location: "Add Location"
+      remove_location: "Remove Location"
 
     placeholders:
       preview: A preview of your description will appear here.

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Cart < ApplicationRecord
-  has_one :order
+  has_one :order, dependent: :destroy
   belongs_to :user
   has_many :cart_items, dependent: :destroy
 

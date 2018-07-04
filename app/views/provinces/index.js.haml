@@ -1,2 +1,2 @@
 :plain
-  document.querySelector('[data-province-select]').innerHTML = '#{j localized_collection(@provinces, 0, blank: t('offers.provinces.blank'))}';
+  document.querySelector("[data-province-select-#{params["element_id"]}]").innerHTML = '#{j localized_collection(@provinces, 0, blank: t('offers.provinces.blank'))}';

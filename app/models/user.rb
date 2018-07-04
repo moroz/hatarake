@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   has_one :avatar, foreign_key: 'owner_id', dependent: :destroy
   has_many :carts, dependent: :destroy
-  has_many :orders, dependent: :destroy
+  has_many :orders
   extend FriendlyId
   friendly_id :name_for_slug, use: [:finders]
 

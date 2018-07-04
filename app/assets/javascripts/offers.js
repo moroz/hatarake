@@ -14,15 +14,32 @@ jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
 document.addEventListener('turbolinks:load', function () {
 
   // substitute provinces in the province select when country is changed
-  var el = document.querySelector('[data-country-select]');
-  el && el.addEventListener('change', function (e) {
+  var elements = document.querySelectorAll('[data-country-select]');
+  elements.forEach(function(el) {
+    el && el.addEventListener('change', function (e) {
+    var elementId = el.name.split('[')[2][0];
     var countryId = e.target.value;
     if (countryId) {
-      $.get('/api/provinces/' + countryId);
+      $.get('/api/provinces/' + countryId + '/' + elementId);
     }
     document.querySelector('[data-province-select]')
       .disabled = !countryId;
-  }, false);
+    }, false);
+  });
+
+  $('#locations').on('cocoon:after-insert', function(e, insertedItem) {
+    var elements = document.querySelectorAll('[data-country-select]');
+    var lastElement = elements[elements.length - 1]
+    lastElement && lastElement.addEventListener('change', function (e) {
+      var elementId = lastElement.name.split('[')[2].split(']')[0];
+      var countryId = e.target.value;
+      if (countryId) {
+        $.get('/api/provinces/' + countryId + '/' + elementId);
+      }
+      //document.querySelector('[data-province-select]')
+        //.disabled = !countryId;
+      }, false);
+  });
 
   // disable location field in offers#new and offers#edit
   // if no province is set

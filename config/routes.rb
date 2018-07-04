@@ -70,7 +70,7 @@ Rails.application.routes.draw do
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions
     get 'schools/(:term)' => 'autocomplete#schools', as: :autocomplete_schools
     get 'organizations/(:term)' => 'autocomplete#organizations', as: :autocomplete_organizations
-    get 'provinces/(:country_id)' => 'provinces#index', as: :provinces
+    get 'provinces/(:country_id)/(:element_id)' => 'provinces#index', as: :provinces
     scope '/dotpay' do
       post 'confirm_payment' => 'dotpay#confirm'
     end

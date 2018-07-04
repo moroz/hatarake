@@ -12,9 +12,9 @@
 
   = f.simple_fields_for :locations do |ff|
     = render 'location_fields', f: ff
-    #locations
-      = link_to_add_association 'Add Location', f, :locations
-      = link_to_remove_association('Remove Location', f, { wrapper_class: '.nested-fields' })
+  #locations
+    = link_to_add_association t('offers.fields.add_location'), f, :locations
+    
   .page-header
     %h4= t('.wages')
   = f.label :currency, t('offers.fields.currency')

@@ -196,6 +196,13 @@ class Offer < ApplicationRecord
     end
   end
 
+  def remove_locations(locations)
+    locations = locations.to_h
+    locations.each do |location|
+      Location.find(location[1]["id"]).destroy! if location[1]["_destroy"] == '1'
+    end
+  end
+
   private
 
   def self.query_variations(query)
@@ -275,4 +282,5 @@ class Offer < ApplicationRecord
     return if company.published_offers_count == count
     company.update_column(:published_offers_count, count)
   end
+
 end
