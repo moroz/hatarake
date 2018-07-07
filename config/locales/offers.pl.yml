@@ -203,8 +203,16 @@ pl:
     provinces:
       blank: Cały kraj
 
-    save_offer: 'Zapisz ofertę'
-    unsave_offer: "Usuń z zapisanych"
+    offer_saves:
+      save_offer: 'Zapisz ofertę'
+      unsave_offer: "Usuń z zapisanych"
+      save_offer_notice: "Oferta została zapisana do twojego Panelu!"
+      fail_save_offer_notice: "Zaloguj się lub zarejestruj aby zapisać ofertę do ulubionych!"
+      unsave_offer_notice: "Oferta została usunięta z listy zapisanych ofert!"
+      email_offer: "Wyślij na E-mail"
+      company_offers: "Więcej ofert firmy"
+      sucess_email: "Oferta została wysłana na twoją skrzynkę pocztową!"
+      fail_email: "Zaloguj się lub utwórz konto aby wysłać ofertę na swoją skrzynkę pocztową!"
 
   activerecord:
     attributes:

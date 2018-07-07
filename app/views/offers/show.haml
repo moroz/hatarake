@@ -8,9 +8,9 @@
   - breadcrumb :company_offer, offer
 - else
   - breadcrumb :offer, offer
-
 .row.collapse
   %h2.offer__header= offer.title
+  
   .columns.large-4.large-push-8
     .offer__sidebar
       = render 'offers/show/company_desc'
@@ -18,4 +18,7 @@
       = render 'offers/show/social_share'
   .columns.large-8.large-pull-4.padding-for-small
     .offer__description
+      = render 'offers/offer_saves'
       = render 'offers/show/description'
+      = render 'sign_in_to_apply'
+      

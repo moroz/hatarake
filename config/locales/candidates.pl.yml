@@ -101,7 +101,7 @@ pl:
         heading: Oferty, na które aplikowałeś
 
       saved_offers:
-        heading: Zapisane oferty
+        heading: 'Zapisane oferty:'
 
   resumes:
     new:

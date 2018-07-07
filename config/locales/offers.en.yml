@@ -202,8 +202,16 @@ en:
     provinces:
       blank: Everywhere
 
-    save_offer: "Save offer"
-    unsave_offer: "Delete from saved"
+    offer_saves:
+      save_offer: "Save offer"
+      unsave_offer: "Delete from saved"
+      save_offer_notice: "You have saved this offer to your Dashboard."
+      fail_save_offer_notice: "You have to sign in or register to save this offer!"
+      unsave_offer_notice: "You have unsaved this offer."
+      email_offer: "Sent to E-mail"
+      company_offers: "More company offers"
+      sucess_email: "Offer has been successfully sent to your mailbox!"
+      fail_email: "Login or create an account to send offer to email."
 
   applications:
     breadcrumb: Applications

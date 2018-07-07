@@ -2,3 +2,6 @@
 
 %h3= t('.applied_offers.heading')
 = render @applied
+
+%h3= t('.saved_offers.heading')
+= render 'offer_saves/offer_save', collection: @saved_offers

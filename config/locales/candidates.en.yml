@@ -88,7 +88,7 @@ en:
         heading: Offers you applied for
 
       saved_offers:
-        heading: Offers you saved
+        heading: 'Offers you have saved:'
 
   resumes:
     new:

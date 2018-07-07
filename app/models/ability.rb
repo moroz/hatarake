@@ -31,6 +31,7 @@ class Ability
         can :save, Offer
         can :vote, Company
         can :create, Application
+        can :manage, OfferSave
       else
         cannot :manage, Attachment
       end

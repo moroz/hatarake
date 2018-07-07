@@ -1,0 +1,12 @@
+%p Witaj,
+
+%p
+  Poniżej znajduje się link do interesującej Cię oferty pracy:
+  %center
+    %button.float-center.radius.large{href: offer_url(@offer)} 
+      = "#{@offer.title} - #{@offer.company.name}"
+
+%p
+  Z serdecznymi pozdrowieniami,
+%p
+  Załoga INJOBS.pl

@@ -1,0 +1,22 @@
+.offer_saves
+  .row
+    - if can?(:create, OfferSave)
+      - if offer.user_saved?(current_candidate)
+        .small-12.large-4.columns
+          = link_to destroy_offer_save_path(offer_id: offer), method: :delete, class: 'hollow warning button' do
+            = fa_icon('star-o', text: t('offers.offer_saves.unsave_offer'))
+      - else
+        .small-12.large-4.columns
+          = link_to offer_save_path(offer_id: offer), method: :post, class: 'hollow warning button' do
+            = fa_icon('star', text: t('offers.offer_saves.save_offer'))
+    - else
+      .small-12.large-4.columns
+        = link_to offer_save_path(offer_id: offer), method: :post, class: 'hollow warning button' do
+          = fa_icon('star', text: t('offers.offer_saves.save_offer'))
+    .small-12.large-4.columns
+      = link_to offer_email_path(offer_id: offer), method: :post, class: 'hollow secondary button' do
+        = fa_icon('envelope', text: t('offers.offer_saves.email_offer'))
+    .small-12.large-4.columns
+      = link_to company_offers_path(offer.company), class: 'hollow primary button' do
+        = fa_icon('plus', text: t('offers.offer_saves.company_offers'))
+

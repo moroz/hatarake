@@ -32,7 +32,6 @@ Rails.application.routes.draw do
       patch :unpublish
       get :promote
       patch :promote, to: 'offers#add_premium'
-      post :save
     end
 
     collection do
@@ -40,6 +39,9 @@ Rails.application.routes.draw do
     end
     resources :applications, only: :create
   end
+  post '/jobs/favourite/:offer_id', to: 'offer_saves#create', as: :offer_save
+  post '/jobs/send_emai/:offer_id', to: 'offer_saves#email', as: :offer_email
+  delete '/unfavourite_offer', to: 'offer_saves#destroy', as: :destroy_offer_save
 
   resource :cart, only: [:show, :destroy], controller: 'cart' do
     patch :finalize
@@ -57,7 +59,6 @@ Rails.application.routes.draw do
   get '/my_offers', to: 'offers#my_offers'
 
   resources :resumes
-  #delete '/offer_saves', to: 'offer_saves#destroy', as: :destroy_offer_save
   get 'candidate/edit_skills', to: 'candidates#edit_skills'
   get 'candidate/edit_profile', to: "candidates#edit", as: :edit_candidate_profile
   resource :profile, only: :show
@@ -95,7 +96,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }, skip: :registrations, path: ''
   resources :candidates do
     get :mailing_list, on: :collection
+    resources :favourite_offers, only: [:index]
   end
+  get "favourite_offer/(:candidate_id)/(:offer_id)", to: "favourite_offers#create", as: "add_offer_to_favourites"
+
   resources :companies, only: [:show, :index, :update, :edit] do
     get :mailing_list, on: :collection
     resources :offers, only: [:index], controller: 'company_offers'

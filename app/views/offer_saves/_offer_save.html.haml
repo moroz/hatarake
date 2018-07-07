@@ -1,0 +1,4 @@
+- @saved_offers.each do |saved_offer|
+  %h4
+    = link_to "#{saved_offer.offer.title} - #{saved_offer.offer.company.name}", offer_path(saved_offer.offer.slug), target: "_blank"
+    = link_to t('offers.offer_saves.unsave_offer'), destroy_offer_save_path(offer_id: saved_offer.offer), method: :delete, class: 'custom_button custom_button--small'

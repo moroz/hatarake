@@ -14,6 +14,7 @@ class DashboardsController < ApplicationController
 
   def candidate_dashboard
     @applied = current_candidate.applied_offers.includes(locations: [:country, :province], company: [:avatar])
+    @saved_offers = OfferSave.where(user_id: current_user).joins(:offer).distinct
     render 'candidate_dashboard'
   end
 
