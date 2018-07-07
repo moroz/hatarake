@@ -211,7 +211,7 @@ pl:
       unsave_offer_notice: "Oferta została usunięta z listy zapisanych ofert!"
       email_offer: "Wyślij na E-mail"
       company_offers: "Więcej ofert firmy"
-      sucess_email: "Oferta została wysłana na twoją skrzynkę pocztową!"
+      success_email: "Oferta została wysłana na twoją skrzynkę pocztową!"
       fail_email: "Zaloguj się lub utwórz konto aby wysłać ofertę na swoją skrzynkę pocztową!"
 
   activerecord:

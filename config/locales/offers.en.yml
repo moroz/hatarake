@@ -210,7 +210,7 @@ en:
       unsave_offer_notice: "You have unsaved this offer."
       email_offer: "Sent to E-mail"
       company_offers: "More company offers"
-      sucess_email: "Offer has been successfully sent to your mailbox!"
+      success_email: "Offer has been successfully sent to your mailbox!"
       fail_email: "Login or create an account to send offer to email."
 
   applications:
