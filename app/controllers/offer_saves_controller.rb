@@ -18,9 +18,9 @@ class OfferSavesController < ApplicationController
 
   def email
     if current_user.nil?
-      flash[:notice] = t('offers.offer_saves.success_email')
-    else
       flash[:notice] = t('offers.offer_saves.fail_email')
+    else
+      flash[:notice] = t('offers.offer_saves.success_email')
       OfferSavesMailer.offer_saved(offer, current_user).deliver
     end
     redirect_to offer
