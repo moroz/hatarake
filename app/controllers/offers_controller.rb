@@ -123,6 +123,7 @@ class OffersController < ApplicationController
   end
 
   def update
+    puts offer_params
     if offer.update(offer_params)
       offer.remove_locations(offer_params["locations_attributes"])
       flash[:success] = "The offer was updated."

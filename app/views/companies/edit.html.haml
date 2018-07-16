@@ -10,7 +10,8 @@
       = f.input :phone
     .columns.medium-4
       = f.input :contact_email
-  = f.simple_fields_for :location do |ff|
-    = render 'location_fields', f: ff
+    = f.simple_fields_for :location do |ff|
+      = render 'location_fields', f: ff, single: true
+
   = render 'pagedown', f: f
   = f.submit "Submit", class: 'button expanded success'

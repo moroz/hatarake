@@ -10,6 +10,7 @@ class Location < ApplicationRecord
   before_validation :find_country_and_province
 
   def to_s
+    puts "testy"
     if province.present? || city.present?
       if country.id == Country::POLAND_ID && I18n.locale == :pl
         return [city, province.try(:local_name)].reject(&:blank?).join(', ')
@@ -70,11 +71,24 @@ class Location < ApplicationRecord
   end
 
   def find_country_and_province
-    if self.country_name.present?
-      self.country = Country.find_by_local_name(country_name)
+    if self.country_id.present? || self.country_name.present?
+      puts "asd"
+      if self.country_id.present?
+        self.country = Country.find(country_id)
+        puts "test1"
+      end
+      if self.province_id.present?
+        self.province = Province.find(province_id)
+        puts "test2"
+      end
+      if self.country_name.present?
+        puts "asd"
+        self.country = Country.find_by_local_name(country_name)
+      end
+      if self.province_name.present?
+        self.province = Province.find_by_local_name(province_name)
+      end
     end
-    if self.province_name.present?
-      self.province = Province.find_by_local_name(province_name)
-    end
+    return true
   end
 end
