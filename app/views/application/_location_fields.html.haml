@@ -6,12 +6,12 @@
     = local_assigns[:random]
     = local_assigns[:sherlock]
     = f.label :country, t('offers.fields.country')
-    = f.select :country_id, localized_collection(@countries, f.object.try(:country_id) || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id', name: "offer[locations_attributes][#{location_index}][country_id]"
+    = f.select :country_id, localized_collection(@countries, f.object.try(:country_id) || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id'
   .medium-4.columns
     = f.label :province, label: t('offers.fields.province')
-    - @provinces.is_a?(Array) ? provinces = @provinces[(f.index).to_i] : provinces = @provinces
-    = f.select :province_id, localized_collection(provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {"province-select-#{location_index}": ''}, id: 'location_province_id', name: "offer[locations_attributes][#{location_index}][province_id]"
+    - f.index.is_a?(Numeric) ? provinces = @provinces[(f.index).to_i] : provinces = Province.where(country: Country::POLAND_ID)
+    = f.select :province_id, localized_collection(provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {"province-select-#{location_index}": ''}, id: 'location_province_id'
   .medium-4.columns
-    = f.input :city, label: t('offers.fields.location'), input_html: { disabled: f.object.try(:province_id) == 0, data: { 'city-input': '' }, id: 'location_city', name: "offer[locations_attributes][#{location_index}][city]" }
-  - unless defined?(single)
+    = f.input :city, label: t('offers.fields.location'), input_html: { disabled: f.object.try(:province_id) == 0, data: { 'city-input': '' }, id: 'location_city' }
+  - unless defined?(single) || f.index == 0
     = link_to_remove_association(t('offers.fields.remove_location'), f, { wrapper_class: "#{location_index}.nested-fields" })

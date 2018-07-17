@@ -1,2 +1,6 @@
-:plain
-  document.querySelector("[data-province-select-#{params["element_id"]}]").innerHTML = '#{j localized_collection(@provinces, 0, blank: t('offers.provinces.blank'))}';
+- if params['element_id'] == "c"
+  :plain
+    document.querySelector("select[name='company[location_attributes][province_id]'").innerHTML = '#{j localized_collection(@provinces, 0, blank: t('offers.provinces.blank'))}';
+- else
+  :plain
+    document.querySelector("select[name='offer[locations_attributes][#{params['element_id']}][province_id]'").innerHTML = '#{j localized_collection(@provinces, 0, blank: t('offers.provinces.blank'))}';
