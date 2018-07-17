@@ -6,6 +6,7 @@
     = f.select :country_id, localized_collection(@countries, f.object.try(:country_id) || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id'
   .medium-4.columns
     = f.label :province, label: t('offers.fields.province')
+    - puts f.index
     - f.index.is_a?(Numeric) ? provinces = @provinces[(f.index).to_i] : provinces = Province.where(country: Country::POLAND_ID)
     = f.select :province_id, localized_collection(provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {"province-select-#{location_index}": ''}, id: 'location_province_id'
   .medium-4.columns

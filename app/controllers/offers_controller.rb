@@ -217,7 +217,8 @@ class OffersController < ApplicationController
       @provinces = []
       offer.locations.each { |o| @provinces << o.country.provinces.local_order }
     else
-      @provinces = Province.where(country_id: params[:cid] || Country::POLAND_ID).local_order
+      @provinces = []
+      @provinces << Province.where(country_id: params[:cid] || Country::POLAND_ID).local_order
     end
   end
 

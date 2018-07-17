@@ -9,6 +9,6 @@
       .medium-6.columns
         = f.select :cid, localized_collection(@fields, params[:cid] || 0, blank: t('offers.fields.field')), {}, name: 'fid'
       .medium-6.columns
-        = f.select :pid, localized_collection(@provinces, params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid'
+        = f.select :pid, localized_collection(@provinces[0], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid'
 
 
