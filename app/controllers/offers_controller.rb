@@ -56,7 +56,6 @@ class OffersController < ApplicationController
 
   def poland
     @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params).group(:id)
-    puts @offers.length
     @total_count = @offers.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
@@ -68,7 +67,7 @@ class OffersController < ApplicationController
       f.html do
         set_province_list
         @fields = Field.all
-        @popular_locations = Province.most_popular_voivodeships_with_counts
+        @popular_locations = Province.most_popular_voivodeships_with_counts.uniq
       end
     end
   end
@@ -197,7 +196,7 @@ class OffersController < ApplicationController
   end
 
   def get_featured_offers(scope, ids = nil, lim = CATEGORY_FEATURED_LIMIT)
-    @featured = Offer.published.with_associations.category_featured.random_order.limit(lim)
+    @featured = Offer.published.with_associations.category_featured.random_order.limit(lim).group(:id)
     if scope == :poland
       @featured = @featured.poland
     else

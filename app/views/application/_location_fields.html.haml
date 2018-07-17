@@ -1,10 +1,7 @@
 - javascript 'offers'
 - f.index == 'new_locations' ? location_index = rand(10..1000) : location_index = f.index
-- location_index = 1 if location_index.nil?
 .nested-fields{class: location_index}
   .medium-4.columns
-    = local_assigns[:random]
-    = local_assigns[:sherlock]
     = f.label :country, t('offers.fields.country')
     = f.select :country_id, localized_collection(@countries, f.object.try(:country_id) || Country::POLAND_ID, blank: false), {}, data: {'country-select': ''}, id: 'location_country_id'
   .medium-4.columns

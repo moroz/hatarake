@@ -10,7 +10,6 @@ class Location < ApplicationRecord
   before_validation :find_country_and_province
 
   def to_s
-    puts "testy"
     if province.present? || city.present?
       if country.id == Country::POLAND_ID && I18n.locale == :pl
         return [city, province.try(:local_name)].reject(&:blank?).join(', ')

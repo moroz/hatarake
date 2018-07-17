@@ -79,6 +79,8 @@
         = offer.title
         - if offer.category_featured?
           %span.offer__premium_label PREMIUM
+        - if offer.social_featured?
+          %span.offer__social_label= t('offers.my_offers.social_featured')
       .offer-row__logo
         = avatar_for offer.company, size: :thumb
       .offer-row__center.center
@@ -104,6 +106,8 @@
         = offer.title
         - if offer.category_featured?
           %span.offer__premium_label PREMIUM
+        - if offer.social_featured?
+          %span.offer__social_label= t('offers.my_offers.social_featured')
       .offer-row__logo
         = avatar_for offer.company, size: :thumb
       .offer-row__details
