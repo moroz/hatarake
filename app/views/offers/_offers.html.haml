@@ -6,7 +6,8 @@
       = reset_search_link if @search_description.present?
   .offer-list#offers
     - check_feat = false
-    - if @offers.first.category_featured?
+    -# REVIEW: What was the purpose of this?
+    -# if @offers.first.category_featured?
       %h4= t('offers.index.featured_offers')
       - check_feat = true
 

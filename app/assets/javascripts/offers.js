@@ -17,28 +17,19 @@ document.addEventListener('turbolinks:load', function () {
   var elements = document.querySelectorAll('[data-country-select]');
   elements.forEach(function(el) {
     el && el.addEventListener('change', function (e) {
-    var elementId = el.name.split('[')[2][0];
+    if (el.name != "cid") {
+      var elementId = el.name.split('[')[2][0];
+    }
+    else {
+      var elementId = "search"
+    }
     var countryId = e.target.value;
     if (countryId) {
       $.get('/api/provinces/' + countryId + '/' + elementId);
     }
-    document.querySelector('#location_province_id')
+    document.querySelector('[data-province-select]')
       .disabled = !countryId;
     }, false);
-  });
-
-  $('#locations').on('cocoon:after-insert', function(e, insertedItem) {
-    var elements = document.querySelectorAll('[data-country-select]');
-    var lastElement = elements[elements.length - 1]
-    lastElement && lastElement.addEventListener('change', function (e) {
-      var elementId = lastElement.name.split('[')[2].split(']')[0];
-      var countryId = e.target.value;
-      if (countryId) {
-        $.get('/api/provinces/' + countryId + '/' + elementId);
-      }
-      //document.querySelector('[data-province-select]')
-        //.disabled = !countryId;
-      }, false);
   });
 
   $('#locations').on('cocoon:after-insert', function(e, insertedItem) {
