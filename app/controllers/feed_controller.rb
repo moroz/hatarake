@@ -11,6 +11,6 @@ class FeedController < ApplicationController
   private
 
   def fetch_offers
-    @offers = Offer.published.includes(:company, location: [:country, :province])
+    @offers = Offer.published.includes(:company, locations: [:country, :province])
   end
 end

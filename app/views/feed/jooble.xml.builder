@@ -5,8 +5,8 @@ xml.jobs do
       xml.id offer.id
       xml.link { xml.cdata! offer_url(offer) }
       xml.name { xml.cdata! offer.title }
-      xml.region { xml.cdata! offer.location.xml_region }
-      xml.country { xml.cdata! offer.location.country.name_en }
+      xml.region { xml.cdata! offer.locations.first.xml_region }
+      xml.country { xml.cdata! offer.locations.first.country.name_en }
       xml.apply_url { xml.cdata! offer_url(offer) } # TODO: Should be application_url_for, but that doesn't work out well
       xml.pubdate offer.published_at.strftime("%d.%m.%Y")
       xml.email { xml.cdata! offer.application_email }
