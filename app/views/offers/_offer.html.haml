@@ -97,8 +97,6 @@
           - offer.locations.each do |location|
             = "/" if !location.eql?(offer.locations.first) && offer.locations.size > 1
             = location.to_s
-
-
 - else
   = link_to offer_path(offer, ref: (defined?(ref) && ref) || params[:ref]), class: 'no-underline' do 
     %div{id: dom_id(offer), class: "offer offer-row #{offer.highlighted? ? 'offer-row--highlighted' : ''}"}

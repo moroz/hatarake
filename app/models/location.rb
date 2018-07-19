@@ -71,23 +71,18 @@ class Location < ApplicationRecord
 
   def find_country_and_province
     if self.country_id.present? || self.country_name.present?
-      puts "asd"
       if self.country_id.present?
         self.country = Country.find(country_id)
-        puts "test1"
       end
       if self.province_id.present?
         self.province = Province.find(province_id)
-        puts "test2"
       end
       if self.country_name.present?
-        puts "asd"
         self.country = Country.find_by_local_name(country_name)
       end
       if self.province_name.present?
         self.province = Province.find_by_local_name(province_name)
       end
     end
-    return true
   end
 end

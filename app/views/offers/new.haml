@@ -10,7 +10,6 @@
   = f.label :field_id, t('offers.fields.field')
   .auto-width= f.select :field_id, options_from_collection_for_select(@fields, :id, :local_name, offer.field_id), include_blank: t('offers.placeholders.field')
 
-  - @random = rand(100)
   = f.simple_fields_for :locations do |ff|
     = render 'location_fields', f: ff
   #locations
