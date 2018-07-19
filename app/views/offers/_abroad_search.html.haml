@@ -9,6 +9,7 @@
       .medium-6.columns
         = f.select :cid, localized_collection(@countries, params[:cid] || 0, blank: t('offers.advanced_search.any_country')), {}, name: 'cid', data: {'country-select': ''}
       .medium-6.columns
+        - puts @provinces.inspect
         = f.select :pid, localized_collection(@provinces || [], params[:pid] || 0, blank: t('offers.provinces.blank')), {}, name: 'pid', data: {'province-select': ''}, 'aria-describedby' => 'provinceSelectHelptext'
     %noscript
       %p.help-text#provinceSelectHelptext= t('offers.index.noscript')

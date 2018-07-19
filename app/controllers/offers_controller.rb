@@ -16,6 +16,7 @@ class OffersController < ApplicationController
   def new
     offer.locations.build
     @fields = Field.all
+    @provinces = [@provinces]
   end
 
   def index
@@ -217,8 +218,7 @@ class OffersController < ApplicationController
       @provinces = []
       offer.locations.each { |o| @provinces << o.country.provinces.local_order }
     else
-      @provinces = []
-      @provinces << Province.where(country_id: params[:cid] || Country::POLAND_ID).local_order
+      @provinces = Country.find(params[:cid] || Country::POLAND_ID).provinces.local_order
     end
   end
 
