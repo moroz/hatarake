@@ -180,7 +180,7 @@ class OffersController < ApplicationController
     title = offer.title
     if offer.destroy
       flash[:success] = "Offer \"#{title}\" has been deleted."
-      redirect_to offers_path
+      redirect_to my_offers_path
     end
   end
 

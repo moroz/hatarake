@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180706123745) do
+ActiveRecord::Schema.define(version: 20180720105718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -379,7 +379,6 @@ ActiveRecord::Schema.define(version: 20180706123745) do
   add_foreign_key "locations", "provinces"
   add_foreign_key "offer_saves", "offers"
   add_foreign_key "offers", "fields"
-  add_foreign_key "offers", "locations"
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
   add_foreign_key "payments", "users", column: "payer_id"
