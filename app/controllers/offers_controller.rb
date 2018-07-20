@@ -17,6 +17,9 @@ class OffersController < ApplicationController
     offer.locations.build
     @fields = Field.all
     @provinces = [@provinces]
+    respond_to do |f|
+      f.html
+    end
   end
 
   def index
@@ -108,6 +111,10 @@ class OffersController < ApplicationController
   
   def create
     offer.company = current_company
+    unless params["offer"]["location_attributes"].nil?
+      params["offer"]["locations_attributes"] = {}
+      params["offer"]["locations_attributes"]["0"] = params["offer"]["location_attributes"]
+    end
     if offer.save
       flash[:success] = "Your offer has been saved."
       redirect_to offer
