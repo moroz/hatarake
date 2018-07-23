@@ -7,7 +7,7 @@
   .medium-4.columns
     = f.label :province, label: t('offers.fields.province')
     - provinces = f.index.is_a?(Numeric) ? @provinces[(f.index).to_i] : Province.where(country: Country::POLAND_ID)
-    = f.select :province_id, localized_collection(provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {"province-select-#{location_index}": ''}, id: 'location_province_id'
+    = f.select :province_id, localized_collection(provinces, f.object.try(:province_id) || 0, blank: t('offers.provinces.blank')), {}, data: {"province-select": ''}, id: 'location_province_id'
   .medium-4.columns
     = f.input :city, label: t('offers.fields.location'), input_html: { disabled: f.object.try(:province_id) == 0, data: { 'city-input': '' }, id: 'location_city' }
   - unless defined?(single) || f.index == 0

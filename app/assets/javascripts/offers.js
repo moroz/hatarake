@@ -12,7 +12,6 @@ function resetSearchForms() {
 jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
 
 document.addEventListener('turbolinks:load', function () {
-
   // substitute provinces in the province select when country is changed
   var elements = document.querySelectorAll('[data-country-select]');
   elements.forEach(function(el) {
@@ -33,19 +32,23 @@ document.addEventListener('turbolinks:load', function () {
   });
 
   $('#locations').on('cocoon:after-insert', function(e, insertedItem) {
-    var elements = document.querySelectorAll('[data-country-select]');
-    var lastElement = elements[elements.length - 1]
+    var wrapper = document.querySelectorAll('.nested-fields');
+    wrapper = wrapper[wrapper.length - 1]
+    var lastElement = wrapper.querySelector('[data-country-select]');
     lastElement && lastElement.addEventListener('change', function (e) {
       var elementId = lastElement.name.split('[')[2].split(']')[0];
       var countryId = e.target.value;
       if (countryId) {
         $.get('/api/provinces/' + countryId + '/' + elementId);
       }
-      //document.querySelector('[data-province-select]')
-        //.disabled = !countryId;
       }, false);
-    var destroyCheckbox = document.querySelectorAll("input[name*='[_destroy]']");
-    destroyCheckbox = destroyCheckbox[destroyCheckbox.length - 1];
+    var provinceSelect = wrapper.querySelector('[data-province-select]')
+    wrapper.querySelector('[data-city-input]').disabled = true;
+    provinceSelect.addEventListener('change', function(e) {
+      wrapper.querySelector('[data-city-input]')
+      .disabled = !this.value;
+    });
+    var destroyCheckbox = wrapper.querySelector("input[name*='[_destroy]']");
     id = lastElement.name.split('[')[2].split(']')[0];
     destroyCheckbox.setAttribute("name", "offer[locations_attributes][" + id + "][_destroy]");
   });
