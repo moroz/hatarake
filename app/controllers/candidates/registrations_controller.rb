@@ -37,7 +37,7 @@ class Candidates::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_in_path_for(resource)
-    candidate_profile_path
+    dashboard_path
   end
 
 end

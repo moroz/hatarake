@@ -31,7 +31,7 @@ en:
 
     no_offer_found:
       outdated_offer: "We are sorry, this offer is outdated :("
-      intresting_offers: "These offers may intrest you:"
+      intresting_offers: "These offers may interest you:"
 
     table:
       title: "Title"
