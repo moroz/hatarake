@@ -195,10 +195,12 @@ class OffersController < ApplicationController
 
   def no_offer_found
     if current_locale.to_s  == 'pl'
-      puts "polska"
       get_featured_offers(:poland)
     else
       get_featured_offers(:aborad)
+    end
+    respond_to do |f|
+      f.html
     end
   end
 
