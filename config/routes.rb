@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get '/jobs/abroad', to: 'offers#abroad'
   get '/jobs/poland', to: 'offers#poland'
+  get '/jobs/outdated_offer', to: 'offers#no_offer_found'
   get '/premium', to: 'products#index'
   get '/subscribe', to: 'newsletter_subscriptions#new', as: :new_newsletter_subscription
   resource :newsletter_subscription, only: [:create, :destroy], path: '/subscribe'

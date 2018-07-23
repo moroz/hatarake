@@ -21,6 +21,10 @@ pl:
       meta_description: "Praca, oferta pracy %{title} w firmie %{company}, %{location}. InJobs.pl aktualne ogłoszenia o pracę.
                         Atrakcyjne wynagrodzenie, pracuj w Polsce i UE"
 
+    no_offer_found:
+      outdated_offer: "Przepraszamy ta oferta jest nieaktualna :("
+      intresting_offers: "Sprawdź oferty które mogą ciebie zainteresować:"
+
     published_time_ago: "%{time} temu"
     not_published: "Nie opublikowano"
     view_count:

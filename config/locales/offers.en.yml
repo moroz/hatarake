@@ -29,6 +29,10 @@ en:
       meta_description: "Work as %{title} at %{company}, %{location}. InJobs.pl everyday new job postings. 
                         Attractive salary, work in Poland and EU!"
 
+    no_offer_found:
+      outdated_offer: "We are sorry, this offer is outdated :("
+      intresting_offers: "These offers may intrest you:"
+
     table:
       title: "Title"
       salary: "Salary"

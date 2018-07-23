@@ -6,7 +6,7 @@ class OffersController < ApplicationController
 
   before_action :set_country_list, only: %i[new edit abroad]
   before_action :set_province_list, only: [:new, :edit]
-  authorize_resource except: [:index, :poland, :abroad]
+  authorize_resource except: [:index, :poland, :abroad, :no_offer_found]
 
   invisible_captcha only: [:create, :update]
 
@@ -101,6 +101,8 @@ class OffersController < ApplicationController
     offer.increment!(:views) unless offer.company_id == current_user&.id
     @company = offer.company
     @title = t('.title') + offer.title + ', ' + offer.locations.first.only_city_format
+  rescue ActiveRecord::RecordNotFound
+    redirect_to jobs_outdated_offer_path
   end
 
   def edit
@@ -188,6 +190,15 @@ class OffersController < ApplicationController
     if offer.destroy
       flash[:success] = "Offer \"#{title}\" has been deleted."
       redirect_to my_offers_path
+    end
+  end
+
+  def no_offer_found
+    if current_locale.to_s  == 'pl'
+      puts "polska"
+      get_featured_offers(:poland)
+    else
+      get_featured_offers(:aborad)
     end
   end
 
