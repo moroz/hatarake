@@ -113,10 +113,6 @@ class OffersController < ApplicationController
   
   def create
     offer.company = current_company
-    unless params["offer"]["location_attributes"].nil?
-      params["offer"]["locations_attributes"] = {}
-      params["offer"]["locations_attributes"]["0"] = params["offer"]["location_attributes"]
-    end
     if offer.save
       flash[:success] = "Your offer has been saved."
       redirect_to offer
@@ -247,6 +243,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, locations_attributes: [:id, :country_id, :province_id, :city, :_destroy])
+    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, locations_attributes: [:id, :country_id, :province_id, :city, :_destroy], location_attributes: [:id, :country_id, :province_id, :city, :_destroy])
   end
 end

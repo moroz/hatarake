@@ -74,7 +74,7 @@ RSpec.describe OffersHelper do
     let(:company) { FactoryBot.build(:company) }
 
     subject { helper.prepare_offer_meta_description(offer, company) }
-    it { is_expected.to include(company.name) } # I'm not sure if I understood your intent properly
+    it { is_expected.to include(company.name) }
     it { is_expected.to include(offer.locations.first.only_city_format) }
   end
 end
