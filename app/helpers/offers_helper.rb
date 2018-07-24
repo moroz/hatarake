@@ -103,8 +103,12 @@ module OffersHelper
   end
 
   def prepare_offer_meta_description(offer, company)
-    location = offer.locations.pluck(:city)
+    location = if offer.locations.size == 1
+                offer.locations.first.only_city_format
+              else
+                offer.locations.pluck(:city).join('/')
+              end
     company = company.name
-    description = t('.meta_description', title: offer.title, company: company, location: location.join('/'))
+    description = t('offers.show.meta_description', title: offer.title, company: company, location: location)
   end
 end

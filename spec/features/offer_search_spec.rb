@@ -21,8 +21,8 @@ RSpec.describe "Offer search" do
   end
 
   describe "searching by name" do
-    let!(:matching) { FactoryBot.create(:offer, :published, title: "Manga reader") }
-    let!(:other) { FactoryBot.create(:offer, :published, title: "Computer programmer") }
+    let!(:matching) { FactoryBot.create(:offer, :published, :germany, title: "Manga reader") }
+    let!(:other) { FactoryBot.create(:offer, :published, :germany, title: "Computer programmer") }
 
     before(:each) do
       visit jobs_abroad_path

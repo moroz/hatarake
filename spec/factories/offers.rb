@@ -12,8 +12,12 @@ FactoryBot.define do
     unpublished
     unfeatured
 
+    trait :one_location do
+      locations {|offer| [offer.association(:location)]}
+    end
+
     trait :random do
-      #association :location, :random
+      association :location, :random
     end
 
     trait :published do
@@ -50,7 +54,9 @@ FactoryBot.define do
 
     %i{ russia poland germany }.each do |country|
       trait country do
-        association :location, country
+        after(:create) do |offer|
+          offer.locations << create(:location, country)
+        end
       end
     end
 

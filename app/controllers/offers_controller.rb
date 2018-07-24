@@ -44,7 +44,7 @@ class OffersController < ApplicationController
       return
     end
     unless offer.company.reduce_premium_services(method, 1)
-      current_cart.add_item(Product.find_by(backend_name: method).id,1,[offer.id])
+      current_cart.add_item(Product.find_by(backend_name: method).id, 1, [offer.id])
       redirect_to cart_path and return
     end
     offer.publish unless offer.published?

@@ -15,6 +15,7 @@ RSpec.describe "Company adds Offer" do
     it { is_expected.to have_content I18n.t('nav.add_offer') }
 
     it "creates a new offer with correct attributes" do
+      FactoryBot.create(:country, :poland)
       click_link I18n.t('nav.add_offer'), match: :first
       expect(current_path).to eq(new_offer_path)
 

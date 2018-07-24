@@ -153,11 +153,6 @@ ActiveRecord::Schema.define(version: 20180720105718) do
     t.index ["location_id"], name: "index_education_items_on_location_id"
   end
 
-  create_table "favourite_offers", force: :cascade do |t|
-    t.integer "candidate_id"
-    t.integer "offer_id"
-  end
-
   create_table "fields", id: :serial, force: :cascade do |t|
     t.string "name_en"
     t.string "name_pl"

@@ -70,11 +70,11 @@ RSpec.describe OffersHelper do
   end
 
   describe '#prepare_offer_meta_description' do
-    let(:offer) { build(:offer) }
-    let(:company) { build(:company) }
+    let(:offer) { FactoryBot.build(:offer, :published, :one_location) }
+    let(:company) { FactoryBot.build(:company) }
+
     subject { helper.prepare_offer_meta_description(offer, company) }
-    it { is_expected.to include(company.name.delete('.')) } # I'm not sure if I understood your intent properly
-    it { is_expected.to include(offer.location.to_s.split(',').first) } # Make it a method on Location
-    it { is_expected.to include(salary_and_wage_for(offer)) }
+    it { is_expected.to include(company.name) } # I'm not sure if I understood your intent properly
+    it { is_expected.to include(offer.locations.first.only_city_format) }
   end
 end

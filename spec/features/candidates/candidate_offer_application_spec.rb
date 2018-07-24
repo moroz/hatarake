@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Candidate offer application' do
   let(:candidate) { FactoryBot.create(:candidate) }
-  let!(:offer) { FactoryBot.create(:offer, :published) }
+  let!(:offer) { FactoryBot.create(:offer, :published, :one_location) }
 
   describe 'applying for offer through application form' do
     before do
@@ -14,7 +14,7 @@ RSpec.describe 'Candidate offer application' do
       expect(page).to have_selector(dom_id(offer))
       click_link offer.title
       expect(current_path).to eq(offer_path(offer))
-      click_link_or_button I18n.t('offers.apply_now')
+      click_link_or_button I18n.t('offers.apply_now'), match: :first
       expect(current_path).to eq(new_offer_application_path(offer_id: offer))
       find('#application_memo').set('Zażółć gęślą jaźń')
       expect { submit_form }.to change { Application.count }

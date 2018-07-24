@@ -61,6 +61,7 @@ group :production, :staging do
 end
 
 group :development, :test do
+  gem 'spring-commands-rspec'
   gem 'binding_of_caller'
   gem 'byebug', platform: :mri
   gem 'pry'

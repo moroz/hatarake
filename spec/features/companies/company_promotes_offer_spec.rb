@@ -36,12 +36,11 @@ RSpec.describe 'Company promotes offers' do
 
   context 'when company has no premium services left' do
     let(:company) { FactoryBot.create(:company, premium_services: nil) }
-
-    it 'redirects back and displays error message' do
+    FactoryBot.create(:product)
+    it 'redirects to cart page' do
       expect { select_homepage_and_submit }.not_to change { offer.featured_until }
 
-      expect(current_path).to eq(promote_offer_path(offer))
-      expect(page).to have_selector('.alert')
+      expect(current_path).to eq(cart_path)
     end
   end
 end
