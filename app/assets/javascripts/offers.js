@@ -11,46 +11,21 @@ function resetSearchForms() {
 
 jQuery.ajaxSetup({ cache: true }); // remove _ param from ajax requests
 
-document.addEventListener('turbolinks:load', function () {
+var element_index = 0
+
+document.addEventListener('turbolinks:load', function (el) {
   // substitute provinces in the province select when country is changed
-  var elements = document.querySelectorAll('[data-country-select]');
-  elements.forEach(function(el) {
-    el && el.addEventListener('change', function (e) {
-    if (el.name != "cid") {
-      var elementId = el.name.split('[')[2][0];
-    }
-    else {
-      var elementId = "search"
-    }
-    var countryId = e.target.value;
-    if (countryId) {
-      $.get('/api/provinces/' + countryId + '/' + elementId);
-    }
-    document.querySelector('[data-province-select]')
-      .disabled = !countryId;
-    }, false);
-  });
+  if (element_index == 0) {
+    var elements = document.querySelectorAll('.nested-fields');
+    elements.forEach(function(el) {
+      handleLocations(el)
+    });
+  }
 
   $('#locations').on('cocoon:after-insert', function(e, insertedItem) {
     var wrapper = document.querySelectorAll('.nested-fields');
     wrapper = wrapper[wrapper.length - 1]
-    var lastElement = wrapper.querySelector('[data-country-select]');
-    lastElement && lastElement.addEventListener('change', function (e) {
-      var elementId = lastElement.name.split('[')[2].split(']')[0];
-      var countryId = e.target.value;
-      if (countryId) {
-        $.get('/api/provinces/' + countryId + '/' + elementId);
-      }
-      }, false);
-    var provinceSelect = wrapper.querySelector('[data-province-select]')
-    wrapper.querySelector('[data-city-input]').disabled = true;
-    provinceSelect.addEventListener('change', function(e) {
-      wrapper.querySelector('[data-city-input]')
-      .disabled = !this.value;
-    });
-    var destroyCheckbox = wrapper.querySelector("input[name*='[_destroy]']");
-    id = lastElement.name.split('[')[2].split(']')[0];
-    destroyCheckbox.setAttribute("name", "offer[locations_attributes][" + id + "][_destroy]");
+    handleLocations(wrapper);
   });
 
   // disable location field in offers#new and offers#edit
@@ -82,6 +57,54 @@ document.addEventListener('turbolinks:load', function () {
           window.infiniteScrollSet = true;
       }
   }
+
+  function handleLocations(el) {
+    countrySelect = el.querySelector('[data-country-select]')
+    countrySelect && countrySelect.addEventListener('change', function (e) {
+      if (countrySelect.name != "cid") {
+        var elementId = e.target.name.split('[')[2].split(']')[0];
+      }
+      else {
+        var elementId = "search"
+      }
+      var countryId = e.target.value;
+      if (countryId) {
+        $.get('/api/provinces/' + countryId + '/' + elementId);
+      }
+      el.querySelector('[data-province-select]').disabled = !countryId;
+      if (el.querySelector('[data-city-input]')) {
+        el.querySelector('[data-city-input]').disabled = true;
+      }
+    }, false);
+    blockCityInput(el);
+    changeDestroyCheckboxName(el);
+  }
+
+  function blockCityInput(el) {
+    if (!el.querySelector('[data-city-input]')) { return; }
+
+    if (el.querySelector('[data-province-select]').value == '') {
+      el.querySelector('[data-city-input]').disabled = true;
+    }
+    el.querySelector('[data-province-select]').addEventListener('change', function (e) {
+      if (e.target.value == '') {
+        el.querySelector('[data-city-input]').disabled = true;
+      }
+      else {
+        el.querySelector('[data-city-input]').disabled = false;
+      }
+    });
+  }
+
+  function changeDestroyCheckboxName(el) {
+    if (!el.querySelector("input[name*='[_destroy]']")) { return }
+    var divId = el.querySelector('[data-country-select]').name.split('[')[2].split(']')[0];
+    var destroyCheckbox = el.querySelector("input[name*='[_destroy]']");
+    if (destroyCheckbox) {
+      destroyCheckbox.setAttribute("name", "offer[locations_attributes][" + divId + "][_destroy]");
+    }
+  }
+
 });
 
 function infiniteScroll(e) {
