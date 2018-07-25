@@ -74,7 +74,8 @@ ActiveAdmin.register Offer do
 
   form partial: 'form'
 
-  filter :company
+  filter :company, collection: -> { Company.all.order(:name) }
+  filter :company_name, as: :string
   filter :title
 
   controller do
