@@ -116,4 +116,5 @@ Rails.application.routes.draw do
   get '/crop_avatar', to: 'avatars#crop'
   resource :avatar, only: [:create, :update]
   root to: 'home#home'
+  get '*path', to: "application#error404"
 end
