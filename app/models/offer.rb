@@ -66,6 +66,7 @@ class Offer < ApplicationRecord
   scope :social_featured, -> { where('social_until > NOW()') }
   scope :special_featured, -> { where('special_until > NOW()') }
   scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
+  scope :promoted, -> { homepage_featured.or(category_featured).or(highlighted).or(social_featured).or(special_featured) }
 
   def self.advanced_search(o = {})
     scope = all
