@@ -23,7 +23,6 @@
 //= require Jcrop
 //= require avatars
 //= require cocoon
-//= require js.cookie
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller
