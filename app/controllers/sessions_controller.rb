@@ -12,6 +12,10 @@ class SessionsController < Devise::SessionsController
     set_flash_message(:notice, :signed_in) if is_navigational_format?
     scope = resource.type.downcase.to_sym
     sign_in(scope, resource)
+    # HACK: This code should be deleted in future when users will be noticed about RODO
+    if resource.last_sign_in_at.round == resource.current_sign_in_at.round
+      cookies['cookie_eu_consented'] = false
+    end
     respond_with resource, :location => after_sign_in_path_for(resource)
   end
 

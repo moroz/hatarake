@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  devise :database_authenticatable, :rememberable, :confirmable, :recoverable, :validatable
+  devise :database_authenticatable, :rememberable, :confirmable, :recoverable, :validatable, :trackable
 
   validates :contact_email, uniqueness: true, allow_blank: true
   validates :phone, uniqueness: true, allow_blank: true
@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   validates_acceptance_of :terms_of_service, accept: '1', on: :create
   validates_acceptance_of :personal_data, accept: '1', on: :create
+  validates_acceptance_of :rodo, accept: '1', on: :create
 
   has_one :avatar, foreign_key: 'owner_id', dependent: :destroy
   has_many :carts, dependent: :destroy

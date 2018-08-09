@@ -5,6 +5,10 @@
 .checkbox-group__checkbox
   = f.check_box :personal_data, id: 'personal_data_checkbox'
 .checkbox-group__label
+  = f.label :rodo, raw(t('rodo_accept')) 
+.checkbox-group__checkbox
+  = f.check_box :rodo
+.checkbox-group__label
   = f.label :personal_data, t('.personal_data')
 
 :javascript

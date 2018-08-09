@@ -6,6 +6,7 @@ pl:
   'false': Nie
   bad_request_alert: "W czasie przetwarzania zapytania wystąpił błąd: "
   terms_of_service: "Regulamin"
+  rodo_accept: "Oświadczam, że zapoznałem/am się z polityką prywatności - RODO (<a href=\"/rodo\">Więcej</a>)"
   and_or: "i/lub"
   fb_sign_up: "Zarejestruj się poprzez Facebooka"
   fb_sign_in: "Zaloguj się poprzez Facebooka"

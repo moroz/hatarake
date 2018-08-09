@@ -1,0 +1,14 @@
+- if cookies && cookies['cookie_eu_consented'] != 'true' && !current_user
+  .cookies-eu.js-cookies-eu
+    %span.cookies-eu-content-holder= t('cookies_eu.cookies_text')
+    - if defined?(link).present?
+      <a href="<%= link %>" class="cookies-eu-link" target="<%= defined?(target).present? ? target : '' %>"> <%= t('cookies_eu.learn_more') %> </a>
+    %br
+    = raw(t("rodo_accept"))
+    %span.cookies-eu-button-holder
+      %button.cookies-eu-ok.js-cookies-eu-ok= t('cookies_eu.ok')
+- elsif cookies && cookies['cookie_eu_consented'] != 'true' && current_user
+  .cookies-eu.js-cookies-eu
+    = raw(t("rodo_accept"))
+    %span.cookies-eu-button-holder
+      %button.cookies-eu-ok.js-cookies-eu-ok= t('cookies_eu.ok')

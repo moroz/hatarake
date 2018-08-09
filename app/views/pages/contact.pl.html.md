@@ -4,7 +4,7 @@
 # Kontakt
 
 __InJobs.pl sp. z o.o.__  
-ul. Piotra Sobczyńskiego 2c  
+ul. 8 Maja 17/4
 11-700 Mrągowo
 
 __Kontakt e-mail:__  

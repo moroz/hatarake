@@ -5,6 +5,7 @@ en:
   'false': 'No'
   bad_request_alert: "An error occurred while processing your request: "
   terms_of_service: "Terms of service"
+  rodo_accept: "I declare that I have read website privacy policy - RODO (<a href=\"/rodo\">More</a>)"
   and_or: "and/or"
   fb_sign_up: "Sign Up with Facebook"
   fb_sign_in: "Sign In with Facebook"

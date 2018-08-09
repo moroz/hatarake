@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/unsubscribe', to: 'newsletter_subscriptions#unsubscribe'
   get '/regulamin', to: 'pages#tos'
   get '/regulamin/zalacznik1', to: 'pages#appendix1'
+  get '/rodo', to: 'pages#rodo'
   get '/contact', to: 'pages#contact'
 
   resources :offers, path: '/jobs', except: :index do
