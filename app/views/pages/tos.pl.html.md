@@ -321,87 +321,75 @@ zawodowej, edukacji oraz innych umiejętności.
 1.  Każdy Użytkownik i Usługobiorca mają prawo do ochrony ich
     prywatności przez Usługodawcę.
 
-2.  Administratorem danych osobowych przekazanych przez Użytkowników i
-    Usługobiorców za pośrednictwem Serwisu jest spółka InJobs.pl Sp. z
-    o.o. z siedzibą w Mrągowie, przy ul. Sobczyńskiego 2 C.
-    Administrator danych osobowych odpowiada za ich zabezpieczenie
-    zgodnie z przepisami ustawy o ochronie danych osobowych. Dane
-    osobowe Użytkownika i Usługobiorcy przetwarzane są w celu
-    świadczenia Usług, o jakich mowa w Regulaminie. Podmiot danych ma
-    prawo dostępu do treści swoich danych oraz ich poprawiania. Podanie
-    danych jest obowiązkowe zgodnie z postanowieniami ustawy z dnia 18
-    lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz.U. z
-    2014 r. poz. 1182) oraz niezbędne dla realizacji umowy.
+### DANE OSOBOWE W SERWISIE INJOBS.PL - INFORMACJE DLA UŻYTKOWNIKÓW. RODO.
 
-3.  Każdy Użytkownik zakładający konto lub Usługobiorca korzystający z
-    Usługi aplikowania na ofertę pracy wyraża zgodę na przetwarzanie
-    danych przez InJobs.pl Sp. z o.o. oraz na udostępnienie danych
-    podmiotom pochodzącym z krajów Europejskiego Obszaru Gospodarczego i
-    spoza niego w celu poszukiwania pracy i rekrutacji  zarówno obecnie
-    jak i w przyszłości. Użytkownik lub Usługobiorca został
-    poinformowany, że podanie danych jest dobrowolne, ale niezbędne do
-    skorzystania z portalu [www.injobs.pl](http://www.injobs.pl) .
-    Użytkownik lub Usługobiorca może wnieść w każdym czasie pisemny
-    sprzeciw co do dalszego przetwarzania danych.
+Kto przetwarza dane osobowe i jak się z nim można skontaktować ?
 
-4.  W przypadku Użytkowników lub Usługobiorców, którzy podali swoje dane
-    osobowe i wyrazili zgodę na ich przetwarzanie, Usługodawca ma,
-    zgodnie z obowiązującymi przepisami, prawo przetwarzania tych danych
-    w celu marketingu usług własnych.
+Administratorem danych przetwarzanych w serwisie InJobs.pl jest InJobs sp. z o.o. 
+z siedzibą w Mrągowie, przy ul. 8 Maja 17/4 , 11-700 Mrągowo KRS: 0000685786
+NIP: 742-22-56-702, posiadająca kapitał zakładowy w wysokości 5000,00 PLN w całości opłacony ( dalej; Administrator ).
 
-5.  Administrator danych osobowych może powierzyć przetwarzanie danych
-    osobowych innemu podmiotowi w drodze umowy zawartej na piśmie
-    zgodnie z ustawą z dnia 29 sierpnia 1997 r. o ochronie danych
-    osobowych (Dz.U. z 2014 r. poz. 1182).
+Kontakt z administratorem możliwy pod numerem telefonu + (48) 89 762 74 48, oraz e- mailem
+[www.injobs.pl](mailto:kontakt@injobs.pl) a także pocztą na adres: ul. 8 Maja 17/4 , 11-700 Mrągowo.
 
-6.  Administrator danych osobowych może na podstawie wcześniej wyrażonej
-    zgody Użytkownika lub Usługobiorcy udostępnić dane Użytkownika lub
-    Usługobiorcy w celu kontaktu telefonicznego lub za pośrednictwem
-    e-mail swoim partnerom. Udostępnione dane mogą być przetwarzane w
-    celach marketingowych. Użytkownik lub Usługobiorca został
-    poinformowany, że podanie danych jest dobrowolne, a w każdym czasie
-    może on wnieść pisemny sprzeciw co do dalszego przetwarzania danych.
+#### Prawa dotyczące ochrony danych osobowych.
 
-7.  Administrator danych osobowych może na podstawie wcześniej wyrażonej
-    specjalnej zgody Użytkownika lub Usługobiorcy udostępnić dane
-    Użytkownika lub Usługobiorcy innym pracodawcom-klientom Serwisu,
-    którzy poszukują pracowników za pośrednictwem Serwisu. Zgoda taka
-    wyrażana jest odrębnie w procesie aplikowania na ofertę oraz
-    zakładania Konta Usługobiorcy. Użytkownik lub Usługobiorca został
-    poinformowany, że podanie danych jest dobrowolne, a w każdym czasie
-    może on wnieść pisemny sprzeciw co do dalszego przetwarzania danych.
+1. Udostepnienie danych osobowych jest dobrowolne.
+2. Każdy ma prawo żądania od administratora dostępu do danych osobowych, które go dotyczą.
+3. Każdy ma prawo żądania sprostowania, usunięcia lub ograniczenia przetwarzania swoich danych osobowych oraz wniesienia sprzeciwu wobec ich przetwarzania,
+4. Każdy ma prawo przenoszenia danych czyli do otrzymania od Administratora lub przesłania dalej dotyczących go danych osobowych, w powszechnie używanym formacie informatycznym.
+5. Każdy w dowolnym momencie może cofnąć udzieloną zgodę na przetwarzanie danych
+osobowych.
+6. Każda osoba, której dane dotyczą, ma prawo wnieść skargę do organu nadzorczego.
 
-8.  Usługodawca przetwarza dane osobowe Użytkownika i Usługobiorcy
-    niezbędne do nawiązania, ukształtowania treści, zmiany lub
-    rozwiązania umowy o świadczenie Usług przez Usługodawcę oraz
-    wyłącznie w celu prawidłowej realizacji Usług, określonych
-    niniejszym Regulaminem, zgodnie z ustawą z dnia 18 lipca 2002 r. o
-    świadczeniu usług drogą elektroniczną (Dz. U. z 2002 r. Nr 144, poz.
-    1204 ze zm.). Dane osobowe Użytkownika i Usługobiorcy przetwarzane
-    są z zachowaniem zasad bezpieczeństwa wymaganych ustawą z dnia 29
-    sierpnia 1997 r. o ochronie danych osobowych (Dz.U. z 2014 r. poz.
-    1182).
+#### Po co przeważmy dane osobowe ?
 
-9.  Usługodawca może przetwarzać wszystkie dane osobowe zamieszczone w
-    Serwisie [www.injobs.pl](http://www.injobs.pl) , których katalog
-    może ulegać zmianie w zależności od rodzaju świadczonej Usługi:
+InJobs.pl sp. z o.o. przetwarza dane osobowe w zakresie niezbędnym do prawidłowej realizacji usług świadczonych drogą elektroniczną tj w celu.:
 
-10. W przypadku Usług polegających na udostępnieniu danych osobowych
-    Usługobiorcy potencjalnym pracodawcom, administratorem danych
-    osobowych Usługobiorcy staje się równocześnie pracodawca, który we
-    własnym zakresie odpowiada za ich przetwarzanie zgodnie z prawem.
+1. tworzenia bazy Pracodawców, bazy Pracowników oraz bazy Ofert Pracy,
+2. automatycznego profilowania Użytkowników i przyporządkowania Profili Pracowników do Ofert Pracy.
+umożliwiania Pracownikom przeglądania Profili Automatycznie przyporządkowanych Ofert Pracy i Pracodawców a Pracodawcom przeglądana profili Automatycznie Przyporządkowanych Pracodawców.
+3. Umożliwiania nawiązywania kontaktów między Automatycznie Przyporządkowanymi
+Pracownikami i Pracodawcami, za pośrednictwem czatu online, e-mail;
+4. Zarzadzania Profilami Użytkowników oraz udzielania im w wsparcia w procesie korzystania z Usługi i przekazywania informacji związanych z funkcjonowaniem Serwisu;
+5. W celu dokonywania rozliczeń
+6. W celu badania rynku oraz zachowań i preferencji Usługobiorców z przeznaczeniem wyników tych badań na potrzeby polepszenia jakości usług świadczonych poprzez Usługodawcę.
 
-11. Dane osobowe Użytkowników i Usługobiorców mogą być wykorzystywane
-    przez Usługodawcę do celów przesyłania drogą elektroniczną
-    informacji handlowych pochodzących od Usługodawcy lub osób trzecich
-    wyłącznie po wyrażeniu przez Użytkownika i Usługobiorcę odrębnej
-    zgody na takie wykorzystanie.
+Na podstawię odrębnej zgody dane osobowe Użytkowników mogą być wykorzystywane przez Administratora do celów przesyłania drogą elektroniczną informacji handlowych pochodzących od Administratora lub osób trzecich.
 
-12. Usługodawca nie ponosi odpowiedzialności za jakiekolwiek działania
-    pracodawców i innych osób trzecich, mające związek z treścią lub
-    zakresem danych osobowych Usługobiorcy lub Użytkownika oraz za
-    szkody powstałe w ich następstwie dla Usługobiorcy lub Użytkownika.
+#### Skąd mamy dane osobowe użytkowników ?
 
+__Użytkownicy podają nam swoje dane osobowe w procesie Rejestracji Profilu__  na witrynie InJobs,pl w trakcie jego uzupełniania.
+
+Podanie części danych jest obowiązkowe (niezbędne dla korzystania z witryny InJobs.pl ) podanie innych danych nie jest konieczne, ale umożliwia pełniejsze korzystanie z funkcjonalności Serwisu.
+
+1. Część danych Administrator pozyskuje automatycznie. Użytkownik może upoważnić Administratora do uzyskania dostępu do niektórych danych zgromadzonych w jego Smartfonie. Wybierając opcję Rejestracji za pośrednictwem konta gogle+ lub profilu na Facebook, użytkownik upoważnia Administratora do przetwarzania niektórych danych z Facebooka lub Google +, jeśli nie chce udostępniać takich danych może wybrać inny sposób rejestracji w serwisie InJobs.pl. Użytkownik w każdym czasie może cofnąć zgodę na automatyczne pozyskiwanie danych poprzez zmianę ustawień Profilu.
+2. Administrator, w zakresie przewidzianym w obowiązujących przepisach, automatycznie zbiera z przeglądarki Użytkownika informacje charakteryzujące sposób korzystania przez Użytkownika z usług InJobs.pl, (tzw. dane eksploatacyjne), a także posługuje się tzw. plikami cookies (ciasteczka) które dostarczają danych statystycznych o aktywności użytkownika.
+
+### Na jakiej podstawie przetwarzamy dane osobowe użytkowników?
+
+1. Dane osobowe przetwarzane są zgodnie z Art. 6 ust 1 lit. a i b ogólnego rozporządzenia o ochronie danych osobowych (RODO).
+Zgodnie z RODO, bez odrębnej zgody użytkownika możemy przetwarzać dane osobowe które są niezbędne do wykonania umowy między administratorem a osobą której dane dotyczą. 
+2. Dane których przetwarzanie jest niezbędne dla korzystania z Serwisu InJobs.pl przetwarzamy na podstawie umowy między Użytkownikiem a Administratorem. Do zawarcia takiej umowy której dochodzi wskutek Rejestracji w Serwisie InJobs.pl i akceptacji Regulaminu Serwisu InJobs.pl .
+3. Na podstawie odrębnej dobrowolnej zgody Użytkownika, przetwarzane mogą być dane osobowe użytkowników których podanie nie jest niezbędne dla korzystania z Serwisu takie jak dane zgromadzonych na koncie Google + i Facebooku.
+4. Na podstawie odrębnej dobrowolnej zgody Użytkownika udostępniamy dane osobowe innym Użytkownikom oraz zewnętrznym podmiotom rekrutującym.
+
+#### Jak długo przetwarzamy dane osobowe?
+1. Dane osobowe przechowywane są w formie umożliwiającej identyfikację osoby, której dane dotyczą i przetwarzane, przez okres korzystania z usług Serwisu (posiadania Profilu). Po zakończeniu korzystania przez Użytkownika z Usług Administrator może przetwarzać dane ile są one niezbędne do rozliczenia usługi oraz dochodzenia roszczeń z tytułu płatności za korzystanie z usług.
+
+#### Komu przekazujemy dane osobowe użytkowników?
+
+1. Administrator udostępnia dane osobowe Pracowników - Pracodawcom i dane Osobowe Pracodawców - Pracownikom. Dane Pracodawców i Pracowników nie są dostępne wszystkim Zarejestrowanym Użytkownikom Aplikacji, a jedynie tym, którzy zostali Automatycznie Przyporządkowani przez System.
+2. Na podstawie odrębnej zgody Użytkownika Administrator udostępnia dane osobowe Użytkowników zewnętrznym podmiotom rekrutującym w celu realizacji procesów rekrutacyjnych i przedstawiania Ofert Pracy lub Pracowników.
+
+3. Dane osobowe użytkowników mogą zostać przekazane na żądanie uprawnionych na podstawie prawa organów państwa w związku z toczącymi się postępowaniami.
+4. Za wyjątkiem w/w przypadków Administrator nie przekazuje, nie sprzedaje ani nie użycza zgromadzonych danych osobowych Użytkowników osobom trzecim.
+
+### Inspektor Ochrony Danych Osobowych
+
+Administrator zgonie z obowiązującymi przepisami wyznaczył Inspektora Ochrony Danych Osobowych, z którym skontaktować się można poprzez e-mail kontakt@injobs.pl i telefonicznie pod numerem +48 89 7627448 . Osoby, których dane przetwarza InJobs sp. z o.o., mogą kontaktować się z inspektorem ochrony danych we wszystkich sprawach związanych z przetwarzaniem ich danych osobowych oraz z wykonywaniem przysługującycych im praw.
+
+1. Każdy Użytkownik zakładający konto lub Usługobiorca korzystający z Usługi aplikowania na ofertę pracy wyraża zgodę na przetwarzanie danych przez InJobs.pl Sp. z o.o. oraz na udostępnienie danych podmiotom pochodzącym z krajów Europejskiego Obszaru Gospodarczego i spoza niego w celu poszukiwania pracy i rekrutacji  zarówno obecnie jak i w przyszłości. Użytkownik lub Usługobiorca został poinformowany, że podanie danych jest dobrowolne, ale niezbędne do skorzystania z portalu www.injobs.pl . Użytkownik lub Usługobiorca może wnieść w każdym czasie pisemny sprzeciw co do dalszego przetwarzania danych.
 ### VIII. Postępowanie reklamacyjne
 
 1.  Użytkownicy i Usługobiorcy mają prawo składać reklamacje w sprawach
@@ -579,22 +567,22 @@ Rejestracja – dodanie oferty.
 
 6.  Użytkownik przekazuje wszelkie prawa do publikacji treści ogłoszeń właścicielowi Serwisu [www.injobs.pl](http://www.injobs.pl).
 
-1.  Oferty mogą być publikowane na stronach partnerskich wyszukiwarek
+7.  Oferty mogą być publikowane na stronach partnerskich wyszukiwarek
     ofert pracy.
 
-2.  Każda oferta musi dotyczyć konkretnego kraju, miejscowości oraz
+8.  Każda oferta musi dotyczyć konkretnego kraju, miejscowości oraz
     konkretnego stanowiska pracy.
 
-3.  Użytkownik może dodać tylko jedną ofertę na dane stanowisko w tej
+9.  Użytkownik może dodać tylko jedną ofertę na dane stanowisko w tej
     samej lokalizacji.
 
-4.  Duplikaty ofert lub zbyt podobne pod względem treści oferty będą
+10.  Duplikaty ofert lub zbyt podobne pod względem treści oferty będą
     uznawane za szkodliwe dla Serwisu.
 
 Usunięcie ofert oraz zablokowanie użytkownika.
 ----------------------------------------------
 
-1.  Serwis zastrzega sobie prawo do usunięcia ofert użytkownika : 
+1.  Serwis zastrzega sobie prawo do usunięcia ofert użytkownika : 
 
   -   łamiącego którekolwiek z postanowień niniejszego regulaminu
 
@@ -617,8 +605,8 @@ Formy kontaktu.
 
 W razie pytań lub wątpliwości prosimy kontaktować się:
 
-1.  Drogą mailową: na adres: [biuro@injobs.pl](mailto:biuro@injobs.pl).
+1.  Drogą mailową: na adres: [biuro@injobs.pl](mailto:biuro@injobs.pl).
 
-2.  Listownie na adres: InJobs.pl, ul. Sobczyńskiego 2c, 11-700 Mrągowo.
+2.  Listownie na adres: InJobs.pl, ul. 8 Maja 17/4, 11-700 Mrągowo.
 
 [**Załącznik nr. 1 Ogłoszenia, usługi i płatności w InJobs.pl**](/regulamin/zalacznik1)
