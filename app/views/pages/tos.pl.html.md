@@ -342,7 +342,7 @@ Kontakt z administratorem możliwy pod numerem telefonu + (48) 89 762 74 48, ora
 osobowych.
 6. Każda osoba, której dane dotyczą, ma prawo wnieść skargę do organu nadzorczego.
 
-#### Po co przeważmy dane osobowe ?
+#### Po co przetwarzamy dane osobowe ?
 
 InJobs.pl sp. z o.o. przetwarza dane osobowe w zakresie niezbędnym do prawidłowej realizacji usług świadczonych drogą elektroniczną tj w celu.:
 
