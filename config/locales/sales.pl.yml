@@ -14,7 +14,7 @@ pl:
       heading: Mój Koszyk
       item_count:
         zero: "Koszyk jest pusty."
-        one: "W koszyku znajduje się jeden przedmiot." 
+        one: "W koszyku znajduje się jeden przedmiot."
         few: "W koszyku znajdują się %{count} przedmioty."
         many: "W koszyku znajduje się %{count} przedmiotów."
       back_to_shop: "Przejdź do sklepu"
@@ -39,7 +39,7 @@ pl:
     actions:
       destroy:
         confirmation: "Czy na pewno chcesz anulować to zamówienie?"
-  
+
   orders:
     index:
       heading: "Zamówienia"
@@ -64,7 +64,7 @@ pl:
       heading: "Zamówienie #%{id}"
       currency: "Waluta zamówienia:"
       redirection_notice: "Zaloguj się, aby przejść dalej."
-    
+
     show:
       heading: "Zamówienie #%{id}"
       invoice:

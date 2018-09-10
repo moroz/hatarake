@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Skill < ApplicationRecord
   has_many :skill_items
   validates :name_en, uniqueness: true, presence: true

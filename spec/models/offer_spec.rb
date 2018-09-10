@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Offer, type: :model do
   let(:offer) { FactoryBot.build(:offer) }
-  describe "validations" do
-    context "with valid attributes" do
-      it "is valid" do
+  describe 'validations' do
+    context 'with valid attributes' do
+      it 'is valid' do
         expect(offer).to be_valid
       end
     end
 
-    describe "currency" do
-      context "without currency" do
-        it "is invalid" do
+    describe 'currency' do
+      context 'without currency' do
+        it 'is invalid' do
           offer.currency = nil
           expect(offer).not_to be_valid
         end
@@ -19,29 +21,29 @@ RSpec.describe Offer, type: :model do
 
       # Currency should be an ISO 4217-compliant
       # three-letter code
-      context "with invalid currency" do
-        it "is invalid" do
-          offer.currency = "zł"
+      context 'with invalid currency' do
+        it 'is invalid' do
+          offer.currency = 'zł'
           expect(offer).not_to be_valid
         end
       end
     end
 
-    context "without title" do
-      it "is invalid" do
+    context 'without title' do
+      it 'is invalid' do
         offer.title = nil
         expect(offer).not_to be_valid
       end
     end
 
-    context "without company" do
-      it "is invalid" do
+    context 'without company' do
+      it 'is invalid' do
         offer.company = nil
         expect(offer).not_to be_valid
       end
     end
 
-    context "when apply_on_website is false" do
+    context 'when apply_on_website is false' do
       let(:offer) { FactoryBot.build(:offer, apply_on_website: false) }
       context 'without application_url' do
         it 'is valid' do
@@ -51,25 +53,25 @@ RSpec.describe Offer, type: :model do
       end
     end
 
-    context "when apply_on_website is true" do
+    context 'when apply_on_website is true' do
       let(:offer) { FactoryBot.build(:offer, :apply_on_website) }
 
-      context "without application_url" do
-        it "is invalid" do
+      context 'without application_url' do
+        it 'is invalid' do
           offer.application_url = nil
           expect(offer).not_to be_valid
         end
       end
 
-      context "with invalid application_url" do
-        it "is invalid" do
+      context 'with invalid application_url' do
+        it 'is invalid' do
           offer.application_url = 'foobar'
           expect(offer).not_to be_valid
         end
       end
 
-      context "with valid application_url" do
-        it "is valid" do
+      context 'with valid application_url' do
+        it 'is valid' do
           offer.application_url = 'https://www.injobs.pl'
           expect(offer).to be_valid
         end
@@ -118,14 +120,14 @@ RSpec.describe Offer, type: :model do
     let(:offer) { FactoryBot.build(:offer) }
 
     context 'upon save' do
-      context "when given numbers with point as decimal separator" do
+      context 'when given numbers with point as decimal separator' do
         before(:each) do
           offer.hourly_wage_min = '10.5'
           offer.hourly_wage_max = '13.0'
           offer.save
         end
 
-        describe "makes a correct range" do
+        describe 'makes a correct range' do
           it 'lower bound is correct' do
             expect(offer.hourly_wage.first).to eq(10.5)
           end
@@ -143,7 +145,7 @@ RSpec.describe Offer, type: :model do
           offer.save
         end
 
-        describe "makes a correct range" do
+        describe 'makes a correct range' do
           it 'lower bound is correct' do
             expect(offer.hourly_wage.first).to eq(17.5)
           end
@@ -177,17 +179,17 @@ RSpec.describe Offer, type: :model do
   end
 
   describe 'search_by_query' do
-    context "examples for foregin query" do
-      let(:query) { "hannover" }
+    context 'examples for foregin query' do
+      let(:query) { 'hannover' }
       subject { described_class.query_variations(query) }
       it { is_expected.to include(query) }
       it { is_expected.to include('hanover') }
       it { is_expected.to include('hannower') }
       it { is_expected.to include('hanower') }
     end
-    
-    context "examples for polish query" do
-      let(:query) { "hanower" }
+
+    context 'examples for polish query' do
+      let(:query) { 'hanower' }
       subject { described_class.query_variations(query) }
       it { is_expected.to include(query) }
       it { is_expected.to include('hannower') }
@@ -195,8 +197,8 @@ RSpec.describe Offer, type: :model do
     end
   end
 
-  describe "publishing" do
-    context "when created" do
+  describe 'publishing' do
+    context 'when created' do
       let(:offer) { FactoryBot.create(:offer) }
 
       it 'published is true' do
@@ -204,60 +206,57 @@ RSpec.describe Offer, type: :model do
       end
     end
 
-    describe "#publish" do
+    describe '#publish' do
       before do
         offer.publish
       end
 
-      it "published is true" do
+      it 'published is true' do
         expect(offer).to be_published
       end
 
-      it "published_at is set" do
+      it 'published_at is set' do
         expect(offer.published_at).not_to be_nil
       end
     end
   end
 
-  describe "scopes" do
-    describe "featured"
+  describe 'scopes' do
+    describe 'featured'
 
-    describe "with_country_id" do
-
+    describe 'with_country_id' do
     end
 
-    describe "with_province_id" do
-
+    describe 'with_province_id' do
     end
 
-    describe "offers in Poland and abroad" do
+    describe 'offers in Poland and abroad' do
       let!(:offer_pl) { FactoryBot.create(:offer, :published, :poland) }
       let!(:offer_de) { FactoryBot.create(:offer, :published, :germany) }
 
-      describe "poland" do
+      describe 'poland' do
         subject { Offer.poland.to_a }
 
         it { is_expected.to include offer_pl }
         it { is_expected.not_to include offer_de }
       end
 
-      describe "abroad" do
+      describe 'abroad' do
         subject { Offer.abroad.to_a }
 
         it { is_expected.to include offer_de }
         it { is_expected.not_to include offer_pl }
       end
 
-      describe "social_featured"
-
+      describe 'social_featured'
     end
 
-    describe "featured scopes" do
+    describe 'featured scopes' do
       let!(:unfeatured) { FactoryBot.create(:offer, :unfeatured) }
       let!(:homepage_featured) { FactoryBot.create(:offer, :homepage_featured) }
-      let!(:social_featured) { FactoryBot.create(:offer, :social_featured ) }
+      let!(:social_featured) { FactoryBot.create(:offer, :social_featured) }
 
-      describe "#homepage_featured" do
+      describe '#homepage_featured' do
         let!(:homepage_past) { FactoryBot.create(:offer, featured_until: 2.weeks.ago) }
 
         subject { Offer.homepage_featured }
@@ -266,27 +265,27 @@ RSpec.describe Offer, type: :model do
         it { is_expected.not_to include(homepage_past) }
       end
 
-      describe "#social_featured" do
+      describe '#social_featured' do
         let!(:social_past) { FactoryBot.create(:offer, social_until: 2.weeks.ago) }
 
         subject { Offer.social_featured }
-        it { is_expected.to include(social_featured)}
-        it { is_expected.not_to include(social_past)}
-        it { is_expected.not_to include(unfeatured)}
+        it { is_expected.to include(social_featured) }
+        it { is_expected.not_to include(social_past) }
+        it { is_expected.not_to include(unfeatured) }
       end
 
-      describe "offers featured within category" do
+      describe 'offers featured within category' do
         let!(:category_featured) { FactoryBot.create(:offer, :category_featured) }
         let!(:category_past) { FactoryBot.create(:offer, category_until: 2.weeks.ago) }
 
-        describe "#category_featured" do
+        describe '#category_featured' do
           subject { Offer.category_featured }
           it { is_expected.to include(category_featured) }
           it { is_expected.not_to include(unfeatured) }
           it { is_expected.not_to include(category_past) }
         end
 
-        describe "#not_category_featured" do
+        describe '#not_category_featured' do
           subject { Offer.not_category_featured }
           it { is_expected.not_to include(category_featured) }
           it { is_expected.to include(unfeatured) }
@@ -295,10 +294,10 @@ RSpec.describe Offer, type: :model do
       end
     end
 
-    describe "adding premium services" do
+    describe 'adding premium services' do
       let(:offer) { FactoryBot.create(:offer, :published) }
 
-      describe "self.add_premium" do
+      describe 'self.add_premium' do
         let!(:offers) { FactoryBot.create_list(:offer, 3) }
       end
     end

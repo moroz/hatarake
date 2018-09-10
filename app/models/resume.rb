@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class Resume < Attachment
   mount_uploader :file, ResumeUploader
 
   MAX_SIZE = 2097152 # 2 megabytes
-  LANGUAGES = %w( bg cs da de el en es fi fr hr hu lt lv nl no pl ro ru sk sl sv ua zh_CN zh_TW )
+  LANGUAGES = %w[bg cs da de el en es fi fr hr hu lt lv nl no pl ro ru sk sl sv ua zh_CN zh_TW].freeze
   validates :language, inclusion: { in: LANGUAGES }
-  EXTENSIONS = %w(pdf doc docx rtf odt)
+  EXTENSIONS = %w[pdf doc docx rtf odt].freeze
 
   validates :file, file_size: { less_than_or_equal_to: MAX_SIZE }
 

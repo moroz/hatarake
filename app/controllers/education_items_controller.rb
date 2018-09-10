@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class EducationItemsController < CvItemsController
-  expose :education_items, -> {current_user.education_items}
+  expose :education_items, -> { current_user.education_items }
   expose :education_item
 
   def create
@@ -24,11 +26,11 @@ class EducationItemsController < CvItemsController
     end
     redirect_to education_items_path
   end
-  
+
   private
 
   def education_item_params
     params.require(:education_item).permit(:start_date, :end_date,
-                         :organization, :specialization, :category)
+                                           :organization, :specialization, :category)
   end
 end

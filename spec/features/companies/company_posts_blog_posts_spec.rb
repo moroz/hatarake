@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Company posts blog posts" do
+RSpec.describe 'Company posts blog posts' do
   let(:company) { Company.first || FactoryBot.create(:company) }
   let(:candidate) { Candidate.first || FactoryBot.create(:candidate) }
-  describe "new blog post form on company profile" do
-
-    context "when not signed in" do
+  describe 'new blog post form on company profile' do
+    context 'when not signed in' do
       before do
         login_as(candidate, scope: :candidate)
         visit company_blog_posts_path(company)
@@ -16,20 +17,20 @@ RSpec.describe "Company posts blog posts" do
       end
     end
 
-    context "when signed in" do
+    context 'when signed in' do
       before do
         login_as(company, scope: :company)
         visit company_blog_posts_path(company)
       end
 
-      it "shows a new post form" do
-        expect(page).to have_selector('.new_blog_post')       
+      it 'shows a new post form' do
+        expect(page).to have_selector('.new_blog_post')
       end
 
-      context "when filled in and submitted" do
-        it "creates a new post" do
+      context 'when filled in and submitted' do
+        it 'creates a new post' do
           within('.new_blog_post__container') do
-            find('#blog_post_body').set("Zażółć gęślą jaźń")
+            find('#blog_post_body').set('Zażółć gęślą jaźń')
             expect { click_button }.to change { company.blog_posts.count }
           end
         end

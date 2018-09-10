@@ -24,8 +24,7 @@
           %td.offer_application__sex= fa_icon sex_icon(a.candidate.sex)
           %td.offer_application__age= a.candidate.age
           %td.offer_application__memo= fa_icon 'comment-o'
-          %td.offer_application__resumes= yes_no_icon(a.candidate.resumes.present?) 
-          %td.offer_application__details= link_to 'Show', a
+          %td.offer_application__resumes= yes_no_icon(a.candidate.resumes.present?)          %td.offer_application__details= link_to 'Show', a
 
 = link_to "Mark selected as read", '#', class: 'button secondary'
 = link_to "Mark all as read", '#', class: 'button primary'

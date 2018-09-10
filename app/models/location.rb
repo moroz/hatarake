@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Location < ApplicationRecord
   belongs_to :country, required: true
   belongs_to :province
@@ -16,7 +18,7 @@ class Location < ApplicationRecord
       end
       [city, province&.local_name, country.local_name].uniq.reject(&:blank?).join(', ')
     else
-      country.local_name + " – " + I18n.t('offers.provinces.blank')
+      country.local_name + ' – ' + I18n.t('offers.provinces.blank')
     end
   end
 
@@ -33,13 +35,13 @@ class Location < ApplicationRecord
   end
 
   def ==(other)
-    self.country_id == other.country_id &&
-      self.province_id == other.province_id &&
-      self.city == other.city
+    country_id == other.country_id &&
+      province_id == other.province_id &&
+      city == other.city
   end
 
   def poland?
-    self.country_id == Country::POLAND_ID
+    country_id == Country::POLAND_ID
   end
 
   def abroad?
@@ -70,19 +72,10 @@ class Location < ApplicationRecord
   end
 
   def find_country_and_province
-    if self.country_id.present? || self.country_name.present?
-      if self.country_id.present?
-        self.country = Country.find(country_id)
-      end
-      if self.province_id.present?
-        self.province = Province.find(province_id)
-      end
-      if self.country_name.present?
-        self.country = Country.find_by_local_name(country_name)
-      end
-      if self.province_name.present?
-        self.province = Province.find_by_local_name(province_name)
-      end
-    end
+    return unless country_id.present? || country_name.present?
+    self.country = Country.find(country_id) if country_id.present?
+    self.province = Province.find(province_id) if province_id.present?
+    self.country = Country.find_by_local_name(country_name) if country_name.present?
+    self.province = Province.find_by_local_name(province_name) if province_name.present?
   end
 end

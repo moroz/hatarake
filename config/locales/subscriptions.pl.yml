@@ -4,7 +4,7 @@ pl:
       newsletter_subscription:
         name: 'Imię i/lub nazwisko'
         email: 'Adres e-mail'
-    
+
     errors:
       models:
         newsletter_subscription:

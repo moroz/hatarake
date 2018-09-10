@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Candidate < User
-  devise :registerable, :omniauthable, :omniauth_providers => [:facebook]
+  devise :registerable, :omniauthable, omniauth_providers: [:facebook]
 
   extend FriendlyId
   friendly_id :name_for_slug, use: [:slugged]
@@ -34,7 +34,7 @@ class Candidate < User
   def self.scope_from_params(params)
     raise ArgumentError, 'params should be an instance of Hash' unless params.is_a?(Hash)
     scope = order_by_param(params[:o])
-    scope = scope.search_by_profession_name(params[:prid]) if params[:prid].present? 
+    scope = scope.search_by_profession_name(params[:prid]) if params[:prid].present?
     scope = scope.where('candidate_profiles.sex = ?', params[:sex]) if params[:sex].present?
     scope = scope.search(params[:q]) if params[:q].present?
     scope
@@ -53,7 +53,8 @@ class Candidate < User
   end
 
   def self.order_by_full_name
-    left_joins(:profile).includes(:profile).order('LOWER(candidate_profiles.first_name), LOWER(candidate_profiles.last_name), email')
+    left_joins(:profile).includes(:profile)
+                        .order('LOWER(candidate_profiles.first_name), LOWER(candidate_profiles.last_name), email')
   end
 
   def self.search(term)
@@ -73,16 +74,16 @@ class Candidate < User
   end
 
   def not_updated_profile?
-    return true if profile.sex.nil? ||  profile.birth_date.nil? || profile.profession_name.nil? || profile.blank?
-    return false
+    return true if profile.sex.nil? || profile.birth_date.nil? || profile.profession_name.nil? || profile.blank?
+    false
   end
 
-  # Facebook login methods
+  # Facebook login methods HACK: WTF going on here?
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
+      data = session['devise.facebook_data']
+      next unless data['info']['email']
+      user.email = data['info']['email'] if user.email.blank?
     end
   end
 
@@ -92,15 +93,15 @@ class Candidate < User
     record = Candidate.where(email: auth.info.email).first_or_create do |candidate|
       is_new_candidate = candidate.new_record?
       candidate.email = auth.info.email
-      candidate.password = Devise.friendly_token[0,20]
-      candidate.type = "Candidate"
+      candidate.password = Devise.friendly_token[0, 20]
+      candidate.type = 'Candidate'
       candidate.build_profile
-      candidate.profile.first_name = auth.info.name.split(" ")[0]
-      candidate.profile.last_name = auth.info.name.split(" ")[1]
-      candidate.skip_confirmation! 
-      #user.avatar = auth.info.image # TODO
+      candidate.profile.first_name = auth.info.name.split(' ')[0]
+      candidate.profile.last_name = auth.info.name.split(' ')[1]
+      candidate.skip_confirmation!
+      # user.avatar = auth.info.image # TODO
     end
-    return [record, is_new_candidate]
+    [record, is_new_candidate]
   end
 
   private
@@ -114,5 +115,4 @@ class Candidate < User
       SecureRandom.hex(8)
     end
   end
-
 end

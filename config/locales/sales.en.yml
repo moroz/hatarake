@@ -62,11 +62,11 @@ en:
       confirm_and_pay: "Confirm and pay with Dotpay"
       heading: "Order #%{id}"
       currency: "Order currency:"
-    
+
     thank_you:
       heading: Thank you for your purchase!
       we_have_registered_your_payment: "We have registered your payment via Dotpay.pl and activated the following services on your account:"
-      premium_services_activated: 
+      premium_services_activated:
       premium_services_count:
         one: "We have activated premium service for selected offer!"
         few: "We have activated premium services for selected offers!"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DotpayController < PaymentsController
   def confirm
     @dotpay = DotpayPayment.new(request.raw_post)
@@ -9,7 +11,7 @@ class DotpayController < PaymentsController
         @order.paid!
       end
     else
-      logger.error "Unrecognized dotpay payment"
+      logger.error 'Unrecognized dotpay payment'
     end
     render plain: 'OK'
   end

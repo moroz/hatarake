@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NewsletterMailer < ApplicationMailer
   def weekly_newsletter(subscriber)
     raise ArgumentError unless subscriber.is_a? NewsletterSubscription

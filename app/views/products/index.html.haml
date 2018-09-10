@@ -9,7 +9,6 @@
         %p
           != t('.price_net', price_pln: localized_currency_value(Prices.net_price(product.price_pln)), price_eur: localized_currency_value(Prices.net_price(product.price_eur)))
           %small!= t('.price_incl_tax', price_pln: localized_currency_value(product.price_pln), price_eur: localized_currency_value(product.price_eur))
-        
 
         .premium-landing-page__quantity_form
           = form_with model: CartItem.new do |f|

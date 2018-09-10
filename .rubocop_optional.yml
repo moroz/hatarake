@@ -1,6 +1,6 @@
 
 Metrics/AbcSize:
-  Max: 50
+  Max: 60
 
 Metrics/ClassLength:
   Max: 500

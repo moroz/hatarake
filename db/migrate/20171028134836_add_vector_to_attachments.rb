@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddVectorToAttachments < ActiveRecord::Migration[5.1]
   def up
     add_column :attachments, :vector, :boolean, default: false

@@ -14,8 +14,7 @@
     = render 'location_fields', f: ff
   #locations
     = link_to_add_association t('offers.fields.add_location'), f, :locations
-    
-  .page-header
+     .page-header
     %h4= t('.wages')
   = f.label :currency, t('offers.fields.currency')
   .auto-width

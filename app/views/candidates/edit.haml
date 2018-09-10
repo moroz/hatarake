@@ -20,4 +20,4 @@
       = ff.input :sex, collection: I18n.t('sexes.long'), label_method: :last, value_method: :first, as: :radio_buttons, label: t('candidates.edit.sex'), checked: candidate.profile.try(:sex) || 'male'
       = ff.input :profession_name, label: t('candidates.edit.profession'), url: autocomplete_professions_path, as: :autocomplete
     = f.input :description, as: :text, label: t('candidates.edit.description'), input_html: { rows: 8 }
-    = f.submit t('candidates.edit.submit'), class: "button primary expanded" 
+    = f.submit t('candidates.edit.submit'), class: "button primary expanded"

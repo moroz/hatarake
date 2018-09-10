@@ -12,7 +12,6 @@
 = render @cart, view_format: :order, currency: @order.currency
 
 - if @billing_address.present?
-  
   %p W formularzu zamówienia wyrazili Państwo chęć otrzymania faktury VAT na następujące dane:
 
   .text-center.float-center

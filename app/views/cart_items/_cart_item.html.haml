@@ -3,7 +3,7 @@
     %td.cart_item__actions
       = link_to fa_icon('trash'), cart_item, method: :delete, remote: true, data: { confirm: t('cart_items.actions.destroy.confirmation') }
   %td.cart_item__product_name= cart_item.product.local_name
-  %td.cart_item__unit_price= cart_item.product.unit_price.to_s 
+  %td.cart_item__unit_price= cart_item.product.unit_price.to_s
   %td.cart_item__quantity
     &times;
     = cart_item.quantity

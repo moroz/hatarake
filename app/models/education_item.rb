@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EducationItem < CvItem
   attr_accessor :start_month, :start_year, :end_month, :end_year
   validates_presence_of :specialization

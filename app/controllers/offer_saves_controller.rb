@@ -1,19 +1,19 @@
+# frozen_string_literal: true
+
 class OfferSavesController < ApplicationController
   def create
     if current_user.nil?
-      redirect_to new_candidate_registration_path, notice: t('offers.offer_saves.fail_save_offer_notice') and return
+      redirect_to(new_candidate_registration_path, notice: t('offers.offer_saves.fail_save_offer_notice')) && return
     end
-    if offer.present? && can?(:create, OfferSave)
-      OfferSave.create(offer: offer, user: current_user)
-      redirect_to offer, notice: t('offers.offer_saves.save_offer_notice')
-    end
+    return unless offer.present? && can?(:create, OfferSave)
+    OfferSave.create(offer: offer, user: current_user)
+    redirect_to offer, notice: t('offers.offer_saves.save_offer_notice')
   end
 
   def destroy
-    if logged_in? && offer.user_saved?(current_user)
-      OfferSave.where(offer: offer, user: current_user).first.destroy
-      redirect_to offer, notice: t('offers.offer_saves.unsave_offer_notice')
-    end
+    return unless logged_in? && offer.user_saved?(current_user)
+    OfferSave.where(offer: offer, user: current_user).first.destroy
+    redirect_to offer, notice: t('offers.offer_saves.unsave_offer_notice')
   end
 
   def email

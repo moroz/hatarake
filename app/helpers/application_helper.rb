@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def mobile?
     browser.platform.android? || browser.platform.ios? || browser.platform.windows_mobile?
@@ -14,7 +16,7 @@ module ApplicationHelper
   def unsafe_markdown(text)
     options = {
       filter_html:     false,
-      link_attributes: { rel: 'nofollow', target: "_blank" },
+      link_attributes: { rel: 'nofollow', target: '_blank' },
       space_after_headers: true
     }
 
@@ -32,7 +34,7 @@ module ApplicationHelper
 
   def markdown(text)
     options = {
-      link_attributes: { rel: 'nofollow', target: "_blank" },
+      link_attributes: { rel: 'nofollow', target: '_blank' },
       space_after_headers: true,
       hard_wrap: true
     }
@@ -60,7 +62,7 @@ module ApplicationHelper
   end
 
   def locale_link(lang)
-    link_to locale_flag(lang), {lang: lang, ref: params[:ref]}, class: 'locale_link'
+    link_to locale_flag(lang), { lang: lang, ref: params[:ref] }, class: 'locale_link'
   end
 
   def edit_button(path)
@@ -68,7 +70,7 @@ module ApplicationHelper
   end
 
   def divider_edit_button(path)
-    link_to fa_icon('pencil', text: t('actions.edit')), path, class: 'card-divider__edit' 
+    link_to fa_icon('pencil', text: t('actions.edit')), path, class: 'card-divider__edit'
   end
 
   def strip_http(url)
@@ -79,23 +81,23 @@ module ApplicationHelper
     raw email.split('@').join('&#8203;&#64;')
   end
 
-  def datetime_with_ordinal_day(dt)
+  def datetime_with_ordinal_day(date)
     if I18n.locale == :pl
-      I18n.l dt, format: :blog
+      I18n.l date, format: :blog
     else
-      dt.day.ordinalize + dt.strftime(" %B %Y, %I:%M %p")
+      date.day.ordinalize + date.strftime(' %B %Y, %I:%M %p')
     end
   end
 
   def blank_slate(text = nil)
-    text ||= I18n.t( [controller_name, 'blank_slate'].join('.'))
+    text ||= I18n.t([controller_name, 'blank_slate'].join('.'))
     content_tag :div, class: 'blank_slate' do
-      text.to_s + "😞"
+      text.to_s + '😞'
     end
   end
 
   def highlight_substring(text, substring)
-    reg = Regexp.new("(" + Regexp.escape(substring) + ")", Regexp::IGNORECASE)
+    reg = Regexp.new('(' + Regexp.escape(substring) + ')', Regexp::IGNORECASE)
     raw text.gsub(reg, '<span class="search_hl">\1</span>')
   end
 end

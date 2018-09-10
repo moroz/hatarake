@@ -26,8 +26,8 @@ en:
       published_at: Published on
       details: "Details"
       description: "Job description"
-      meta_description: "Work as %{title} at %{company}, %{location}. InJobs.pl everyday new job postings. 
-                        Attractive salary, work in Poland and EU!"
+      meta_description: "Work as %{title} at %{company}, %{location}. InJobs.pl everyday new job postings.
+                         Attractive salary, work in Poland and EU!"
 
     no_offer_found:
       outdated_offer: "We are sorry, this offer is outdated :("
@@ -96,7 +96,7 @@ en:
       remaining: "Premium services remaining:"
 
       destructive_action_warning: "This action cannot be undone. Please make sure that you have selected the correct offers."
-    
+
     promote:
       heading: "Promote offer: "
       breadcrumb: "Promote offer"

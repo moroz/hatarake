@@ -2,7 +2,7 @@
 
 class Offer < ApplicationRecord
   extend FriendlyId
-  friendly_id :name_for_slug, use: [:slugged, :finders, :history]
+  friendly_id :name_for_slug, use: %i[slugged finders history]
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
   belongs_to :company, required: true
@@ -37,7 +37,10 @@ class Offer < ApplicationRecord
 
   default_scope { order('published_at DESC') }
 
-  scope :featured_first, -> { reorder('(category_until IS NOT NULL AND category_until > NOW()) DESC', 'published_at DESC') }
+  scope :featured_first, -> {
+                           reorder('(category_until IS NOT NULL AND category_until > NOW()) DESC',
+                                   'published_at DESC')
+                         }
   scope :by_publishing_date_nulls_first, -> { reorder('published_at DESC NULLS FIRST') }
 
   scope :poland, -> { joins(:locations).where('locations.country_id = ?', Country::POLAND_ID) }
@@ -66,17 +69,20 @@ class Offer < ApplicationRecord
   scope :social_featured, -> { where('social_until > NOW()') }
   scope :special_featured, -> { where('special_until > NOW()') }
   scope :not_category_featured, -> { where('category_until IS NULL OR category_until < NOW()') }
-  scope :promoted, -> { homepage_featured.or(category_featured).or(highlighted).or(social_featured).or(special_featured) }
+  scope :promoted, -> {
+                     homepage_featured.or(category_featured).or(highlighted).or
+                     social_featured.or(special_featured)
+                   }
 
-  def self.advanced_search(o = {})
+  def self.advanced_search(options = {})
     scope = all
-    scope = scope.with_country_id(o[:cid]) if o[:cid].present?
-    scope = scope.with_province_id(o[:pid]) if o[:pid].present?
-    scope = scope.search_by_query(o[:q]) if o[:q].present?
-    scope = scope.with_min_salary(o[:smin]) if o[:smin].present?
-    scope = scope.where(currency: o[:cur]) if o[:cur].present?
-    scope = scope.where(field_id: o[:fid]) if o[:fid].present?
-    scope = scope.no_lang_required if o[:lr].to_i == 1
+    scope = scope.with_country_id(options[:cid]) if options[:cid].present?
+    scope = scope.with_province_id(options[:pid]) if options[:pid].present?
+    scope = scope.search_by_query(options[:q]) if options[:q].present?
+    scope = scope.with_min_salary(options[:smin]) if options[:smin].present?
+    scope = scope.where(currency: options[:cur]) if options[:cur].present?
+    scope = scope.where(field_id: options[:fid]) if options[:fid].present?
+    scope = scope.no_lang_required if options[:lr].to_i == 1
     scope
   end
 
@@ -182,7 +188,7 @@ class Offer < ApplicationRecord
   def self.search_by_query(query)
     queries = query_variations(query)
     sanitized_queries = queries.map { |q| "%#{sanitize_sql_like(q)}%" }
-    joins(:locations).where("title ILIKE ANY(ARRAY[:q]) OR locations.city ILIKE ANY(ARRAY[:q])", q: sanitized_queries)
+    joins(:locations).where('title ILIKE ANY(ARRAY[:q]) OR locations.city ILIKE ANY(ARRAY[:q])', q: sanitized_queries)
   end
 
   def unpublish
@@ -200,16 +206,11 @@ class Offer < ApplicationRecord
   def remove_locations(locations)
     locations = locations.to_h
     locations.each do |location|
-      Location.find(location[1]["id"]).destroy! if location[1]["_destroy"] == '1'
+      Location.find(location[1]['id']).destroy! if location[1]['_destroy'] == '1'
     end
   end
 
   private
-
-  def self.query_variations(query)
-    query = [query, query.squeeze, query.gsub('v','w'), query.squeeze.gsub('n','nn'), query.squeeze.gsub('v','w'),
-            query.squeeze.gsub('w','v'), query.squeeze.gsub('n','nn').gsub('w','v')].uniq
-  end
 
   def name_for_slug
     slug_locations = []
@@ -224,7 +225,7 @@ class Offer < ApplicationRecord
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || will_save_change_to_attribute?(:title) #||  will_save_change_to_attribute?(:location_id) # REVIEW
+    slug.blank? || will_save_change_to_attribute?(:title) # ||  will_save_change_to_attribute?(:location_id) # REVIEW
   end
 
   def make_required_languages
@@ -258,24 +259,7 @@ class Offer < ApplicationRecord
   end
 
   def add_http_to_application_url
-    application_url = add_http_to_url(application_url)
-  end
-
-  def self.premium_column(type)
-    case type
-    when 'highlight'
-      return 'highlight_until'
-    when 'homepage'
-      return 'featured_until'
-    when 'category'
-      return 'category_until'
-    when 'social'
-      return 'social_until'
-    when 'special'
-      return 'special_until'
-    else
-      raise ArgumentError.new
-    end
+    add_http_to_url(application_url)
   end
 
   def update_offers_count_on_company
@@ -284,4 +268,27 @@ class Offer < ApplicationRecord
     company.update_column(:published_offers_count, count)
   end
 
+  class << self
+    def query_variations(query)
+      [query, query.squeeze, query.tr('v', 'w'), query.squeeze.gsub('n', 'nn'), query.squeeze.tr('v', 'w'),
+       query.squeeze.tr('w', 'v'), query.squeeze.gsub('n', 'nn').tr('w', 'v')].uniq
+    end
+
+    def premium_column(type)
+      case type
+      when 'highlight'
+        'highlight_until'
+      when 'homepage'
+        'featured_until'
+      when 'category'
+        'category_until'
+      when 'social'
+        'social_until'
+      when 'special'
+        'special_until'
+      else
+        raise ArgumentError
+      end
+    end
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RenameNameNameEnTables < ActiveRecord::Migration[5.0]
   def change
     rename_column :professions, :name, :name_en

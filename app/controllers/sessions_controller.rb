@@ -1,9 +1,8 @@
-class SessionsController < Devise::SessionsController
+# frozen_string_literal: true
 
+class SessionsController < Devise::SessionsController
   def new
-    if params[:return_to].present?
-      session[:return_to] = params[:return_to]
-    end
+    session[:return_to] = params[:return_to] if params[:return_to].present?
     super
   end
 
@@ -13,10 +12,8 @@ class SessionsController < Devise::SessionsController
     scope = resource.type.downcase.to_sym
     sign_in(scope, resource)
     # HACK: This code should be deleted in future when users will be noticed about RODO
-    if resource.last_sign_in_at.round == resource.current_sign_in_at.round
-      cookies['cookie_eu_consented'] = false
-    end
-    respond_with resource, :location => after_sign_in_path_for(resource)
+    cookies['cookie_eu_consented'] = false if resource.last_sign_in_at.round == resource.current_sign_in_at.round
+    respond_with resource, location: after_sign_in_path_for(resource)
   end
 
   def destroy
@@ -30,14 +27,13 @@ class SessionsController < Devise::SessionsController
 
   def after_sign_in_path_for(resource)
     session.delete(:return_to) ||
-    case resource.type
-      when "Candidate"
-        return resource.not_updated_profile? ? edit_candidate_profile_path(ref: 'signup')
-          : dashboard_path
-      when "Company"
+      case resource.type
+      when 'Candidate'
+        resource.not_updated_profile? ? edit_candidate_profile_path(ref: 'signup') : dashboard_path
+      when 'Company'
         dashboard_path
       else
         super(resource)
-    end
+      end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CompanyOffersController < ApplicationController
   expose(:company)
   helper_method :company_offers
@@ -13,6 +15,6 @@ class CompanyOffersController < ApplicationController
   end
 
   def company_offers
-    @offers ||= company.offers.with_associations.page(params[:page])
+    @company_offers ||= company.offers.with_associations.page(params[:page])
   end
 end

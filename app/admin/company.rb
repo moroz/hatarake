@@ -1,22 +1,26 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Company do
   config.per_page = [50, 250, 500]
   permit_params :name, :description, :website, :email, :contact_email, :balance
-  menu label: "Companies"
+  menu label: 'Companies'
   scope :all
   scope :premium_users
 
   action_item :show, only: :show do
-    link_to "View on Website", company_path(company), target: '_blank'
+    link_to 'View on Website', company_path(company), target: '_blank'
   end
 
   action_item :index, only: :index do
-    link_to "View on Website", companies_path, target: '_blank'
+    link_to 'View on Website', companies_path, target: '_blank'
   end
 
   sidebar :actions, only: :index, priority: 0 do
-    str = link_to "Mailing list", mailing_list_companies_path(format: :xlsx), target: '_blank', class: 'button'
+    str = link_to 'Mailing list', mailing_list_companies_path(format: :xlsx),
+                  target: '_blank', class: 'button'
     str += link_to 'Download as XLSX', companies_path(format: 'xlsx'), class: 'button'
-    str += link_to 'Wszyscy +10 PLN', increment_all_admin_companies_path, class: 'button', method: :patch
+    str += link_to 'Wszyscy +10 PLN', increment_all_admin_companies_path, class: 'button',
+                                                                          method: :patch
     str
   end
 
@@ -43,16 +47,14 @@ ActiveAdmin.register Company do
     redirect_to mailing_list_companies_path(format: :xlsx, ids: ids.join(',')), target: '_blank', class: 'button'
   end
 
-  index title: "Companies" do
+  index title: 'Companies' do
     selectable_column
-    column :premium do |company|
-      company.premium?
-    end
+    column :premium, &:premium?
     column :active do |company|
       !!company.confirmed_at
     end
     column :name do |company|
-      link_to company.name, admin_company_path(company) 
+      link_to company.name, admin_company_path(company)
     end
     column :email do |company|
       [company.email, company.contact_email].compact.join(', ')
@@ -64,7 +66,8 @@ ActiveAdmin.register Company do
       str = content_tag :span, id: "company_#{c.id}_balance" do
         Prices.formatted_price(c.balance, 'pln') if c.balance
       end
-      str += link_to '+10', increment_balance_admin_company_path(id: c.id), method: :patch, class: 'increment-button', remote: true
+      str += link_to '+10', increment_balance_admin_company_path(id: c.id), method: :patch,
+                                                                            class: 'increment-button', remote: true
       raw(str)
     end
 
@@ -78,35 +81,34 @@ ActiveAdmin.register Company do
         content = if company.avatar.present?
                     avatar_for company
                   else
-                    "No avatar<br/>".html_safe
+                    'No avatar<br/>'.html_safe
                   end
-        content + (link_to "Edit avatar", new_admin_avatar_path(id: company.to_param), class: 'button')
+        content + (link_to 'Edit avatar', new_admin_avatar_path(id: company.to_param), class: 'button')
       end
       row :active do
         content = I18n.t((!!company.confirmed_at).to_s)
-        content += '<br/>' + (link_to 'Activate', activate_admin_company_path(company), method: :patch, class: 'button') unless company.confirmed_at
+        unless company.confirmed_at
+          content += '<br/>' + (link_to 'Activate', activate_admin_company_path(company),
+                                        method: :patch, class: 'button')
+        end
         raw(content)
       end
       row :email
       row :phone
       row :name
-      row :balance do |company|
-        Prices.formatted_price(company.balance || 0, 'pln')
+      row :balance do |company_row|
+        Prices.formatted_price(company_row.balance || 0, 'pln')
       end
       row :created_at
       row :updated_at
       row :slug
-      row :premium do |company|
-        company.premium?
-      end
+      row :premium, &:premium?
       row :premium_until
-      row :offers do |company|
-        company.offers.count
+      row :offers do |company_row|
+        company_row.offers.count
       end
       row :description do
-        if company.description.present?
-          markdown company.description.truncate(300, separator: /\s/)
-        end
+        markdown company.description.truncate(300, separator: /\s/) if company.description.present?
       end
     end
   end

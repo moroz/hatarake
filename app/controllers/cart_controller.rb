@@ -1,5 +1,6 @@
-class CartController < ApplicationController
+# frozen_string_literal: true
 
+class CartController < ApplicationController
   def show
     @cart = current_cart
     @cart_items = @cart.cart_items

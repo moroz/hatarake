@@ -26,7 +26,7 @@
 
 Turbolinks.changeURL = function(url) {
   Turbolinks.controller
-    .pushHistoryWithLocationAndRestorationIdentifier(url, Turbolinks.uuid()); 
+    .pushHistoryWithLocationAndRestorationIdentifier(url, Turbolinks.uuid());
 }
 
 document.addEventListener('turbolinks:load', function () {

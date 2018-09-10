@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Candidate do
   config.per_page = [50, 250, 500]
   menu label: 'Candidates'
 
   action_item :show, only: :show do
-    link_to "View on Website", candidate_path(candidate), target: '_blank' unless candidate.profile.blank?
+    link_to 'View on Website', candidate_path(candidate), target: '_blank' unless candidate.profile.blank?
   end
 
   form partial: 'form'
@@ -13,7 +15,7 @@ ActiveAdmin.register Candidate do
   end
 
   action_item :mailing_list, only: :index do
-    link_to "Mailing list", mailing_list_candidates_path(format: :xlsx), target: '_blank'
+    link_to 'Mailing list', mailing_list_candidates_path(format: :xlsx), target: '_blank'
   end
 
   order_by(:full_name) do |order_clause|
@@ -33,7 +35,7 @@ ActiveAdmin.register Candidate do
     column :profession do |c|
       c&.profile&.profession_name
     end
-        column :phone
+    column :phone
     column :email
     column :age do |c|
       c&.profile&.age

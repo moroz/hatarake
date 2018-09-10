@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class WorkItemsController < CvItemsController
   expose :work_item
-  expose :work_items, -> {current_user.work_items}
+  expose :work_items, -> { current_user.work_items }
 
   def create
     work_item.candidate = current_user

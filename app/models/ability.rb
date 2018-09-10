@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Ability
   include CanCan::Ability
 
@@ -13,8 +15,8 @@ class Ability
       cannot :manage, Order
       if user.company?
         can :create, [Offer, BlogPost]
-        can [:promote, :add_premium, :update, :batch_action, :destroy, :publish, :unpublish], Offer, company_id: user.id
-        can [:update, :destroy], BlogPost, user_id: user.id
+        can %i[promote add_premium update batch_action destroy publish unpublish], Offer, company_id: user.id
+        can %i[update destroy], BlogPost, user_id: user.id
         can :my_offers, Offer
         can :my_offer_applications, Application
         can :show, Candidate
@@ -22,11 +24,9 @@ class Ability
         can :manage, Company, id: user.id
 
         # only premium users
-        if user.premium?
-          can :index, Candidate
-        end
+        can :index, Candidate if user.premium?
       elsif user.candidate?
-        can :manage, [ SkillItem, CvItem ], candidate_id: user.id
+        can :manage, [SkillItem, CvItem], candidate_id: user.id
         can :manage, Candidate, id: user.id
         can :save, Offer
         can :vote, Company

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CompaniesController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update]
+  before_action :find_user, only: %i[show edit update]
   helper_method :company
 
   before_action :set_province_list, only: :edit
@@ -27,15 +27,16 @@ class CompaniesController < ApplicationController
   end
 
   def mailing_list
-    @collection = if params["ids"].nil?
+    @collection = if params['ids'].nil?
                     Company.order('LOWER(name)')
                   else
-                    Company.where('id in (?)', params["ids"].split(','))
+                    Company.where('id in (?)', params['ids'].split(','))
                   end
     respond_to do |f|
-      f.xlsx {
-        response.headers['Content-Disposition'] = "attachment; filename=#{Time.zone.now.strftime('%Y_%m_%d_mailing_pracodawcy.xlsx')}"
-      }
+      f.xlsx do
+        response.headers['Content-Disposition'] = "attachment; filename=
+          #{Time.zone.now.strftime('%Y_%m_%d_mailing_pracodawcy.xlsx')}"
+      end
     end
   end
 
@@ -49,9 +50,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    if request.path != company_path(company)
-      redirect_to company, status: :moved_permanently
-    end
+    redirect_to company, status: :moved_permanently if request.path != company_path(company)
     @blog_posts = company.blog_posts.ordered
   end
 
@@ -61,9 +60,9 @@ class CompaniesController < ApplicationController
       redirect_to company
     else
       respond_to do |f|
-        f.html {
-          flash.alert = "The profile could not be saved."
-        }
+        f.html do
+          flash.alert = 'The profile could not be saved.'
+        end
         f.js { render_js_errors_for company }
       end
     end
@@ -84,15 +83,15 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :website, :description, location_attributes: [:country_id, :province_id, :city])
+    params.require(:company).permit(:name, :website, :description, location_attributes: %i[country_id province_id city])
   end
 
   def set_province_list
-    if @company.location.try(:country).present?
-      @provinces = @company.location.country.provinces.local_order
-    else
-      @provinces = Province.where(country_id: Country::POLAND_ID).local_order
-    end
+    @provinces = if @company.location.try(:country).present?
+                   @company.location.country.provinces.local_order
+                 else
+                   Province.where(country_id: Country::POLAND_ID).local_order
+                 end
   end
 
   def set_country_list

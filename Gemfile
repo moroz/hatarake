@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 ruby '2.5.0'
 
@@ -11,6 +13,7 @@ gem 'capistrano-rbenv', '~> 2.1'
 gem 'carrierwave', '~> 1.1.0'
 gem 'carrierwave-i18n'
 gem 'carrierwave-unoconv'
+gem 'cocoon'
 gem 'coffee-rails', '~> 4.2'
 gem 'cookies_eu'
 gem 'decent_exposure'
@@ -33,7 +36,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'meta-tags'
 gem 'mini_magick'
+gem 'omniauth-facebook'
 gem 'pg', '~> 0.20'
 gem 'premailer-rails'
 gem 'puma', '~> 3.0'
@@ -44,16 +49,15 @@ gem 'redcarpet'
 gem 'remotipart'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'thin'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'valid_url'
-gem 'meta-tags'
-gem 'omniauth-facebook'
-gem 'thin'
-gem "cocoon"
 # For XSLX exports
 gem 'axlsx', '2.1.0.pre'
 gem 'axlsx_rails'
+gem 'overcommit'
+gem 'rubocop'
 gem 'rubyzip', '~> 1.1.0'
 
 group :production, :staging do
@@ -61,11 +65,11 @@ group :production, :staging do
 end
 
 group :development, :test do
-  gem 'spring-commands-rspec'
   gem 'binding_of_caller'
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'rspec-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :test do

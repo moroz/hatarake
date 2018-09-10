@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AvatarsController < ApplicationController
   authorize_resource
   helper_method :avatar
@@ -49,7 +51,6 @@ class AvatarsController < ApplicationController
   private
 
   def avatar_params
-    params.require(:avatar).permit(%i{file crop_x crop_y crop_w crop_h})
+    params.require(:avatar).permit(%i[file crop_x crop_y crop_w crop_h])
   end
 end
-

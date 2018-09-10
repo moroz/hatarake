@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResumeUploader < CarrierWave::Uploader::Base
   include CarrierWave::UNOConv
   # Choose what kind of storage to use for this uploader:
@@ -14,7 +16,7 @@ class ResumeUploader < CarrierWave::Uploader::Base
   end
 
   version :pdf, if: :not_pdf? do
-    process :uno_convert => 'pdf'
+    process uno_convert: 'pdf'
     def full_filename(for_file = model.file)
       for_file.sub(/\.\w{2,4}$/, '.pdf')
     end
@@ -27,7 +29,7 @@ class ResumeUploader < CarrierWave::Uploader::Base
   end
 
   protected
-  
+
   def not_pdf?(new_file)
     new_file.content_type != 'application/pdf'
   end
