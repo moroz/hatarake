@@ -2,11 +2,15 @@
 
 class FeedController < ApplicationController
   respond_to :xml
-  before_action :fetch_offers
+  before_action :fetch_offers, except: :region_list
 
   def jooble; end
 
   def trovit; end
+
+  def region_list
+    @countries = Country.all
+  end
 
   private
 

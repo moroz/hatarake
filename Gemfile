@@ -59,6 +59,7 @@ gem 'axlsx_rails'
 gem 'overcommit'
 gem 'rubocop'
 gem 'rubyzip', '~> 1.1.0'
+gem 'rest-client'
 
 group :production, :staging do
   gem 'rollbar'

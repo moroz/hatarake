@@ -5,7 +5,7 @@ class Offer < ApplicationRecord
   friendly_id :name_for_slug, use: %i[slugged finders history]
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
-  belongs_to :company, required: true
+  belongs_to :company
   belongs_to :field
 
   has_many :applications, dependent: :destroy
@@ -263,6 +263,7 @@ class Offer < ApplicationRecord
   end
 
   def update_offers_count_on_company
+    return if company_id.nil?
     count = Offer.where('published_at IS NOT NULL AND company_id = ?', company_id).count
     return if company.published_offers_count == count
     company.update_column(:published_offers_count, count)

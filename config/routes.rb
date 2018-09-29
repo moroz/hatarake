@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/regulamin/zalacznik1', to: 'pages#appendix1'
   get '/rodo', to: 'pages#rodo'
   get '/contact', to: 'pages#contact'
+  get '/platnosci', to: 'pages#dotpay_payments', as: :payments
 
   resources :offers, path: '/jobs', except: :index do
     member do
@@ -84,6 +85,10 @@ Rails.application.routes.draw do
       get 'trovit_feed.xml', to: 'feed#trovit'
     end
     post '/confirm_lfw', to: 'candidates#confirm_lfw'
+    scope '/hrlink' do
+      get 'import', to: 'import#hrlink'
+      get 'region_list', to: 'feed#region_list'
+    end
   end
 
   devise_scope :candidate do

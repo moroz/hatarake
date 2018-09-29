@@ -1,0 +1,22 @@
+.center
+  - if current_locale == :pl
+    = image_tag 'dotpay_pl.png', alt: 'Płatności Online wspierane przez Dotpay'
+  - else
+    = image_tag 'dotpay_en.png', alt: 'Online payments supported by Dotpay'
+.center
+  %i
+    = t('application.footer.payments_powered_by')
+  %hr
+  %b InJobs.pl sp. z o.o.
+  %br
+  ul. 8 Maja 17/4
+  11-700 Mrągowo
+  %br
+  E-mail: 
+  = link_to 'info@injobs.pl', 'mailto:info@injobs.pl'
+  = link_to 'kontakt@injobs.pl'
+  = link_to 'biuro@injobs.pl'
+  %br
+  Telefon: +48 (89) 762-74-48
+  %br
+  NIP 742-22-56-702 KRS 0000685786
