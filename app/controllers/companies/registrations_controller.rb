@@ -1,19 +1,19 @@
+# frozen_string_literal: true
+
 class Companies::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   def new
-    if logged_in?
-      redirect_to root_path, alert: I18n.t('devise.failure.already_authenticated') and return
-    end
+    redirect_to(root_path, alert: I18n.t('devise.failure.already_authenticated')) && return if logged_in?
     @heading = I18n.t('registrations.company_heading')
     super
   end
 
   # POST /resource
-   #def create
-     #super
-   #end
+  # def create
+  # super
+  # end
 
   # GET /resource/edit
   # def edit

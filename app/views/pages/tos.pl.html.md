@@ -325,8 +325,7 @@ zawodowej, edukacji oraz innych umiejętności.
 
 Kto przetwarza dane osobowe i jak się z nim można skontaktować ?
 
-Administratorem danych przetwarzanych w serwisie InJobs.pl jest InJobs sp. z o.o. 
-z siedzibą w Mrągowie, przy ul. 8 Maja 17/4 , 11-700 Mrągowo KRS: 0000685786
+Administratorem danych przetwarzanych w serwisie InJobs.pl jest InJobs sp. z o.o.z siedzibą w Mrągowie, przy ul. 8 Maja 17/4 , 11-700 Mrągowo KRS: 0000685786
 NIP: 742-22-56-702, posiadająca kapitał zakładowy w wysokości 5000,00 PLN w całości opłacony ( dalej; Administrator ).
 
 Kontakt z administratorem możliwy pod numerem telefonu + (48) 89 762 74 48, oraz e- mailem
@@ -369,8 +368,7 @@ Podanie części danych jest obowiązkowe (niezbędne dla korzystania z witryny 
 ### Na jakiej podstawie przetwarzamy dane osobowe użytkowników?
 
 1. Dane osobowe przetwarzane są zgodnie z Art. 6 ust 1 lit. a i b ogólnego rozporządzenia o ochronie danych osobowych (RODO).
-Zgodnie z RODO, bez odrębnej zgody użytkownika możemy przetwarzać dane osobowe które są niezbędne do wykonania umowy między administratorem a osobą której dane dotyczą. 
-2. Dane których przetwarzanie jest niezbędne dla korzystania z Serwisu InJobs.pl przetwarzamy na podstawie umowy między Użytkownikiem a Administratorem. Do zawarcia takiej umowy której dochodzi wskutek Rejestracji w Serwisie InJobs.pl i akceptacji Regulaminu Serwisu InJobs.pl .
+Zgodnie z RODO, bez odrębnej zgody użytkownika możemy przetwarzać dane osobowe które są niezbędne do wykonania umowy między administratorem a osobą której dane dotyczą.2. Dane których przetwarzanie jest niezbędne dla korzystania z Serwisu InJobs.pl przetwarzamy na podstawie umowy między Użytkownikiem a Administratorem. Do zawarcia takiej umowy której dochodzi wskutek Rejestracji w Serwisie InJobs.pl i akceptacji Regulaminu Serwisu InJobs.pl .
 3. Na podstawie odrębnej dobrowolnej zgody Użytkownika, przetwarzane mogą być dane osobowe użytkowników których podanie nie jest niezbędne dla korzystania z Serwisu takie jak dane zgromadzonych na koncie Google + i Facebooku.
 4. Na podstawie odrębnej dobrowolnej zgody Użytkownika udostępniamy dane osobowe innym Użytkownikom oraz zewnętrznym podmiotom rekrutującym.
 
@@ -582,8 +580,7 @@ Rejestracja – dodanie oferty.
 Usunięcie ofert oraz zablokowanie użytkownika.
 ----------------------------------------------
 
-1.  Serwis zastrzega sobie prawo do usunięcia ofert użytkownika : 
-
+1.  Serwis zastrzega sobie prawo do usunięcia ofert użytkownika :
   -   łamiącego którekolwiek z postanowień niniejszego regulaminu
 
   -   reklamującego serwis konkurencyjny,

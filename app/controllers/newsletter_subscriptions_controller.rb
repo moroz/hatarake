@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class NewsletterSubscriptionsController < ApplicationController
   def create
     @subscription = NewsletterSubscription.new(subscription_params)
     if @subscription.save
-      redirect_to root_path, notice: "You have successfully subscribed to our newsletter." 
+      redirect_to root_path, notice: 'You have successfully subscribed to our newsletter.'
     else
       respond_to do |f|
         f.html { render :new }
@@ -11,8 +13,7 @@ class NewsletterSubscriptionsController < ApplicationController
     end
   end
 
-  def unsubscribe
-  end
+  def unsubscribe; end
 
   def destroy
     @subscription = NewsletterSubscription.find_by(email: params[:email])

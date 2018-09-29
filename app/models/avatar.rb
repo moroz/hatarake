@@ -36,8 +36,6 @@ class Avatar < Attachment
   private
 
   def update_vector
-    if file.present? && file_changed?
-      self.vector = (file.content_type == 'image/svg+xml')
-    end
+    self.vector = (file.content_type == 'image/svg+xml') if file.present? && file_changed?
   end
 end

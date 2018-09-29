@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :work_item do
     candidate { Candidate.first || create(:candidate) }
-    category "work"
-    position "Merchandiser"
-    organization "Jeronimo Martins Polska"
+    category 'work'
+    position 'Merchandiser'
+    organization 'Jeronimo Martins Polska'
     start_date { 2.years.ago }
     end_date { 1.years.ago }
 

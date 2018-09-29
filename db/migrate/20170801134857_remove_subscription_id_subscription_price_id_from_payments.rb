@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveSubscriptionIdSubscriptionPriceIdFromPayments < ActiveRecord::Migration[5.1]
   def change
     remove_column :payments, :subscription_id, :integer

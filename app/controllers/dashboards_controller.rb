@@ -1,8 +1,8 @@
+# frozen_string_literal: true
+
 class DashboardsController < ApplicationController
   def show
-    unless logged_in?
-      redirect_to root_path and return
-    end
+    redirect_to(root_path) && return unless logged_in?
     if candidate_signed_in?
       candidate_dashboard
     elsif company_signed_in?
@@ -13,7 +13,7 @@ class DashboardsController < ApplicationController
   private
 
   def candidate_dashboard
-    @applied = current_candidate.applied_offers.includes(locations: [:country, :province], company: [:avatar])
+    @applied = current_candidate.applied_offers.includes(locations: %i[country province], company: [:avatar])
     @saved_offers = OfferSave.where(user_id: current_user).joins(:offer).distinct
     render 'candidate_dashboard'
   end
@@ -26,5 +26,4 @@ class DashboardsController < ApplicationController
     }
     render 'company_dashboard'
   end
-
 end

@@ -1,16 +1,21 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
-  before_action :disable_turbolinks, only: [:new, :edit, :create, :update]
-  helper_method :current_user, :current_locale, :local_name, :page_title, :logged_in?, :translate_with_gender, :current_cart
+  before_action :disable_turbolinks, only: %i[new edit create update]
+
+  helper_method :current_user, :current_locale, :local_name, :page_title,
+                :logged_in?, :translate_with_gender, :current_cart
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_back fallback_location: main_app.root_url, alert: exception.message
   end
 
   rescue_from ActionController::BadRequest do |exception|
-    redirect_back fallback_location: root_path, alert: I18n.t('bad_request_alert') + exception.message.to_s 
+    redirect_back fallback_location: root_path,
+                  alert: I18n.t('bad_request_alert') + exception.message.to_s
   end
 
   def current_user
@@ -35,7 +40,7 @@ class ApplicationController < ActionController::Base
 
   def page_title
     if @title.present?
-      @title + " – " + I18n.t('default_title')
+      @title + ' – ' + I18n.t('default_title')
     else
       I18n.t('.title', default: :default_title)
     end
@@ -54,10 +59,8 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if params[:lang].present?
-      session[:locale] = params[:lang] 
-      if logged_in?
-        current_user.set_locale(params[:lang])
-      end
+      session[:locale] = params[:lang]
+      current_user.set_locale(params[:lang]) if logged_in?
     end
     I18n.locale = session[:locale] || user_locale || accepted_language || I18n.default_locale
   end
@@ -80,7 +83,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:first_name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name first_name last_name])
   end
 
   def render_js_errors_for(object)
@@ -89,9 +92,7 @@ class ApplicationController < ActionController::Base
   end
 
   def deny_access_if_logged_in
-    if logged_in?
-      redirect_to root_path, alert: I18n.t('devise.failure.already_authenticated') and return
-    end
+    redirect_to(root_path, alert: I18n.t('devise.failure.already_authenticated')) && return if logged_in?
   end
 
   def set_country_list

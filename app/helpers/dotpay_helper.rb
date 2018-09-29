@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DotpayHelper
   def dotpay_id(currency = 'pln')
     if currency == 'eur'

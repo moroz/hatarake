@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Rails.env.production? || Rails.env.staging?
   Rollbar.configure do |config|
     # Without configuration, Rollbar is enabled in all environments.

@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class OrdersMailer < ApplicationMailer
-  
   def order_placed(order)
     @order = order
     @user = order.user

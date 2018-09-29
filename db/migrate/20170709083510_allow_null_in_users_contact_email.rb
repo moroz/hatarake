@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AllowNullInUsersContactEmail < ActiveRecord::Migration[5.0]
   def up
     remove_index :users, :contact_email

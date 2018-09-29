@@ -17,16 +17,16 @@ pl:
         one: aktywna oferta pracy
         few: aktywne oferty pracy
         many: aktywnych ofert pracy
-      meta_description: "Strona domowa firmy %{company} w serwisie InJobs.pl. 
-                        Tutaj znajdziesz najnowsze oferty pracy oraz szczegółwe informacje o firmie %{company}"
+      meta_description: "Strona domowa firmy %{company} w serwisie InJobs.pl.
+                         Tutaj znajdziesz najnowsze oferty pracy oraz szczegółwe informacje o firmie %{company}"
 
     edit:
       heading: Edycja profilu
 
     index:
       heading: Profile pracodawców
-      meta_description: "Zobacz profile pracodawców których oferty pracy w Polsce i zagranicą znajdziesz na portalu Injobs.pl! 
-                        Znajdź ciekawą pracę w Polsce lub innym kraju Unii Europejskiej!"
+      meta_description: "Zobacz profile pracodawców których oferty pracy w Polsce i zagranicą znajdziesz na portalu Injobs.pl!
+                         Znajdź ciekawą pracę w Polsce lub innym kraju Unii Europejskiej!"
 
     search:
       placeholder: 'Wpisz fragment nazwy...'

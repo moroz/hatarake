@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Localizable
   extend ActiveSupport::Concern
 
-  class_methods do 
+  class_methods do
     def local_order
       if I18n.locale == :pl
         order('name_pl, name_en')
@@ -24,7 +26,7 @@ module Localizable
   end
 
   def local_description
-    return unless self.respond_to?(:description_en)
+    return unless respond_to?(:description_en)
     if I18n.locale == :pl
       description_pl
     else
@@ -36,4 +38,3 @@ module Localizable
     super || name_en
   end
 end
-

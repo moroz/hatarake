@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 def select_homepage_and_submit
@@ -6,7 +8,7 @@ def select_homepage_and_submit
 end
 
 RSpec.describe 'Company promotes offers' do
-  let(:company) { FactoryBot.create(:company, premium_services: {2 => 10, 3 => 10, 4 => 10}) }
+  let(:company) { FactoryBot.create(:company, premium_services: { 2 => 10, 3 => 10, 4 => 10 }) }
   let!(:offer) { FactoryBot.create(:offer, :published, company: company) }
 
   before do

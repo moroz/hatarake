@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class ChangeSalaryToRange < ActiveRecord::Migration[5.0]
   def up
     add_column :offers, :salary, :numrange
-    execute(%q{UPDATE offers SET salary = numrange(salary_min, salary_max, '[]')})
+    execute("UPDATE offers SET salary = numrange(salary_min, salary_max, '[]')")
     remove_column :offers, :salary_min
     remove_column :offers, :salary_max
   end

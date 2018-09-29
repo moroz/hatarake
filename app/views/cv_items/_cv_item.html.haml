@@ -5,8 +5,7 @@
       %br/
       %span.cv_item__timespan= timespan(item.start_date,
         item.end_date)
-      - if item.respond_to?(:position) && item.position.present? 
-        %br/
+      - if item.respond_to?(:position) && item.position.present?        %br/
         %span.cv_item__position= item.position
       - if item.respond_to?(:specialization) && item.specialization.present?
         %br/

@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class OfferSavesMailer < ApplicationMailer
-  
   def offer_saved(offer, user)
     @user = user
     @offer = offer

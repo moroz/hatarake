@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class SkillItem < ApplicationRecord
   attr_accessor :skill_name
 
   default_scope { includes(:skill).ordered }
   scope :ordered, -> { order('level DESC', 'skills.name_en') }
 
-  enum level: [:beginner, :intermediate, :good, :expert]
+  enum level: %i[beginner intermediate good expert]
 
   belongs_to :candidate, required: true
   belongs_to :skill, required: true

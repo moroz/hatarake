@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SkillItemsController < ApplicationController
   def create
     @skill_item = current_user.skill_items.new(skill_item_params)
@@ -18,13 +20,13 @@ class SkillItemsController < ApplicationController
   def destroy
     @skill_item = current_user.skill_items.find(params[:id])
     @skill_item.destroy
-    flash[:success] = "The skill has been deleted."
+    flash[:success] = 'The skill has been deleted.'
     respond_to do |f|
       f.html { redirect_to candidate_edit_skills_path }
-      f.js {
+      f.js do
         @skill_items = current_user.skill_items
         render 'create'
-      }
+      end
     end
   end
 

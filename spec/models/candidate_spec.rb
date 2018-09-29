@@ -1,56 +1,64 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Candidate, type: :model do
-  describe "scopes" do
+  describe 'scopes' do
     let!(:candidate) { FactoryBot.create(:candidate, :looking_for_work) }
     let!(:not_looking_candidate) { FactoryBot.create(:candidate, :not_looking_for_work) }
-    describe "looking_for_work" do
+    describe 'looking_for_work' do
       subject { Candidate.looking_for_work }
 
       it { is_expected.to include candidate }
       it { is_expected.not_to include not_looking_candidate }
     end
 
-    describe "with_profession" do
-      let!(:carpenter) { FactoryBot.create(:candidate, profession_name: "Carpenter") }
-      let!(:welder) { FactoryBot.create(:candidate, profession_name: "Welder") }
+    describe 'with_profession' do
+      let!(:carpenter) { FactoryBot.create(:candidate, profession_name: 'Carpenter') }
+      let!(:welder) { FactoryBot.create(:candidate, profession_name: 'Welder') }
 
-      context "when given profession name" do
-        subject { Candidate.with_profession "Carpenter" }
+      context 'when given profession name' do
+        subject { Candidate.with_profession 'Carpenter' }
 
         it { is_expected.to include carpenter }
         it { is_expected.not_to include welder }
       end
     end
 
-    describe "search" do
-      let!(:smith) { FactoryBot.create(:candidate, profile: FactoryBot.create(:candidate_profile, first_name: "John", last_name: "Smith")) }
-      let!(:kowalski) { FactoryBot.create(:candidate, profile: FactoryBot.create(:candidate_profile, first_name: "Jan", last_name: "Kowalski")) }
+    describe 'search' do
+      let!(:smith) do
+        FactoryBot.create(:candidate, profile:
+                     FactoryBot.create(:candidate_profile, first_name: 'John', last_name: 'Smith'))
+      end
+      let!(:kowalski) do
+        FactoryBot.create(:candidate, profile:
+                        FactoryBot.create(:candidate_profile, first_name: 'Jan', last_name: 'Kowalski'))
+      end
 
-      context "by first name" do
-        subject { Candidate.search("john") }
+      context 'by first name' do
+        subject { Candidate.search('john') }
 
         it { is_expected.to include smith }
         it { is_expected.not_to include kowalski }
       end
 
-      context "by last name" do
-        subject { Candidate.search("smith") }
-        
+      context 'by last name' do
+        subject { Candidate.search('smith') }
+
         it { is_expected.to include smith }
         it { is_expected.not_to include kowalski }
       end
 
-      context "by substring of full name" do
-        subject { Candidate.search("n kowa") }
-        
+      context 'by substring of full name' do
+        subject { Candidate.search('n kowa') }
+
         it { is_expected.to include kowalski }
         it { is_expected.not_to include smith }
       end
     end
   end
 
-  describe "#should_confirm_lfw?" do
+  describe '#should_confirm_lfw?' do
     context 'when profile is not updated after registration' do
       it 'returns false' do
         only_name_candidate = FactoryBot.build(:candidate, :only_login_credentials)
@@ -113,49 +121,49 @@ RSpec.describe Candidate, type: :model do
     end
   end
 
-  describe "#not_updated_profile?" do
-    context "when candidated just registred" do
-      it "returns true" do
+  describe '#not_updated_profile?' do
+    context 'when candidated just registred' do
+      it 'returns true' do
         candidate = FactoryBot.build(:candidate, :only_login_credentials)
         candidate.save(validate: false)
         expect(candidate.not_updated_profile?).to be true
       end
     end
 
-    context "candidate with full credentials" do
+    context 'candidate with full credentials' do
       let (:candidate) { FactoryBot.create(:candidate) }
 
-      it "returns false" do
+      it 'returns false' do
         expect(candidate.not_updated_profile?).to be false
       end
     end
   end
 
-  describe "#from_omniauth" do
+  describe '#from_omniauth' do
     let!(:facebook_hash) { FactoryBot.create(:facebook_auth) }
-    context "Candidate already not registred" do
+    context 'Candidate already not registred' do
       subject { described_class.from_omniauth(facebook_hash) }
-      it "create new user" do
+      it 'create new user' do
         expect { subject }.to change { User.count }
       end
-      it "return created user" do
+      it 'return created user' do
         expect(subject[0]).to eq User.last
       end
-      it "return true - is new candidate?" do
+      it 'return true - is new candidate?' do
         expect(subject[1]).to eq true
       end
     end
 
-    context "Candidate already registred" do
+    context 'Candidate already registred' do
       before do
         User.delete_all
       end
       let!(:candidate) { FactoryBot.create(:candidate, email: facebook_hash.info.email) }
       subject { described_class.from_omniauth(facebook_hash) }
-      it "return candidate object" do
-        expect(subject[0]).to eq candidate 
+      it 'return candidate object' do
+        expect(subject[0]).to eq candidate
       end
-      it "return false - is new candidate?" do
+      it 'return false - is new candidate?' do
         expect(subject[1]).to eq false
       end
     end

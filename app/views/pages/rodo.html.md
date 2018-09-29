@@ -11,4 +11,4 @@ Zmiany w regulaminie i Polityce prywatności mają na celu dostosowanie do zmien
 
 Każdy Użytkownik i Usługobiorca uprawniony jest do wypowiedzenia umowy o świadczenie Usług Serwisu InJobs.pl w terminie 14 dni od otrzymania komunikatu o zmianie Regulaminu i Polityki Prywatności.
 
-Wypowiedzenia umowy można dokonać składając Usługodawcy oświadczenie o wypowiedzeniu, poprzez przesłanie oświadczenia pocztą elektroniczną na adres poczty elektronicznej Usługodawcy e- mail: kontakt@injobs.pl lub pisemnie na adres: InJobs.pl , ul. 8 Maja 17/4, a także poprzez usunięcie Profilu Użytkownika z poziomu swojego Profilu. Niewypowiedzenie umowy w terminie 14 dni oznacza akceptację nowego Regulaminu, Polityki Prywatności. 
+Wypowiedzenia umowy można dokonać składając Usługodawcy oświadczenie o wypowiedzeniu, poprzez przesłanie oświadczenia pocztą elektroniczną na adres poczty elektronicznej Usługodawcy e- mail: kontakt@injobs.pl lub pisemnie na adres: InJobs.pl , ul. 8 Maja 17/4, a także poprzez usunięcie Profilu Użytkownika z poziomu swojego Profilu. Niewypowiedzenie umowy w terminie 14 dni oznacza akceptację nowego Regulaminu, Polityki Prywatności.

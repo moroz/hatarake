@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :application do
     candidate_id 1
     offer nil
-    memo "MyText"
+    memo 'MyText'
     read false
   end
 end

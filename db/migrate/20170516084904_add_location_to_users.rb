@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddLocationToUsers < ActiveRecord::Migration[5.0]
   def change
     add_reference :users, :location, foreign_key: true

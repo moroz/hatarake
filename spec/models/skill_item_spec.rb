@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe SkillItem, type: :model do
@@ -6,7 +8,6 @@ RSpec.describe SkillItem, type: :model do
   describe 'validations' do
     describe 'level' do
       describe 'inclusion in defined values' do
-
         context 'with valid level' do
           it 'is valid' do
             skill_item.level = 'good'
@@ -14,33 +15,31 @@ RSpec.describe SkillItem, type: :model do
           end
         end
 
-        context "with invalid level" do
-          it "raises error" do
-            expect { skill_item.level = "foobar" }
+        context 'with invalid level' do
+          it 'raises error' do
+            expect { skill_item.level = 'foobar' }
               .to raise_error ArgumentError
           end
         end
-
       end
     end
   end
 
-  describe "auto-creating Skill" do
-    let(:skill) { FactoryBot.create(:skill, name_en: "Bazz") }
+  describe 'auto-creating Skill' do
+    let(:skill) { FactoryBot.create(:skill, name_en: 'Bazz') }
 
     context "when Skill doesn't exist" do
-      it "creates a new Skill" do
-        skill_item.skill_name = "Foobar"
+      it 'creates a new Skill' do
+        skill_item.skill_name = 'Foobar'
         expect { skill_item.save }.to change { Skill.count }
       end
     end
 
-    context "when Skill exists" do
-      it "reuses existing Skill" do
+    context 'when Skill exists' do
+      it 'reuses existing Skill' do
         skill_item.skill_name = skill.name_en
         expect { skill_item.save }.not_to change { Skill.count }
       end
     end
-
   end
 end

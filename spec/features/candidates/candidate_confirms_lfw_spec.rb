@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Candidate confirms looking for work" do
+RSpec.describe 'Candidate confirms looking for work' do
   let(:candidate) { FactoryBot.create(:candidate, :looking_for_work) }
 
   before do
@@ -9,20 +11,20 @@ RSpec.describe "Candidate confirms looking for work" do
     visit profile_path
   end
 
-  context "when candidate is looking for work" do
-    context "when lfw_at < 2 days ago" do
-      it "shows callout to confirm lfw" do
+  context 'when candidate is looking for work' do
+    context 'when lfw_at < 2 days ago' do
+      it 'shows callout to confirm lfw' do
         expect(page).to have_selector('#confirm_lfw_callout')
       end
     end
 
-    context "when lfw_at > 2 days ago" do
+    context 'when lfw_at > 2 days ago' do
       before do
         candidate.profile.update_column(:lfw_at, 1.day.ago)
         visit profile_path
       end
 
-      it "does not show callout" do
+      it 'does not show callout' do
         expect(page).not_to have_selector('#confirm_lfw_callout')
       end
     end
@@ -31,12 +33,12 @@ RSpec.describe "Candidate confirms looking for work" do
   context "when candidate isn't looking for work and lfw_at < 2 days ago" do
     let(:candidate) { FactoryBot.create(:candidate, :not_looking_for_work) }
 
-    it "shows callout to ask" do
+    it 'shows callout to ask' do
       expect(page).to have_selector('#confirm_lfw_callout')
     end
   end
 
-  describe "confirmation" do
+  describe 'confirmation' do
     context 'when user clicks yes' do
       before do
         within '#confirm_lfw_callout' do
@@ -48,7 +50,7 @@ RSpec.describe "Candidate confirms looking for work" do
         expect(page).not_to have_selector('#confirm_lfw_callout')
       end
 
-      describe "changes in the model" do
+      describe 'changes in the model' do
         before do
           candidate.profile.reload
         end
@@ -74,7 +76,7 @@ RSpec.describe "Candidate confirms looking for work" do
         expect(page).not_to have_selector('#confirm_lfw_callout')
       end
 
-      describe "changes in the model" do
+      describe 'changes in the model' do
         before do
           candidate.profile.reload
         end

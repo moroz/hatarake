@@ -4,12 +4,12 @@ class CandidatesController < ApplicationController
   before_action :find_candidate
   helper_method :candidate
   after_action :set_lfw_at, only: :update
-  skip_authorize_resource only: [:mailing_list, :index] 
-  #authorize_resource # FIX: Something not working here!
+  skip_authorize_resource only: %i[mailing_list index]
+  # authorize_resource # FIX: Something not working here!
 
   def index
     unless admin_user_signed_in?
-      redirect_to root_path, alert: "Access Denied" and return unless current_user.premium?
+      redirect_to(root_path, alert: 'Access Denied') && return unless current_user.premium?
     end
     respond_to do |format|
       unless request.format.xlsx?
@@ -29,20 +29,21 @@ class CandidatesController < ApplicationController
 
   def mailing_list
     raise CanCan::AccessDenied unless admin_user_signed_in?
-    @collection = if params["ids"].nil?
+    @collection = if params['ids'].nil?
                     Candidate.order_by_full_name
                   else
-                    Candidate.where('id in (?)', params["ids"].split(','))
+                    Candidate.where('id in (?)', params['ids'].split(','))
                   end
     respond_to do |f|
-      f.xlsx {
-        response.headers['Content-Disposition'] = "attachment; filename=#{Time.zone.now.strftime('%Y_%m_%d_mailing_kandydaci.xlsx')}"
-      }
+      f.xlsx do
+        response.headers['Content-Disposition'] = "attachment;
+                        filename=#{Time.zone.now.strftime('%Y_%m_%d_mailing_kandydaci.xlsx')}"
+      end
     end
   end
 
   def show
-    redirect_to edit_candidate_profile_path and return if @candidate.not_updated_profile? && !admin_user_signed_in?
+    redirect_to(edit_candidate_profile_path) && return if @candidate.not_updated_profile? && !admin_user_signed_in?
   end
 
   def update
@@ -67,7 +68,10 @@ class CandidatesController < ApplicationController
   end
 
   def edit
-    redirect_to candidates_path, flash: { alert: "Try to edit profile via admin panel!" } and return if admin_user_signed_in?
+    if admin_user_signed_in?
+      redirect_to(candidates_path,
+                  flash: { alert: 'Try to edit profile via admin panel!' }) && return
+    end
     @candidate.build_profile unless @candidate.profile.present?
   end
 
@@ -86,7 +90,7 @@ class CandidatesController < ApplicationController
 
   def set_lfw_at
     if @candidate.profile.looking_for_work?
-      @candidate.profile.touch(:lfw_at) 
+      @candidate.profile.touch(:lfw_at)
     else
       @candidate.update_column(:lfw_at, nil)
     end
@@ -109,6 +113,7 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:description, :contact_email, :phone, profile_attributes: [:id, :first_name, :last_name, :sex, :looking_for_work, :birth_date, :profession_name])
+    params.require(:candidate).permit(:description, :contact_email, :phone, profile_attributes:
+                                      %i[id first_name last_name sex looking_for_work birth_date profession_name])
   end
 end

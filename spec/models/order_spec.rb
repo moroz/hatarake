@@ -24,21 +24,21 @@ RSpec.describe Order, type: :model do
 
       it "changes user's premium_services hash" do
         result = Order.process_premium_services_hash(order.to_h)
-        result["3"] = result["3"].to_s
-        expect(order.user.premium_services).to eq(result.except("3"))
+        result['3'] = result['3'].to_s
+        expect(order.user.premium_services).to eq(result.except('3'))
       end
     end
   end
 
-  describe "#process_premium_services_hash" do
-    it "return hash with stringified keys when no bundle premium service passed" do
-      arguments = {2 => 2, 3 => 3, 4 => 1}
-      expect(described_class.process_premium_services_hash(arguments)).to eq({"2" => 2, "3" => 3, "4" => 1})
+  describe '#process_premium_services_hash' do
+    it 'return hash with stringified keys when no bundle premium service passed' do
+      arguments = { 2 => 2, 3 => 3, 4 => 1 }
+      expect(described_class.process_premium_services_hash(arguments)).to eq('2' => 2, '3' => 3, '4' => 1)
     end
 
-    it "return multiplied values of bundled service" do
-      arguments = {5 => 1, 6 => 1, 7 => 0}
-      expect(described_class.process_premium_services_hash(arguments)).to eq({"3" => 15})
+    it 'return multiplied values of bundled service' do
+      arguments = { 5 => 1, 6 => 1, 7 => 0 }
+      expect(described_class.process_premium_services_hash(arguments)).to eq('3' => 15)
     end
   end
 

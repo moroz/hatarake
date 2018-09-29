@@ -27,8 +27,7 @@
 
 **Service Recipient (or Employer)** &mdash; a natural person of age that owns an Account and uses services provided electronically by the Service Provider.
 
-**Services** &mdash; all services provided electronically by the Service Provider for Users and Service Recipient, in accordance with the Terms of Service.  
-A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1) (only available in Polish,) which constitutes an integral part of this document.
+**Services** &mdash; all services provided electronically by the Service Provider for Users and Service Recipient, in accordance with the Terms of Service. A list and description of Services is included in the [**Appendix 1**](/regulamin/zalacznik1) (only available in Polish,) which constitutes an integral part of this document.
 
 **Registration form** &mdash; the form filled in by the User with the goal of creating an Account.
 
@@ -127,8 +126,7 @@ A list and description of Services is included in the [**Appendix 1**](/regulami
      e. using the Services in any way that is indecent, illegal, or which violates the personality rights of third parties, or the legitimate interest of the Service Provider,
 
 7. The Service Provider reserves the right to:
-    
-     a. block the access to any resources of the Users or Service Recipients containing erotic or pornographic material, containing illegal software or any information on how to obtain it, or other material that is indecent, illegal, or which violates the personality rights of third parties, or the legitimate interest of the Service Provider, if reliable and justified information about it is obtained.
+        a. block the access to any resources of the Users or Service Recipients containing erotic or pornographic material, containing illegal software or any information on how to obtain it, or other material that is indecent, illegal, or which violates the personality rights of third parties, or the legitimate interest of the Service Provider, if reliable and justified information about it is obtained.
 
      b. remove any content shared by the Service Recipient on the Website, if that content violates any regulations of this document.
 
@@ -311,8 +309,7 @@ A list and description of Services is included in the [**Appendix 1**](/regulami
 ## The deletion of offers and banning of users.
 
 1. The Service Provider reserves the right to remove the job offers of a user in the following cases:
-  
-  - when the user violates the regulations of the Terms of Service,
+   - when the user violates the regulations of the Terms of Service,
 
   - when the user advertises a competitive Website,
 

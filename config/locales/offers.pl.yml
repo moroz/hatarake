@@ -124,15 +124,15 @@ pl:
       remaining: "Do wykorzystania:"
 
       destructive_action_warning: "Tej czynności nie da się cofnąć. Upewnij się, że wybrano właściwe oferty."
-    
+
     poland:
       heading: Praca w Polsce
-      meta_description: "Oferty pracy Polska: dolnośląskie, mazowieckie, małópolskie, śląskie, pomorskie, łódzkie, lubuskie. 
-                        Oferty pracy dla opiekunek osób starszych, sprawdź!"
+      meta_description: "Oferty pracy Polska: dolnośląskie, mazowieckie, małópolskie, śląskie, pomorskie, łódzkie, lubuskie.
+                         Oferty pracy dla opiekunek osób starszych, sprawdź!"
     abroad:
       heading: Praca za granicą
-      meta_description: "Ciekawe oferty pracy za granicą, UE bez języka: Holandia, Niemcy, Belgia, Francja. Praca na magazynie. 
-                        Opiekunka osób starszych. Praca za granicą czeka na Ciebie!"
+      meta_description: "Ciekawe oferty pracy za granicą, UE bez języka: Holandia, Niemcy, Belgia, Francja. Praca na magazynie.
+                         Opiekunka osób starszych. Praca za granicą czeka na Ciebie!"
     popular_countries: "Najpopularniejsze kraje"
     popular_voivodeships: "Najpopularniejsze województwa"
 
@@ -235,7 +235,7 @@ pl:
             title:
               too_short: "jest za krótki (przynajmniej %{count} znaków)."
               too_long: "jest za długi (max. %{count} znaków)."
-          
+
     models:
       offer: oferty
       company: profilu pracodawcy
