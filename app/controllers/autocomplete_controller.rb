@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AutocompleteController < ApplicationController
   def skills
     autocomplete(Skill)

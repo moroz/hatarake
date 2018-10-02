@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Candidate offer application' do
@@ -10,7 +12,7 @@ RSpec.describe 'Candidate offer application' do
       visit jobs_abroad_path
     end
 
-    it "creates an Application" do
+    it 'creates an Application' do
       expect(page).to have_selector(dom_id(offer))
       click_link offer.title
       expect(current_path).to eq(offer_path(offer))
@@ -23,7 +25,7 @@ RSpec.describe 'Candidate offer application' do
     end
   end
 
-  context "when Candidate has no CandidateProfile" do
+  context 'when Candidate has no CandidateProfile' do
     let(:no_profile_candidate) { FactoryBot.create(:candidate, :only_login_credentials) }
 
     before do
@@ -31,11 +33,11 @@ RSpec.describe 'Candidate offer application' do
       visit new_offer_application_path(offer)
     end
 
-    it "redirects to edit_candidate_profile_path" do
+    it 'redirects to edit_candidate_profile_path' do
       expect(current_path).to eq(edit_candidate_profile_path)
     end
 
-    it "displays an alert callout" do
+    it 'displays an alert callout' do
       expect(page).to have_selector('.alert')
     end
   end

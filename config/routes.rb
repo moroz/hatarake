@@ -21,12 +21,13 @@ Rails.application.routes.draw do
   get '/jobs/outdated_offer', to: 'offers#no_offer_found'
   get '/premium', to: 'products#index'
   get '/subscribe', to: 'newsletter_subscriptions#new', as: :new_newsletter_subscription
-  resource :newsletter_subscription, only: [:create, :destroy], path: '/subscribe'
+  resource :newsletter_subscription, only: %i[create destroy], path: '/subscribe'
   get '/unsubscribe', to: 'newsletter_subscriptions#unsubscribe'
   get '/regulamin', to: 'pages#tos'
   get '/regulamin/zalacznik1', to: 'pages#appendix1'
   get '/rodo', to: 'pages#rodo'
   get '/contact', to: 'pages#contact'
+  get '/platnosci', to: 'pages#dotpay_payments', as: :payments
 
   resources :offers, path: '/jobs', except: :index do
     member do
@@ -45,14 +46,14 @@ Rails.application.routes.draw do
   post '/jobs/send_emai/:offer_id', to: 'offer_saves#email', as: :offer_email
   delete '/unfavourite_offer', to: 'offer_saves#destroy', as: :destroy_offer_save
 
-  resource :cart, only: [:show, :destroy], controller: 'cart' do
+  resource :cart, only: %i[show destroy], controller: 'cart' do
     patch :finalize
   end
-  resources :cart_items, only: [:create, :edit, :update, :destroy]
+  resources :cart_items, only: %i[create edit update destroy]
 
   get '/orders/place', to: 'orders#place', as: :place_order
 
-  resources :orders, only: [:index, :create, :show, :destroy] do
+  resources :orders, only: %i[index create show destroy] do
     get :payment
     get :thank_you
   end
@@ -62,11 +63,11 @@ Rails.application.routes.draw do
 
   resources :resumes
   get 'candidate/edit_skills', to: 'candidates#edit_skills'
-  get 'candidate/edit_profile', to: "candidates#edit", as: :edit_candidate_profile
+  get 'candidate/edit_profile', to: 'candidates#edit', as: :edit_candidate_profile
   resource :profile, only: :show
   resource :dashboard, only: :show
-  resources :education_items, except: [:new, :edit]
-  resources :work_items, except: [:new, :edit]
+  resources :education_items, except: %i[new edit]
+  resources :work_items, except: %i[new edit]
 
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
@@ -84,14 +85,18 @@ Rails.application.routes.draw do
       get 'trovit_feed.xml', to: 'feed#trovit'
     end
     post '/confirm_lfw', to: 'candidates#confirm_lfw'
+    scope '/hrlink' do
+      get 'import', to: 'import#hrlink'
+      get 'region_list', to: 'feed#region_list'
+    end
   end
 
   devise_scope :candidate do
     get '/sign_up', to: 'candidates/registrations#new'
   end
 
-  devise_for :candidates, controllers: { 
-    omniauth_callbacks: "candidates/omniauth_callbacks",
+  devise_for :candidates, controllers: {
+    omniauth_callbacks: 'candidates/omniauth_callbacks',
     registrations: 'candidates/registrations', sessions: 'sessions'
   }
   devise_for :companies, controllers: { registrations: 'companies/registrations', sessions: 'sessions' }
@@ -100,22 +105,22 @@ Rails.application.routes.draw do
     get :mailing_list, on: :collection
     resources :favourite_offers, only: [:index]
   end
-  get "favourite_offer/(:candidate_id)/(:offer_id)", to: "favourite_offers#create", as: "add_offer_to_favourites"
+  get 'favourite_offer/(:candidate_id)/(:offer_id)', to: 'favourite_offers#create', as: 'add_offer_to_favourites'
 
-  resources :companies, only: [:show, :index, :update, :edit] do
+  resources :companies, only: %i[show index update edit] do
     get :mailing_list, on: :collection
     resources :offers, only: [:index], controller: 'company_offers'
-    resources :blog_posts, only: [:show, :index, :create, :new], path: '/blog'
+    resources :blog_posts, only: %i[show index create new], path: '/blog'
     member do
       post :vote
     end
   end
-  resources :blog_posts, path: '/blog', only: [:show, :destroy, :edit, :update]
-  resources :skill_items, path: 'skills', only: [:create, :destroy]
-  resources :cv_items, path: 'cv_items', only: [:create, :destroy]
+  resources :blog_posts, path: '/blog', only: %i[show destroy edit update]
+  resources :skill_items, path: 'skills', only: %i[create destroy]
+  resources :cv_items, path: 'cv_items', only: %i[create destroy]
   get '/edit_avatar', to: 'avatars#new'
   get '/crop_avatar', to: 'avatars#crop'
-  resource :avatar, only: [:create, :update]
+  resource :avatar, only: %i[create update]
   root to: 'home#home'
-  get '*path', to: "application#error404"
+  get '*path', to: 'application#error404'
 end

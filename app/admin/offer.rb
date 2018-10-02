@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Offer do
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-  permit_params :views, :title, :description, :featured_until, :category_until, :highlight_until, :social_until, :special_until
-  menu label: "Offers"
-#
-# or
+  # See permitted parameters documentation:
+  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
+  #
+  permit_params :views, :title, :description, :featured_until, :category_until,
+                :highlight_until, :social_until, :special_until
+  menu label: 'Offers'
+  #
+  # or
   #
   scope :all, default: true
   scope :poland
@@ -15,13 +18,15 @@ ActiveAdmin.register Offer do
   scope :highlighted
 
   action_item :show, only: :show do
-    link_to "View on Website", offer_path(offer), target: '_blank'
+    link_to 'View on Website', offer_path(offer), target: '_blank'
   end
 
   action_item :index, only: :index do
-    str = link_to "View on Website", jobs_abroad_path, target: '_blank'
-    str += link_to "Increment all views", increment_all_views_admin_offers_path
-  end  
+    str = link_to 'View on Website', jobs_abroad_path, target: '_blank'
+    str += link_to 'Increment all views', increment_all_views_admin_offers_path
+    str += link_to 'Import from prowork', import_from_prowork_admin_offers_path
+    str
+  end
 
   member_action :increment_views, method: :patch do
     by = params[:by] || 10
@@ -29,6 +34,10 @@ ActiveAdmin.register Offer do
     respond_to do |f|
       f.js
     end
+  end
+
+  collection_action :import_from_prowork, method: :get do
+    Offer.all
   end
 
   collection_action :increment_all_views, method: :get do
@@ -47,7 +56,8 @@ ActiveAdmin.register Offer do
       str = content_tag :span, id: "offer_#{o.id}_views" do
         o.views.to_s
       end
-      str += link_to '+10', increment_views_admin_offer_path(id: o.id), method: :patch, class: 'increment-button', remote: true
+      str += link_to '+10', increment_views_admin_offer_path(id: o.id),
+                     method: :patch, class: 'increment-button', remote: true
       raw(str)
     end
     actions

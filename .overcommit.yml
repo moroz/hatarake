@@ -1,0 +1,98 @@
+PreCommit:
+  BerksfileCheck:
+    enabled: true
+
+  BundleCheck:
+    enabled: true
+
+  CoffeeLint:
+    enabled: true
+
+  CssLint:
+    enabled: true
+    exclude:
+      - vendor/assets/**/*
+      - coverage/**/*
+
+  EsLint:
+    enabled: false
+    exclude:
+      - vendor/assets/**/*
+
+  HamlLint:
+    enabled: true
+    exclude:
+      - vendor/assets/**/*
+
+  HardTabs:
+    enabled: true
+    exclude:
+      - vendor/assets/**/*
+      - coverage/**/*
+      - app/assets/images/*
+      - public/*
+
+  ImageOptim:
+    enabled: false
+    exclude:
+      - public/apple-touch-icon.png
+      - public/apple-touch-icon-precomposed.png
+      - coverage/**/*
+
+  JavaCheckstyle:
+    enabled: true
+
+  Jscs:
+    enabled: false
+
+  JsHint:
+    enabled: true
+    exclude:
+      - vendor/assets/**/*
+      - coverage/**/*
+
+  JsonSyntax:
+    enabled: true
+
+  LocalPathsInGemfile:
+    enabled: true
+
+  PryBinding:
+    enabled: true
+
+  RailsSchemaUpToDate:
+    enabled: true
+
+  RuboCop: &rubocop
+    enabled: true
+
+  # overcommit used 'Rubocop' hook name before 0.25.0 version
+  Rubocop:
+    <<: *rubocop
+
+  Scalastyle:
+    enabled: true
+
+  ScssLint:
+    enabled: true
+    exclude:
+      - vendor/assets/**/*
+      - coverage/**/*
+
+  ShellCheck:
+    enabled: false
+
+  TrailingWhitespace:
+    enabled: true
+    exclude:
+      - vendor/assets/**/*
+      - coverage/**/*
+
+  TravisLint:
+    enabled: true
+
+  XmlLint:
+    enabled: true
+
+  YamlSyntax:
+    enabled: false

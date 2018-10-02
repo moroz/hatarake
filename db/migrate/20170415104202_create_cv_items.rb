@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCvItems < ActiveRecord::Migration[5.0]
   def change
     create_table :cv_items do |t|

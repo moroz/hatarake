@@ -42,8 +42,7 @@ indywidulanymi pakietami staramy się rozwiązywać tak szybko, jak to możliwe.
 
 <div class="callout notice text-center">
 Z okazji uruchomienia serwisu <a href="https://www.injobs.pl">www.injobs.pl</a> oferujemy atrakcyjne ceny
-usług dodatkowych i wyróżnień.<br/>  
-Promocja jest ważna do odwołania.</br>
+usług dodatkowych i wyróżnień.<br/> Promocja jest ważna do odwołania.</br>
 Pozdrawiamy – Zespół InJobs.pl
 </div>
 
@@ -111,12 +110,9 @@ ofert.
 
 1\. Przelewy za usługi płatne prosimy dokonywać na konto spółki :
 
-InJobs.pl Sp. z o.o  
-ul. Sobczyńskiego 2c  
-11-700 Mrągowo
+InJobs.pl Sp. z o.o ul. Sobczyńskiego 2c 11-700 Mrągowo
 
-NIP 742-22-56-702  
-KRS 0000685786
+NIP 742-22-56-702 KRS 0000685786
 
 ING Bank Śląski Spółka Akcyjna, ul. Sokolska 34, 40-086 Katowice
 
@@ -124,8 +120,7 @@ Konto złotówkowe : 41 1050 1764 1000 0090 8020 2782
 
 Konto walutowe € (euro) : 19 1050 1764 1000 0090 8020 2790
 
-2\. Płatności przez Serwis [www.injobs.pl](http://www.injobs.pl) 
-obsługiwane są przez firmy:
+2\. Płatności przez Serwis [www.injobs.pl](http://www.injobs.pl)obsługiwane są przez firmy:
 
 - Dotpay S.A. z  siedzibą w Krakowie, przy ul. Wielickiej 72, 30-552
 Kraków, NIP 6342661860, REGON 240770255,  wpisaną do rejestru

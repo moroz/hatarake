@@ -1,7 +1,8 @@
-%p
+%p.footer__menu
   .payment_icon.payment_icon--visa
   .payment_icon.payment_icon--mastercard
   .payment_icon.payment_icon--paypal
+  .payment_icon.payment_icon--dotpay
   %br
-  %small= t('application.footer.payments_powered_by')
+  = link_to t('application.footer.payments'), payments_path, style: 'color:white;'
 

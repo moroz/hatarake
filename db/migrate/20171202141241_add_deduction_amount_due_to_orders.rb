@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddDeductionAmountDueToOrders < ActiveRecord::Migration[5.1]
   def change
     add_column :orders, :deduction, :decimal, precision: 6, scale: 2

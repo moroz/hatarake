@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-
-RSpec.describe "Company adds Offer" do
+RSpec.describe 'Company adds Offer' do
   let(:company) { Company.first || FactoryBot.create(:company) }
   let!(:country) { FactoryBot.create(:country) }
 
-  describe "offer creation" do
+  describe 'offer creation' do
     before do
       login_as(company, scope: :company)
       visit root_path
@@ -14,7 +15,7 @@ RSpec.describe "Company adds Offer" do
     subject { page.body }
     it { is_expected.to have_content I18n.t('nav.add_offer') }
 
-    it "creates a new offer with correct attributes" do
+    it 'creates a new offer with correct attributes' do
       FactoryBot.create(:country, :poland)
       click_link I18n.t('nav.add_offer'), match: :first
       expect(current_path).to eq(new_offer_path)
@@ -44,11 +45,9 @@ RSpec.describe "Company adds Offer" do
       expect(page.body).to have_selector(:link_or_button, I18n.t('actions.publish'))
     end
 
-    xit "publishes when clicked" do
+    xit 'publishes when clicked' do
       click_link_or_button I18n.t('actions.publish'), match: :first
       expect(offer.reload).to be_published
     end
-
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 xml.instruct!
 xml.trovit do
   @offers.each do |offer|

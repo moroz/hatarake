@@ -111,7 +111,7 @@ pl:
 
     create:
       success: "Twoje CV zostało zapisane."
-    
+
     destroy:
       success: "Twoje CV zostało usunięte."
 

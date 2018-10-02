@@ -41,9 +41,9 @@ class Order < ApplicationRecord
     hash.each do |k, v|
       v = v.to_i
       case k
-      when '5'; hash['3'] += 5 * v
-      when '6'; hash['3'] += 10 * v
-      when '7'; hash['3'] += 15 * v
+      when '5' then hash['3'] += 5 * v
+      when '6' then hash['3'] += 10 * v
+      when '7' then hash['3'] += 15 * v
       end
     end
     hash.except!('3') if (hash['3'].to_i).zero?

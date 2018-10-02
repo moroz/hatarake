@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payment < ApplicationRecord
   validates_presence_of :currency, :description
   belongs_to :payer, class_name: 'Company'

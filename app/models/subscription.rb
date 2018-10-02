@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Subscription < ApplicationRecord
   # This is a class used to order Premium Employer Bundles
   # and nothing else, really
@@ -13,9 +15,9 @@ class Subscription < ApplicationRecord
   scope :paid, -> { where('paid') }
   scope :unpaid, -> { where('NOT paid') }
 
-  PRICES = {'eur' => 12.30, 'pln' => 49.19}
+  PRICES = { 'eur' => 12.30, 'pln' => 49.19 }.freeze
   DURATION = 2592000 # 30 days
-  PAYMENT_TITLE = "InJobs.pl Premium Employer "
+  PAYMENT_TITLE = 'InJobs.pl Premium Employer '
 
   def active?
     !!valid_until && valid_until > Time.now
@@ -23,14 +25,14 @@ class Subscription < ApplicationRecord
 
   def paid!
     return false if paid
-    if company.has_valid_subscription?
-      self.valid_until = company.last_subscription.valid_until + duration
-    else
-      self.valid_until = Time.now + duration
-    end
+    self.valid_until = if company.has_valid_subscription?
+                         company.last_subscription.valid_until + duration
+                       else
+                         Time.now + duration
+                       end
     self.paid = true
     self.paid_at = Time.now
-    self.save!
+    save!
     true
   end
 
@@ -39,5 +41,4 @@ class Subscription < ApplicationRecord
   def set_price
     self.price ||= PRICES[currency]
   end
-
 end

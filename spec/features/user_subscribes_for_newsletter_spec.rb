@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User subscribes for newsletter' do
@@ -25,7 +27,6 @@ RSpec.describe 'User subscribes for newsletter' do
 
     context 'when non-existent e-mail is input' do
       it "doesn't change NewsletterSubscription count" do
-
       end
     end
   end

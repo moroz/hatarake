@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AutocompleteHelper
   def highlight_search_term(str, term, highlight_class: 'ui-state-highlight')
     regex = Regexp.new("(#{term})", Regexp::IGNORECASE)

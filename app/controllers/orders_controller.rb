@@ -23,9 +23,7 @@ class OrdersController < ApplicationController
     @order.cart = current_cart
     @order.user = current_user
     @order.transaction do
-      if @order.currency == 'pln'
-        @order.deduction = current_user.reduce_balance(current_cart.total)
-      end
+      @order.deduction = current_user.reduce_balance(current_cart.total) if @order.currency == 'pln'
       @order.save!
       @order.cart.finalize!
     end
@@ -78,10 +76,10 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order)
           .permit(:currency, :invoice, :polish_taxpayer,
-                 billing_address_attributes: [
-                   :first_name, :last_name, :street, :house_no,
-                   :apt_no, :postal_code, :city, :nip
-                 ])
+                  billing_address_attributes: %i[
+                    first_name last_name street house_no
+                    apt_no postal_code city nip
+                  ])
   end
 
   def set_cart

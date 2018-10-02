@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Devise.setup do |config|
   config.secret_key = Rails.application.secrets.devise_secret_key if Rails.env.production? || Rails.env.staging?
   config.mailer_sender = 'InJobs.pl <no-reply@injobs.pl>'
@@ -14,9 +16,9 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  require "omniauth-facebook"
+  require 'omniauth-facebook'
   OmniAuth.config.logger = Rails.logger
   config.omniauth :facebook, Rails.application.secrets.FB_APP_ID, Rails.application.secrets.FB_SECRET_KEY,
-    callback_url: "https://injobs.pl/api/users/auth/facebook/callback", token_params: { parse: :json }
+                  callback_url: 'https://injobs.pl/api/users/auth/facebook/callback', token_params: { parse: :json }
   config.omniauth_path_prefix = '/api/users/auth'
 end

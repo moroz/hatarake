@@ -33,7 +33,7 @@ class Admin::AvatarsController < Admin::BaseController
       end
     else
       respond_to do |f|
-        f.html { redirect_to edit_admin_avatar_path(id: company.to_param), warning: "Wystąpił błąd" }
+        f.html { redirect_to edit_admin_avatar_path(id: company.to_param), warning: 'Wystąpił błąd' }
         f.js { render_js_errors_for(avatar) }
       end
     end

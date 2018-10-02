@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddRequirementsAndFieldIdToOffers < ActiveRecord::Migration[5.1]
   def change
     add_column :offers, :req_lang_1, :integer, limit: 2

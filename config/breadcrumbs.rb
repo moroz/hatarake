@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 crumb :root do
-  link "Home", root_path
+  link 'Home', root_path
 end
 
 crumb :jobs_abroad do
@@ -66,7 +68,7 @@ crumb :orders do
 end
 
 crumb :admin_dashboard do
-  link "Panel administracyjny", admin_dashboard_path
+  link 'Panel administracyjny', admin_dashboard_path
 end
 
 crumb :admin_orders do
@@ -94,7 +96,7 @@ crumb :tos do
 end
 
 crumb :tos_appendix do
-  link "Załącznik 1"
+  link 'Załącznik 1'
   parent :tos
 end
 

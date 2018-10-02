@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CartItemsController < ApplicationController
   def create
     current_cart.add_item(cart_item_params[:product_id], cart_item_params[:quantity])
@@ -15,7 +17,7 @@ class CartItemsController < ApplicationController
         f.html { redirect_to cart_path }
       end
     else
-      redirect_to cart_path, alert: "The item could not be removed."
+      redirect_to cart_path, alert: 'The item could not be removed.'
     end
   end
 

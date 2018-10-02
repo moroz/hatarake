@@ -26,16 +26,16 @@ class User < ApplicationRecord
   after_validation :add_http_to_website
 
   def company?
-    self.type == "Company"
+    type == 'Company'
   end
 
   def candidate?
-    self.type == "Candidate"
+    type == 'Candidate'
   end
 
   def set_locale(locale = I18n.locale)
     self.locale = locale
-    self.save if self.persisted?
+    save if persisted?
   end
 
   def renew_premium_employer(duration)
@@ -85,5 +85,4 @@ class User < ApplicationRecord
   def add_http_to_website
     self.website = add_http_to_url(website)
   end
-
 end

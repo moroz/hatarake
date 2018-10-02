@@ -11,7 +11,7 @@ en:
     registrations:
       edit:
         title: Edit account credentials
-    
+
     edit:
       looking_for_work: Are you looking for work?
       birth_date: 'Date of birth:'
@@ -99,7 +99,7 @@ en:
     create:
       success: "Your resumé has been saved."
 
-    destroy: 
+    destroy:
       success: "Your resumé has been deleted."
 
     download: "Download in %{ext} format"

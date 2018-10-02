@@ -9,6 +9,7 @@ AllCops:
     - 'spec/fixtures/**/*'
     - 'db/functional_test_data.rb'
     - 'db/schema.rb'
+    - 'bin/*'
 
 Lint/HandleExceptions:
   Exclude:
@@ -33,3 +34,34 @@ Metrics/BlockLength:
     - '**/*.rake'
     - 'spec/**/*.rb'
     - 'config/**/*.rb'
+    - 'app/admin/*'
+    - 'Guardfile'
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Lint/UselessAssignment:
+   Exclude:
+    - 'app/models/cv_item.rb'
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Performance/RedundantMatch:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"

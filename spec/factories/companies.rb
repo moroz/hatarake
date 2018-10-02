@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :company do
     name { Faker::Company.name }
     email { Faker::Internet.email }
-    password "foobar2000"
+    password 'foobar2000'
     website { Faker::Internet.url }
     confirmed_at Time.now
     premium_services nil

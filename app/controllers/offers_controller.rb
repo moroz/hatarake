@@ -5,12 +5,12 @@ class OffersController < ApplicationController
   helper_method :offers
 
   before_action :set_country_list, only: %i[new edit abroad]
-  before_action :set_province_list, only: [:new, :edit]
-  authorize_resource except: [:index, :poland, :abroad, :no_offer_found]
+  before_action :set_province_list, only: %i[new edit]
+  authorize_resource except: %i[index poland abroad no_offer_found]
 
-  invisible_captcha only: [:create, :update]
+  invisible_captcha only: %i[create update]
 
-  SEARCH_PARAMS = %i( cid pid q smin cur )
+  SEARCH_PARAMS = %i[cid pid q smin cur].freeze
   CATEGORY_FEATURED_LIMIT = 5
 
   def new
@@ -45,13 +45,13 @@ class OffersController < ApplicationController
     end
     unless offer.company.reduce_premium_services(method, 1)
       current_cart.add_item(Product.find_by(backend_name: method).id, 1, [offer.id])
-      redirect_to cart_path and return
+      redirect_to(cart_path) && return
     end
     offer.publish unless offer.published?
     if offer.add_premium(params[:method])
       redirect_to my_offers_path, notice: t("offers.promote.success.#{method}")
     else
-      redirect_to promote_offer_path(offer), alert: t("offers.promote.error")
+      redirect_to promote_offer_path(offer), alert: t('offers.promote.error')
     end
   end
 
@@ -59,7 +59,8 @@ class OffersController < ApplicationController
   # TODO: Write a stored procedure to get random records
 
   def poland
-    @offers = Offer.with_associations.poland.published_or_owned_by(current_user).featured_first.advanced_search(params).group(:id)
+    @offers = Offer.with_associations.poland.published_or_owned_by(current_user)
+                   .featured_first.advanced_search(params).group(:id)
     @total_count = @offers.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
@@ -77,7 +78,8 @@ class OffersController < ApplicationController
   end
 
   def abroad
-    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user).featured_first.advanced_search(params).group(:id)
+    @offers = Offer.with_associations.abroad.published_or_owned_by(current_user)
+                   .featured_first.advanced_search(params).group(:id)
     @total_count = @offers.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
@@ -95,9 +97,7 @@ class OffersController < ApplicationController
   end
 
   def show
-    if request.path != offer_path(offer)
-      redirect_to offer, status: :moved_permanently
-    end
+    redirect_to offer, status: :moved_permanently if request.path != offer_path(offer)
     offer.increment!(:views) unless offer.company_id == current_user&.id
     @company = offer.company
     @title = t('.title') + offer.title + ', ' + offer.locations.first.only_city_format
@@ -110,15 +110,16 @@ class OffersController < ApplicationController
     @fields = Field.all
     render 'new'
   end
-  
+
   def create
     offer.company = current_company
-    if params["offer"]["locations_attributes"].nil?
-      flash[:alert] = "Update your browser and then try post your offer again. If it won't help contact with administrator."
-      redirect_to root_path and return
+    if params['offer']['locations_attributes'].nil?
+      flash[:alert] = "Update your browser and then try post your offer again.
+          If it won't help contact with administrator."
+      redirect_to(root_path) && return
     end
     if offer.save
-      flash[:success] = "Your offer has been saved."
+      flash[:success] = 'Your offer has been saved.'
       redirect_to offer
     else
       respond_to do |f|
@@ -133,8 +134,8 @@ class OffersController < ApplicationController
 
   def update
     if offer.update(offer_params)
-      offer.remove_locations(offer_params["locations_attributes"])
-      flash[:success] = "The offer was updated."
+      offer.remove_locations(offer_params['locations_attributes'])
+      flash[:success] = 'The offer was updated.'
       redirect_to offer
     else
       respond_to do |f|
@@ -149,15 +150,13 @@ class OffersController < ApplicationController
   end
 
   def batch_action
-    if params[:offer_ids].blank?
-      redirect_to my_offers_path, alert: t('offers.my_offers.no_offers_selected') and return
-    end
+    redirect_to(my_offers_path, alert: t('offers.my_offers.no_offers_selected')) && return if params[:offer_ids].blank?
     @offers = Offer.where(id: params[:offer_ids])
-    if params.key?('apply_bulk_action_top')
-      update_action = params['update_action_top']
-    else
-      update_action = params['update_action']
-    end
+    update_action = if params.key?('apply_bulk_action_top')
+                      params['update_action_top']
+                    else
+                      params['update_action']
+                    end
     case update_action
     when 'publish'
       @offers.publish_all
@@ -167,34 +166,33 @@ class OffersController < ApplicationController
       offers = @offers.add_premium(update_action)
       if offers == false
         current_cart.add_item(Product.find_by(backend_name: update_action).id, @offers.count, params[:offer_ids])
-        redirect_to cart_path and return
+        redirect_to(cart_path) && return
       end
     else
-      raise ActionController::BadRequest.new, "Unrecognized action"
+      raise ActionController::BadRequest.new, 'Unrecognized action'
     end
     redirect_to my_offers_path
   end
 
   def unpublish
     offer.unpublish
-    redirect_to offer, notice: "The offer has been unpublished."
+    redirect_to offer, notice: 'The offer has been unpublished.'
   end
 
   def publish
     offer.publish
-    redirect_to offer, notice: "The offer has been published."
+    redirect_to offer, notice: 'The offer has been published.'
   end
 
   def destroy
     title = offer.title
-    if offer.destroy
-      flash[:success] = "Offer \"#{title}\" has been deleted."
-      redirect_to my_offers_path
-    end
+    return unless offer.destroy
+    flash[:success] = "Offer \"#{title}\" has been deleted."
+    redirect_to my_offers_path
   end
 
   def no_offer_found
-    if current_locale.to_s  == 'pl'
+    if current_locale.to_s == 'pl'
       get_featured_offers(:poland)
     else
       get_featured_offers(:aborad)
@@ -208,20 +206,18 @@ class OffersController < ApplicationController
 
   def search_params_present?
     SEARCH_PARAMS.each do |key|
-      if params[key].present?
-        return true
-      end
+      return true if params[key].present?
     end
     false
   end
 
   def get_featured_offers(scope, ids = nil, lim = CATEGORY_FEATURED_LIMIT)
     @featured = Offer.published.with_associations.category_featured.random_order.limit(lim).group(:id)
-    if scope == :poland
-      @featured = @featured.poland
-    else
-      @featured = @featured.abroad
-    end
+    @featured = if scope == :poland
+                  @featured.poland
+                else
+                  @featured.abroad
+                end
     @featured = @featured.where('offers.id NOT IN (?)', ids) if ids.present?
   end
 
@@ -247,6 +243,10 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email, :contact_phone, :apply_on_website, :application_url, :description, :hourly_wage_min, :hourly_wage_max, :field_id, :req_lang_1, :req_lang_2, locations_attributes: [:id, :country_id, :province_id, :city, :_destroy])
+    params.require(:offer).permit(:title, :currency, :salary_min, :salary_max, :contact_email,
+                                  :contact_phone, :apply_on_website, :application_url,
+                                  :description, :hourly_wage_min, :hourly_wage_max,
+                                  :field_id, :req_lang_1, :req_lang_2,
+                                  locations_attributes: %i[id country_id province_id city _destroy])
   end
 end

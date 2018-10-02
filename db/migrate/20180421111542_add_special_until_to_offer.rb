@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AddSpecialUntilToOffer < ActiveRecord::Migration[5.1]
   def change
-  	add_column :offers, :special_until, :date
+    add_column :offers, :special_until, :date
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCandidateProfiles < ActiveRecord::Migration[5.0]
   def change
     create_table :candidate_profiles do |t|
