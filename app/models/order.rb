@@ -46,8 +46,8 @@ class Order < ApplicationRecord
       when '7'; hash['3'] += 15 * v
       end
     end
-    hash.except!('3') if hash['3'] == 0
-    hash.except!('5','6','7')
+    hash.except!('3') if (hash['3'].to_i).zero?
+    hash.except!('5', '6', '7')
   end
 
   def paid?
