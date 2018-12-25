@@ -28,6 +28,7 @@ class Order < ApplicationRecord
 
   def paid!
     raise 'Order is already paid' if paid?
+
     transaction do
       update!(paid_at: Time.now)
       user.add_premium_services(to_h)
@@ -36,8 +37,9 @@ class Order < ApplicationRecord
 
   def self.process_premium_services_hash(hash)
     raise ArgumentError unless hash.is_a?(Hash)
+
     hash.stringify_keys!
-    hash['3'] = 0 if hash['3'].nil?
+    hash['3'] = hash['3'].to_i
     hash.each do |k, v|
       v = v.to_i
       case k
@@ -46,7 +48,7 @@ class Order < ApplicationRecord
       when '7' then hash['3'] += 15 * v
       end
     end
-    hash.except!('3') if (hash['3'].to_i).zero?
+    hash.except!('3') if hash['3'].zero?
     hash.except!('5', '6', '7')
   end
 
