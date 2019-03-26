@@ -7,8 +7,8 @@ en:
   terms_of_service: "Terms of service"
   rodo_accept: "I declare that I have read website privacy policy - RODO (<a href=\"/rodo\">More</a>)"
   and_or: "and/or"
-  fb_sign_up: "Sign Up with Facebook"
-  fb_sign_in: "Sign In with Facebook"
+  fb_sign_up: "Continue with Facebook"
+  fb_sign_in: "Continue with Facebook"
 
   currency_range:
     min: "%{min}+ %{currency}"

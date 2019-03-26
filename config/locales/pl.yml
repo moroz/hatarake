@@ -8,8 +8,8 @@ pl:
   terms_of_service: "Regulamin"
   rodo_accept: "Oświadczam, że zapoznałem/am się z polityką prywatności - RODO (<a href=\"/rodo\">Więcej</a>)"
   and_or: "i/lub"
-  fb_sign_up: "Zarejestruj się poprzez Facebooka"
-  fb_sign_in: "Zaloguj się poprzez Facebooka"
+  fb_sign_up: "Kontynuuj z Facebook"
+  fb_sign_in: "Kontynuuj z Facebook"
 
   unauthorized:
     default: "Nie jesteś upoważniony do wyświetlania tej strony."
