@@ -13,15 +13,6 @@ class Candidates::RegistrationsController < Devise::RegistrationsController
     respond_with resource
   end
 
-  def create
-    super
-    redirect unless resource.save # TODO: Create method which do everything below
-    @profile = Profile.new(resource)
-    @profile.first_name = sign_up_params['profile_attributes']['first_name']
-    @profile.last_name = sign_up_params['profile_attributes']['last_name']
-    @profile.save!(validate: false)
-  end
-
   protected
 
   def configure_sign_up_params
