@@ -26,3 +26,6 @@ public/assets/**
 # SimpleCov test coverage reports
 coverage
 tags
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key

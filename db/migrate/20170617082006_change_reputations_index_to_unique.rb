@@ -16,7 +16,8 @@
 #  limitations under the License.
 #
 
-class ChangeReputationsIndexToUnique < ActiveRecord::Migration
+class ChangeReputationsIndexToUnique < ActiveRecord::Migration[5.0]
+
   def self.up
     remove_index :rs_reputations, name: 'index_rs_reputations_on_reputation_name_and_target'
     add_index :rs_reputations, %i[reputation_name target_id target_type],

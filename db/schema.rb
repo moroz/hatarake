@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20180720105718) do
   enable_extension "plpgsql"
   enable_extension "hstore"
 
-  create_table "active_admin_comments", id: :serial, force: :cascade do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20180720105718) do
     t.boolean "looking_for_work"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "sex", limit: 2, comment: "ISO/IEC 5218-compliant sex field, 1 male, 2 female"
+    t.integer "sex", limit: 2, comment: "ISO/IEC 5218-compliant\n               sex field, 1 male, 2 female"
     t.datetime "lfw_at"
     t.string "profession_name"
     t.index ["user_id"], name: "index_candidate_profiles_on_user_id"
@@ -128,8 +128,8 @@ ActiveRecord::Schema.define(version: 20180720105718) do
   end
 
   create_table "companies_fields", id: false, force: :cascade do |t|
-    t.integer "company_id", null: false
-    t.integer "field_id", null: false
+    t.bigint "company_id", null: false
+    t.bigint "field_id", null: false
     t.index ["company_id", "field_id"], name: "index_companies_fields_on_company_id_and_field_id"
   end
 
@@ -232,8 +232,8 @@ ActiveRecord::Schema.define(version: 20180720105718) do
   end
 
   create_table "offers_skills", id: false, force: :cascade do |t|
-    t.integer "offer_id", null: false
-    t.integer "skill_id", null: false
+    t.bigint "offer_id", null: false
+    t.bigint "skill_id", null: false
     t.index ["offer_id"], name: "index_offers_skills_on_offer_id"
     t.index ["skill_id"], name: "index_offers_skills_on_skill_id"
   end

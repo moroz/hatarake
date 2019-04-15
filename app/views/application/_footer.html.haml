@@ -7,14 +7,22 @@
           &bull;
           = link_to raw(t('.find_us_on_facebook') + fa_icon('facebook-official')), 'https://www.facebook.com/InJobspl-150172078909014/', target: '_blank'
       %nav.footer__menu
-        = link_to t('nav.contact'), contact_path
-        &bull;
-        = link_to t('.subscribe'), new_newsletter_subscription_path
-        &bull;
-        = link_to t('.unsubscribe'), unsubscribe_path
-        &bull;
-        = link_to t('.terms_of_service'), regulamin_path
-        &bull;
-        = link_to "RODO", rodo_path
+        .columns-medium-12
+          = link_to t('nav.contact'), contact_path
+          &bull;
+          = link_to t('.subscribe'), new_newsletter_subscription_path
+          &bull;
+          = link_to t('.unsubscribe'), unsubscribe_path
+          &bull;
+          = link_to t('.terms_of_service'), regulamin_path
+          &bull;
+          = link_to "RODO", rodo_path
+        .columns-medium-12
+          = link_to 'Jooble', 'https://jooble.com/'
+          &bull;
+          = link_to 'Jobsora', 'https://jobsora.com'
     .columns.medium-4
       = render 'payments'
+
+
+

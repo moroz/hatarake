@@ -16,7 +16,7 @@
 #  limitations under the License.
 ##
 
-class CreateReputationSystem < ActiveRecord::Migration
+class CreateReputationSystem < ActiveRecord::Migration[5.0]
   def self.up
     create_table :rs_evaluations do |t|
       t.string      :reputation_name

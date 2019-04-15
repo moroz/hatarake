@@ -16,7 +16,7 @@
 #  limitations under the License.
 ##
 
-class AddReputationsIndex < ActiveRecord::Migration
+class AddReputationsIndex < ActiveRecord::Migration[5.0]
   def self.up
     add_index :rs_reputations, %i[reputation_name target_id target_type],
               name: 'index_rs_reputations_on_reputation_name_and_target'
