@@ -9,6 +9,7 @@ pl:
       unsubscribe: 'Anuluj subskrypcję'
       terms_of_service: Regulamin
 
-      find_us_on_facebook: "Znajdź nas na "
+      find_us_on_facebook: 'Znajdź nas na '
 
-      payments: "Płatności online(Dotpay)"
+      payments: 'Płatności online(Dotpay)'
+      partners: 'Nasi partnerzy:'

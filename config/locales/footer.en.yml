@@ -10,6 +10,7 @@ en:
       unsubscribe: Cancel subscription
       terms_of_service: Terms of Service
 
-      find_us_on_facebook: "Find us on "
+      find_us_on_facebook: 'Find us on '
 
-      payments: "Online payments(Dotpay)"
+      payments: 'Online payments(Dotpay)'
+      partners: 'Our Partners:'

@@ -1,11 +1,24 @@
 %footer.footer
   .row
-    .columns.medium-8
+    .columns.medium-3
       %p
         %nav.footer__menu
-          %strong InJobs.pl sp. z o.o.
-          &bull;
-          = link_to raw(t('.find_us_on_facebook') + fa_icon('facebook-official')), 'https://www.facebook.com/InJobspl-150172078909014/', target: '_blank'
+          .col-medium-12
+            %strong= t('.partners')
+          .col-medium-12
+            = link_to 'https://jooble.com' do
+              .partner_icon.partner_icon--jooble
+            = link_to 'https://jobsora.com' do
+              .partner_icon.partner_icon--jobsora
+    .columns.medium-3
+      = render 'payments'
+    .columns.medium-6
+      %p
+        %nav.footer__menu
+          %strong
+            InJobs.pl sp. z o.o.
+            &bull;
+            = link_to raw(t('.find_us_on_facebook') + fa_icon('facebook-official lg')), 'https://www.facebook.com/InJobspl-150172078909014/', target: '_blank'
       %nav.footer__menu
         .columns-medium-12
           = link_to t('nav.contact'), contact_path
@@ -17,12 +30,6 @@
           = link_to t('.terms_of_service'), regulamin_path
           &bull;
           = link_to "RODO", rodo_path
-        .columns-medium-12
-          = link_to 'Jooble', 'https://jooble.com/'
-          &bull;
-          = link_to 'Jobsora', 'https://jobsora.com'
-    .columns.medium-4
-      = render 'payments'
 
 
 
