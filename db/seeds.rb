@@ -27,4 +27,5 @@ company.confirm
 countries = Country.all
 Offer.all.each { |o| Location.create!(country_id: countries.sample.id, offer_id: o[:id]) }
 
-Product.create!(name_pl: 'Produkt', name_en: 'Product', price_eur: 10.0, price_pln: 40.0, description_pl: 'Test', description_en: 'Test', backend_name: 'test')
+products = MultiJson.parse("[{\"id\":8,\"name_pl\":\"Promowanie oferty w mediach społecznościowych\",\"name_en\":\"Promote offers in social media\",\"price_pln\":\"60.0\",\"price_eur\":\"15.0\",\"created_at\":\"2018-04-23T12:04:08.367+02:00\",\"updated_at\":\"2018-07-06T11:03:55.325+02:00\",\"description_en\":\"* Your offer will be promoted in social media\\r\\n\",\"description_pl\":\"* Twoja oferta będzie promowana w mediach społecznościowych\\r\\n\",\"backend_name\":\"social\",\"order\":6},{\"id\":1,\"name_pl\":\"Promowany Pracodawca\",\"name_en\":\"Premium Employer Bundle\",\"price_pln\":\"39.99\",\"price_eur\":\"10.0\",\"created_at\":\"2017-08-01T19:25:29.554+02:00\",\"updated_at\":\"2018-07-06T11:05:11.350+02:00\",\"description_en\":\"* Your company profile will be featured on the homepage\\r\\n\\r\\n\",\"description_pl\":\"* Wyróżnienie profilu Twojej firmy na stronie głównej serwisu\\r\\n\",\"backend_name\":\"homepage\",\"order\":5}]")
+products.each { |p| Product.new(p.merge(id: '')).save }

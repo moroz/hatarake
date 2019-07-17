@@ -13,7 +13,7 @@ module CurrencyHelper
     return I18n.t('currency_range.none') if range.blank?
     min = localized_currency_value(range.first)
     max = localized_currency_value(range.last)
-    puts "#{min} and #{max}"
+
     format = if min.nil? && max.nil? then 'none'
              elsif min.nil? && !max.nil? then 'max'
              elsif !min.nil? && max.nil? then 'min'

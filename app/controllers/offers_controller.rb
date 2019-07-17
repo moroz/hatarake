@@ -57,7 +57,6 @@ class OffersController < ApplicationController
 
   # Getting random records from the database can be hard on performance
   # TODO: Write a stored procedure to get random records
-
   def poland
     @offers = Offer.with_associations.poland.published_or_owned_by(current_user)
                    .featured_first.advanced_search(params).group(:id)

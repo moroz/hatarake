@@ -41,7 +41,6 @@ RSpec.describe 'Company promotes offers' do
     FactoryBot.create(:product)
     it 'redirects to cart page' do
       expect { select_homepage_and_submit }.not_to change { offer.featured_until }
-
       expect(current_path).to eq(cart_path)
     end
   end

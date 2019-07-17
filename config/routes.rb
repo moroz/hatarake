@@ -84,6 +84,9 @@ Rails.application.routes.draw do
     scope '/jobsora' do
       get 'jobs_feed.xml', to: 'feed#jooble'
     end
+    scope '/adzuna' do
+      get 'jobs_feed.xml', to: 'feed#adzuna'
+    end
     scope '/trovit' do
       get 'trovit_feed.xml', to: 'feed#trovit'
     end

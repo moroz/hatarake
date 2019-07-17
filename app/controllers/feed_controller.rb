@@ -4,9 +4,9 @@ class FeedController < ApplicationController
   respond_to :xml
   before_action :fetch_offers, except: :region_list
 
-  def jooble; end
-
-  def trovit; end
+  def action_missing(name)
+    fetch_offers
+  end
 
   def region_list
     @countries = Country.all

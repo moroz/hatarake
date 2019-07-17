@@ -15,8 +15,9 @@ class Offer < ApplicationRecord
 
   accepts_nested_attributes_for :locations
 
-  validates_presence_of :currency
+  validates_presence_of :currency, :company
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
+
   CURRENCIES = %w[pln eur chf usd gbp czk nok sek dkk].freeze
   validates :currency, inclusion: { in: CURRENCIES }
   validates :application_url, url: true, if: :apply_on_website?
