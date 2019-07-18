@@ -20,8 +20,8 @@ xml.jobs do
       if salary_frequency
         salary_column = salary_frequency == 'hour' ? :hourly_wage : :salary
         xml.salary { xml.cdata! xml_salary_for(offer, salary_column, " per #{salary_frequency}") }
-        xml.salary_min { xml.cdata! localized_currency_value(offer.salary.first) }
-        xml.salary_max { xml.cdata! localized_currency_value(offer.salary.first) }
+        xml.salary_min { xml.cdata! localized_currency_value(offer.salary.first) } if offer.read_attribute(salary_column)&.first
+        xml.salary_max { xml.cdata! localized_currency_value(offer.salary.last) } if offer.read_attribute(salary_column)&.last
         xml.salary_frequency { xml.cdata! salary_frequency }
         xml.salary_currency { xml.cdata! offer.currency }
       end
