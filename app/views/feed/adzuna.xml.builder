@@ -12,14 +12,14 @@ xml.jobs do
       xml.company { xml.cdata! offer.company.name }
 
       salary_frequency = if offer.salary
-                           'hour'
-                         elsif offer.hourly_wage
                            'month'
-                        end
+                         elsif offer.hourly_wage
+                           'hour'
+                         end
 
       if salary_frequency
         salary_column = salary_frequency == 'hour' ? :hourly_wage : :salary
-        xml.salary { xml.cdata! xml_salary_for(offer, salary_column, " per #{salary_frequency}") }
+        xml.salary { xml.cdata! xml_salary_for(offer, salary_column, " per #{salary_frequency}") } if offer.read_attribute(salary_column).present?
         xml.salary_min { xml.cdata! localized_currency_value(offer.salary.first) } if offer.read_attribute(salary_column)&.first
         xml.salary_max { xml.cdata! localized_currency_value(offer.salary.last) } if offer.read_attribute(salary_column)&.last
         xml.salary_frequency { xml.cdata! salary_frequency }
