@@ -25,11 +25,11 @@ module CurrencyHelper
 
   def localized_currency_value(value)
     return if value.nil?
-    value.infinite? ? nil : number_with_precision(value, strip_insignificant_zeros: true, precision: 2)
+    value.infinite? ? '' : number_with_precision(value, strip_insignificant_zeros: true, precision: 2)
   end
 
   def pretty_currency_value(value)
     return if value.nil?
-    value.infinite? ? nil : number_with_precision(value, separator: '.', strip_insignificant_zeros: true, precision: 2)
+    value.infinite? ? '' : number_with_precision(value, separator: '.', strip_insignificant_zeros: true, precision: 2)
   end
 end
