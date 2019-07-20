@@ -45,7 +45,7 @@ module OffersHelper
   end
 
   def xml_salary_for(offer, salary = :salary, period = ' per month')
-    readable_currency_range(offer.read_attribute(salary), offer.currency) + ' per month' if offer.read_attribute(salary).present?
+    readable_currency_range(offer.read_attribute(salary), offer.currency) + period if offer.read_attribute(salary).present?
   end
 
   def short_salary(offer)

@@ -15,6 +15,7 @@ class FeedController < ApplicationController
   private
 
   def fetch_offers
-    @offers = Offer.published.promoted.includes(:company, locations: %i[country province])
+    @offers = Offer.published.poland.includes(:company, locations: %i[country province])
+                   .reorder(:updated_at).reverse_order.page(params[:page])
   end
 end
