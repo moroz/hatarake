@@ -1,17 +1,23 @@
 %footer.footer
   .row
-    .columns.medium-3
+    .columns.medium-6
       %p
         %nav.footer__menu
-          .col-medium-12
+          .columns-medium-12
             %strong= t('.partners')
-          .col-medium-12
-            = link_to 'https://jooble.com' do
-              .partner_icon.partner_icon--jooble
-            = link_to 'https://jobsora.com' do
-              .partner_icon.partner_icon--jobsora
-    .columns.medium-3
-      = render 'payments'
+          .columns.medium-12
+            .columns.medium-4
+              = link_to 'https://adzuna.com/' do
+                .partner_icon.partner_icon--adzuna
+            .columns.medium-4
+              = link_to 'https://jooble.com/' do
+                .partner_icon.partner_icon--jooble
+            .columns.medium-4
+              = link_to 'https://jobsora.com/' do
+                .partner_icon.partner_icon--jobsora
+          .columns-medium-12
+            %strong=t('.payments_header')
+            = render 'payments'
     .columns.medium-6
       %p
         %nav.footer__menu
