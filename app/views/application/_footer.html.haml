@@ -1,41 +1,44 @@
 %footer.footer
   .row
-    .columns.medium-6
-      %p
-        %nav.footer__menu
-          .columns-medium-12
-            %strong= t('.partners')
-          .columns.medium-12
-            .columns.medium-4
-              = link_to 'https://adzuna.com/' do
-                .partner_icon.partner_icon--adzuna
-            .columns.medium-4
-              = link_to 'https://jooble.com/' do
-                .partner_icon.partner_icon--jooble
-            .columns.medium-4
-              = link_to 'https://jobsora.com/' do
-                .partner_icon.partner_icon--jobsora
-          .columns-medium-12
-            %strong=t('.payments_header')
-            = render 'payments'
-    .columns.medium-6
-      %p
-        %nav.footer__menu
-          %strong
-            InJobs.pl sp. z o.o.
-            &bull;
-            = link_to raw(t('.find_us_on_facebook') + fa_icon('facebook-official lg')), 'https://www.facebook.com/InJobspl-150172078909014/', target: '_blank'
-      %nav.footer__menu
-        .columns-medium-12
-          = link_to t('nav.contact'), contact_path
-          &bull;
-          = link_to t('.subscribe'), new_newsletter_subscription_path
-          &bull;
-          = link_to t('.unsubscribe'), unsubscribe_path
-          &bull;
-          = link_to t('.terms_of_service'), regulamin_path
-          &bull;
-          = link_to "RODO", rodo_path
+    .columns.medium-10.medium-offset-1
+      .row
+        .columns.medium-3
+          %strong=t('.payments_header')
+          = render 'payments'
+        .columns.medium-9
+          %p
+            %nav.footer__menu
+              %strong
+                InJobs.pl sp. z o.o.
+                &bull;
+                = link_to raw(t('.find_us_on_facebook') + fa_icon('facebook-official lg')), 'https://www.facebook.com/InJobspl-150172078909014/', target: '_blank'
+          %nav.footer__menu
+            .columns-medium-12
+              = link_to t('nav.contact'), contact_path
+              &bull;
+              = link_to t('.subscribe'), new_newsletter_subscription_path
+              &bull;
+              = link_to t('.unsubscribe'), unsubscribe_path
+              &bull;
+              = link_to t('.terms_of_service'), regulamin_path
+              &bull;
+              = link_to "RODO", rodo_path
+      .row
+        .columns.medium-12
+          %p
+            %nav.footer__menu
+              .columns-medium-12
+                %strong= t('.partners')
+              .columns.medium-12
+                .columns.medium-4
+                  = link_to 'https://adzuna.pl/' do
+                    .partner_icon.partner_icon--adzuna
+                .columns.medium-4
+                  = link_to 'https://jooble.com/' do
+                    .partner_icon.partner_icon--jooble
+                .columns.medium-4
+                  = link_to 'https://jobsora.com/' do
+                    .partner_icon.partner_icon--jobsora
 
 
 
