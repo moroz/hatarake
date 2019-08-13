@@ -8,6 +8,7 @@ RSpec.describe Order, type: :model do
   describe '#paid!' do
     context 'when called on a paid order' do
       let(:paid_order) { FactoryBot.create(:order, :paid) }
+
       it 'raises an exception' do
         expect { paid_order.paid! }.to raise_exception RuntimeError
       end
@@ -23,7 +24,7 @@ RSpec.describe Order, type: :model do
       end
 
       it "changes user's premium_services hash" do
-        result = Order.process_premium_services_hash(order.to_h)
+        result = described_class.process_premium_services_hash(order.to_h)
         result['3'] = result['3'].to_s
         expect(order.user.premium_services).to eq(result.except('3'))
       end
@@ -44,6 +45,7 @@ RSpec.describe Order, type: :model do
 
   describe 'upon creation' do
     let(:order) { FactoryBot.build(:order) }
+
     context 'when deduction is nil' do
       it 'amount_due == total' do
         order.save

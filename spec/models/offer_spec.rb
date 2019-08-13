@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Offer, type: :model do
   let(:offer) { FactoryBot.build(:offer) }
+
   describe 'validations' do
     context 'with valid attributes' do
       it 'is valid' do
@@ -45,6 +46,7 @@ RSpec.describe Offer, type: :model do
 
     context 'when apply_on_website is false' do
       let(:offer) { FactoryBot.build(:offer, apply_on_website: false) }
+
       context 'without application_url' do
         it 'is valid' do
           offer.application_url = nil
@@ -82,11 +84,11 @@ RSpec.describe Offer, type: :model do
   describe 'make_required_languages' do
     let(:offer) { FactoryBot.build(:offer) }
 
-    before(:each) do
+    before do
       offer.req_lang_2 = 5
     end
 
-    after(:each) do
+    after do
       offer.validate
       expect(offer.req_lang_2).to be nil
     end
@@ -121,7 +123,7 @@ RSpec.describe Offer, type: :model do
 
     context 'upon save' do
       context 'when given numbers with point as decimal separator' do
-        before(:each) do
+        before do
           offer.hourly_wage_min = '10.5'
           offer.hourly_wage_max = '13.0'
           offer.save
@@ -139,7 +141,7 @@ RSpec.describe Offer, type: :model do
       end
 
       context 'when given numbers with comma as decimal separator' do
-        before(:each) do
+        before do
           offer.hourly_wage_min = '17,5'
           offer.hourly_wage_max = '19,5'
           offer.save
@@ -159,7 +161,7 @@ RSpec.describe Offer, type: :model do
       context 'when min > max' do
         context 'upon save' do
           describe 'swaps min and max' do
-            before(:each) do
+            before do
               offer.hourly_wage_min = '25.5'
               offer.hourly_wage_max = '15.5'
               offer.save
@@ -180,8 +182,10 @@ RSpec.describe Offer, type: :model do
 
   describe 'search_by_query' do
     context 'examples for foregin query' do
-      let(:query) { 'hannover' }
       subject { described_class.query_variations(query) }
+
+      let(:query) { 'hannover' }
+
       it { is_expected.to include(query) }
       it { is_expected.to include('hanover') }
       it { is_expected.to include('hannower') }
@@ -189,8 +193,10 @@ RSpec.describe Offer, type: :model do
     end
 
     context 'examples for polish query' do
-      let(:query) { 'hanower' }
       subject { described_class.query_variations(query) }
+
+      let(:query) { 'hanower' }
+
       it { is_expected.to include(query) }
       it { is_expected.to include('hannower') }
       it { is_expected.to include('hannover') }
@@ -235,14 +241,14 @@ RSpec.describe Offer, type: :model do
       let!(:offer_de) { FactoryBot.create(:offer, :published, :germany) }
 
       describe 'poland' do
-        subject { Offer.poland.to_a }
+        subject { described_class.poland.to_a }
 
         it { is_expected.to include offer_pl }
         it { is_expected.not_to include offer_de }
       end
 
       describe 'abroad' do
-        subject { Offer.abroad.to_a }
+        subject { described_class.abroad.to_a }
 
         it { is_expected.to include offer_de }
         it { is_expected.not_to include offer_pl }
@@ -257,18 +263,20 @@ RSpec.describe Offer, type: :model do
       let!(:social_featured) { FactoryBot.create(:offer, :social_featured) }
 
       describe '#homepage_featured' do
+        subject { described_class.homepage_featured }
+
         let!(:homepage_past) { FactoryBot.create(:offer, featured_until: 2.weeks.ago) }
 
-        subject { Offer.homepage_featured }
         it { is_expected.to include(homepage_featured) }
         it { is_expected.not_to include(unfeatured) }
         it { is_expected.not_to include(homepage_past) }
       end
 
       describe '#social_featured' do
+        subject { described_class.social_featured }
+
         let!(:social_past) { FactoryBot.create(:offer, social_until: 2.weeks.ago) }
 
-        subject { Offer.social_featured }
         it { is_expected.to include(social_featured) }
         it { is_expected.not_to include(social_past) }
         it { is_expected.not_to include(unfeatured) }
@@ -279,14 +287,16 @@ RSpec.describe Offer, type: :model do
         let!(:category_past) { FactoryBot.create(:offer, category_until: 2.weeks.ago) }
 
         describe '#category_featured' do
-          subject { Offer.category_featured }
+          subject { described_class.category_featured }
+
           it { is_expected.to include(category_featured) }
           it { is_expected.not_to include(unfeatured) }
           it { is_expected.not_to include(category_past) }
         end
 
         describe '#not_category_featured' do
-          subject { Offer.not_category_featured }
+          subject { described_class.not_category_featured }
+
           it { is_expected.not_to include(category_featured) }
           it { is_expected.to include(unfeatured) }
           it { is_expected.to include(category_past) }

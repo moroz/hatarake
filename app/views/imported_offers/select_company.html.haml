@@ -1,0 +1,7 @@
+= link_to 'Back to Admin Panel', admin_imported_offers_path
+= form_with url: :imported_offers_publish do |f|
+  All offers will be saved to selected Company:
+  .row
+    = f.hidden_field :offers_ids, value: params[:ids]
+    = f.select :company_id, options_from_collection_for_select(@companies, :id, :name, 0)
+    = f.submit 'Publish Offers'

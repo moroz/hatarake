@@ -17,14 +17,14 @@ RSpec.describe DotpayPayment do
   describe '#acknowledge' do
     context 'with correct signature' do
       it 'returns true' do
-        @payment = DotpayPayment.new(@correct)
+        @payment = described_class.new(@correct)
         expect(@payment.acknowledge).to be true
       end
     end
 
     context 'with wrong signature' do
       it 'returns false' do
-        @payment = DotpayPayment.new(@wrong)
+        @payment = described_class.new(@wrong)
         expect(@payment.acknowledge).to be false
       end
     end

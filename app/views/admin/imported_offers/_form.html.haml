@@ -1,0 +1,10 @@
+= form_for [:admin, @imported_offer], builder: ActiveAdmin::FormBuilder do |f|
+  .row
+    = f.label :views
+    = f.text_field :views
+    = f.label :title
+    = f.text_field :title
+    = f.label :field_name, 'Field'
+    = f.select :field_name, options_from_collection_for_select(Field.all, :name_en, :name_en)
+    = render 'pagedown', f: f, no_simple_form: true
+    = f.actions

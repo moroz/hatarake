@@ -4,6 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Offer search' do
   describe 'when visiting offers_path without params' do
+    subject { page.body }
+
     before do
       visit jobs_abroad_path
     end
@@ -11,8 +13,6 @@ RSpec.describe 'Offer search' do
     it 'shows advanced search form' do
       expect(page).to have_selector('.abroad_search form')
     end
-
-    subject { page.body }
 
     # country select
     it { is_expected.to have_selector('.abroad_search select[name="cid"]') }
@@ -26,7 +26,7 @@ RSpec.describe 'Offer search' do
     let!(:matching) { FactoryBot.create(:offer, :published, :germany, title: 'Manga reader') }
     let!(:other) { FactoryBot.create(:offer, :published, :germany, title: 'Computer programmer') }
 
-    before(:each) do
+    before do
       visit jobs_abroad_path
       within('.abroad_search') do
         find('input[name="q"]').set('manga')
@@ -47,7 +47,7 @@ RSpec.describe 'Offer search' do
     let!(:germany) { FactoryBot.create(:offer, :published, :germany, title: 'Offer in Germany') }
     let!(:russia) { FactoryBot.create(:offer, :published, :russia, title: 'Offer in Russia') }
 
-    before(:each) do
+    before do
       visit jobs_abroad_path(lang: 'en')
       within('.abroad_search') do
         select('Germany', from: 'cid')

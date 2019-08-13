@@ -5,7 +5,7 @@ FactoryBot.define do
     user factory: :company
 
     trait :empty do
-      cart_items nil
+      cart_items { nil }
     end
 
     trait :with_items do

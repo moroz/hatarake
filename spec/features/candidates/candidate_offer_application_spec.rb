@@ -15,11 +15,11 @@ RSpec.describe 'Candidate offer application' do
     it 'creates an Application' do
       expect(page).to have_selector(dom_id(offer))
       click_link offer.title
-      expect(current_path).to eq(offer_path(offer))
+      expect(page).to have_current_path(offer_path(offer))
       click_link_or_button I18n.t('offers.apply_now'), match: :first
-      expect(current_path).to eq(new_offer_application_path(offer_id: offer))
+      expect(page).to have_current_path(new_offer_application_path(offer_id: offer))
       find('#application_memo').set('Zażółć gęślą jaźń')
-      expect { submit_form }.to change { Application.count }
+      expect { submit_form }.to change(Application, :count)
 
       expect(ActionMailer::Base.deliveries).not_to be_empty
     end
@@ -34,7 +34,7 @@ RSpec.describe 'Candidate offer application' do
     end
 
     it 'redirects to edit_candidate_profile_path' do
-      expect(current_path).to eq(edit_candidate_profile_path)
+      expect(page).to have_current_path(edit_candidate_profile_path)
     end
 
     it 'displays an alert callout' do

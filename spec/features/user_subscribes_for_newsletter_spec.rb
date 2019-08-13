@@ -8,7 +8,7 @@ RSpec.describe 'User subscribes for newsletter' do
       it 'creates new NewsletterSubscription instance' do
         visit new_newsletter_subscription_path
         find('input[name="newsletter_subscription[email]"]').set('user@example.com')
-        expect { submit_form }.to change { NewsletterSubscription.count }
+        expect { submit_form }.to change(NewsletterSubscription, :count)
       end
     end
   end

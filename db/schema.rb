@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180720105718) do
+ActiveRecord::Schema.define(version: 2019_08_13_101556) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
   enable_extension "hstore"
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -172,6 +172,38 @@ ActiveRecord::Schema.define(version: 20180720105718) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "imported_offers", force: :cascade do |t|
+    t.integer "company_id"
+    t.string "currency"
+    t.string "contact_email"
+    t.string "contact_phone"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.datetime "published_at"
+    t.string "slug"
+    t.numrange "hourly_wage"
+    t.numrange "salary"
+    t.integer "views", default: 0
+    t.boolean "apply_on_website", default: false
+    t.string "application_url"
+    t.datetime "featured_until", comment: "Featuring on the homepage"
+    t.datetime "category_until", comment: "Featuring on the category page"
+    t.datetime "highlight_until", comment: "Highlight with colors"
+    t.integer "req_lang_1", limit: 2
+    t.integer "req_lang_2", limit: 2
+    t.date "social_until"
+    t.date "special_until"
+    t.string "external_id"
+    t.string "external_url"
+    t.string "source"
+    t.string "location"
+    t.boolean "published", default: false
+    t.string "field_name"
+    t.index ["slug"], name: "index_importd_offers_on_slug", unique: true
+  end
+
   create_table "locations", id: :serial, force: :cascade do |t|
     t.integer "country_id"
     t.integer "province_id"
@@ -224,6 +256,7 @@ ActiveRecord::Schema.define(version: 20180720105718) do
     t.integer "field_id"
     t.date "social_until"
     t.date "special_until"
+    t.string "external_id"
     t.index ["company_id"], name: "index_offers_on_company_id"
     t.index ["published_at"], name: "index_offers_on_published_at"
     t.index ["req_lang_1"], name: "index_offers_on_req_lang_1"

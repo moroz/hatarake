@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.shared_examples 'acts like autocompletable' do
-  before(:each) do
+  before do
     I18n.locale = :en
   end
 
@@ -27,18 +27,21 @@ RSpec.shared_examples 'acts like autocompletable' do
       subject { described_class.search('Foobar') }
       # returns items whose English name contains given substring
       # and not others
+
       it { is_expected.to include item }
       it { is_expected.not_to include other }
     end
 
     context 'search by Polish' do
       subject { described_class.search('Cośtam') }
+
       it { is_expected.to include item }
       it { is_expected.not_to include other }
     end
 
     describe 'it is case-insensitive' do
       subject { described_class.search('foobar').to_a }
+
       it { is_expected.to eq described_class.search('Foobar').to_a }
     end
   end
@@ -58,6 +61,7 @@ RSpec.shared_examples 'acts like autocompletable' do
       described_class.where(id: [item.id, other.id])
                      .serialize_for_autocomplete
     end
+
     it { is_expected.to eq(serialized_collection) }
   end
 end

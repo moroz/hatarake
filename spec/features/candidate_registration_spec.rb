@@ -14,7 +14,7 @@ RSpec.describe 'Candidate registration' do
     find('#terms_of_service_checkbox').set(true)
     find('#personal_data_checkbox').set(true)
 
-    expect { submit_form }.to change { Candidate.count }
+    expect { submit_form }.to change(Candidate, :count)
   end
 
   describe 'second step' do
@@ -28,7 +28,7 @@ RSpec.describe 'Candidate registration' do
 
     context 'upon first login' do
       it 'redirects to step2 path' do
-        expect(current_path).to eq(edit_candidate_profile_path)
+        expect(page).to have_current_path(edit_candidate_profile_path)
       end
 
       describe 'form has all fields' do

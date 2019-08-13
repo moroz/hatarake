@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe BlogPost, type: :model do
   let(:company) { FactoryBot.create(:company) }
+
   describe 'validations' do
     describe 'uniqueness validation in user scope' do
       let!(:post1) { FactoryBot.create(:blog_post, company: company, body: 'Zażółć gęślą jaźń.') }

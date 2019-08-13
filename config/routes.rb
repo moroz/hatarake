@@ -69,6 +69,9 @@ Rails.application.routes.draw do
   resources :education_items, except: %i[new edit]
   resources :work_items, except: %i[new edit]
 
+  get '/imported_offers/select_company' => 'imported_offers#select_company'
+  post '/imported_offers/publish' => 'imported_offers#publish'
+
   scope '/api' do
     get 'skills/(:term)' => 'autocomplete#skills', as: :autocomplete_skills
     get 'professions/(:term)' => 'autocomplete#professions', as: :autocomplete_professions

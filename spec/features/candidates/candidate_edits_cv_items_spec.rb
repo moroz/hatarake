@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Candidate edits CV items' do
   let(:candidate) { FactoryBot.create(:candidate) }
 
-  before(:each) do
+  before do
     login_as(candidate, scope: :candidate)
   end
 
@@ -15,7 +15,7 @@ RSpec.describe 'Candidate edits CV items' do
         visit profile_path
         within '#candidate_work_experience' do
           click_link_or_button I18n.t('actions.edit')
-          expect(current_path).to eq(work_items_path)
+          expect(page).to have_current_path(work_items_path)
         end
       end
     end
@@ -87,7 +87,7 @@ RSpec.describe 'Candidate edits CV items' do
         visit profile_path
         within '#candidate_education' do
           click_link_or_button I18n.t('actions.edit')
-          expect(current_path).to eq(education_items_path)
+          expect(page).to have_current_path(education_items_path)
         end
       end
     end

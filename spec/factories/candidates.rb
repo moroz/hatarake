@@ -3,12 +3,12 @@
 FactoryBot.define do
   factory :candidate do
     email { Faker::Internet.email }
-    password 'foobar2000'
-    confirmed_at Time.now
+    password { 'foobar2000' }
+    confirmed_at { Time.now }
     association :profile, factory: :candidate_profile
 
     transient do
-      profession_name nil
+      profession_name { nil }
     end
 
     after(:create) do |cand, ev|
@@ -20,7 +20,7 @@ FactoryBot.define do
     end
 
     trait :no_profession do
-      profession_name nil
+      profession_name { nil }
     end
 
     trait :not_looking_for_work do

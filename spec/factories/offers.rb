@@ -6,11 +6,11 @@ FactoryBot.define do
     title { Faker::Job.title }
     salary_min { @smin = rand(10) * 1000 }
     salary_max { @smin + 2500 }
-    currency 'pln'
+    currency { 'pln' }
     description { Faker::Lorem.paragraphs(8, true).join("\n\n") }
     contact_email { Faker::Internet.email }
     contact_phone { Faker::PhoneNumber.cell_phone }
-    apply_on_website false
+    apply_on_website { false }
     unpublished
     unfeatured
 
@@ -47,11 +47,11 @@ FactoryBot.define do
     end
 
     trait :unfeatured do
-      featured_until nil
-      category_until nil
-      highlight_until nil
-      social_until nil
-      special_until nil
+      featured_until { nil }
+      category_until { nil }
+      highlight_until { nil }
+      social_until { nil }
+      special_until { nil }
     end
 
     %i[russia poland germany].each do |country|
@@ -63,12 +63,12 @@ FactoryBot.define do
     end
 
     trait :unpublished do
-      published_at nil
+      published_at { nil }
     end
 
     trait :apply_on_website do
-      apply_on_website true
-      application_url 'https://www.injobs.pl'
+      apply_on_website { true }
+      application_url { 'https://www.injobs.pl' }
     end
   end
 end
