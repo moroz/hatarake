@@ -59,11 +59,12 @@ class OffersController < ApplicationController
   # TODO: Write a stored procedure to get random records
   def poland
     @offers = Offer.with_associations.poland.published_or_owned_by(current_user)
-                   .featured_first.advanced_search(params).group(:id)
-    @total_count = @offers.length
+                   .featured_first.advanced_search(params).group(:id).page(params[:page])
+    @total_count = Offer.poland.published_or_owned_by(current_user)
+                        .advanced_search(params).group(:id).reorder('').count.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
-    @offers = @offers.page(params[:page])
+
     set_search_description
     get_featured_offers(:poland, ids) if search_params_present? && @offers.last_page?
     respond_to do |f|
@@ -78,11 +79,12 @@ class OffersController < ApplicationController
 
   def abroad
     @offers = Offer.with_associations.abroad.published_or_owned_by(current_user)
-                   .featured_first.advanced_search(params).group(:id)
-    @total_count = @offers.length
+                   .featured_first.advanced_search(params).group(:id).page(params[:page])
+    @total_count = Offer.abroad.published_or_owned_by(current_user)
+                        .advanced_search(params).group(:id).reorder('').count.length
     ids = nil
     ids = @offers.pluck(:id) if search_params_present? && @total_count < 50
-    @offers = @offers.page(params[:page])
+
     set_search_description
     set_province_list if params[:cid].present?
     get_featured_offers(:abroad, ids) if search_params_present? && @offers.last_page?
