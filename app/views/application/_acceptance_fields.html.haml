@@ -13,6 +13,12 @@
 
 :javascript
   var personalData = false, tos = false, rodoData = false;
+  $(document).ready(function() {
+    tos = $("#terms_of_service_checkbox").checked;
+    personlData = $("#personal_data_checkbox").checked;
+    rodoData = $("#rodo_checkbox").checked;
+    $('#submit_button').prop('disabled', !(!personalData || !tos || !rodoData));
+  });
   $('#terms_of_service_checkbox, #personal_data_checkbox, #rodo_checkbox').on('change', function() {
     if (this.id == 'personal_data_checkbox')
       personalData = this.checked;

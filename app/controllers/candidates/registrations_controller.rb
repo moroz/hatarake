@@ -18,7 +18,7 @@ class Candidates::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     devise_parameter_sanitizer
       .permit(:sign_up, keys:
-        [:attribute, :terms_of_service, :personal_data, profile_attributes: %i[first_name last_name]])
+        [:attribute, :terms_of_service, :personal_data, :rodo, profile_attributes: %i[first_name last_name]])
   end
 
   def after_sign_up_path_for(_resource)
