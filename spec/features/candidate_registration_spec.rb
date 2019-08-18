@@ -13,6 +13,7 @@ RSpec.describe 'Candidate registration' do
     find('#candidate_password_confirmation').set('foobar')
     find('#terms_of_service_checkbox').set(true)
     find('#personal_data_checkbox').set(true)
+    find('#rodo_checkbox').set(true)
 
     expect { submit_form }.to change(Candidate, :count)
   end

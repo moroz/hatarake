@@ -12,11 +12,13 @@
   = f.label :personal_data, t('.personal_data')
 
 :javascript
-  var personalData = false, tos = false;
+  var personalData = false, tos = false, rodoData = false;
   $('#terms_of_service_checkbox, #personal_data_checkbox, #rodo_checkbox').on('change', function() {
     if (this.id == 'personal_data_checkbox')
       personalData = this.checked;
+    else if (this.id == 'rodo_checkbox')
+      rodoData = this.checked;
     else
       tos = this.checked;
-    $('#submit_button').prop('disabled', (!personalData || !tos));
+    $('#submit_button').prop('disabled', (!personalData || !tos || !rodoData));
   });

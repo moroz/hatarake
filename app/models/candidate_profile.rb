@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CandidateProfile < ApplicationRecord
-  belongs_to :candidate, dependent: :destroy
+  belongs_to :candidate, dependent: :destroy, optional: :true
 
   validates_presence_of :first_name, :last_name
   validates_presence_of :sex, :birth_date, :profession_name, on: :update
