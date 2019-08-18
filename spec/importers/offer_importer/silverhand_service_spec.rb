@@ -19,7 +19,7 @@ RSpec.describe SilverhandService do
     describe 'transform each offer' do
       offer = described_class.import.first
       it 'merge publisher key to offer' do
-        expect(offer[:publisher]).to eq 'Silverhand'
+        expect(offer[:source]).to eq 'Silverhand'
       end
 
       it 'delete locations key' do
@@ -57,20 +57,31 @@ RSpec.describe SilverhandService do
   end
 
   describe 'self.map_salaries' do
-    context 'salary ends with "Miesiąc"' do
-      # job = { salary: '10,0-20,1 PLN na Miesiąc' }
-      # described_class.map_salaries(job)
-      # it 'return' do
-      #   expect(job[:salary]).to eq '22'
-      # end
+    context 'salary ends with "miesiąc"' do
+      job = { salary: '10,0-20,1 PLN na miesiąc' }
+      described_class.map_salaries(job)
+
+      it 'return salary in salary key' do
+        expect(job).to have_key(:salary)
+      end
     end
 
-    context 'salary ends with "Tydzień"' do
+    context 'salary ends with "tydzień"' do
+      job = { salary: '10,0-20,1 PLN na tydzień' }
+      described_class.map_salaries(job)
 
+      it 'return salary in salary key' do
+        expect(job).to have_key(:salary)
+      end
     end
 
-    context 'salary ends with "Godzinę"' do
+    context 'salary ends with "godzinę"' do
+      job = { salary: '10,0-20,1 PLN na godzinę' }
+      described_class.map_salaries(job)
 
+      it 'return salary in hourly wage key' do
+        expect(job).to have_key(:hourly_wage)
+      end
     end
   end
 

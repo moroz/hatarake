@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :field do
-    name_en { 'MyString' }
-    name_pl { 'MyString' }
+    name_en { 'No experience required' }
+    name_pl { 'Brak doświadczenia' }
   end
 end
