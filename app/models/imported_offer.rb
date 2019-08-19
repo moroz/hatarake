@@ -41,13 +41,13 @@ class ImportedOffer < ApplicationRecord
     return [] unless location
 
     country, city = location.split('|', 2)
-    country_id = countries.find { |c| c[:iso] == country.upcase }
+    found_country = countries.find { |c| c[:iso] == country.upcase }
 
-    return [] unless country_id
+    return [] unless found_country
 
     [{
-      country_id: country[:id],
-      city: offer[:location].split('|').second
+      country_id: found_country[:id],
+      city: city
     }]
   end
 
