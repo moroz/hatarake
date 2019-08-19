@@ -7,15 +7,6 @@ ActiveAdmin.register ImportedOffer do
 
   scope :unpublished, default: true
   scope :published
-  # scope :poland
-  # scope :abroad
-  # scope :social_featured
-  # scope :homepage_featured
-  # scope :highlighted
-
-  # action_item :show, only: :show do
-  #   link_to 'View on Website', offer_path(offer), target: '_blank'
-  # end
 
   batch_action :publish do |ids|
     redirect_to imported_offers_select_company_path(ids: ids.join(',')), class: 'button'
@@ -46,35 +37,8 @@ ActiveAdmin.register ImportedOffer do
 
   form partial: 'form', fields: Field.all
 
-  # show do |offer|
-  #   attributes_table do
-  #     row :views
-  #     row :published_at
-  #     row :featured_until
-  #     row :category_until
-  #     row :highlight_until
-  #     row :social_until
-  #     row :special_until
-  #     row :locations
-  #     row :company do |o|
-  #       link_to o.company.name, o.company, target: '_blank'
-  #     end
-  #     row :description do
-  #       markdown offer.description.truncate(300, separator: /\s/)
-  #     end
-  #   end
-  # end
-
-  # form partial: 'form'
-
   filter :source
   filter :title
-
-  # controller do
-  #   def scoped_collection
-  #     super.includes(:locations, :company)
-  #   end
-  # end
 
   before_update do |offer|
     offer.field_name = params['imported_offer']['field_name']

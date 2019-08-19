@@ -22,6 +22,5 @@ module InJobs
 
     config.time_zone = 'Europe/Warsaw'
     config.eager_load_paths += %W( #{config.root}/app/importers/offer_importer/ )
-    # config.eager_load_paths << Rails.root.join('app/importers/offer_importer')
   end
 end

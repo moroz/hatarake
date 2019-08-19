@@ -24,10 +24,4 @@ class ImportedOffersController < ApplicationController
     redirect_to admin_imported_offers_path
   end
 
-  def update
-    require 'pry'
-    binding.pry
-    super
-  end
-
 end
