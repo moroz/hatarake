@@ -6,7 +6,7 @@ class Offer < ApplicationRecord
   attr_accessor :salary_min, :salary_max, :hourly_wage_min, :hourly_wage_max
 
   belongs_to :company
-  belongs_to :field
+  belongs_to :field, optional: true
 
   has_many :applications, dependent: :destroy
   has_many :candidates, through: :applications
@@ -15,7 +15,7 @@ class Offer < ApplicationRecord
 
   accepts_nested_attributes_for :locations
 
-  validates_presence_of :currency, :company
+  validates_presence_of :currency#, :company
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
 
   CURRENCIES = %w[pln eur chf usd gbp czk nok sek dkk].freeze
@@ -73,6 +73,7 @@ class Offer < ApplicationRecord
   scope :promoted, -> {
                      homepage_featured.or(category_featured).or(highlighted).or(social_featured).or(special_featured)
                    }
+  scope :imported, -> { where.not(external_id: nil) }
 
   def self.advanced_search(options = {})
     scope = all

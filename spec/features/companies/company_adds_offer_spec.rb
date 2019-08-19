@@ -7,18 +7,19 @@ RSpec.describe 'Company adds Offer' do
   let!(:country) { FactoryBot.create(:country) }
 
   describe 'offer creation' do
+    subject { page.body }
+
     before do
       login_as(company, scope: :company)
       visit root_path
     end
 
-    subject { page.body }
     it { is_expected.to have_content I18n.t('nav.add_offer') }
 
     it 'creates a new offer with correct attributes' do
       FactoryBot.create(:country, :poland)
       click_link I18n.t('nav.add_offer'), match: :first
-      expect(current_path).to eq(new_offer_path)
+      expect(page).to have_current_path(new_offer_path)
 
       page.find('#offer_title').set('Looking for welders')
       page.find('#offer_currency').set('EUR')
@@ -30,12 +31,13 @@ RSpec.describe 'Company adds Offer' do
       page.find('#location_city').set('Berlin')
       page.find('#wmd-input').set("We're looking for welders!")
 
-      expect { submit_form }.to change { Offer.count }
+      expect { submit_form }.to change(Offer, :count)
     end
   end
 
   describe 'offer publishing' do
     let(:offer) { FactoryBot.create(:offer, :unpublished, company: company) }
+
     before do
       login_as(company, scope: :company)
       visit offer_path(offer)

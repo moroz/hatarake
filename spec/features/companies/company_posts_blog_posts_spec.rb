@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Company posts blog posts' do
   let(:company) { Company.first || FactoryBot.create(:company) }
   let(:candidate) { Candidate.first || FactoryBot.create(:candidate) }
+
   describe 'new blog post form on company profile' do
     context 'when not signed in' do
       before do

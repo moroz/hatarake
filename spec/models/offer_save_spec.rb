@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe OfferSave, type: :model do
   let(:offer) { FactoryBot.create(:offer) }
   let(:user) { FactoryBot.create(:candidate) }
-  let(:save) { OfferSave.new(offer: offer, user: user) }
+  let(:save) { described_class.new(offer: offer, user: user) }
 
   describe 'validations' do
     describe 'associations' do

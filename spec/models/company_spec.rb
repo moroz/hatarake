@@ -36,6 +36,7 @@ RSpec.describe Company do
 
       context 'with URL with https://' do
         before { company.website = 'https://www.injobs.pl' }
+
         it 'is valid' do
           expect(company).to be_valid
         end
@@ -48,6 +49,7 @@ RSpec.describe Company do
 
       context 'with URL with no protocol' do
         before { company.website = 'www.injobs.pl' }
+
         it 'is valid' do
           expect(company).to be_valid
         end
@@ -112,7 +114,7 @@ RSpec.describe Company do
 
     context 'when hash has key = 1' do
       it 'changes premium_until' do
-        expect { company.add_premium_services(1 => 2) }.to change { company.premium_until }
+        expect { company.add_premium_services(1 => 2) }.to change(company, :premium_until)
       end
 
       it 'does not add 1 to premium_services' do

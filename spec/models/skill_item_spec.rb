@@ -31,14 +31,14 @@ RSpec.describe SkillItem, type: :model do
     context "when Skill doesn't exist" do
       it 'creates a new Skill' do
         skill_item.skill_name = 'Foobar'
-        expect { skill_item.save }.to change { Skill.count }
+        expect { skill_item.save }.to change(Skill, :count)
       end
     end
 
     context 'when Skill exists' do
       it 'reuses existing Skill' do
         skill_item.skill_name = skill.name_en
-        expect { skill_item.save }.not_to change { Skill.count }
+        expect { skill_item.save }.not_to change(Skill, :count)
       end
     end
   end

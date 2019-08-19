@@ -14,6 +14,7 @@ RSpec.describe OffersHelper do
     context 'with locale == :pl' do
       it 'uses comma as decimal separator'
     end
+
     context 'with locale == :en' do
       it 'uses point as decimal separator'
     end
@@ -81,10 +82,11 @@ RSpec.describe OffersHelper do
   end
 
   describe '#prepare_offer_meta_description' do
+    subject { helper.prepare_offer_meta_description(offer, company) }
+
     let(:offer) { FactoryBot.build(:offer, :published, :one_location) }
     let(:company) { FactoryBot.build(:company) }
 
-    subject { helper.prepare_offer_meta_description(offer, company) }
     it { is_expected.to include(company.name) }
     it { is_expected.to include(offer.locations.first.only_city_format) }
   end

@@ -18,7 +18,7 @@ end
 RSpec.describe 'Dotpay confirmation', type: :request do
   let!(:order) { FactoryBot.create(:order, unique_token: '280533fa22fb47a95cac') }
 
-  before(:each) do
+  before do
     post '/api/dotpay/confirm_payment', params: post_params
     order.reload
   end

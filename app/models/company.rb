@@ -6,7 +6,7 @@ class Company < User
   has_many :applications, through: :offers
   has_many :subscriptions
   has_many :blog_posts, foreign_key: :user_id
-  belongs_to :location
+  belongs_to :location, optional: true
   validates :name, uniqueness: true, presence: true
 
   def self.published_offers

@@ -2,7 +2,7 @@
 
 class Location < ApplicationRecord
   belongs_to :country, required: true
-  belongs_to :province
+  belongs_to :province, optional: true
   belongs_to :offer
 
   attr_accessor :country_name, :province_name

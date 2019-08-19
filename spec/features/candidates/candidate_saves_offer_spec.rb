@@ -8,7 +8,7 @@ RSpec.xdescribe 'Candidate saves offer' do
 
   describe 'in offers#index' do
     context 'when not signed in' do
-      before(:each) do
+      before do
         visit offers_path
       end
 
@@ -24,7 +24,7 @@ RSpec.xdescribe 'Candidate saves offer' do
     end
 
     context 'when signed in as Candidate' do
-      before(:each) do
+      before do
         login_as(candidate, scope: :candidate)
         visit offers_path
       end
@@ -43,7 +43,7 @@ RSpec.xdescribe 'Candidate saves offer' do
 
   describe 'in offers#show' do
     context 'when not signed in' do
-      before(:each) do
+      before do
         visit offer_path(offer)
       end
 
@@ -53,7 +53,7 @@ RSpec.xdescribe 'Candidate saves offer' do
     end
 
     context 'when signed in as Candidate' do
-      before(:each) do
+      before do
         login_as(candidate, scope: :candidate)
         visit offer_path(offer)
       end
@@ -66,7 +66,7 @@ RSpec.xdescribe 'Candidate saves offer' do
 
   describe 'saving offer' do
     context 'when candidate clicks link' do
-      before(:each) do
+      before do
         login_as(candidate, scope: :candidate)
         visit offer_path(offer)
       end

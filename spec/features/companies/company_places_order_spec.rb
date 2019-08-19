@@ -39,7 +39,7 @@ RSpec.describe 'Company places Order' do
 
     def click_place_order
       click_link_or_button I18n.t('carts.cart.place')
-      expect(current_path).to eq(place_order_path)
+      expect(page).to have_current_path(place_order_path)
     end
 
     def fill_in_billing_address
@@ -62,7 +62,7 @@ RSpec.describe 'Company places Order' do
         visit cart_path
         click_place_order
         fill_in_billing_address
-        expect { submit_form }.to change { Order.count }
+        expect { submit_form }.to change(Order, :count)
         o = Order.last
         expect(o.billing_address).to be_persisted
       end
@@ -81,7 +81,7 @@ RSpec.describe 'Company places Order' do
           visit cart_path
           click_place_order
           find('#order_invoice').set(false)
-          expect { submit_form }.to change { Order.count }
+          expect { submit_form }.to change(Order, :count)
           o = Order.last
           expect(o).to be_paid
         end
@@ -94,7 +94,7 @@ RSpec.describe 'Company places Order' do
           visit cart_path
           click_place_order
           find('#order_invoice').set(false)
-          expect { submit_form }.to change { Order.count }
+          expect { submit_form }.to change(Order, :count)
           o = Order.last
           expect(o).not_to be_paid
           expect(o.amount_due).to eq(30)

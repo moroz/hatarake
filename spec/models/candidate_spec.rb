@@ -6,8 +6,9 @@ RSpec.describe Candidate, type: :model do
   describe 'scopes' do
     let!(:candidate) { FactoryBot.create(:candidate, :looking_for_work) }
     let!(:not_looking_candidate) { FactoryBot.create(:candidate, :not_looking_for_work) }
+
     describe 'looking_for_work' do
-      subject { Candidate.looking_for_work }
+      subject { described_class.looking_for_work }
 
       it { is_expected.to include candidate }
       it { is_expected.not_to include not_looking_candidate }
@@ -18,7 +19,7 @@ RSpec.describe Candidate, type: :model do
       let!(:welder) { FactoryBot.create(:candidate, profession_name: 'Welder') }
 
       context 'when given profession name' do
-        subject { Candidate.with_profession 'Carpenter' }
+        subject { described_class.with_profession 'Carpenter' }
 
         it { is_expected.to include carpenter }
         it { is_expected.not_to include welder }
@@ -36,21 +37,21 @@ RSpec.describe Candidate, type: :model do
       end
 
       context 'by first name' do
-        subject { Candidate.search('john') }
+        subject { described_class.search('john') }
 
         it { is_expected.to include smith }
         it { is_expected.not_to include kowalski }
       end
 
       context 'by last name' do
-        subject { Candidate.search('smith') }
+        subject { described_class.search('smith') }
 
         it { is_expected.to include smith }
         it { is_expected.not_to include kowalski }
       end
 
       context 'by substring of full name' do
-        subject { Candidate.search('n kowa') }
+        subject { described_class.search('n kowa') }
 
         it { is_expected.to include kowalski }
         it { is_expected.not_to include smith }
@@ -141,10 +142,12 @@ RSpec.describe Candidate, type: :model do
 
   describe '#from_omniauth' do
     let!(:facebook_hash) { FactoryBot.create(:facebook_auth) }
+
     context 'Candidate already not registred' do
       subject { described_class.from_omniauth(facebook_hash) }
+
       it 'create new user' do
-        expect { subject }.to change { User.count }
+        expect { subject }.to change(User, :count)
       end
       it 'return created user' do
         expect(subject[0]).to eq User.last
@@ -155,11 +158,14 @@ RSpec.describe Candidate, type: :model do
     end
 
     context 'Candidate already registred' do
+      subject { described_class.from_omniauth(facebook_hash) }
+
       before do
         User.delete_all
       end
+
       let!(:candidate) { FactoryBot.create(:candidate, email: facebook_hash.info.email) }
-      subject { described_class.from_omniauth(facebook_hash) }
+
       it 'return candidate object' do
         expect(subject[0]).to eq candidate
       end

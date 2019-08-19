@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe CandidateProfile, type: :model do
   let(:profile) { FactoryBot.build(:candidate_profile) }
+
   describe 'validations' do
     context 'with correct attributes' do
       it 'is valid' do

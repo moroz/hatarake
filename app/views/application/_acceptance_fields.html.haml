@@ -3,20 +3,28 @@
 .checkbox-group__label
   = f.label :terms_of_service, raw(t('.terms_of_service'))
 .checkbox-group__checkbox
-  = f.check_box :personal_data, id: 'personal_data_checkbox'
+  = f.check_box :rodo, id: 'rodo_checkbox'
 .checkbox-group__label
   = f.label :rodo, raw(t('rodo_accept'))
 .checkbox-group__checkbox
-  = f.check_box :rodo
+  = f.check_box :personal_data, id: 'personal_data_checkbox'
 .checkbox-group__label
   = f.label :personal_data, t('.personal_data')
 
 :javascript
-  var personalData = false, tos = false;
-  $('#terms_of_service_checkbox, #personal_data_checkbox').on('change', function() {
+  var personalData = false, tos = false, rodoData = false;
+  $(document).ready(function() {
+    tos = $("#terms_of_service_checkbox").checked;
+    personlData = $("#personal_data_checkbox").checked;
+    rodoData = $("#rodo_checkbox").checked;
+    $('#submit_button').prop('disabled', !(!personalData || !tos || !rodoData));
+  });
+  $('#terms_of_service_checkbox, #personal_data_checkbox, #rodo_checkbox').on('change', function() {
     if (this.id == 'personal_data_checkbox')
       personalData = this.checked;
+    else if (this.id == 'rodo_checkbox')
+      rodoData = this.checked;
     else
       tos = this.checked;
-    $('#submit_button').prop('disabled', (!personalData || !tos));
+    $('#submit_button').prop('disabled', (!personalData || !tos || !rodoData));
   });

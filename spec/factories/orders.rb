@@ -4,12 +4,12 @@ FactoryBot.define do
   factory :order do
     user { Company.first || FactoryBot.create(:company) }
     cart { create :cart, :with_items, user: user }
-    payment_status 'new'
-    paid_at nil
-    currency 'pln'
+    payment_status { 'new' }
+    paid_at { nil }
+    currency { 'pln' }
 
     trait :paid do
-      paid_at 2.days.ago
+      paid_at { 2.days.ago }
     end
 
     trait :with_billing_address_attributes do
