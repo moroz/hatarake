@@ -5,7 +5,11 @@ class FeedController < ApplicationController
   before_action :fetch_offers, except: :region_list
 
   def action_missing(name)
-    fetch_offers
+    if name == 'jooble'
+      @offers = Offer.published.promoted.includes(:company, locations: %i[country province])
+    else
+      fetch_offers
+    end
   end
 
   def region_list
