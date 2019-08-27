@@ -2,7 +2,7 @@
 
 class Payment < ApplicationRecord
   validates_presence_of :currency, :description
-  belongs_to :payer, class_name: 'Company'
+  belongs_to :payer, class_name: 'Company', optional: true
   has_one :subscription, required: true
 
   before_validation :set_description, :set_amount

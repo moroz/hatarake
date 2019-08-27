@@ -11,8 +11,12 @@ module CurrencyHelper
 
   def readable_currency_range(range, currency)
     return I18n.t('currency_range.none') if range.blank?
+
     min = localized_currency_value(range.first)
     max = localized_currency_value(range.last)
+
+    min = nil if min.to_i.zero?
+    max = nil if max.to_i.zero?
 
     format = if min.nil? && max.nil? then 'none'
              elsif min.nil? && !max.nil? then 'max'
@@ -20,11 +24,13 @@ module CurrencyHelper
              elsif min == max then 'mineqmax'
              elsif min != max then 'minmax'
              end
+
     I18n.t("currency_range.#{format}", min: min, max: max, currency: currency.upcase)
   end
 
   def localized_currency_value(value)
     return if value.nil?
+
     value.infinite? ? '' : number_with_precision(value, strip_insignificant_zeros: true, precision: 2)
   end
 
