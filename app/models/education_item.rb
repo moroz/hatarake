@@ -5,5 +5,5 @@ class EducationItem < CvItem
   validates_presence_of :specialization
   before_validation :swap_dates
 
-  belongs_to :location
+  belongs_to :location, optional: true
 end
