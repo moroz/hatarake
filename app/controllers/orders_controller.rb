@@ -44,7 +44,19 @@ class OrdersController < ApplicationController
     render :place
   end
 
-  def payment; end
+  def payment
+    dotpay_id = if @order.currency == 'eur'
+                  Rails.application.secrets.dotpay_id_eur || '767542'
+                else
+                  Rails.application.secrets.dotpay_id_pln || '767542'
+                end
+
+    @signature = Digest::SHA256.hexdigest(
+                   Rails.application.secrets.dotpay_secret + 'dev' + dotpay_id.to_s +
+                   sprintf("%.2f", @order.amount_due) + @order.currency.upcase +
+                   t('.payment_description') + @order.unique_token + order_thank_you_path(order_id: @order)
+                 )
+  end
 
   def thank_you
     redirect_to order_payment_path(@order) unless @order.paid?
