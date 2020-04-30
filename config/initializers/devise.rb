@@ -2,7 +2,7 @@
 
 Devise.setup do |config|
   config.secret_key = Rails.application.secrets.devise_secret_key if Rails.env.production? || Rails.env.staging?
-  config.mailer_sender = 'InJobs.pl <no-reply@injobs.pl>'
+  config.mailer_sender = 'InJobs.pl <kontakt@injobs.pl>'
   require 'devise/orm/active_record'
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
